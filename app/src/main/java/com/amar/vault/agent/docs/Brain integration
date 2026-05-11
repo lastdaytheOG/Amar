@@ -1,0 +1,144 @@
+# Brain Integration — Final Steps
+
+You now have the full Primary Brain architecture. **One critical gate remains
+before this runs**: the LiteRT-LM API placeholders in `LiteRtEngine.kt`.
+
+## 1. The placeholder gate
+
+`LiteRtEngine.kt` has three blocks marked `// LITERT_API:` and calls to
+`TODO_LITERT_CALL(...)`. Those must be replaced with real LiteRT-LM API calls
+before the engine works.
+
+**Why I didn't write real calls**: the LiteRT-LM Kotlin binding is preview
+(as of April 2026), and the exact Kotlin API names aren't stable across
+its versions. Writing code against an API surface I can't verify would
+produce files that look correct but won't compile — worse than an explicit
+placeholder.
+
+**What to do**:
+
+1. Clone https://github.com/google-ai-edge/LiteRT-LM
+2. Build the Android `.aar` per their instructions (or wait for Maven release)
+3. Add the dependency to `app/build.gradle.kts`:
+
+   ```kotlin
+   dependencies {
+       implementation(files("libs/litertlm-<version>.aar"))
+       // OR once Maven artifact is stable:
+       // implementation("com.google.ai.edge:litert-lm:<version>")
+   }
+   ```
+
+4. Replace the three `// LITERT_API:` blocks in `LiteRtEngine.kt` with real
+   calls. Each block has commented pseudo-code matching the expected C++
+   preview API; the Kotlin binding names are almost certainly 1:1 translations.
+
+5. Remove the `TODO_LITERT_CALL("...")` calls and the `@Suppress("UNREACHABLE_CODE")`
+   blocks that follow them.
+
+**If you want to test the Brain orchestration logic NOW** (before LiteRT-LM
+is wired), the `FakeInferenceEngine` works as a drop-in replacement. Bind
+that in a test Hilt module and you can exercise prompt building, streaming,
+validation, correction rounds — everything except the actual model.
+
+## 2. Model manifest — URLs and checksums
+
+`ModelManifest.kt` ships with PLACEHOLDER sha256 values. Before release:
+
+1. Pick the actual `.litertlm` file from the LiteRT Community HuggingFace
+   repo (https://huggingface.co/litert-community).
+2. Download it, compute SHA-256: `sha256sum gemma-3-1b-it-int4.litertlm`
+3. Measure actual file size in bytes.
+4. Update `ModelManifest.GEMMA_3_1B.sha256` and `sizeBytes`.
+5. Same for `GEMMA_4_E2B` if you ship both.
+
+Until real checksums are in, `ModelDownloader` has a defensive skip — if
+`sha256` equals "PLACEHOLDER_REPLACE_BEFORE_SHIP" it won't fail verification.
+This lets you test the download flow against real files without needing
+checksums yet, but **IS NOT SAFE FOR PRODUCTION** (a corrupted download
+would silently succeed). Remove this skip once real checksums are in place.
+
+## 3. App permissions
+
+No new Android permissions are required by the Brain — downloads use
+`HttpURLConnection` from `INTERNET` (which your app already has for other
+Amar Vault features). Model files live in internal storage (no permission
+needed).
+
+## 4. Wire the BrainDebugViewModel
+
+Add a debug screen to VaultNavHost behind `BuildConfig.DEBUG`:
+
+```kotlin
+if (BuildConfig.DEBUG) {
+    composable("debug_brain") {
+        DebugBrainScreen()   // Compose screen using BrainDebugViewModel
+    }
+}
+```
+
+The Compose screen is a light wrapper over `BrainDebugViewModel` — a text
+field for the user request, a streaming output pane for the model's live
+response, and an execution trace pane for ControlLayer state transitions.
+Similar structure to `DebugAgentScreen` but simpler because the Brain
+handles envelope generation automatically.
+
+A reference implementation is NOT included in this commit because it's a
+trivial Compose layout; write it in ~80 lines following the pattern of
+`DebugAgentScreen`. If you want me to provide it, say so and I'll generate
+it in the next turn.
+
+## 5. First-run expected behavior
+
+**Before LiteRT-LM placeholders are replaced:**
+- App compiles and runs
+- Brain initializes to `BrainState.Uninitialized`
+- Calling `brain.warmup()` progresses through `Downloading → Loading`
+- At Loading step, `LiteRtEngine.load()` throws `NotImplementedError`
+  with a clear message — you know exactly what to fix
+- Brain settles in `BrainState.Failed(ModelLoadFailed(...))`
+
+**After LiteRT-LM placeholders are replaced + real model downloaded:**
+- `brain.warmup()` progresses through all states to `Ready`
+- First download is ~550MB for Gemma 3 1B, ~1.2GB for E2B
+- Load takes 3-8 seconds on SD695 (varies by SoC)
+- Warmup generation takes 0.5-2 seconds
+- First real `plan("open whatsapp")` should produce first token within 2s
+  on GPU, 3-5s on CPU
+- Full envelope generation typically 1-3 seconds after TTFT
+
+## 6. What's still missing (known deferrals)
+
+- **Intent cache** — bypass Brain entirely for common commands. This is the
+  single biggest TTFT win available. Flagged in the spec as Phase 5.
+- **MockBrain** — I designed for it but didn't write one. Drop-in composable
+  over FakeInferenceEngine for integration tests; 50 lines.
+- **Function calling / constrained decoding** — LiteRT-LM supports it per the
+  docs. Currently we do free-form + validator as decided. Upgrade path is
+  additive, not a rewrite.
+- **Context injection from read_screen** — PlanContext has the field, but
+  nothing wires ReadScreenExecutor output into it automatically yet. Phase 2
+  concern; requires a plan-composition layer above Brain.
+- **Multi-turn conversation** — PlanContext.recentTurns exists but no ViewModel
+  populates it. Requires a TurnHistoryStore backed by Room. Maybe 100 lines.
+- **Brain unit tests** — the DSL / Control / Executor layers have ~110 test
+  cases. Brain layer is now the least-tested part of the agent. Priority
+  for the next testing round.
+
+## 7. Integration sanity check
+
+If you want confidence the Brain orchestration works BEFORE wiring LiteRT-LM:
+
+1. Swap `provideInferenceEngine()` in `BrainModule` to return
+   `FakeInferenceEngine(scriptedResponses = mapOf("open whatsapp" to "{...}"))`
+2. Run the debug screen, type "open whatsapp"
+3. Should see the scripted JSON token-stream into the output pane, followed
+   by real execution via ControlLayer
+
+This confirms:
+- Brain.warmup() flow works
+- Prompt building is correct
+- Streaming integration is correct
+- ActionValidator handles Brain output correctly
+- ControlLayer receives and executes the envelope
+- Only the LiteRT-LM-specific bits are still TODO

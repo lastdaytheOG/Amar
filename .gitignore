@@ -1,0 +1,8 @@
+*.onnx
+*.litertlm
+*.bin
+*.gguf
+app/src/main/assets/
+app/src/main/ml/
+.idea/
+build/

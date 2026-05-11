@@ -1,0 +1,237 @@
+package com.amar.vault.agent.dsl
+
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertTrue
+import org.junit.Assert.fail
+import org.junit.Test
+
+/**
+ * Tests for the hybrid-policy validator.
+ *
+ * The contract we're pinning down:
+ *   - Valid envelopes parse and report no warnings.
+ *   - Envelopes with unknown constraints/verify keys → Degraded with warnings.
+ *   - Envelopes with bad actions/params → Invalid with structured reasons.
+ *   - Specific error codes (E_ACTION_UNKNOWN, E_PARAM_INVALID, etc.) are stable
+ *     so the Brain's correction prompt can be template-driven.
+ */
+class ActionValidatorTest {
+
+    // -------------------------------------------------------------------------
+    // Valid path
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `well-formed envelope returns Valid`() {
+        val result = ActionValidator.validate("""
+            {"action":"open_app","params":{"app":"Settings"}}
+        """.trimIndent())
+        assertTrue(result is ValidationResult.Valid)
+    }
+
+    @Test
+    fun `Valid envelope is executable`() {
+        val result = ActionValidator.validate("""
+            {"action":"home"}
+        """.trimIndent())
+        assertTrue(result.isExecutable)
+    }
+
+    // -------------------------------------------------------------------------
+    // Degraded path — warnings, not rejections
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `unknown constraint key produces Degraded with warning`() {
+        val result = ActionValidator.validate("""
+            {
+              "action": "home",
+              "constraints": { "timeout_ms": 3000, "mystery_flag": true }
+            }
+        """.trimIndent())
+
+        assertTrue(result is ValidationResult.Degraded)
+        val warnings = (result as ValidationResult.Degraded).warnings
+        assertTrue(warnings.any {
+            it is ValidationWarning.UnknownConstraintKey && it.key == "mystery_flag"
+        })
+    }
+
+    @Test
+    fun `unknown verify type produces Degraded with warning`() {
+        val result = ActionValidator.validate("""
+            {
+              "action": "home",
+              "verify": { "type": "future_variant" }
+            }
+        """.trimIndent())
+
+        val degraded = result as ValidationResult.Degraded
+        assertTrue(degraded.warnings.any {
+            it is ValidationWarning.UnknownVerifyType && it.type == "future_variant"
+        })
+    }
+
+    @Test
+    fun `Degraded envelope is still executable`() {
+        val result = ActionValidator.validate("""
+            {
+              "action": "home",
+              "constraints": { "unknown_key": "whatever" }
+            }
+        """.trimIndent())
+        assertTrue(result.isExecutable)
+    }
+
+    // -------------------------------------------------------------------------
+    // Invalid path — specific reason codes
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `unknown action produces E_ACTION_UNKNOWN`() {
+        val result = ActionValidator.validate("""
+            {"action":"teleport","params":{}}
+        """.trimIndent())
+        val invalid = result as ValidationResult.Invalid
+        assertTrue(invalid.reasons.any { it is ValidationReason.UnknownAction })
+    }
+
+    @Test
+    fun `empty SMS body produces E_PARAM_INVALID`() {
+        val result = ActionValidator.validate("""
+            {"action":"send_sms","params":{"to":"+911234567890","body":""}}
+        """.trimIndent())
+        val invalid = result as ValidationResult.Invalid
+        val reason = invalid.reasons.filterIsInstance<ValidationReason.InvalidParamValue>()
+            .firstOrNull { it.param == "body" }
+        assertNotNull(reason)
+    }
+
+    @Test
+    fun `bad phone number produces E_PARAM_INVALID`() {
+        val result = ActionValidator.validate("""
+            {"action":"send_sms","params":{"to":"not-a-number","body":"hi"}}
+        """.trimIndent())
+        val invalid = result as ValidationResult.Invalid
+        assertTrue(invalid.reasons.any {
+            it is ValidationReason.InvalidParamValue && it.param == "to"
+        })
+    }
+
+    @Test
+    fun `wait out of range produces E_PARAM_INVALID`() {
+        val result = ActionValidator.validate("""
+            {"action":"wait","params":{"ms":30000}}
+        """.trimIndent())
+        val invalid = result as ValidationResult.Invalid
+        assertTrue(invalid.reasons.any {
+            it is ValidationReason.InvalidParamValue && it.param == "ms"
+        })
+    }
+
+    @Test
+    fun `negative retries produces E_CONSTRAINT_RANGE`() {
+        val result = ActionValidator.validate("""
+            {
+              "action": "home",
+              "constraints": { "retries": -1 }
+            }
+        """.trimIndent())
+        val invalid = result as ValidationResult.Invalid
+        assertTrue(invalid.reasons.any {
+            it is ValidationReason.ConstraintOutOfRange && it.field == "retries"
+        })
+    }
+
+    @Test
+    fun `timeout over cap produces E_CONSTRAINT_RANGE`() {
+        val result = ActionValidator.validate("""
+            {
+              "action": "home",
+              "constraints": { "timeout_ms": 120000 }
+            }
+        """.trimIndent())
+        val invalid = result as ValidationResult.Invalid
+        assertTrue(invalid.reasons.any {
+            it is ValidationReason.ConstraintOutOfRange && it.field == "timeout_ms"
+        })
+    }
+
+    @Test
+    fun `malformed JSON produces E_JSON`() {
+        val result = ActionValidator.validate("""{"action":"open_app","params":}""")
+        val invalid = result as ValidationResult.Invalid
+        assertTrue(invalid.reasons.any { it is ValidationReason.MalformedJson })
+    }
+
+    @Test
+    fun `Invalid envelope is NOT executable`() {
+        val result = ActionValidator.validate("""{"action":"teleport","params":{}}""")
+        assertFalse(result.isExecutable)
+    }
+
+    @Test
+    fun `Invalid preserves raw JSON for Brain correction`() {
+        val raw = """{"action":"teleport","params":{}}"""
+        val result = ActionValidator.validate(raw) as ValidationResult.Invalid
+        assertEquals(raw, result.rawJson)
+    }
+
+    @Test
+    fun `multiple validation errors accumulate`() {
+        // Bad phone number AND empty body — two reasons should be reported
+        // so the Brain can fix both in one retry instead of ping-ponging.
+        val result = ActionValidator.validate("""
+            {"action":"send_sms","params":{"to":"bad","body":""}}
+        """.trimIndent())
+        val invalid = result as ValidationResult.Invalid
+        val invalidParams = invalid.reasons.filterIsInstance<ValidationReason.InvalidParamValue>()
+        assertTrue(
+            "expected at least 2 InvalidParamValue reasons, got ${invalidParams.size}",
+            invalidParams.size >= 2
+        )
+    }
+
+    // -------------------------------------------------------------------------
+    // Stable error codes — the Brain's correction prompt depends on these
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `reason codes are stable and documented`() {
+        val codes = setOf(
+            ValidationReason.MalformedJson("x").code,
+            ValidationReason.UnknownAction("x").code,
+            ValidationReason.MissingRequiredParam("a", "b").code,
+            ValidationReason.InvalidParamValue("a", "b", "c").code,
+            ValidationReason.UnknownParam("a", "b").code,
+            ValidationReason.ConstraintOutOfRange("a", "b").code
+        )
+        // If any of these shift, treat as a breaking change and bump contract.
+        assertEquals(
+            setOf(
+                "E_JSON",
+                "E_ACTION_UNKNOWN",
+                "E_PARAM_MISSING",
+                "E_PARAM_INVALID",
+                "E_PARAM_UNKNOWN",
+                "E_CONSTRAINT_RANGE"
+            ),
+            codes
+        )
+    }
+
+    @Test
+    fun `warning codes are stable and documented`() {
+        val codes = setOf(
+            ValidationWarning.UnknownConstraintKey("x").code,
+            ValidationWarning.UnknownVerifyType("x").code,
+            ValidationWarning.VerifyMissingField("t", "f").code
+        )
+        assertEquals(
+            setOf("W_CONSTRAINT_UNKNOWN", "W_VERIFY_UNKNOWN", "W_VERIFY_INCOMPLETE"),
+            codes
+        )
+    }
+}

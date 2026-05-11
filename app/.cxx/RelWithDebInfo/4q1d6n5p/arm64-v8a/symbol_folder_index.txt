@@ -1,0 +1,1 @@
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\build\intermediates\cxx\RelWithDebInfo\4q1d6n5p\obj\arm64-v8a

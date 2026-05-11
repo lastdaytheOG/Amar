@@ -1,0 +1,265 @@
+# Agent Integration — Final Wiring Steps
+
+You now have **everything** needed to run the agent pipeline end-to-end. This
+document walks through the last 20 minutes of setup to get `Open WhatsApp`
+actually working from a debug screen.
+
+---
+
+## 1. Gradle dependencies (`app/build.gradle.kts`)
+
+Add these if they're not already present. Most Amar Vault projects already
+have kotlinx-serialization and Hilt — verify before adding.
+
+```kotlin
+plugins {
+    kotlin("plugin.serialization") version "<your kotlin version>"
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
+}
+
+dependencies {
+    // kotlinx.serialization — DSL uses this
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+
+    // Room — checkpoint persistence
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.51")
+    ksp("com.google.dagger:hilt-android-compiler:2.51")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    // Compose (debug screen only)
+    implementation("androidx.compose.material3:material3:1.2.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.3")
+}
+```
+
+---
+
+## 2. `AndroidManifest.xml`
+
+Inside `<manifest>` (top-level, before `<application>`):
+
+```xml
+<!-- Agent SMS send capability. Runtime permission on API 23+.
+     If you don't need send_sms, remove this and SendSmsExecutor will
+     simply report PermissionDenied — the Brain can plan around it. -->
+<uses-permission android:name="android.permission.SEND_SMS" />
+
+<!-- Agent direct-call capability. Runtime permission on API 23+.
+     If you don't need make_call, remove this. Without CALL_PHONE, the
+     agent can still decompose a call into open_app("phone") + type +
+     click via Accessibility-tier executors — slower but permissionless. -->
+<uses-permission android:name="android.permission.CALL_PHONE" />
+```
+
+Inside `<application>`:
+
+```xml
+<service
+    android:name="com.amar.vault.agent.perception.PerceptionService"
+    android:exported="false"
+    android:label="@string/perception_service_label"
+    android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+    <intent-filter>
+        <action android:name="android.accessibilityservice.AccessibilityService" />
+    </intent-filter>
+    <meta-data
+        android:name="android.accessibilityservice"
+        android:resource="@xml/perception_service_config" />
+</service>
+```
+
+No `<uses-permission>` needed for the Accessibility service itself.
+
+### Runtime permission requests
+
+Both SEND_SMS and CALL_PHONE require runtime grants on API 23+. Add a permission
+request flow (ActivityResultContracts.RequestMultiplePermissions or similar) to
+a settings screen or first-launch onboarding. The agent will fail SMS/call
+actions with [PermissionDenied] until these are granted, but all other actions
+work regardless.
+
+---
+
+## 3. `res/xml/perception_service_config.xml`
+
+Copy `perception_service_config.xml` from the perception package into
+`app/src/main/res/xml/`.
+
+---
+
+## 4. `res/values/strings.xml`
+
+Add:
+
+```xml
+<string name="perception_service_label">Amar Vault Agent</string>
+
+<string name="perception_service_summary">
+    Lets Amar Vault read what\'s on screen so the on-device agent can execute
+    tasks you request (like sending a message in WhatsApp).
+</string>
+
+<string name="perception_service_description">
+    Amar Vault uses this service to see the contents of apps you choose to
+    automate, and to perform taps and text entry on your behalf.
+
+    All processing stays on your device. Amar Vault never sees screens from
+    apps you haven\'t explicitly asked it to automate, and no screen content
+    is sent to any server.
+
+    You can disable this service at any time from Settings → Accessibility.
+</string>
+```
+
+---
+
+## 5. `VaultApplication.kt` (or your existing Application class)
+
+**IMPORTANT**: Do NOT call `AgentStateHolder.init(...)` here. The Hilt module
+handles initialization lazily on first `SnapshotCache` injection, which avoids
+a race with the Hilt graph.
+
+If you have no existing `Application` class, create one:
+
+```kotlin
+package com.amar.vault
+
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class VaultApplication : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        // Agent wiring is handled by AgentModule.
+        // Do NOT call AgentStateHolder.init() here — the module does it.
+    }
+}
+```
+
+And reference it from manifest:
+
+```xml
+<application
+    android:name=".VaultApplication"
+    ...>
+```
+
+---
+
+## 6. Add the debug screen to navigation
+
+In your existing `VaultNavHost.kt`, add a debug route (gated by
+`BuildConfig.DEBUG`):
+
+```kotlin
+if (BuildConfig.DEBUG) {
+    composable("debug_agent") {
+        DebugAgentScreen()
+    }
+}
+```
+
+Add a button somewhere (Settings screen is a natural place) to navigate there:
+
+```kotlin
+if (BuildConfig.DEBUG) {
+    OutlinedButton(onClick = { navController.navigate("debug_agent") }) {
+        Text("Agent debug harness")
+    }
+}
+```
+
+---
+
+## 7. First run — end-to-end
+
+1. Install the app.
+2. Open **Settings → Accessibility → Amar Vault Agent → On**.
+3. Return to the app, navigate to the debug screen.
+4. The status chip at the top should go green ("Accessibility service: CONNECTED").
+5. Tap **Open WhatsApp**.
+
+Expected trace (success path):
+
+```
+[submit] {...}
+[accepted] task=task-a1b2c3d4
+  Pending
+  Running attempt=1
+  Verifying (exec took 24ms)
+✓ Succeeded attempts=1 duration=847ms result={package=com.whatsapp}
+```
+
+Expected trace (WhatsApp not installed):
+
+```
+[submit] {...}
+[accepted] task=task-a1b2c3d4
+  Pending
+  Running attempt=1
+✗ Failed attempts=1 duration=52ms reason=TargetNotFound(...)
+```
+
+Expected trace (Accessibility service not enabled, trying failing click):
+
+```
+[submit] {...}
+[accepted] task=task-a1b2c3d4
+  Pending
+  Running attempt=1
+✗ Failed attempts=1 duration=0ms reason=AccessibilityUnavailable(...)
+```
+
+---
+
+## 8. Troubleshooting cheat sheet
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| Status chip stays red | User hasn't enabled the service | Settings → Accessibility |
+| "Open Settings" succeeds but "Open WhatsApp" fails immediately | WhatsApp not installed (or different package on ROM) | Try the explicit `packageId` override in the envelope |
+| Click succeeds per executor but verify times out | UI change hasn't propagated in 1.5s | Increase `timeout_ms` or add a `wait` step before verify |
+| Task hangs, never reaches terminal | Coroutine leak or AccessibilityService unbinding mid-walk | Force-stop app; check logcat for `TreeWalker threw` |
+| Checkpoints not persisting | Room init failed | Check logcat for `CheckpointWriter` tag — migration or schema issue |
+
+---
+
+## 9. What's NOT included yet
+
+- **LiteRT integration** — deferred per your build-order decision.
+- **Intent cache** (spec §5) — bypass LLM for common commands. Premature until
+  LiteRT is integrated and we have real TTFT measurements.
+- **Memory system** (spec §6) — phase 2.
+- **Shadow Brain hooks** (spec §7) — phase 3, also the migration path for the
+  existing llama.cpp integration from Amar Vault.
+- **Clipboard paste fallback** for TypeText — some Flutter/Compose custom
+  inputs reject ACTION_SET_TEXT. Adding when a real failing case demands it.
+- **SendMessageUiExecutor** — Accessibility-tier fallback for `send_message`
+  when deep links don't work (e.g., Signal, Messenger, phone-number Telegram).
+  The Brain can compose this from open_app + click + type_text + click today.
+- **Gesture-based scroll** — our scroll uses semantic accessibility actions.
+  Views that don't expose ACTION_SCROLL_FORWARD (WebView subframes, some
+  custom views) need gesture dispatch. Add when encountered.
+
+## 10. All 10 v1 executors
+
+| Action         | Tier           | Executor              | Self-verifies |
+|----------------|----------------|-----------------------|---------------|
+| open_app       | INTENT         | OpenAppExecutor       | No (use app_opened verify) |
+| home           | ACCESSIBILITY  | HomeExecutor          | No |
+| send_sms       | SYSTEM_API     | SendSmsExecutor       | **Yes** (via PendingIntent) |
+| make_call      | SYSTEM_API     | MakeCallExecutor      | No |
+| send_message   | INTENT         | SendMessageExecutor   | No (user still taps Send) |
+| click          | ACCESSIBILITY  | ClickExecutor         | No |
+| type_text      | ACCESSIBILITY  | TypeTextExecutor      | **Yes** (read-back match) |
+| scroll         | ACCESSIBILITY  | ScrollExecutor        | No |
+| wait           | INTENT         | WaitExecutor          | **Yes** (time elapsed) |
+| read_screen    | ACCESSIBILITY  | ReadScreenExecutor    | **Yes** (snapshot captured) |

@@ -1,0 +1,1048 @@
+--------- beginning of main
+05-11 10:27:07.597 20602 21406 W TileUtils: Found com.motorola.setup.PrivacyandExperienceControlsSettingsAlias for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.597 20602 21406 W TileUtils: Found com.motorola.appforecast.ui.activity.AppForecastSettingsActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.598 20602 21406 W TileUtils: Found com.motorola.appforecast.ui.activity.ZRamSettingsActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } missing metadata com.android.settings.category
+05-11 10:27:07.599 20602 21406 W TileUtils: Found com.motorola.coresettingsext.warranty for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.600 20602 21406 W TileUtils: Found com.motorola.coresettingsext.arbitration for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.600 20602 21406 W TileUtils: Found com.motorola.coresettingsext.regulatory for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.601 20602 21406 W TileUtils: Found com.motorola.coresettingsext.sar for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.601 20602 21406 W TileUtils: Found com.motorola.coresettingsext.legal for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.602 20602 21406 W TileUtils: Found com.motorola.coresettingsext.CoreSettingsExt$OpenSourceInfoActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.602 20602 21406 W TileUtils: Found com.motorola.coresettingsext.regulatory_labels for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.603 20602 21406 W TileUtils: Found com.motorola.coresettingsext.CoreSettingsExt$ScreenRecordActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.603  1990  2042 I system_server: Background young concurrent copying GC freed 61MB AllocSpace bytes, 52(4592KB) LOS objects, 31% free, 136MB/199MB, paused 807us,671us total 253.023ms
+05-11 10:27:07.604 20602 21406 W TileUtils: Found com.motorola.coresettingsext.CoreSettingsExt$WLCStandActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.605 20602 21406 W TileUtils: Found com.motorola.coresettingsext.CoreSettingsExt$DoubleTapToLockActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.606 20602 21406 W TileUtils: Found com.motorola.coresettingsext.CoreSettingsExt$DoubleTapToUnlockActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.608 20602 21406 W TileUtils: Found com.motorola.coresettingsext.CoreSettingsExt$ScrambleKeySettings for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.610 20602 21406 W TileUtils: Found com.motorola.coresettingsext.NetworkProtectionActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.610 20602 21406 W TileUtils: Found com.motorola.coresettingsext.LegacyNetworkProtectionActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.611 20602 21406 W TileUtils: Found com.motorola.coresettingsext.CoreSettingsExt$ThinkShieldActivity for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.611 20602 21406 W TileUtils: Found com.motorola.coresettingsext.PhishingDetectionSettings for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.612 20602 21406 W TileUtils: Found com.motorola.coresettingsext.LegacyPhishingDetectionSettings for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.615 20602 21406 W TileUtils: Found com.motorola.setup.MotorolaTermsAndConditions for intent Intent { act=com.android.settings.action.EXTRA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.627  1990  2044 W System  : A resource failed to call HardwareBuffer.close. 
+05-11 10:27:07.631  1990  3140 W ParceledListSlice: Element #24 is 19516 bytes.
+05-11 10:27:07.634 20602 21406 W TileUtils: Found com.google.android.finsky.systemupdateactivity.SystemUpdateActivity for intent Intent { act=com.android.settings.action.IA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.636 20602 21406 W TileUtils: Found com.google.android.gms.auth.proximity.multidevice.SettingsMaterialNextActivity for intent Intent { act=com.android.settings.action.IA_SETTINGS } missing metadata 
+05-11 10:27:07.638 20602 21406 W TileUtils: Found com.google.android.gms.location.settings.DrivingBehaviorPlatformSettingsActivity for intent Intent { act=com.android.settings.action.IA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.640 20602 21406 W TileUtils: Found com.google.android.projection.gearhead.companion.settings.DefaultSettingsActivity for intent Intent { act=com.android.settings.action.IA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.640 20602 21406 W TileUtils: Found com.motorola.developer.DeveloperMainActivity for intent Intent { act=com.android.settings.action.IA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.641 20602 21406 W TileUtils: Found com.android.traceur.MainActivity for intent Intent { act=com.android.settings.action.IA_SETTINGS } is primary profile only, skip loading tile for uid 10
+05-11 10:27:07.648 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.648 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.649 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.649 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.650 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.650 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.651 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.653 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.653 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.653 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.656  1990  2044 W System  : A resource failed to call release. 
+05-11 10:27:07.656  1990  2044 W System  : A resource failed to call HardwareBuffer.close. 
+05-11 10:27:07.658 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.659 20602 20602 D ActivityEmbeddingUtils: isSettingsSplitSupported = false
+05-11 10:27:07.679 22504 22637 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.680 22504 20396 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.684 22504 22637 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.687 22504 22520 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.689 22504 22520 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.690 22504 20396 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.691 22504 22635 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.691 22504 22637 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.692 22504 22635 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.694 22504 22635 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.695 22504 22520 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.698 22504 22635 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.699 22504 22520 I CachedField: (REDACTED) %s: %s
+05-11 10:27:07.699 22504 22639 I CachedField: (REDACTED) %s: %s
+--------- beginning of system
+05-11 10:27:07.831  2866  2910 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#1479) android.os.BinderProxy@944b157@0
+05-11 10:27:07.833  1990  2113 V WindowManager: Finish Transition (#1479): created at 05-11 10:27:07.242 collect-started=0.038ms request-sent=7.143ms started=14.69ms ready=55.175ms sent=58.526ms finished=590.915ms
+05-11 10:27:07.836 20791 20791 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+05-11 10:27:07.839  2866  2910 V WindowManagerShell: Track 0 became idle
+05-11 10:27:07.839  2866  2910 V WindowManagerShell: All active transition animations finished
+05-11 10:27:07.839  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=4063825, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=223538, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=3, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=2500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=72, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-456238, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=18301, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=2500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=365, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=3383711}
+05-11 10:27:07.840  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=4063825, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=223538, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=3, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=2500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=72, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-456238, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=18301, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=2500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=365, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=3383711}
+05-11 10:27:07.847  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:07.847  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:07.848  1990  3451 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 10:27:07.848  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 10:27:07.849 20602 20602 D BatteryBroadcastRcvr: updateBatteryStatus: action=android.intent.action.BATTERY_CHANGED
+05-11 10:27:07.850 20602 20602 D BatteryBroadcastRcvr: Battery changed: level: 72%| status: Charging slowly| chargingStatus: 0| health: 2
+05-11 10:27:07.851  2866  4897 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:07.852  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=4063825, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=223539, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=3, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=2500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=72, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-456238, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=18301, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=2500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=365, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=3383711}
+05-11 10:27:07.852  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=4063825, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=223539, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=3, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=2500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=72, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-456238, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=18301, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=2500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=365, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=3383711}
+05-11 10:27:07.854  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:07.855  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:07.858  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 10:27:07.858  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:07.858  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:07.859  1990  3451 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 10:27:07.860 20602 20602 D BatteryBroadcastRcvr: updateBatteryStatus: action=android.intent.action.BATTERY_CHANGED
+05-11 10:27:07.860 20602 20602 D BatteryBroadcastRcvr: Battery changed: level: 72%| status: Charging slowly| chargingStatus: 0| health: 2
+05-11 10:27:07.861 20791 20815 D Surface : Surface::disconnect
+05-11 10:27:07.861 20791 20815 D BufferQueueProducer: [com.amar.vault/com.amar.vault.MainActivity#16811(BLAST Consumer)pid:20791](id:513700000001,api:1,p:20791,c:20791) disconnect: api 1
+05-11 10:27:07.862 20791 20815 D HWUI    : endAllActiveAnimators on 0xb400007d4f943a00 (UnprojectedRipple) with handle 0xb400007d4f0c8b40
+05-11 10:27:07.863  2866  3379 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:07.874  2866  4870 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:07.874  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:07.875  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:07.881  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 10:27:07.882  2866  4708 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:07.884 20602 20602 D BatteryBroadcastRcvr: updateBatteryStatus: action=android.intent.action.BATTERY_CHANGED
+05-11 10:27:07.885 20602 20602 D BatteryBroadcastRcvr: Battery changed: level: 72%| status: Charging slowly| chargingStatus: 0| health: 2
+05-11 10:27:07.888 20791 20830 I VectorEngineJNI: Saved HNSW index: 0 vectors
+05-11 10:27:07.891 20791 20830 D VectorSearch: Saved state: 0 vectors
+05-11 10:27:07.894  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} entered launcher screen? false
+05-11 10:27:07.895  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:07.967  1990  3614 D StorageStatsService: getFreeBytes: 25596989440
+05-11 10:27:07.998  3519  3684 I ThermalEngine: Monitor:ACTIVE:FREEZE-CHG:freeze_rule=1:DETECT-STANDBY=0
+05-11 10:27:07.998  3519  3684 I ThermalEngine: ACTION: freeze_rule - Setting freeze_rule to 1
+05-11 10:27:07.999  3519  3683 I ThermalEngine: Thermal-Server: Thermal received msg from  freezing
+05-11 10:27:07.999  3519 21414 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-11 10:27:08.081 20602 20627 D BatteryInfo: time for getStats: 0ms
+05-11 10:27:08.082 20602 20627 D BatteryInfo: time for regular BatteryInfo: 1ms
+05-11 10:27:08.084 20602 20627 D BatteryInfo: time for getBatteryInfo: 2ms
+05-11 10:27:08.084 20602 20602 D TopLvBatteryPrefControl: getBatteryInfo: com.android.settings.fuelgauge.BatteryInfo@296acc
+05-11 10:27:08.085 20602 20602 D TopLvBatteryPrefControl: getDashboardLabel: null batteryStatusUpdate=true
+05-11 10:27:08.085 20602 20602 D TopLvBatteryPrefControl: usbPort: UsbPort{id=port0, supportedModes=dual, supportedContaminantProtectionModes=0, supportsEnableContaminantPresenceProtection=false, supportsEnableContaminantPresenceDetection=false, supportsComplianceWarnings=false
+05-11 10:27:08.085 20602 20602 D BatteryInfo: time for callback: 1ms
+05-11 10:27:08.086 20602 20602 D TopLvBatteryPrefControl: usbPort: UsbPort{id=port0, supportedModes=dual, supportedContaminantProtectionModes=0, supportsEnableContaminantPresenceProtection=false, supportsEnableContaminantPresenceDetection=false, supportsComplianceWarnings=false
+05-11 10:27:08.086 20602 20602 D TopLvBatteryPrefControl: usbPort: UsbPort{id=port0, supportedModes=dual, supportedContaminantProtectionModes=0, supportsEnableContaminantPresenceProtection=false, supportsEnableContaminantPresenceDetection=false, supportsComplianceWarnings=false
+05-11 10:27:08.147 21167 21415 D ProfileInstaller: Installing profile for com.motorola.personalize
+05-11 10:27:08.237 21185 21416 D ProfileInstaller: Installing profile for com.motorola.motcameradesktop
+05-11 10:27:08.287  1347  3832 E ANDR-PERF-LM: VmRssMeter:: start() 453: Could not find pid, can not collect vmrss data
+05-11 10:27:08.288  1347  3833 E ANDR-PERF-LM: VmRssMeter:: start() 453: Could not find pid, can not collect vmrss data
+05-11 10:27:08.288  1347  3833 E ANDR-PERF-LM: AdaptiveLaunch: writeToDataBase() 64: Meter aborted or could not get meter data for this run
+05-11 10:27:08.645  1289  2613 I slpi    : LTR569 ALS_OC: lux:5.093809, last_ps:0[992], RAW:91.000000[130, 96], INT:70, G:512, C:93, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-11 10:27:08.891 21093 21421 D ProfileInstaller: Installing profile for com.motorola.moto
+05-11 10:27:09.020  1289  2613 I slpi    : LTR569 ALS_OC: lux:3.974290, last_ps:0[992], RAW:71.000000[108, 74], INT:70, G:512, C:86, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-11 10:27:09.091  1990  5270 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+05-11 10:27:09.395  1289  2613 I slpi    : LTR569 ALS_OC: lux:5.429665, last_ps:0[993], RAW:97.000000[88, 54], INT:70, G:512, C:89, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-11 10:27:09.875  1289  2613 I slpi    : LTR569 ALS_OC: lux:6.437231, last_ps:0[993], RAW:115.000000[114, 80], INT:70, G:512, C:92, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-11 10:27:10.004  3519  3684 I ThermalEngine: ACTION: freeze_rule - Setting freeze_rule to 0
+05-11 10:27:10.004  3519  3684 I ThermalEngine: Monitor:INACTIVE:FREEZE-CHG:freeze_rule=1:DETECT-STANDBY=1
+05-11 10:27:10.005  3519  3683 I ThermalEngine: Thermal-Server: Thermal received msg from  freezing
+05-11 10:27:10.006  3519 21422 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-11 10:27:10.007  3519  3684 I ThermalEngine: Monitor:ACTIVE:MON-MSM-STB:battery=6:Virt-QUT=40406
+05-11 10:27:10.325  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 10:27:10.326  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 10:27:10.326  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10358} in 3ms
+05-11 10:27:10.327  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 10:27:10.328  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 10:27:10.328  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={20358} in 2ms
+05-11 10:27:10.515 21322 21423 D ProfileInstaller: Skipping profile installation for com.internshala.app
+05-11 10:27:10.656  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 10:27:10.657  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 10:27:10.657  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10283} in 2ms
+05-11 10:27:10.658  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 10:27:10.658  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 10:27:10.658  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={20283} in 1ms
+05-11 10:27:10.778  5136  5421 I ProtoXDBBufferWrapper: ProtoXDBBufferWrapper.flushToStorage():158 Flushed 12 data item(s) to storage.
+05-11 10:27:11.479  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 10:27:11.479 20602 20602 D BatteryBroadcastRcvr: updateBatteryStatus: action=android.intent.action.BATTERY_CHANGED
+05-11 10:27:11.480 20602 20602 D BatteryBroadcastRcvr: Battery changed: level: 72%| status: Charging slowly| chargingStatus: 0| health: 2
+05-11 10:27:11.481  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:11.481  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:11.481  2866  4975 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:12.100  1990  2635 D ActivityManager: freezing 21058 com.dare2compete.app, reason = oom_cached
+05-11 10:27:12.106  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 10:27:12.107  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 10:27:12.107  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10480} in 3ms
+05-11 10:27:12.337  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 10:27:12.343 25920 25920 D ActivityTracker: Registering callback: com.android.launcher3.LauncherInitListener@562fd4f, reason=OtherActivityInputConsumer.startTouchTrackingForWindowAnimation
+05-11 10:27:12.344 25920 25920 D AbsSwipeUpHandler: alreadyOnHome : false
+05-11 10:27:12.344 25920 25920 D RecentsView: onGestureAnimationStart - runningTasks: [[id=1472 windowingMode=1 user=0 lastActiveTime=170366697] null]
+05-11 10:27:12.344 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:12.345 25920 25920 D RecentsView: showCurrentTask - runningTasks: [[id=1472 windowingMode=1 user=0 lastActiveTime=170366697] null]
+05-11 10:27:12.345 25920 25920 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-11 10:27:12.345 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:12.349  2866  2910 V ShellRecents: RecentsTransitionHandler.startRecentsTransition
+05-11 10:27:12.349  2866  2910 V WindowManagerShell: Directly starting a new transition type=3 wct=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[mParcelledData.dataSize=412]}] errorCallbackToken=null taskFragmentOrganizer=null } handler=com.android.wm.shell.recents.RecentsTransitionHandler@53894cd
+05-11 10:27:12.350  1302  1302 I QTI PowerHAL: Power setMode: 5 to: 1
+05-11 10:27:12.350  1990  3614 D PowerManagerService: nativeSetPowerMode ret:true mode:5 enabled:true duration ms: 0
+05-11 10:27:12.351  1347  1347 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+05-11 10:27:12.351  1347  1347 E ANDR-PERF-REQUEST: invalid request
+05-11 10:27:12.351  1347  1347 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+05-11 10:27:12.351  1302  1302 E QTI PowerHAL: Can't perform app launch hint
+05-11 10:27:12.357  1386  1386 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-11 10:27:12.359  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher} entered launcher screen? true
+05-11 10:27:12.360  2866  2910 V ShellRecents: [143995033] RecentsController.setTransition: id=android.os.BinderProxy@2e4e00c
+05-11 10:27:12.360  1990  2175 W MotoBatteryCareService: uid: 10272 pkgName:com.motorola.launcher3 come to foreground
+05-11 10:27:12.364 25920 25920 D RecentsView: applyLoadPlan - taskGroups: [type=1 task1=[id=1362 windowingMode=1 user=0 lastActiveTime=100674526] null task2=null, type=1 task1=[id=1421 windowingMode=1 user=0 lastActiveTime=121014355] null task2=null, type=1 task1=[id=1423 windowingMode=1 user=0 lastActiveTime=121239609] null task2=null, type=1 task1=[id=1422 windowingMode=1 user=0 lastActiveTime=123598837] null task2=null, type=1 task1=[id=1461 windowingMode=1 user=0 lastActiveTime=161499778] null task2=null, type=1 task1=[id=1470 windowingMode=1 user=0 lastActiveTime=170321759] null task2=null, type=1 task1=[id=1471 windowingMode=1 user=0 lastActiveTime=170368367] null task2=null, type=1 task1=[id=1472 windowingMode=1 user=0 lastActiveTime=170368412] null task2=null]
+05-11 10:27:12.365  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:12.365  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:12.367  1386  1386 I Scheduler: notifyScrollEvent state=1
+05-11 10:27:12.368 25920 25920 D RecentsView: onGestureAnimationStart - runningTasks: [[id=1472 windowingMode=1 user=0 lastActiveTime=170366697] null]
+05-11 10:27:12.368 25920 25920 D RecentsView: showCurrentTask - runningTasks: [[id=1472 windowingMode=1 user=0 lastActiveTime=170366697] null]
+05-11 10:27:12.368 25920 25920 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-11 10:27:12.368 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:12.368   842   842 W lowmemorykiller: Failed to open /proc/20736/oom_score_adj; errno=2: process 20736 might have been killed
+05-11 10:27:12.368  1990  3451 I InputDispatcher: Channel [Gesture Monitor] swipe-up (server) is stealing input gesture for device 5 from [b569ec5 com.android.settings/com.android.settings.Settings, [Gesture Monitor] moto_actions_input_channel, [Gesture Monitor] sysui_input_dispatcher]
+05-11 10:27:12.370  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:12.371  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:12.371  5569  5569 D GameMode: exiting game mode
+05-11 10:27:12.373  5569  5569 D GameMode: isFeatureSupported: true
+05-11 10:27:12.374  5569  5569 D GameMode: isFeatureSupported: true
+05-11 10:27:12.375  5569  5569 D GameMode: isFeatureSupported: true
+05-11 10:27:12.378 25920 25920 D AbsSwipeUpHandler: onLauncherStart
+05-11 10:27:12.379  2866  2910 D WindowManagerShell: setLauncherKeepClearAreaHeight: visible=false, height=141
+05-11 10:27:12.379 25920 25920 D StateManager: goToState - fromState: AllApps, toState: Background, partial trace:
+05-11 10:27:12.379 25920 25920 D StateManager: 	at com.android.quickstep.BaseActivityInterface$DefaultAnimationFactory.initBackgroundStateUI(BaseActivityInterface.java:253)
+05-11 10:27:12.379 25920 25920 D StateManager: 	at com.android.quickstep.LauncherActivityInterface.prepareRecentsUI(LauncherActivityInterface.java:140)
+05-11 10:27:12.379 25920 25920 D StateManager: 	at com.android.quickstep.AbsSwipeUpHandler.lambda$onLauncherStart$7(AbsSwipeUpHandler.java:678)
+05-11 10:27:12.379 25920 25920 D StateManager: onStateTransitionStart - state: Background
+05-11 10:27:12.380  3043  3043 D GameModeDetector: notifyGameModeStatusValue, value=false
+05-11 10:27:12.380  3043  3043 D DaxService: sendGameModeIntent, state=false
+05-11 10:27:12.380 25920 25920 D StatsLog: LAUNCHER_ALLAPPS_EXIT
+05-11 10:27:12.381  2866  2866 I vol.VolumeDialogImpl: mDialog.dismiss() reason: volume_controller from: com.android.systemui.volume.VolumeDialogImpl$10.onDismissRequested:3 displayId: 0 mShowing: false mIsAnimatingDismiss: false
+05-11 10:27:12.381 25920 25920 D StateManager: onStateTransitionEnd - state: Background
+05-11 10:27:12.382  1990  3123 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+05-11 10:27:12.383 25920 25920 D VRI[CustomizationPanelLauncher]: visibilityChanged oldVisibility=false newVisibility=true
+05-11 10:27:12.383 25920 25920 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=1263, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.HOME] flg=0x10000100 cmp=com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher }
+05-11 10:27:12.386 25920   505 D CustomAppIcons: setWrapperBackgroundColor color: ff070e18, mWrapperBackgroundColor: ff070e18, stack: java.lang.Exception
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.launcher3.icons.BaseIconFactory.setWrapperBackgroundColor(BaseIconFactory.java:479)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache.getBitmapInfo(TaskIconCache.java:273)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache.getCacheEntry(TaskIconCache.java:190)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache.lambda$updateIconInBackground$0(TaskIconCache.java:124)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache.$r8$lambda$O2ShbPu3eyrpUNTQFQ51NIXKEQA(Unknown Source:0)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache$$ExternalSyntheticLambda1.get(D8$$SyntheticClass:0)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.launcher3.util.CancellableTask.run(CancellableTask.kt:46)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.launcher3.util.Executors$SimpleThreadFactory.lambda$newThread$0(Executors.java:132)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.launcher3.util.Executors$SimpleThreadFactory.$r8$lambda$kdEbHeq7Fea6rEAvEStv80toUEk(Unknown Source:0)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at com.android.launcher3.util.Executors$SimpleThreadFactory$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+05-11 10:27:12.386 25920   505 D CustomAppIcons: 	at java.lang.Thread.run(Thread.java:1564)
+05-11 10:27:12.386 20971 21029 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-11 10:27:12.387 20971 21029 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-11 10:27:12.391  1288  1288 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 10:27:12.392 25920 25920 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+05-11 10:27:12.392  1990  3451 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+05-11 10:27:12.388 25920 25920 W orola.launcher3: type=1400 audit(0.0:45847): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=2916 scontext=u:r:moto_app:s0:c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.motorola.launcher3
+05-11 10:27:12.393  1288  1288 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 10:27:12.395 25920   505 D CustomAppIcons: setWrapperBackgroundColor color: fff5f5f5, mWrapperBackgroundColor: fff5f5f5, stack: java.lang.Exception
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.launcher3.icons.BaseIconFactory.setWrapperBackgroundColor(BaseIconFactory.java:479)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache.getBitmapInfo(TaskIconCache.java:273)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache.getCacheEntry(TaskIconCache.java:190)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache.lambda$updateIconInBackground$0(TaskIconCache.java:124)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache.$r8$lambda$O2ShbPu3eyrpUNTQFQ51NIXKEQA(Unknown Source:0)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.quickstep.TaskIconCache$$ExternalSyntheticLambda1.get(D8$$SyntheticClass:0)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.launcher3.util.CancellableTask.run(CancellableTask.kt:46)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.launcher3.util.Executors$SimpleThreadFactory.lambda$newThread$0(Executors.java:132)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.launcher3.util.Executors$SimpleThreadFactory.$r8$lambda$kdEbHeq7Fea6rEAvEStv80toUEk(Unknown Source:0)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at com.android.launcher3.util.Executors$SimpleThreadFactory$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+05-11 10:27:12.395 25920   505 D CustomAppIcons: 	at java.lang.Thread.run(Thread.java:1564)
+05-11 10:27:12.396 25920 25920 D BaseDepthController: setSurface:
+05-11 10:27:12.396 25920 25920 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+05-11 10:27:12.396 25920 25920 D BaseDepthController: 	mSurface: Surface(name=com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher)/@0xe82828
+05-11 10:27:12.396 25920 25920 D AbsSwipeUpHandler: launcher onDraw
+05-11 10:27:12.393  3043 14268 D DolbyAudioEffectHelper: getDolbyStatus enabled=true profile=2
+05-11 10:27:12.396  3043 14268 D DolbyProvider: true, profile=2
+05-11 10:27:12.410  2866  2987 V WindowManagerShell: onTransitionReady(transaction=8546985022731)
+05-11 10:27:12.410  2866  2910 V WindowManagerShell: onTransitionReady (#1480) android.os.BinderProxy@2e4e00c: {id=1480 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@dd2c20d} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP pTaskId=-1 leash=Surface(name=Task=1)/@0x8c359d1 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@ceac5c2} m=TO_BACK f=NONE pTaskId=-1 leash=Surface(name=Task=1472)/@0x9311c36 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{2b21bc4 token=android.os.Binder@4dd86d7})/@0x845a737 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0}]}
+05-11 10:27:12.410  2866  2910 V WindowManagerShell: Playing animation for (#1480) android.os.BinderProxy@2e4e00c@0
+05-11 10:27:12.410  2866  2910 V WindowManagerShell:  try firstHandler com.android.wm.shell.recents.RecentsTransitionHandler@53894cd
+05-11 10:27:12.410  2866  2910 V ShellRecents: [143995033] RecentsController.start
+05-11 10:27:12.411 25920 25920 D AbsSwipeUpHandler: launcher onDraw
+05-11 10:27:12.412 25920 25920 D RecentsView: applyLoadPlan - taskGroups: [type=1 task1=[id=1362 windowingMode=1 user=0 lastActiveTime=100674526] null task2=null, type=1 task1=[id=1421 windowingMode=1 user=0 lastActiveTime=121014355] null task2=null, type=1 task1=[id=1423 windowingMode=1 user=0 lastActiveTime=121239609] null task2=null, type=1 task1=[id=1422 windowingMode=1 user=0 lastActiveTime=123598837] null task2=null, type=1 task1=[id=1461 windowingMode=1 user=0 lastActiveTime=161499778] null task2=null, type=1 task1=[id=1470 windowingMode=1 user=0 lastActiveTime=170321759] null task2=null, type=1 task1=[id=1471 windowingMode=1 user=0 lastActiveTime=170368367] null task2=null, type=1 task1=[id=1472 windowingMode=1 user=0 lastActiveTime=170368412] null task2=null]
+05-11 10:27:12.413  2866  2910 V ShellRecents:   adding pausing leaf taskId=1472 at layer=8
+05-11 10:27:12.414  2866  2910 V ShellRecents: Applying transaction=8546985022731
+05-11 10:27:12.414  1386  2327 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-11 10:27:12.415  1990  2113 I MotoPerfManagerService: handleAppStart 10272:com.motorola.launcher3 hot 11 56 -1 -1 53
+05-11 10:27:12.416  1990  2113 V WindowManager: Sent Transition (#1480) createdAt=05-11 10:27:12.349
+05-11 10:27:12.417  1990  2113 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [{PendingIntent: options=Bundle[{android.activity.splashScreenStyle=-1, android.activity.sourceInfo=android.app.ActivityOptions$SourceInfo@1c626d0, android:activity.animAbortListener=null, android.activity.transientLaunch=true}]}] errorCallbackToken=null taskFragmentOrganizer=null }
+05-11 10:27:12.417  1990  2113 V WindowManager:     info={id=1480 t=TO_FRONT f=0x80 trk=0 r=[0@Point(0, 0)] c=[
+05-11 10:27:12.417  1990  2113 V WindowManager:         {WCT{RemoteToken{e52faa8 Task{7fe1bed #1 type=undefined}}} m=TO_FRONT f=SHOW_WALLPAPER|MOVE_TO_TOP pTaskId=-1 leash=Surface(name=Task=1)/@0xfeb7087 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},
+05-11 10:27:12.417  1990  2113 V WindowManager:         {WCT{RemoteToken{fe4a36f Task{5fdf99e #1472 type=standard A=1000:com.android.settings.root}}} m=TO_BACK f=NONE pTaskId=-1 leash=Surface(name=Task=1472)/@0x9245750 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},
+05-11 10:27:12.417  1990  2113 V WindowManager:         {null m=TO_FRONT f=IS_WALLPAPER leash=Surface(name=WallpaperWindowToken{2b21bc4 token=android.os.Binder@4dd86d7})/@0x5c00a8d sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0}
+05-11 10:27:12.417  1990  2113 V WindowManager:     ]}
+05-11 10:27:12.417  2866  2910 V ShellRecents: Trying to get a handler for takeover but the flag is disabled
+05-11 10:27:12.417  2866  2910 V ShellRecents: [143995033] RecentsController.start: calling onAnimationStart with 2 apps
+05-11 10:27:12.418  2866  2910 V WindowManagerShell:  animated by firstHandler
+05-11 10:27:12.418  1990  3614 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 10:27:12.421 25920 25920 D RemoteTargetGluer: appCount: 1 handleLength: 4
+05-11 10:27:12.421 25920 25920 D RemoteTargetGluer: resizing handles
+05-11 10:27:12.421 25920 25920 D RemoteTargetGluer: containsSplitTargets? false handleLength: 1 appsLength: 1
+05-11 10:27:12.421 25920 25920 D RecentsView: setRecentsAnimationTargets - recentsAnimationController: com.android.quickstep.RecentsAnimationController@678e600, recentsAnimationTargets: com.android.quickstep.RecentsAnimationTargets@b8e1e39
+05-11 10:27:12.422 25920 25920 D RemoteTargetGluer: appCount: 1 handleLength: 1
+05-11 10:27:12.422 25920 25920 D RemoteTargetGluer: containsSplitTargets? false handleLength: 1 appsLength: 1
+05-11 10:27:12.422  2866  2910 V ShellRecents: [143995033] RecentsController.setInputConsumerEnabled: set focus to recents
+05-11 10:27:12.423  1990  2691 E HandwritingModeController: Cannot get requestId: Handwriting was not initialized.
+05-11 10:27:12.434  1990  2175 W MotoBatteryCareService: uid: 10272 pkgName:com.motorola.launcher3 come to foreground
+05-11 10:27:12.437  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 10:27:12.450 20602 20602 D ControllerRendererPool: Controller is already there.
+05-11 10:27:12.541  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 10:27:12.605  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 333
+05-11 10:27:12.606  1347  1347 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+05-11 10:27:12.606  1347  1347 E ANDR-PERF-REQUEST: invalid request
+05-11 10:27:12.606  1347  1347 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+05-11 10:27:12.606 25920 25920 D NotifySysuiOfCurrentRotation:  rotation0
+05-11 10:27:12.606 25920 25920 D AbsSwipeUpHandler: mRecentsView : com.android.quickstep.views.LauncherRecentsView{9e8326f V.ED..... ......ID 0,0-720,1600 #7f090291 app:id/overview_panel}
+05-11 10:27:12.607 25920 25920 D RecentsView: onPrepareGestureEndAnimation - endTarget: RECENTS
+05-11 10:27:12.607  2866  2866 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+05-11 10:27:12.689  2866  2866 I vol.VolumeDialogImpl: dismissH reason = volume_controller mDialog.isShowing(): false
+05-11 10:27:12.767 25920 25920 D InputConsumerProxy: mDestroyPending: false
+05-11 10:27:12.767  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 10:27:12.775 25920 25920 D StateManager: goToState - fromState: Background, toState: Overview, partial trace:
+05-11 10:27:12.775 25920 25920 D StateManager: 	at com.android.quickstep.BaseActivityInterface$DefaultAnimationFactory.lambda$createActivityInterface$0(BaseActivityInterface.java:266)
+05-11 10:27:12.775 25920 25920 D StateManager: 	at com.android.quickstep.BaseActivityInterface$DefaultAnimationFactory.$r8$lambda$QLowDD-ac245y5a-8NMx_Bxocv4(Unknown Source:0)
+05-11 10:27:12.775 25920 25920 D StateManager: 	at com.android.quickstep.BaseActivityInterface$DefaultAnimationFactory$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+05-11 10:27:12.776 25920 25920 D Launcher: Send Intent { act=com.motorola.launcher3.action.OVERVIEW_STATE_CHANGE cmp=com.motorola.mobiledesktop/com.lenovo.hec.vault.services.RecentTaskReceiver4Moto (has extras) }
+05-11 10:27:12.777 25920 25920 D StatsLog: LAUNCHER_ONRESUME
+05-11 10:27:12.777 25920 25920 D StateManager: onStateTransitionStart - state: Overview
+05-11 10:27:12.779  2866  2910 D WindowManagerShell: setLauncherKeepClearAreaHeight: visible=true, height=141
+05-11 10:27:12.779  2866  2866 D FreeformGesture: onStateChanged: State{mIsPackageAvailable=true, mPillGestureEnabled=false, mVibrationEnabled=true, mShortcutPanelShowing=false, mSwipeInEnabled=false, mHunFreeformEnabled=true, mIsInGameMode=false, mIsRecentsShowing=true, mIsInTutorialMode=false, mIsDoubleTapPowerEnabled=false, mIsPillMoving=false, mPillXPosition=1, mPillYPosition=180}
+05-11 10:27:12.781 25920 25920 D StateManager: onStateTransitionEnd - state: Overview
+05-11 10:27:12.781 25920 25920 D TaskViewSimulator: setDrawsBelowRecents drawsBelowRecents -> true
+05-11 10:27:12.781 25920 25920 D AbsSwipeUpHandler: page transition end
+05-11 10:27:12.782  2866 28732 V ShellRecents: [143995033] RecentsController.screenshotTask: taskId=1472
+05-11 10:27:12.782 25920 25920 D b/318590728: onInterceptTouchEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=424.0, y[0]=923.0, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=94218543, downTime=94218543, deviceId=5, source=0x1002, displayId=0, eventId=964924970 }
+05-11 10:27:12.785 25920 25934 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=
+05-11 10:27:12.798  1386  1386 I Scheduler: notifyScrollEvent state=1
+05-11 10:27:12.799 25920 25920 D AbsSwipeUpHandler: screenshot captured
+05-11 10:27:12.799 25920 25920 D AbsSwipeUpHandler: Current task swipe up to recent
+05-11 10:27:12.799 25920 25920 D StatsLog: LAUNCHER_OVERVIEW_GESTURE
+05-11 10:27:12.800 25920 25920 D ActivityTracker: Unregistering callback: com.android.launcher3.LauncherInitListener@562fd4f, reason=AbsSwipeUpHandler.invalidateHandler
+05-11 10:27:12.800 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:12.801 25920 25920 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-11 10:27:12.801 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:12.801 25920 25920 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-11 10:27:12.801 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:12.801 25920 25920 D RecentsView: onGestureAnimationEnd - mEnableDrawingLiveTile: true
+05-11 10:27:12.801  2866 28732 V ShellRecents: [143995033] RecentsController.detachNavigationBarFromApp
+05-11 10:27:12.803  1990  3614 W PackageManager: Missing required system package: word.office.docxviewer.document.docx.reader, but found with extended search.
+05-11 10:27:12.803  1990  3614 W PackageManager: Missing required system package: water.sort.puzzle.game.color.sorting.free, but found with extended search.
+05-11 10:27:12.803  1990  3614 W PackageManager: Missing required system package: tech.butterfly.app, but found with extended search.
+05-11 10:27:12.803  1990  3614 W PackageManager: Missing required system package: src.com.dop, but found with extended search.
+05-11 10:27:12.803  1990  3614 W PackageManager: Missing required system package: sorting.games.goods.sort.triple.match3d.puzzle.stuff, but found with extended search.
+05-11 10:27:12.804  1990  3614 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-11 10:27:12.804  1990  3614 W PackageManager: Missing required system package: org.videolan.vlc, but found with extended search.
+05-11 10:27:12.804  1990  3614 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-11 10:27:12.804  1990  3614 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-11 10:27:12.804  1990  3614 W PackageManager: Missing required system package: io.teslatech.callbreak, but found with extended search.
+05-11 10:27:12.804  1990  3614 W PackageManager: Missing required system package: info.indiapost.daksewa, but found with extended search.
+05-11 10:27:12.804  1990  3614 W PackageManager: Missing required system package: info.indiapost, but found with extended search.
+05-11 10:27:12.804  1990  3614 W PackageManager: Missing required system package: in.swiggy.android.instamart, but found with extended search.
+05-11 10:27:12.805  1990  3614 W PackageManager: Missing required system package: in.amazon.mShop.android.shopping, but found with extended search.
+05-11 10:27:12.805  1990  3614 W PackageManager: Missing required system package: homeworkout.homeworkouts.noequipment, but found with extended search.
+05-11 10:27:12.805  1990  3614 W PackageManager: Missing required system package: gymworkout.gym.gymlog.gymtrainer, but found with extended search.
+05-11 10:27:12.805  1990  3614 W PackageManager: Missing required system package: cris.org.in.prs.ima, but found with extended search.
+05-11 10:27:12.805  1990  3614 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-11 10:27:12.805  1990  3614 W PackageManager: Missing required system package: com.worldpackers.travelers, but found with extended search.
+05-11 10:27:12.806  1990  3614 W PackageManager: Missing required system package: com.whereismytrain.android, but found with extended search.
+05-11 10:27:12.806  1990  3614 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 10:27:12.806  1990  3614 W PackageManager: Missing required system package: com.valvesoftware.android.steam.community, but found with extended search.
+05-11 10:27:12.806  1990  3614 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-11 10:27:12.806  1990  3614 W PackageManager: Missing required system package: com.tallteam.citychase, but found with extended search.
+05-11 10:27:12.806  1990  3614 W PackageManager: Missing required system package: com.sbi.lotusintouch, but found with extended search.
+05-11 10:27:12.806  1990  3614 W PackageManager: Missing required system package: com.rapido.passenger, but found with extended search.
+05-11 10:27:12.807  1990  3614 W PackageManager: Missing required system package: com.phonepe.app, but found with extended search.
+05-11 10:27:12.807  1990  3614 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-11 10:27:12.807  1990  3614 W PackageManager: Missing required system package: com.olacabs.customer, but found with extended search.
+05-11 10:27:12.807  1990  3614 W PackageManager: Missing required system package: com.myntra.android, but found with extended search.
+05-11 10:27:12.807  1990  3614 W PackageManager: Missing required system package: com.mbm.elereaning.mbmecj, but found with extended search.
+05-11 10:27:12.807  1990  3614 W PackageManager: Missing required system package: com.marc.files, but found with extended search.
+05-11 10:27:12.807  1990  3614 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-11 10:27:12.807  1990  3614 W PackageManager: Missing required system package: com.kiloo.subwaysurf, but found with extended search.
+05-11 10:27:12.808  1990  3614 W PackageManager: Missing required system package: com.jpl.jiomart, but found with extended search.
+05-11 10:27:12.808  1990  3614 W PackageManager: Missing required system package: com.jaipurcitybus.mobileticketingapp, but found with extended search.
+05-11 10:27:12.808  1990  3614 W PackageManager: Missing required system package: com.internshala.app, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.innersloth.spacemafia, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.google.earth, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.subscriptions.red, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.nbu.paisa.user, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.fitness, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.bard, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.adm, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.google.ai.edge.gallery, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.fsn.nykaa, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.flipkart.android, but found with extended search.
+05-11 10:27:12.809  1990  3614 W PackageManager: Missing required system package: com.easybrain.sudoku.android, but found with extended search.
+05-11 10:27:12.810  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.easybrain.spider.solitaire, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.easybrain.jigsaw.puzzles, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.easybrain.color.sort.puzzle, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.easybrain.block.puzzle.games, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.discord, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.digital.bsnl.selfcare, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.digilocker.android, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.dare2compete.app, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.catool.solitaire.card, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.cambyte.okenscan, but found with extended search.
+05-11 10:27:12.810  1990  3614 W PackageManager: Missing required system package: com.bt.bms, but found with extended search.
+05-11 10:27:12.811  1990  3614 W PackageManager: Missing required system package: com.blackout.spades, but found with extended search.
+05-11 10:27:12.811  1990  3614 W PackageManager: Missing required system package: com.azefsw.audioconnect, but found with extended search.
+05-11 10:27:12.811  1990  3614 W PackageManager: Missing required system package: com.application.zomato, but found with extended search.
+05-11 10:27:12.811  1990  3614 W PackageManager: Missing required system package: com.anthropic.claude, but found with extended search.
+05-11 10:27:12.811  1990  3614 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-11 10:27:12.811  1990  3614 W PackageManager: Missing required system package: com.Dominos, but found with extended search.
+05-11 10:27:12.812  1990  3614 W PackageManager: Missing required system package: app.revanced.manager.flutter, but found with extended search.
+05-11 10:27:12.812  1990  3614 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-11 10:27:12.812  1990  3614 W PackageManager: Missing required system package: app.netmirror.netmirrornew, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: all.documentreader.filereader.office.viewer, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: ai.character.app, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.youtube.creator, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.dopuz.klotski.riddle, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-11 10:27:12.813  1990  3614 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-11 10:27:12.814  1990  3614 W PackageManager: Missing required system package: app.revanced.android.apps.youtube.music, but found with extended search.
+05-11 10:27:12.822  1990  3614 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-11 10:27:12.850  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 10:27:12.852  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 10:27:12.852  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10572} in 3ms
+05-11 10:27:12.853  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 10:27:12.854  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 10:27:12.855  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={20572} in 3ms
+05-11 10:27:12.867  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 10:27:12.869  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 2076
+05-11 10:27:12.870  1347  1347 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+05-11 10:27:12.870  1347  1347 E ANDR-PERF-REQUEST: invalid request
+05-11 10:27:12.870  1347  1347 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+05-11 10:27:12.948  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=4104894, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=223541, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=3, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=2500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=72, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-54626, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=18300, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=2500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=366, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=3383711}
+05-11 10:27:12.948  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=4104894, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=223541, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=3, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=2500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=72, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-54626, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=18300, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=2500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=366, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=3383711}
+05-11 10:27:12.953  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 10:27:12.955 20602 20602 D BatteryBroadcastRcvr: updateBatteryStatus: action=android.intent.action.BATTERY_CHANGED
+05-11 10:27:12.955 20602 20602 D BatteryBroadcastRcvr: Battery changed: level: 72%| status: Charging slowly| chargingStatus: 0| health: 2
+05-11 10:27:12.956  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:12.956  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:12.958  2866  4952 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:12.959  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=4104894, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=223542, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=3, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=2500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=72, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-54626, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=18300, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=2500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=366, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=3383711}
+05-11 10:27:12.960  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=4104894, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=223542, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=3, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=2500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=72, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-54626, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=18300, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=2500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=366, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=3383711}
+05-11 10:27:12.961  2866  5052 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:12.961  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 10:27:12.962 20602 20602 D BatteryBroadcastRcvr: updateBatteryStatus: action=android.intent.action.BATTERY_CHANGED
+05-11 10:27:12.962 20602 20602 D BatteryBroadcastRcvr: Battery changed: level: 72%| status: Charging slowly| chargingStatus: 0| health: 2
+05-11 10:27:12.964  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:12.964  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:12.968  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 10:27:12.969  2866  5014 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:12.969 20602 20602 D BatteryBroadcastRcvr: updateBatteryStatus: action=android.intent.action.BATTERY_CHANGED
+05-11 10:27:12.970 20602 20602 D BatteryBroadcastRcvr: Battery changed: level: 72%| status: Charging slowly| chargingStatus: 0| health: 2
+05-11 10:27:12.974  2866  4897 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:12.974  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:12.974  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:12.977  2866  3379 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 10:27:12.978  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 10:27:12.979  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 10:27:12.979  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 10:27:12.981 20602 20602 D BatteryBroadcastRcvr: updateBatteryStatus: action=android.intent.action.BATTERY_CHANGED
+05-11 10:27:12.982 20602 20602 D BatteryBroadcastRcvr: Battery changed: level: 72%| status: Charging slowly| chargingStatus: 0| health: 2
+05-11 10:27:13.209 25920 25920 D RecentsView: finishRecentsAnimation - mRecentsAnimationController: com.android.quickstep.RecentsAnimationController@678e600
+05-11 10:27:13.209 25920 25920 D RecentsView: cleanupRemoteTargets - mRemoteTargetHandles: [com.android.quickstep.RemoteTargetGluer$RemoteTargetHandle@29b87a2]
+05-11 10:27:13.209 25920 25920 D b/318590728: onInterceptTouchEvent: MotionEvent { action=ACTION_DOWN, actionButton=0, id[0]=0, x[0]=248.5, y[0]=827.75, toolType[0]=TOOL_TYPE_FINGER, buttonState=0, classification=NONE, metaState=0, flags=0x0, edgeFlags=0x0, pointerCount=1, historySize=0, eventTime=94218985, downTime=94218985, deviceId=5, source=0x1002, displayId=0, eventId=504625595 }
+05-11 10:27:13.209  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 10:27:13.210 25920 25920 D RecentsView: cleanupRemoteTargets - mRemoteTargetHandles: null
+05-11 10:27:13.211  2866  2910 V ShellRecents: [143995033] RecentsController.finishInner: toHome=true userLeave=false willFinishToHome=true state=0
+05-11 10:27:13.211  2866  2910 V ShellRecents:   normal finish
+05-11 10:27:13.211  2866  2910 V ShellRecents: [143995033] RecentsController.cleanup
+05-11 10:27:13.211  2866  2910 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#1480) android.os.BinderProxy@2e4e00c@0
+05-11 10:27:13.214  1990  2113 V WindowManager: Finish Transition (#1480): created at 05-11 10:27:12.349 collect-started=0.198ms started=0.283ms ready=9.183ms sent=57.329ms finished=864.461ms
+05-11 10:27:13.218  1990  3451 D PowerManagerService: nativeSetPowerMode ret:true mode:5 enabled:false duration ms: 0
+05-11 10:27:13.218  1302  1302 I QTI PowerHAL: Power setMode: 5 to: 0
+05-11 10:27:13.220  2866  2910 V WindowManagerShell: Track 0 became idle
+05-11 10:27:13.220  2866  2910 V WindowManagerShell: All active transition animations finished
+05-11 10:27:13.220  2866  2910 V ShellRecents: [143995033] RecentsController.finishInner: calling finish callback
+05-11 10:27:13.221 25920 25920 D RecentsView: finishRecentsAnimation - mRecentsAnimationController: com.android.quickstep.RecentsAnimationController@678e600
+05-11 10:27:13.221 25920 25920 D RecentsView: cleanupRemoteTargets - mRemoteTargetHandles: null
+05-11 10:27:13.221 25920 25920 D RecentsView: onRecentsAnimationComplete - mRecentsAnimationController: com.android.quickstep.RecentsAnimationController@678e600, mSideTaskLaunchCallback: null
+05-11 10:27:13.222 25920 25920 D StatsLog: LAUNCHER_TASK_DISMISS_SWIPE_UP
+05-11 10:27:13.222 25920 25920 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-11 10:27:13.222 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:13.223 25920 25920 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-11 10:27:13.223 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:13.223 25920 25920 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-11 10:27:13.223 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:13.224  1990  2128 V WindowManager: Unknown focus tokens, dropping reportFocusChanged
+05-11 10:27:13.224 25920 25920 D RecentsView: onRecentsAnimationComplete - mRecentsAnimationController: null, mSideTaskLaunchCallback: null
+05-11 10:27:13.224  1990  6243 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 10:27:13.226  1990  3614 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 10:27:13.236  1990  2691 I ImeTracker: com.motorola.launcher3:ac939e02: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+05-11 10:27:13.237  1990  2691 I ImeTracker: com.motorola.launcher3:ac939e02: onCancelled at PHASE_SERVER_SHOULD_HIDE
+05-11 10:27:13.242  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2099 
+05-11 10:27:13.243  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+05-11 10:27:13.244  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1371 onStartInput(EditorInfo{EditorInfo{packageName=com.motorola.launcher3, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+05-11 10:27:13.245  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missing HWUI jank callback for vsyncId: 44321404, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missing HWUI jank callback for vsyncId: 44321419, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missing HWUI jank callback for vsyncId: 44321524, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missing HWUI jank callback for vsyncId: 44321539, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missing HWUI jank callback for vsyncId: 44321614, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missing HWUI jank callback for vsyncId: 44321629, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missing HWUI jank callback for vsyncId: 44321659, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missed App frame:JANK_APP_DEADLINE_MISSED, 44321704, 17961163, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.248 25920 25920 W FrameTracker: Missing HWUI jank callback for vsyncId: 44321741, CUJ=J<LAUNCHER_APP_SWIPE_TO_RECENTS>
+05-11 10:27:13.249  1990  3451 W PackageConfigPersister: App-specific configuration not found for packageName: com.motorola.launcher3 and userId: 0
+05-11 10:27:13.256 20602 20602 D DynamicDashboardTileController: unregister observer: @6f8c056, uri: content://com.google.android.gms.settings.persistent/getGoogleSettingsTitle
+05-11 10:27:13.257 20602 20602 D DynamicDashboardTileController: unregister observer: @b0848d7, uri: content://com.google.android.gms.settings.persistent/getGoogleSettingsSummary
+05-11 10:27:13.258 20602 20602 D DynamicDashboardTileController: unregister observer: @7bad58a, uri: content://com.google.android.apps.wellbeing.api/digitalWellbeingSummary
+05-11 10:27:13.263 20602 20620 D Surface : Surface::disconnect
+05-11 10:27:13.263 20602 20620 D BufferQueueProducer: [com.android.settings/com.android.settings.Settings#16820(BLAST Consumer)pid:20602](id:507a00000005,api:1,p:20602,c:20602) disconnect: api 1
+05-11 10:27:13.269 25920 25920 D TaskView: startActivityFromRecents taskId : 1471
+05-11 10:27:13.271  1990  3451 D PowerManagerService: nativeSetPowerMode ret:true mode:5 enabled:true duration ms: 0
+05-11 10:27:13.271  1302  1302 I QTI PowerHAL: Power setMode: 5 to: 1
+05-11 10:27:13.271  1990  3451 W ActivityTaskManager: callingPackage for (uid=-1, pid=-1) has no WPC
+05-11 10:27:13.271  1347  1347 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+05-11 10:27:13.271  1347  1347 E ANDR-PERF-REQUEST: invalid request
+05-11 10:27:13.271  1347  1347 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+05-11 10:27:13.271  1302  1302 E QTI PowerHAL: Can't perform app launch hint
+05-11 10:27:13.274  1990  3451 D ActivityTrigger: ActivityTrigger activityPauseTrigger 
+05-11 10:27:13.274  1347  1432 W ANDR-PERF-LM: MetaMeter: handlePrimaryAsync() 118: AdaptLaunch MetaMeter. No MeterMgr Available to handle this Primary Async. !!!!
+05-11 10:27:13.274  1347  1432 W ANDR-PERF-LM: MetaMeter: handlePrimaryAsync() 118: AdaptLaunch MetaMeter. No MeterMgr Available to handle this Primary Async. !!!!
+05-11 10:27:13.276  1990  3451 D PowerManagerService: nativeAcquireSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 2
+05-11 10:27:13.277  1347  1432 W ANDR-PERF-LM: FeatureState: writeState() 188: GameOptimization: State transition not allowed
+05-11 10:27:13.280  2866  2910 V WindowManagerShell: Transition requested (#1481): android.os.BinderProxy@b98cc27 TransitionRequestInfo { type = TO_FRONT, triggerTask = TaskInfo{userId=0 taskId=1471 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.amar.vault/.MainActivity } baseActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} topActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} origActivity=null realActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} numActivities=1 lastActiveTime=170368367 supportsMultiWindow=true supportsGlobalFreeform=true resizeMode=1 isResizeable=true isAppLocked=false isShowDecorCaptionWindowRequest=false canKillAndRestart=false minWidth=-1 minHeight=-1 defaultMinSize=200 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@b6cfed4} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 77 - 0, 0) topActivityInfo=ActivityInfo{f05487d com.amar.vault.MainActivity} launchCookies=[android.os.BinderProxy@535242c] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=720 topActivityLetterboxHeight=1600 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@f042372, appThread = android.app.IApplicationThread$Stub$Proxy@3bc03c3, debugName = QuickstepLaunch }, displayChange = null, flags = 0, debugId = 1481 }
+05-11 10:27:13.280  2866  2910 V WindowManagerShell: RemoteTransition directly requested for (#1481) android.os.BinderProxy@b98cc27: RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@f042372, appThread = android.app.IApplicationThread$Stub$Proxy@3bc03c3, debugName = QuickstepLaunch }
+05-11 10:27:13.282  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.android.settings/com.android.settings.Settings} entered launcher screen? false
+05-11 10:27:13.282 25920 25920 D StatsLog: LAUNCHER_TASK_LAUNCH_TAP
+05-11 10:27:13.285  2866  2910 D WindowManagerShell: onActivityRestartAttempt: ComponentInfo{com.amar.vault/com.amar.vault.MainActivity}
+05-11 10:27:13.287 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/SetupWizard/SetupWizard.apk' with 1 weak references
+05-11 10:27:13.287 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/SettingsMoto/SettingsMoto.apk' with 1 weak references
+05-11 10:27:13.287  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:13.289 25920 25934 D QuickstepModelDelegate: notifyAppTargetEvent action=1 launchLocation=task-switcher
+05-11 10:27:13.289  2866  2910 D WindowManagerShell: setLauncherKeepClearAreaHeight: visible=false, height=141
+05-11 10:27:13.291  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:13.291  1347  1432 W ANDR-PERF-LM: MetaMeter: handlePrimaryAsync() 118: AdaptLaunch MetaMeter. No MeterMgr Available to handle this Primary Async. !!!!
+05-11 10:27:13.291  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:13.291  1347  1432 W ANDR-PERF-LM: MetaMeter: handlePrimaryAsync() 118: AdaptLaunch MetaMeter. No MeterMgr Available to handle this Primary Async. !!!!
+05-11 10:27:13.291 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '/product/overlay/SettingsMoto__fogos_g__auto_generated_rro_product.apk' with 1 weak references
+05-11 10:27:13.292  1990  2605 D ActivityTaskManager: sendShowDecorCaptionWindow Task is not organized Task{e04a940 #1263 type=undefined I=com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher}
+05-11 10:27:13.291 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '/product/overlay/MotoSettingsGlobalOverlay.apk' with 1 weak references
+05-11 10:27:13.293  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} entered launcher screen? true
+05-11 10:27:13.293  1386  1386 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-11 10:27:13.296 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '/product/overlay/MotoSettingsFPSSideOverlay.apk' with 1 weak references
+05-11 10:27:13.296 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '/product/overlay/MotoSettingsPowerBottomOverlay.apk' with 1 weak references
+05-11 10:27:13.296 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '/product/overlay/MotoSettingsAppCloneOverlay.apk' with 1 weak references
+05-11 10:27:13.296 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/MotoAppForecast/MotoAppForecast.apk' with 1 weak references
+05-11 10:27:13.297 25920 25920 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=1471, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.amar.vault/.MainActivity }
+05-11 10:27:13.298  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:13.298 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EoFN3Mvn2OWOons-GI1Vog==/com.motorola.moto-u-JHS3OKEia9Ny8GIKzoww==/base.apk' with 1 weak references
+05-11 10:27:13.298  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:13.298 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EoFN3Mvn2OWOons-GI1Vog==/com.motorola.moto-u-JHS3OKEia9Ny8GIKzoww==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.298 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~EoFN3Mvn2OWOons-GI1Vog==/com.motorola.moto-u-JHS3OKEia9Ny8GIKzoww==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.298 20791 20815 I HWUI    : setGrContext validptr-->nullptr
+05-11 10:27:13.299 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/BatteryCare/BatteryCare.apk' with 1 weak references
+05-11 10:27:13.299 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '/product/overlay/batterycare-rro-motobatterycare.apk' with 1 weak references
+05-11 10:27:13.300 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/base.apk' with 1 weak references
+05-11 10:27:13.300 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.300 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.300 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.301 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk' with 1 weak references
+05-11 10:27:13.302 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_AdsDynamite_installtime.apk' with 1 weak references
+05-11 10:27:13.302 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_CronetDynamite_installtime.apk' with 1 weak references
+05-11 10:27:13.302 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteLoader_installtime.apk' with 1 weak references
+05-11 10:27:13.302 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteModulesA_installtime.apk' with 1 weak references
+05-11 10:27:13.303  2866  2918 V SnapshotDrawerUtils: Drawing snapshot surface sizeMismatch=false
+05-11 10:27:13.303 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteModulesC_installtime.apk' with 1 weak references
+05-11 10:27:13.304 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_GoogleCertificates_installtime.apk' with 1 weak references
+05-11 10:27:13.304 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_MapsDynamite_installtime.apk' with 1 weak references
+05-11 10:27:13.304 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_MeasurementDynamite_installtime.apk' with 1 weak references
+05-11 10:27:13.304 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.305 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.305 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_maps_core_dynamite_ondemand.apk' with 1 weak references
+05-11 10:27:13.305 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/3c_ota/3c_ota.apk' with 1 weak references
+05-11 10:27:13.306 21001 21010 W gs.intelligence: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/MSimSettings/MSimSettings.apk' with 1 weak references
+05-11 10:27:13.307  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:13.307  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:13.311  2866 25665 V WindowManagerShell: onTransitionReady(transaction=8546985022787)
+05-11 10:27:13.311  1990  2113 V WindowManager: Sent Transition (#1481) createdAt=05-11 10:27:13.271 via request=TransitionRequestInfo { type = TO_FRONT, triggerTask = TaskInfo{userId=0 taskId=1471 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.amar.vault/.MainActivity } baseActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} topActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} origActivity=null realActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} numActivities=1 lastActiveTime=170368367 supportsMultiWindow=true supportsGlobalFreeform=true resizeMode=1 isResizeable=true isAppLocked=false isShowDecorCaptionWindowRequest=false canKillAndRestart=true minWidth=-1 minHeight=-1 defaultMinSize=200 token=WCT{RemoteToken{b816312 Task{190cb75 #1471 type=standard A=10572:com.amar.vault}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 77 - 0, 0) topActivityInfo=ActivityInfo{432dae3 com.amar.vault.MainActivity} launchCookies=[android.os.BinderProxy@6ea8ce0] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=720 topActivityLetterboxHeight=1600 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@4b15319, appThread = android.app.IApplicationThread$Stub$Proxy@5282fde, debugName = QuickstepLaunch }, displayChange = null, flags = 0, debugId = 1481 }
+05-11 10:27:13.311  2866  2910 V WindowManagerShell: onTransitionReady (#1481) android.os.BinderProxy@b98cc27: {id=1481 t=TO_FRONT f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@129546c} m=TO_FRONT f=MOVE_TO_TOP pTaskId=-1 leash=Surface(name=Task=1471)/@0xda2ef79 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@dda0a35} m=TO_BACK f=SHOW_WALLPAPER pTaskId=-1 leash=Surface(name=Task=1)/@0x3ed04be sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1}]}
+05-11 10:27:13.311  1990  2113 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+05-11 10:27:13.311  1990  2113 V WindowManager:     info={id=1481 t=TO_FRONT f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+05-11 10:27:13.311  1990  2113 V WindowManager:         {WCT{RemoteToken{b816312 Task{190cb75 #1471 type=standard A=10572:com.amar.vault}}} m=TO_FRONT f=MOVE_TO_TOP pTaskId=-1 leash=Surface(name=Task=1471)/@0x3218486 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},
+05-11 10:27:13.311  1990  2113 V WindowManager:         {WCT{RemoteToken{e52faa8 Task{7fe1bed #1 type=undefined}}} m=TO_BACK f=SHOW_WALLPAPER pTaskId=-1 leash=Surface(name=Task=1)/@0xfeb7087 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1}
+05-11 10:27:13.311  1990  2113 V WindowManager:     ]}
+05-11 10:27:13.311  2866  2910 V WindowManagerShell: Playing animation for (#1481) android.os.BinderProxy@b98cc27@0
+05-11 10:27:13.311  2866  2910 V WindowManagerShell:  try firstHandler com.android.wm.shell.transition.DefaultMixedHandler@dcd8091
+05-11 10:27:13.312  2866  2910 V WindowManagerShell: Mixed transition for opening an intent with a remote transition and PIP #1481
+05-11 10:27:13.312  2866  2910 V WindowManagerShell:  Delegate animation for (#1481) to RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@f042372, appThread = android.app.IApplicationThread$Stub$Proxy@3bc03c3, debugName = QuickstepLaunch }
+05-11 10:27:13.316  2866  2910 V WindowManagerShell:  animated by firstHandler
+05-11 10:27:13.319 25920 25930 D LauncherAnimationRunner: onAnimationStart transit : 0
+05-11 10:27:13.322  5569  5569 D GameMode: exiting game mode
+05-11 10:27:13.322  1990  6243 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 10:27:13.323 25920 25920 D TaskViewSimulator: setDrawsBelowRecents drawsBelowRecents -> false
+05-11 10:27:13.320 20791 20791 W com.amar.vault: type=1400 audit(0.0:45848): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=2916 scontext=u:r:untrusted_app:s0:c60,c258,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.amar.vault
+05-11 10:27:13.324 20602 20602 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.app.Activity$$ExternalSyntheticLambda0@bd97dbd
+05-11 10:27:13.324 20791 20791 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+05-11 10:27:13.325   844   844 I hwservicemanager: getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device VINTF manifest.
+05-11 10:27:13.330  5569  5569 D GameMode: isFeatureSupported: true
+05-11 10:27:13.332  5569  5569 D GameMode: isFeatureSupported: true
+05-11 10:27:13.332  3043  3043 D GameModeDetector: notifyGameModeStatusValue, value=false
+05-11 10:27:13.332  3043  3043 D DaxService: sendGameModeIntent, state=false
+05-11 10:27:13.334  1990  3613 D CoreBackPreview: Window{b569ec5 u0 com.android.settings/com.android.settings.Settings}: Setting back callback null
+05-11 10:27:13.335 20791 20815 I HWUI    : setGrContext nullptr-->validptr
+05-11 10:27:13.337  5569  5569 D GameMode: isFeatureSupported: true
+05-11 10:27:13.338  1990  7594 W InputManager-JNI: Input channel object 'b569ec5 com.android.settings/com.android.settings.Settings (client)' was disposed without first being removed with the input manager!
+05-11 10:27:13.342 20971 21029 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-11 10:27:13.344 20971 21029 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-11 10:27:13.344  1990  2618 W UsageStatsService: Unexpected activity event reported! (com.android.settings/com.android.settings.homepage.SettingsHomepageActivity event : 23 instanceId : 224763007)
+05-11 10:27:13.348  1288  1288 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 10:27:13.349  1288  1288 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 10:27:13.350  3043 14268 D DolbyAudioEffectHelper: getDolbyStatus enabled=true profile=2
+05-11 10:27:13.350  3043 14268 D DolbyProvider: true, profile=2
+05-11 10:27:13.354  1990  5270 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+05-11 10:27:13.358 25920 25920 I TopTaskTracker: onTaskRemoved: taskId=1472
+05-11 10:27:13.358 25920 25920 I TopTaskTracker: onTaskRemoved: taskId=1472
+05-11 10:27:13.364 21214 21224 W MotoFreeForm: [FreeFormController] onTaskRemoved 1472
+05-11 10:27:13.365 21214 21224 W MotoFreeForm: [FreeFormController] onTaskRemoved 1472
+05-11 10:27:13.384  1347  3832 E ANDR-PERF-LM: VmRssMeter:: start() 453: Could not find pid, can not collect vmrss data
+05-11 10:27:13.385  1347  3833 E ANDR-PERF-LM: VmRssMeter:: start() 453: Could not find pid, can not collect vmrss data
+05-11 10:27:13.385  1347  3833 E ANDR-PERF-LM: AdaptiveLaunch: writeToDataBase() 64: Meter aborted or could not get meter data for this run
+05-11 10:27:13.400  1990  2113 I MotoPerfManagerService: handleAppStart 10572:com.amar.vault hot 5 39 35 -1 124
+05-11 10:27:13.407 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/base.apk' with 1 weak references
+05-11 10:27:13.407 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_chrome.apk' with 1 weak references
+05-11 10:27:13.407 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.407 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_dev_ui.apk' with 1 weak references
+05-11 10:27:13.407 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_on_demand.apk' with 1 weak references
+05-11 10:27:13.407 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_stack_unwinder.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_test_dummy.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~8wZhCQ0ev-DIw04XKBdeCQ==/com.google.android.trichromelibrary_755913233-c_SSiem4IsMUvpcCQys3Ow==/base.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/base.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_data_loader.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_data_loader.config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_webrtc_native_lib.apk' with 1 weak references
+05-11 10:27:13.408 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_webrtc_native_lib.config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.409 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/Drive/Drive.apk' with 1 weak references
+05-11 10:27:13.410 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/Maps/Maps.apk' with 1 weak references
+05-11 10:27:13.410 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~9gBbrpjNHOAbTIUcN8ROiw==/com.google.android.apps.messaging-Gveexi309iayRNqYCAALLw==/base.apk' with 1 weak references
+05-11 10:27:13.411 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~9gBbrpjNHOAbTIUcN8ROiw==/com.google.android.apps.messaging-Gveexi309iayRNqYCAALLw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.411 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~9gBbrpjNHOAbTIUcN8ROiw==/com.google.android.apps.messaging-Gveexi309iayRNqYCAALLw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.411 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~9gBbrpjNHOAbTIUcN8ROiw==/com.google.android.apps.messaging-Gveexi309iayRNqYCAALLw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.411 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~4JLKSXkEPo5nhU01jXL_CA==/com.google.android.apps.photos-5-UdoLAiwqZanXoRY8vojQ==/base.apk' with 1 weak references
+05-11 10:27:13.412 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~4JLKSXkEPo5nhU01jXL_CA==/com.google.android.apps.photos-5-UdoLAiwqZanXoRY8vojQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.412 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~4JLKSXkEPo5nhU01jXL_CA==/com.google.android.apps.photos-5-UdoLAiwqZanXoRY8vojQ==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.412 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~4JLKSXkEPo5nhU01jXL_CA==/com.google.android.apps.photos-5-UdoLAiwqZanXoRY8vojQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.412 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/Meet/Meet.apk' with 1 weak references
+05-11 10:27:13.413 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/CalculatorGoogle/CalculatorGoogle.apk' with 1 weak references
+05-11 10:27:13.414 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7LP9HShPwlfhxDz11iNxsQ==/com.google.android.calendar-efOPIqTQcYeTE56NYFnS5g==/base.apk' with 1 weak references
+05-11 10:27:13.415 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7LP9HShPwlfhxDz11iNxsQ==/com.google.android.calendar-efOPIqTQcYeTE56NYFnS5g==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.415 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7LP9HShPwlfhxDz11iNxsQ==/com.google.android.calendar-efOPIqTQcYeTE56NYFnS5g==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.415 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7LP9HShPwlfhxDz11iNxsQ==/com.google.android.calendar-efOPIqTQcYeTE56NYFnS5g==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.416 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ulxYoKqEaJJl1hiqFcX2zg==/com.google.android.deskclock-aehtRBMu-Cik5MFBtKYfnQ==/base.apk' with 1 weak references
+05-11 10:27:13.416 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ulxYoKqEaJJl1hiqFcX2zg==/com.google.android.deskclock-aehtRBMu-Cik5MFBtKYfnQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.417 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SnkLtc3GRX-z6lwvQt6lfQ==/com.google.android.dialer-RShxJhX-12DAgfk1-f9CAg==/base.apk' with 1 weak references
+05-11 10:27:13.418 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/base.apk' with 1 weak references
+05-11 10:27:13.418 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.418 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.418 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.419 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~NztbVQWWLbM-L6gdmXZznQ==/com.google.android.youtube-SyJFvCt_s0gHrL3FGmEomw==/base.apk' with 1 weak references
+05-11 10:27:13.419 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~NztbVQWWLbM-L6gdmXZznQ==/com.google.android.youtube-SyJFvCt_s0gHrL3FGmEomw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.419 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~NztbVQWWLbM-L6gdmXZznQ==/com.google.android.youtube-SyJFvCt_s0gHrL3FGmEomw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.420 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~NztbVQWWLbM-L6gdmXZznQ==/com.google.android.youtube-SyJFvCt_s0gHrL3FGmEomw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.420 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~9YrUyuwvfLPDC5mZIdo2Gw==/app.revanced.android.apps.youtube.music-zVf_zKgdyvNJTcMONJaIzA==/base.apk' with 1 weak references
+05-11 10:27:13.423 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ksJhqVqZK6oelcUzBNr8eA==/com.brave.browser-_49ycfiS47CH0ZnOUE_emA==/base.apk' with 1 weak references
+05-11 10:27:13.423 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ksJhqVqZK6oelcUzBNr8eA==/com.brave.browser-_49ycfiS47CH0ZnOUE_emA==/split_chrome.apk' with 1 weak references
+05-11 10:27:13.423 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ksJhqVqZK6oelcUzBNr8eA==/com.brave.browser-_49ycfiS47CH0ZnOUE_emA==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.424 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ksJhqVqZK6oelcUzBNr8eA==/com.brave.browser-_49ycfiS47CH0ZnOUE_emA==/split_on_demand.apk' with 1 weak references
+05-11 10:27:13.424 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~gSkNWOVnR1MbphRtER_2xg==/com.couchsurfing.mobile.android-QYfRrc2Pkd5QgPbOtY77aA==/base.apk' with 1 weak references
+05-11 10:27:13.424 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~gSkNWOVnR1MbphRtER_2xg==/com.couchsurfing.mobile.android-QYfRrc2Pkd5QgPbOtY77aA==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.424 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~gSkNWOVnR1MbphRtER_2xg==/com.couchsurfing.mobile.android-QYfRrc2Pkd5QgPbOtY77aA==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.425 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~yenG7B7osUv16uU9xkS1sw==/com.google.android.apps.docs.editors.docs-MpX9lth8sKssOFmIjg2hDQ==/base.apk' with 1 weak references
+05-11 10:27:13.425 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~yenG7B7osUv16uU9xkS1sw==/com.google.android.apps.docs.editors.docs-MpX9lth8sKssOFmIjg2hDQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.425 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~yenG7B7osUv16uU9xkS1sw==/com.google.android.apps.docs.editors.docs-MpX9lth8sKssOFmIjg2hDQ==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.425 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~yenG7B7osUv16uU9xkS1sw==/com.google.android.apps.docs.editors.docs-MpX9lth8sKssOFmIjg2hDQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.426 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~rEIWr_I_nc_xYT_Ll9r1Gg==/com.google.android.apps.docs.editors.sheets-JtJR9cOzmYT57CK-7SIptQ==/base.apk' with 1 weak references
+05-11 10:27:13.426 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~rEIWr_I_nc_xYT_Ll9r1Gg==/com.google.android.apps.docs.editors.sheets-JtJR9cOzmYT57CK-7SIptQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.426 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~rEIWr_I_nc_xYT_Ll9r1Gg==/com.google.android.apps.docs.editors.sheets-JtJR9cOzmYT57CK-7SIptQ==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.427 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~rEIWr_I_nc_xYT_Ll9r1Gg==/com.google.android.apps.docs.editors.sheets-JtJR9cOzmYT57CK-7SIptQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.427 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~E7labk-YX5mXx5RkcWCx7A==/com.google.android.apps.youtube.creator-pJH85zIgbWbiIfI3qvIeSg==/base.apk' with 1 weak references
+05-11 10:27:13.428 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~E7labk-YX5mXx5RkcWCx7A==/com.google.android.apps.youtube.creator-pJH85zIgbWbiIfI3qvIeSg==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.428 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~E7labk-YX5mXx5RkcWCx7A==/com.google.android.apps.youtube.creator-pJH85zIgbWbiIfI3qvIeSg==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.428 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/base.apk' with 1 weak references
+05-11 10:27:13.428 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.428 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.429 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~owYSg4lyX0PqikpWwB8peQ==/com.jio.myjio-GWY55RthQEHopbfKAiYLhQ==/base.apk' with 1 weak references
+05-11 10:27:13.429 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~owYSg4lyX0PqikpWwB8peQ==/com.jio.myjio-GWY55RthQEHopbfKAiYLhQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.430 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~owYSg4lyX0PqikpWwB8peQ==/com.jio.myjio-GWY55RthQEHopbfKAiYLhQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.430 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qUev4V-yGIKQRezQpDd0VA==/com.pinterest-ck1JBHou2qIgicrdTGNvYA==/base.apk' with 1 weak references
+05-11 10:27:13.431 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qUev4V-yGIKQRezQpDd0VA==/com.pinterest-ck1JBHou2qIgicrdTGNvYA==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.431 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qUev4V-yGIKQRezQpDd0VA==/com.pinterest-ck1JBHou2qIgicrdTGNvYA==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.431 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qUev4V-yGIKQRezQpDd0VA==/com.pinterest-ck1JBHou2qIgicrdTGNvYA==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.432 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Eg_8ODSLrnDAgPEGX-mCLA==/com.spotify.music-Wl7Y6QUYZZqxY0pVi9ho5Q==/base.apk' with 1 weak references
+05-11 10:27:13.433 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Eg_8ODSLrnDAgPEGX-mCLA==/com.spotify.music-Wl7Y6QUYZZqxY0pVi9ho5Q==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.433 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Eg_8ODSLrnDAgPEGX-mCLA==/com.spotify.music-Wl7Y6QUYZZqxY0pVi9ho5Q==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.433 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Eg_8ODSLrnDAgPEGX-mCLA==/com.spotify.music-Wl7Y6QUYZZqxY0pVi9ho5Q==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.434 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~rRKbP5a3KJXXjexEBGOP8g==/com.google.android.apps.nbu.files-BAF6l5Dx2seaEJdnGJF0Lw==/base.apk' with 1 weak references
+05-11 10:27:13.434 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~rRKbP5a3KJXXjexEBGOP8g==/com.google.android.apps.nbu.files-BAF6l5Dx2seaEJdnGJF0Lw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.434 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~rRKbP5a3KJXXjexEBGOP8g==/com.google.android.apps.nbu.files-BAF6l5Dx2seaEJdnGJF0Lw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.434 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~rRKbP5a3KJXXjexEBGOP8g==/com.google.android.apps.nbu.files-BAF6l5Dx2seaEJdnGJF0Lw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.435 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/base.apk' with 1 weak references
+05-11 10:27:13.436 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /product/app/AudioRecorder/AudioRecorder.apk' with 1 weak references
+05-11 10:27:13.436 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~VqPM2LctoJ7IT-8Iv1BPJQ==/com.motorola.ccc.notification-7HhATuQIW2mdDKoMiv2wOg==/base.apk' with 1 weak references
+05-11 10:27:13.437 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /system/app/MotoDolbyDax3/MotoDolbyDax3.apk' with 1 weak references
+05-11 10:27:13.438 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/FMPlayer/FMPlayer.apk' with 1 weak references
+05-11 10:27:13.438 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /product/priv-app/MotoHelp/MotoHelp.apk' with 1 weak references
+05-11 10:27:13.439 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~2QL-fe93MjO-sV5tUufssQ==/ai.character.app-ATkE88ct3t3D_nxGoaJhOA==/base.apk' with 1 weak references
+05-11 10:27:13.440 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~2QL-fe93MjO-sV5tUufssQ==/ai.character.app-ATkE88ct3t3D_nxGoaJhOA==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.440 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~2QL-fe93MjO-sV5tUufssQ==/ai.character.app-ATkE88ct3t3D_nxGoaJhOA==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.440 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~2QL-fe93MjO-sV5tUufssQ==/ai.character.app-ATkE88ct3t3D_nxGoaJhOA==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.441 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~JWZaVvID7cb3cd9oNiV-Sw==/all.documentreader.filereader.office.viewer-GWoN5boe4aCPIDaol2Ad9g==/base.apk' with 1 weak references
+05-11 10:27:13.442 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~JWZaVvID7cb3cd9oNiV-Sw==/all.documentreader.filereader.office.viewer-GWoN5boe4aCPIDaol2Ad9g==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.442 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~JWZaVvID7cb3cd9oNiV-Sw==/all.documentreader.filereader.office.viewer-GWoN5boe4aCPIDaol2Ad9g==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.443 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~chh9sqg9HnIo8NM_pdOs1A==/app.netmirror.netmirrornew-rVptKhn7jGvmMU7XWfCm0A==/base.apk' with 1 weak references
+05-11 10:27:13.443 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~j8GOAc7YjgPR2ewqW3vbaQ==/app.revanced.android.gms--UUUliunyge5sSr2uqB2Hw==/base.apk' with 1 weak references
+05-11 10:27:13.444  1990  2691 I ImeTracker: com.amar.vault:82ee34ee: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+05-11 10:27:13.444 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~0Yz1vW8Cg-M3EftcFEbcvA==/app.revanced.manager.flutter-kKlNFSl-VPwvuWDAHbqj_A==/base.apk' with 1 weak references
+05-11 10:27:13.444  1990  2691 I ImeTracker: com.amar.vault:82ee34ee: onCancelled at PHASE_SERVER_SHOULD_HIDE
+05-11 10:27:13.445 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~ZqMN2JiREEcmPvxO4xru9g==/com.Dominos-I6lxH2Et2zVL1AAioxPb9A==/base.apk' with 1 weak references
+05-11 10:27:13.445 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~nXwQd9gY_5VUTil_kr-cLQ==/com.amar.vault-orEV5K7r-DtudjmiG8VtIg==/base.apk' with 1 weak references
+05-11 10:27:13.446 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~-quCVE8ycUXUd3IzYjluMQ==/com.anthropic.claude-xVu9LO8dHdaYTfTPKZiq0Q==/base.apk' with 1 weak references
+05-11 10:27:13.446 25920 25920 D composeRecentsLaunchAnimator: finish recent animation
+05-11 10:27:13.446 25920 25920 D RecentsView: finishRecentsAnimation - mRecentsAnimationController: null
+05-11 10:27:13.446 25920 25920 D RecentsView: cleanupRemoteTargets - mRemoteTargetHandles: null
+05-11 10:27:13.446 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~-quCVE8ycUXUd3IzYjluMQ==/com.anthropic.claude-xVu9LO8dHdaYTfTPKZiq0Q==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.446 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~-quCVE8ycUXUd3IzYjluMQ==/com.anthropic.claude-xVu9LO8dHdaYTfTPKZiq0Q==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.446 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~-quCVE8ycUXUd3IzYjluMQ==/com.anthropic.claude-xVu9LO8dHdaYTfTPKZiq0Q==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.447 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~T6RRuILnlmcPNHQ_vQJwDg==/com.application.zomato-2Achl23VE7UE321dEl1Ubw==/base.apk' with 1 weak references
+05-11 10:27:13.447 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~T6RRuILnlmcPNHQ_vQJwDg==/com.application.zomato-2Achl23VE7UE321dEl1Ubw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.447 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lanBas1jIzQqDpaneQ-lAQ==/com.azefsw.audioconnect-WsLsXQuJikytjCPaaH87Ew==/base.apk' with 1 weak references
+05-11 10:27:13.448 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~H0BgbQISaKfo1DxAdnPLTA==/com.bt.bms-Du-ThfAaKMqBNJTeEuHsOQ==/base.apk' with 1 weak references
+05-11 10:27:13.448  2866  2910 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#1481) android.os.BinderProxy@b98cc27@0
+05-11 10:27:13.448 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~H0BgbQISaKfo1DxAdnPLTA==/com.bt.bms-Du-ThfAaKMqBNJTeEuHsOQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.449 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~H0BgbQISaKfo1DxAdnPLTA==/com.bt.bms-Du-ThfAaKMqBNJTeEuHsOQ==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.449 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~H0BgbQISaKfo1DxAdnPLTA==/com.bt.bms-Du-ThfAaKMqBNJTeEuHsOQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.449 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~78TWXUYNNgRsSl22ES-x3g==/com.cambyte.okenscan-NlwJAz-PdsF9x7T3FPyoEw==/base.apk' with 1 weak references
+05-11 10:27:13.450 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~78TWXUYNNgRsSl22ES-x3g==/com.cambyte.okenscan-NlwJAz-PdsF9x7T3FPyoEw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.450 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~78TWXUYNNgRsSl22ES-x3g==/com.cambyte.okenscan-NlwJAz-PdsF9x7T3FPyoEw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.451 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/base.apk' with 1 weak references
+05-11 10:27:13.451 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.451 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.bn.apk' with 1 weak references
+05-11 10:27:13.451 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.451  1990  2113 V WindowManager: Finish Transition (#1481): created at 05-11 10:27:13.271 collect-started=0.025ms request-sent=7.68ms started=12.99ms ready=23.677ms sent=38.476ms finished=179.91ms
+05-11 10:27:13.451 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.gu.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.kn.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.mr.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.ta.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.te.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/base.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.bn.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.452 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.gu.apk' with 1 weak references
+05-11 10:27:13.453 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.hi.apk' with 1 weak references
+05-11 10:27:13.453 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.kn.apk' with 1 weak references
+05-11 10:27:13.453 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.mr.apk' with 1 weak references
+05-11 10:27:13.453 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.ta.apk' with 1 weak references
+05-11 10:27:13.453 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.te.apk' with 1 weak references
+05-11 10:27:13.453 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.454 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~60EFF9nn6dMHjDvlJHwuVg==/com.digilocker.android-kgiZhbJ8jR50DajIz8z4UQ==/base.apk' with 1 weak references
+05-11 10:27:13.454 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~60EFF9nn6dMHjDvlJHwuVg==/com.digilocker.android-kgiZhbJ8jR50DajIz8z4UQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.454  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2099 
+05-11 10:27:13.454 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~60EFF9nn6dMHjDvlJHwuVg==/com.digilocker.android-kgiZhbJ8jR50DajIz8z4UQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.455 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GNvW7M53oH3qZVex5W-RwQ==/com.discord-hfk8iRJ4nCtYovLAQVfB6w==/base.apk' with 1 weak references
+05-11 10:27:13.456  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+05-11 10:27:13.456 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GNvW7M53oH3qZVex5W-RwQ==/com.discord-hfk8iRJ4nCtYovLAQVfB6w==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.456  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1371 onStartInput(EditorInfo{EditorInfo{packageName=com.amar.vault, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+05-11 10:27:13.456 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GNvW7M53oH3qZVex5W-RwQ==/com.discord-hfk8iRJ4nCtYovLAQVfB6w==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.457 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GNvW7M53oH3qZVex5W-RwQ==/com.discord-hfk8iRJ4nCtYovLAQVfB6w==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.457 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HQa20CHVeOS2h7yj0HtJGA==/com.frontrow.vlog-RUBVAUH7ooO5XG1Y2t5BzA==/base.apk' with 1 weak references
+05-11 10:27:13.457 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HQa20CHVeOS2h7yj0HtJGA==/com.frontrow.vlog-RUBVAUH7ooO5XG1Y2t5BzA==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.457 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HQa20CHVeOS2h7yj0HtJGA==/com.frontrow.vlog-RUBVAUH7ooO5XG1Y2t5BzA==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.458 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HQa20CHVeOS2h7yj0HtJGA==/com.frontrow.vlog-RUBVAUH7ooO5XG1Y2t5BzA==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.458 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HQa20CHVeOS2h7yj0HtJGA==/com.frontrow.vlog-RUBVAUH7ooO5XG1Y2t5BzA==/split_vn_install_time_audio_effects.apk' with 1 weak references
+05-11 10:27:13.458 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HQa20CHVeOS2h7yj0HtJGA==/com.frontrow.vlog-RUBVAUH7ooO5XG1Y2t5BzA==/split_vn_install_time_fx.apk' with 1 weak references
+05-11 10:27:13.458 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HQa20CHVeOS2h7yj0HtJGA==/com.frontrow.vlog-RUBVAUH7ooO5XG1Y2t5BzA==/split_vn_install_time_help_video.apk' with 1 weak references
+05-11 10:27:13.458  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+05-11 10:27:13.458 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~t9ko1dTbiQNJMjKR8oWRNQ==/com.fsn.nykaa-HH6ZDWN-Ny-ijHl0hYm9tg==/base.apk' with 1 weak references
+05-11 10:27:13.458 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~t9ko1dTbiQNJMjKR8oWRNQ==/com.fsn.nykaa-HH6ZDWN-Ny-ijHl0hYm9tg==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.458 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~t9ko1dTbiQNJMjKR8oWRNQ==/com.fsn.nykaa-HH6ZDWN-Ny-ijHl0hYm9tg==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.459  2866  2910 V WindowManagerShell: Track 0 became idle
+05-11 10:27:13.459  2866  2910 V WindowManagerShell: All active transition animations finished
+05-11 10:27:13.459 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~1viIyaoQ2LbXTHCSCly3NA==/com.google.android.apps.adm-GgG8QRNnoWR7O011zhthaw==/base.apk' with 1 weak references
+05-11 10:27:13.459 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~1viIyaoQ2LbXTHCSCly3NA==/com.google.android.apps.adm-GgG8QRNnoWR7O011zhthaw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.459 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~1viIyaoQ2LbXTHCSCly3NA==/com.google.android.apps.adm-GgG8QRNnoWR7O011zhthaw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.459 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~1viIyaoQ2LbXTHCSCly3NA==/com.google.android.apps.adm-GgG8QRNnoWR7O011zhthaw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.459 25920 25920 D StateManager: goToState - fromState: Overview, toState: AllApps, partial trace:
+05-11 10:27:13.459 25920 25920 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(StateManager.java:524)
+05-11 10:27:13.459 25920 25920 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(StateManager.java:515)
+05-11 10:27:13.459 25920 25920 D StateManager: 	at com.android.quickstep.TaskViewUtils$9.lambda$onAnimationSuccess$0(TaskViewUtils.java:683)
+05-11 10:27:13.459 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/base.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.bn.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.gu.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.hi.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.kn.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.mr.apk' with 1 weak references
+05-11 10:27:13.460  1990  3614 W PackageConfigPersister: App-specific configuration not found for packageName: com.amar.vault and userId: 0
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.ta.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.te.apk' with 1 weak references
+05-11 10:27:13.460 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.461 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lk0QomXTEFxzOUo0xCjRMg==/com.google.android.apps.chromecast.app-lM5KeKxnDCxvgHRMeBfFZw==/base.apk' with 1 weak references
+05-11 10:27:13.461 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lk0QomXTEFxzOUo0xCjRMg==/com.google.android.apps.chromecast.app-lM5KeKxnDCxvgHRMeBfFZw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.462 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lk0QomXTEFxzOUo0xCjRMg==/com.google.android.apps.chromecast.app-lM5KeKxnDCxvgHRMeBfFZw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.462 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~lk0QomXTEFxzOUo0xCjRMg==/com.google.android.apps.chromecast.app-lM5KeKxnDCxvgHRMeBfFZw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.462 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~PXv-V4M_JIUU_V1CCgQC5g==/com.google.android.apps.fitness-_ABuOEoFEh129JSS0bzWgw==/base.apk' with 1 weak references
+05-11 10:27:13.463 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~PXv-V4M_JIUU_V1CCgQC5g==/com.google.android.apps.fitness-_ABuOEoFEh129JSS0bzWgw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.463 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~PXv-V4M_JIUU_V1CCgQC5g==/com.google.android.apps.fitness-_ABuOEoFEh129JSS0bzWgw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.463 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~PXv-V4M_JIUU_V1CCgQC5g==/com.google.android.apps.fitness-_ABuOEoFEh129JSS0bzWgw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.463 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Bj6esGk0TCUjVRja19kJDg==/com.google.android.apps.nbu.paisa.user-zDAh4hKeaDkwKAATCVp-rw==/base.apk' with 1 weak references
+05-11 10:27:13.463 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Bj6esGk0TCUjVRja19kJDg==/com.google.android.apps.nbu.paisa.user-zDAh4hKeaDkwKAATCVp-rw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.464 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Bj6esGk0TCUjVRja19kJDg==/com.google.android.apps.nbu.paisa.user-zDAh4hKeaDkwKAATCVp-rw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.464 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GwL-i-CcX7AgmmPM94dWZA==/com.google.android.apps.subscriptions.red-4LAcs66C-ARWEy6MQ-DxDQ==/base.apk' with 1 weak references
+05-11 10:27:13.464 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GwL-i-CcX7AgmmPM94dWZA==/com.google.android.apps.subscriptions.red-4LAcs66C-ARWEy6MQ-DxDQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.464 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GwL-i-CcX7AgmmPM94dWZA==/com.google.android.apps.subscriptions.red-4LAcs66C-ARWEy6MQ-DxDQ==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.465 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~GwL-i-CcX7AgmmPM94dWZA==/com.google.android.apps.subscriptions.red-4LAcs66C-ARWEy6MQ-DxDQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.465 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Suw1j2HmfZlJMcrr03IukA==/com.google.earth-05Uv2ZQY_x1Jy84GlInXwg==/base.apk' with 1 weak references
+05-11 10:27:13.465  1990  2605 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 10:27:13.465 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Suw1j2HmfZlJMcrr03IukA==/com.google.earth-05Uv2ZQY_x1Jy84GlInXwg==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.466  1990  3613 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 10:27:13.466  2866  2866 D FreeformGesture: onStateChanged: State{mIsPackageAvailable=true, mPillGestureEnabled=false, mVibrationEnabled=true, mShortcutPanelShowing=false, mSwipeInEnabled=false, mHunFreeformEnabled=true, mIsInGameMode=false, mIsRecentsShowing=false, mIsInTutorialMode=false, mIsDoubleTapPowerEnabled=false, mIsPillMoving=false, mPillXPosition=1, mPillYPosition=180}
+05-11 10:27:13.467 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i0S8wZqUNo6y6Tsp0u_aJg==/com.instagram.android-MJmzoLa3AYjsWB1uvNtjgQ==/base.apk' with 1 weak references
+05-11 10:27:13.467 25920 25920 D Launcher: Send Intent { act=com.motorola.launcher3.action.OVERVIEW_STATE_CHANGE cmp=com.motorola.mobiledesktop/com.lenovo.hec.vault.services.RecentTaskReceiver4Moto (has extras) }
+05-11 10:27:13.467 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i0S8wZqUNo6y6Tsp0u_aJg==/com.instagram.android-MJmzoLa3AYjsWB1uvNtjgQ==/split_arservicesforpersonsegmentation.apk' with 1 weak references
+05-11 10:27:13.467 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i0S8wZqUNo6y6Tsp0u_aJg==/com.instagram.android-MJmzoLa3AYjsWB1uvNtjgQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.468 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i0S8wZqUNo6y6Tsp0u_aJg==/com.instagram.android-MJmzoLa3AYjsWB1uvNtjgQ==/split_executorch.apk' with 1 weak references
+05-11 10:27:13.468 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~i0S8wZqUNo6y6Tsp0u_aJg==/com.instagram.android-MJmzoLa3AYjsWB1uvNtjgQ==/split_pytorch.apk' with 1 weak references
+05-11 10:27:13.468 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~oaLSK_VNUG9g4JkQ69SRBw==/com.internshala.app-CQldwbogXVTIU1G8Qp5R8Q==/base.apk' with 1 weak references
+05-11 10:27:13.468 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/base.apk' with 1 weak references
+05-11 10:27:13.469 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/split_config.bn.apk' with 1 weak references
+05-11 10:27:13.469 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.469 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/split_config.gu.apk' with 1 weak references
+05-11 10:27:13.469 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/split_config.kn.apk' with 1 weak references
+05-11 10:27:13.469 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/split_config.ta.apk' with 1 weak references
+05-11 10:27:13.469 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/split_config.te.apk' with 1 weak references
+05-11 10:27:13.469 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.470 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~oHjZDJHsrjBVW-uK4-B_rA==/com.jpl.jiomart-05GYnKAbooo1Vc9Qcvd9Zg==/base.apk' with 1 weak references
+05-11 10:27:13.470 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~oHjZDJHsrjBVW-uK4-B_rA==/com.jpl.jiomart-05GYnKAbooo1Vc9Qcvd9Zg==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.470 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~oHjZDJHsrjBVW-uK4-B_rA==/com.jpl.jiomart-05GYnKAbooo1Vc9Qcvd9Zg==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.470 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~oHjZDJHsrjBVW-uK4-B_rA==/com.jpl.jiomart-05GYnKAbooo1Vc9Qcvd9Zg==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.471 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~fbwpy0e_fnl-FsnqIJah_Q==/com.lenskart.app-6LhMl98bKK-6Y55neERwTQ==/base.apk' with 1 weak references
+05-11 10:27:13.471 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~fbwpy0e_fnl-FsnqIJah_Q==/com.lenskart.app-6LhMl98bKK-6Y55neERwTQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/base.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/split_config.bn.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/split_config.gu.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/split_config.hi.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/split_config.kn.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/split_config.mr.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/split_config.ta.apk' with 1 weak references
+05-11 10:27:13.472 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/split_config.te.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/base.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.bn.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.gu.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.hi.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.kn.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.mr.apk' with 1 weak references
+05-11 10:27:13.473 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.ta.apk' with 1 weak references
+05-11 10:27:13.474 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.te.apk' with 1 weak references
+05-11 10:27:13.474 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.474 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~RhLG7mUGMElOslYC_n4s7A==/com.myntra.android-Jqz0nmNifbuT1ZQQBSEJuQ==/base.apk' with 1 weak references
+05-11 10:27:13.474 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~RhLG7mUGMElOslYC_n4s7A==/com.myntra.android-Jqz0nmNifbuT1ZQQBSEJuQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.474 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~RhLG7mUGMElOslYC_n4s7A==/com.myntra.android-Jqz0nmNifbuT1ZQQBSEJuQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.475 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dgz9oO4zwLDyQEmBi5vBxA==/com.olacabs.customer-rPvNxMCH0_sHe42FjSVYAw==/base.apk' with 1 weak references
+05-11 10:27:13.475 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dgz9oO4zwLDyQEmBi5vBxA==/com.olacabs.customer-rPvNxMCH0_sHe42FjSVYAw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.475 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dgz9oO4zwLDyQEmBi5vBxA==/com.olacabs.customer-rPvNxMCH0_sHe42FjSVYAw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.476 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Dgz9oO4zwLDyQEmBi5vBxA==/com.olacabs.customer-rPvNxMCH0_sHe42FjSVYAw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.476 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Yp2LyM9SeLkMC27opCOiDg==/com.openai.chatgpt-LfJZ2Lt9XiAY2L-_eCET7A==/base.apk' with 1 weak references
+05-11 10:27:13.476 25920 25920 D StatsLog: LAUNCHER_ALLAPPS_ENTRY
+05-11 10:27:13.477 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Yp2LyM9SeLkMC27opCOiDg==/com.openai.chatgpt-LfJZ2Lt9XiAY2L-_eCET7A==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.477 25920 25920 D StateManager: onStateTransitionStart - state: AllApps
+05-11 10:27:13.477 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Yp2LyM9SeLkMC27opCOiDg==/com.openai.chatgpt-LfJZ2Lt9XiAY2L-_eCET7A==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.477 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Yp2LyM9SeLkMC27opCOiDg==/com.openai.chatgpt-LfJZ2Lt9XiAY2L-_eCET7A==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.477 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~gGnXWdji5RWTX1ngw2Zb-A==/com.phonepe.app-5hm1dvf93Byax4K9eLE4Gg==/base.apk' with 1 weak references
+05-11 10:27:13.477 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~gGnXWdji5RWTX1ngw2Zb-A==/com.phonepe.app-5hm1dvf93Byax4K9eLE4Gg==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.478 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~gGnXWdji5RWTX1ngw2Zb-A==/com.phonepe.app-5hm1dvf93Byax4K9eLE4Gg==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.478 25920 25920 D VRI[CustomizationPanelLauncher]: visibilityChanged oldVisibility=true newVisibility=false
+05-11 10:27:13.478 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qr7FkVWAXO6BsL99dSONRQ==/com.rapido.passenger-sJ2UMmDTdiANtEkKwtba9Q==/base.apk' with 1 weak references
+05-11 10:27:13.478 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qr7FkVWAXO6BsL99dSONRQ==/com.rapido.passenger-sJ2UMmDTdiANtEkKwtba9Q==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.478 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qr7FkVWAXO6BsL99dSONRQ==/com.rapido.passenger-sJ2UMmDTdiANtEkKwtba9Q==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.479 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qr7FkVWAXO6BsL99dSONRQ==/com.rapido.passenger-sJ2UMmDTdiANtEkKwtba9Q==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.479 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~xxBmJd3dSJ3DszGV-lekZQ==/com.sbi.lotusintouch-9_h43_It5ydH7M8BeQpW5Q==/base.apk' with 1 weak references
+05-11 10:27:13.480 25920 25944 D Surface : Surface::disconnect
+05-11 10:27:13.480 25920 25944 D BufferQueueProducer: [com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher#16823(BLAST Consumer)pid:25920](id:65400000005e,api:1,p:25920,c:25920) disconnect: api 1
+05-11 10:27:13.480 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~orsr0cfjht_O8mMs9iMoVw==/com.twitter.android-P72oKngNwPlhI8v1mGNLmw==/base.apk' with 1 weak references
+05-11 10:27:13.481 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~orsr0cfjht_O8mMs9iMoVw==/com.twitter.android-P72oKngNwPlhI8v1mGNLmw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.481 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~orsr0cfjht_O8mMs9iMoVw==/com.twitter.android-P72oKngNwPlhI8v1mGNLmw==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.481 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~orsr0cfjht_O8mMs9iMoVw==/com.twitter.android-P72oKngNwPlhI8v1mGNLmw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.482 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~XkS46xgpKSl73YTa08KrDg==/com.valvesoftware.android.steam.community-7jNQNSNKlR-q9JTAoMf1Zg==/base.apk' with 1 weak references
+05-11 10:27:13.482 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~2VISMM0hGjDjfh2kYRk9TA==/com.whatsapp-WFTD4D_U2mLsmupzt9umJg==/base.apk' with 1 weak references
+05-11 10:27:13.483 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~2VISMM0hGjDjfh2kYRk9TA==/com.whatsapp-WFTD4D_U2mLsmupzt9umJg==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.483 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~2VISMM0hGjDjfh2kYRk9TA==/com.whatsapp-WFTD4D_U2mLsmupzt9umJg==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.483 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~nGL8NA48gStUGYdiovF9FA==/com.whereismytrain.android-FZdLhKEA4zt8YaMNLkDV3w==/base.apk' with 1 weak references
+05-11 10:27:13.484 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pqjjSaSyFXFVAmWJuBpeRw==/com.worldpackers.travelers-eZEY6MYDp4vGnPteIDhm4w==/base.apk' with 1 weak references
+05-11 10:27:13.485 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pqjjSaSyFXFVAmWJuBpeRw==/com.worldpackers.travelers-eZEY6MYDp4vGnPteIDhm4w==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.485 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pqjjSaSyFXFVAmWJuBpeRw==/com.worldpackers.travelers-eZEY6MYDp4vGnPteIDhm4w==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.485 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pqjjSaSyFXFVAmWJuBpeRw==/com.worldpackers.travelers-eZEY6MYDp4vGnPteIDhm4w==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.485 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~867bTrPYz6swknYEdOYzTQ==/com.xingin.xhs-ZSgF8ROEC2VzvrgWdRK_hQ==/base.apk' with 1 weak references
+05-11 10:27:13.487 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~867bTrPYz6swknYEdOYzTQ==/com.xingin.xhs-ZSgF8ROEC2VzvrgWdRK_hQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.488 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~867bTrPYz6swknYEdOYzTQ==/com.xingin.xhs-ZSgF8ROEC2VzvrgWdRK_hQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.488 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~tY2_q9LQRAefpYnkeipOuA==/cris.org.in.prs.ima-K2kGpnEdO3q9jR-PxT8OcQ==/base.apk' with 1 weak references
+05-11 10:27:13.488 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~P-r8qBi1GiUgCe4SBR1LpQ==/gymworkout.gym.gymlog.gymtrainer-K6nLI2eE4GksbXkyciAu8g==/base.apk' with 1 weak references
+05-11 10:27:13.489 25920 25920 D BaseDepthController: setSurface:
+05-11 10:27:13.489 25920 25920 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+05-11 10:27:13.489 25920 25920 D BaseDepthController: 	mSurface: null
+05-11 10:27:13.489 25920 25920 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+05-11 10:27:13.489 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~1KxQhmgL7iJ0e_CKmIX0Kw==/homeworkout.homeworkouts.noequipment-rH7iROLWH0pFOxI2IMYpsA==/base.apk' with 1 weak references
+05-11 10:27:13.489 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~1KxQhmgL7iJ0e_CKmIX0Kw==/homeworkout.homeworkouts.noequipment-rH7iROLWH0pFOxI2IMYpsA==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.490 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~1KxQhmgL7iJ0e_CKmIX0Kw==/homeworkout.homeworkouts.noequipment-rH7iROLWH0pFOxI2IMYpsA==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.490 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pmqEaG80grDIGxXWgllBnw==/in.amazon.mShop.android.shopping-cLXYHLHGyP7y_jNtZeqSUw==/base.apk' with 1 weak references
+05-11 10:27:13.490 25920 25920 D StatsLog: LAUNCHER_ONSTOP
+05-11 10:27:13.490 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pmqEaG80grDIGxXWgllBnw==/in.amazon.mShop.android.shopping-cLXYHLHGyP7y_jNtZeqSUw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.490 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~pmqEaG80grDIGxXWgllBnw==/in.amazon.mShop.android.shopping-cLXYHLHGyP7y_jNtZeqSUw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.491 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~IdIte2fQrXrrAOSP3UJ0aQ==/in.swiggy.android.instamart-db5Ryfd-wu3d3PfURIj_XQ==/base.apk' with 1 weak references
+05-11 10:27:13.491 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~IdIte2fQrXrrAOSP3UJ0aQ==/in.swiggy.android.instamart-db5Ryfd-wu3d3PfURIj_XQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.491 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~IdIte2fQrXrrAOSP3UJ0aQ==/in.swiggy.android.instamart-db5Ryfd-wu3d3PfURIj_XQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.492 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~BW_gyE69r51kZJVDSj4kGg==/org.telegram.messenger-RSulhFQeqixph7eO931cnA==/base.apk' with 1 weak references
+05-11 10:27:13.492 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~BW_gyE69r51kZJVDSj4kGg==/org.telegram.messenger-RSulhFQeqixph7eO931cnA==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.492  1990  2175 W MotoBatteryCareService: uid: 10572 pkgName:com.amar.vault come to foreground
+05-11 10:27:13.492  1990  3613 D PowerManagerService: nativeSetPowerMode ret:true mode:5 enabled:false duration ms: 0
+05-11 10:27:13.492 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~BW_gyE69r51kZJVDSj4kGg==/org.telegram.messenger-RSulhFQeqixph7eO931cnA==/split_config.en.apk' with 1 weak references
+05-11 10:27:13.493 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~BW_gyE69r51kZJVDSj4kGg==/org.telegram.messenger-RSulhFQeqixph7eO931cnA==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.493  1990  3613 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-11 10:27:13.493  1302  1302 I QTI PowerHAL: Power setMode: 5 to: 0
+05-11 10:27:13.493 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7ql-GblGyJEsALoE2E1vcw==/org.thoughtcrime.securesms-W-tds3eiizFUJix3pvX_Fw==/base.apk' with 1 weak references
+05-11 10:27:13.494 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7ql-GblGyJEsALoE2E1vcw==/org.thoughtcrime.securesms-W-tds3eiizFUJix3pvX_Fw==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.494 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7ql-GblGyJEsALoE2E1vcw==/org.thoughtcrime.securesms-W-tds3eiizFUJix3pvX_Fw==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.494 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Iw9TK8UdR4EFTdrEtS3IwA==/org.videolan.vlc-hevfc-IcXTrLusVtq-IIRQ==/base.apk' with 1 weak references
+05-11 10:27:13.495 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Iw9TK8UdR4EFTdrEtS3IwA==/org.videolan.vlc-hevfc-IcXTrLusVtq-IIRQ==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.495 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~Iw9TK8UdR4EFTdrEtS3IwA==/org.videolan.vlc-hevfc-IcXTrLusVtq-IIRQ==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.495 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~MTFx8ET8fWnXbCz9hv0YuQ==/ru.zdevs.zarchiver-wRBk8Iz-WEkLDvI8nij5nA==/base.apk' with 1 weak references
+05-11 10:27:13.496 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~_k9sWq7uVnIcDnF8azWp0Q==/src.com.dop-71sxgZtHhPpY29wwA2o8hg==/base.apk' with 1 weak references
+05-11 10:27:13.496 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HZ-W4XEdDCX4QV9hWB4CMg==/tech.butterfly.app-BczxbrPS5YRDF3guKJ-wAg==/base.apk' with 1 weak references
+05-11 10:27:13.497 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HZ-W4XEdDCX4QV9hWB4CMg==/tech.butterfly.app-BczxbrPS5YRDF3guKJ-wAg==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.497 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~HZ-W4XEdDCX4QV9hWB4CMg==/tech.butterfly.app-BczxbrPS5YRDF3guKJ-wAg==/split_config.xhdpi.apk' with 1 weak references
+05-11 10:27:13.497 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qqIyNwLys0pdvk7sW73How==/word.office.docxviewer.document.docx.reader-TTRsSf7b4Bu4q86OKHfOVA==/base.apk' with 1 weak references
+05-11 10:27:13.497  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher} entered launcher screen? false
+05-11 10:27:13.498 21214 21221 W torola.freeform: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~qqIyNwLys0pdvk7sW73How==/word.office.docxviewer.document.docx.reader-TTRsSf7b4Bu4q86OKHfOVA==/split_config.arm64_v8a.apk' with 1 weak references
+05-11 10:27:13.499  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 10:27:13.501  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: word.office.docxviewer.document.docx.reader, but found with extended search.
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: water.sort.puzzle.game.color.sorting.free, but found with extended search.
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: tech.butterfly.app, but found with extended search.
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: src.com.dop, but found with extended search.
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: sorting.games.goods.sort.triple.match3d.puzzle.stuff, but found with extended search.
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: org.videolan.vlc, but found with extended search.
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-11 10:27:13.553  1990  2605 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-11 10:27:13.554  1990  2605 W PackageManager: Missing required system package: io.teslatech.callbreak, but found with extended search.
+05-11 10:27:13.554  1990  2605 W PackageManager: Missing required system package: info.indiapost.daksewa, but found with extended search.
+05-11 10:27:13.555  1990  2605 W PackageManager: Missing required system package: info.indiapost, but found with extended search.
+05-11 10:27:13.555  1990  2605 W PackageManager: Missing required system package: in.swiggy.android.instamart, but found with extended search.
+05-11 10:27:13.555  1990  2605 W PackageManager: Missing required system package: in.amazon.mShop.android.shopping, but found with extended search.
+05-11 10:27:13.556  1990  2605 W PackageManager: Missing required system package: homeworkout.homeworkouts.noequipment, but found with extended search.
+05-11 10:27:13.556  1990  2605 W PackageManager: Missing required system package: gymworkout.gym.gymlog.gymtrainer, but found with extended search.
+05-11 10:27:13.556  1990  2605 W PackageManager: Missing required system package: cris.org.in.prs.ima, but found with extended search.
+05-11 10:27:13.556  1990  2605 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-11 10:27:13.556  1990  2605 W PackageManager: Missing required system package: com.worldpackers.travelers, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.whereismytrain.android, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.valvesoftware.android.steam.community, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.tallteam.citychase, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.sbi.lotusintouch, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.rapido.passenger, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.phonepe.app, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.olacabs.customer, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.myntra.android, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.mbm.elereaning.mbmecj, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.marc.files, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-11 10:27:13.557  1990  2605 W PackageManager: Missing required system package: com.kiloo.subwaysurf, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.jpl.jiomart, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.jaipurcitybus.mobileticketingapp, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.internshala.app, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.innersloth.spacemafia, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.google.earth, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.subscriptions.red, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.nbu.paisa.user, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.fitness, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.bard, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.adm, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.google.ai.edge.gallery, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.fsn.nykaa, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.flipkart.android, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.easybrain.sudoku.android, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.easybrain.spider.solitaire, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.easybrain.jigsaw.puzzles, but found with extended search.
+05-11 10:27:13.558  1990  2605 W PackageManager: Missing required system package: com.easybrain.color.sort.puzzle, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.easybrain.block.puzzle.games, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.discord, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.digital.bsnl.selfcare, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.digilocker.android, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.dare2compete.app, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.catool.solitaire.card, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.cambyte.okenscan, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.bt.bms, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.blackout.spades, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.azefsw.audioconnect, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.application.zomato, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.anthropic.claude, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: com.Dominos, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: app.revanced.manager.flutter, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: app.netmirror.netmirrornew, but found with extended search.
+05-11 10:27:13.559  1990  2605 W PackageManager: Missing required system package: all.documentreader.filereader.office.viewer, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: ai.character.app, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.youtube.creator, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.dopuz.klotski.riddle, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-11 10:27:13.560  1990  2605 W PackageManager: Missing required system package: app.revanced.android.apps.youtube.music, but found with extended search.
+05-11 10:27:13.566  1990  2605 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-11 10:27:14.075 25920 25920 D StateManager: onStateTransitionEnd - state: AllApps
+05-11 10:27:14.076 25920 25920 D NotifySysuiOfCurrentRotation:  rotation-1
+05-11 10:27:14.077  2866  2866 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+05-11 10:27:14.077 25920 25920 D NotifySysuiOfCurrentRotation:  rotation-1
+05-11 10:27:14.078  2866  2866 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+05-11 10:27:14.079 25920 25920 D RecentsView: reset - mEnableDrawingLiveTile: true, mRecentsAnimationController: null
+05-11 10:27:14.086 25920 25920 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-11 10:27:14.086 25920 25920 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-11 10:27:14.234  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.235  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.235  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.235  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.236  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.236  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.237  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.237  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.237  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.237  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.238  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.238  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.238  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.238  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.238  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.239  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.239  5200  5209 I dyyr    : (REDACTED) appOpsListener %s %s
+05-11 10:27:14.239  5200  5209 I dyyr    : (REDACTED) Ignoring irrelevant audio permission changes for package %s
+05-11 10:27:14.274   922 21316 I keystore2: system/security/keystore2/watchdog/src/lib.rs:319 - Watchdog thread idle -> terminating. Have a great day.
+05-11 10:27:15.331  1990  2635 D ActivityManager: freezing 21322 com.internshala.app, reason = oom_cached
+05-11 10:27:15.337  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 10:27:15.338  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 10:27:15.338  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10358} in 2ms
+05-11 10:27:15.448  1386  1386 I Scheduler: notifyScrollEvent state=0

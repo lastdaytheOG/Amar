@@ -1,0 +1,410 @@
+package com.amar.vault.agent.control
+
+import com.amar.vault.agent.control.persistence.CheckpointWriter
+import com.amar.vault.agent.dsl.ActionEnvelope
+import com.amar.vault.agent.dsl.ActionKind
+import com.amar.vault.agent.dsl.AgentAction
+import com.amar.vault.agent.dsl.VerifySpec
+import io.mockk.mockk
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Test
+import java.util.concurrent.atomic.AtomicInteger
+
+/**
+ * Integration-ish tests of ControlLayer.
+ *
+ * Strategy:
+ *   - Use real ExecutorRegistry + StateMachine + TaskContext (simple classes).
+ *   - Mock CheckpointWriter + VerificationEngineApi (have I/O or Android deps).
+ *   - Provide test executors that record calls and return scripted results.
+ *   - Drive everything on a TestScope/TestDispatcher so retry delays are virtual.
+ *
+ * What we're validating:
+ *   - Happy path: valid envelope → Running → Verifying → Succeeded.
+ *   - Validation-rejected envelope → Failed(ValidationRejected) without executing.
+ *   - Executor failure → retry with exponential backoff → eventual success or giveup.
+ *   - Fatal failure stops retries immediately.
+ *   - Verification failure re-runs executor up to retry budget.
+ *   - Fallback across executor tiers within one attempt.
+ *   - Terminal observers fire on any terminal state.
+ */
+@OptIn(ExperimentalCoroutinesApi::class)
+class ControlLayerTest {
+
+    private val dispatcher = StandardTestDispatcher()
+    private val scope = TestScope(dispatcher)
+
+    private val noopCheckpointer: CheckpointWriter = mockk(relaxed = true)
+
+    // -------------------------------------------------------------------------
+    // Happy path
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `valid envelope with no verify ends in Succeeded`() = runTest(dispatcher) {
+        val executor = ScriptedExecutor(
+            ActionKind.HOME,
+            ExecutorTier.ACCESSIBILITY,
+            result = ExecutionResult.Executed(durationMs = 10)
+        )
+        val cl = buildControlLayer(executors = listOf(executor), verifier = alwaysTrueVerifier())
+
+        val ctx = cl.submitEnvelope(ActionEnvelope(action = AgentAction.Home))
+        advanceUntilIdle()
+
+        val terminal = ctx.current
+        assertTrue("expected Succeeded, got $terminal", terminal is TaskState.Succeeded)
+        assertEquals(1, executor.callCount.get())
+    }
+
+    @Test
+    fun `ExecutedAndVerified skips the verify step entirely`() = runTest(dispatcher) {
+        val callVerifier = CallCountingVerifier()
+        val executor = ScriptedExecutor(
+            ActionKind.READ_SCREEN,
+            ExecutorTier.ACCESSIBILITY,
+            result = ExecutionResult.ExecutedAndVerified(durationMs = 5)
+        )
+        val cl = buildControlLayer(executors = listOf(executor), verifier = callVerifier)
+
+        // Envelope has a verify block, but the executor self-verified.
+        val envelope = ActionEnvelope(
+            action = AgentAction.ReadScreen,
+            verify = verifyUiContains("anything")
+        )
+        val ctx = cl.submitEnvelope(envelope)
+        advanceUntilIdle()
+
+        assertTrue(ctx.current is TaskState.Succeeded)
+        assertEquals("verifier should NOT be called", 0, callVerifier.calls)
+    }
+
+    // -------------------------------------------------------------------------
+    // Validation-rejected path
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `invalid JSON via submitRaw produces Failed(ValidationRejected) without executing`() =
+        runTest(dispatcher) {
+            val executor = ScriptedExecutor(
+                ActionKind.HOME,
+                ExecutorTier.ACCESSIBILITY,
+                result = ExecutionResult.Executed(0)
+            )
+            val cl = buildControlLayer(executors = listOf(executor), verifier = alwaysTrueVerifier())
+
+            val ctx = cl.submitRaw("""{"action":"teleport","params":{}}""")
+            advanceUntilIdle()
+
+            val terminal = ctx.current as TaskState.Failed
+            assertTrue(terminal.reason is FailureReason.ValidationRejected)
+            assertEquals("executor must not run for rejected envelope", 0, executor.callCount.get())
+        }
+
+    // -------------------------------------------------------------------------
+    // Missing executor
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `no registered executor produces Failed(NoExecutor)`() = runTest(dispatcher) {
+        // Registry with no executors for CLICK, but we submit a Click action.
+        val cl = buildControlLayer(executors = emptyList(), verifier = alwaysTrueVerifier())
+
+        val envelope = ActionEnvelope(
+            action = AgentAction.Click(target = "Send")
+        )
+        val ctx = cl.submitEnvelope(envelope)
+        advanceUntilIdle()
+
+        val terminal = ctx.current as TaskState.Failed
+        assertTrue(terminal.reason is FailureReason.NoExecutor)
+    }
+
+    // -------------------------------------------------------------------------
+    // Retry behavior
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `executor fails twice then succeeds — task ends in Succeeded after 3 attempts`() =
+        runTest(dispatcher) {
+            val executor = SequencedExecutor(
+                ActionKind.HOME,
+                results = listOf(
+                    ExecutionResult.Failed(FailureReason.TargetNotFound("x", emptyList()), 5),
+                    ExecutionResult.Failed(FailureReason.TargetNotFound("x", emptyList()), 5),
+                    ExecutionResult.Executed(5)
+                )
+            )
+            val cl = buildControlLayer(executors = listOf(executor), verifier = alwaysTrueVerifier())
+
+            val envelope = ActionEnvelope(
+                action = AgentAction.Home,
+                constraints = constraintsJson(timeoutMs = 5000, retries = 3, backoffMs = 10)
+            )
+            val ctx = cl.submitEnvelope(envelope)
+            advanceUntilIdle()
+
+            val terminal = ctx.current
+            assertTrue("expected Succeeded, got $terminal", terminal is TaskState.Succeeded)
+            assertEquals(3, (terminal as TaskState.Succeeded).attemptsUsed)
+            assertEquals(3, executor.callCount.get())
+        }
+
+    @Test
+    fun `exhausting retries ends in Failed with the final reason`() = runTest(dispatcher) {
+        val failure = FailureReason.TargetNotFound("Send", listOf("text"))
+        val executor = ScriptedExecutor(
+            ActionKind.HOME,
+            ExecutorTier.ACCESSIBILITY,
+            result = ExecutionResult.Failed(failure, 5)
+        )
+        val cl = buildControlLayer(executors = listOf(executor), verifier = alwaysTrueVerifier())
+
+        val envelope = ActionEnvelope(
+            action = AgentAction.Home,
+            constraints = constraintsJson(timeoutMs = 5000, retries = 2, backoffMs = 10)
+        )
+        val ctx = cl.submitEnvelope(envelope)
+        advanceUntilIdle()
+
+        val terminal = ctx.current as TaskState.Failed
+        assertEquals(3, terminal.attemptsUsed) // 1 initial + 2 retries
+        assertTrue(terminal.reason is FailureReason.TargetNotFound)
+    }
+
+    @Test
+    fun `fatal failure skips remaining retries`() = runTest(dispatcher) {
+        val executor = ScriptedExecutor(
+            ActionKind.HOME,
+            ExecutorTier.ACCESSIBILITY,
+            result = ExecutionResult.FatalFailure(
+                reason = FailureReason.PermissionDenied("android.permission.SEND_SMS"),
+                durationMs = 0
+            )
+        )
+        val cl = buildControlLayer(executors = listOf(executor), verifier = alwaysTrueVerifier())
+
+        val envelope = ActionEnvelope(
+            action = AgentAction.Home,
+            constraints = constraintsJson(retries = 5)
+        )
+        val ctx = cl.submitEnvelope(envelope)
+        advanceUntilIdle()
+
+        val terminal = ctx.current as TaskState.Failed
+        assertEquals("fatal failure must not retry", 1, executor.callCount.get())
+        assertTrue(terminal.reason is FailureReason.PermissionDenied)
+    }
+
+    // -------------------------------------------------------------------------
+    // Verification flow
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `verification failure triggers retry`() = runTest(dispatcher) {
+        val verifier = SequencedVerifier(results = listOf(false, true))
+        val executor = ScriptedExecutor(
+            ActionKind.HOME,
+            ExecutorTier.ACCESSIBILITY,
+            result = ExecutionResult.Executed(10)
+        )
+        val cl = buildControlLayer(executors = listOf(executor), verifier = verifier)
+
+        val envelope = ActionEnvelope(
+            action = AgentAction.Home,
+            constraints = constraintsJson(retries = 2, backoffMs = 10),
+            verify = verifyUiContains("ok")
+        )
+        val ctx = cl.submitEnvelope(envelope)
+        advanceUntilIdle()
+
+        assertTrue(ctx.current is TaskState.Succeeded)
+        assertEquals(2, executor.callCount.get())  // re-executed after verify failed once
+        assertEquals(2, verifier.calls.get())
+    }
+
+    // -------------------------------------------------------------------------
+    // Tier fallback within a single attempt
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `failed INTENT executor falls back to ACCESSIBILITY executor in same attempt`() =
+        runTest(dispatcher) {
+            val intentExec = ScriptedExecutor(
+                ActionKind.OPEN_APP,
+                ExecutorTier.INTENT,
+                result = ExecutionResult.Failed(FailureReason.SystemError("intent rejected"), 5)
+            )
+            val fallbackExec = ScriptedExecutor(
+                ActionKind.OPEN_APP,
+                ExecutorTier.ACCESSIBILITY,
+                result = ExecutionResult.Executed(20)
+            )
+            val cl = buildControlLayer(
+                executors = listOf(intentExec, fallbackExec),
+                verifier = alwaysTrueVerifier()
+            )
+
+            val envelope = ActionEnvelope(action = AgentAction.OpenApp(app = "Foo"))
+            val ctx = cl.submitEnvelope(envelope)
+            advanceUntilIdle()
+
+            assertTrue(ctx.current is TaskState.Succeeded)
+            // BOTH executors invoked in a single attempt — INTENT first (failed),
+            // then ACCESSIBILITY fallback (succeeded).
+            assertEquals(1, intentExec.callCount.get())
+            assertEquals(1, fallbackExec.callCount.get())
+            // attemptsUsed should still be 1 — fallback happens within one attempt.
+            assertEquals(1, (ctx.current as TaskState.Succeeded).attemptsUsed)
+        }
+
+    // -------------------------------------------------------------------------
+    // Terminal observers
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `terminal observer fires once on success`() = runTest(dispatcher) {
+        val observer = RecordingObserver()
+        val executor = ScriptedExecutor(
+            ActionKind.HOME,
+            ExecutorTier.ACCESSIBILITY,
+            result = ExecutionResult.Executed(0)
+        )
+        val cl = buildControlLayer(
+            executors = listOf(executor),
+            verifier = alwaysTrueVerifier(),
+            observers = listOf(observer)
+        )
+
+        cl.submitEnvelope(ActionEnvelope(action = AgentAction.Home))
+        advanceUntilIdle()
+
+        assertEquals(1, observer.invocations.size)
+        assertTrue(observer.invocations.first().second is TaskState.Succeeded)
+    }
+
+    @Test
+    fun `observer exception does not break subsequent observers`() = runTest(dispatcher) {
+        val throwingObserver = TaskTerminalObserver { _, _ -> error("boom") }
+        val recording = RecordingObserver()
+        val executor = ScriptedExecutor(
+            ActionKind.HOME,
+            ExecutorTier.ACCESSIBILITY,
+            result = ExecutionResult.Executed(0)
+        )
+        val cl = buildControlLayer(
+            executors = listOf(executor),
+            verifier = alwaysTrueVerifier(),
+            observers = listOf(throwingObserver, recording)
+        )
+
+        cl.submitEnvelope(ActionEnvelope(action = AgentAction.Home))
+        advanceUntilIdle()
+
+        assertEquals("second observer still invoked", 1, recording.invocations.size)
+    }
+
+    // -------------------------------------------------------------------------
+    // Test helpers
+    // -------------------------------------------------------------------------
+
+    private fun buildControlLayer(
+        executors: List<ActionExecutor>,
+        verifier: VerificationEngineApi,
+        observers: List<TaskTerminalObserver> = emptyList()
+    ): ControlLayer {
+        val registry = ExecutorRegistry().apply { executors.forEach(::register) }
+        return ControlLayer(
+            registry = registry,
+            checkpointWriter = noopCheckpointer,
+            verificationEngine = verifier,
+            scope = scope,
+            logger = ControlLayerLogger.NoOp,
+            terminalObservers = observers
+        )
+    }
+
+    private fun alwaysTrueVerifier(): VerificationEngineApi {
+        return object : VerificationEngineApi {
+            override suspend fun verify(spec: VerifySpec, ctx: TaskContext): Boolean = true
+        }
+    }
+
+    private fun verifyUiContains(query: String): JsonObject =
+        JsonObject(mapOf(
+            "type" to JsonPrimitive("ui_contains"),
+            "query" to JsonPrimitive(query)
+        ))
+
+    private fun constraintsJson(
+        timeoutMs: Long = 5000,
+        retries: Int = 1,
+        backoffMs: Long = 10
+    ): JsonObject = JsonObject(mapOf(
+        "timeout_ms" to JsonPrimitive(timeoutMs),
+        "retries" to JsonPrimitive(retries),
+        "retry_backoff_ms" to JsonPrimitive(backoffMs)
+    ))
+}
+
+// ---------------------------------------------------------------------------
+// Test doubles
+// ---------------------------------------------------------------------------
+
+private class ScriptedExecutor(
+    override val handles: ActionKind,
+    override val tier: ExecutorTier,
+    private val result: ExecutionResult
+) : ActionExecutor {
+    val callCount = AtomicInteger(0)
+    override fun isAvailable(): Boolean = true
+    override suspend fun execute(action: AgentAction, ctx: TaskContext): ExecutionResult {
+        callCount.incrementAndGet()
+        return result
+    }
+}
+
+private class SequencedExecutor(
+    override val handles: ActionKind,
+    private val results: List<ExecutionResult>,
+    override val tier: ExecutorTier = ExecutorTier.ACCESSIBILITY
+) : ActionExecutor {
+    val callCount = AtomicInteger(0)
+    override fun isAvailable(): Boolean = true
+    override suspend fun execute(action: AgentAction, ctx: TaskContext): ExecutionResult {
+        val idx = callCount.getAndIncrement()
+        return results[idx.coerceAtMost(results.lastIndex)]
+    }
+}
+
+private class CallCountingVerifier : VerificationEngineApi {
+    var calls = 0
+        private set
+    override suspend fun verify(spec: VerifySpec, ctx: TaskContext): Boolean {
+        calls++
+        return true
+    }
+}
+
+private class SequencedVerifier(private val results: List<Boolean>) : VerificationEngineApi {
+    val calls = AtomicInteger(0)
+    override suspend fun verify(spec: VerifySpec, ctx: TaskContext): Boolean {
+        val idx = calls.getAndIncrement()
+        return results[idx.coerceAtMost(results.lastIndex)]
+    }
+}
+
+private class RecordingObserver : TaskTerminalObserver {
+    val invocations = mutableListOf<Pair<TaskContext, TaskState>>()
+    override fun onTerminal(ctx: TaskContext, terminal: TaskState) {
+        invocations += ctx to terminal
+    }
+}

@@ -1,0 +1,340 @@
+package com.amar.vault.agent.dsl
+
+import kotlinx.serialization.SerializationException
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Assert.fail
+import org.junit.Test
+
+/**
+ * Unit tests for DSL serialization and deserialization.
+ *
+ * These tests are the BASE TRUTH for the Brain↔ControlLayer contract.
+ * If something here breaks silently, every downstream test will produce
+ * nonsense and debugging becomes expensive. Keep them specific.
+ *
+ * Scope:
+ *   - Wire format shape (nested params)
+ *   - Polymorphic dispatch on "action" discriminator
+ *   - Round-trip stability (encode → decode → identical)
+ *   - Strict-vs-lenient validation boundaries
+ *   - Enum serialization (TargetStrategy, ScrollDirection)
+ */
+class ActionEnvelopeSerializerTest {
+
+    // -------------------------------------------------------------------------
+    // Happy path: each of the 10 v1 actions decodes correctly
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `decodes open_app with explicit packageId`() {
+        val json = """
+            {
+              "action": "open_app",
+              "params": { "app": "WhatsApp", "packageId": "com.whatsapp" }
+            }
+        """.trimIndent()
+        val env = AgentJson.decodeFromString(ActionEnvelope.serializer(), json)
+        val action = env.action as AgentAction.OpenApp
+        assertEquals("WhatsApp", action.app)
+        assertEquals("com.whatsapp", action.packageId)
+    }
+
+    @Test
+    fun `decodes open_app without packageId`() {
+        val json = """{"action":"open_app","params":{"app":"Settings"}}"""
+        val env = AgentJson.decodeFromString(ActionEnvelope.serializer(), json)
+        val action = env.action as AgentAction.OpenApp
+        assertEquals("Settings", action.app)
+        assertNull(action.packageId)
+    }
+
+    @Test
+    fun `decodes home action with empty params`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"home","params":{}}"""
+        )
+        assertTrue(env.action is AgentAction.Home)
+    }
+
+    @Test
+    fun `decodes home action with missing params`() {
+        // The wire format allows omitting params for zero-arg actions.
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"home"}"""
+        )
+        assertTrue(env.action is AgentAction.Home)
+    }
+
+    @Test
+    fun `decodes send_sms with all required fields`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"send_sms","params":{"to":"+919876543210","body":"hello"}}"""
+        )
+        val action = env.action as AgentAction.SendSms
+        assertEquals("+919876543210", action.to)
+        assertEquals("hello", action.body)
+    }
+
+    @Test
+    fun `decodes make_call`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"make_call","params":{"to":"+919876543210"}}"""
+        )
+        assertEquals("+919876543210", (env.action as AgentAction.MakeCall).to)
+    }
+
+    @Test
+    fun `decodes send_message`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"send_message","params":{"app":"whatsapp","to":"Mom","content":"otw"}}"""
+        )
+        val action = env.action as AgentAction.SendMessage
+        assertEquals("whatsapp", action.app)
+        assertEquals("Mom", action.to)
+        assertEquals("otw", action.content)
+    }
+
+    @Test
+    fun `decodes click with explicit strategy`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"click","params":{"target":"Send","strategy":"text"}}"""
+        )
+        val action = env.action as AgentAction.Click
+        assertEquals("Send", action.target)
+        assertEquals(TargetStrategy.TEXT, action.strategy)
+    }
+
+    @Test
+    fun `decodes click with default AUTO strategy when omitted`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"click","params":{"target":"Send"}}"""
+        )
+        assertEquals(TargetStrategy.AUTO, (env.action as AgentAction.Click).strategy)
+    }
+
+    @Test
+    fun `decodes type_text`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"type_text","params":{"target":"Message","text":"hello world"}}"""
+        )
+        val action = env.action as AgentAction.TypeText
+        assertEquals("Message", action.target)
+        assertEquals("hello world", action.text)
+    }
+
+    @Test
+    fun `decodes scroll with direction`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"scroll","params":{"direction":"down"}}"""
+        )
+        assertEquals(ScrollDirection.DOWN, (env.action as AgentAction.Scroll).direction)
+    }
+
+    @Test
+    fun `decodes wait`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"wait","params":{"ms":1500}}"""
+        )
+        assertEquals(1500, (env.action as AgentAction.Wait).ms)
+    }
+
+    @Test
+    fun `decodes read_screen`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"read_screen","params":{}}"""
+        )
+        assertTrue(env.action is AgentAction.ReadScreen)
+    }
+
+    // -------------------------------------------------------------------------
+    // Constraints + verify — lenient leniency
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `preserves constraints as JsonObject for lenient parsing`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """
+            {
+              "action": "home",
+              "constraints": { "timeout_ms": 5000, "retries": 3, "unknown_key": "ok" }
+            }
+            """.trimIndent()
+        )
+        // effectiveConstraints must parse known keys and stash unknown ones.
+        val c = env.effectiveConstraints
+        assertEquals(5000L, c.timeoutMs)
+        assertEquals(3, c.retries)
+        assertEquals(listOf("unknown_key"), c.unknownKeys)
+    }
+
+    @Test
+    fun `verify with unknown type degrades to Unknown variant`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """
+            {
+              "action": "home",
+              "verify": { "type": "future_variant", "field": "abc" }
+            }
+            """.trimIndent()
+        )
+        val v = env.effectiveVerify as VerifySpec.Unknown
+        assertEquals("future_variant", v.rawType)
+    }
+
+    @Test
+    fun `verify ui_contains parsed correctly`() {
+        val env = AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """
+            {
+              "action": "home",
+              "verify": { "type": "ui_contains", "query": "Send", "is_regex": false }
+            }
+            """.trimIndent()
+        )
+        val v = env.effectiveVerify as VerifySpec.UiContains
+        assertEquals("Send", v.query)
+        assertEquals(false, v.isRegex)
+    }
+
+    // -------------------------------------------------------------------------
+    // Round-trip: encode then decode back, expect equality
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `round-trip open_app preserves all fields`() {
+        val original = ActionEnvelope(
+            action = AgentAction.OpenApp(app = "WhatsApp", packageId = "com.whatsapp"),
+            constraints = null,
+            verify = null
+        )
+        val encoded = AgentJson.encodeToString(ActionEnvelope.serializer(), original)
+        val decoded = AgentJson.decodeFromString(ActionEnvelope.serializer(), encoded)
+        assertEquals(original, decoded)
+    }
+
+    @Test
+    fun `round-trip send_message preserves all fields`() {
+        val original = ActionEnvelope(
+            action = AgentAction.SendMessage(app = "whatsapp", to = "Mom", content = "hi")
+        )
+        val encoded = AgentJson.encodeToString(ActionEnvelope.serializer(), original)
+        val decoded = AgentJson.decodeFromString(ActionEnvelope.serializer(), encoded)
+        assertEquals(original, decoded)
+    }
+
+    @Test
+    fun `encoded output uses nested params shape`() {
+        val env = ActionEnvelope(
+            action = AgentAction.SendSms(to = "+911234567890", body = "hello")
+        )
+        val encoded = AgentJson.encodeToString(ActionEnvelope.serializer(), env)
+        val tree = AgentJson.parseToJsonElement(encoded).jsonObject
+
+        // Wire shape MUST be nested: top-level has "action" + "params",
+        // params MUST NOT have an "action" key leaking through.
+        assertEquals("send_sms", tree["action"]!!.jsonPrimitive.content)
+        val params = tree["params"]!!.jsonObject
+        assertEquals("+911234567890", params["to"]!!.jsonPrimitive.content)
+        assertEquals("hello", params["body"]!!.jsonPrimitive.content)
+        assertNull("encoded params must not leak the action discriminator", params["action"])
+    }
+
+    @Test
+    fun `encoded output omits null constraints and verify blocks`() {
+        val env = ActionEnvelope(action = AgentAction.Home)
+        val encoded = AgentJson.encodeToString(ActionEnvelope.serializer(), env)
+        val tree = AgentJson.parseToJsonElement(encoded).jsonObject
+        assertNull(tree["constraints"])
+        assertNull(tree["verify"])
+    }
+
+    // -------------------------------------------------------------------------
+    // Strictness — unknown action names, unknown params, malformed JSON
+    // -------------------------------------------------------------------------
+
+    @Test(expected = SerializationException::class)
+    fun `unknown action fails fast`() {
+        AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"teleport","params":{}}"""
+        )
+    }
+
+    @Test(expected = SerializationException::class)
+    fun `unknown param in known action fails fast`() {
+        // open_app accepts app + packageId only. Adding "frobnicate" must fail.
+        AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"open_app","params":{"app":"X","frobnicate":true}}"""
+        )
+    }
+
+    @Test
+    fun `malformed JSON throws SerializationException with readable message`() {
+        try {
+            AgentJson.decodeFromString(
+                ActionEnvelope.serializer(),
+                """{"action":"open_app","params":}"""
+            )
+            fail("expected SerializationException")
+        } catch (e: SerializationException) {
+            // Don't assert specific wording — library may change it. Just
+            // assert it's non-empty so we can log it meaningfully.
+            assertNotNull(e.message)
+            assertTrue(e.message!!.isNotBlank())
+        }
+    }
+
+    @Test(expected = SerializationException::class)
+    fun `invalid scroll direction fails`() {
+        AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"scroll","params":{"direction":"sideways"}}"""
+        )
+    }
+
+    @Test(expected = SerializationException::class)
+    fun `missing required field fails`() {
+        AgentJson.decodeFromString(
+            ActionEnvelope.serializer(),
+            """{"action":"send_sms","params":{"to":"+911234567890"}}"""  // no body
+        )
+    }
+
+    @Test
+    fun `params as a non-object fails`() {
+        try {
+            AgentJson.decodeFromString(
+                ActionEnvelope.serializer(),
+                """{"action":"home","params":"nope"}"""
+            )
+            fail("expected SerializationException")
+        } catch (e: SerializationException) {
+            assertTrue(
+                "error should mention params",
+                e.message?.contains("params") == true
+            )
+        }
+    }
+}

@@ -1,0 +1,164 @@
+package com.amar.vault.agent.control.executors
+
+import android.Manifest
+import android.app.Application
+import android.content.Context
+import androidx.test.core.app.ApplicationProvider
+import com.amar.vault.agent.control.ExecutionResult
+import com.amar.vault.agent.control.FailureReason
+import com.amar.vault.agent.control.TaskContext
+import com.amar.vault.agent.dsl.ActionEnvelope
+import com.amar.vault.agent.dsl.AgentAction
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Before
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.Shadows.shadowOf
+
+/**
+ * Permission-sensitive executor tests.
+ *
+ * Robolectric's ShadowApplication lets us grant/deny runtime permissions
+ * programmatically without a real device. We test:
+ *   - Permission NOT granted → isAvailable returns false, execute returns
+ *     FatalFailure(PermissionDenied).
+ *   - Permission granted → execute follows the normal path.
+ *
+ * For MakeCall we don't test actual dialing (impossible in Robolectric);
+ * we verify the intent shape. For SendSms we defer end-to-end testing to
+ * instrumented tests because SmsManager requires device-level integration
+ * that Robolectric shadows don't fully emulate — we instead test the
+ * permission-guard behavior which is where the subtle bugs live.
+ */
+@OptIn(ExperimentalCoroutinesApi::class)
+@RunWith(RobolectricTestRunner::class)
+class PermissionExecutorsTest {
+
+    private lateinit var context: Context
+    private lateinit var application: Application
+
+    @Before
+    fun setUp() {
+        context = ApplicationProvider.getApplicationContext()
+        application = context as Application
+        // Start each test with a clean permission slate.
+        shadowOf(application).denyPermissions(
+            Manifest.permission.CALL_PHONE,
+            Manifest.permission.SEND_SMS
+        )
+    }
+
+    private fun ctxFor(envelope: ActionEnvelope) = TaskContext.create(envelope)
+
+    // -------------------------------------------------------------------------
+    // MakeCallExecutor
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `make_call isAvailable returns false without permission`() {
+        val executor = MakeCallExecutor(context)
+        assertEquals(false, executor.isAvailable())
+    }
+
+    @Test
+    fun `make_call isAvailable returns true after grant`() {
+        shadowOf(application).grantPermissions(Manifest.permission.CALL_PHONE)
+        val executor = MakeCallExecutor(context)
+        assertEquals(true, executor.isAvailable())
+    }
+
+    @Test
+    fun `make_call fails FatalFailure(PermissionDenied) without permission`() = runTest {
+        val executor = MakeCallExecutor(context)
+        val envelope = ActionEnvelope(action = AgentAction.MakeCall(to = "+919876543210"))
+
+        val result = executor.execute(envelope.action, ctxFor(envelope))
+        assertTrue("expected FatalFailure, got $result", result is ExecutionResult.FatalFailure)
+        val fatal = result as ExecutionResult.FatalFailure
+        assertTrue(fatal.reason is FailureReason.PermissionDenied)
+        assertEquals(
+            Manifest.permission.CALL_PHONE,
+            (fatal.reason as FailureReason.PermissionDenied).permission
+        )
+    }
+
+    @Test
+    fun `make_call with empty number fails Failed(SystemError)`() = runTest {
+        shadowOf(application).grantPermissions(Manifest.permission.CALL_PHONE)
+        val executor = MakeCallExecutor(context)
+        // Validator would normally catch this, but we bypass to test defensive handling.
+        val envelope = ActionEnvelope(action = AgentAction.MakeCall(to = "   "))
+
+        val result = executor.execute(envelope.action, ctxFor(envelope))
+        assertTrue(result is ExecutionResult.Failed)
+        assertTrue((result as ExecutionResult.Failed).reason is FailureReason.SystemError)
+    }
+
+    @Test
+    fun `make_call with permission launches ACTION_CALL intent`() = runTest {
+        shadowOf(application).grantPermissions(Manifest.permission.CALL_PHONE)
+        val executor = MakeCallExecutor(context)
+        val envelope = ActionEnvelope(action = AgentAction.MakeCall(to = "+919876543210"))
+
+        val result = executor.execute(envelope.action, ctxFor(envelope))
+        // Robolectric successfully "launches" the intent, so Executed is expected.
+        assertTrue("expected Executed, got $result", result is ExecutionResult.Executed)
+        val executed = result as ExecutionResult.Executed
+        assertEquals("+919876543210", executed.resultData["to"])
+        assertTrue(executed.resultData["uri"]?.startsWith("tel:") == true)
+    }
+
+    @Test
+    fun `make_call rejects wrong action type`() = runTest {
+        val executor = MakeCallExecutor(context)
+        val envelope = ActionEnvelope(action = AgentAction.Home)
+        val result = executor.execute(AgentAction.Home, ctxFor(envelope))
+        assertTrue(result is ExecutionResult.FatalFailure)
+    }
+
+    // -------------------------------------------------------------------------
+    // SendSmsExecutor — permission-guard only (real SMS flow is device-only)
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `send_sms isAvailable returns false without permission`() {
+        val executor = SendSmsExecutor(context)
+        assertEquals(false, executor.isAvailable())
+    }
+
+    @Test
+    fun `send_sms isAvailable returns true after grant`() {
+        shadowOf(application).grantPermissions(Manifest.permission.SEND_SMS)
+        val executor = SendSmsExecutor(context)
+        assertEquals(true, executor.isAvailable())
+    }
+
+    @Test
+    fun `send_sms fails FatalFailure(PermissionDenied) without permission`() = runTest {
+        val executor = SendSmsExecutor(context)
+        val envelope = ActionEnvelope(action = AgentAction.SendSms(
+            to = "+919876543210", body = "test"
+        ))
+
+        val result = executor.execute(envelope.action, ctxFor(envelope))
+        assertTrue(result is ExecutionResult.FatalFailure)
+        val fatal = result as ExecutionResult.FatalFailure
+        assertTrue(fatal.reason is FailureReason.PermissionDenied)
+        assertEquals(
+            Manifest.permission.SEND_SMS,
+            (fatal.reason as FailureReason.PermissionDenied).permission
+        )
+    }
+
+    @Test
+    fun `send_sms rejects wrong action type`() = runTest {
+        val executor = SendSmsExecutor(context)
+        val envelope = ActionEnvelope(action = AgentAction.Home)
+        val result = executor.execute(AgentAction.Home, ctxFor(envelope))
+        assertTrue(result is ExecutionResult.FatalFailure)
+    }
+}

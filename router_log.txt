@@ -1,0 +1,523 @@
+--------- beginning of main
+05-10 12:16:24.455  1386  1386 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-10 12:16:24.455 23674 23674 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.pay.service.BIND dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+--------- beginning of system
+05-10 12:16:24.455  2866  2910 D WindowManagerShell: setLauncherKeepClearAreaHeight: visible=false, height=141
+05-10 12:16:24.455 14686 14686 I CastMediaRouteProvider: Published 0 routes
+05-10 12:16:24.455  5569  5955 D GameMode: isScreenUnlocked: true
+05-10 12:16:24.456  1990  6243 D ActivityTaskManager: sendShowDecorCaptionWindow Task is not organized Task{e04a940 #1263 type=undefined I=com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher}
+05-10 12:16:24.458  1990  2727 I serviceDiscovery: [MdnsDiscoveryManager] Unregistering listener for serviceType:_googlecast._tcp.local
+05-10 12:16:24.462  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} entered launcher screen? true
+05-10 12:16:24.463  5569  5955 D GameMode: isScreenUnlocked: true
+05-10 12:16:24.464  2866  2910 D WindowManagerShell: onActivityRestartAttempt: ComponentInfo{com.amar.vault/com.amar.vault.MainActivity}
+05-10 12:16:24.464  1990  2175 W MotoBatteryCareService: uid: 10572 pkgName:com.amar.vault come to foreground
+05-10 12:16:24.465  5569  5955 D GameMode: isScreenUnlocked: true
+05-10 12:16:24.467   842   842 W lowmemorykiller: Failed to open /proc/4572/oom_score_adj; errno=2: process 4572 might have been killed
+05-10 12:16:24.476  5569  5955 D GameMode: isScreenUnlocked: true
+05-10 12:16:24.476  5569  5955 D GameMode: isScreenUnlocked: true
+05-10 12:16:24.481  1990  2727 I serviceDiscovery: [MdnsDiscoveryManager] Unregistering listener for serviceType:_googlecast._tcp.local
+05-10 12:16:24.483  1990  2727 I serviceDiscovery: [MdnsDiscoveryManager] Unregistering listener for serviceType:_googlecast._tcp.local
+05-10 12:16:24.484  1990  2727 I serviceDiscovery: [MdnsSocketProvider] Stop monitoring sockets.
+05-10 12:16:24.484  1990  2727 I TetheringManager: unregisterTetheringEventCallback caller:android
+05-10 12:16:24.485  1990  2059 I WifiService: releaseMulticastLock uid=10180 lockTag=MdnsServiceBrowserImpl
+05-10 12:16:24.486 25180 25180 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+05-10 12:16:24.486 11328 11328 W AxMediaRouter: Ignoring null provider descriptor from ComponentInfo{com.google.android.gms/com.google.android.gms.cast.media.CastMediaRoute2ProviderService_Persistent}
+05-10 12:16:24.483 25180 25180 W com.amar.vault: type=1400 audit(0.0:30011): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=2916 scontext=u:r:untrusted_app:s0:c60,c258,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.amar.vault
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: QUALCOMM build                   : 923a446bf8, I23d7d7df15
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: Build Date                       : 09/05/24
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: OpenGL ES Shader Compiler Version: EV031.35.01.12
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: Local Branch                     : 
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.9.14.11.00.00.571.148
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: Remote Branch                    : NONE
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: Reconstruct Branch               : NOTHING
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: Build Config                     : S P 10.0.7 AArch64
+05-10 12:16:24.486 25180 25220 I AdrenoGLES-0: Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+05-10 12:16:24.488  5569  5569 D GameMode: exiting game mode
+05-10 12:16:24.489  1990  3617 D CompatChangeReporter: Compat change id reported: 151861875; UID 10243; state: ENABLED
+05-10 12:16:24.489  2866  2918 V SnapshotDrawerUtils: Drawing snapshot surface sizeMismatch=false
+05-10 12:16:24.492  5569  5569 D GameMode: isFeatureSupported: true
+05-10 12:16:24.492  5569  5569 D GameMode: isFeatureSupported: true
+05-10 12:16:24.493   844   844 I hwservicemanager: getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device VINTF manifest.
+05-10 12:16:24.494 25180 25220 I AdrenoGLES-0: PFP: 0x016ee201, ME: 0x00000000
+05-10 12:16:24.495  3043  3043 D GameModeDetector: notifyGameModeStatusValue, value=false
+05-10 12:16:24.495  3043  3043 D DaxService: sendGameModeIntent, state=false
+05-10 12:16:24.495  5569  5569 D GameMode: isFeatureSupported: true
+05-10 12:16:24.495  1990  2128 I ActivityManager: Killing 11328:com.google.android.videos/u0a243 (adj 915, setSvc -10000): remove task
+05-10 12:16:24.499   844   844 I hwservicemanager: getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device VINTF manifest.
+05-10 12:16:24.499  1990  3123 I ActivityTaskManager: Activity reported stop, but no longer stopping: ActivityRecord{c8872c u0 com.google.android.videos/com.google.android.apps.googletv.app.presentation.pages.home.GtvHomePageActivity t1345 f}} DESTROYING
+05-10 12:16:24.502 30596 31808 I HWUI    : setGrContext validptr-->nullptr
+05-10 12:16:24.503 30596 30596 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@8e51953
+05-10 12:16:24.504  1990  2113 V WindowManager: Sent Transition (#585) createdAt=05-10 12:16:24.440 via request=TransitionRequestInfo { type = TO_FRONT, triggerTask = TaskInfo{userId=0 taskId=1332 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10200000 cmp=com.amar.vault/.MainActivity } baseActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} topActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} origActivity=null realActivity=ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} numActivities=1 lastActiveTime=90515756 supportsMultiWindow=true supportsGlobalFreeform=true resizeMode=1 isResizeable=true isAppLocked=false isShowDecorCaptionWindowRequest=false canKillAndRestart=true minWidth=-1 minHeight=-1 defaultMinSize=200 token=WCT{RemoteToken{7cb4c87 Task{7351584 #1332 type=standard A=10572:com.amar.vault}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 77 - 0, 0) topActivityInfo=ActivityInfo{a4ae7b4 com.amar.vault.MainActivity} launchCookies=[android.os.BinderProxy@db5afdd] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=720 topActivityLetterboxHeight=1600 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@727605b, appThread = android.app.IApplicationThread$Stub$Proxy@c81f0f8, debugName = QuickstepLaunch }, displayChange = null, flags = 0, debugId = 585 }
+05-10 12:16:24.504  1990  2113 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+05-10 12:16:24.504  1990  2113 V WindowManager:     info={id=585 t=TO_FRONT f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+05-10 12:16:24.504  1990  2113 V WindowManager:         {WCT{RemoteToken{7cb4c87 Task{7351584 #1332 type=standard A=10572:com.amar.vault}}} m=TO_FRONT f=MOVE_TO_TOP pTaskId=-1 leash=Surface(name=Task=1332)/@0x9ba50ab sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},
+05-10 12:16:24.504  1990  2113 V WindowManager:         {WCT{RemoteToken{e52faa8 Task{7fe1bed #1 type=undefined}}} m=TO_BACK f=SHOW_WALLPAPER pTaskId=-1 leash=Surface(name=Task=1)/@0xfeb7087 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1}
+05-10 12:16:24.504  1990  2113 V WindowManager:     ]}
+05-10 12:16:24.507  2866  5391 V WindowManagerShell: onTransitionReady(transaction=8546984962938)
+05-10 12:16:24.508  2866  2910 V WindowManagerShell: onTransitionReady (#585) android.os.BinderProxy@1e964cc: {id=585 t=TO_FRONT f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@854bfcd} m=TO_FRONT f=MOVE_TO_TOP pTaskId=-1 leash=Surface(name=Task=1332)/@0x2b37af6 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@4145082} m=TO_BACK f=SHOW_WALLPAPER pTaskId=-1 leash=Surface(name=Task=1)/@0x6267ef7 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1}]}
+05-10 12:16:24.508  2866  2910 V WindowManagerShell: Playing animation for (#585) android.os.BinderProxy@1e964cc@0
+05-10 12:16:24.508  2866  2910 V WindowManagerShell:  try firstHandler com.android.wm.shell.transition.DefaultMixedHandler@dcd8091
+05-10 12:16:24.508  2866  2910 V WindowManagerShell: Mixed transition for opening an intent with a remote transition and PIP #585
+05-10 12:16:24.508  2866  2910 V WindowManagerShell:  Delegate animation for (#585) to RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@eaa3c1b, appThread = android.app.IApplicationThread$Stub$Proxy@4ae01b8, debugName = QuickstepLaunch }
+05-10 12:16:24.508  1990  3617 D CoreBackPreview: Window{a1b3879 u0 com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity EXITING}: Setting back callback null
+05-10 12:16:24.510  8002  8098 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-10 12:16:24.511  2866  2910 V WindowManagerShell:  animated by firstHandler
+05-10 12:16:24.511  1990  2605 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 12:16:24.511  1990  3123 W InputManager-JNI: Input channel object 'a1b3879 com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity (client)' was disposed without first being removed with the input manager!
+05-10 12:16:24.512  6112 15362 D LauncherAnimationRunner: onAnimationStart transit : 0
+05-10 12:16:24.512  8002  8098 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-10 12:16:24.514  6112  6112 D TaskViewSimulator: setDrawsBelowRecents drawsBelowRecents -> false
+05-10 12:16:24.515  1288 16677 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-10 12:16:24.516  1288 16677 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-10 12:16:24.516  3043 10638 D DolbyAudioEffectHelper: getDolbyStatus enabled=true profile=2
+05-10 12:16:24.516  3043 10638 D DolbyProvider: true, profile=2
+05-10 12:16:24.519  1990  2618 W UsageStatsService: Unexpected activity event reported! (com.google.android.permissioncontroller/com.android.permissioncontroller.permission.ui.GrantPermissionsActivity event : 23 instanceId : 97677244)
+05-10 12:16:24.522  1990  5270 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+05-10 12:16:24.523 25180 25220 I HWUI    : setGrContext nullptr-->validptr
+05-10 12:16:24.549  1990  2175 W MotoBatteryCareService: uid: 10572 pkgName:com.amar.vault come to foreground
+05-10 12:16:24.549  1990  3617 D PowerManagerService: nativeSetPowerMode ret:true mode:5 enabled:false duration ms: 0
+05-10 12:16:24.549  1302  1302 I QTI PowerHAL: Power setMode: 5 to: 0
+05-10 12:16:24.556  1990  2113 I MotoPerfManagerService: handleAppStart 10572:com.amar.vault hot 5 63 58 -1 111
+05-10 12:16:24.571  1990  3614 I MediaSessionStack: removeSession | record: com.google.android.videos/play_movies_media/12 (userId=0)
+05-10 12:16:24.571  1990  3062 I WindowManager: WIN DEATH: Window{6cd57c6 u0 com.google.android.videos/com.google.android.apps.googletv.app.presentation.pages.home.GtvHomePageActivity}
+05-10 12:16:24.572  1990 11413 I ActivityManager: appDiedLocked: app=ProcessRecord{6932bd1 11328:com.google.android.videos/u0a243} thread=android.os.BinderProxy@c7fcfc2 fromBinderDied=true isKilledByAm=true reason=null
+05-10 12:16:24.572  1990  3062 W InputManager-JNI: Input channel object '6cd57c6 com.google.android.videos/com.google.android.apps.googletv.app.presentation.pages.home.GtvHomePageActivity (client)' was disposed without first being removed with the input manager!
+05-10 12:16:24.572  1990  2722 D ConnectivityService: releasing NetworkRequest [ REQUEST id=5157, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10243 RequestorUid: 10243 RequestorPkg: com.google.android.videos UnderlyingNetworks: Null] ] (release request)
+05-10 12:16:24.573  1990  2722 D ConnectivityService: releasing NetworkRequest [ REQUEST id=5151, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10243 RequestorUid: 10243 RequestorPkg: com.google.android.videos UnderlyingNetworks: Null] ] (release request)
+05-10 12:16:24.573  1990  2722 D ConnectivityService: releasing NetworkRequest [ REQUEST id=5153, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10243 RequestorUid: 10243 RequestorPkg: com.google.android.videos UnderlyingNetworks: Null] ] (release request)
+05-10 12:16:24.574  1990  3614 D MediaSessionService: destroySessionLocked: record=com.google.android.videos/play_movies_media/12 (userId=0)
+05-10 12:16:24.575  1990  2275 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_10243/pid_11328
+05-10 12:16:24.575  1990  2275 W libprocessgroup: RemoveCgroup: /dev/memcg/apps/uid_10243/pid_11328 does not exist.
+05-10 12:16:24.577  1191  1191 I Zygote  : Process 11328 exited due to signal 9 (Killed)
+05-10 12:16:24.580  2866  2866 D MotoMediaSessionUtils: onActiveSessionsChanged - controllers size: 0 mActiveControllers size: 0
+05-10 12:16:24.580  2866  2866 D MotoMediaSessionUtils: Final controllers count: 0
+05-10 12:16:24.580  1990  2691 I ImeTracker: com.amar.vault:77fe899f: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+05-10 12:16:24.581  1990  2691 I ImeTracker: com.amar.vault:77fe899f: onCancelled at PHASE_SERVER_SHOULD_HIDE
+05-10 12:16:24.582 23674 23674 D BoundBrokerSvc: onUnbind: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+05-10 12:16:24.582 14686 14686 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+05-10 12:16:24.583 23674 23674 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.mobstore.service.START pkg=com.google.android.gms }
+05-10 12:16:24.583  1990 11413 D RestartModeController: markWaitRestartAppIsSuicided null processName=com.google.android.videos
+05-10 12:16:24.584  1990  2114 D DisplayManagerService: Drop pending events for gone uid 10243
+05-10 12:16:24.584 23674 23674 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.inappreach.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+05-10 12:16:24.586  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2099 
+05-10 12:16:24.587  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+05-10 12:16:24.589  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:16:24.590  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1371 onStartInput(EditorInfo{EditorInfo{packageName=com.amar.vault, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+05-10 12:16:24.591  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:16:24.591  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10243} in 4ms
+05-10 12:16:24.591  1990 11413 D ActivityTaskManager: handleAppDied: uid=10243,diedCount=1,lastDiedTime=38760480,forceStopUids=false
+05-10 12:16:24.592  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+05-10 12:16:24.593  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:16:24.594  1990  3062 W PackageConfigPersister: App-specific configuration not found for packageName: com.amar.vault and userId: 0
+05-10 12:16:24.594  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:16:24.595  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={20243} in 3ms
+05-10 12:16:24.595  1990  2128 W ActivityManager: setHasOverlayUi called on unknown pid: 11328
+05-10 12:16:24.597  1386  1386 E BpTransactionCompletedListener: Failed to transact (-32)
+05-10 12:16:24.598 23674 23674 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.mdisync.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+05-10 12:16:24.614  1990 11413 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-10 12:16:24.641  6112  6112 D composeRecentsLaunchAnimator: finish recent animation
+05-10 12:16:24.642  6112  6112 D RecentsView: finishRecentsAnimation - mRecentsAnimationController: null
+05-10 12:16:24.642  6112  6112 D RecentsView: cleanupRemoteTargets - mRemoteTargetHandles: null
+05-10 12:16:24.643  2866  2910 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#585) android.os.BinderProxy@1e964cc@0
+05-10 12:16:24.644  6112  6112 D StateManager: goToState - fromState: Overview, toState: Normal, partial trace:
+05-10 12:16:24.644  6112  6112 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(StateManager.java:524)
+05-10 12:16:24.644  6112  6112 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(StateManager.java:515)
+05-10 12:16:24.644  6112  6112 D StateManager: 	at com.android.quickstep.TaskViewUtils$9.lambda$onAnimationSuccess$0(TaskViewUtils.java:683)
+05-10 12:16:24.645  6112  6112 D RecentsView: finishRecentsAnimation - mRecentsAnimationController: null
+05-10 12:16:24.645  6112  6112 D RecentsView: cleanupRemoteTargets - mRemoteTargetHandles: null
+05-10 12:16:24.648  1990  2113 V WindowManager: Finish Transition (#585): created at 05-10 12:16:24.440 collect-started=0.067ms request-sent=6.349ms started=10.938ms ready=24.8ms sent=62.193ms finished=207.056ms
+05-10 12:16:24.652  2866  2866 D FreeformGesture: onStateChanged: State{mIsPackageAvailable=true, mPillGestureEnabled=false, mVibrationEnabled=true, mShortcutPanelShowing=false, mSwipeInEnabled=false, mHunFreeformEnabled=true, mIsInGameMode=false, mIsRecentsShowing=false, mIsInTutorialMode=false, mIsDoubleTapPowerEnabled=false, mIsPillMoving=false, mPillXPosition=1, mPillYPosition=180}
+05-10 12:16:24.652  6112  6112 D Launcher: Send Intent { act=com.motorola.launcher3.action.OVERVIEW_STATE_CHANGE cmp=com.motorola.mobiledesktop/com.lenovo.hec.vault.services.RecentTaskReceiver4Moto (has extras) }
+05-10 12:16:24.654  6112  6112 D StateManager: onStateTransitionStart - state: Normal
+05-10 12:16:24.655  2866  2910 V WindowManagerShell: Track 0 became idle
+05-10 12:16:24.655  2866  2910 V WindowManagerShell: All active transition animations finished
+05-10 12:16:24.655  5136  5421 I ProtoXDBBufferWrapper: ProtoXDBBufferWrapper.flushToStorage():158 Flushed 13 data item(s) to storage.
+05-10 12:16:24.659  1990  3614 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 12:16:24.664  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:24.666  1990  3617 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 12:16:24.669  6112  6112 D VRI[CustomizationPanelLauncher]: visibilityChanged oldVisibility=true newVisibility=false
+05-10 12:16:24.669  6112  6112 I TopTaskTracker: onTaskRemoved: taskId=1345
+05-10 12:16:24.669  6112  6112 I TopTaskTracker: onTaskRemoved: taskId=1345
+05-10 12:16:24.671  6112  6152 D Surface : Surface::disconnect
+05-10 12:16:24.671  6112  6152 D BufferQueueProducer: [com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher#7134(BLAST Consumer)pid:6112](id:17e0000000d5,api:1,p:6112,c:6112) disconnect: api 1
+05-10 12:16:24.678  6112  6112 D BaseDepthController: setSurface:
+05-10 12:16:24.678  6112  6112 D BaseDepthController: 	mWaitingOnSurfaceValidity: false
+05-10 12:16:24.678  6112  6112 D BaseDepthController: 	mSurface: null
+05-10 12:16:24.678  6112  6112 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+05-10 12:16:24.679  6112  6112 D StateManager: goToState - fromState: Normal, toState: Normal, partial trace:
+05-10 12:16:24.679  6112  6112 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(StateManager.java:524)
+05-10 12:16:24.679  6112  6112 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(StateManager.java:515)
+05-10 12:16:24.679  6112  6112 D StateManager: 	at com.android.launcher3.statemanager.StatefulActivity.onStop(StatefulActivity.java:150)
+05-10 12:16:24.679  6112  6112 D StateManager: cancelAnimation - with ongoing animation, partial trace:
+05-10 12:16:24.679  6112  6112 D StateManager: 	at com.android.launcher3.statemanager.StateManager.goToState(StateManager.java:306)
+05-10 12:16:24.679  6112  6112 D StateManager: 	at com.android.launcher3.statemanager.StateManager.goToState(StateManager.java:189)
+05-10 12:16:24.679  6112  6112 D StateManager: 	at com.android.launcher3.statemanager.StateManager.moveToRestState(StateManager.java:524)
+05-10 12:16:24.679  6112  6112 D setStateWithAnimation: State transition failed, toState : Normal
+05-10 12:16:24.679  6112  6112 D RecentsView: reset - mEnableDrawingLiveTile: true, mRecentsAnimationController: null
+05-10 12:16:24.679  6112  6112 D StateManager: onStateTransitionStart - state: Normal
+05-10 12:16:24.680  1386  1386 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-10 12:16:24.680  6112  6112 D BaseDepthController: mSurface is null and mCurrentBlur is: 0
+05-10 12:16:24.682  6112  6112 D StateManager: onStateTransitionEnd - state: Normal
+05-10 12:16:24.683  6112  6112 D NotifySysuiOfCurrentRotation:  rotation-1
+05-10 12:16:24.684  6112  6112 D RecentsView: reset - mEnableDrawingLiveTile: false, mRecentsAnimationController: null
+05-10 12:16:24.684  2866  2866 D NavigationModeController: getCurrentUserContext: contextUser=0 currentUser=0
+05-10 12:16:24.685  6112  6112 D StatsLog: LAUNCHER_ONSTOP
+05-10 12:16:24.690  6112  6112 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-10 12:16:24.690  6112  6112 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-10 12:16:24.690  6112  6112 D OverviewActionsView: updateForGroupedTask() called with: isGroupedTask = [false], canSaveAppPair = [false]
+05-10 12:16:24.690  6112  6112 D OverviewActionsView: updateActionButtonsVisibility() called: showSingleTaskActions = [true], showGroupActions = [false]
+05-10 12:16:24.692  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher} entered launcher screen? false
+05-10 12:16:24.692  5569  5955 D GameMode: isScreenUnlocked: true
+05-10 12:16:24.703  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 12:16:24.703  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 12:16:24.703  1484  1484 I Diag-Router: diag: In diag_copy_dci sending data 386 entry 0x0 buf 0x7fe7b88170
+05-10 12:16:24.704  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778395583038,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":454,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 12:16:24.711  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778395583053,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":454,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 12:16:24.712  5293 22699 E rola.dciservice: [diag_lsm_comm_read] singal hal thread to continue send
+05-10 12:16:24.721  1990  2606 W PackageManager: Missing required system package: word.office.docxviewer.document.docx.reader, but found with extended search.
+05-10 12:16:24.721  1990  2606 W PackageManager: Missing required system package: water.sort.puzzle.game.color.sorting.free, but found with extended search.
+05-10 12:16:24.721  1990  2606 W PackageManager: Missing required system package: tech.butterfly.app, but found with extended search.
+05-10 12:16:24.721  1990  2606 W PackageManager: Missing required system package: src.com.dop, but found with extended search.
+05-10 12:16:24.721  1990  2606 W PackageManager: Missing required system package: sorting.games.goods.sort.triple.match3d.puzzle.stuff, but found with extended search.
+05-10 12:16:24.721  1990  2606 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-10 12:16:24.721  1990  2606 W PackageManager: Missing required system package: org.videolan.vlc, but found with extended search.
+05-10 12:16:24.721  1990  2606 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: io.teslatech.callbreak, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: info.indiapost.daksewa, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: info.indiapost, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: in.swiggy.android.instamart, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: in.amazon.mShop.android.shopping, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: homeworkout.homeworkouts.noequipment, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: gymworkout.gym.gymlog.gymtrainer, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: cris.org.in.prs.ima, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: com.worldpackers.travelers, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: com.whereismytrain.android, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:16:24.722  1990  2606 W PackageManager: Missing required system package: com.valvesoftware.android.steam.community, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.tallteam.citychase, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.sbi.lotusintouch, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.rapido.passenger, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.phonepe.app, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.olacabs.customer, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.myntra.android, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.mbm.elereaning.mbmecj, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.marc.files, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.kiloo.subwaysurf, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.jpl.jiomart, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.jaipurcitybus.mobileticketingapp, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.internshala.app, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-10 12:16:24.723  1990  2606 W PackageManager: Missing required system package: com.innersloth.spacemafia, but found with extended search.
+05-10 12:16:24.724  1990  2606 W PackageManager: Missing required system package: com.google.earth, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.subscriptions.red, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.nbu.paisa.user, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.fitness, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.bard, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.adm, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.google.ai.edge.gallery, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.fsn.nykaa, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.flipkart.android, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.easybrain.sudoku.android, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.easybrain.spider.solitaire, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.easybrain.jigsaw.puzzles, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.easybrain.color.sort.puzzle, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.easybrain.block.puzzle.games, but found with extended search.
+05-10 12:16:24.725  1990  2606 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.discord, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.digital.bsnl.selfcare, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.digilocker.android, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.dare2compete.app, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.catool.solitaire.card, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.cambyte.okenscan, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.bt.bms, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.blackout.spades, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.azefsw.audioconnect, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.application.zomato, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.anthropic.claude, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: com.Dominos, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: app.revanced.manager.flutter, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: app.netmirror.netmirrornew, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: all.documentreader.filereader.office.viewer, but found with extended search.
+05-10 12:16:24.726  1990  2606 W PackageManager: Missing required system package: ai.character.app, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.youtube.creator, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.dopuz.klotski.riddle, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-10 12:16:24.727  1990  2606 W PackageManager: Missing required system package: app.revanced.android.apps.youtube.music, but found with extended search.
+05-10 12:16:24.733  1990  2606 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-10 12:16:24.736  1289  2613 I slpi    : LTR569 ALS_OC: lux:29.123327, last_ps:0[786], RAW:392.000000[491, 403], INT:70, G:512, C:0, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 12:16:24.777  5171  5179 W ogle.android.as: Reducing the number of considered missed Gc histogram windows from 223 to 100
+05-10 12:16:24.821  4550  4550 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.pay.service.BIND dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+05-10 12:16:24.838  4550  4550 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.cryptauth.cryptauthservice.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+05-10 12:16:24.994  1289  2613 I slpi-mot_tap : Apply inv Z reset: zpeak 3.882127 zmin -5.263317 lim -3.000000 zpeakn 4 zminn 2
+05-10 12:16:25.046  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:25.100 25180 25180 D InsetsController: show(ime(), fromIme=false)
+05-10 12:16:25.101 25180 25180 I ImeTracker: com.amar.vault:861b39fe: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT_BY_INSETS_API fromUser false
+05-10 12:16:25.101 25180 25180 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{4504bfc VFED..... .F....ID 0,0-720,1600 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT_BY_INSETS_API
+05-10 12:16:25.101  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2099 
+05-10 12:16:25.102  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+05-10 12:16:25.103  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1371 onStartInput(EditorInfo{EditorInfo{packageName=com.amar.vault, inputType=8001, inputTypeString=Normal[AutoCorrect], enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=2000004, privateImeOptions=null, actionName=SEND, actionLabel=null, initialSelStart=12, initialSelEnd=12, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=Bundle[mParcelledData.dataSize=404], hintText=null, hintLocales=[]}}, false)
+05-10 12:16:25.104  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+05-10 12:16:25.106  1990  3062 W PackageConfigPersister: App-specific configuration not found for packageName: com.amar.vault and userId: 0
+05-10 12:16:25.106  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1371 onStartInput(EditorInfo{EditorInfo{packageName=com.amar.vault, inputType=8001, inputTypeString=Normal[AutoCorrect], enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=2000004, privateImeOptions=null, actionName=SEND, actionLabel=null, initialSelStart=12, initialSelEnd=12, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=Bundle[mParcelledData.dataSize=404], hintText=null, hintLocales=[]}}, true)
+05-10 12:16:25.106  5136  5136 W SessionManager: SessionManager.beginSession():53 Try to begin an already begun session [INPUT_SESSION], end it first
+05-10 12:16:25.108  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+05-10 12:16:25.108  5136  5136 I StylusModule: StylusModule.onUpdateToolType():774 Update tool type = 1
+05-10 12:16:25.109  1990  2059 W PackageConfigPersister: App-specific configuration not found for packageName: com.amar.vault and userId: 0
+05-10 12:16:25.110  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onStartInputView():1459 onStartInputView(EditorInfo{EditorInfo{packageName=com.amar.vault, inputType=8001, inputTypeString=Normal[AutoCorrect], enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=2000004, privateImeOptions=null, actionName=SEND, actionLabel=null, initialSelStart=12, initialSelEnd=12, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=11, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], hintText=null, hintLocales=[]}}, false)
+05-10 12:16:25.110  5136  5136 I KeyboardHeightUtil: KeyboardHeightUtil.getOemKeyboardHeightRatio():81 systemKeyboardHeightRatio:1.000000.
+05-10 12:16:25.111 25180 25180 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+05-10 12:16:25.111 25180 25180 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+05-10 12:16:25.117  1990  2901 D CoreBackPreview: Window{22803c3 u0 Pop-up window}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@b0caeca, mPriority=0, mIsAnimationCallback=false}
+05-10 12:16:25.121 25180 25180 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+05-10 12:16:25.119 25180 25180 W com.amar.vault: type=1400 audit(0.0:30012): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=2916 scontext=u:r:untrusted_app:s0:c60,c258,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.amar.vault
+05-10 12:16:25.141 25180 25180 I ImeTracker: com.amar.vault:b1b3d135: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false
+05-10 12:16:25.141 25180 25180 D InputMethodManager: showSoftInput() view=androidx.compose.ui.platform.AndroidComposeView{4504bfc VFED..... .F...... 0,0-720,1600 aid=1073741824} flags=0 reason=SHOW_SOFT_INPUT
+05-10 12:16:25.143  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:25.143  5136  5136 I AndroidIME: InputBundleManager.loadActiveInputBundleId():531 loadActiveInputBundleId: en-IN, ime_english_india
+05-10 12:16:25.143  5136  5136 I AndroidIME: AbstractIme.onActivate():95 LatinIme.onActivate() : EditorInfo = EditorInfo{packageName=com.amar.vault, inputType=8001, inputTypeString=Normal[AutoCorrect], enableLearning=true, autoCorrection=true, autoComplete=true, imeOptions=2000004, privateImeOptions=null, actionName=SEND, actionLabel=null, initialSelStart=12, initialSelEnd=12, initialCapsMode=0, label=null, fieldId=-1, fieldName=null, extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=11, androidx.core.view.inputmethod.EditorInfoCompat.STYLUS_HANDWRITING_ENABLED=true, android.support.text.emoji.emojiCompat_replaceAll=false}], hintText=null, hintLocales=[]}, IncognitoMode = false, DeviceLocked = false
+05-10 12:16:25.144  5136  5136 I InputBundle: InputBundle.consumeEvent():1037 Skip consuming an event as keyboard status is INACTIVE
+05-10 12:16:25.144  5136  5136 I Delight5Facilitator: Delight5Facilitator.initializeForIme():745 initializeForIme() : Locale = [en_IN], layout = qwerty
+05-10 12:16:25.144  5136  5136 I LatinIme: LatinIme.updateEnableInlineSuggestionsOnDecoderSideFlags():1256 inline flag updated to:false
+05-10 12:16:25.144  5136  5136 I LatinIme: LatinIme.updateEnableInlineSuggestionsOnDecoderSideFlags():1256 inline flag updated to:false
+05-10 12:16:25.147  5136  5136 I InputBundle: InputBundle.consumeEvent():1037 Skip consuming an event as keyboard status is INACTIVE
+05-10 12:16:25.147  5136  5136 I LatinIme: LatinIme.resetInputContext():2280 resetInputContext(): reason=1, externalEditsInfo=ExternalEditsInfo{action=0, offset=-1, text=null, originalText=null, edits=null}
+05-10 12:16:25.147  5136  5136 I InputBundle: InputBundle.consumeEvent():1037 Skip consuming an event as keyboard status is INACTIVE
+05-10 12:16:25.148  5136  5136 I KeyboardWrapper: KeyboardWrapper.activateKeyboard():582 activateKeyboard(): type=prime, status=INACTIVE, imeDef=nfp{stringId=ime_english_india, language=en-IN, languageTag=en-IN, processedConditions={writing_helper_enable_by_word_revert=false, true=true, enable_number_row=true, device=phone, enable_pk_simulator=false}, className=com.google.android.apps.inputmethod.libs.latin5.LatinIme, label=0, keyEventInterpreter=com.google.android.libraries.inputmethod.keyevent.interpreters.EnglishIndiaKeyEventInterpreter, inlineComposing=true, autoCapital=true, announceAutoSelectedCandidate=true, statusIcon=0, indicatorIcon=0, indicatorLabel=null, displayAppCompletions=true, extraValues=nfh{#0x7f0b02e0=TypedValue{t=0x3/d=0x0 "com.google.android.apps.inputmethod.libs.latin5.LatinIme"}}, processors=nhg@83784d0, unacceptableMetaKeys=4098, languageSpecificSettings=0, asciiCapable=true, alwaysShowSuggestions=false, useAsciiPasswordKeyboard=false, keyboardGroupDef=ngp@93d3b3b, phenotypeFlagId=0, localizationLanguageTag=null, supportsInlineSuggestion=true}
+05-10 12:16:25.148  5136  5136 I KeyboardManager: KeyboardManager.requestKeyboard():249 Creating keyboard prime, imeId=ime_english_india, cacheKey=theme,!gsf,!pgsans,!pgsf,!use_system_font,BORDER,FLAVOR_DPI=XHDPI,KEYBOARD_WIDTH_CATEGORY=NORMAL,KEY_BORDER_SHAPE=1,LIGHT_THEME=false,PHYSICAL_DIAGONAL=5.505279,POPUP,SCREEN_SHORTEST_WIDTH=376,SCREEN_SHORTEST_WIDTH_NO_SCALE=376,XHDPI,bottom4dp,enable_popup_on_keypress=true,keyboard_redesign_google_sans=true,non_linear_scale,noshadow,overlay_builtin_dynamic_color_dark_base.binarypb:gm3-dark-ff0e1514-ff00ded2-a5dc8543c7f33939c58ed54e2448fe5e,silkpopup
+05-10 12:16:25.148  5136  5136 I KeyboardWrapper: KeyboardWrapper.onKeyboardReady():224 onKeyboardReady(): type=prime(prime), kb=com.google.android.apps.inputmethod.latin.keyboard.LatinPrimeKeyboard@74e7520
+05-10 12:16:25.148  5136  5136 I KeyboardWrapper: KeyboardWrapper.doActivateKeyboard():612 doActivateKeyboard(): prime
+05-10 12:16:25.150  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.150  5136  5136 I GlobeKeyExtension: GlobeKeyExtension.getKeyboardInitialStates():175 
+05-10 12:16:25.151  5136  5136 W Keyboard: Keyboard.getKeyboardViewHelper():604 null helper is returned: keyboardDef=ngj{processedConditions={show_comma_key=true, enable_more_candidates_view_for_multilingual=false, layout_9key_split=false, enable_secondary_symbols=false, pref_enable_flick_symbols=false, language=en-IN, deprecate_long_press_space_for_ime_picker=false, expressions=normal, android_software_xr_api_spatial=false, variant=qwerty, show_period_key=true, enable_number_row=true, device=phone, keyboard_mode=normal, show_secondary_digits=false, enable_pk_simulator=false, enable_preemptive_decode=true}, globalConditions={global_theme_key=theme,!gsf,!pgsans,!pgsf,!use_system_font,BORDER,FLAVOR_DPI=XHDPI,KEYBOARD_WIDTH_CATEGORY=NORMAL,KEY_BORDER_SHAPE=1,LIGHT_THEME=false,PHYSICAL_DIAGONAL=5.505279,POPUP,SCREEN_SHORTEST_WIDTH=376,SCREEN_SHORTEST_WIDTH_NO_SCALE=376,XHDPI,bottom4dp,enable_popup_on_keypress=true,keyboard_redesign_google_sans=true,non_linear_scale,noshadow,overlay_builtin_dynamic_color_dark_base.binarypb:gm3-dark-ff0e1514-ff00ded2-a5dc8543c7f33939c58ed54e2448fe5e,silkpopup, global_locale=en_IN, global_density_dpi=306, global_orientation=1}, className=.latin.keyboard.LatinPrimeKeyboard, resourceIds=[#0x7f1705f9, #0x7f17088b], initialStates=0, keyboardViewDefs=[ngx{direction=null, id=#0x7f0b0225, isScalable=true, layoutId=#0x7f0e02af, type=BODY, touchable=true, defaultShow=true}, ngx{direction=null, id=#0x7f0b0225, isScalable=false, layoutId=#0x7f0e020b, type=FLOATING_CANDIDATES, touchable=false, defaultShow=false}, ngx{direction=LOCALE, id=#0x7f0b0225, isScalable=false, layoutId=#0x7f0e0511, type=HEADER, touchable=true, defaultShow=true}], persistentStates=0, persistentStatesPrefKey=null, popupBubbleLayoutId=#0x7f0e0601, recentKeyLayoutId=#0x0, recentKeyPopupLayoutId=#0x0, recentKeyType=null, rememberRecentKey=NONE, sessionStates=17592186044419}, type=WIDGET, helpersCreated={HEADER=msd@9766c9c, BODY=msd@92bf6a5, FLOATING_CANDIDATES=msd@57c7a7a}, context.getResources().getConfiguration(): {1.0 405mcc868mnc [en_IN] ldltr sw376dp w376dp h772dp 306dpi nrml long layoutCompatNeeded port night finger -keyb/v/h -nav/h winConfig={ mBounds=Rect(0, 0 - 720, 1600) mAppBounds=Rect(0, 77 - 720, 1554) mMaxBounds=Rect(0, 0 - 720, 1600) mDisplayRotation=ROTATION_0 mWindowingMode=fullscreen mActivityType=undefined mAlwaysOnTop=undefined mRotation=ROTATION_0} as.5 s.291 fontWeightAdjustment=300 spnjio gidffffffffffffffffffff}
+05-10 12:16:25.152  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.155  5136  5136 I AndroidIME: InputBundleManager.startInput():361 startInput() with ngt[keyboardType=prime, payload=null]
+05-10 12:16:25.155  5136  5136 I GlobeKeyExtension: GlobeKeyExtension.onActivate():120 
+05-10 12:16:25.157  5136  5136 I LanguagePromoExtension: LanguagePromoExtension.checkDisplayPreconditions():171 Not show language promo: exceeds the max display times.
+05-10 12:16:25.157  5136  5136 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.cancelShutdown():109 cancelShutdown()
+05-10 12:16:25.157  5136  5136 I VoiceInputManagerWrapper: VoiceInputManagerWrapper.syncLanguagePacks():121 syncLanguagePacks()
+05-10 12:16:25.158  5136  5136 I VoiceInputManager: VoiceInputManager.onKeyboardActivated():1215 onKeyboardActivated() [UD]
+05-10 12:16:25.158  5136 11311 I SpeechFactory: SpeechRecognitionFactory.maybeScheduleAutoPackDownloadForFallback():217 maybeScheduleAutoPackDownloadForFallback()
+05-10 12:16:25.158  5136  5136 I PkModeUpdater: PkModeUpdater.onActivate():74 onActivate false true
+05-10 12:16:25.158  5136  5136 I AccessoryInputModeManager: AccessoryInputModeManager.onModeStarted():324 Accessory input mode started: null
+05-10 12:16:25.158  5136 11311 I FallbackOnDeviceRecognitionProvider: FallbackOnDeviceRecognitionProvider.maybeScheduleAutoPackDownload():213 maybeScheduleAutoPackDownload() for language tag en-IN
+05-10 12:16:25.158  5136  5136 W SupplementaryKeyboardsWrapper: SupplementaryKeyboardsWrapper.deactivateKeyboard():162 keyboard accessory_candidates_consumer is not activated before!
+05-10 12:16:25.158  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:25.159  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.159  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.159  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.159  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.159  5136  5136 W ExtensionWrapper: ExtensionWrapper.setExtensionViewVisibility():859 interface mvp is not activate
+05-10 12:16:25.161  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+05-10 12:16:25.161  5136  5136 I VoiceImeExtension: VoiceImeExtension.shouldStartVoiceInputAutomaticallyInCurrentInputBox():384 No private IME option set to start voice input.
+05-10 12:16:25.170  1990  2901 D PowerManagerService: nativeSetPowerMode ret:true mode:5 enabled:true duration ms: 0
+05-10 12:16:25.170  1302  1302 I QTI PowerHAL: Power setMode: 5 to: 1
+05-10 12:16:25.170 23674 23674 D BoundBrokerSvc: onBind: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+05-10 12:16:25.171 23674 23674 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.firebase.dynamiclinks.service.START pkg=com.google.android.gms }
+05-10 12:16:25.171  1347  1347 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+05-10 12:16:25.171  1347  1347 E ANDR-PERF-REQUEST: invalid request
+05-10 12:16:25.171  1347  1347 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+05-10 12:16:25.171  1302  1302 E QTI PowerHAL: Can't perform app launch hint
+05-10 12:16:25.177  5136  5136 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+05-10 12:16:25.175  5136  5136 W putmethod.latin: type=1400 audit(0.0:30013): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=2916 scontext=u:r:untrusted_app:s0:c226,c256,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.google.android.inputmethod.latin
+05-10 12:16:25.178  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:25.178  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.178  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.178  5136  5136 I WindowMetricsNotification: WindowMetricsNotification.notifyWithWindow():166 
+05-10 12:16:25.179  5136  5136 I WindowMetricsNotification: WindowMetricsNotification.notify():159 qdp[bounds=Rect(0, 77 - 720, 1600), insets=Rect(0, 0 - 0, 92), densityDpi=306, smallestScreenWidthDp=376, displayWidth=720, displayHeight=1600, xdpi=268.941, ydpi=269.139, isTrustable=true, displayId=0]; DisplayMetrics{density=1.9125, width=720, height=1600, scaledDensity=1.9125, xdpi=268.941, ydpi=269.139}
+05-10 12:16:25.189  5136  5136 I StylusModule: StylusModule.onUpdateToolType():774 Update tool type = 1
+05-10 12:16:25.192  5136  5136 I GoogleInputMethodService: GoogleInputMethodService$1.onKeyboardViewShown():329 onKeyboardViewShown: keyboardType=prime, keyboardViewType=HEADER keyboardView=com.google.android.libraries.inputmethod.widgets.SoftKeyboardView{678c67 V.E...... ........ 0,0-720,84}
+05-10 12:16:25.192  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.192  5136  5136 I GoogleInputMethodService: GoogleInputMethodService$1.onKeyboardViewShown():329 onKeyboardViewShown: keyboardType=prime, keyboardViewType=BODY keyboardView=com.google.android.libraries.inputmethod.widgets.SoftKeyboardView{ddb01c8 V.E...... ........ 0,0-720,482}
+05-10 12:16:25.192  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.192  5136  5136 I GlobeKeyExtension: GlobeKeyExtension$1.onKeyboardViewShown():72 maybeDisableLanguageSwitchKeyPref when the keyboard is shown
+05-10 12:16:25.192  5136  5136 I GlobeKeyExtension: GlobeKeyExtension.maybeDisableLanguageSwitchKeyPref():200 maybeDisableLanguageSwitchKeyPref hasGlobeKeyBeenDisabled: true, shouldDisableLanguageSwitchKey: true
+05-10 12:16:25.192  5136  5136 I NewLanguagePromptExtension: NewLanguagePromptExtension$1.onKeyboardViewShown():98 Not show new language banner: no change in enabled input method entries
+05-10 12:16:25.193  5136  5136 I DynamicLayoutHandler: DynamicLayoutHandler.loadDynamicKeys():92 This isn't a dynamic layout.
+05-10 12:16:25.193  5136  5446 I Delight5Decoder: Delight5DecoderWrapper.setKeyboardLayout():548 setKeyboardLayout()
+05-10 12:16:25.200  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:25.200  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.200  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.202 25180 25180 D InsetsController: show(ime(), fromIme=true)
+05-10 12:16:25.203 25180 25180 D InsetsController: show(ime(), fromIme=true)
+05-10 12:16:25.203 25180 25180 I ImeTracker: com.amar.vault:b1b3d135: onCancelled at PHASE_CLIENT_APPLY_ANIMATION
+05-10 12:16:25.210  2866  2910 D WindowManagerShell: onKeepClearAreasChanged: restricted={}, unrestricted={Rect(0, 942 - 720, 1600)}
+05-10 12:16:25.241  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 12:16:25.241  1484  1484 I Diag-Router: diag: In diag_copy_dci sending data 199 entry 0x0 buf 0x7fe7b88170
+05-10 12:16:25.242  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778395583576,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":454,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 12:16:25.247  5293 22699 E rola.dciservice: [diag_lsm_comm_read] singal hal thread to continue send
+05-10 12:16:25.347  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id spell_check_add_to_dictionary not found in tooltipManager.
+05-10 12:16:25.501 25180 25180 I ImeTracker: com.amar.vault:861b39fe: onShown
+05-10 12:16:25.593  1289  2613 I slpi    : LTR569 ALS_OC: lux:25.037146, last_ps:0[785], RAW:337.000000[431, 353], INT:70, G:512, C:0, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 12:16:25.665  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:25.734  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:25.754 25180 25180 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@a4085f6
+05-10 12:16:25.755  1990  2059 D CoreBackPreview: Window{22803c3 u0 Pop-up window}: Setting back callback null
+05-10 12:16:25.755 25180 25220 D Surface : Surface::disconnect
+05-10 12:16:25.755 25180 25220 D BufferQueueProducer: [Pop-up window#7156(BLAST Consumer)pid:25180](id:625c00000020,api:1,p:25180,c:25180) disconnect: api 1
+05-10 12:16:25.757  1990  2059 W InputManager-JNI: Input channel object '22803c3 Pop-up window (client)' was disposed without first being removed with the input manager!
+05-10 12:16:25.759  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:25.759  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.759  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.814  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:25.823  1990  2635 D ActivityManager: freezing 4848 com.google.android.googlequicksearchbox:googleapp, reason = oom_cached
+05-10 12:16:25.827  1990  2635 D ActivityManager: freezing 4948 com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0, reason = oom_cached
+05-10 12:16:25.829  1990  2635 D ActivityManager: freezing 5073 com.android.chrome, reason = oom_cached
+05-10 12:16:25.831  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:16:25.831  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:16:25.831  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={99074} in 1ms
+05-10 12:16:25.832  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:16:25.833  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:16:25.833  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10222} in 2ms
+05-10 12:16:25.901  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:25.917  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:25.917  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.917  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:25.988  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:26.038  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:26.058  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:26.058  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.058  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.114  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:26.200  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:26.217  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:26.217  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.217  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.271  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:26.295  1990  2635 D ActivityManager: freezing 27460 com.android.vending, reason = oom_cached
+05-10 12:16:26.299  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:16:26.299  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:16:26.300  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10212} in 1ms
+05-10 12:16:26.329  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:26.350  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:26.350  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.350  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.463  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:26.492  1386  1386 I Scheduler: notifyScrollEvent state=0
+05-10 12:16:26.538  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:26.550  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:26.550  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.550  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.713  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:26.737  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:26.751  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:26.751  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.751  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:26.786  2866  4870 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:16:26.787  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:16:26.787  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:16:26.787  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:16:26.788  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:16:26.788  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:16:26.993 28497 28594 I ThermalEngine: ACTION: override_c - Setting override_c to 0
+05-10 12:16:26.994 28497 28594 I ThermalEngine: Monitor:INACTIVE:OVERRIDE-CHG:internal_override=1:DETECT-STANDBY=0
+05-10 12:16:26.994 28497 28593 I ThermalEngine: Thermal-Server: Thermal received msg from  override_c
+05-10 12:16:26.994 28497 11554 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-10 12:16:26.995 28497 28594 I ThermalEngine: Monitor:ACTIVE:MON-MSM-NORMAL:battery=1:Virt-QUT=41802
+05-10 12:16:27.054  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3767393, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=139950, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=8, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=600000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=18, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-45471, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=43018, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=600000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=387, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1074233}
+05-10 12:16:27.055  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3767393, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=139950, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=8, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=600000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=18, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-45471, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=43018, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=600000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=387, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1074233}
+05-10 12:16:27.061  2866  5052 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:16:27.062  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3767393, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=139951, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=8, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=600000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=18, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-45471, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=43018, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=600000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=387, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1074233}
+05-10 12:16:27.062  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3767393, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=139951, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=8, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=600000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=18, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-45471, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=43018, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=600000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=387, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1074233}
+05-10 12:16:27.062  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:16:27.062  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:16:27.062  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:16:27.062  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:16:27.063  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:16:27.073  2866  4897 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:16:27.075  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:16:27.075  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:16:27.075  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:16:27.076  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:16:27.076  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:16:27.077  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:16:27.077  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:16:27.080  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:16:27.080  2866  4708 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:16:27.080  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:16:27.080  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:16:27.080  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:16:27.080  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:16:27.418  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:27.493  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:27.517  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:27.518  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:27.518  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:27.592  1990  5270 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+05-10 12:16:27.770  1289  2613 I slpi-mot_tap : cor_sums, 77.5, 79.2, 63.1,  0.0, sigzm,  8.1, pk,  4.6, pcor, 79.2, slps, 36.9, 21.3, -27.8, *ang,  43.5, tn,  5.8, Tap 26 111111111111111111111111111111111111111
+05-10 12:16:27.866  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:27.895  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:27.916  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:27.917  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:27.917  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:27.996 28497 28594 I ThermalEngine: Monitor:ACTIVE:OVERRIDE-CHG:internal_override=1:DETECT-STANDBY=1
+05-10 12:16:27.996 28497 28594 I ThermalEngine: ACTION: override_c - Setting override_c to 1
+05-10 12:16:27.997 28497 28593 I ThermalEngine: Thermal-Server: Thermal received msg from  override_c
+05-10 12:16:27.997 28497 11557 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-10 12:16:27.999 28497 28594 I ThermalEngine: Monitor:INACTIVE:MON-MSM-NORMAL:battery=6:Virt-QUT=41802
+05-10 12:16:28.007  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:28.055  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:28.075  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:28.076  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:28.076  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:28.223  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:28.293  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:28.308  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:28.308  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:28.308  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:28.349  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:28.430  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:28.442  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:28.442  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:28.442  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:28.481  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:28.560  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:28.575  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:28.575  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:28.575  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:28.856  1990  1990 D WiFiBlocklistController: Default net onCapabilitiesChanged
+05-10 12:16:28.856  1990  1990 D WiFiBlocklistController: updateDefaultNet:109
+05-10 12:16:28.857  3038  3798 D QCNEJ/WwanInfoRelay: onCapabilitiesChanged: 109 [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=56448Kbps LinkDnBandwidth>=56448Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> AdminUids: [10234] SubscriptionIds: {1} UnderlyingNetworks: Null]
+05-10 12:16:28.857  5251  5251 I Smart5G : [Smart5GService] isValidated=true
+05-10 12:16:28.857  5251  5251 I Smart5G : [IpManagerService] isValidated=true
+05-10 12:16:28.857  5251  5251 I Smart5G : [NetworkStateService] isValidated=true
+05-10 12:16:28.858  3038  3798 I QCNEJ/WwanInfoRelay: cacheWwanInfo subId = 1 phoneId = 0 slotId = 0
+05-10 12:16:28.859  1990  2773 I WifiDataStallService: onCapabilitiesChanged NET_CAPABILITY_VALIDATED=true
+05-10 12:16:28.859  5569  6132 D WM-NetworkStateTracker: Network capabilities changed: [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=56448Kbps LinkDnBandwidth>=56448Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> SubscriptionIds: {1} UnderlyingNetworks: Null]
+05-10 12:16:28.860  5309  9407 I ModemStats: [DataStallDetectService] onCapabilitiesChanged networkCapabilities=[ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=56448Kbps LinkDnBandwidth>=56448Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> SubscriptionIds: {1} UnderlyingNetworks: Null]
+05-10 12:16:28.860  5309  9407 I ModemStats: [DataStallDetectService] onCapabilitiesChanged NET_CAPABILITY_VALIDATED=true
+05-10 12:16:28.860  5309  9407 I ModemStats: [DataStallDetectService] onCapabilitiesChanged mDataStallManager.mDataStallInstance=null
+05-10 12:16:28.860  5309  9407 I ModemStats: [DataStallDetectService] onCapabilitiesChanged mDataStallSmart5gManager.mDataStallInstance=null
+05-10 12:16:28.861  5220  6024 I BugleRcsEngine: Connected state: [1], networkType: [MOBILE] [CONTEXT thread_id=182 ]
+05-10 12:16:28.861  5220  6198 I BugleRcsEngine: handleMessage processing message:[NOTIFY_UPTIME_IGNORE_STATE_CHANGED] with [non-null]:RcsEngineImpl reference [CONTEXT log_prefix="RcsEngineImpl[DUAL_REG]:[2400028a-88b9]>Handler" thread_id=189 ]
+05-10 12:16:28.863  1990  2773 I EnhancedConnectivity: [DataStallService] alraady registerExtListener:1
+05-10 12:16:28.863  1990  2773 I EnhancedConnectivity: [DataStallService] NetworkCallback  isDataStallNetwork=true isLabCard=false
+05-10 12:16:28.864  8794  8899 D WM-NetworkStateTracker: Network capabilities changed: [ Transports: CELLULAR Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&VALIDATED&NOT_ROAMING&FOREGROUND&NOT_CONGESTED&NOT_SUSPENDED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED LinkUpBandwidth>=56448Kbps LinkDnBandwidth>=56448Kbps Specifier: <TelephonyNetworkSpecifier [mSubId = 1]> SubscriptionIds: {1} UnderlyingNetworks: Null]
+05-10 12:16:28.959  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 12:16:28.997  5136  5136 W TooltipLifecycleManager: TooltipLifecycleManager.dismissTooltips():153 Tooltip with id SUGGESTION_VIEW_EDU_MINI_DIALOG not found in tooltipManager.
+05-10 12:16:29.008  5136  5136 I KeyboardModeUtils: KeyboardModeUtils.getKeyboardBottomOffset():435 inch: 0.000000 ydpi: 269.139008 adjustKeyboardBottomByDisplaySize: false currentDensityDpi: 306 defaultDensityDpi: 306 keyboardBottomToScreenPx: 0 keyboardBottomToNavBarPx: -92 navBarHeight: 92
+05-10 12:16:29.009  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:29.009  5136  5136 I BaseKeyboardSizeHelper: BaseKeyboardSizeHelper.calculateMaxKeyboardBodyHeight():73 leave 186 height for app when ime window height:1431, header height:84 and isFullscreenMode:false, so the max keyboard body height is:1161
+05-10 12:16:29.368 14686 11264 I NearbySharing: Network state changed: NetworkState(isRestricted=false, isOnline=true, isCongested=false, isMetered=true, isWifiConnected=false)
+05-10 12:16:29.482  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:16:29.482  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:16:29.483  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10472} in 2ms
+05-10 12:16:29.483  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:16:29.484  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:16:29.484  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={20472} in 1ms

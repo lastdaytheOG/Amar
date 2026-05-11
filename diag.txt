@@ -1,0 +1,1019 @@
+--------- beginning of main
+05-10 12:24:50.199 16060 16143 I Finsky  : [4480] SysUA: Set SystemUpdateActivity enabled state to 1
+05-10 12:24:50.207 16060 16148 I Finsky  : [4483] Set UnhibernateActivity enabled state to 1
+05-10 12:24:50.210 16060 16130 I Finsky  : [4468] VerifyApps: Device wide unknown source restriction updated
+05-10 12:24:50.212 16060 16131 I Finsky  : [4469] Finished reading experiment flags from file [U6QYB0P1L3EsTmVEX8vPwHb9ZDRsaSwWz4QZs5aMCSc] numFlags=2004.
+05-10 12:24:50.217 16060 16131 I Finsky  : [4469] Finished reading experiment flags from file [_vfmduVnP-lY_-lglTl3zCWpYB6WHw1gFVw09iFlcgM] numFlags=2004.
+05-10 12:24:50.229 16060 16131 I Finsky  : [4469] Finished reading experiment flags from file [tNusFTu2Lf4iTAmK7bwB0ksUDRe-SzJpAzC88gN-Mds] numFlags=2004.
+05-10 12:24:50.233 16060 16131 I Finsky  : [4469] Finished reading experiment flags from file [XQzIQmk9McLj8bNtzw6tvfHZ8Ga3NvuEV_ScikzI5Rg] numFlags=2004.
+05-10 12:24:50.239 16060 16131 I Finsky  : [4469] Finished reading experiment flags from file [rSe4qG6X77Kuy1mJK3rJKA9LZc8i2h85NocgQrgEzs8] numFlags=2004.
+05-10 12:24:50.245  1990  3617 W PackageManager: Missing required system package: app.revanced.android.apps.youtube.music, but found with extended search.
+05-10 12:24:50.253  1990  3451 W PackageManager: Missing required system package: in.swiggy.android.instamart, but found with extended search.
+05-10 12:24:50.267 16060 16146 I Finsky  : [4481] SysCUA: Set {com.android.vending/com.google.android.finsky.systemcomponentupdateui.common.SystemComponentUpdateActivity} enabled state to 0
+05-10 12:24:50.267  1990  3617 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-10 12:24:50.277 16060 16134 I Finsky  : [4472] Initializing pausers from value store.
+05-10 12:24:50.283 16060 16239 I Finsky  : [4522] Created new item store.
+05-10 12:24:50.289 16060 16134 I Finsky  : [4472] IQ::HLD: Callers (Pausers) in PauseUpdatesCallersValueStore: []
+--------- beginning of system
+05-10 12:24:50.294  1990  2175 W MotoBatteryCareService: uid: 10212 pkgName:com.android.vending come to foreground
+05-10 12:24:50.304  1191  1191 D Zygote  : Forked child process 16241
+05-10 12:24:50.305  1990  2182 I ActivityManager: Start proc 16241:com.android.vending:background/u0a212 for service {com.android.vending/com.google.frameworks.client.data.android.server.play.BackgroundProcessEndpointService}
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: word.office.docxviewer.document.docx.reader, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: water.sort.puzzle.game.color.sorting.free, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: tech.butterfly.app, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: src.com.dop, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: sorting.games.goods.sort.triple.match3d.puzzle.stuff, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: org.videolan.vlc, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-10 12:24:50.308  1990  3617 W PackageManager: Missing required system package: io.teslatech.callbreak, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: info.indiapost.daksewa, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: info.indiapost, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: in.swiggy.android.instamart, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: in.amazon.mShop.android.shopping, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: homeworkout.homeworkouts.noequipment, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: gymworkout.gym.gymlog.gymtrainer, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: cris.org.in.prs.ima, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: com.worldpackers.travelers, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: com.whereismytrain.android, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: com.valvesoftware.android.steam.community, but found with extended search.
+05-10 12:24:50.309  1990  3617 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.tallteam.citychase, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.sbi.lotusintouch, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.rapido.passenger, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.phonepe.app, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.olacabs.customer, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.myntra.android, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.mbm.elereaning.mbmecj, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.marc.files, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.kiloo.subwaysurf, but found with extended search.
+05-10 12:24:50.310  1990  3617 W PackageManager: Missing required system package: com.jpl.jiomart, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.jaipurcitybus.mobileticketingapp, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.internshala.app, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.innersloth.spacemafia, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.google.earth, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.subscriptions.red, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.nbu.paisa.user, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.fitness, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.bard, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.adm, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.google.ai.edge.gallery, but found with extended search.
+05-10 12:24:50.311  1990  3617 W PackageManager: Missing required system package: com.fsn.nykaa, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.flipkart.android, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.easybrain.sudoku.android, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.easybrain.spider.solitaire, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.easybrain.jigsaw.puzzles, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.easybrain.color.sort.puzzle, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.easybrain.block.puzzle.games, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.discord, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.digital.bsnl.selfcare, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.digilocker.android, but found with extended search.
+05-10 12:24:50.312  1990  3617 W PackageManager: Missing required system package: com.dare2compete.app, but found with extended search.
+05-10 12:24:50.314  1990  3617 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-10 12:24:50.318  1990  3617 W PackageManager: Missing required system package: com.catool.solitaire.card, but found with extended search.
+05-10 12:24:50.319  1990  3617 W PackageManager: Missing required system package: com.cambyte.okenscan, but found with extended search.
+05-10 12:24:50.319  1990  3617 W PackageManager: Missing required system package: com.bt.bms, but found with extended search.
+05-10 12:24:50.319  1990  3617 W PackageManager: Missing required system package: com.blackout.spades, but found with extended search.
+05-10 12:24:50.320  1990  3617 W PackageManager: Missing required system package: com.azefsw.audioconnect, but found with extended search.
+05-10 12:24:50.320  1990  3617 W PackageManager: Missing required system package: com.application.zomato, but found with extended search.
+05-10 12:24:50.322  1990  3617 W PackageManager: Missing required system package: com.anthropic.claude, but found with extended search.
+05-10 12:24:50.322  1990  3617 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-10 12:24:50.324  1990  3617 W PackageManager: Missing required system package: com.Dominos, but found with extended search.
+05-10 12:24:50.327  1990  3617 W PackageManager: Missing required system package: app.revanced.manager.flutter, but found with extended search.
+05-10 12:24:50.328  1990  3617 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-10 12:24:50.328  1990  3617 W PackageManager: Missing required system package: app.netmirror.netmirrornew, but found with extended search.
+05-10 12:24:50.328 16241 16241 I ding:background: Using CollectorTypeCC GC.
+05-10 12:24:50.330  1990  3617 W PackageManager: Missing required system package: all.documentreader.filereader.office.viewer, but found with extended search.
+05-10 12:24:50.331  1990  3617 W PackageManager: Missing required system package: ai.character.app, but found with extended search.
+05-10 12:24:50.335  1990  3617 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-10 12:24:50.336  1990  3617 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-10 12:24:50.338  1990  3617 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:50.338 16241 16241 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-10 12:24:50.338  1990  3617 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-10 12:24:50.339  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.youtube.creator, but found with extended search.
+05-10 12:24:50.340  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-10 12:24:50.342  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-10 12:24:50.342  1990  3617 W PackageManager: Missing required system package: com.dopuz.klotski.riddle, but found with extended search.
+05-10 12:24:50.343  1990  3617 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-10 12:24:50.343  1990  3617 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-10 12:24:50.343  1990  3617 W PackageManager: Missing required system package: app.revanced.android.apps.youtube.music, but found with extended search.
+05-10 12:24:50.370 16241 16241 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+05-10 12:24:50.370 16241 16241 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-10 12:24:50.370 16241 16241 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+05-10 12:24:50.371  1990  3617 W PackageManager: Missing required system package: com.sbi.lotusintouch, but found with extended search.
+05-10 12:24:50.429  1990  5173 W PackageManager: Missing required system package: com.whereismytrain.android, but found with extended search.
+05-10 12:24:50.433 16241 16241 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-10 12:24:50.434 16241 16241 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-10 12:24:50.434 16241 16241 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-10 12:24:50.435 16241 16241 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-10 12:24:50.435 16241 16241 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-10 12:24:50.436 16241 16241 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-10 12:24:50.436 16241 16241 D nativeloader: Configuring clns-7 for other apk /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/base.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.arm64_v8a.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.en.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_data_loader.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_data_loader.config.arm64_v8a.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_webrtc_native_lib.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_webrtc_native_lib.config.arm64_v8a.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/lib/arm64:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.and
+05-10 12:24:50.445  1990  5173 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-10 12:24:50.459 16241 16241 V GraphicsEnvironment: Currently set values for:
+05-10 12:24:50.459 16241 16241 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-10 12:24:50.459 16241 16241 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-10 12:24:50.459 16241 16241 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-10 12:24:50.459 16241 16241 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-10 12:24:50.461 15778 15792 V ClearcutMetricXmitter: Transmission is done.
+05-10 12:24:50.465  1990  5173 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-10 12:24:50.475  1990  3617 W PackageManager: Missing required system package: com.phonepe.app, but found with extended search.
+05-10 12:24:50.490 16241 16241 I Finsky:background: [2] Process created at version: 51.2.34-31 [0] [PR] 908936081
+05-10 12:24:50.508 16241 16241 I Finsky:background: [2] [BGP] Initializing early flags...
+05-10 12:24:50.508 16241 16241 I Finsky:background: [2] [BGP] Initializing Gservices...
+05-10 12:24:50.509 16241 16241 I Finsky:background: [2] [BGP] Initializing flags...
+05-10 12:24:50.515 16060 16191 I Finsky  : [4505] Prepare dev-triggered update flow...
+05-10 12:24:50.523 16241 16241 I Finsky:background: [2] Finished reading experiment flags from file [0tGUNCGIkbk4o6-fQ335kUYSKwVj4lusnHT-A5Dsy08] numFlags=2303.
+05-10 12:24:50.528 16060 16191 I Finsky  : [4505] ICalc: estimated size required for installing : 31650131 bytes
+05-10 12:24:50.536 15942 15946 I .android.videos: Background concurrent copying GC freed 38MB AllocSpace bytes, 73(4096KB) LOS objects, 75% free, 28MB/115MB, paused 483us,587us total 469.299ms
+05-10 12:24:50.559 16060 16134 I Finsky  : [4472] ICalc: Partition available space: 30634848256, install size: 31650131, min free: 524288000, additional needed: 0
+05-10 12:24:50.562 16241 16261 D nativeloader: Load /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.arm64_v8a.apk!/lib/arm64-v8a/libmappedcountercacheversionjni.so using class loader ns clns-7 (caller=/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/base.apk): ok
+05-10 12:24:50.573 16060 16191 I Finsky  : [4505] playLoggingServerUrl: https://play.googleapis.com/play/log
+05-10 12:24:50.574 16060 16191 I Finsky  : [4505] playLoggingServerTimestampUrl: https://play.googleapis.com/play/log/timestamp
+05-10 12:24:50.595  1990  3617 W PackageManager: Missing required system package: app.netmirror.netmirrornew, but found with extended search.
+05-10 12:24:50.603  1990  3451 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:50.614 16241 16241 I Finsky:background: [2] Finished reading experiment flags from file [iVEbirjHlHHAYvgqlG_UjYLf2qOmgv_vf_zrdOdF-AQ] numFlags=2004.
+05-10 12:24:50.615  1990  3617 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-10 12:24:50.621 16241 16241 I Finsky:background: [2] Finished reading experiment flags from file [U6QYB0P1L3EsTmVEX8vPwHb9ZDRsaSwWz4QZs5aMCSc] numFlags=2004.
+05-10 12:24:50.622  1990  3451 W PackageManager: Missing required system package: com.easybrain.spider.solitaire, but found with extended search.
+05-10 12:24:50.627  1990  3451 W PackageManager: Missing required system package: com.fsn.nykaa, but found with extended search.
+05-10 12:24:50.628 16241 16241 I Finsky:background: [2] Finished reading experiment flags from file [_vfmduVnP-lY_-lglTl3zCWpYB6WHw1gFVw09iFlcgM] numFlags=2004.
+05-10 12:24:50.631  1990  3451 W PackageManager: Missing required system package: all.documentreader.filereader.office.viewer, but found with extended search.
+05-10 12:24:50.635 16241 16241 I Finsky:background: [2] Finished reading experiment flags from file [tNusFTu2Lf4iTAmK7bwB0ksUDRe-SzJpAzC88gN-Mds] numFlags=2004.
+05-10 12:24:50.637  1990  3617 W PackageManager: Missing required system package: com.cambyte.okenscan, but found with extended search.
+05-10 12:24:50.640  1990  3617 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-10 12:24:50.642 16241 16241 I Finsky:background: [2] Finished reading experiment flags from file [XQzIQmk9McLj8bNtzw6tvfHZ8Ga3NvuEV_ScikzI5Rg] numFlags=2004.
+05-10 12:24:50.646  1990  3451 W PackageManager: Missing required system package: com.digital.bsnl.selfcare, but found with extended search.
+05-10 12:24:50.648 16060 16060 I Finsky  : [2] SCH: system job 9187 received onStopJob signal.
+05-10 12:24:50.649 16060 16060 I Finsky  : [2] SCH: system job 9187 stopped.
+05-10 12:24:50.649 16241 16241 I Finsky:background: [2] Finished reading experiment flags from file [rSe4qG6X77Kuy1mJK3rJKA9LZc8i2h85NocgQrgEzs8] numFlags=2004.
+05-10 12:24:50.651  1990  3617 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 1
+05-10 12:24:50.652 16241 16241 I Finsky:background: [2] [BGP] Initializing crash detector...
+05-10 12:24:50.655 16241 16241 I Finsky:background: [2] ajkm - Registering in memory receiver for android.intent.action.PACKAGE_ADDED and android.intent.action.PACKAGE_REMOVED
+05-10 12:24:50.656  1990  3617 W PackageManager: Missing required system package: com.discord, but found with extended search.
+05-10 12:24:50.658 16060 16060 I Finsky  : [2] SCH: Job 12-1 is stopped while running due to system job stopped
+05-10 12:24:50.658 16060 16060 I Finsky  : [2] SCH: jobStopped: 12-1. TimeElapsed: 914ms. EventType: 2535
+05-10 12:24:50.658 16060 16060 I Finsky  : [2] WM::SCH: Logging work stop for 12-1
+05-10 12:24:50.659 16060 16060 I Finsky  : [2] [ContentSync] job stopped
+05-10 12:24:50.659 16241 16241 I Typeface: updateThemeFont new=Rookery-Regular;old=sans-serif;new=Rookery-Stacked;old=
+05-10 12:24:50.660 16060 16060 I Finsky  : [2] Memory trim requested to level 40
+05-10 12:24:50.660 16060 16060 I Finsky  : [2] Flushing in-memory image cache
+05-10 12:24:50.660  1990  3451 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10212. pid: 16241
+05-10 12:24:50.662 16060 16146 I Finsky  : [4481] SCH: Scheduling phonesky job Id: 1-1337, CT: 1778373050440, Constraints: [{ L: 25887508, D: 69087508, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]
+05-10 12:24:50.662 16060 16146 I Finsky  : [4481] SCH: Scheduling phonesky job Id: 34-1428, CT: 1778344318641, Constraints: [{ L: 79199216, D: 1375199216, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]
+05-10 12:24:50.663 16060 16146 I Finsky  : [4481] SCH: Scheduling phonesky job Id: 34-1429, CT: 1778344321382, Constraints: [{ L: 604800000, D: 2591999760, C: CHARGING_NONE, I: IDLE_NONE, N: NET_ANY, B: BATTERY_ANY }]
+05-10 12:24:50.667 16241 16241 I Finsky:background: [2] This process start was not selected for Play memory metrics collection.
+05-10 12:24:50.670 16060 16143 I Finsky  : [4480] SCH: Scheduling 1 system job(s)
+05-10 12:24:50.671 16060 16143 I Finsky  : [4480] SCH: Scheduling system job Id: 9201, L: 2847278, D: 46047278, C: false, I: false, N: 1
+05-10 12:24:50.674 16241 16241 I Finsky:background: [2] Memory trim requested to level 40
+05-10 12:24:50.674  1990  3451 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-10 12:24:50.701  1990  3451 W PackageManager: Missing required system package: com.easybrain.sudoku.android, but found with extended search.
+05-10 12:24:50.702  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:24:50.704 16241 16276 W Settings: Setting download_manager_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+05-10 12:24:50.704  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:24:50.704  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={1010236} in 4ms
+05-10 12:24:50.706  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:24:50.707 16241 16276 I Finsky:background: [4478] SettingNotFoundException, fall through to G.downloadBytesOverMobileMaximum
+05-10 12:24:50.707 16241 16276 W Settings: Setting download_manager_recommended_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+05-10 12:24:50.707  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:24:50.707  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={1020236} in 3ms
+05-10 12:24:50.709 16241 16276 I Finsky:background: [4478] SettingNotFoundException, fall through to G.downloadBytesOverMobileRecommended
+05-10 12:24:50.710 16241 16276 I Finsky:background: [4478] registerListener
+05-10 12:24:50.713 16241 16276 I Finsky:background: [4478] DFS: Listener added for slg@5320e60
+05-10 12:24:50.713 16241 16276 I Finsky:background: [4478] registerListener
+05-10 12:24:50.713 16241 16276 I Finsky:background: [4478] registerListener
+05-10 12:24:50.713 16241 16276 I Finsky:background: [4478] DFS: Listener added for anue@d30cadb
+05-10 12:24:50.723  1990  3451 D ConnectivityService: requestNetwork for uid/pid:10212/16241 activeRequest: null callbackRequest: 5250 [NetworkRequest [ REQUEST id=5251, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOST
+05-10 12:24:50.728  1990  2709 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=5251, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-10 12:24:50.728  1990  2709 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5251, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-10 12:24:50.729  1990  2709 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5251, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-10 12:24:50.729  1990  2709 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5251, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-10 12:24:50.730  1990  2722 D ConnectivityService: NetReassign [5251 : null → 109] [c 0] [a 2] [i 4]
+05-10 12:24:50.730 16241 16276 I Finsky:background: [4478] IV2: IQv2 is disabled. Recovering all active installs: []
+05-10 12:24:50.734  1990  3451 D ConnectivityService: Returning BLOCKED NetworkInfo to uid=10212
+05-10 12:24:50.734 16241 16285 I Finsky:background: [4487] IQ: Internet connection lost.
+05-10 12:24:50.741 15778 15792 V ClearcutMetricXmitter: Transmission is done.
+05-10 12:24:50.742 16241 16275 I Finsky:background: [4477] Device is eligible for platform Cronet and will attempt to use it.
+05-10 12:24:50.743 15942 15942 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-10 12:24:50.749 16241 16283 I Finsky:background: [4485] IQ: Pruning inactive install requests
+05-10 12:24:50.761 16241 16290 D HttpFlagsLoader: Not loading HTTP flags because they are disabled in the manifest
+05-10 12:24:50.767  1990  3451 D ConnectivityService: requestNetwork for uid/pid:10212/16241 activeRequest: null callbackRequest: 5252 [NetworkRequest [ REQUEST id=5253, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOST|NC|LP
+05-10 12:24:50.769  1990  2722 D ConnectivityService: NetReassign [5253 : null → 109] [c 0] [a 1] [i 1]
+05-10 12:24:50.769  1990  2709 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=5253, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-10 12:24:50.769  1990  2709 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5253, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-10 12:24:50.769  1990  2709 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5253, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-10 12:24:50.769  1990  2709 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=5253, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-10 12:24:50.769 28497 28594 I ThermalEngine: ACTION: override_c - Setting override_c to 0
+05-10 12:24:50.769 28497 28594 I ThermalEngine: Monitor:INACTIVE:OVERRIDE-CHG:internal_override=1:DETECT-STANDBY=0
+05-10 12:24:50.769 28497 28593 I ThermalEngine: Thermal-Server: Thermal received msg from  override_c
+05-10 12:24:50.770 28497 16291 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-10 12:24:50.772 28497 28594 I ThermalEngine: Monitor:ACTIVE:MON-MSM-NORMAL:battery=1:Virt-QUT=44418
+05-10 12:24:50.778  1990  2722 D ConnectivityService: NetReassign [no changes] [c 0] [a 1] [i 1]
+05-10 12:24:50.778 16241 16275 I cn_CronetLibraryLoader: Cronet version: 144.0.7500.8, arch: aarch64
+05-10 12:24:50.787  1990  3451 W PackageManager: Missing required system package: in.amazon.mShop.android.shopping, but found with extended search.
+05-10 12:24:50.787 16241 16275 I Finsky:background: [4477] CronetEngine is present. Using Cronet for the networking stack.
+05-10 12:24:50.790 16241 16294 W chromium: [0510/122450.790243:WARNING:external/cronet/stable/net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+05-10 12:24:50.818 16241 16275 I Finsky:background: [4477] Finished reading experiment flags from file [Se-xCc4LzNyh3UrKMIU2sUf-PUKz4oQEbpKZDMuaFno] numFlags=1993.
+05-10 12:24:50.831  1990  3451 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-10 12:24:50.832 16241 16275 I Finsky:background: [4477] Subscription detail: DataSubscriptionInfo{groupIdLevel1=FFFFFFFFFFFFFFFFFFFF, serviceProviderName=[yOlW3tnQDJ1YThQMBZR88g71IOfDulvO9qZSUfyq_8k], simCarrierId=2018}
+05-10 12:24:50.835 16241 16241 I Finsky:background: [2] onSubscriptionsChanged
+05-10 12:24:50.842 16060 16306 I Finsky  : [4534] SM: There are no stale sessions to be pruned
+05-10 12:24:50.846 16060 16060 I Finsky  : [2] Connecting InstallListener to SplitInstallService broadcaster...
+05-10 12:24:50.850 16241 16293 W chromium: [0510/122450.850473:WARNING:external/cronet/stable/net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+05-10 12:24:50.876  1990  3451 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-10 12:24:50.885  1990  3451 W PackageManager: Missing required system package: com.easybrain.jigsaw.puzzles, but found with extended search.
+05-10 12:24:50.889  1990  3451 W PackageManager: Missing required system package: com.dopuz.klotski.riddle, but found with extended search.
+05-10 12:24:50.898  1990  3451 W PackageManager: Missing required system package: tech.butterfly.app, but found with extended search.
+05-10 12:24:50.903  1990  3451 W PackageManager: Missing required system package: sorting.games.goods.sort.triple.match3d.puzzle.stuff, but found with extended search.
+05-10 12:24:50.906  1990  3451 W PackageManager: Missing required system package: com.flipkart.android, but found with extended search.
+05-10 12:24:50.918  1990  3451 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-10 12:24:50.938 16241 16283 I Finsky:background: [4485] Resetting scheduler db
+05-10 12:24:50.948 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58943, CT: 1778395987499, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.948 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58944, CT: 1778395987527, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.949 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58945, CT: 1778395987528, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.949 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58946, CT: 1778395987528, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.949 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58947, CT: 1778395987529, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.949 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58948, CT: 1778395987529, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.950 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58949, CT: 1778395987529, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.950 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58950, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.950 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58951, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.950 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58952, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.950 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58953, CT: 1778395987531, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.950 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58954, CT: 1778395987531, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.951 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 47-15, CT: 1778392431203, Constraints: [{ L: 6506751, D: 28106743, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_NONE, B: BATTERY_ANY }]
+05-10 12:24:50.962  1990  5445 W PackageManager: Missing required system package: com.jaipurcitybus.mobileticketingapp, but found with extended search.
+05-10 12:24:50.969 16241 16275 I Finsky:background: [4477] SCH: Scheduling 0 system job(s)
+05-10 12:24:50.970  1990  5445 W PackageManager: Missing required system package: gymworkout.gym.gymlog.gymtrainer, but found with extended search.
+05-10 12:24:50.978 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58943
+05-10 12:24:50.979 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58943
+05-10 12:24:50.983 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58945, CT: 1778395987528, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.983 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58953, CT: 1778395987531, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:50.987  1990  5445 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-10 12:24:50.992 16241 16280 I Finsky:background: [4482] SCH: Scheduling 1 system job(s)
+05-10 12:24:50.994 16241 16280 I Finsky:background: [4482] SCH: Scheduling system job Id: 10246, L: 0, D: 86296536, C: false, I: true, N: 2
+05-10 12:24:51.000  1990  5445 W PackageManager: Missing required system package: app.revanced.manager.flutter, but found with extended search.
+05-10 12:24:51.009 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58944
+05-10 12:24:51.009 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58944
+05-10 12:24:51.009  1990  5445 W PackageManager: Missing required system package: com.google.ai.edge.gallery, but found with extended search.
+05-10 12:24:51.011 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58954, CT: 1778395987531, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.013  1990  5445 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-10 12:24:51.025  1990  3451 W PackageManager: Missing required system package: com.worldpackers.travelers, but found with extended search.
+05-10 12:24:51.025  1990  2339 I AppsFilter: interaction: PackageSetting{422373e com.oem.euiccpartnerapp/10220} -> PackageSetting{bf5044b com.motorola.dolby.dolbyui/10141} BLOCKED
+05-10 12:24:51.028 16241 16280 I Finsky:background: [4482] SCH: Scheduling 1 system job(s)
+05-10 12:24:51.028 16241 16280 I Finsky:background: [4482] SCH: Scheduling system job Id: 10248, L: 0, D: 86296503, C: true, I: true, N: 2
+05-10 12:24:51.031  1990  2175 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-10 12:24:51.031  1990  2175 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-10 12:24:51.031  3087  3087 D CarrierSvcBindHelper: onPackageModified: com.motorola.dolby.dolbyui
+05-10 12:24:51.031  3087  3087 D CarrierSvcBindHelper: No carrier app for: 0
+05-10 12:24:51.031  3087  3087 D CarrierSvcBindHelper: No carrier app for: 1
+05-10 12:24:51.034  1990  2808 D ShortcutService: received package broadcast intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x45000010 (has extras) }
+05-10 12:24:51.034  1990  2808 D ShortcutService: changing package: com.motorola.dolby.dolbyui userId0
+05-10 12:24:51.034  1990  2808 D ShortcutService: handlePackageChanged: com.motorola.dolby.dolbyui user=0
+05-10 12:24:51.034  1990  2808 D ShortcutService: rescanPackageIfNeeded 0@com.motorola.dolby.dolbyui, forceRescan=true , isNewApp=true
+05-10 12:24:51.034  1990  5173 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-10 12:24:51.035  1990  5173 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-10 12:24:51.035  1990  2808 D ShortcutService: Package com.motorola.dolby.dolbyui has 0 manifest shortcut(s), and 0 share target(s)
+05-10 12:24:51.035  1990  5173 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-10 12:24:51.035  1990  5173 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-10 12:24:51.038  1990  2802 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-10 12:24:51.039  1990  3451 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.040  1990  2175 W AccessibilitySecurityPolicy: Skipping accessibility service com.lenskart.app/io.cobrowse.CobrowseAccessibilityService: it does not require the permission android.permission.BIND_ACCESSIBILITY_SERVICE
+05-10 12:24:51.040  1990  5445 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.040  1990  5445 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.041  1990  1990 I TrafficStatsCollector: Receive intent: android.intent.action.PACKAGE_CHANGED
+05-10 12:24:51.041  1990  1990 I TrafficStatsCollector: Not com.tmobile.echolocate.system, pkgName=com.motorola.dolby.dolbyui
+05-10 12:24:51.042 30596 11441 I PermissionControllerServiceImpl: Updating user sensitive for uid 10141
+05-10 12:24:51.043  1990  3451 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:51.043  1990  2175 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+05-10 12:24:51.043  1990  3451 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.045  1990  2175 W UserManagerService: onPackageModified for another profile 0 from 10
+05-10 12:24:51.047  6112  6147 I PackageUpdatedTask: Packages updated: [com.motorola.dolby.dolbyui], mOp: 2, mUser: UserHandle{0}
+05-10 12:24:51.048  6112  6147 D PackageUpdatedTask: Package updated: mOp=UPDATE packages=[com.motorola.dolby.dolbyui]
+05-10 12:24:51.048  6112  6147 I SQLiteCacheHelper: SqliteCacheHelper---->delete whereClause = componentName LIKE ? AND profileId = ?, whereArgs = com.motorola.dolby.dolbyui/%;0;
+05-10 12:24:51.048  5569  5569 D MFL     : inside onPackageChanged 
+05-10 12:24:51.048  1990  2175 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-10 12:24:51.048  1990  2175 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-10 12:24:51.049  1990  2175 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:51.049  1990  2175 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-10 12:24:51.049  1990  2175 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-10 12:24:51.049  1990  2175 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-10 12:24:51.049  1990  2175 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.049  1990  2175 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-10 12:24:51.050  1990  2175 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-10 12:24:51.050  1990  2175 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-10 12:24:51.050  1990  2175 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-10 12:24:51.050  1990  2175 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-10 12:24:51.052  3087  3087 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+05-10 12:24:51.052  1990  5173 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10185, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-10 12:24:51.053  1990  2638 I RoleService: Granting default roles...
+05-10 12:24:51.055 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58945
+05-10 12:24:51.056 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58945
+05-10 12:24:51.059 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58953, CT: 1778395987531, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.060  3087  3087 E SmsApplication: isSystemPackage NameNotFoundException:com.motorola.cn.devicemigration
+05-10 12:24:51.061  1990  5173 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-10 12:24:51.063  1990  2175 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-10 12:24:51.063  1990  2175 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-10 12:24:51.063  1990  2175 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:51.063  1990  2175 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.064  1990  2175 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-10 12:24:51.064  1990  2175 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-10 12:24:51.064  1990  5445 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+05-10 12:24:51.064  1990  2175 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-10 12:24:51.064  1990  2175 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-10 12:24:51.064  1990  2175 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-10 12:24:51.064  1990  3617 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-10 12:24:51.065  1990  3617 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_WAP_PUSH, mode = allow, callingUid = 1001, oldMode = allow
+05-10 12:24:51.066  1990  3617 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = SEND_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-10 12:24:51.067  1990  5173 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-10 12:24:51.068 16241 16275 I Finsky:background: [4477] SCH: Scheduling 1 system job(s)
+05-10 12:24:51.068  1990  5173 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:51.068  1990  5173 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.068 16241 16275 I Finsky:background: [4477] SCH: Scheduling system job Id: 10249, L: 0, D: 86296463, C: false, I: true, N: 2
+05-10 12:24:51.069  1990  3617 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-10 12:24:51.071  1990  2603 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:51.071  1990  2603 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.072  1990  2603 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.073  2866  2921 D Tile.ScreenshotTile: update state
+05-10 12:24:51.073  1990  5173 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.074  1990  4681 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION, user: 0
+05-10 12:24:51.075  3087  3406 D ImsResolver: maybeAddedImsService, packageName: com.motorola.dolby.dolbyui
+05-10 12:24:51.079 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58946
+05-10 12:24:51.079 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58946
+05-10 12:24:51.080  1990  3451 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+05-10 12:24:51.081 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58948, CT: 1778395987529, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.081 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58950, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.083 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58952, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.084  1990  3617 W PackageManager: Missing required system package: src.com.dop, but found with extended search.
+05-10 12:24:51.085  1990  4681 W SignedPackage: Package doesn't have required signing certificate: com.google.android.apps.work.clouddpc
+05-10 12:24:51.094  1990  5173 W PackageManager: Missing required system package: com.olacabs.customer, but found with extended search.
+05-10 12:24:51.095  1990  4681 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-10 12:24:51.096 16241 16275 I Finsky:background: [4477] SCH: Scheduling 1 system job(s)
+05-10 12:24:51.096 16241 16275 I Finsky:background: [4477] SCH: Scheduling system job Id: 10250, L: 0, D: 86296433, C: true, I: false, N: 2
+05-10 12:24:51.097  6112  6112 D StatsLog: LAUNCHER_ALLAPPS_COUNT
+05-10 12:24:51.101  1990  4681 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-10 12:24:51.104 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58947
+05-10 12:24:51.104 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58947
+05-10 12:24:51.106 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58949, CT: 1778395987529, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.106 16241 16273 I Finsky:background: [4475] SCH: Scheduling phonesky job Id: 3-58951, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.113  1990  4681 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10150, code = FINE_LOCATION, mode = allow, callingUid = 1000, oldMode = allow
+05-10 12:24:51.115 16241 16280 I Finsky:background: [4482] SCH: Scheduling 1 system job(s)
+05-10 12:24:51.115 16241 16280 I Finsky:background: [4482] SCH: Scheduling system job Id: 10253, L: 0, D: 86296414, C: false, I: false, N: 2
+05-10 12:24:51.122  1990  4681 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:51.122  1990  4681 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.122  1990  4681 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 12:24:51.122  1990  4681 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.122  1990  4681 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.123  1990  4681 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.124  1990  4681 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10150, code = FINE_LOCATION, mode = allow, callingUid = 1000, oldMode = allow
+05-10 12:24:51.129  1990  2603 W PackageManager: Missing required system package: com.innersloth.spacemafia, but found with extended search.
+05-10 12:24:51.129 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58948
+05-10 12:24:51.129 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58948
+05-10 12:24:51.131 16241 16271 I Finsky:background: [4473] SCH: Scheduling phonesky job Id: 3-58950, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.131 16241 16271 I Finsky:background: [4473] SCH: Scheduling phonesky job Id: 3-58952, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.132  1990  4681 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.WALLET, user: 0
+05-10 12:24:51.136  1990  4681 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.motorola.paks, role: android.app.role.SYSTEM_FINANCED_DEVICE_CONTROLLER, user: 0
+05-10 12:24:51.138  1990  4681 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-10 12:24:51.140 16241 16280 I Finsky:background: [4482] SCH: Scheduling 1 system job(s)
+05-10 12:24:51.140 16241 16280 I Finsky:background: [4482] SCH: Scheduling system job Id: 10255, L: 0, D: 86296390, C: true, I: false, N: 2
+05-10 12:24:51.143  1990  2603 W PackageManager: Missing required system package: com.blackout.spades, but found with extended search.
+05-10 12:24:51.147 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58949
+05-10 12:24:51.147 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58949
+05-10 12:24:51.149 16241 16271 I Finsky:background: [4473] SCH: Scheduling phonesky job Id: 3-58951, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.158 16241 16280 I Finsky:background: [4482] SCH: Scheduling 1 system job(s)
+05-10 12:24:51.158 16241 16280 I Finsky:background: [4482] SCH: Scheduling system job Id: 10257, L: 0, D: 86296372, C: false, I: false, N: 2
+05-10 12:24:51.166 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58950
+05-10 12:24:51.166 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58950
+05-10 12:24:51.168 16241 16271 I Finsky:background: [4473] SCH: Scheduling phonesky job Id: 3-58952, CT: 1778395987530, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.172  1990  2603 W PackageManager: Missing required system package: com.jpl.jiomart, but found with extended search.
+05-10 12:24:51.175  1990  2603 W PackageManager: Missing required system package: com.azefsw.audioconnect, but found with extended search.
+05-10 12:24:51.184 16241 16280 I Finsky:background: [4482] SCH: Scheduling 1 system job(s)
+05-10 12:24:51.184  1990  2603 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-10 12:24:51.184 16241 16280 I Finsky:background: [4482] SCH: Scheduling system job Id: 10258, L: 0, D: 86296346, C: true, I: false, N: 2
+05-10 12:24:51.194  1990  2603 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-10 12:24:51.194 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58951
+05-10 12:24:51.195 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58951
+05-10 12:24:51.197 16241 16271 I Finsky:background: [4473] SCH: no pending jobs to schedule.
+05-10 12:24:51.198  1990  2603 W PackageManager: Missing required system package: com.google.android.apps.bard, but found with extended search.
+05-10 12:24:51.200 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58952
+05-10 12:24:51.200 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58952
+05-10 12:24:51.202 16241 16273 I Finsky:background: [4475] SCH: no pending jobs to schedule.
+05-10 12:24:51.205 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58953
+05-10 12:24:51.205 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58953
+05-10 12:24:51.207 16241 16280 I Finsky:background: [4482] SCH: no pending jobs to schedule.
+05-10 12:24:51.210 14686 14686 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+05-10 12:24:51.210 16241 16307 I Finsky:background: [4500] SCH: Canceling job 3-58954
+05-10 12:24:51.210 16241 16307 I Finsky:background: [4500] WM::SCH: Logging work end for 3-58954
+05-10 12:24:51.212 16241 16275 I Finsky:background: [4477] SCH: no pending jobs to schedule.
+05-10 12:24:51.213  1990  2603 W PackageManager: Missing required system package: io.teslatech.callbreak, but found with extended search.
+05-10 12:24:51.217  1990  2603 W PackageManager: Missing required system package: word.office.docxviewer.document.docx.reader, but found with extended search.
+05-10 12:24:51.220  1990  2603 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-10 12:24:51.233  1990  2603 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-10 12:24:51.236  1990  2603 W PackageManager: Missing required system package: com.dare2compete.app, but found with extended search.
+05-10 12:24:51.248  1990  2603 W PackageManager: Missing required system package: com.marc.files, but found with extended search.
+05-10 12:24:51.266  1990  2603 W PackageManager: Missing required system package: com.mbm.elereaning.mbmecj, but found with extended search.
+05-10 12:24:51.266  1843  2091 E RIL-MOTEXT: qcrilUpdRegRAT, called , rat =7
+05-10 12:24:51.273 16241 16283 I Finsky:background: [4485] IQ: Creating job 58955, for (REQ_DEVICE_IDLE, REQ_GEARHEAD_PROJECTION_OFF, MIN_BATTERY=20, SHOULD_APPLY_BUDGET=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED)
+05-10 12:24:51.274 16241 16283 I Finsky:background: [4485] IQ: Creating job 58956, for (REQ_CHARGING, REQ_DEVICE_IDLE, REQ_GEARHEAD_PROJECTION_OFF, IGNORE_HOLDOFF=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED)
+05-10 12:24:51.275 16241 16283 I Finsky:background: [4485] IQ: Creating job 58957, for (REQ_DEVICE_IDLE, REQ_GEARHEAD_PROJECTION_OFF, MIN_BATTERY=20, SHOULD_APPLY_BUDGET=true, IGNORE_HOLDOFF=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED)
+05-10 12:24:51.275 16241 16283 I Finsky:background: [4485] IQ: Creating job 58958, for (REQ_CHARGING, REQ_GEARHEAD_PROJECTION_OFF, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED, PROCESS_IMPORTANCE_THRESHOLD=125)
+05-10 12:24:51.275 16241 16283 I Finsky:background: [4485] IQ: Creating job 58959, for (REQ_GEARHEAD_PROJECTION_OFF, MIN_BATTERY=20, SHOULD_APPLY_BUDGET=true, IGNORE_HOLDOFF=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED)
+05-10 12:24:51.275 16241 16283 I Finsky:background: [4485] IQ: Creating job 58960, for (REQ_CHARGING, REQ_GEARHEAD_PROJECTION_OFF, IGNORE_HOLDOFF=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED, PROCESS_IMPORTANCE_THRESHOLD=125)
+05-10 12:24:51.275 16241 16283 I Finsky:background: [4485] IQ: Creating job 58961, for (REQ_GEARHEAD_PROJECTION_OFF, MIN_BATTERY=20, SHOULD_APPLY_BUDGET=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED)
+05-10 12:24:51.276 16241 16283 I Finsky:background: [4485] IQ: Creating job 58962, for (REQ_CHARGING, REQ_GEARHEAD_PROJECTION_OFF, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED)
+05-10 12:24:51.276 16241 16283 I Finsky:background: [4485] IQ: Creating job 58963, for (IGNORE_HOLDOFF=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, PROCESS_IMPORTANCE_THRESHOLD=100)
+05-10 12:24:51.276 16241 16283 I Finsky:background: [4485] IQ: Creating job 58964, for (REQ_CHARGING, REQ_GEARHEAD_PROJECTION_OFF, IGNORE_HOLDOFF=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED)
+05-10 12:24:51.276 16241 16283 I Finsky:background: [4485] IQ: Creating job 58965, for (REQ_DEVICE_IDLE, IGNORE_HOLDOFF=true, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY)
+05-10 12:24:51.276 16241 16283 I Finsky:background: [4485] IQ: Creating job 58966, for (REQ_CHARGING, REQ_DEVICE_IDLE, REQ_GEARHEAD_PROJECTION_OFF, NETWORK=UNMETERED, PROVISIONING_STATE=PROVISIONED, BACKUP_MANAGER_STATE=BACKUP_READY, AUTHENTICATION_REQUIRED, PROCESS_IMPORTANCE_THRESHOLD=125)
+05-10 12:24:51.277 16241 16283 I Finsky:background: [4485] IQ: Bulk scheduling created jobs
+05-10 12:24:51.277  3041  3287 I QcrilOemhookMsgTunnel: [0]processOemHookIndication length=16
+05-10 12:24:51.277  3041  3041 D QcrilMsgTunnelIfaceManager: handleMessage what = 5
+05-10 12:24:51.279 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58955, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.279  1990  5173 D PowerManagerService: nativeAcquireSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 2
+05-10 12:24:51.280  1843  2091 E RIL-MOTEXT: qcrilUpdDataState, called , state =1
+05-10 12:24:51.280  1990  2603 W PackageManager: Missing required system package: com.google.android.apps.fitness, but found with extended search.
+05-10 12:24:51.284  1843  2091 E RIL-MOTEXT: qcrilUpdDataState, called , state =0
+05-10 12:24:51.285  1843  2091 E RIL-MOTEXT: qcrilUpdDataState, called , state =1
+05-10 12:24:51.286  1843  2091 E RIL-MOTEXT: qcrilUpdDataState, called , state =1
+05-10 12:24:51.292 16241 16283 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemjob.SystemJobService
+05-10 12:24:51.292 16241 16283 D WM-Schedulers: Created SystemJobScheduler and enabled SystemJobService
+05-10 12:24:51.295 16241 16271 D WM-ForceStopRunnable: Is default app process = true
+05-10 12:24:51.296 16241 16271 D WM-ForceStopRunnable: Performing cleanup operations.
+05-10 12:24:51.303  1843 13973 E RIL-MOTEXT: qcrilUpdateOperator, called
+05-10 12:24:51.304 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58956, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.305 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58957, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.305 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58958, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.305  3038  3483 W IWlanNetworkService: 1614 > Response Processed
+05-10 12:24:51.305 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58959, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.306 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58960, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.306 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58961, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.307 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58962, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.307 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58963, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.307 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58964, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.308 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58965, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.308 16241 16283 I Finsky:background: [4485] SCH: Received scheduling request: Id: 3-58966, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.312 16241 16273 I Finsky:background: [4475] IQ: start evaluating install requests.
+05-10 12:24:51.312 16241 16273 I Finsky:background: [4475] IQ: no jobs active. Skipping
+05-10 12:24:51.317 16241 16280 I Finsky:background: [4482] SSM: Start staged session task with 1 tracked staged sessions
+05-10 12:24:51.322 16241 16280 I Finsky:background: [4482] AMU: Is primary profile true
+05-10 12:24:51.329 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58955
+05-10 12:24:51.329 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58956
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58957
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58958
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58959
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58960
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58961
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58962
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58963
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58964
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58965
+05-10 12:24:51.330 16241 16261 I Finsky:background: [4469] WM::SCH: Logging work initialize for 3-58966
+05-10 12:24:51.336 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58955, CT: 1778396091279, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.336 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58956, CT: 1778396091304, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.336 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58957, CT: 1778396091305, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.336 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58958, CT: 1778396091305, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.337 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58959, CT: 1778396091306, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.337 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58960, CT: 1778396091306, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.337 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58961, CT: 1778396091306, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.337 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58962, CT: 1778396091307, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.337 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58963, CT: 1778396091307, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.337 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58964, CT: 1778396091307, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_NONE, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.338 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58965, CT: 1778396091308, Constraints: [{ L: 0, D: 86400000, C: CHARGING_NONE, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.338 16241 16280 I Finsky:background: [4482] SCH: Scheduling phonesky job Id: 3-58966, CT: 1778396091308, Constraints: [{ L: 0, D: 86400000, C: CHARGING_REQUIRED, I: IDLE_REQUIRED, N: NET_UNMETERED, B: BATTERY_ANY }]
+05-10 12:24:51.341  1843  2091 E RIL-MOTEXT: qcrilUpdRegRAT, called , rat =7
+05-10 12:24:51.343 16241 16280 I Finsky:background: [4482] SCH: Scheduling 0 system job(s)
+05-10 12:24:51.347  3041  3287 I QcrilOemhookMsgTunnel: [0]processOemHookIndication length=16
+05-10 12:24:51.348  3041  3041 D QcrilMsgTunnelIfaceManager: handleMessage what = 5
+05-10 12:24:51.349 16241 16271 D WM-PackageManagerHelper: Skipping component enablement for androidx.work.impl.background.systemalarm.RescheduleReceiver
+05-10 12:24:51.358  1990  5173 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-10 12:24:51.371 16241 16273 I Finsky:background: [4475] IQ: 0 scheduled install statuses found to proceed. 
+05-10 12:24:51.386  2866  2866 D GlobalActionsDialogLite: Service changed before actions created
+05-10 12:24:51.386  2866  2866 D GlobalActionsDialogLite: Service changed before actions created
+05-10 12:24:51.392  1990  1990 I EnhancedConnectivity: [DataStallService] onServiceStateChanged result=0 subId=1 networkType=20
+05-10 12:24:51.393  5251  5251 I Smart5G : [NetworkStateListener_1_0] onServiceStateChanged networkType = 20 dataRegState=0 isInService=true
+05-10 12:24:51.395  8483  8483 D OtaApp  : PollingMangerService, phone state: roaming: false
+05-10 12:24:51.395  1990  2603 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcastMultiplePermissions:1308 android.content.Context.sendBroadcastMultiplePermissions:2522 com.android.server.TelephonyRegistry.broadcastServiceStateChanged:3764 com.android.server.TelephonyRegistry.notifyServiceStateForPhoneId:1765 com.android.internal.telephony.ITelephonyRegistry$Stub.onTransact:562 
+05-10 12:24:51.397  1990  2603 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcastMultiplePermissions:1341 com.android.server.TelephonyRegistry.broadcastServiceStateChanged:3769 com.android.server.TelephonyRegistry.notifyServiceStateForPhoneId:1765 com.android.internal.telephony.ITelephonyRegistry$Stub.onTransact:562 android.os.Binder.execTransactInternal:1520 
+05-10 12:24:51.399  1990  2603 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcastMultiplePermissions:1341 com.android.server.TelephonyRegistry.broadcastServiceStateChanged:3778 com.android.server.TelephonyRegistry.notifyServiceStateForPhoneId:1765 com.android.internal.telephony.ITelephonyRegistry$Stub.onTransact:562 android.os.Binder.execTransactInternal:1520 
+05-10 12:24:51.400  1990  2603 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcastMultiplePermissions:1341 com.android.server.TelephonyRegistry.broadcastServiceStateChanged:3784 com.android.server.TelephonyRegistry.notifyServiceStateForPhoneId:1765 com.android.internal.telephony.ITelephonyRegistry$Stub.onTransact:562 android.os.Binder.execTransactInternal:1520 
+05-10 12:24:51.401  1990  2181 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@286cb445 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-10 12:24:51.403  3087  3087 D ServiceStateProvider: subId=1
+05-10 12:24:51.411  1191  1191 D Zygote  : Forked child process 16314
+05-10 12:24:51.411  1990  2182 I ActivityManager: Start proc 16314:com.google.android.cellbroadcastreceiver/u0a325 for broadcast {com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver}
+05-10 12:24:51.426  1990  2603 W PackageManager: Missing required system package: com.Dominos, but found with extended search.
+05-10 12:24:51.430 16314 16314 I oadcastreceiver: Using CollectorTypeCC GC.
+05-10 12:24:51.433  1843 16310 E RIL-MOTEXT: qcrilUpdateOperator, called
+05-10 12:24:51.433  3038  3483 W IWlanNetworkService: 1615 > Response Processed
+05-10 12:24:51.438 16314 16314 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-10 12:24:51.446  1990  5173 W PackageManager: Missing required system package: org.videolan.vlc, but found with extended search.
+05-10 12:24:51.457  1990  3617 W PackageManager: Missing required system package: cris.org.in.prs.ima, but found with extended search.
+05-10 12:24:51.458  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 12:24:51.458  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 12:24:51.458  1484  1484 I Diag-Router: diag: In diag_copy_dci sending data 386 entry 0x0 buf 0x7fe7b88170
+05-10 12:24:51.461  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778396089969,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":454,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 12:24:51.462 16314 16314 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-10 12:24:51.462 16314 16314 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+05-10 12:24:51.463  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778396089992,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":454,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 12:24:51.464  5293 22699 E rola.dciservice: [diag_lsm_comm_read] singal hal thread to continue send
+05-10 12:24:51.467  1990  5173 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 12:24:51.469  3087  3087 D Telephony: TelecomAccountRegistry$TelecomAccountTelephonyCallback: onServiceStateChanged called.
+05-10 12:24:51.469  3087  3087 I Telephony: TelecomAccountRegistry$TelecomAccountTelephonyCallback: onServiceStateChanged: newState=0, mServiceState=0
+05-10 12:24:51.482  3087  3087 I Telephony: TelecomAccountRegistry$AccountEntry: isRttCurrentlySupported -- regular acct, hasVoiceAvailability: true
+05-10 12:24:51.482  3087  3087 I Telephony:  isRttSupported: false
+05-10 12:24:51.482  3087  3087 I Telephony:  alwaysAllowWhileRoaming: false
+05-10 12:24:51.482  3087  3087 I Telephony:  isRoaming: false
+05-10 12:24:51.482  3087  3087 I Telephony:  isOnWfc: false
+05-10 12:24:51.482 16314 16314 D nativeloader: Configuring clns-shared-7 for other apk /apex/com.android.cellbroadcast/priv-app/GoogleCellBroadcastApp@361524280/GoogleCellBroadcastApp.apk. target_sdk_version=36, uses_libraries=, library_path=/apex/com.android.cellbroadcast/priv-app/GoogleCellBroadcastApp@361524280/lib/arm64:/system/lib64:/system_ext/lib64, permitted_path=/data:/mnt/expand:/data/user_de/0/com.google.android.cellbroadcastreceiver:/apex/com.android.cellbroadcast/priv-app/GoogleCellBroadcastApp@361524280:/system/lib64:/system_ext/lib64
+05-10 12:24:51.486 16314 16314 D nativeloader: InitApexLibraries:
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_adservices: libhpke_jni.so:libtflite_support_classifiers_native.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_appsearch: libappsearchservice.so:libicing_anywhere.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_art: libartservice.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_btservices: libbluetooth_jni.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_conscrypt: libjavacrypto.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_mediaprovider: libpdfclient.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_nfcservices: libnfc_nci_jni.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_ondevicepersonalization: libfcp_cpp_dep_jni.so:libfcp_hpke_jni.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_os_statsd: libstats_jni.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_tethering: libandroid_net_connectivity_com_android_net_module_util_jni.so:libandroid_net_connectivity_com_android_net_module_util_jni_CommonConnectivityJni.so:libframework-connectivity-jni.so:libframework-connectivity-tiramisu-jni.so:libmainlinecronet.144.0.7500.8.so:libservice-connectivity.so:libservice-thread-jni.so:stable_cronet_libcrypto.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_uwb: libuwb_uci_jni_rust.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_virt: libvirtualizationservice_jni.so:libvirtualmachine_jni.so
+05-10 12:24:51.486 16314 16314 D nativeloader:   com_android_wifi: libservice-wifi-jni
+05-10 12:24:51.487  3087  3087 I Telephony: VoiceActivationHandler: Service state is IN_SERVICE. Set voice activation state to ACTIVATED
+05-10 12:24:51.490  1990  3617 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-10 12:24:51.502  1990  3617 W PackageManager: Missing required system package: com.application.zomato, but found with extended search.
+05-10 12:24:51.506 16314 16314 V GraphicsEnvironment: Currently set values for:
+05-10 12:24:51.506 16314 16314 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-10 12:24:51.506 16314 16314 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-10 12:24:51.506 16314 16314 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-10 12:24:51.506 16314 16314 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-10 12:24:51.520 16314 16314 I Typeface: updateThemeFont new=Rookery-Regular;old=sans-serif;new=Rookery-Stacked;old=
+05-10 12:24:51.521  1990  3617 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10325. pid: 16314
+05-10 12:24:51.522 16314 16314 D CellBroadcastReceiver: onReceive Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 cmp=com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver (has extras) }
+05-10 12:24:51.527  1990  3617 W PackageManager: Missing required system package: com.tallteam.citychase, but found with extended search.
+05-10 12:24:51.530  1990  5445 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-10 12:24:51.531  1990  2603 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-10 12:24:51.532  1990 10206 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-10 12:24:51.532  1990  3616 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-10 12:24:51.532  1990  3616 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-10 12:24:51.532  2866  2866 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 1
+05-10 12:24:51.533  1990 10206 W PackageManager: Missing required system package: com.bt.bms, but found with extended search.
+05-10 12:24:51.533  1990  3616 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-10 12:24:51.533  1990  3616 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-10 12:24:51.534  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-10 12:24:51.536 16314 16314 D CellBroadcastReceiver: onServiceStateChanged, ss: 0
+05-10 12:24:51.537 16314 16314 D CellBroadcastReceiver: networkOperator: 405868
+05-10 12:24:51.540 16314 16314 D CellBroadcastReceiver: update supported roaming operator as 
+05-10 12:24:51.544  2866  2866 D FreeformGesture: onStateChanged: State{mIsPackageAvailable=true, mPillGestureEnabled=false, mVibrationEnabled=true, mShortcutPanelShowing=false, mSwipeInEnabled=false, mHunFreeformEnabled=true, mIsInGameMode=false, mIsRecentsShowing=false, mIsInTutorialMode=false, mIsDoubleTapPowerEnabled=false, mIsPillMoving=false, mPillXPosition=1, mPillYPosition=180}
+05-10 12:24:51.549  1990  2603 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-10 12:24:51.559  2866  2866 I SecurityPatternView: The position of mLockPatternView is not changed. return.
+05-10 12:24:51.560  1990  2603 W PackageManager: Missing required system package: com.valvesoftware.android.steam.community, but found with extended search.
+05-10 12:24:51.584  1990 10206 W PackageManager: Missing required system package: com.easybrain.block.puzzle.games, but found with extended search.
+05-10 12:24:51.593  1990  5270 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+05-10 12:24:51.603  1990 10206 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-10 12:24:51.633  1990 10206 W PackageManager: Missing required system package: com.google.android.apps.nbu.paisa.user, but found with extended search.
+05-10 12:24:51.638  1990 10206 W PackageManager: Missing required system package: water.sort.puzzle.game.color.sorting.free, but found with extended search.
+05-10 12:24:51.655  1990 10206 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-10 12:24:51.661  1990 10206 W PackageManager: Missing required system package: com.myntra.android, but found with extended search.
+05-10 12:24:51.669  1990 10206 W PackageManager: Missing required system package: com.google.android.apps.youtube.creator, but found with extended search.
+05-10 12:24:51.681  1990 10206 W PackageManager: Missing required system package: com.anthropic.claude, but found with extended search.
+05-10 12:24:51.689  1990 10206 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-10 12:24:51.698  1990 10206 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-10 12:24:51.714  1990 10206 W PackageManager: Missing required system package: com.rapido.passenger, but found with extended search.
+05-10 12:24:51.720  1990 10206 W PackageManager: Missing required system package: com.digilocker.android, but found with extended search.
+05-10 12:24:51.735  1990 10206 W PackageManager: Missing required system package: info.indiapost.daksewa, but found with extended search.
+05-10 12:24:51.801  1990 10206 W PackageManager: Missing required system package: com.kiloo.subwaysurf, but found with extended search.
+05-10 12:24:51.810  1990 10206 W PackageManager: Missing required system package: com.catool.solitaire.card, but found with extended search.
+05-10 12:24:51.821  1990 10206 W PackageManager: Missing required system package: homeworkout.homeworkouts.noequipment, but found with extended search.
+05-10 12:24:51.838  1990 10206 W PackageManager: Missing required system package: com.easybrain.color.sort.puzzle, but found with extended search.
+05-10 12:24:51.843  1990 10206 W PackageManager: Missing required system package: com.google.android.apps.adm, but found with extended search.
+05-10 12:24:51.863  1990 10206 W PackageManager: Missing required system package: com.google.earth, but found with extended search.
+05-10 12:24:51.869  1990 10206 W PackageManager: Missing required system package: info.indiapost, but found with extended search.
+05-10 12:24:51.884  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 12:24:51.884  1484  1484 I Diag-Router: diag: In diag_copy_dci sending data 199 entry 0x0 buf 0x7fe7b88170
+05-10 12:24:51.885  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778396090218,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":454,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 12:24:51.887  1990 10206 W PackageManager: Missing required system package: ai.character.app, but found with extended search.
+05-10 12:24:51.891  5293 22699 E rola.dciservice: [diag_lsm_comm_read] singal hal thread to continue send
+05-10 12:24:52.302 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~8sr-PqCkWrcdMZYjvZ-fLA==/com.motorola.mobiledesktop-x1S36KClFk4UQfAdLUM5uw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.324 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~yXhAM8oG9v-R0x-OeOtPNQ==/com.google.ar.core-rTOvGEjQIVAJj-3KYwfz8Q==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.349 15655 15661 W chbox:googleapp: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~hF_Xb8vUZ5hX5lzIocjVsA==/com.google.android.webview-CYpGeHAa63LmKEzCIQnZ_w==/base.apk' with 2 weak references
+05-10 12:24:52.354 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~gGnXWdji5RWTX1ngw2Zb-A==/com.phonepe.app-5hm1dvf93Byax4K9eLE4Gg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.360 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.phonepe.app/app_pccache/5/A6422CD2CF82BB9C0EAF521C1BF6CC70ABCF649F/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.368 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.phonepe.app/app_pccache/5/F2FF627D940052495BF0C0AF15E5A0B2723F5469/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.426 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~HZ-W4XEdDCX4QV9hWB4CMg==/tech.butterfly.app-BczxbrPS5YRDF3guKJ-wAg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.461 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~y-wqvpPWaY29h-A5qeWHpg==/com.google.android.partnersetup-7kghZBqOG7uY8AeUPhW3Xg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.536 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~j8GOAc7YjgPR2ewqW3vbaQ==/app.revanced.android.gms--UUUliunyge5sSr2uqB2Hw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed' executable 'false'
+05-10 12:24:52.552 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~j8GOAc7YjgPR2ewqW3vbaQ==/app.revanced.android.gms--UUUliunyge5sSr2uqB2Hw==/oat/arm/base.odex) is kOatUpToDate with filter 'speed' executable 'false'
+05-10 12:24:52.563 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/21a90bf1c1c388089206dce215fb60d7882bfa18/oat/arm64/the.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.573 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/dd26cfca40a2391a1e3626bbaf83bd500298c9f7/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.582 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/1e73ddd364d745715765fba57ac8818d80cf9089/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.588 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/bc758ed5e7d6bdb04aa7a99271131838e0308423/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.598 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/ed48a77328f42a82bd9fa493e1dc9a627daadb59/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.608 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/c979021594972b0ba2d39f27bf33d93c4b1302bc/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.616 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/7d5c9405a3d81c422016c0cf22e38a12d08182e8/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.622 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/2db167ef440159ff365b49d8b91441b1cfd017f9/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.633 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/de47351470b874cd27e2358fa315b85f3554f2ab/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.642 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/707ffd883bf2a7896692338f9625ca52336e933b/oat/arm64/the.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.650 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/5f3be511026be02395273329794abd31b995290b/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.661 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/8ddaf89ca525eacf24c43471ca97fa2b3a367dfe/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.672 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/1021e3c6414f4e3834a200c646dd91cec82e4c2b/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.681  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:24:52.682  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:24:52.682  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:24:52.682  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:24:52.682  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:24:52.683  2866  3379 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:24:52.685 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/b6402974df4684369d814f4d7e0a178d1e5cd2f5/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.692 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/4346ea85cda1436041b029d54013fbb1aa13e134/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.700 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/87e7746227ff4e457a2eb56043b95e41006de49f/oat/arm64/the.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.708 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/a1442e7af072b496ccb2c7df6a5ceecc73356bba/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.715 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/f5338de2bc19b72e4bf9f7cac38ecd5ace5d1df2/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.721 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/646da7be3af9b756defd88ca7189fc9d7c55ec0f/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.727 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/f2da33623c7c8602eebf9a226bc4329fb4fef326/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.733 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/9b790551aea6f45286c19831bdc04308df1aff9f/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.738 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/955c46548bdd0816eb5634e05879f1b50ef60fb1/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.745 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/a8f89f306fd1ba172e06f6f2b9f79826d0309bb6/oat/arm64/the.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.750 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/app.revanced.android.gms/app_cache_dg/f69f380742af765c5688217890fc7c5272ff6a59/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.779 28497 28594 I ThermalEngine: Monitor:ACTIVE:FREEZE-CHG:freeze_rule=1:DETECT-STANDBY=0
+05-10 12:24:52.779 28497 28594 I ThermalEngine: ACTION: freeze_rule - Setting freeze_rule to 1
+05-10 12:24:52.780 28497 28593 I ThermalEngine: Thermal-Server: Thermal received msg from  freezing
+05-10 12:24:52.780 28497 16336 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-10 12:24:52.847 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~4yB8e6QOeK_xZVWbTuaERg==/com.google.android.as-kOCIqPVOqvsAoEvIRusbAw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.866 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~SfurlnGZRK50UeGX7Guv7w==/com.google.android.tts-4A2QXKOQ6fXtmKFr-n897Q==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.890 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~eq3pn_N7_m_r8YOBCjGZLA==/com.easybrain.block.puzzle.games-mR0fXnhqysD-c6BUHjZ0YA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.939 12214 12217 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~T6RRuILnlmcPNHQ_vQJwDg==@com.application.zomato-2Achl23VE7UE321dEl1Ubw==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:52.949 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.application.zomato/app_pccache/5/F2FF627D940052495BF0C0AF15E5A0B2723F5469/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.957 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.application.zomato/app_pccache/5/A4A3883B62E64477497A21E502C207B1868F77D8/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:52.966 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.mainline.primary.libs' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:52.981 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_AdsDynamite_installtime.apk' with 1 weak references
+05-10 12:24:52.982 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_CronetDynamite_installtime.apk' with 1 weak references
+05-10 12:24:52.982 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteLoader_installtime.apk' with 1 weak references
+05-10 12:24:52.982 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteModulesA_installtime.apk' with 1 weak references
+05-10 12:24:52.982 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteModulesC_installtime.apk' with 1 weak references
+05-10 12:24:52.982 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_GoogleCertificates_installtime.apk' with 1 weak references
+05-10 12:24:52.982 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_MapsDynamite_installtime.apk' with 1 weak references
+05-10 12:24:52.982 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_MeasurementDynamite_installtime.apk' with 1 weak references
+05-10 12:24:52.983 15694 15708 W gle.android.gms: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_maps_core_dynamite_ondemand.apk' with 1 weak references
+05-10 12:24:53.075 12214 12218 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~867bTrPYz6swknYEdOYzTQ==@com.xingin.xhs-ZSgF8ROEC2VzvrgWdRK_hQ==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.117 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~yFbKkWFnPHw3g-JqVNmdFg==/com.motorola.gamemode-syqPFI9NrZGZNVBU8csoig==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.127 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.motorola.gamemode/app_yqzdkcache/dgd/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.175 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~dRcbN6s_SZHLHq_XV5JdOA==/com.easybrain.spider.solitaire-sqgmyZPaV8adcVToRk-vCw==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.198  1990  2635 D ActivityManager: freezing 15800 com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0, reason = oom_cached
+05-10 12:24:53.202  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:24:53.203  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:24:53.204  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={1099075} in 4ms
+05-10 12:24:53.225 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~652zS_y93W7tBxpY30YnEA==/com.dts.freefiremax-f1OpeVldj-L7uO06M3vWAA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.229 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.dts.freefiremax/cache/oat/arm64/app_resources_lib.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.232 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.dts.freefiremax/cache/oat/arm64/google_api_resources_lib.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.245 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.nfcservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:53.302 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~9YrUyuwvfLPDC5mZIdo2Gw==/app.revanced.android.apps.youtube.music-zVf_zKgdyvNJTcMONJaIzA==/oat/arm/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.367 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~lanBas1jIzQqDpaneQ-lAQ==/com.azefsw.audioconnect-WsLsXQuJikytjCPaaH87Ew==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.374 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.azefsw.audioconnect/app_pccache/5/591C52BA23C4E0E4C6EB8A94DE92F532A215A628/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.384 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.azefsw.audioconnect/app_pccache/5/FF9F46C837651603405478A94323CFF15475179C/oat/arm64/pcam.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.443 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Jd2Wy3teb8eS52c_0ISOYA==/com.innersloth.spacemafia-5WVI-QAP-FBRSgLtZ9vlVQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.470 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~ksJhqVqZK6oelcUzBNr8eA==/com.brave.browser-_49ycfiS47CH0ZnOUE_emA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.477 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~ksJhqVqZK6oelcUzBNr8eA==/com.brave.browser-_49ycfiS47CH0ZnOUE_emA==/oat/arm64/split_chrome.odex) is kOatUpToDate with filter 'speed' executable 'false'
+05-10 12:24:53.481 12214 12218 I artd    : GetBestInfo: dm (/data/app/~~ksJhqVqZK6oelcUzBNr8eA==/com.brave.browser-_49ycfiS47CH0ZnOUE_emA==/split_on_demand.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.504 15957 16338 D ProfileInstaller: Installing profile for com.motorola.dolby.dolbyui
+05-10 12:24:53.541 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.devicelock' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:53.557 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~2scNsFJwOUNnwERShUOw9A==/com.motorola.spaces-s-_Sr_txcoMDLW5-5hNaWA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.584 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~hF_Xb8vUZ5hX5lzIocjVsA==/com.google.android.webview-CYpGeHAa63LmKEzCIQnZ_w==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.592 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~hF_Xb8vUZ5hX5lzIocjVsA==/com.google.android.webview-CYpGeHAa63LmKEzCIQnZ_w==/oat/arm/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.622 12214 12214 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~78TWXUYNNgRsSl22ES-x3g==@com.cambyte.okenscan-NlwJAz-PdsF9x7T3FPyoEw==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.652 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~JWZaVvID7cb3cd9oNiV-Sw==/all.documentreader.filereader.office.viewer-GWoN5boe4aCPIDaol2Ad9g==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.659 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/all.documentreader.filereader.office.viewer/app_pccache/5/32C64336DAAB52DE09299639A297EE1CAEE76804/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.707 12214 12214 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~7ql-GblGyJEsALoE2E1vcw==@org.thoughtcrime.securesms-W-tds3eiizFUJix3pvX_Fw==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.729 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.motorola.motosecure' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:53.763 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~yenG7B7osUv16uU9xkS1sw==/com.google.android.apps.docs.editors.docs-MpX9lth8sKssOFmIjg2hDQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.774 12214 12214 I artd    : GetBestInfo: /data/app/~~roSaBOkcznRD0-qhTuCJcQ==/com.amar.vault-10HGdZkLrEczjw09LTFxyg==/base.apk has no usable artifacts
+05-10 12:24:53.778 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.apex.cts.shim' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:53.840 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Yp2LyM9SeLkMC27opCOiDg==/com.openai.chatgpt-LfJZ2Lt9XiAY2L-_eCET7A==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.859 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~SQnu_akxXHPoTqUJQ7Phzw==/com.marc.files-ugV73G3LoQeP303VLcFqAA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.902 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Eg_8ODSLrnDAgPEGX-mCLA==/com.spotify.music-Wl7Y6QUYZZqxY0pVi9ho5Q==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.937  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3776541, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=140431, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=8, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=600000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=19, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=43945, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=42568, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=600000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=397, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1107022}
+05-10 12:24:53.937  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3776541, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=140431, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=8, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=600000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=19, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=43945, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=42568, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=600000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=397, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1107022}
+05-10 12:24:53.941  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3776541, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=140432, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=8, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=600000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=19, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=43945, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=42568, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=600000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=397, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1107022}
+05-10 12:24:53.941  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3776541, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=140432, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=8, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=600000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=19, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=43945, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=42568, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=600000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=397, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1107022}
+05-10 12:24:53.945  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:24:53.945  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:24:53.945  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:24:53.945  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:24:53.945  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10572} in 1ms
+05-10 12:24:53.946  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:24:53.946  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:24:53.947  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={20572} in 1ms
+05-10 12:24:53.948  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:24:53.948  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:24:53.949  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:24:53.949  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:24:53.949  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:24:53.950  2866  4952 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:24:53.951 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~2QL-fe93MjO-sV5tUufssQ==/ai.character.app-ATkE88ct3t3D_nxGoaJhOA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:53.952  2866  5014 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:24:53.954  2866  5052 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:24:53.957  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:24:53.957  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:24:53.958  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:24:53.958  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:24:53.958  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:24:53.962 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/ai.character.app/app_pccache/5/591C52BA23C4E0E4C6EB8A94DE92F532A215A628/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:53.969 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/ai.character.app/app_pccache/5/EEE20DEE2B9E8FD13D3BD7940C93E19263473270/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.007 12214 12217 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~fbwpy0e_fnl-FsnqIJah_Q==@com.lenskart.app-6LhMl98bKK-6Y55neERwTQ==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.012 15694 15694 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.measurement.START pkg=com.google.android.gms }
+05-10 12:24:54.016 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.appsearch' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.021 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.art' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.040 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~7mVguxb0PZxNyaIFEv66sw==/com.google.android.marvin.talkback-20pi8PlJi3d6cFxpBfJk6w==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.085 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~ODwlmXeXNIJTOOE7lXHqxA==/com.catool.solitaire.card-KVi1EzfN9b4sBpDh1KPf3Q==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.159 12214 12214 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~owYSg4lyX0PqikpWwB8peQ==@com.jio.myjio-GWY55RthQEHopbfKAiYLhQ==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.168 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.jio.myjio/app_pccache/5/C150A56EE81A7F41B729057EB1FA05CBFA504FB6/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.174 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.jio.myjio/app_pccache/5/0DB12F04482D5EE6F1C4FAFDFA9C30C300995A35/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.232 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~4QcSOoNxY0ZUtixJQ_oh6Q==/com.easybrain.sudoku.android-F4mUt5SatFRdCUCM-98fMw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.261 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~2VISMM0hGjDjfh2kYRk9TA==/com.whatsapp-WFTD4D_U2mLsmupzt9umJg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.295 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~XkS46xgpKSl73YTa08KrDg==/com.valvesoftware.android.steam.community-7jNQNSNKlR-q9JTAoMf1Zg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.312  1990  2175 W ProcessStats: Tracking association SourceState{a63570b system/1000 ImpFg #102676} whose proc state 5 is better than process ProcessState{4480279 com.google.android.permissioncontroller/10321 pkg=com.google.android.permissioncontroller} proc state 14 (4 skipped)
+05-10 12:24:54.317 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~XfoHXcHeqmjJWN_IxxWkwQ==/com.google.android.safetycore-uEg9wQNAjtv2b3rl10QunA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.369 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~SnkLtc3GRX-z6lwvQt6lfQ==/com.google.android.dialer-RShxJhX-12DAgfk1-f9CAg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.385 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~Q3hsdIElozY6_DPo1MxpbA==/android.autoinstalls.config.motorola.layout-8p0kr8cZM9HNfI766VI0jA==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.415 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.mediaprovider' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.444 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~uhwgnesRR4lFnqicYa7KBg==/com.tallteam.citychase-60FKhMJ6vCRFHz5XIxcijQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.452 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.tallteam.citychase/cache/oat/arm64/google_api_resources_lib.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.461 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.tallteam.citychase/app_pccache/5/C032827D49137A4DE859DC0AEDE2EAF97B8599B0/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.466 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.tallteam.citychase/cache/oat/arm64/app_resources_lib.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.470 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.tallteam.citychase/cache/oat/arm64/auth_resources_lib.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.475 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.tallteam.citychase/app_pccache/5/362BAA1E742037C69CD8BF98C5D97909342864E7/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.478 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.tallteam.citychase/cache/oat/arm64/database_resources_lib.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.540 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~tY2_q9LQRAefpYnkeipOuA==/cris.org.in.prs.ima-K2kGpnEdO3q9jR-PxT8OcQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.550 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/cris.org.in.prs.ima/app_pccache/5/591C52BA23C4E0E4C6EB8A94DE92F532A215A628/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.559 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/cris.org.in.prs.ima/app_pccache/5/EEE20DEE2B9E8FD13D3BD7940C93E19263473270/oat/arm64/pcam.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.581 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.virt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.585 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.btservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.586 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.resolv' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.632 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~TJVEOGC9VgtKlbC_c1CWDQ==/com.google.android.apps.bard-SIQoCpLfGygs9MTtE0da1A==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.667 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Bj6esGk0TCUjVRja19kJDg==/com.google.android.apps.nbu.paisa.user-zDAh4hKeaDkwKAATCVp-rw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.679 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.google.android.apps.nbu.paisa.user/app_pccache2/5/F2FF627D940052495BF0C0AF15E5A0B2723F5469/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.689 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.google.android.apps.nbu.paisa.user/app_pccache2/5/A6422CD2CF82BB9C0EAF521C1BF6CC70ABCF649F/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.750 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~HQa20CHVeOS2h7yj0HtJGA==/com.frontrow.vlog-RUBVAUH7ooO5XG1Y2t5BzA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.761 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.frontrow.vlog/app_pccache/5/591C52BA23C4E0E4C6EB8A94DE92F532A215A628/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.772 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.frontrow.vlog/app_pccache/5/EEE20DEE2B9E8FD13D3BD7940C93E19263473270/oat/arm64/pcam.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.784 28497 28594 I ThermalEngine: ACTION: freeze_rule - Setting freeze_rule to 0
+05-10 12:24:54.784 28497 28594 I ThermalEngine: Monitor:INACTIVE:FREEZE-CHG:freeze_rule=1:DETECT-STANDBY=1
+05-10 12:24:54.784 28497 28593 I ThermalEngine: Thermal-Server: Thermal received msg from  freezing
+05-10 12:24:54.784 28497 28594 I ThermalEngine: Monitor:ACTIVE:OVERRIDE-CHG:internal_override=1:DETECT-STANDBY=1
+05-10 12:24:54.784 28497 16340 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-10 12:24:54.785 28497 28594 I ThermalEngine: ACTION: override_c - Setting override_c to 1
+05-10 12:24:54.785 28497 16341 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-10 12:24:54.785 28497 28593 I ThermalEngine: Thermal-Server: Thermal received msg from  override_c
+05-10 12:24:54.787 28497 28594 I ThermalEngine: Monitor:ACTIVE:MON-MSM-STB:battery=4:Virt-QUT=44534
+05-10 12:24:54.789 28497 28594 I ThermalEngine: Monitor:INACTIVE:MON-MSM-NORMAL:battery=6:Virt-QUT=44534
+05-10 12:24:54.799 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.configinfrastructure' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.800 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.media' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.825 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~i84XzoIXf2WbAI10NMmyKw==/com.cloudflare.onedotonedotonedotone-fazNeZ8rzU2Y0Az6Tq8MGg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.855 14686 14686 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+05-10 12:24:54.876 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~9gBbrpjNHOAbTIUcN8ROiw==/com.google.android.apps.messaging-Gveexi309iayRNqYCAALLw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.884 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.google.android.apps.messaging/app_dg_cache/7D5C9405A3D81C422016C0CF22E38A12D08182E8/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.892 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.google.android.apps.messaging/app_dg_cache/646DA7BE3AF9B756DEFD88CA7189FC9D7C55EC0F/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:54.915 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~AdgbRK67T2jmt76BUoU2qQ==/com.google.android.googlequicksearchbox-K95lu87diIGEvA7MGgbT5A==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.934 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.vndk.v31' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.936 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.vndk.v30' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.956 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~chh9sqg9HnIo8NM_pdOs1A==/app.netmirror.netmirrornew-rVptKhn7jGvmMU7XWfCm0A==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:54.966 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.vndk.v33' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.967 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.vndk.v32' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.968 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.vndk.v34' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:54.995 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~IdIte2fQrXrrAOSP3UJ0aQ==/in.swiggy.android.instamart-db5Ryfd-wu3d3PfURIj_XQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.014 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~6zy4eB98dBIh_wbG0Fl7gg==/com.google.android.documentsui-mzqzt-UU6Y4P9VedWviDFA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.089 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~wTInLTOJK0BXx2AvaBnQ1w==/sorting.games.goods.sort.triple.match3d.puzzle.stuff-csdUNP1dTx3bS1DDDvclNg==/oat/arm64/base.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.132 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~-quCVE8ycUXUd3IzYjluMQ==/com.anthropic.claude-xVu9LO8dHdaYTfTPKZiq0Q==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.158 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~ZWZr-i-gyxX-9pFH3kQ8bw==/com.google.android.contactkeys-mNjHpatIdmXw7eIelxhNPQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.181  1347  1431 E ANDR-PERF-OPTSHANDLER: Failed to read 
+05-10 12:24:55.181  1347  1431 E ANDR-PERF-RESOURCEQS: Failed to apply optimization [11, 10]
+05-10 12:24:55.238 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~zyi3XXWdM4f6Ixpuv4-lfQ==/com.flipkart.android-jP54XyOEh1NubcrgibOHuA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.246 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.sdkext' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:55.286 12214 12217 I artd    : GetBestInfo: dm (/data/app/~~i0S8wZqUNo6y6Tsp0u_aJg==/com.instagram.android-MJmzoLa3AYjsWB1uvNtjgQ==/base.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.328 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~pmqEaG80grDIGxXWgllBnw==/in.amazon.mShop.android.shopping-cLXYHLHGyP7y_jNtZeqSUw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.338 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.adservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:55.347 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~VqPM2LctoJ7IT-8Iv1BPJQ==/com.motorola.ccc.notification-7HhATuQIW2mdDKoMiv2wOg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.351 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.tethering' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:55.359 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WKcWxWKYmB75r0SdknZpSg==/com.google.android.captiveportallogin-ze1ZpdThyf1I7ZvgemvCxQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.397 12214 12218 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~TG3oqrjeyitbl3eFfrKzHw==@com.kiloo.subwaysurf-wO1X74iLbopnrcpDeQuqMA==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.407 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.kiloo.subwaysurf/app_pccache/5/EEE20DEE2B9E8FD13D3BD7940C93E19263473270/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.416 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.kiloo.subwaysurf/app_pccache/5/591C52BA23C4E0E4C6EB8A94DE92F532A215A628/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.422 12214 12218 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.kiloo.subwaysurf/cache/oat/arm64/google_api_resources_lib.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.425 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.kiloo.subwaysurf/cache/oat/arm64/app_resources_lib.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.447 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~_k9sWq7uVnIcDnF8azWp0Q==/src.com.dop-71sxgZtHhPpY29wwA2o8hg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.480 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.486 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/oat/arm64/split_chrome.odex) is kOatUpToDate with filter 'speed' executable 'false'
+05-10 12:24:55.490 12214 12214 I artd    : GetBestInfo: dm (/data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_dev_ui.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.496 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/oat/arm64/split_on_demand.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.498 12214 12214 I artd    : GetBestInfo: dm (/data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_stack_unwinder.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.501 12214 12218 I artd    : GetBestInfo: dm (/data/app/~~0suRK4GuaSV6CxaYf2wruw==/com.android.chrome-KnA2-hxL5ARmnr8xUg3Xtw==/split_test_dummy.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.555 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~vfQiz86PJ1N44mfh200MNw==/com.facebook.services-53r4MPCNKhiZbV7Q38SbLw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.560 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.runtime' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:55.572 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~GwL-i-CcX7AgmmPM94dWZA==/com.google.android.apps.subscriptions.red-4LAcs66C-ARWEy6MQ-DxDQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.642 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~AvT5YsIwSI62rLNVvYeS2w==/com.dopuz.klotski.riddle-N5D_D2RdWXy-J6dT6fbFOg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.653 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~AvT5YsIwSI62rLNVvYeS2w==/com.dopuz.klotski.riddle-N5D_D2RdWXy-J6dT6fbFOg==/oat/arm64/split_module_hybid.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.662 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~AvT5YsIwSI62rLNVvYeS2w==/com.dopuz.klotski.riddle-N5D_D2RdWXy-J6dT6fbFOg==/oat/arm64/split_module_pangle.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.685 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~0Yz1vW8Cg-M3EftcFEbcvA==/app.revanced.manager.flutter-kKlNFSl-VPwvuWDAHbqj_A==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:55.686  1990  7484 I AppSearchIcing: icing-search-engine.cc:2486: Persisting data to disk with mode 3
+05-10 12:24:55.705  1990  2635 D ActivityManager: freezing 15916 com.google.android.webview:webview_service, reason = oom_cached
+05-10 12:24:55.707  1990  7484 I AppSearchIcing: icing-search-engine.cc:2501: PersistToDisk completed.
+05-10 12:24:55.709  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 12:24:55.711  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 12:24:55.711  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={1010236} in 4ms
+05-10 12:24:55.730 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~XZ1RhCaymuQCrYchGp1O6Q==/com.google.android.contacts-vDrsOdkZVHjXiJE2jAGVpA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.742 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.cellbroadcast' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:55.762 12214 12214 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~KzaDceRYfqgawD7FFSvaVg==@com.digital.bsnl.selfcare-P9qDd7LCK5v_EezlybY6nA==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.850 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.883 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~B-PPF9n9LSYusHoK-9Sbgg==/com.google.ai.edge.gallery-kjwL001CwuzRlFhL-dAfbQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.914 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Yvq1xqh8M5-d96Tz5au-3w==/com.google.android.accessibility.switchaccess-ZXZb7y4-2_mn6BOK5kn3ZQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.960 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~KPzo5y2J1ou29ssu87VykQ==/com.google.android.apps.carrier.carrierwifi-8z1IWHewdDlZ_BuLyHet5A==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.970 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~jmJ2u59ZlbU5zxAaehdsCg==/com.google.android.apps.wellbeing-JPDb8H6yom8XY-yaKQlB_A==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:55.993 12214 12214 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~RhLG7mUGMElOslYC_n4s7A==@com.myntra.android-Jqz0nmNifbuT1ZQQBSEJuQ==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.028 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Dgz9oO4zwLDyQEmBi5vBxA==/com.olacabs.customer-rPvNxMCH0_sHe42FjSVYAw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.059 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~E7labk-YX5mXx5RkcWCx7A==/com.google.android.apps.youtube.creator-pJH85zIgbWbiIfI3qvIeSg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.079 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~9AyxPfdMULSxK4wR_9iQcw==/eu.kanade.tachiyomi.extension.en.freemanga-G4lp3jLdyWtVeUtEnXzGLA==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:56.132 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Iw9TK8UdR4EFTdrEtS3IwA==/org.videolan.vlc-hevfc-IcXTrLusVtq-IIRQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.162 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~TjQLUuG3405Jiuz5YJLgbw==/com.google.android.apps.restore-EZ03ZE70nf3jOu8QZOIeDA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.178 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.motorola.enterprise' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:56.199 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~pYpSO0XiX7Jd07_GeTc0GQ==/com.mbm.elereaning.mbmecj-TEvUJ12j-GvE0pDeQeE75w==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.227 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~4JLKSXkEPo5nhU01jXL_CA==/com.google.android.apps.photos-5-UdoLAiwqZanXoRY8vojQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.270 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Suw1j2HmfZlJMcrr03IukA==/com.google.earth-05Uv2ZQY_x1Jy84GlInXwg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.300 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~GNvW7M53oH3qZVex5W-RwQ==/com.discord-hfk8iRJ4nCtYovLAQVfB6w==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.323 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~xxBmJd3dSJ3DszGV-lekZQ==/com.sbi.lotusintouch-9_h43_It5ydH7M8BeQpW5Q==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.334 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.tzdata6' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:56.363 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~qr7FkVWAXO6BsL99dSONRQ==/com.rapido.passenger-sJ2UMmDTdiANtEkKwtba9Q==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.370 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.rapido.passenger/app_pccache/5/D6A6862E57300EBB9D9EF1C1C983A838A749EA4F/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:56.380 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.rapido.passenger/app_pccache/5/A4A3883B62E64477497A21E502C207B1868F77D8/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:56.428 12214 12214 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~P-r8qBi1GiUgCe4SBR1LpQ==@gymworkout.gym.gymlog.gymtrainer-K6nLI2eE4GksbXkyciAu8g==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.435 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/gymworkout.gym.gymlog.gymtrainer/app_pccache/5/8C5AE28E06233ED046257CCB628AC34047ABB1F1/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:56.445 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/gymworkout.gym.gymlog.gymtrainer/app_pccache/5/A410D6CBF665646817609CD2009C03000EA43564/oat/arm64/pcam.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.459 14686 11282 W GetConfigSnapshotOp: Succeeded but not registered: com.google.android.libraries.performance.primes#com.android.vending [CONTEXT service_id=51 ]
+05-10 12:24:56.468 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.permission' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:56.496 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~qUev4V-yGIKQRezQpDd0VA==/com.pinterest-ck1JBHou2qIgicrdTGNvYA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.510 12214 12218 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~KyzmJ8Sc9YYPjDZ89qWaDw==/com.facebook.system-urLFJv0CzUipt7FIKwSfeg==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:56.548 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.wifi' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:56.558 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~g3uZ0yrAT9xgLoYr0tj2Yg==/com.mgoogle.android.gms-mcMyarsRcIuWwP9rQToBRQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed' executable 'false'
+05-10 12:24:56.571 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~oaLSK_VNUG9g4JkQ69SRBw==/com.internshala.app-CQldwbogXVTIU1G8Qp5R8Q==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.594 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~nGL8NA48gStUGYdiovF9FA==/com.whereismytrain.android-FZdLhKEA4zt8YaMNLkDV3w==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.619 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Dwvm9Wu1qUN-Ia4QFVte-g==/com.jaipurcitybus.mobileticketingapp-K58hF_r2VArWbxT2o1kCPA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.645 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~pqjjSaSyFXFVAmWJuBpeRw==/com.worldpackers.travelers-eZEY6MYDp4vGnPteIDhm4w==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.678 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~1KxQhmgL7iJ0e_CKmIX0Kw==/homeworkout.homeworkouts.noequipment-rH7iROLWH0pFOxI2IMYpsA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:56.688 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/homeworkout.homeworkouts.noequipment/app_pccache/5/591C52BA23C4E0E4C6EB8A94DE92F532A215A628/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:56.696 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/homeworkout.homeworkouts.noequipment/app_pccache/5/A410D6CBF665646817609CD2009C03000EA43564/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:56.729 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~1viIyaoQ2LbXTHCSCly3NA==/com.google.android.apps.adm-GgG8QRNnoWR7O011zhthaw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:57.406   842   842 I lowmemorykiller: Kill 'com.google.android.googlequicksearchbox:googleapp' (15655), uid 1010214, oom_score_adj 920 to free 268388kB rss, 33824kB swap; reason: device is in medium stall and watermark low
+05-10 12:24:57.455  1990  2722 D ConnectivityService: releasing NetworkRequest [ REQUEST id=5233, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 1010214 RequestorUid: 1010214 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ] (release request)
+05-10 12:24:57.455  1990  5445 I ActivityManager: appDiedLocked: app=ProcessRecord{7b14712 15655:com.google.android.googlequicksearchbox:googleapp/u10a214} thread=android.os.BinderProxy@a398cc7 fromBinderDied=true isKilledByAm=false reason=null
+05-10 12:24:57.455  1990  5445 I ActivityManager: Process com.google.android.googlequicksearchbox:googleapp (pid 15655) has died: cch+20 CEM 
+05-10 12:24:57.456  1990  2722 D ConnectivityService: releasing NetworkRequest [ REQUEST id=5231, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 1010214 RequestorUid: 1010214 RequestorPkg: com.google.android.googlequicksearchbox UnderlyingNetworks: Null] ] (release request)
+05-10 12:24:57.458  1990  2275 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_1010214/pid_15655
+05-10 12:24:57.459  1191  1191 I Zygote  : Process 15655 exited due to signal 9 (Killed)
+05-10 12:24:57.459  1990  2275 W libprocessgroup: RemoveCgroup: /dev/memcg/apps/uid_1010214/pid_15655 does not exist.
+05-10 12:24:57.460  1990  5445 D ActivityManager: unfreezing ProcessRecord{d6300ec 15800:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u10a214i75}, reason = unfreezeTemporarily, adj = 920, adjType = cch-empty, adjSource = null
+05-10 12:24:57.461  1990  5445 D ActivityManager: sync unfroze 15800 com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0 for 27
+05-10 12:24:57.462  1990  5445 I ActivityManager: Killing 15800:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u10a214i75 (adj 0, setSvc -10000): isolated not needed
+05-10 12:24:57.464   844   844 I hwservicemanager: getTransport: Cannot find entry vendor.qti.hardware.iop@2.0::IIop/default in either framework or device VINTF manifest.
+05-10 12:24:57.466 15694 15694 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safetynet.service.START pkg=com.google.android.gms }
+05-10 12:24:57.466 15694 15694 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.safebrowsing.SafeBrowsingService.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+05-10 12:24:57.467  1990  5445 D RestartModeController: markWaitRestartAppIsSuicided null processName=com.google.android.googlequicksearchbox:googleapp
+05-10 12:24:57.467  1990  5445 D ActivityTaskManager: handleAppDied: uid=1010214,diedCount=2,lastDiedTime=41141976,forceStopUids=false
+05-10 12:24:57.490  1990  3134 I ActivityManager: appDiedLocked: app=ProcessRecord{d6300ec 15800:com.google.android.webview:sandboxed_process0:org.chromium.content.app.SandboxedProcessService0:0/u10a214i75} thread=android.os.BinderProxy@c4fc2f4 fromBinderDied=true isKilledByAm=true reason=null
+05-10 12:24:57.491  1990  2114 D DisplayManagerService: Drop pending events for gone uid 1099075
+05-10 12:24:57.491  1990  3134 D ActivityTaskManager: handleAppDied: uid=1099075,diedCount=0,lastDiedTime=0,forceStopUids=false
+05-10 12:24:57.492  1990  2275 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_1099075/pid_15800
+05-10 12:24:57.492  1990  2275 W libprocessgroup: RemoveCgroup: /dev/memcg/apps/uid_1099075/pid_15800 does not exist.
+05-10 12:24:57.492  1575  1575 I Zygote  : Process 15800 exited due to signal 9 (Killed)
+05-10 12:24:57.641 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.media.swcodec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:57.661 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~IPudBTLubkxa7ZtiNMk4cA==/io.teslatech.callbreak-mEFFXFgVHfrMSd8jOWX8zQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:57.668 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~IPudBTLubkxa7ZtiNMk4cA==/io.teslatech.callbreak-mEFFXFgVHfrMSd8jOWX8zQ==/oat/arm64/split_com_android_vending_recoveryUpdate_7120308132707083498.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:57.669 16241 16344 I Finsky:background: [4503] playLoggingServerUrl: https://play.googleapis.com/play/log
+05-10 12:24:57.669 16241 16344 I Finsky:background: [4503] playLoggingServerTimestampUrl: https://play.googleapis.com/play/log/timestamp
+05-10 12:24:57.673 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/io.teslatech.callbreak/app_pccache/5/FF9F46C837651603405478A94323CFF15475179C/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:57.679 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/io.teslatech.callbreak/app_pccache/5/31A608BBC774481EC4B6A2274A0729389E78E19D/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:57.680 14686 11282 W GetConfigSnapshotOp: Succeeded but not registered: com.google.android.libraries.performance.primes#com.android.vending [CONTEXT service_id=51 ]
+05-10 12:24:57.731 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Nno-t4NCc5ZYf7wZ5fe4UA==/com.google.android.projection.gearhead-l9Mh6FfM1wHqHspXOw2-RA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:57.737 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.google.android.projection.gearhead/app_impl/oat/arm64/sdk_impl.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:57.743  5136  5421 I ProtoXDBBufferWrapper: ProtoXDBBufferWrapper.flushToStorage():158 Flushed 8 data item(s) to storage.
+05-10 12:24:57.757 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.profiling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:57.770 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~ZqMN2JiREEcmPvxO4xru9g==/com.Dominos-I6lxH2Et2zVL1AAioxPb9A==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:57.814 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~OqxOcS4nvgav3jIp-nzIgA==/water.sort.puzzle.game.color.sorting.free-stkW9MRIixNmxqxxlfEj1w==/oat/arm64/base.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:57.869 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~PXv-V4M_JIUU_V1CCgQC5g==/com.google.android.apps.fitness-_ABuOEoFEh129JSS0bzWgw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:57.907 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~mkD7drmtb-nhLgON2xa8ig==/com.google.ambient.streaming-b6vqh5gnDPn-lH3YDt-JyA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:57.946 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~rEIWr_I_nc_xYT_Ll9r1Gg==/com.google.android.apps.docs.editors.sheets-JtJR9cOzmYT57CK-7SIptQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:57.987 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~H0BgbQISaKfo1DxAdnPLTA==/com.bt.bms-Du-ThfAaKMqBNJTeEuHsOQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:57.997 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.bt.bms/app_pccache/5/973D507BAB02B28011CA2EDE121F1257A52FC7EF/oat/arm64/pcam.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.004 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.bt.bms/app_pccache/5/8C5AE28E06233ED046257CCB628AC34047ABB1F1/oat/arm64/pcam.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.060 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~qqIyNwLys0pdvk7sW73How==/word.office.docxviewer.document.docx.reader-TTRsSf7b4Bu4q86OKHfOVA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.066 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/word.office.docxviewer.document.docx.reader/app_pccache/5/EEE20DEE2B9E8FD13D3BD7940C93E19263473270/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.074 12214 12217 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/word.office.docxviewer.document.docx.reader/app_pccache/5/A6422CD2CF82BB9C0EAF521C1BF6CC70ABCF649F/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.104 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~EoFN3Mvn2OWOons-GI1Vog==/com.motorola.moto-u-JHS3OKEia9Ny8GIKzoww==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.140 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~7AFNJu7vFzEJK_deO2PtgQ==/com.dare2compete.app-Mjm6meBRrbqSPBUB_rAWmA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.162 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~MTFx8ET8fWnXbCz9hv0YuQ==/ru.zdevs.zarchiver-wRBk8Iz-WEkLDvI8nij5nA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.234 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~orsr0cfjht_O8mMs9iMoVw==/com.twitter.android-P72oKngNwPlhI8v1mGNLmw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.245 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.twitter.android/app_pccache/5/D6A6862E57300EBB9D9EF1C1C983A838A749EA4F/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.254 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.twitter.android/app_pccache2/5/DAF7A800792838CAD4E7302B4F4B8E384482B7D1/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.263 12214 12214 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.twitter.android/app_pccache/5/2A8265B47A1D9B3EFA0B68A58A01A5E195878859/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.276 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.adbd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.314 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~kpYhWjPj8h4G5soYa9EazA==/com.blackout.spades-pl-MQTjWnzhVovULxjCcDw==/oat/arm64/base.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.355  1289  2613 I slpi    : LTR569 ALS_OC: lux:22.956907, last_ps:0[781], RAW:309.000000[721, 591], INT:70, G:512, C:0, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 12:24:58.363 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~ulxYoKqEaJJl1hiqFcX2zg==/com.google.android.deskclock-aehtRBMu-Cik5MFBtKYfnQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.389 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~60EFF9nn6dMHjDvlJHwuVg==/com.digilocker.android-kgiZhbJ8jR50DajIz8z4UQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.435 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.i18n' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.443 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.conscrypt' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.457  1289  2613 I slpi    : LTR569 ALS_OC: lux:10.401188, last_ps:0[781], RAW:140.000000[339, 279], INT:70, G:512, C:0, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 12:24:58.466 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~oHjZDJHsrjBVW-uK4-B_rA==/com.jpl.jiomart-05GYnKAbooo1Vc9Qcvd9Zg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.518 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.524 12214 12217 I artd    : GetBestInfo: dm (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/split_adaptivebrightness.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.529  1990  2603 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-10 12:24:58.534 12214 12217 I artd    : GetBestInfo: dm (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/split_adaptiveicons.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.538 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/oat/arm64/split_appusage.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.545 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/oat/arm64/split_contentobfuscation.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.548 12214 12214 I artd    : GetBestInfo: dm (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/split_keyextraction.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.558 12214 12217 I artd    : GetBestInfo: dm (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/split_languageidentifier.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.561 12214 12214 I artd    : GetBestInfo: dm (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/split_onnx.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.565  1289  2613 I slpi    : LTR569 ALS_OC: lux:8.395245, last_ps:0[781], RAW:113.000000[154, 126], INT:70, G:512, C:0, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 12:24:58.567 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/oat/arm64/split_optimizedcharging.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.571 12214 12214 I artd    : GetBestInfo: dm (/data/app/~~bP3_ZmX9dDKAcBATgh1NXw==/com.motorola.aiservices-0cxoAsvpt8PuHkg1jg5JvA==/split_phishing.dm) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:58.611  6714  6714 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.gmscompliance.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentBoundBrokerService }
+05-10 12:24:58.631 15694 15694 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.mobstore.service.START pkg=com.google.android.gms }
+05-10 12:24:58.650  1289  2613 I slpi    : LTR569 PRX_OC_T: Near 1 K 789 PDATA 1203 PLT 983 PHT 1152 - 1,16,12,ed,|a5,c|46
+05-10 12:24:58.670  1289  2613 I slpi    : LTR569 ALS_OC: lux:4.903418, last_ps:1[1203], RAW:66.000000[126, 100], INT:70, G:512, C:0, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 12:24:58.683  1288  2676 V MotSpeakerHelperProximity: updated mCurProximityState: NEAR (0.000000)
+05-10 12:24:58.683  1288  2676 V MotSpeakerHelperProximity: ThreadLoop event mProximityState = NEAR, previous FAR
+05-10 12:24:58.699 12214 12216 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~BW_gyE69r51kZJVDSj4kGg==@org.telegram.messenger-RSulhFQeqixph7eO931cnA==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.705 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.neuralnetworks' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.728 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~gSkNWOVnR1MbphRtER_2xg==/com.couchsurfing.mobile.android-QYfRrc2Pkd5QgPbOtY77aA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.764 12214 12216 I artd    : GetBestInfo: odex in dalvik-cache (/data/dalvik-cache/arm64/data@app@~~t9ko1dTbiQNJMjKR8oWRNQ==@com.fsn.nykaa-HH6ZDWN-Ny-ijHl0hYm9tg==@base.apk@classes.dex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.776 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.ipsec' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.803 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~cuxGbUaHwmGZFE-n0r8lWQ==/com.google.android.as.oss-G7nG2GNuMhwWnwTu7i8Flw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.829 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.ondevicepersonalization' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.839 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.healthfitness' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.884  1289  2613 I slpi    : LTR569 ALS_OC: lux:3.268945, last_ps:1[1203], RAW:44.000000[79, 53], INT:70, G:512, C:0, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 12:24:58.898 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~SCA8hlMPB--u7IMvF7RKrg==/com.facebook.appmanager-xFNECTfMw92HEo9faR5nDA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:58.903  6714  6714 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+05-10 12:24:58.959 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.uwb' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.960 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.extservices' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:58.991 12214 12216 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~9G-bbrE3IbzZgzF8RxQ6tg==/com.easybrain.jigsaw.puzzles-sFjlEExLGKxPLShHQWC3ZQ==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.041 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.044 12214 16348 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.android.vending/app_dg_cache/87E7746227FF4E457A2EB56043B95E41006DE49F/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.048 12214 16348 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.android.vending/app_dg_cache/A8F89F306FD1BA172E06F6F2B9F79826D0309BB6/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.051 12214 12216 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.android.vending/app_dg_cache/21A90BF1C1C388089206DCE215FB60D7882BFA18/oat/arm64/the.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.054  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3774595, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=140433, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=19, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=114746, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=42567, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=397, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1107022}
+05-10 12:24:59.054  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3774595, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=140433, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=19, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=114746, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=42567, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=397, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1107022}
+05-10 12:24:59.061  2866  4708 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:24:59.062  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:24:59.062  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:24:59.062  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:24:59.063  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3774595, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=140434, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=19, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=114746, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=42567, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=397, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1107022}
+05-10 12:24:59.063  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3774595, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=140434, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=19, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=114746, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=42567, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=397, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=1107022}
+05-10 12:24:59.065  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:24:59.065  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:24:59.065  2866  4870 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:24:59.070  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:24:59.070  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:24:59.071 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~rRKbP5a3KJXXjexEBGOP8g==/com.google.android.apps.nbu.files-BAF6l5Dx2seaEJdnGJF0Lw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.073  2866  4897 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 12:24:59.073  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 12:24:59.073  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 12:24:59.074  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 12:24:59.074  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls on low battery
+05-10 12:24:59.074  3057  3057 D VideoCall_LowBattery: disconnectVideoCalls 
+05-10 12:24:59.117 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.153 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~lk0QomXTEFxzOUo0xCjRMg==/com.google.android.apps.chromecast.app-lM5KeKxnDCxvgHRMeBfFZw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.182 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~NztbVQWWLbM-L6gdmXZznQ==/com.google.android.youtube-SyJFvCt_s0gHrL3FGmEomw==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.188 12214 16348 I artd    : GetBestInfo: vdex next to the dex file (/data/user/0/com.google.android.youtube/app_pccache2/5/32C64336DAAB52DE09299639A297EE1CAEE76804/oat/arm64/pcam.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.194 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.google.android.youtube/app_dg_cache/21A90BF1C1C388089206DCE215FB60D7882BFA18/oat/arm64/the.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.198 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.google.android.youtube/app_dg_cache/87E7746227FF4E457A2EB56043B95E41006DE49F/oat/arm64/the.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.203 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.google.android.youtube/app_yqzdkcache/drgd/v/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.209 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.google.android.youtube/app_dg_cache/A8F89F306FD1BA172E06F6F2B9F79826D0309BB6/oat/arm64/the.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.214 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/user/0/com.google.android.youtube/app_pccache2/5/EEE20DEE2B9E8FD13D3BD7940C93E19263473270/oat/arm64/pcam.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.235 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.237 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_attribution.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.239 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_contentMedia.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.240 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_dynamicInstalls.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.242 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_igniteCompat.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.243 12214 12217 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_motorola.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.245 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_notification.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.247 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_packageUsageStats.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.248 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_serviceLayer.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.250 12214 12218 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_singleTap.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.257 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_ui.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.259 12214 12214 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_webview.odex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.262 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~WDXv3jl7sYNcLJ0BSHh-SA==/com.dti.motorola-3DzUmTolqQhFtqQIzva-fA==/oat/arm64/split_wizard.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.315 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.os.statsd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:59.321 12214 16348 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~JTqFhNUHUR2-HTEzZqEo_A==/eu.kanade.tachiyomi.extension.all.kavita-EXe07xlLl_dWn5thBsijng==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.346 12214 12216 I artd    : GetBestInfo: vdex next to the dex file (/data/app/~~rwnhZVFTGQgA_olABoVwdw==/eu.kanade.tachiyomi.extension.all.mangafire-FvdKyOi8tWN6lx-jfVJAWA==/oat/arm64/base.vdex) is kOatUpToDate with filter 'verify' executable 'false'
+05-10 12:24:59.383 12214 12216 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~vNyCmceKn57sZmLiVdry-Q==/com.easybrain.color.sort.puzzle-DXU3xe2tXCqkFKHhuurMdg==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.396 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~JVFy1fQoJ1jrTOC8IPNNAQ==/com.motorola.livewallpaper3-DwzxGviwDy6r8FFbPyV56w==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.411 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~Y7MHmWg2WGnU9De2Lf3Pfw==/info.indiapost.daksewa-TyG7j45zniuMYnEwK1tB7g==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.420 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.android.rkpd' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:59.449 16060 16060 W Finsky  : [2] STU: Failed to get storage stats for package 'com.google.android.scheduling' (1601: Error getting stats: android.content.pm.PackageManager.NameNotFoundException)
+05-10 12:24:59.473 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~ri0w4ogag3OcgkBSyjiBjQ==/com.google.android.gm-oCJaOHWkQdaLBPfX6JdCaQ==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'
+05-10 12:24:59.474  1289  2613 I slpi    : LTR569 ALS_OC: lux:4.457652, last_ps:1[1330], RAW:60.000000[57, 31], INT:70, G:512, C:0, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 12:24:59.493 12214 16348 I artd    : GetBestInfo: odex next to the dex file (/data/app/~~5IWmZ9COFsb_5vKog3SEvw==/info.indiapost-hL8WeWe-CWLnOXqep2nlJA==/oat/arm64/base.odex) is kOatUpToDate with filter 'speed-profile' executable 'false'

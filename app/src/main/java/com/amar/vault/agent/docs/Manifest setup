@@ -1,0 +1,86 @@
+<!--
+  ============================================================================
+  PERCEPTION SERVICE — MANIFEST + STRINGS ADDITIONS
+  ============================================================================
+
+  Add the following to your existing files. DO NOT replace the whole files —
+  these are snippets to merge in.
+
+  ----------------------------------------------------------------------------
+  1. app/src/main/AndroidManifest.xml
+  ----------------------------------------------------------------------------
+
+  Inside <application>, add:
+
+      <service
+          android:name="com.amar.vault.agent.perception.PerceptionService"
+          android:exported="false"
+          android:label="@string/perception_service_label"
+          android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+          <intent-filter>
+              <action android:name="android.accessibilityservice.AccessibilityService" />
+          </intent-filter>
+          <meta-data
+              android:name="android.accessibilityservice"
+              android:resource="@xml/perception_service_config" />
+      </service>
+
+  No top-level <uses-permission> is required for AccessibilityService itself —
+  the permission is granted by the user toggling the service on in Settings,
+  not via a runtime permission dialog.
+
+  ----------------------------------------------------------------------------
+  2. app/src/main/res/xml/perception_service_config.xml
+  ----------------------------------------------------------------------------
+
+  Copy the perception_service_config.xml file I generated into
+  app/src/main/res/xml/.
+
+  ----------------------------------------------------------------------------
+  3. app/src/main/res/values/strings.xml
+  ----------------------------------------------------------------------------
+
+  Add these three strings. The description is shown to users in
+  Settings → Accessibility when they decide whether to enable the service.
+  Keep it HONEST — users ignoring this prompt is a misfeature, not a feature.
+
+      <string name="perception_service_label">Amar Vault Agent</string>
+
+      <string name="perception_service_summary">
+          Lets Amar Vault read what\'s on screen so the on-device agent can execute
+          tasks you request (like sending a message in WhatsApp).
+      </string>
+
+      <string name="perception_service_description">
+          Amar Vault uses this service to see the contents of apps you choose to
+          automate, and to perform taps and text entry on your behalf.
+
+          All processing stays on your device. Amar Vault never sees screens from
+          apps you haven\'t explicitly asked it to automate, and no screen content
+          is sent to any server.
+
+          You can disable this service at any time from Settings → Accessibility.
+      </string>
+
+  ----------------------------------------------------------------------------
+  4. Application class wiring
+  ----------------------------------------------------------------------------
+
+  In your VaultApplication (or equivalent Hilt Application subclass), add to
+  onCreate():
+
+      // Agent perception wiring. The AccessibilityService is created by Android,
+      // not by Hilt, so we inject shared state via its bind() method once the
+      // service connects. If the service is enabled before our Application.onCreate
+      // runs (rare but possible on process restart), rebind() handles it.
+      val snapshotCache = SnapshotCache()
+      val watchlist = PackageWatchlist()
+      AgentStateHolder.init(snapshotCache, watchlist)
+      PerceptionService.rebind(snapshotCache, watchlist)
+
+  You'll want a small AgentStateHolder (pure Kotlin singleton) or equivalent Hilt
+  @Singleton bindings so the rest of the Control Layer can also reach
+  SnapshotCache / PackageWatchlist. I can generate this in the next turn along
+  with AgentModule (Hilt) — flagging now so the current files don't reference
+  undefined injection points.
+-->

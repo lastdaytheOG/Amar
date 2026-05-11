@@ -1,0 +1,202 @@
+package com.amar.vault.agent.perception
+
+import app.cash.turbine.test
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+@OptIn(ExperimentalCoroutinesApi::class)
+class SnapshotCacheTest {
+
+    private fun snapshot(ts: Long = 0L): UiSnapshot = UiSnapshot(
+        packageId = "com.test",
+        windowClass = null,
+        capturedAt = ts,
+        elements = emptyList()
+    )
+
+    @Test
+    fun `new cache returns null`() {
+        val cache = SnapshotCache()
+        assertNull(cache.currentIfFresh())
+        assertNull(cache.currentAnyAge())
+        assertNull(cache.raw)
+    }
+
+    @Test
+    fun `put exposes snapshot via raw and currentAnyAge`() {
+        val cache = SnapshotCache()
+        val snap = snapshot(ts = 100)
+        cache.put(snap)
+
+        assertEquals(snap, cache.raw)
+        assertEquals(snap, cache.currentAnyAge())
+    }
+
+    @Test
+    fun `currentIfFresh returns snapshot when within TTL`() {
+        var now = 1000L
+        val cache = SnapshotCache(staleAfterMs = 2000, clock = { now })
+
+        val snap = snapshot(ts = 1000)
+        cache.put(snap)
+
+        now = 2500 // 1500ms after capture — within 2000ms TTL
+        assertEquals(snap, cache.currentIfFresh())
+    }
+
+    @Test
+    fun `currentIfFresh returns null when stale`() {
+        var now = 1000L
+        val cache = SnapshotCache(staleAfterMs = 500, clock = { now })
+
+        cache.put(snapshot(ts = 1000))
+
+        now = 1600 // 600ms after capture — past 500ms TTL
+        assertNull(cache.currentIfFresh())
+        // But currentAnyAge still returns the stale snapshot.
+        assertNotNull(cache.currentAnyAge())
+    }
+
+    @Test
+    fun `invalidate clears all readers`() {
+        val cache = SnapshotCache()
+        cache.put(snapshot(ts = 0))
+
+        cache.invalidate()
+        assertNull(cache.raw)
+        assertNull(cache.currentIfFresh())
+        assertNull(cache.currentAnyAge())
+    }
+
+    @Test
+    fun `currentFlow emits updates`() = runTest {
+        val cache = SnapshotCache()
+
+        cache.currentFlow.test {
+            assertNull(awaitItem())  // initial null
+
+            val snap1 = snapshot(ts = 100)
+            cache.put(snap1)
+            assertEquals(snap1, awaitItem())
+
+            cache.invalidate()
+            assertNull(awaitItem())
+
+            val snap2 = snapshot(ts = 200)
+            cache.put(snap2)
+            assertEquals(snap2, awaitItem())
+
+            cancelAndIgnoreRemainingEvents()
+        }
+    }
+
+    @Test
+    fun `ageMs returns MAX_VALUE when empty`() {
+        val cache = SnapshotCache()
+        assertEquals(Long.MAX_VALUE, cache.ageMs())
+    }
+
+    @Test
+    fun `ageMs reflects time since put`() {
+        var now = 1000L
+        val cache = SnapshotCache(clock = { now })
+        cache.put(snapshot(ts = 1000))
+
+        now = 1750
+        assertEquals(750L, cache.ageMs())
+    }
+}
+
+class PackageWatchlistTest {
+
+    @Test
+    fun `empty watchlist allows all packages`() {
+        val w = PackageWatchlist()
+        assertTrue(w.allows("com.foo"))
+        assertTrue(w.allows("com.bar"))
+        assertTrue(w.allows(null))
+    }
+
+    @Test
+    fun `empty watchlist still allows null packages`() {
+        val w = PackageWatchlist()
+        assertTrue(w.allows(null))
+        assertTrue(w.allows(""))
+    }
+
+    @Test
+    fun `acquire adds package to watchlist`() {
+        val w = PackageWatchlist()
+        assertEquals(1, w.acquire("com.foo"))
+        assertTrue(w.allows("com.foo"))
+        assertFalse("non-acquired package blocked when watchlist non-empty", w.allows("com.bar"))
+    }
+
+    @Test
+    fun `null packages are always allowed even with watchlist`() {
+        val w = PackageWatchlist()
+        w.acquire("com.foo")
+        assertTrue("null passes through even when watchlist non-empty", w.allows(null))
+    }
+
+    @Test
+    fun `acquire is refcounted`() {
+        val w = PackageWatchlist()
+        assertEquals(1, w.acquire("com.foo"))
+        assertEquals(2, w.acquire("com.foo"))
+        assertEquals(3, w.acquire("com.foo"))
+    }
+
+    @Test
+    fun `release decrements and removes at zero`() {
+        val w = PackageWatchlist()
+        w.acquire("com.foo")
+        w.acquire("com.foo")
+
+        assertEquals(1, w.release("com.foo"))
+        assertTrue("still watched at refcount 1", w.allows("com.foo"))
+
+        assertEquals(0, w.release("com.foo"))
+        // Empty watchlist → back to allowing all.
+        assertTrue(w.allows("com.foo"))
+        assertTrue(w.allows("com.bar"))
+    }
+
+    @Test
+    fun `release on unknown package returns 0`() {
+        val w = PackageWatchlist()
+        assertEquals(0, w.release("com.never-added"))
+    }
+
+    @Test
+    fun `clear removes everything`() {
+        val w = PackageWatchlist()
+        w.acquire("com.a")
+        w.acquire("com.b")
+        w.clear()
+        assertTrue(w.watched.isEmpty())
+        assertTrue(w.allows("com.anything"))
+    }
+
+    @Test
+    fun `watched reflects acquired packages`() {
+        val w = PackageWatchlist()
+        w.acquire("com.a")
+        w.acquire("com.b")
+        w.acquire("com.a")  // refcount 2 on com.a
+        assertEquals(setOf("com.a", "com.b"), w.watched)
+
+        w.release("com.a")
+        // Still in watchlist (refcount 1).
+        assertEquals(setOf("com.a", "com.b"), w.watched)
+
+        w.release("com.a")
+        assertEquals(setOf("com.b"), w.watched)
+    }
+}

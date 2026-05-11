@@ -1,0 +1,224 @@
+Starting a Gradle Daemon, 7 stopped Daemons could not be reused, use --status for details
+
+> Task :app:externalNativeBuildCleanDebug
+Clean amar_llama_engine-arm64-v8a, amar_search_engine-arm64-v8a, ggml-base-arm64-v8a, ggml-arm64-v8a, llama-arm64-v8a, amar_vector_engine-arm64-v8a, ggml-cpu-arm64-v8a
+Clean amar_llama_engine-x86_64, amar_search_engine-x86_64, ggml-base-x86_64, ggml-x86_64, llama-x86_64, amar_vector_engine-x86_64, ggml-cpu-x86_64
+
+> Task :app:externalNativeBuildCleanRelease
+> Task :app:clean
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateDebugBuildConfig
+> Task :app:checkDebugAarMetadata
+> Task :app:generateDebugResValues
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:mergeDebugResources
+
+> Task :app:processDebugMainManifest
+[com.google.ai.edge.litert:litert-support:1.0.1] C:\Users\Lenovo\.gradle\caches\9.3.1\transforms\fb607d1b8960431b5f786d8867f46ab8\workspace\transformed\litert-support-1.0.1\AndroidManifest.xml Warning:
+	Namespace 'org.tensorflow.lite.support' is used in multiple modules and/or libraries: com.google.ai.edge.litert:litert-support:1.0.1, com.google.ai.edge.litert:litert-support-api:1.0.1. Please ensure that all modules and libraries have a unique namespace. For more information, See https://developer.android.com/studio/build/configure-app-module#set-namespace
+
+> Task :app:processDebugManifest
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:processDebugManifestForPackage
+> Task :app:checkDebugDuplicateClasses
+> Task :app:compressDebugAssets
+> Task :app:mergeLibDexDebug
+> Task :app:processDebugResources
+> Task :app:configureCMakeDebug[arm64-v8a]
+
+> Task :app:buildCMakeDebug[arm64-v8a]
+C/C++: ninja: Entering directory `C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\.cxx\Debug\5f1c6a4q\arm64-v8a'
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:98:72: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:    98 |         LOGE("FATAL: llama_model_load_from_file FAILED after %lldms.", loadMs);
+C/C++:       |                                                              ~~~~      ^~~~~~
+C/C++:       |                                                              %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:17:67: note: expanded from macro 'LOGE'
+C/C++:    17 | #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                   ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:102:52: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   102 |     LOGI("llama_model_load_from_file took %lldms", loadMs);
+C/C++:       |                                           ~~~~     ^~~~~~
+C/C++:       |                                           %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:15:66: note: expanded from macro 'LOGI'
+C/C++:    15 | #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                  ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:139:67: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   139 |         LOGE("FATAL: llama_init_from_model FAILED after %lldms.", ctxMs);
+C/C++:       |                                                         ~~~~      ^~~~~
+C/C++:       |                                                         %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:17:67: note: expanded from macro 'LOGE'
+C/C++:    17 | #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                   ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:146:47: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   146 |     LOGI("llama_init_from_model took %lldms", ctxMs);
+C/C++:       |                                      ~~~~     ^~~~~
+C/C++:       |                                      %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:15:66: note: expanded from macro 'LOGI'
+C/C++:    15 | #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                  ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:268:56: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   267 |             LOGE("llama_decode FAILED prompt chunk %d: error=%d after %lldms",
+C/C++:       |                                                                       ~~~~
+C/C++:       |                                                                       %ld
+C/C++:   268 |                  i / Config::BATCH_SIZE, decodeResult, decodeMs);
+C/C++:       |                                                        ^~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:17:67: note: expanded from macro 'LOGE'
+C/C++:    17 | #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                   ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:275:94: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   275 |         LOGI("AFTER llama_decode (prompt chunk %d) took %lldms ✓", i / Config::BATCH_SIZE, decodeMs);
+C/C++:       |                                                         ~~~~                               ^~~~~~~~
+C/C++:       |                                                         %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:15:66: note: expanded from macro 'LOGI'
+C/C++:    15 | #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                  ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:341:45: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   340 |             LOGE("llama_decode FAILED gen token %d: error=%d after %lldms",
+C/C++:       |                                                                    ~~~~
+C/C++:       |                                                                    %ld
+C/C++:   341 |                  n_generated, decodeResult, decodeMs);
+C/C++:       |                                             ^~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:17:67: note: expanded from macro 'LOGE'
+C/C++:    17 | #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                   ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:346:63: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   346 |             LOGI("Gen token %d took %lldms ✓", n_generated, decodeMs);
+C/C++:       |                                     ~~~~                    ^~~~~~~~
+C/C++:       |                                     %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:15:66: note: expanded from macro 'LOGI'
+C/C++:    15 | #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                  ^~~~~~~~~~~
+C/C++: 8 warnings generated.
+
+> Task :app:mergeExtDexDebug
+> Task :app:kspDebugKotlin
+> Task :app:configureCMakeDebug[x86_64]
+
+> Task :app:buildCMakeDebug[x86_64]
+C/C++: ninja: Entering directory `C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\.cxx\Debug\5f1c6a4q\x86_64'
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:98:72: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:    98 |         LOGE("FATAL: llama_model_load_from_file FAILED after %lldms.", loadMs);
+C/C++:       |                                                              ~~~~      ^~~~~~
+C/C++:       |                                                              %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:17:67: note: expanded from macro 'LOGE'
+C/C++:    17 | #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                   ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:102:52: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   102 |     LOGI("llama_model_load_from_file took %lldms", loadMs);
+C/C++:       |                                           ~~~~     ^~~~~~
+C/C++:       |                                           %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:15:66: note: expanded from macro 'LOGI'
+C/C++:    15 | #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                  ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:139:67: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   139 |         LOGE("FATAL: llama_init_from_model FAILED after %lldms.", ctxMs);
+C/C++:       |                                                         ~~~~      ^~~~~
+C/C++:       |                                                         %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:17:67: note: expanded from macro 'LOGE'
+C/C++:    17 | #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                   ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:146:47: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   146 |     LOGI("llama_init_from_model took %lldms", ctxMs);
+C/C++:       |                                      ~~~~     ^~~~~
+C/C++:       |                                      %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:15:66: note: expanded from macro 'LOGI'
+C/C++:    15 | #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                  ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:268:56: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   267 |             LOGE("llama_decode FAILED prompt chunk %d: error=%d after %lldms",
+C/C++:       |                                                                       ~~~~
+C/C++:       |                                                                       %ld
+C/C++:   268 |                  i / Config::BATCH_SIZE, decodeResult, decodeMs);
+C/C++:       |                                                        ^~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:17:67: note: expanded from macro 'LOGE'
+C/C++:    17 | #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                   ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:275:94: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   275 |         LOGI("AFTER llama_decode (prompt chunk %d) took %lldms ✓", i / Config::BATCH_SIZE, decodeMs);
+C/C++:       |                                                         ~~~~                               ^~~~~~~~
+C/C++:       |                                                         %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:15:66: note: expanded from macro 'LOGI'
+C/C++:    15 | #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                  ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:341:45: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   340 |             LOGE("llama_decode FAILED gen token %d: error=%d after %lldms",
+C/C++:       |                                                                    ~~~~
+C/C++:       |                                                                    %ld
+C/C++:   341 |                  n_generated, decodeResult, decodeMs);
+C/C++:       |                                             ^~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:17:67: note: expanded from macro 'LOGE'
+C/C++:    17 | #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                   ^~~~~~~~~~~
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:346:63: warning: format specifies type 'long long' but the argument has type 'int64_t' (aka 'long') [-Wformat]
+C/C++:   346 |             LOGI("Gen token %d took %lldms ✓", n_generated, decodeMs);
+C/C++:       |                                     ~~~~                    ^~~~~~~~
+C/C++:       |                                     %ld
+C/C++: C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/cpp/llama_jni_bridge.cpp:15:66: note: expanded from macro 'LOGI'
+C/C++:    15 | #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
+C/C++:       |                                                                  ^~~~~~~~~~~
+C/C++: 8 warnings generated.
+
+> Task :app:compileDebugKotlin
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/Agenticscreen.kt:446:36 Unnecessary safe call on a non-null receiver of type 'String'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/Documentindexer.kt:211:21 'when' is exhaustive so 'else' is redundant here.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/EmbeddingEngine.kt:150:52 Unchecked cast of 'Any?' to 'Array<FloatArray>'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/EmbeddingEngine.kt:189:13 Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'Any?'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:162:46 Unnecessary non-null assertion (!!) on a non-null receiver of type 'String'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:168:68 Elvis operator (?:) always returns the left operand of non-nullable type 'Int'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:217:42 Elvis operator (?:) always returns the left operand of non-nullable type 'String'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:267:68 Elvis operator (?:) always returns the left operand of non-nullable type 'Int'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:267:99 Elvis operator (?:) always returns the left operand of non-nullable type 'Int'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:311:46 Elvis operator (?:) always returns the left operand of non-nullable type 'String'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:313:78 Elvis operator (?:) always returns the left operand of non-nullable type 'Int'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:313:113 Elvis operator (?:) always returns the left operand of non-nullable type 'Int'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:487:33 Elvis operator (?:) always returns the left operand of non-nullable type 'Int'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/GalleryScreen.kt:488:40 Elvis operator (?:) always returns the left operand of non-nullable type 'String'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/MainActivity.kt:66:42 'static field TRIM_MEMORY_MODERATE: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/Qwenengine.kt:206:50 Unnecessary safe call on a non-null receiver of type 'String'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/SearchViewModel.kt:17:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
+- To opt in to applying to both value parameter and field, add '-Xannotation-default-target=param-property' to your compiler arguments.
+- To keep applying to the value parameter only, use the '@param:' annotation target.
+
+See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/VaultDatabase.kt:103:22 'fun fallbackToDestructiveMigration(): RoomDatabase.Builder<VaultDatabase>' is deprecated. Replace by overloaded version with parameter to indicate if all tables should be dropped or not.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/VectorStore.kt:206:18 Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'Pair<Float, String>?'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/VectorStore.kt:206:25 Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'Pair<Float, String>?'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/VectorStore.kt:249:18 Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'Pair<Float, String>?'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/VectorStore.kt:249:25 Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'Pair<Float, String>?'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/brain/Litertbrain.kt:242:43 No cast needed.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/brain/Litertbrain.kt:253:44 No cast needed.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/brain/Litertbrain.kt:268:38 No cast needed.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/brain/Litertengine.kt:211:35 Unnecessary safe call on a non-null receiver of type 'Conversation'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/brain/Modeldownloader.kt:169:50 This is a delicate API and its use requires care. Make sure you fully read and understand documentation of the declaration that is marked as a delicate API.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/control/executors/Livenodefinder.kt:106:39 Unnecessary non-null assertion (!!) on a non-null receiver of type 'AccessibilityNodeInfo'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/control/executors/Livenodefinder.kt:184:59 Unnecessary non-null assertion (!!) on a non-null receiver of type 'AccessibilityNodeInfo'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/control/executors/Openappexecutor.kt:159:59 Unnecessary safe call on a non-null receiver of type 'CharSequence'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/control/persistence/Agentdatabase.kt:53:18 'fun fallbackToDestructiveMigration(): RoomDatabase.Builder<AgentDatabase>' is deprecated. Replace by overloaded version with parameter to indicate if all tables should be dropped or not.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/debug/Debugbrainscreen.kt:217:13 'fun LinearProgressIndicator(progress: Float, modifier: Modifier = ..., color: Color = ..., trackColor: Color = ..., strokeCap: StrokeCap = ...): Unit' is deprecated. Use the overload that takes `progress` as a lambda.
+
+> Task :app:compileDebugJavaWithJavac
+> Task :app:mergeDebugJniLibFolders
+> Task :app:hiltAggregateDepsDebug FAILED
+> Task :app:mergeDebugNativeLibs
+
+[Incubating] Problems report is available at: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+35 actionable tasks: 35 executed

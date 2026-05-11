@@ -1,0 +1,12 @@
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\CMakeLists.txt
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\CMakeLists.txt
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\cmake\build-info.cmake
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\cmake\common.cmake
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\cmake\license.cmake
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\cmake\llama-config.cmake.in
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\ggml\CMakeLists.txt
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\ggml\cmake\common.cmake
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\ggml\cmake\ggml-config.cmake.in
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\ggml\src\CMakeLists.txt
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\ggml\src\ggml-cpu\CMakeLists.txt
+C:\Users\Lenovo\AndroidStudioProjects\Amar2\app\src\main\cpp\llama.cpp\src\CMakeLists.txt

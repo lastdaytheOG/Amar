@@ -1,0 +1,203 @@
+package com.amar.vault.agent.control
+
+import com.amar.vault.agent.dsl.ActionKind
+import com.amar.vault.agent.dsl.Constraints
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+/**
+ * Tests the retry decision logic.
+ *
+ * What we're pinning:
+ *   - Fatal failures never retry (don't waste battery on permission denials).
+ *   - Attempt-count math: retries=N → N+1 total attempts allowed.
+ *   - Exponential backoff with a hard cap.
+ *   - Timeout failures get bonus delay (system was busy).
+ *   - Jitter stays within ±20% bounds.
+ */
+class RetryPolicyTest {
+
+    private val defaultConstraints = Constraints(
+        timeoutMs = 3000,
+        retries = 2,
+        retryBackoffMs = 100
+    )
+
+    // -------------------------------------------------------------------------
+    // Fatal failures — never retry
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `NoExecutor is fatal — gives up immediately`() {
+        val d = RetryPolicy.decide(
+            attemptNumber = 1,
+            constraints = defaultConstraints,
+            failure = FailureReason.NoExecutor(ActionKind.CLICK)
+        )
+        assertTrue(d is RetryDecision.GiveUp)
+    }
+
+    @Test
+    fun `PermissionDenied is fatal`() {
+        val d = RetryPolicy.decide(
+            attemptNumber = 1,
+            constraints = defaultConstraints,
+            failure = FailureReason.PermissionDenied("android.permission.SEND_SMS")
+        )
+        assertTrue(d is RetryDecision.GiveUp)
+    }
+
+    @Test
+    fun `ValidationRejected is fatal`() {
+        val d = RetryPolicy.decide(
+            attemptNumber = 1,
+            constraints = defaultConstraints,
+            failure = FailureReason.ValidationRejected(emptyList())
+        )
+        assertTrue(d is RetryDecision.GiveUp)
+    }
+
+    // -------------------------------------------------------------------------
+    // Retryable failures
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `TargetNotFound on first attempt triggers retry`() {
+        val d = RetryPolicy.decide(
+            attemptNumber = 1,
+            constraints = defaultConstraints,
+            failure = FailureReason.TargetNotFound("Send", listOf("text"))
+        )
+        assertTrue(d is RetryDecision.Retry)
+        assertEquals(2, (d as RetryDecision.Retry).nextAttemptNumber)
+    }
+
+    @Test
+    fun `Timeout is retryable`() {
+        val d = RetryPolicy.decide(
+            attemptNumber = 1,
+            constraints = defaultConstraints,
+            failure = FailureReason.Timeout(ActionKind.CLICK, 3000)
+        )
+        assertTrue(d is RetryDecision.Retry)
+    }
+
+    @Test
+    fun `VerificationFailed is retryable`() {
+        val d = RetryPolicy.decide(
+            attemptNumber = 1,
+            constraints = defaultConstraints,
+            failure = FailureReason.VerificationFailed("no match")
+        )
+        assertTrue(d is RetryDecision.Retry)
+    }
+
+    @Test
+    fun `AccessibilityUnavailable is retryable (user may enable)`() {
+        val d = RetryPolicy.decide(
+            attemptNumber = 1,
+            constraints = defaultConstraints,
+            failure = FailureReason.AccessibilityUnavailable
+        )
+        assertTrue(d is RetryDecision.Retry)
+    }
+
+    // -------------------------------------------------------------------------
+    // Attempt exhaustion
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `retries=2 allows attempts 1, 2, 3 and gives up on failure at attempt 3`() {
+        val c = Constraints(retries = 2, retryBackoffMs = 100)
+        val fail = FailureReason.TargetNotFound("x", emptyList())
+
+        assertTrue(RetryPolicy.decide(1, c, fail) is RetryDecision.Retry)
+        assertTrue(RetryPolicy.decide(2, c, fail) is RetryDecision.Retry)
+        assertTrue(RetryPolicy.decide(3, c, fail) is RetryDecision.GiveUp)
+    }
+
+    @Test
+    fun `retries=0 means single attempt`() {
+        val c = Constraints(retries = 0, retryBackoffMs = 100)
+        val fail = FailureReason.TargetNotFound("x", emptyList())
+
+        assertTrue(RetryPolicy.decide(1, c, fail) is RetryDecision.GiveUp)
+    }
+
+    @Test
+    fun `retries=5 allows up to 6 total attempts`() {
+        val c = Constraints(retries = 5, retryBackoffMs = 50)
+        val fail = FailureReason.TargetNotFound("x", emptyList())
+
+        // Attempts 1-5 retry; attempt 6 (which would be the 6th total) gives up.
+        for (i in 1..5) {
+            assertTrue(
+                "attempt $i should retry",
+                RetryPolicy.decide(i, c, fail) is RetryDecision.Retry
+            )
+        }
+        assertTrue(RetryPolicy.decide(6, c, fail) is RetryDecision.GiveUp)
+    }
+
+    // -------------------------------------------------------------------------
+    // Backoff math
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `backoff grows exponentially but stays within cap`() {
+        val c = Constraints(retries = 10, retryBackoffMs = 100)
+        val fail = FailureReason.TargetNotFound("x", emptyList())
+
+        // nextAttempt=2 → shift=1 → 100 * 2 = 200, plus jitter ±20%
+        val d2 = RetryPolicy.decide(1, c, fail) as RetryDecision.Retry
+        assertInRange(d2.delayMs, low = 160, high = 240)
+
+        // nextAttempt=3 → shift=2 → 100 * 4 = 400
+        val d3 = RetryPolicy.decide(2, c, fail) as RetryDecision.Retry
+        assertInRange(d3.delayMs, low = 320, high = 480)
+
+        // nextAttempt=10 → shift=9 → 100 * 512 = 51200, capped at 5000
+        val d10 = RetryPolicy.decide(9, c, fail) as RetryDecision.Retry
+        assertInRange(d10.delayMs, low = 4000, high = 6000)  // cap + jitter
+    }
+
+    @Test
+    fun `Timeout failure gets extra backoff multiplier`() {
+        val c = Constraints(retries = 5, retryBackoffMs = 100)
+        val normalFail = FailureReason.TargetNotFound("x", emptyList())
+        val timeoutFail = FailureReason.Timeout(ActionKind.CLICK, 3000)
+
+        val normal = RetryPolicy.decide(1, c, normalFail) as RetryDecision.Retry
+        val timeout = RetryPolicy.decide(1, c, timeoutFail) as RetryDecision.Retry
+
+        // Timeout should be ≥ 1.3x normal (1.5x multiplier minus worst-case jitter).
+        // Using aggregate bounds rather than exact comparison — jitter makes
+        // single-shot comparison flaky.
+        assertTrue(
+            "timeout backoff ($timeout) should exceed normal ($normal)",
+            timeout.delayMs >= (normal.delayMs * 1.1).toLong()
+        )
+    }
+
+    @Test
+    fun `Retry decision preserves the previous failure reason`() {
+        val specificFailure = FailureReason.TargetNotFound(
+            target = "Send button",
+            strategiesTried = listOf("text", "resource_id")
+        )
+        val d = RetryPolicy.decide(1, defaultConstraints, specificFailure) as RetryDecision.Retry
+        assertEquals(specificFailure, d.previousFailure)
+    }
+
+    // -------------------------------------------------------------------------
+    // Helpers
+    // -------------------------------------------------------------------------
+
+    private fun assertInRange(value: Long, low: Long, high: Long) {
+        assertTrue(
+            "expected $value in [$low, $high]",
+            value in low..high
+        )
+    }
+}

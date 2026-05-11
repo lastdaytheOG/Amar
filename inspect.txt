@@ -1,0 +1,1012 @@
+--------- beginning of system
+05-10 16:01:24.300  1990  2316 I DisplayPowerController2[0]: 05-10 16:01:24.299 - BrightnessEvent: disp=0, physDisp=local:4630946747577212033, displayState=ON, displayPolicy=BRIGHT, brt=0.33686435, initBrt=0.33686435, rcmdBrt=0.33686435, preBrt=NaN, lux=37.81625, preLux=NaN, brtNits=137.49161, hdrNits=NaN, initNits=137.49161, preNits=NaN, rcmdNits=137.49161, hdrBrightness=NaN, brt(%)=48%, brtInt=87, hbmPolicy=legacy, hbmMax=0.9999, hbmMode=off, rbcStrength=50, thrmMax=1.0, powerFactor=1.0, wasShortTermModelActive=false, flags=, reason=automatic, autoBrightness=true, strategy=InvalidBrightnessStrategy, autoBrightnessMode=default
+--------- beginning of main
+05-10 16:01:24.300  1288  1288 D audio_hw_primary: adev_set_parameters: exit with code(0) takes 0.13 ms
+05-10 16:01:24.301  1990  2316 D BrightnessThermalClamper: Thermal status observer already started
+05-10 16:01:24.301  1990  2316 D BrightnessThermalClamper: Thermal status observer already started
+05-10 16:01:24.301  1990  2316 I PowerManagerService: handleSandman stop dream, groupId=0
+05-10 16:01:24.301  1990  2316 I DreamManagerService: Gently waking up from dream.
+05-10 16:01:24.301  1990  2316 I DreamManagerService: stopDreamLocked. callers=com.android.server.dreams.DreamManagerService.stopDreamInternal:542 com.android.server.dreams.DreamManagerService.-$$Nest$mstopDreamInternal:0 com.android.server.dreams.DreamManagerService$LocalService.stopDream:1251 com.android.server.power.PowerManagerService.handleSandman:4354 com.android.server.power.PowerManagerService.-$$Nest$mhandleSandman:0 
+05-10 16:01:24.302  1990  2128 I DisplayDeviceRepository: Display device changed: DisplayDeviceInfo{"Built-in Screen": uniqueId="local:4630946747577212033", 720 x 1600, modeId 3, renderFrameRate 60.000004, defaultModeId 1, userPreferredModeId -1, supportedModes [{id=1, width=720, height=1600, fps=120.00001, vsync=120.00001, synthetic=false, alternativeRefreshRates=[60.000004, 90.0], supportedHdrTypes=[]}, {id=2, width=720, height=1600, fps=90.0, vsync=90.0, synthetic=false, alternativeRefreshRates=[60.000004, 120.00001], supportedHdrTypes=[]}, {id=3, width=720, height=1600, fps=60.000004, vsync=60.000004, synthetic=false, alternativeRefreshRates=[90.0, 120.00001], supportedHdrTypes=[]}], supportedReadyForModes [], colorMode 0, supportedColorModes [0, 7], hdrCapabilities HdrCapabilities{mSupportedHdrTypes=[], mMaxLuminance=500.0, mMaxAverageLuminance=500.0, mMinLuminance=0.0}, allmSupported false, gameContentTypeSupported false, density 280, 268.941 x 269.139 dpi, appVsyncOff 9166666, presDeadline 11500000, cutout DisplayCutout{insets=Rect(0, 77 - 0, 0) waterfall=Insets{left=0, top=0, right=0, bottom=0} boundingRect={Bounds=[Rect(0, 0 - 0, 0), Rect(332, 0 - 388, 77), Rect(0, 0 - 0, 0), Rect(0, 0 - 0, 0)]} cutoutPathParserInfo={CutoutPathParserInfo{displayWidth=720 displayHeight=1600 physicalDisplayWidth=720 physicalDisplayHeight=1600 density={1.75} cutoutSpec={M -28,0 L 28,0 L 28,77 L -28,77 Z} rotation={0} scale={1.0} physicalPixelDisplaySizeRatio={1.0}}} sideOverrides={}}, touch INTERNAL, rotation 0, type INTERNAL, address {port=129, model=0x40446d87f7171c}, deviceProductInfo DeviceProductInfo{name=, manufacturerPnpId=QCM, productId=1, modelYear=null, manufactureDate=ManufactureDate{week=27, year=2006}, connectionToSinkType=0}, state ON, committedState ON, frameRateOverride , brightnessMinimum 0.0, brightnessMaximum 1.0, brightnessDefault 0.4509804, hdrSdrRatio 1.0, roundedCorners RoundedCorners{[RoundedCorner{position=TopLeft, radius=66, center=Point(66, 66)}, RoundedCorner{position=TopRight, radius=66, center=Point(654, 66)}, RoundedCorner{position=BottomRight, radius=60, center=Point(660, 1540)}, RoundedCorner{position=BottomLeft, radius=60, center=Point(60, 1540)}]}, FLAG_ALLOWED_TO_BE_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS, FLAG_TRUSTED, installOrientation 0, displayShape DisplayShape{ spec=2134893525 displayWidth=720 displayHeight=1600 physicalPixelDisplaySizeRatio=1.0 rotation=0 offsetX=0 offsetY=0 scale=1.0}}
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 10321/6923
+05-10 16:01:24.303 10062 10985 D MCLOG   : [BrightnessTrigger] onDisplayChanged displayId = 0
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 10201/15210
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 10289/15708
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 1010214/16981
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 10568/27391
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 10451/29046
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 10461/29332
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 10212/29366
+05-10 16:01:24.303  1990  2128 D DisplayManagerService: Ignore redundant display event 0/2 to 10238/30780
+05-10 16:01:24.305  2866  2866 I FalsingManager: Sensor is: false at time 0
+05-10 16:01:24.306  2866  2866 D BiometricStatusRepositoryImpl: fingerprintAuthenticationState updated: Succeeded(biometricSourceType=FINGERPRINT, isStrongBiometric=true, requestReason=DeviceEntryAuthentication, userId=0)
+05-10 16:01:24.306  2866  2866 D BiometricStatusRepositoryImpl: fingerprintAuthenticationState updated: Stopped(biometricSourceType=FINGERPRINT, requestReason=NotRunning)
+05-10 16:01:24.306  2866  2866 D BiometricStatusRepositoryImpl: fingerprintRunningState updated: Stopped(biometricSourceType=FINGERPRINT, requestReason=NotRunning)
+05-10 16:01:24.306  2866  2866 D BiometricStatusRepositoryImpl: fingerprintAuthenticationReason updated: NotRunning
+05-10 16:01:24.306  1990  3134 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 16:01:24.307  5751  5751 I FileStationLog: [ FS_g$a ] - [Display] Changed display: 0
+05-10 16:01:24.307 10062 10985 D MCLOG   : [BrightnessManager] displayId = 0 brightness = 0.33686435 nit = 137.49161 level = br2
+05-10 16:01:24.307  5751  5751 I FileStationLog: [ FS_g$a ] - [Display] Current activity display id: null
+05-10 16:01:24.307  5751  5751 I FileStationLog: [ FS_g ] - [Logic] Retrieved display info: LogicDisplayInfo(width=720, height=1600, orientation=1, rotation=0, displayId=0)
+05-10 16:01:24.308  5751  5751 I FileStationLog: [ FS_g$a ] - [Display] New logical size: 720x1600
+05-10 16:01:24.308  5751  5751 I FileStationLog: [ FS_g$a ] - [Display] Screen width unchanged: 720
+05-10 16:01:24.311  1386  1469 D VSyncReactor: 4630946747577212033: period 16 confirmed(cnt2)
+05-10 16:01:24.320   922  7716 I keystore2: system/security/keystore2/src/super_key.rs:1040 - Successfully unlocked user 0 with biometric 2125177197410983363
+05-10 16:01:24.320  1990  1990 I WindowManager: Started waking up... (groupId=0 why=ON_BECAUSE_OF_USER) pmWakeReason=WAKE_REASON_BIOMETRIC
+05-10 16:01:24.322  1386  1386 D SurfaceFlinger: setDesiredDisplayModeSpecs[{0, false, PR={p[120.00-120.00]Hz, r[120.00-120.00]Hz}, AR={p[0.00-120.00]Hz, r[0.00-120.00]Hz}}]: by process 1990 uid 1000 for display 4630946747577212033
+05-10 16:01:24.322  1386  1386 D RefreshRateSelector: constructAvailableRefreshRates: {defaultModeId=0, allowGroupSwitching=false, primaryRanges={physical=[120.00 Hz, 120.00 Hz], render=[120.00 Hz, 120.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 120.00 Hz]} idleScreenConfig=nullptr} 
+05-10 16:01:24.322  1386  1386 D RefreshRateSelector: primary render rates: {fps=120.00 Hz, modePtr={id=0, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}} , isVrrDevice? 0
+05-10 16:01:24.322  1386  1386 D RefreshRateSelector: app request render rates: {fps=22.50 Hz, modePtr={id=1, vsyncRate=90.00 Hz, peakRefreshRate=90.00 Hz}} {fps=24.00 Hz, modePtr={id=0, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}} {fps=30.00 Hz, modePtr={id=0, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}} {fps=40.00 Hz, modePtr={id=0, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}} {fps=45.00 Hz, modePtr={id=1, vsyncRate=90.00 Hz, peakRefreshRate=90.00 Hz}} {fps=60.00 Hz, modePtr={id=0, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}} {fps=90.00 Hz, modePtr={id=1, vsyncRate=90.00 Hz, peakRefreshRate=90.00 Hz}} {fps=120.00 Hz, modePtr={id=0, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}} , isVrrDevice? 0
+05-10 16:01:24.322  1386  1386 D RefreshRateSelector: Special render rates: 
+05-10 16:01:24.322  1386  1386 D RefreshRateSelector: found  ScrollBoostRefreshRate: {fps=120.00 Hz, modePtr={id=0, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}
+05-10 16:01:24.322  1386  1386 D RefreshRateSelector: [90:120:0]: mTouchBoostRefreshRateAvailable=0, mScrollBoostRefreshRateAvailable=1, mTouchOnBlankNotBoostRefreshRateAvailable=0
+05-10 16:01:24.322  1386  1386 I RefreshRateSelector: Display 4630946747577212033 policy changed
+05-10 16:01:24.322  1386  1386 I RefreshRateSelector: Previous: {defaultModeId=0, allowGroupSwitching=false, primaryRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 60.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 60.00 Hz]} idleScreenConfig=nullptr}
+05-10 16:01:24.322  1386  1386 I RefreshRateSelector: Current:  DisplayManagerPolicy{defaultModeId=0, allowGroupSwitching=false, primaryRanges={physical=[120.00 Hz, 120.00 Hz], render=[120.00 Hz, 120.00 Hz]}, appRequestRanges={physical=[0.00 Hz, 120.00 Hz], render=[0.00 Hz, 120.00 Hz]} idleScreenConfig=nullptr}
+05-10 16:01:24.322  1386  1386 I RefreshRateSelector: 1 mode changes were performed under the previous policy
+05-10 16:01:24.322  1386  1386 D SurfaceFlinger: Setting desired display mode specs: {0, false, PR={p[120.00-120.00]Hz, r[120.00-120.00]Hz}, AR={p[0.00-120.00]Hz, r[0.00-120.00]Hz}} for display 4630946747577212033
+05-10 16:01:24.322  1386  1386 I SurfaceFlinger: Switching to Scheduler preferred mode 0 (120.00 Hz) for display 4630946747577212033
+05-10 16:01:24.323  1386  1386 W ComposerExtn: DisplayExtnImpl::SetActiveConfig: HWC Display 0 is not registered!
+05-10 16:01:24.323  1386  1386 D DisplayModeController: setDesiredMode 4630946747577212033 {mode={fps=120.00 Hz, modePtr={id=0, vsyncRate=120.00 Hz, peakRefreshRate=120.00 Hz}}, emitEvent=true, force=false}
+05-10 16:01:24.323  1289  1289 I sensors-hal: batch:240, android.sensor.device_orientation/271, period=66667000, max_latency=0
+05-10 16:01:24.323  1289  1289 I sensors-hal: set_config:64, sample_period_ns is adjusted to 0 based on min/max delay_ns
+05-10 16:01:24.323  1289  1289 I sensors-hal: batch:249, android.sensor.device_orientation/271, period=66667000, max_latency=0 request completed
+05-10 16:01:24.323  1990  2128 D PanelsService: onAwakeStateChanged.. isAwake=true
+05-10 16:01:24.323  1990  2128 D TouchHwService: onAwakeStateChanged.. isAwake=true
+05-10 16:01:24.323  1990  2128 D TouchHwService: Unregister stow sensor
+05-10 16:01:24.324  1289  1289 I sensors-hal: activate:207, android.sensor.device_orientation/271 en=1
+05-10 16:01:24.324  2866  2925 D KeyguardTransitionRepository: (Internal) Setting current transition info: TransitionInfo(ownerName=FromDozingTransitionInteractor(biometric wake and unlock), from=DOZING, to=GONE, animated)
+05-10 16:01:24.328  2866  2921 D Tile.ScreenshotTile: update state
+05-10 16:01:24.328  1386  1469 D VSyncReactor: 4630946747577212033: confirming period 16->8(cnt1)
+05-10 16:01:24.329  1289  1289 I sensors-hal: send_sync_sensor_request:359, send sync request
+05-10 16:01:24.329  1289  1289 I sensors-hal: send_sync_sensor_request:385, wait for notification of response
+05-10 16:01:24.330  2866  2866 D KeyguardUpdateMonitor: handleFingerprintLockoutReset: mode=0
+05-10 16:01:24.330  1289 17247 I sensors-hal: ssc_conn_resp_cb:666, resp_value = 0
+05-10 16:01:24.330  1289 17248 E sensors-hal: handle_sns_client_event:62, mot_disprot_event: now=104025451947768 ts=103362022136101, type=16, status=3
+05-10 16:01:24.331  1990  1990 D TrustManagerService: refreshDeviceLockedForUser(userId=-1, unlockedUser=-10000), secure=true, showingKeyguard=true, trusted=false, biometricAuthenticated=false, currentUserIsUnlocked=false, deviceLocked=true
+05-10 16:01:24.331  1289  1289 I sensors-hal: send_sync_sensor_request:391, takes 2 ms to receive the response with 0
+05-10 16:01:24.331  1289  1289 I sensors-hal: activate:218, android.sensor.device_orientation/271 en=1 completed
+05-10 16:01:24.332  2866  2866 D KeyguardViewMediator: keyguardDone: 0
+05-10 16:01:24.332  2866  2866 D KeyguardViewMediator: OnHideAnimationFinished.run(0)
+05-10 16:01:24.333  2866  2866 D KeyguardViewMediator: keyguardGoingAway requested for userId: 0
+05-10 16:01:24.333  1289  1289 I sensors-hal: batch:240, com.motorola.sensor.stowed/65568, period=200000000, max_latency=0
+05-10 16:01:24.333  1289  1289 I sensors-hal: set_config:64, sample_period_ns is adjusted to 0 based on min/max delay_ns
+05-10 16:01:24.333  1289  1289 I sensors-hal: batch:249, com.motorola.sensor.stowed/65568, period=200000000, max_latency=0 request completed
+05-10 16:01:24.333  2866  2866 V PowerManager: wakeUp time=54265252 reason=WAKE_REASON_GESTURE details=com.android.systemui:UNLOCK_DREAMING by (com.android.systemui) callers=com.android.systemui.keyguard.KeyguardViewMediator.handleHide:186 com.android.systemui.keyguard.KeyguardViewMediator.handleKeyguardDone:60 com.android.systemui.keyguard.KeyguardViewMediator.-$$Nest$mtryKeyguardDone:86 
+05-10 16:01:24.334  1990  2128 W AlarmManager: Unrecognized alarm listener com.motorola.server.display.TouchHwService$AlarmListenerImpl@f00f8f5
+05-10 16:01:24.334   922  7716 I keystore2: system/security/keystore2/src/authorization.rs:155 - on_device_locked(user_id=0, unlocking_sids=[-1411924262651143293, 2125177197410983363], weak_unlock_enabled=false)
+05-10 16:01:24.334  1386  1386 I SurfaceFlinger: initiateDisplayModeChanges changing active mode from 2(60.00 Hz:0) to 0(120.00 Hz:0) for display 4630946747577212033
+05-10 16:01:24.334  1307  1307 I motorola.hardware.display.touch@1.4-service: Setting stow gesture mode to 0 for panel 0
+05-10 16:01:24.335  1990  2175 D addPss  : tracker=ProcessState{beeb98 com.android.settings/1000 pkg=com.android.settings}
+05-10 16:01:24.335  1386  1386 I SurfaceFlinger: initiateDisplayModeChanges active mode changed to 0(120.00 Hz) for display 4630946747577212033. mBrightnessDimingCnt=0
+05-10 16:01:24.336  1990  2113 D TouchHwService: setGestureStowModeHal done displayId=0 stowed=0 result=0
+05-10 16:01:24.336  2866  2866 V TrustManager: clearAllBiometricRecognized unlockedUser=0 source=FINGERPRINT callers=com.android.keyguard.KeyguardUpdateMonitor.clearFingerprintRecognized:16 com.android.systemui.keyguard.KeyguardViewMediator.handleKeyguardDone:78 com.android.systemui.keyguard.KeyguardViewMediator.-$$Nest$mtryKeyguardDone:86 com.android.systemui.keyguard.KeyguardViewMediator$OnHideAnimationFinished.run:91 com.android.systemui.statusbar.phone.StatusBarKeyguardViewManager.startPreHideAnimation:39 
+05-10 16:01:24.336  1328  1668 I SDM     : HWDeviceDRM::UpdateMixerAttributes: Mixer WxH 720x1600-0 for Peripheral
+05-10 16:01:24.336  1328  1668 I SDM     : HWCDisplay::SubmitDisplayConfig: Active configuration changed to: 0
+05-10 16:01:24.337   869   872 D DrmLibTime: got the req here! ret=0
+05-10 16:01:24.337   869   872 D DrmLibTime: command id, time_cmd_id = 770
+05-10 16:01:24.337   869   872 D DrmLibTime: time_getutcsec starts!
+05-10 16:01:24.337   869   872 D DrmLibTime: QSEE Time Listener: time_getutcsec
+05-10 16:01:24.337   869   872 D DrmLibTime: QSEE Time Listener: get_utc_seconds
+05-10 16:01:24.337   869   872 D DrmLibTime: QSEE Time Listener: time_get_modem_time
+05-10 16:01:24.337   869   872 D DrmLibTime: QSEE Time Listener: Checking if ATS_MODEM is set or not.
+05-10 16:01:24.337   869   872 D QC-time-services: Lib:time_genoff_operation: pargs->base = 13
+05-10 16:01:24.337   869   872 D QC-time-services: Lib:time_genoff_operation: pargs->operation = 2
+05-10 16:01:24.337   869   872 D QC-time-services: Lib:time_genoff_operation: pargs->ts_val = 0
+05-10 16:01:24.337  1990 10206 D ActivityTaskManager: Top Process State changed to PROCESS_STATE_TOP
+05-10 16:01:24.337   869   872 D QC-time-services: Lib:time_genoff_operation: Send to server  passed!!
+05-10 16:01:24.337  1990  2175 D addPss  : tracker=ProcessState{de44936 com.android.settings/1001000 pkg=com.android.settings}
+05-10 16:01:24.337  1160  1174 D QC-time-services: Daemon: Connection accepted:time_genoff
+05-10 16:01:24.338  2866  2910 V WindowManagerShell: Transition requested (#787): android.os.BinderProxy@3f4865a TransitionRequestInfo { type = TO_BACK, triggerTask = null, pipTask = null, remoteTransition = null, displayChange = null, flags = 262, debugId = 787 }
+05-10 16:01:24.338  1160 17250 D QC-time-services: Daemon:Received base = 13, unit = 1, operation = 2,value = 0
+05-10 16:01:24.338  1160 17250 D QC-time-services: Daemon:genoff_opr: Base = 13, val = 0, operation = 2
+05-10 16:01:24.338  1160 17250 D QC-time-services: offset is: 1 for base: 13
+05-10 16:01:24.338   869   872 E QC-time-services: Receive Passed == base = 13, unit = 1, operation = 2, result = 0
+05-10 16:01:24.338   869   872 D DrmLibTime: QSEE Time Listener: ATS_MODEM is set. Try to retrieve it.
+05-10 16:01:24.338  1160  1174 E QC-time-services: Daemon: Time-services: Waiting to acceptconnection
+05-10 16:01:24.339  1160  1174 D QC-time-services: Daemon: Connection accepted:time_genoff
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon:Received base = 13, unit = 1, operation = 1,value = 0
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon:genoff_opr: Base = 13, val = 0, operation = 1
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon: genoff get for 13
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon:Value read from QTimer mseconds = 104029056
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon:Value read from RTC mseconds on boot = 52852515000
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon:Value read from QTimer mseconds = 104029056
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon:Value read from generic offset = 1725452647477
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon:Delta read on boot mseconds = 52852406258
+05-10 16:01:24.339  1160 17251 D QC-time-services: Daemon:Final Time = 1778409082791
+05-10 16:01:24.339  1990  2175 D addPss  : tracker=ProcessState{5b41079 com.android.settings/1101000 pkg=com.android.settings}
+05-10 16:01:24.339   869   872 D DrmLibTime: QSEE Time Listener: Time GenOff - seconds: 1778409082
+05-10 16:01:24.339   869   872 D DrmLibTime: time_getutcsec returns 0, sec = 1778409082; nsec = 0
+05-10 16:01:24.339   869   872 D DrmLibTime: time_getutcsec finished! 
+05-10 16:01:24.339   869   872 D DrmLibTime: iotcl_continue_command finished! and return 0 
+05-10 16:01:24.339   869   872 D DrmLibTime: before calling ioctl to read the next time_cmd
+05-10 16:01:24.340  1160  1174 E QC-time-services: Daemon: Time-services: Waiting to acceptconnection
+05-10 16:01:24.341  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} entered launcher screen? true
+05-10 16:01:24.341  1990  2175 D addPss  : tracker=ProcessState{c7ccbe6 com.motorola.carriersettingsext/10156 pkg=com.motorola.carriersettingsext}
+05-10 16:01:24.342  5569  5955 D GameMode: isScreenUnlocked: false
+05-10 16:01:24.342  5569  5955 D GameMode: isScreenUnlocked: false
+05-10 16:01:24.343  1990  2175 D addPss  : tracker=ProcessState{87a9798 com.qualcomm.qti.workloadclassifier/1010309 pkg=com.qualcomm.qti.workloadclassifier}
+05-10 16:01:24.347  1990  2175 D addPss  : tracker=ProcessState{11c57ad com.motorola.ccc/1010251 pkg=com.motorola.ccc.devicemanagement}
+05-10 16:01:24.347  2866  2866 D ZenModeController: Added callback class com.android.systemui.qs.tiles.DndTile$3
+05-10 16:01:24.349  1990  2175 D addPss  : tracker=ProcessState{ef72b8f com.google.android.cellbroadcastreceiver/10325 pkg=com.google.android.cellbroadcastreceiver}
+05-10 16:01:24.351  1386  1386 I SurfaceFlinger: initiateDisplayModeChanges changing active mode from 0(120.00 Hz:0) to 0(120.00 Hz:0) for display 4630946747577212033
+05-10 16:01:24.351  2866  2866 V DreamService[DozeService]: wakeUp(): fromSystem=true, mWaking=false, mFinished=false callers=android.service.dreams.DreamService.-$$Nest$mwakeUp:0 android.service.dreams.DreamService$DreamServiceWrapper.lambda$wakeUp$1:1794 android.service.dreams.DreamService$DreamServiceWrapper.$r8$lambda$SFP-NasoKFNaaOvKHyJqrl_aPt8:0 android.service.dreams.DreamService$DreamServiceWrapper$$ExternalSyntheticLambda3.run:0 android.os.Handler.handleCallback:1001 
+05-10 16:01:24.351  2866  2866 V DreamService[DozeService]: finish(): mFinished=false activity=null callers=android.service.dreams.DreamService.onWakeUp:1197 android.service.dreams.DreamService.wakeUp:1360 android.service.dreams.DreamService.-$$Nest$mwakeUp:0 android.service.dreams.DreamService$DreamServiceWrapper.lambda$wakeUp$1:1794 android.service.dreams.DreamService$DreamServiceWrapper.$r8$lambda$SFP-NasoKFNaaOvKHyJqrl_aPt8:0 
+05-10 16:01:24.351  1990  3616 I DreamManagerService: finishSelf by com.android.systemui callingUid=10302 callingPid=2866
+05-10 16:01:24.351  1990  3616 D DreamManagerService: Dream finished: android.os.Binder@f3acf0c, immediate=true
+05-10 16:01:24.351  1990  3616 I DreamManagerService: Leaving dreamland.
+05-10 16:01:24.352  1990  3616 I DreamManagerService: stopDreamLocked. callers=com.android.server.dreams.DreamManagerService.finishSelfInternal:514 com.android.server.dreams.DreamManagerService.-$$Nest$mfinishSelfInternal:0 com.android.server.dreams.DreamManagerService$BinderService.finishSelf:1092 android.service.dreams.IDreamManager$Stub.onTransact:292 android.os.Binder.execTransactInternal:1520 
+05-10 16:01:24.353  1386  1469 D VSyncReactor: 4630946747577212033: period 8 confirmed(cnt2)
+05-10 16:01:24.356  1990  2128 I DisplayDeviceRepository: Display device changed render timings: "Built-in Screen", renderFrameRate=120.00001, presentationDeadlineNanos=11500000, appVsyncOffsetNanos=833333
+05-10 16:01:24.357  5569  5955 D GameMode: isScreenUnlocked: false
+05-10 16:01:24.358  1990  2175 D addPss  : tracker=ProcessState{15bfece com.motorola.dolby.dolbyui/10141 pkg=com.motorola.dolby.dolbyui}
+05-10 16:01:24.359  1386  1386 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-10 16:01:24.359  1288  1288 D audio_hw_primary: adev_set_parameters: enter: screen_state=on
+05-10 16:01:24.359  1288  1288 D sound_trigger_hw: handle_screen_status_change: screen on
+05-10 16:01:24.359  1288  1288 D audio_hw_primary: adev_set_parameters: exit with code(0) takes 0.21 ms
+05-10 16:01:24.360  1990  2316 D BrightnessThermalClamper: Thermal status observer already started
+05-10 16:01:24.361 10062 10985 D MCLOG   : [BrightnessTrigger] onDisplayChanged displayId = 0
+05-10 16:01:24.364  5751  5751 I FileStationLog: [ FS_g$a ] - [Display] Changed display: 0
+05-10 16:01:24.364  5751  5751 I FileStationLog: [ FS_g$a ] - [Display] Current activity display id: null
+05-10 16:01:24.364  1990  2113 I DreamController: Stopping dream: name=ComponentInfo{com.android.systemui/com.android.systemui.doze.DozeService}, isPreviewMode=false, canDoze=true, userId=0, reason='finished self'(from 'power manager request')
+05-10 16:01:24.364  5751  5751 I FileStationLog: [ FS_g ] - [Logic] Retrieved display info: LogicDisplayInfo(width=720, height=1600, orientation=1, rotation=0, displayId=0)
+05-10 16:01:24.364  5751  5751 I FileStationLog: [ FS_g$a ] - [Display] New logical size: 720x1600
+05-10 16:01:24.365  5751  5751 I FileStationLog: [ FS_g$a ] - [Display] Screen width unchanged: 720
+05-10 16:01:24.365  2866  2866 D KeyguardViewMediator: KeyguardViewMediator queue processing message: NOTIFY_STARTED_WAKING_UP
+05-10 16:01:24.365  5569  5955 D GameMode: isScreenUnlocked: false
+05-10 16:01:24.365 10062 10985 D MCLOG   : [BrightnessManager] displayId = 0 brightness = 0.33686435 nit = 137.49161 level = br2
+05-10 16:01:24.365  2866  2866 D CentralSurfaces: !shouldBeKeyguard mStatusBarStateController.isKeyguardRequested() true keyguardForDozing false wakeAndUnlocking true isWakingAndOccluded false
+05-10 16:01:24.366  2866  2866 D CentralSurfaces: hideKeyguardImpl false
+05-10 16:01:24.367  1990  2175 D addPss  : tracker=ProcessState{4480279 com.google.android.permissioncontroller/10321 pkg=com.google.android.permissioncontroller}
+05-10 16:01:24.369  1990  2175 W MotoBatteryCareService: uid: 10572 pkgName:com.amar.vault come to foreground
+05-10 16:01:24.372   922  7716 I keystore2: system/security/keystore2/src/super_key.rs:976 - UnlockedDeviceRequired super keys for user 0 are biometric-encrypted.
+05-10 16:01:24.372  2866  2866 I KeyguardTransitionRepository: STARTED transition: TransitionStep(from=DOZING, to=GONE, value=0.0, transitionState=STARTED, ownerName=FromDozingTransitionInteractor(biometric wake and unlock))
+05-10 16:01:24.372  1990  1990 D TrustManagerService: refreshDeviceLockedForUser(userId=-1, unlockedUser=-10000), secure=true, showingKeyguard=true, trusted=false, biometricAuthenticated=false, currentUserIsUnlocked=false, deviceLocked=true
+05-10 16:01:24.372  1990  1990 I BrightnessSynchronizer: New Update: {[2087] 0.33686435(f), mUpdatedTypes=0, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:24.372  1990  1990 I WindowManager: Finished waking up... (groupId=0 why=ON_BECAUSE_OF_USER) pmWakeReason=WAKE_REASON_BIOMETRIC
+05-10 16:01:24.373  1990  1990 I BrightnessSynchronizer: New Update: {[2088] 0.33686435(f), mUpdatedTypes=0, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:24.376  1990  1990 D TrustManagerService: refreshDeviceLockedForUser(userId=-1, unlockedUser=0), secure=true, showingKeyguard=true, trusted=false, biometricAuthenticated=false, currentUserIsUnlocked=true, deviceLocked=true
+05-10 16:01:24.376  1990  1990 D TrustManagerService: Keyguard is finishing but may not have completed going away yet
+05-10 16:01:24.376  1990  1990 D TrustManagerService: refreshDeviceLockedForUser(userId=-1, unlockedUser=0), secure=true, showingKeyguard=true, trusted=false, biometricAuthenticated=false, currentUserIsUnlocked=false, deviceLocked=true
+05-10 16:01:24.377  2866  2918 V SnapshotDrawerUtils: Drawing snapshot surface sizeMismatch=false
+05-10 16:01:24.380  1289  1289 I sensors-hal: flush:269, android.sensor.accelerometer/11
+05-10 16:01:24.380  1289  1289 I sensors-hal: send_sync_sensor_request:359, send sync request
+05-10 16:01:24.380  1289  1289 I sensors-hal: send_sync_sensor_request:385, wait for notification of response
+05-10 16:01:24.379 14803 14803 W com.amar.vault: type=1400 audit(0.0:32430): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=2916 scontext=u:r:untrusted_app:s0:c60,c258,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.amar.vault
+05-10 16:01:24.381 14803 14803 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+05-10 16:01:24.381  1289 17239 I sensors-hal: ssc_conn_resp_cb:666, resp_value = 0
+05-10 16:01:24.381  1289  1289 I sensors-hal: send_sync_sensor_request:391, takes 0 ms to receive the response with 0
+05-10 16:01:24.381  1289  1289 I sensors-hal: flush:275, android.sensor.accelerometer/11 completed
+05-10 16:01:24.383  1990  2113 V WindowManager: Sent Transition (#787) createdAt=05-10 16:01:24.336 via request=TransitionRequestInfo { type = TO_BACK, triggerTask = null, pipTask = null, remoteTransition = null, displayChange = null, flags = 262, debugId = 787 }
+05-10 16:01:24.383  1990  2113 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+05-10 16:01:24.383  1990  2113 V WindowManager:     info={id=787 t=TO_BACK f=0x106 trk=0 r=[0@Point(0, 0)] c=[
+05-10 16:01:24.383  1990  2113 V WindowManager:         {WCT{RemoteToken{d631814 Task{7ad81a9 #1367 type=standard A=10572:com.amar.vault}}} m=TO_FRONT f=NONE p=WCT{RemoteToken{7a419c1 DefaultTaskDisplayArea@62655434(displayId=0)}} pTaskId=-1 leash=Surface(name=Task=1367)/@0x67e8d68 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},
+05-10 16:01:24.383  1990  2113 V WindowManager:         {WCT{RemoteToken{7a419c1 DefaultTaskDisplayArea@62655434(displayId=0)}} m=TO_FRONT f=NONE leash=Surface(name=DefaultTaskDisplayArea)/@0x835f8c6 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0}
+05-10 16:01:24.383  1990  2113 V WindowManager:     ]}
+05-10 16:01:24.384  2866 25665 V WindowManagerShell: onTransitionReady(transaction=8546984975618)
+05-10 16:01:24.384  2866  2910 V WindowManagerShell: onTransitionReady (#787) android.os.BinderProxy@3f4865a: {id=787 t=TO_BACK f=0x106 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@349e6de} m=TO_FRONT f=NONE p=WCT{android.window.IWindowContainerToken$Stub$Proxy@88320bf} pTaskId=-1 leash=Surface(name=Task=1367)/@0x5fed163 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@a356ad5} m=TO_FRONT f=NONE leash=Surface(name=DefaultTaskDisplayArea)/@0x6dd8160 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0}]}
+05-10 16:01:24.385  2866  2910 V WindowManagerShell: Playing animation for (#787) android.os.BinderProxy@3f4865a@0
+05-10 16:01:24.385  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@dcd8091
+05-10 16:01:24.385  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@ed21bf6
+05-10 16:01:24.385  2866  2910 V WindowManagerShell: start keyguard going-away transition, info = {id=787 t=TO_BACK f=0x106 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@349e6de} m=TO_FRONT f=NONE p=WCT{android.window.IWindowContainerToken$Stub$Proxy@88320bf} pTaskId=-1 leash=Surface(name=Task=1367)/@0x5fed163 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@a356ad5} m=TO_FRONT f=NONE leash=Surface(name=DefaultTaskDisplayArea)/@0x6dd8160 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0}]}
+05-10 16:01:24.385  2866  2910 D KeyguardService: Starts IRemoteAnimationRunner: info={id=787 t=TO_BACK f=0x106 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@349e6de} m=TO_FRONT f=NONE p=WCT{android.window.IWindowContainerToken$Stub$Proxy@88320bf} pTaskId=-1 leash=Surface(name=Task=1367)/@0x5fed163 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@a356ad5} m=TO_FRONT f=NONE leash=Surface(name=DefaultTaskDisplayArea)/@0x6dd8160 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0}]}
+05-10 16:01:24.386  1289  1289 I sensors-hal: batch:240, android.sensor.light/51, period=200000000, max_latency=0
+05-10 16:01:24.387  1289  1289 I sensors-hal: set_config:64, sample_period_ns is adjusted to 0 based on min/max delay_ns
+05-10 16:01:24.387  1289  1289 I sensors-hal: batch:249, android.sensor.light/51, period=200000000, max_latency=0 request completed
+05-10 16:01:24.388  2866  2910 D KeyguardViewMediator: Exit Animation Start: 
+05-10 16:01:24.390  2866  2910 V WindowManagerShell:  animated by com.android.wm.shell.keyguard.KeyguardTransitionHandler@ed21bf6
+05-10 16:01:24.397  5251  5251 I Smart5G : [Smart5GService] receive action: android.intent.action.SCREEN_ON
+05-10 16:01:24.397  1990 17255 D MotoSecureProxyService: getReadyForDisplayCount()
+05-10 16:01:24.400  1990 17255 D MotoSecureProxyService: getReadyForDisplayCount()
+05-10 16:01:24.401  1990 17255 V TrustManager: setDeviceLockedForUser userId=11 locked=true callers=com.motorola.server.security.securevault.LockPolicy.lockSecureVaultProfile:294 com.motorola.server.security.securevault.LockPolicy.handleScreenBroadcast:340 com.motorola.server.security.securevault.SecureVault.handleSecureVaultReceiver:545 com.motorola.server.security.securevault.SecureVault.-$$Nest$mhandleSecureVaultReceiver:0 com.motorola.server.security.securevault.SecureVault$SecureVaultReceiver.lambda$onReceive$0:584 
+05-10 16:01:24.401  2866  2866 V DreamService[DozeService]: detach(): Calling onDreamingStopped()
+05-10 16:01:24.402  2866  2866 V DreamService[DozeService]: onDreamingStopped()
+05-10 16:01:24.402  2866  2866 I FalsingManager: Sensor is: false at time 0
+05-10 16:01:24.403  5251  5251 I Smart5G : [NetworkStateService] received action:android.intent.action.SCREEN_ON
+05-10 16:01:24.403  1990 17255 E PersistenceController: SettingNotFoundException: sv_face_enabled
+05-10 16:01:24.403  1990 17255 D BiometricService: Sensor ID(4), oemStrength: 15, updatedStrength: 15, modality 8, state: 4, cookie: 2311322, sensorId 4, hasEnrollments: false cannot participate in Keystore operations
+05-10 16:01:24.404  1990 17255 D BiometricService: Sensor ID(0), oemStrength: 15, updatedStrength: 15, modality 2, state: 4, cookie: 1910445408, sensorId 0, hasEnrollments: false cannot participate in Keystore operations
+05-10 16:01:24.405   922  7716 I keystore2: system/security/keystore2/src/authorization.rs:155 - on_device_locked(user_id=11, unlocking_sids=[], weak_unlock_enabled=false)
+05-10 16:01:24.405   922  7716 I keystore2: system/security/keystore2/src/super_key.rs:976 - UnlockedDeviceRequired super keys for user 11 are fully protected.
+05-10 16:01:24.405  1990  2802 I MR2ServiceImpl: Updating composite discovery preference | preference: RouteDiscoveryRequest{ preferredFeatures={}, activeScan=false }, active routers: []
+05-10 16:01:24.405  2866  2866 V DreamService[DozeService]: finish(): mFinished=true activity=null callers=com.android.systemui.doze.DozeMachine$Service$Delegate.finish:3 com.android.systemui.doze.DozeMachine$Service$Delegate.finish:3 com.android.systemui.doze.DozeMachine.transitionTo:557 com.android.systemui.doze.DozeMachine.requestState:10 com.android.systemui.doze.DozeMachine.requestState:2 
+05-10 16:01:24.405  2866  2866 V DreamService[DozeService]: detach(): mActivity=null mActivity.isFinishing()=false
+05-10 16:01:24.405  1990  2802 I MR2ServiceImpl: Updating composite discovery preference | preference: RouteDiscoveryRequest{ preferredFeatures={}, activeScan=false }, active routers: []
+05-10 16:01:24.406  2866  2866 V DreamService[DozeService]: finish(): mFinished=true activity=null callers=android.service.dreams.DreamService.detach:1492 android.service.dreams.DreamService.-$$Nest$mdetach:0 android.service.dreams.DreamService$DreamServiceWrapper.$r8$lambda$1LeV6PgvJQarx7-tBMQHBSWLLCM:0 android.service.dreams.DreamService$DreamServiceWrapper$$ExternalSyntheticLambda1.run:0 android.os.Handler.handleCallback:1001 
+05-10 16:01:24.406  1289  1289 I sensors-hal: activate:207, com.motorola.sensor.glance/65658 en=0
+05-10 16:01:24.406  1289  1289 I sensors-hal: deactivate:166, deactivate glance 65548
+05-10 16:01:24.406  2866  2866 V DreamService[DozeService]: onDestroy()
+05-10 16:01:24.406  2866  2866 V DreamService[DozeService]: detach(): mActivity=null mActivity.isFinishing()=false
+05-10 16:01:24.406  2866  2866 V DreamService[DozeService]: finish(): mFinished=true activity=null callers=android.service.dreams.DreamService.detach:1492 android.service.dreams.DreamService.onDestroy:1385 com.android.systemui.doze.DozeService.onDestroy:8 android.app.ActivityThread.handleStopService:5311 android.app.ActivityThread.-$$Nest$mhandleStopService:0 
+05-10 16:01:24.408  1289  1289 I sensors-hal: activate:218, com.motorola.sensor.glance/65658 en=0 completed
+05-10 16:01:24.409  2866  2910 D ShellSplitScreen: onFinishedWakingUp
+05-10 16:01:24.409  1289  1289 I sensors-hal: activate:207, com.motorola.sensor.ltv/65738 en=0
+05-10 16:01:24.409  2866  2921 D Tile.ScreenshotTile: update state
+05-10 16:01:24.410  2866  2866 D KeyguardViewMediator: handleStartKeyguardExitAnimation startTime=0 fadeoutDuration=0
+05-10 16:01:24.410  1289  1289 I sensors-hal: activate:218, com.motorola.sensor.ltv/65738 en=0 completed
+05-10 16:01:24.410  2866  2866 D KeyguardUnlock: playCannedUnlockAnimation
+05-10 16:01:24.410  2866  2866 D KeyguardUnlock: playCannedUnlockAnimation, isWakeAndUnlock
+05-10 16:01:24.410  5136 17256 I DeviceStatusMonitor: DeviceStatusMonitor.handleBroadcast():138 onReceive() : Action = android.intent.action.SCREEN_ON
+05-10 16:01:24.411  2866  2866 D KeyguardViewMediator: exitKeyguardAndFinishSurfaceBehindRemoteAnimation
+05-10 16:01:24.411  2866  2866 D KeyguardViewMediator: KeyguardViewMediator queue processing message: START_KEYGUARD_EXIT_ANIM
+05-10 16:01:24.411  5136 17256 I DeviceStatusMonitor: DeviceStatusMonitor.updateCountryInfo():154 updateCountryInfo(), notifyAnyway = false
+05-10 16:01:24.411  1990  3616 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 16:01:24.416  1289  2613 I slpi    : LTR569 PRX_OC: Near 0 K 789 PDATA 775 PLT 972 PHT 1141 - 0,16,12,ed,|a5,c|46
+05-10 16:01:24.420  1289  1289 I sensors-hal: batch:240, com.motorola.sensor.tap/65988, period=66667000, max_latency=0
+05-10 16:01:24.421  1289  1289 I sensors-hal: set_config:64, sample_period_ns is adjusted to 0 based on min/max delay_ns
+05-10 16:01:24.421  1289  1289 I sensors-hal: batch:249, com.motorola.sensor.tap/65988, period=66667000, max_latency=0 request completed
+05-10 16:01:24.422  1288  2676 V MotSpeakerHelperProximity: updated mCurProximityState: FAR (5.000000)
+05-10 16:01:24.422  1288  2676 V MotSpeakerHelperProximity: ThreadLoop event mProximityState = FAR, previous FAR
+05-10 16:01:24.422  1289  1289 I sensors-hal: activate:207, com.motorola.sensor.tap/65988 en=1
+05-10 16:01:24.422  5569  5955 D GameMode: isScreenUnlocked: false
+05-10 16:01:24.423  5784  5784 D AdaptivePerfD: ScreenOnOffReceiver.onReceive [android.intent.action.SCREEN_ON]
+05-10 16:01:24.427  5563  7000 I BatteryCare: [SmartBackground] [DGMC::AccelerateSmartCleanReceiver] action received: android.intent.action.SCREEN_ON
+05-10 16:01:24.429  5563  7000 W BatteryCare: [SmartBackground] [DGMC::AccelerateSmartCleanReceiver] Enter disableMidNightByScreen, isEnableBySleepMode = false
+05-10 16:01:24.429  5563  7000 I BatteryCare: [SmartBackground] [DGMC::AccelerateSmartCleanReceiver] disableMidNightByScreen isSleepMode or isEnableBySleepMode return
+05-10 16:01:24.430  1289  1289 I sensors-hal: send_sync_sensor_request:359, send sync request
+05-10 16:01:24.431  1289  1289 I sensors-hal: send_sync_sensor_request:385, wait for notification of response
+05-10 16:01:24.432  1289 17257 I sensors-hal: ssc_conn_resp_cb:666, resp_value = 0
+05-10 16:01:24.432  1289  1289 I sensors-hal: send_sync_sensor_request:391, takes 1 ms to receive the response with 0
+05-10 16:01:24.432  1289  1289 I sensors-hal: activate:218, com.motorola.sensor.tap/65988 en=1 completed
+05-10 16:01:24.435  1990  2175 W MotoBatteryCareService: uid: 10572 pkgName:com.amar.vault come to foreground
+05-10 16:01:24.442  2866  2866 I KeyguardViewMediator: Send broadcast: com.motorola.KEYGUARD_UNLOCKED_SUCCESS mUnlockType=1
+05-10 16:01:24.444  2866  2866 D KeyguardViewMediator: onKeyguardExitRemoteAnimationFinished#hideKeyguardViewAfterRemoteAnimation
+05-10 16:01:24.444  2866  2866 I FalsingManager: Sensor is: false at time 0
+05-10 16:01:24.444  2866  2948 E FromLockscreenTransitionInteractor: Ignoring startTransition: This interactor asked to transition from LOCKSCREEN -> GONE, but we last transitioned to GONE, not LOCKSCREEN. This should never happen - check currentTransitionInfoInternal or use filterRelevantKeyguardState before starting transitions.
+05-10 16:01:24.445  2866 17261 D AudioTrack: setVolume: mRelativePercentage:1.000000, left:0.501187, right:0.501187
+05-10 16:01:24.445  2866  2866 I TappableTagline: isUnlocked called
+05-10 16:01:24.445  1990  1990 D TrustManagerService: refreshDeviceLockedForUser(userId=0, unlockedUser=-10000), secure=true, showingKeyguard=false, trusted=false, biometricAuthenticated=false, currentUserIsUnlocked=false, deviceLocked=false
+05-10 16:01:24.447  2866  2866 I FalsingManager: Sensor is: false at time 0
+05-10 16:01:24.448   922  7716 I keystore2: system/security/keystore2/src/authorization.rs:128 - on_device_unlocked(user_id=0, password.is_some()=false)
+05-10 16:01:24.448  1289  1289 I sensors-hal: activate:207, com.motorola.sensor.stowed/65568 en=0
+05-10 16:01:24.448  1380  1744 W Permission: The package name(android) provided does not correspond to the uid 1041
+05-10 16:01:24.449  5751  5751 I FileStationLog: [ ShareHubUiManager ] - screenIsOn: true, hasWindowShowed: false
+05-10 16:01:24.449  5751  5751 I MotoDesktopLog: [ FileStationLog ] - broadcastMessage - cmd : 2008
+05-10 16:01:24.449  1289  1289 I sensors-hal: activate:218, com.motorola.sensor.stowed/65568 en=0 completed
+05-10 16:01:24.451  2866  2866 D CentralSurfaces: !shouldBeKeyguard mStatusBarStateController.isKeyguardRequested() false keyguardForDozing false wakeAndUnlocking true isWakingAndOccluded false
+05-10 16:01:24.451  2866  2866 D CentralSurfaces: hideKeyguardImpl false
+05-10 16:01:24.455  1990 11413 W PackageManager: Missing required system package: word.office.docxviewer.document.docx.reader, but found with extended search.
+05-10 16:01:24.455  1990 11413 W PackageManager: Missing required system package: water.sort.puzzle.game.color.sorting.free, but found with extended search.
+05-10 16:01:24.455  1990 11413 W PackageManager: Missing required system package: tech.butterfly.app, but found with extended search.
+05-10 16:01:24.455  5296  5296 I android_os_HwBinder: HwBinder: Starting thread pool for getting: vendor.qti.hardware.sensorscalibrate@1.0::ISensorsCalibrate/default
+05-10 16:01:24.455  1990 11413 W PackageManager: Missing required system package: src.com.dop, but found with extended search.
+05-10 16:01:24.456  1990 11413 W PackageManager: Missing required system package: sorting.games.goods.sort.triple.match3d.puzzle.stuff, but found with extended search.
+05-10 16:01:24.456  1990 11413 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-10 16:01:24.456  5296  5296 D SlpcSystem: Sensorscalibrate HIDL
+05-10 16:01:24.456  1990 11413 W PackageManager: Missing required system package: org.videolan.vlc, but found with extended search.
+05-10 16:01:24.456  1990 11413 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-10 16:01:24.456  1348  1348 I sensorcal: calibrate:31, sensor calibrate begin
+05-10 16:01:24.456  1990 11413 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-10 16:01:24.456  1990 11413 W PackageManager: Missing required system package: io.teslatech.callbreak, but found with extended search.
+05-10 16:01:24.457  1288  2437 I EffectsFactory: EffectCreate() create_effect
+05-10 16:01:24.457  1288  2437 V DlbVolumeListener: Create Dolby Listener Effect.
+05-10 16:01:24.457  1288  2437 V DlbVolumeListener: create CREATED_CONTEXT 0xea469ba0 sessionId 6305 ioId 13 stream_type 3
+05-10 16:01:24.457  1288  2437 I DlbVolumeListener: create() Created effect System Listener
+05-10 16:01:24.457  1288  2437 V DlbVolumeListener: effectGetDescriptor
+05-10 16:01:24.457  1990 11413 W PackageManager: Missing required system package: info.indiapost.daksewa, but found with extended search.
+05-10 16:01:24.457  1288  2437 I DlbVolumeListener: effectGetDescriptor() Returning descriptor for System Listener
+05-10 16:01:24.457  1990 11413 W PackageManager: Missing required system package: info.indiapost, but found with extended search.
+05-10 16:01:24.457  1990 11413 W PackageManager: Missing required system package: in.swiggy.android.instamart, but found with extended search.
+05-10 16:01:24.457  1288  1288 V DlbVolumeListener: effectGetDescriptor
+05-10 16:01:24.457  1288  1288 I DlbVolumeListener: effectGetDescriptor() Returning descriptor for System Listener
+05-10 16:01:24.457  1990 11413 W PackageManager: Missing required system package: in.amazon.mShop.android.shopping, but found with extended search.
+05-10 16:01:24.457  1288  2438 V DlbVolumeListener: effectCommand
+05-10 16:01:24.457  1990 11413 W PackageManager: Missing required system package: homeworkout.homeworkouts.noequipment, but found with extended search.
+05-10 16:01:24.457  1288  2438 V DlbVolumeListener: effectCommand :: Command EFFECT_CMD_INIT
+05-10 16:01:24.457  1990 11413 W PackageManager: Missing required system package: gymworkout.gym.gymlog.gymtrainer, but found with extended search.
+05-10 16:01:24.457  1288  2438 V DlbVolumeListener: effectCommand
+05-10 16:01:24.457  1288  2438 D DlbVolumeListener: effectCommand :: Command EFFECT_CMD_OFFLOAD offload=0 ioHandle=13
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: cris.org.in.prs.ima, but found with extended search.
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-10 16:01:24.458  1288  1288 V DlbVolumeListener: effectCommand
+05-10 16:01:24.458  1288  1288 V DlbVolumeListener: effectCommand :: Command EFFECT_CMD_SET_CONFIG
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: com.worldpackers.travelers, but found with extended search.
+05-10 16:01:24.458  1288  2438 V DlbVolumeListener: effectCommand
+05-10 16:01:24.458  1288  2438 V DlbVolumeListener: effectCommand :: Command EFFECT_CMD_SET_CONFIG
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: com.whereismytrain.android, but found with extended search.
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 16:01:24.458  1288  1288 V DlbVolumeListener: effectCommand
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: com.valvesoftware.android.steam.community, but found with extended search.
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: com.tallteam.citychase, but found with extended search.
+05-10 16:01:24.458  1990 11413 W PackageManager: Missing required system package: com.sbi.lotusintouch, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.rapido.passenger, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.phonepe.app, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.olacabs.customer, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.myntra.android, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.mbm.elereaning.mbmecj, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.marc.files, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-10 16:01:24.459  1990 11413 W PackageManager: Missing required system package: com.kiloo.subwaysurf, but found with extended search.
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.jpl.jiomart, but found with extended search.
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.jaipurcitybus.mobileticketingapp, but found with extended search.
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.internshala.app, but found with extended search.
+05-10 16:01:24.460  1380  1744 D APM_AudioPolicyManager: startOutput() output 13, stream 1, session 6305
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.innersloth.spacemafia, but found with extended search.
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.google.earth, but found with extended search.
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.subscriptions.red, but found with extended search.
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.nbu.paisa.user, but found with extended search.
+05-10 16:01:24.460  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.fitness, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.bard, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.adm, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.google.ai.edge.gallery, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.fsn.nykaa, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.flipkart.android, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.easybrain.sudoku.android, but found with extended search.
+05-10 16:01:24.461  1990 11413 W PackageManager: Missing required system package: com.easybrain.spider.solitaire, but found with extended search.
+05-10 16:01:24.462  1990 11413 W PackageManager: Missing required system package: com.easybrain.jigsaw.puzzles, but found with extended search.
+05-10 16:01:24.462  1990 11413 W PackageManager: Missing required system package: com.easybrain.color.sort.puzzle, but found with extended search.
+05-10 16:01:24.462  1990 11413 W PackageManager: Missing required system package: com.easybrain.block.puzzle.games, but found with extended search.
+05-10 16:01:24.462  1380  2604 D audioserver: logFgsApiBegin: FGS Logger Transaction failed, -129
+05-10 16:01:24.462  1990 11413 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-10 16:01:24.462  1990 11413 W PackageManager: Missing required system package: com.discord, but found with extended search.
+05-10 16:01:24.462  1990 11413 W PackageManager: Missing required system package: com.digital.bsnl.selfcare, but found with extended search.
+05-10 16:01:24.462  1990 11413 W PackageManager: Missing required system package: com.digilocker.android, but found with extended search.
+05-10 16:01:24.463  1990 11413 W PackageManager: Missing required system package: com.dare2compete.app, but found with extended search.
+05-10 16:01:24.463  1990  5173 W AS.PlaybackActivityMon: No piid assigned for invalid/internal port id 644
+05-10 16:01:24.463  1990 11413 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-10 16:01:24.463  1990 11413 W PackageManager: Missing required system package: com.catool.solitaire.card, but found with extended search.
+05-10 16:01:24.463  1990 11413 W PackageManager: Missing required system package: com.cambyte.okenscan, but found with extended search.
+05-10 16:01:24.463  1990 11413 W PackageManager: Missing required system package: com.bt.bms, but found with extended search.
+05-10 16:01:24.463  1990 11413 W PackageManager: Missing required system package: com.blackout.spades, but found with extended search.
+05-10 16:01:24.463  1990 11413 W PackageManager: Missing required system package: com.azefsw.audioconnect, but found with extended search.
+05-10 16:01:24.463  1990 11413 W PackageManager: Missing required system package: com.application.zomato, but found with extended search.
+05-10 16:01:24.464  1990 11413 W PackageManager: Missing required system package: com.anthropic.claude, but found with extended search.
+05-10 16:01:24.464  1990 11413 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-10 16:01:24.464  1990 11413 W PackageManager: Missing required system package: com.Dominos, but found with extended search.
+05-10 16:01:24.464  1990 11413 W PackageManager: Missing required system package: app.revanced.manager.flutter, but found with extended search.
+05-10 16:01:24.464  1990 11413 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-10 16:01:24.464  1990 11413 W PackageManager: Missing required system package: app.netmirror.netmirrornew, but found with extended search.
+05-10 16:01:24.464  1288  1288 V DlbVolumeListener: effectCommand
+05-10 16:01:24.464  1288  1288 V DlbVolumeListener: effectCommand :: Command EFFECT_CMD_ENABLE
+05-10 16:01:24.464  1990 11413 W PackageManager: Missing required system package: all.documentreader.filereader.office.viewer, but found with extended search.
+05-10 16:01:24.464  1990 11413 W PackageManager: Missing required system package: ai.character.app, but found with extended search.
+05-10 16:01:24.465   868   868 E KeymasterUtils: rsp_header->status: -26
+05-10 16:01:24.465  1288  3374 D audio_hw_primary: start_output_stream: enter: stream(0xe8fbc000)usecase(1: low-latency-playback) devices(0x2) is_haptic_usecase(0)
+05-10 16:01:24.465  1990 11413 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-10 16:01:24.465  1990 11413 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-10 16:01:24.465  1990 11413 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 16:01:24.466  1288  3374 D audio_hw_primary: select_devices for use case (low-latency-playback)
+05-10 16:01:24.466  1990 11413 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-10 16:01:24.466  1288  3374 I msm8974_platform: platform_check_and_set_codec_backend_cfg:becf: afe: bitwidth 16, samplerate 48000 channels 2, backend_idx 0 usecase = 1 device (speaker)
+05-10 16:01:24.466  1288  3374 I msm8974_platform: platform_check_and_set_codec_backend_cfg: new_snd_devices[0] is 3
+05-10 16:01:24.466  1288  3374 I msm8974_platform: platform_check_codec_backend_cfg:becf: afe: bitwidth 16, samplerate 48000 channels 2, backend_idx 0 usecase = 1 device (speaker)
+05-10 16:01:24.466  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.youtube.creator, but found with extended search.
+05-10 16:01:24.466  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-10 16:01:24.466  1990 11413 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-10 16:01:24.466  1990 11413 W PackageManager: Missing required system package: com.dopuz.klotski.riddle, but found with extended search.
+05-10 16:01:24.466  1990 11413 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-10 16:01:24.466  1990 11413 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-10 16:01:24.466  1990 11413 W PackageManager: Missing required system package: app.revanced.android.apps.youtube.music, but found with extended search.
+05-10 16:01:24.467  1288  3374 D msm8974_platform: platform_check_codec_backend_cfg:becf: updated afe: bitwidth 16, samplerate 48000 channels 2,backend_idx 0 usecase = 1 device (speaker)
+05-10 16:01:24.467  1288  3374 I msm8974_platform: platform_check_codec_backend_cfg:becf: afe: Codec selected backend: 0 updated bit width: 16 and sample rate: 48000
+05-10 16:01:24.467  1288  3374 D audio_hw_primary: check_usecases_codec_backend:becf: force routing 0
+05-10 16:01:24.467  1288  3374 D audio_hw_primary: check_usecases_codec_backend:becf: (87) check_usecases curr device: speaker, usecase device: backends match 0
+05-10 16:01:24.467  1288  3374 D audio_hw_primary: check_usecases_codec_backend:becf: check_usecases num.of Usecases to switch 0
+05-10 16:01:24.467  1288  3374 D hardware_info: hw_info_append_hw_type : device_name = speaker
+05-10 16:01:24.467  1288  3374 D mot_spkr_spin: exit enable_stereo_spkr_spin,spkr_spin_enabled=0, ret=0
+05-10 16:01:24.467  1288  3374 D audio_hw_primary: enable_snd_device: snd_device(3: speaker)
+05-10 16:01:24.467  1288  3374 D msm8974_platform: platform_get_island_cfg_on_device:island cfg status on snd_device = (speaker 0)
+05-10 16:01:24.467  1288  3374 I soundtrigger: audio_extn_sound_trigger_update_device_status: device 0x3 of type 0 for Event 1, with Raise=0
+05-10 16:01:24.467  1288  3374 D audio_route: Apply path: speaker
+05-10 16:01:24.472  2866  2866 D KeyguardService: Finish IRemoteAnimationRunner.
+05-10 16:01:24.473  2866  2910 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#787) android.os.BinderProxy@3f4865a@0
+05-10 16:01:24.475  1990  2113 V WindowManager: Finish Transition (#787): created at 05-10 16:01:24.336 collect-started=0.03ms request-sent=0.563ms started=16.195ms ready=16.137ms sent=45.927ms finished=138.81ms
+05-10 16:01:24.478  2866  2910 V WindowManagerShell: Track 0 became idle
+05-10 16:01:24.478  2866 25665 D KeyguardService: setOccluded(false)
+05-10 16:01:24.478  2866 25665 D KeyguardViewMediator: setOccluded(false)
+05-10 16:01:24.478  2866  2910 V WindowManagerShell: All active transition animations finished
+05-10 16:01:24.492  1990 11413 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-10 16:01:24.496  1348 17263 I sensorcal: send_recal_req:329, Sending proxcal request
+05-10 16:01:24.501 14686 19349 I FusedLocation: (REDACTED) stationary throttling engaged @%s
+05-10 16:01:24.501  1348  1348 I sensorcal: calibrate:45, s_result: proxcal success
+05-10 16:01:24.502 14686 15295 I NearbySharing: Screen is unlocked
+05-10 16:01:24.502 14686 15295 I NearbySharing: Uwb feature is off.
+05-10 16:01:24.502 14686 15295 I NearbySharing: Uwb feature is off.
+05-10 16:01:24.502 14686 15295 I NearbySharing: Stopping scanning because Bluetooth is disabled.
+05-10 16:01:24.506  1288  3374 D soundtrigger: audio_extn_sound_trigger_update_stream_status: uc_info->id 1 of type 0 for Event 3, with Raise=0
+05-10 16:01:24.506  1288  3374 D audio_hw_utils: audio_extn_utils_send_app_type_cfg: usecase->out_snd_device speaker
+05-10 16:01:24.506  1288  3374 I audio_hw_utils: send_app_type_cfg_for_device PLAYBACK app_type 69937, acdb_dev_id 14, sample_rate 48000, snd_device_be_idx 187
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> send_audio_cal, acdb_id = 14, path = 0, app id = 0x11131, sample rate = 48000, use_case = 0,buffer_idx_w_path =0, afe_sample_rate = 48000, cal_mode = 1, offset_index = 0
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> send_asm_topology
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_STREAM_TOPOLOGY_ID
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> send_adm_topology
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_COMMON_TOPOLOGY_ID
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> send_audtable
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_INSTANCE_COMMON_TABLE_SIZE
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_INSTANCE_COMMON_TABLE
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> AUDIO_SET_AUDPROC_CAL cal_type[11] acdb_id[14] app_type[69937]
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> send_audvoltable
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_INSTANCE_GAIN_DEP_STEP_TABLE_SIZE
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_INSTANCE_GAIN_DEP_STEP_TABLE, vol index 0
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> AUDIO_SET_VOL_CAL cal type = 12
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_INSTANCE_STREAM_TABLE_SIZE
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> send_audstrmtable
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AUDPROC_INSTANCE_STREAM_TABLE
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> audstrm_cal->cal_type.cal_data.cal_size = 20
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> send_afe_topology
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AFE_TOPOLOGY_ID
+05-10 16:01:24.507  1288  3374 D ACDB-LOADER: ACDB -> GET_AFE_TOPOLOGY_ID for adcd_id 14, Topology Id 11111111
+05-10 16:01:24.508  1288  3374 D ACDB-LOADER: ACDB -> send_afe_cal
+05-10 16:01:24.508  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AFE_INSTANCE_COMMON_TABLE_SIZE
+05-10 16:01:24.508  1288  3374 D ACDB-LOADER: ACDB -> ACDB_CMD_GET_AFE_INSTANCE_COMMON_TABLE
+05-10 16:01:24.508  1288  3374 D ACDB-LOADER: ACDB -> AUDIO_SET_AFE_CAL cal_type[16] acdb_id[14]
+05-10 16:01:24.508  1288  3374 D ACDB-LOADER: ACDB -> send_hw_delay : acdb_id = 14 path = 0
+05-10 16:01:24.508  1288  3374 D ACDB-LOADER: ACDB -> ACDB_AVSYNC_INFO: ACDB_CMD_GET_DEVICE_PROPERTY
+05-10 16:01:24.508  1288  3374 D audio_hw_primary: enable_audio_route: apply mixer and update path: low-latency-playback
+05-10 16:01:24.508  1288  3374 D audio_route: Apply path: low-latency-playback
+05-10 16:01:24.508 14686 15295 I NearbySharing: Stopping Fast Init advertisement because Bluetooth is off.
+05-10 16:01:24.508 14686 15295 I NearbySharing: Stopping advertising because Bluetooth is disabled.
+05-10 16:01:24.509  1288  3374 D audio_hw_primary: select_devices: done
+05-10 16:01:24.509  1288  3374 V ext_speaker: usecase 1: out_snd_device 3 is active: enabling device(s) 0x2
+05-10 16:01:24.509  1288  3374 D msm8974_platform: platform_set_channel_map mixer_ctl_name:Playback Channel Map9
+05-10 16:01:24.509  1288  2751 D MotSpeakerHelper: Speaker ON: volume 0.500000 (step 12), usecase SAFE
+05-10 16:01:24.509  1288  3374 D msm8974_platform: platform_set_channel_map: set mapping(1 2 0 0 0 0 0 0) for channel:2
+05-10 16:01:24.513   922  7716 I keystore2: system/security/keystore2/src/super_key.rs:1040 - Successfully unlocked user 0 with biometric 2125177197410983363
+05-10 16:01:24.514  2866  2980 D KeyguardViewMediator: updateActivityLockScreenState(false, false)
+05-10 16:01:24.518  1386  1386 I SurfaceFlinger: track jank, 10302:3,27:1,63205:1327
+05-10 16:01:24.518 14686 15295 I NearbySharing: Fast Initiation Scanning has stopped
+05-10 16:01:24.518 14686 15295 I NearbySharing: Stopping FastInitiation scanning because Bluetooth is disabled.
+05-10 16:01:24.519  2866  2921 D Tile.ScreenshotTile: update state
+05-10 16:01:24.520 14686 15295 I NearbySharing: Dismissing HUN as there's no device nearby.
+05-10 16:01:24.521  1990  2128 D PanelsService: onKeyguardStateChanged.. isShowing=false
+05-10 16:01:24.521  1990  2128 D TouchHwService: onKeyguardStateChanged.. isShowing=false
+05-10 16:01:24.521 14686 19349 I FusedLocation: (REDACTED) stationary throttling engaged @%s
+05-10 16:01:24.522  1990  2055 D FingerprintProvider/defaultHIDL: Starting watchdog for fingerprint
+05-10 16:01:24.522  1990  3613 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-10 16:01:24.522  1990  3613 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-10 16:01:24.524  1990  2691 I ImeTracker: com.amar.vault:78c39807: onRequestHide at ORIGIN_SERVER reason HIDE_SAME_WINDOW_FOCUSED_WITHOUT_EDITOR fromUser false
+05-10 16:01:24.524  1990  2691 I ImeTracker: com.amar.vault:78c39807: onCancelled at PHASE_SERVER_SHOULD_HIDE
+05-10 16:01:24.527  1990  2113 E UsbDeviceManager: Calling Update secure attr with /sys/class/android_usb/android0/secure value = false
+05-10 16:01:24.527  1990  2113 E UsbDeviceManager: Actually updating secure attr with false
+05-10 16:01:24.526 14686 19349 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+05-10 16:01:24.529  1990  2113 E UsbDeviceManager: Set USB secure = false by /sys/class/android_usb/android0/secure
+05-10 16:01:24.529 14686 19349 I FusedLocation: (REDACTED) location delivery to %s blocked - too fast
+05-10 16:01:24.529 14686 19349 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+05-10 16:01:24.532  1990  2113 E UsbDeviceManager: Calling Update secure attr with /sys/class/android_usb/android0/secure value = false
+05-10 16:01:24.533  1990  2113 E UsbDeviceManager: Actually updating secure attr with false
+05-10 16:01:24.533  1990  2113 E UsbDeviceManager: Set USB secure = false by /sys/class/android_usb/android0/secure
+05-10 16:01:24.535  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:24.536  2866  2866 V KeyguardStatusViewController: onTimeChanged
+05-10 16:01:24.537  1990  2113 E UsbDeviceManager: Calling Update secure attr with /sys/class/android_usb/android0/secure value = false
+05-10 16:01:24.537  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1371 onStartInput(EditorInfo{EditorInfo{packageName=com.amar.vault, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+05-10 16:01:24.537  1990  2113 E UsbDeviceManager: Actually updating secure attr with false
+05-10 16:01:24.538  1990  2113 E UsbDeviceManager: Set USB secure = false by /sys/class/android_usb/android0/secure
+05-10 16:01:24.541  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+05-10 16:01:24.541  1990 17270 D MotoSecureProxyService: getReadyForDisplayCount()
+05-10 16:01:24.541  1990 17269 D MotoSecureProxyService: getReadyForDisplayCount()
+05-10 16:01:24.542  1990  3613 W PackageConfigPersister: App-specific configuration not found for packageName: com.amar.vault and userId: 0
+05-10 16:01:24.542  1990 17269 V TrustManager: setDeviceLockedForUser userId=11 locked=true callers=com.motorola.server.security.securevault.LockPolicy.lockSecureVaultProfile:294 com.motorola.server.security.securevault.LockPolicy.handleScreenBroadcast:340 com.motorola.server.security.securevault.SecureVault.handleSecureVaultReceiver:545 com.motorola.server.security.securevault.SecureVault.-$$Nest$mhandleSecureVaultReceiver:0 com.motorola.server.security.securevault.SecureVault$SecureVaultReceiver.lambda$onReceive$0:584 
+05-10 16:01:24.543  2866  2866 I Channel.Remote: [4bf4ed223cfb4fb89ebe46605bdad302|com.motorola.personalize] Keep channel connection alive false by 4
+05-10 16:01:24.543  1990 17269 E PersistenceController: SettingNotFoundException: sv_face_enabled
+05-10 16:01:24.544  1990 17269 D BiometricService: Sensor ID(4), oemStrength: 15, updatedStrength: 15, modality 8, state: 4, cookie: 2311322, sensorId 4, hasEnrollments: false cannot participate in Keystore operations
+05-10 16:01:24.544  1990 17269 D BiometricService: Sensor ID(0), oemStrength: 15, updatedStrength: 15, modality 2, state: 4, cookie: 1910445408, sensorId 0, hasEnrollments: false cannot participate in Keystore operations
+05-10 16:01:24.545  1990 17270 D MotoSecureProxyService: getReadyForDisplayCount()
+05-10 16:01:24.545   922  7716 I keystore2: system/security/keystore2/src/authorization.rs:155 - on_device_locked(user_id=11, unlocking_sids=[], weak_unlock_enabled=false)
+05-10 16:01:24.546  1990 17271 D MotoSecureProxyService: getReadyForDisplayCount()
+05-10 16:01:24.546  1990  2055 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 16:01:24.546   922  7716 I keystore2: system/security/keystore2/src/super_key.rs:976 - UnlockedDeviceRequired super keys for user 11 are fully protected.
+05-10 16:01:24.546  1990 17271 V TrustManager: setDeviceLockedForUser userId=11 locked=true callers=com.motorola.server.security.securevault.LockPolicy.lockSecureVaultProfile:294 com.motorola.server.security.securevault.LockPolicy.handleScreenBroadcast:340 com.motorola.server.security.securevault.SecureVault.handleSecureVaultReceiver:545 com.motorola.server.security.securevault.SecureVault.-$$Nest$mhandleSecureVaultReceiver:0 com.motorola.server.security.securevault.SecureVault$SecureVaultReceiver.lambda$onReceive$0:584 
+05-10 16:01:24.548  1990 17271 E PersistenceController: SettingNotFoundException: sv_face_enabled
+05-10 16:01:24.548  1990 17270 V TrustManager: setDeviceLockedForUser userId=11 locked=true callers=com.motorola.server.security.securevault.LockPolicy.lockSecureVaultProfile:294 com.motorola.server.security.securevault.LockPolicy.handleScreenBroadcast:340 com.motorola.server.security.securevault.SecureVault.handleSecureVaultReceiver:545 com.motorola.server.security.securevault.SecureVault.-$$Nest$mhandleSecureVaultReceiver:0 com.motorola.server.security.securevault.SecureVault$SecureVaultReceiver.lambda$onReceive$0:584 
+05-10 16:01:24.549  1990 17271 D BiometricService: Sensor ID(4), oemStrength: 15, updatedStrength: 15, modality 8, state: 4, cookie: 2311322, sensorId 4, hasEnrollments: false cannot participate in Keystore operations
+05-10 16:01:24.549  1990  2055 D SystemServerTiming: getUserSwitchability-0
+05-10 16:01:24.549  1990  2055 D SystemServerTiming: TM.isInCall
+05-10 16:01:24.549  1990  2055 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+05-10 16:01:24.549  1990  2055 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+05-10 16:01:24.549  1990 17270 E PersistenceController: SettingNotFoundException: sv_face_enabled
+05-10 16:01:24.549  1990  2055 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+05-10 16:01:24.549  1990 17270 D BiometricService: Sensor ID(4), oemStrength: 15, updatedStrength: 15, modality 8, state: 4, cookie: 2311322, sensorId 4, hasEnrollments: false cannot participate in Keystore operations
+05-10 16:01:24.550  1990 17270 D BiometricService: Sensor ID(0), oemStrength: 15, updatedStrength: 15, modality 2, state: 4, cookie: 1910445408, sensorId 0, hasEnrollments: false cannot participate in Keystore operations
+05-10 16:01:24.551  2866  2866 D KeyguardViewMediator: handleSetOccluded(false)
+05-10 16:01:24.551  1990 17271 D BiometricService: Sensor ID(0), oemStrength: 15, updatedStrength: 15, modality 2, state: 4, cookie: 1910445408, sensorId 0, hasEnrollments: false cannot participate in Keystore operations
+05-10 16:01:24.551  2866  2866 D KeyguardViewMediator: KeyguardViewMediator queue processing message: SET_OCCLUDED
+05-10 16:01:24.552   922  7716 I keystore2: system/security/keystore2/src/authorization.rs:155 - on_device_locked(user_id=11, unlocking_sids=[], weak_unlock_enabled=false)
+05-10 16:01:24.552   922  7716 I keystore2: system/security/keystore2/src/super_key.rs:976 - UnlockedDeviceRequired super keys for user 11 are fully protected.
+05-10 16:01:24.553   922 15319 I keystore2: system/security/keystore2/src/authorization.rs:155 - on_device_locked(user_id=11, unlocking_sids=[], weak_unlock_enabled=false)
+05-10 16:01:24.554   922 15319 I keystore2: system/security/keystore2/src/super_key.rs:976 - UnlockedDeviceRequired super keys for user 11 are fully protected.
+05-10 16:01:24.555  1990  2055 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 16:01:24.560  1990  2055 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 16:01:24.561  1990  2603 W UserManagerService: Requested status bar icon for non-badged user 0
+05-10 16:01:24.617  1990  2603 D SystemServerTiming: getUserSwitchability-0
+05-10 16:01:24.617  1990  2603 D SystemServerTiming: TM.isInCall
+05-10 16:01:24.618  1990  2603 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+05-10 16:01:24.618  1990  2603 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+05-10 16:01:24.618  1990  2603 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+05-10 16:01:24.633  2094  2288 D [fps_checkin_data]: checkin file size = 4487
+05-10 16:01:24.633  2094  2288 E [fps_checkin_data]: open temp file failed
+05-10 16:01:24.635  1288  3374 D audio_hw_primary: start_output_stream: exit
+05-10 16:01:24.642  2866  2933 D Surface : Surface::disconnect
+05-10 16:01:24.643  2866  2933 D BufferQueueProducer: [NotificationShade#9217(BLAST Consumer)pid:2866](id:b3200000303,api:1,p:2866,c:2866) disconnect: api 1
+05-10 16:01:24.655  2094  2288 D fpc_tac : fpc_tee_update_template
+05-10 16:01:24.670  2094  2288 D fpc_tac : fpc_tee_store_template_db_host ready to write: /data/vendor_de/0/fpdata/user.db
+05-10 16:01:24.671  2866  2866 I FalsingManager: Sensor is: false at time 0
+05-10 16:01:24.702  1990  3616 D SystemServerTiming: getUserSwitchability-0
+05-10 16:01:24.702  1990  3616 D SystemServerTiming: TM.isInCall
+05-10 16:01:24.702  1990  3616 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+05-10 16:01:24.703  1990  3616 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+05-10 16:01:24.703  1990  3616 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+05-10 16:01:24.708  1990  3616 D SystemServerTiming: getUserSwitchability-0
+05-10 16:01:24.709  1990  3616 D SystemServerTiming: TM.isInCall
+05-10 16:01:24.709  1990  3616 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+05-10 16:01:24.709  1990  3616 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+05-10 16:01:24.709  1990  3616 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+05-10 16:01:24.711  1990  2603 D SystemServerTiming: getUserSwitchability-0
+05-10 16:01:24.711  1990  2603 D SystemServerTiming: TM.isInCall
+05-10 16:01:24.711  1990  2603 D SystemServerTiming: hasUserRestriction-DISALLOW_USER_SWITCH
+05-10 16:01:24.711  1990  2603 D SystemServerTiming: getInt-ALLOW_USER_SWITCHING_WHEN_SYSTEM_USER_LOCKED
+05-10 16:01:24.711  1990  2603 D SystemServerTiming: isUserUnlocked-USER_SYSTEM
+05-10 16:01:24.721  1289  2613 I slpi-mot_tap : Using product index 2
+05-10 16:01:24.752  2094  2288 D fpc_tac : fpc_write_db_blob_to_file Successfully wrote template database /data/vendor_de/0/fpdata/user.db
+05-10 16:01:24.766  1990  2113 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.Broadcasts duration ms: 0
+05-10 16:01:24.769 10537 10537 W fbservices-stub:InitStatus: Not blocking Service (241670222)
+05-10 16:01:24.769 10537 10537 W fbservices-stub:InitStatus: Not blocking Service (241670222)
+05-10 16:01:24.772  1990  2603 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-10 16:01:24.775  1990  2603 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-10 16:01:24.883  1380  2349 D audioserver: logFgsApiEnd: FGS Logger Transaction failed, -129
+05-10 16:01:24.883  1288  1288 V DlbVolumeListener: effectCommand
+05-10 16:01:24.883  1288  1288 V DlbVolumeListener: effectCommand :: Command EFFECT_CMD_DISABLE
+05-10 16:01:24.884  1288  2438 V DlbVolumeListener: release(handle=0xea469ba0)
+05-10 16:01:24.884  1380  1744 W audioserver: Binder 0xb4000078c4e21150 destroyed after setInheritRt before being parceled.
+05-10 16:01:24.884  1380  1744 W audioserver: Binder 0xb4000078c4e21150 destroyed after setMinSchedulerPolicy before being parceled.
+05-10 16:01:24.884  1380  1744 D APM_AudioPolicyManager: stopOutput() output 13, stream 1, session 6305
+05-10 16:01:24.887  2866  2866 I KeyguardTransitionRepository: FINISHED transition: TransitionStep(from=DOZING, to=GONE, value=1.0, transitionState=FINISHED, ownerName=FromDozingTransitionInteractor(biometric wake and unlock))
+05-10 16:01:24.888  2866  2944 D ResourceTrimmer: Sending TRIM_MEMORY_UI_HIDDEN.
+05-10 16:01:24.888  1990  2055 D FaceProvider/default: Starting watchdog for face
+05-10 16:01:25.025  5751  6477 I MotoDesktopLog: [ R4ConnectivityManager ] - cancelWfdPowerSavingAlarm
+05-10 16:01:25.026  5569  5955 D GameMode: isScreenUnlocked: true
+05-10 16:01:25.027  5569  5569 D GameMode: exiting game mode
+05-10 16:01:25.030  5751  5751 I FileStationLog: [ ShareHubUiManager ] - onUserPresent(). hasWindowShowed: false, isMotoWindowType(): true
+05-10 16:01:25.030  1289  1289 I sensors-hal: batch:240, com.motorola.sensor.stowed/65568, period=200000000, max_latency=0
+05-10 16:01:25.030  1289  1289 I sensors-hal: set_config:64, sample_period_ns is adjusted to 0 based on min/max delay_ns
+05-10 16:01:25.030  1289  1289 I sensors-hal: batch:249, com.motorola.sensor.stowed/65568, period=200000000, max_latency=0 request completed
+05-10 16:01:25.031  5563  7000 I BatteryCare: [SmartBackground] [DGMC::AccelerateSmartCleanReceiver] action received: android.intent.action.USER_PRESENT
+05-10 16:01:25.031  5563  7000 I BatteryCare: [SmartBackground] [DGMC::AccelerateSmartCleanReceiver] user present
+05-10 16:01:25.031  1289  1289 I sensors-hal: activate:207, com.motorola.sensor.stowed/65568 en=1
+05-10 16:01:25.031  5563  7000 W BatteryCare: [SmartBackground] [DGMC::AccelerateSmartCleanReceiver] Enter disableMidNightByScreen, isEnableBySleepMode = false
+05-10 16:01:25.031  5563  7000 I BatteryCare: [SmartBackground] [DGMC::AccelerateSmartCleanReceiver] disableMidNightByScreen isSleepMode or isEnableBySleepMode return
+05-10 16:01:25.033  5569  5569 D GameMode: isFeatureSupported: true
+05-10 16:01:25.034  1289  1289 I sensors-hal: send_sync_sensor_request:359, send sync request
+05-10 16:01:25.034  5569  5569 D GameMode: isFeatureSupported: true
+05-10 16:01:25.034  1289  1289 I sensors-hal: send_sync_sensor_request:385, wait for notification of response
+05-10 16:01:25.035  1289 17275 I sensors-hal: ssc_conn_resp_cb:666, resp_value = 0
+05-10 16:01:25.035  1289  1289 I sensors-hal: send_sync_sensor_request:391, takes 1 ms to receive the response with 0
+05-10 16:01:25.035  1289  1289 I sensors-hal: activate:218, com.motorola.sensor.stowed/65568 en=1 completed
+05-10 16:01:25.040  3043  3043 D GameModeDetector: notifyGameModeStatusValue, value=false
+05-10 16:01:25.040  3043  3043 D DaxService: sendGameModeIntent, state=false
+05-10 16:01:25.040 15708 15708 E ActivityThread: Failed to find provider info for com.motorola.commandcenter.weather
+05-10 16:01:25.044  5569  5569 D GameMode: isFeatureSupported: true
+05-10 16:01:25.044  1990  2181 D ActivityManager: unfreezing ProcessRecord{70e1ca 15587:com.motorola.dolby.dolbyui/u0a141}, reason = unfreezeTemporarily, adj = 955, adjType = cch-empty, adjSource = null
+05-10 16:01:25.046  1990  2181 D ActivityManager: sync unfroze 15587 com.motorola.dolby.dolbyui for 3
+05-10 16:01:25.050 15587 15627 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-10 16:01:25.050 15587 15627 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-10 16:01:25.054  1288 17043 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-10 16:01:25.055  1288 17043 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-10 16:01:25.056  3043 27216 D DolbyAudioEffectHelper: getDolbyStatus enabled=true profile=2
+05-10 16:01:25.056  3043 27216 D DolbyProvider: true, profile=2
+05-10 16:01:25.056  1990  6116 D ActivityManager: unfreezing ProcessRecord{837dfe7 23487:com.google.android.gms/u0a180}, reason = unfreezeTemporarily, adj = 905, adjType = cch-client-act, adjSource = null
+05-10 16:01:25.056  1990  6116 D ActivityManager: sync unfroze 23487 com.google.android.gms for 27
+05-10 16:01:25.068  1990 11413 D ActivityManager: unfreezing ProcessRecord{2a48388 9357:com.google.android.gms/u10a180}, reason = unfreezeTemporarily, adj = 920, adjType = cch-empty, adjSource = null
+05-10 16:01:25.069  1990 11413 D ActivityManager: sync unfroze 9357 com.google.android.gms for 27
+05-10 16:01:25.073 14686 17279 I NearbyMediums: ModuleInitializer handles incoming intent android.intent.action.USER_PRESENT
+05-10 16:01:25.082 14686 14686 I RCNIntentOperation: RCN is disabled on this network.
+05-10 16:01:25.089   933 17283 I NearbyMediums: ModuleInitializer handles incoming intent android.intent.action.USER_PRESENT
+05-10 16:01:25.095  1990  1990 D Biometrics/AuthenticationClient: FingerprintDownTimeout mState=STATE_STOPPED
+05-10 16:01:25.098   933   933 I RCNIntentOperation: RCN is disabled on this network.
+05-10 16:01:25.104  9357  9357 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.pay.service.BIND dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+05-10 16:01:25.105  9357  9357 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.pay.service.BIND dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+05-10 16:01:25.105  1990 11413 D BiometricService: canAuthenticate: User=0, Caller=0, Authenticators=255
+05-10 16:01:25.106  1990 11413 D BiometricService/PreAuthInfo: Package: com.google.android.gms Sensor ID: 4 Modality: 8 Status: 1
+05-10 16:01:25.106  1990 11413 D BiometricService/PreAuthInfo: Package: com.google.android.gms Sensor ID: 0 Modality: 2 Status: 1
+05-10 16:01:25.106  1990 11413 D BiometricService/PreAuthInfo: getCanAuthenticateInternal Modality: 10 AuthenticatorStatus: 1
+05-10 16:01:25.106  1990 11413 D AuthService: canAuthenticate, userId: 0, callingUserId: 0, authenticators: 255, result: 0
+05-10 16:01:25.116 14686 14686 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+05-10 16:01:25.119  1990  3613 D BiometricService: canAuthenticate: User=10, Caller=10, Authenticators=255
+05-10 16:01:25.120  9357  9357 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.auth.cryptauth.cryptauthservice.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+05-10 16:01:25.121  9357  9357 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.auth.cryptauth.cryptauthservice.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+05-10 16:01:25.121  1990  3613 D BiometricService/PreAuthInfo: Package: com.google.android.gms Sensor ID: 4 Modality: 8 Status: 7
+05-10 16:01:25.121  1990  3613 D BiometricService/PreAuthInfo: Package: com.google.android.gms Sensor ID: 0 Modality: 2 Status: 7
+05-10 16:01:25.121  1990  3613 D BiometricService/PreAuthInfo: getCanAuthenticateInternal Modality: 2 AuthenticatorStatus: 7
+05-10 16:01:25.121  1990  3613 D AuthService: canAuthenticate, userId: 10, callingUserId: 10, authenticators: 255, result: 11
+05-10 16:01:25.122 23487 17297 I Fido    : [FidoV2EnrollmentController] Execute registerFor API [CONTEXT service_id=287 ]
+05-10 16:01:25.123  1289 17248 E sensors-hal: handle_sns_client_event:62, mot_disprot_event: now=104026244269382 ts=104026207386518, type=0, status=3
+05-10 16:01:25.124  1990  3613 D BiometricService: canAuthenticate: User=10, Caller=10, Authenticators=65536
+05-10 16:01:25.124  1990  3613 E BiometricService: Non-biometric, non-credential bits found. Authenticators: 65536
+05-10 16:01:25.124  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:25.126  1990  3616 D BiometricService: canAuthenticate: User=10, Caller=10, Authenticators=15
+05-10 16:01:25.127  1990  3616 D BiometricService/PreAuthInfo: Package: com.google.android.gms Sensor ID: 4 Modality: 8 Status: 7
+05-10 16:01:25.127  1990  3616 D BiometricService/PreAuthInfo: Package: com.google.android.gms Sensor ID: 0 Modality: 2 Status: 7
+05-10 16:01:25.127  1990  3616 D BiometricService/PreAuthInfo: getCanAuthenticateInternal Modality: 2 AuthenticatorStatus: 7
+05-10 16:01:25.127  1990  3616 D AuthService: canAuthenticate, userId: 10, callingUserId: 10, authenticators: 15, result: 11
+05-10 16:01:25.129  9357 17296 I SystemUpdate: [Control,UpdateReminderDialogControl] System update management not enabled in this context. Ignoring intent: Intent { act=android.intent.action.USER_PRESENT flg=0x24200010 pkg=com.google.android.gms }
+05-10 16:01:25.133 23487 17302 I PersonalSafety: ConnectivityProtectionLockingIntentOperation: cancelled task [CONTEXT service_id=310 ]
+05-10 16:01:25.144 23487 23778 I CryptauthV2: [HaveKeyWithKeyNameOperation] Have key with key name operation is called.
+05-10 16:01:25.147 23487 17297 I Fido    : [FidoV2EnrollmentController] Execute registerFor API [CONTEXT service_id=287 ]
+05-10 16:01:25.147 23487 24135 I CryptauthV2: [HaveKeyWithKeyNameOperation] Have key with key name operation is called.
+05-10 16:01:25.150 23487 17297 I Fido    : [FidoV2EnrollmentController] Execute registerFor API [CONTEXT service_id=287 ]
+05-10 16:01:25.150 23487 24135 I CryptauthV2: [HaveKeyWithKeyNameOperation] Have key with key name operation is called.
+05-10 16:01:25.157 23487 17297 I Fido    : [FidoV2EnrollmentController] Execute registerFor API [CONTEXT service_id=287 ]
+05-10 16:01:25.161 23487 24135 I CryptauthV2: [HaveKeyWithKeyNameOperation] Have key with key name operation is called.
+05-10 16:01:25.164 23487 17297 I Fido    : [FidoV2EnrollmentController] Execute registerFor API [CONTEXT service_id=287 ]
+05-10 16:01:25.166 23487 24135 I CryptauthV2: [HaveKeyWithKeyNameOperation] Have key with key name operation is called.
+05-10 16:01:25.168 23487 17297 I Fido    : [FidoV2EnrollmentController] Execute registerFor API [CONTEXT service_id=287 ]
+05-10 16:01:25.172 23487 24135 I CryptauthV2: [HaveKeyWithKeyNameOperation] Have key with key name operation is called.
+05-10 16:01:25.204  1990  1990 V PowerManager: userActivity when=54266117 event=0 flags=0 displayId=0 by (android) callers=android.os.PowerManager.userActivity:1487 com.android.server.accessibility.AccessibilityInputFilter.handleMotionEvent:536 com.android.server.accessibility.AccessibilityInputFilter.processMotionEvent:506 
+05-10 16:01:25.204  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:25.246  1386  1386 I Scheduler: notifyScrollEvent state=1
+05-10 16:01:25.251  1347  1431 E ANDR-PERF-OPTSHANDLER: Failed to read 
+05-10 16:01:25.252  1347  1431 E ANDR-PERF-RESOURCEQS: Failed to apply optimization [11, 10]
+05-10 16:01:25.303  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:25.335 25680 25688 E ThermalEngine: sensor name fetch error
+05-10 16:01:25.394  1990  1990 V PowerManager: userActivity when=54266313 event=0 flags=0 displayId=0 by (android) callers=android.os.PowerManager.userActivity:1487 com.android.server.accessibility.AccessibilityInputFilter.handleMotionEvent:536 com.android.server.accessibility.AccessibilityInputFilter.processMotionEvent:506 
+05-10 16:01:25.395  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:25.398  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 1345
+05-10 16:01:25.398  1347  1347 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+05-10 16:01:25.398  1347  1347 E ANDR-PERF-REQUEST: invalid request
+05-10 16:01:25.398  1347  1347 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+05-10 16:01:25.520 14686 14686 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+05-10 16:01:25.817 25680 25780 I ThermalEngine: Monitor:ACTIVE:FREEZE-CHG:freeze_rule=1:DETECT-STANDBY=0
+05-10 16:01:25.818 25680 25780 I ThermalEngine: ACTION: freeze_rule - Setting freeze_rule to 1
+05-10 16:01:25.818 25680 25779 I ThermalEngine: Thermal-Server: Thermal received msg from  freezing
+05-10 16:01:25.818 25680 17309 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-10 16:01:25.916  1990  1990 V PowerManager: userActivity when=54266834 event=0 flags=0 displayId=0 by (android) callers=android.os.PowerManager.userActivity:1487 com.android.server.accessibility.AccessibilityInputFilter.handleMotionEvent:536 com.android.server.accessibility.AccessibilityInputFilter.processMotionEvent:506 
+05-10 16:01:25.916  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.012  1386  1386 I Scheduler: notifyScrollEvent state=1
+05-10 16:01:26.020  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.120  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.228  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.333  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.353  1990  1990 V PowerManager: userActivity when=54267271 event=0 flags=0 displayId=0 by (android) callers=android.os.PowerManager.userActivity:1487 com.android.server.accessibility.AccessibilityInputFilter.handleMotionEvent:536 com.android.server.accessibility.AccessibilityInputFilter.processMotionEvent:506 
+05-10 16:01:26.354  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.471  3008  3025 I Tethering: [OffloadController] notifyAlertReached
+05-10 16:01:26.606 10062 10075 W System  : A resource failed to call close. 
+05-10 16:01:26.607 10062 10075 W System  : A resource failed to call close. 
+05-10 16:01:26.607 10062 10075 W System  : A resource failed to call close. 
+05-10 16:01:26.607 10062 10075 W System  : A resource failed to call close. 
+05-10 16:01:26.608 10062 10075 W System  : A resource failed to call close. 
+05-10 16:01:26.608 10062 10075 W System  : A resource failed to call close. 
+05-10 16:01:26.608 10062 10075 W System  : A resource failed to call close. 
+05-10 16:01:26.609 10062 10075 W System  : A resource failed to call close. 
+05-10 16:01:26.641  1990  1990 V PowerManager: userActivity when=54267559 event=0 flags=0 displayId=0 by (android) callers=android.os.PowerManager.userActivity:1487 com.android.server.accessibility.AccessibilityInputFilter.handleMotionEvent:536 com.android.server.accessibility.AccessibilityInputFilter.processMotionEvent:506 
+05-10 16:01:26.641  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.737  1386  1386 I Scheduler: notifyScrollEvent state=1
+05-10 16:01:26.745  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.850  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:26.949  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:27.063  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:27.179  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:27.208  1288  3194 D DlbDap2Process: process() called [414000] times with input format 0x22 and channel mask 0x3 (ProcessingMode=10), htEnable=0(0, 0, 0)
+05-10 16:01:27.282  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:27.383  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:27.486  3057  3080 I QImsService: VtDataUsageProvider : onSetAlert:2097152
+05-10 16:01:27.486  3057  3057 I QImsService: ImsServiceClassTracker : updateAlertQuota:newQuota=2097152,Remaining=2097152
+05-10 16:01:27.487  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:27.592  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:27.737  1990  1990 V PowerManager: userActivity when=54268655 event=0 flags=0 displayId=0 by (android) callers=android.os.PowerManager.userActivity:1487 com.android.server.accessibility.AccessibilityInputFilter.handleMotionEvent:536 com.android.server.accessibility.AccessibilityInputFilter.processMotionEvent:506 
+05-10 16:01:27.737  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-10 16:01:27.858  1289 17248 E sensors-hal: handle_sns_client_event:62, mot_disprot_event: now=104028979527819 ts=104028942538289, type=16, status=3
+05-10 16:01:27.872  1288 17043 D audio_hw_primary: out_standby: enter: stream (0xe8fbc000) usecase(1: low-latency-playback)
+05-10 16:01:27.957  1288 17043 D audio_hw_primary: disable_audio_route: reset and update mixer path: low-latency-playback
+05-10 16:01:27.957  1288 17043 D soundtrigger: audio_extn_sound_trigger_update_stream_status: uc_info->id 1 of type 0 for Event 2, with Raise=0
+05-10 16:01:27.957  1288 17043 D hardware_info: hw_info_append_hw_type : device_name = speaker
+05-10 16:01:27.957  1288 17043 D audio_hw_primary: disable_snd_device: snd_device(3: speaker)
+05-10 16:01:27.957  1288 17043 D mot_spkr_spin: exit enable_stereo_spkr_spin,spkr_spin_enabled=0, ret=0
+05-10 16:01:27.981  1288 17043 D audio_route: audio_route_update_path: skip to reset mixer control 'RX HPH Mode' in path 'speaker' because it is still needed by other paths
+05-10 16:01:27.982  1288 17043 I soundtrigger: audio_extn_sound_trigger_update_device_status: device 0x3 of type 0 for Event 0, with Raise=0
+05-10 16:01:27.982  1288 17043 D audio_hw_utils: audio_extn_utils_release_snd_device:snd_device =3
+05-10 16:01:27.982  1288 17043 V ext_speaker: usecase 1: out_snd_device 3 is NOT active
+05-10 16:01:27.983  1990  3613 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-10 16:01:28.121  1289  2613 I slpi    : LTR569 ALS_OC: lux:47.251110, last_ps:0[775], RAW:636.000000[559, 459], INT:70, G:512, C:46, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:28.142  1289  2613 I slpi-mot_tap : Apply inv Z reset: zpeak 10.276560 zmin -32.096870 lim -3.000000 zpeakn 14 zminn 13
+05-10 16:01:28.242  1386  1386 I Scheduler: notifyScrollEvent state=0
+05-10 16:01:28.497  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3896048, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156660, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=150756, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30006, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:28.498  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3896048, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156660, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=150756, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30006, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:28.504  1289  2613 I slpi-mot_tap : Apply inv Z reset: zpeak 30.900188 zmin -35.869492 lim -3.000000 zpeakn 6 zminn 0
+05-10 16:01:28.510  2866  4897 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:28.510  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:28.511  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:28.512  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:28.513  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:28.513  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:28.513  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:28.516  2866  5014 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:28.519  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3876585, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156661, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-55847, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30006, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:28.521  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3876585, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156661, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-55847, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30006, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:28.525  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:28.525  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:28.525  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:28.526  2866  4975 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:28.531  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:28.531  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:28.532  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:28.533  2866  5052 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:28.825 25680 25780 I ThermalEngine: ACTION: freeze_rule - Setting freeze_rule to 0
+05-10 16:01:28.826 25680 25780 I ThermalEngine: Monitor:INACTIVE:FREEZE-CHG:freeze_rule=1:DETECT-STANDBY=1
+05-10 16:01:28.826 25680 17318 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-10 16:01:28.826 25680 25779 I ThermalEngine: Thermal-Server: Thermal received msg from  freezing
+05-10 16:01:28.827 25680 25780 I ThermalEngine: Monitor:ACTIVE:MON-MSM-STB:battery=4:Virt-QUT=44825
+05-10 16:01:29.005  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:29.005  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:29.005  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:29.008  2866  4952 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:30.637  1289  2613 I slpi    : LTR569 ALS_OC: lux:22.213964, last_ps:0[775], RAW:299.000000[699, 573], INT:70, G:512, C:45, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:30.741  1289  2613 I slpi    : LTR569 ALS_OC: lux:7.220895, last_ps:0[775], RAW:129.000000[328, 270], INT:70, G:512, C:43, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:30.850  1289  2613 I slpi    : LTR569 ALS_OC: lux:4.701978, last_ps:0[775], RAW:84.000000[146, 112], INT:70, G:512, C:41, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:31.007  1289  2613 I slpi    : LTR569 ALS_OC: lux:2.854772, last_ps:0[775], RAW:51.000000[101, 67], INT:70, G:512, C:38, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:31.015  1289  2613 I slpi    : LTR569 PRX_OC_T: Near 1 K 789 PDATA 1229 PLT 972 PHT 1141 - 1,16,12,ed,|a5,c|46
+05-10 16:01:31.022  1288  2676 V MotSpeakerHelperProximity: updated mCurProximityState: NEAR (0.000000)
+05-10 16:01:31.023  1288  2676 V MotSpeakerHelperProximity: ThreadLoop event mProximityState = NEAR, previous FAR
+05-10 16:01:33.616  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3897995, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156663, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=169067, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29995, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:33.617  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3897995, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156663, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=169067, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29995, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:33.624  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3897995, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156664, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=169067, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29995, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:33.624  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3897995, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156664, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=169067, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29995, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:33.626  2866  4708 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:33.627  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:33.629  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:33.629  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:33.632  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:33.633  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:33.633  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:33.634  2866  3379 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:33.642  1990  2316 I DisplayPowerController2[0]: 05-10 16:01:33.642 - BrightnessEvent: disp=0, physDisp=local:4630946747577212033, displayState=ON, displayPolicy=BRIGHT, brt=0.20801185, initBrt=0.33686435, rcmdBrt=0.20801185, preBrt=0.33686435, lux=2.855, preLux=29.415283, brtNits=87.26999, hdrNits=NaN, initNits=137.49161, preNits=137.49161, rcmdNits=87.26999, hdrBrightness=NaN, brt(%)=35%, brtInt=54, hbmPolicy=legacy, hbmMax=0.9999, hbmMode=off, rbcStrength=50, thrmMax=1.0, powerFactor=1.0, wasShortTermModelActive=false, flags=, reason=automatic, autoBrightness=true, strategy=InvalidBrightnessStrategy, autoBrightnessMode=default
+05-10 16:01:33.643  1386  2328 I SurfaceFlinger: mBrightnessDiming=1, isCli=0, mBrightnessDimingCnt=0
+05-10 16:01:33.646  1990  1990 I BrightnessSynchronizer: New Update: {[2089] 0.20801185(f), mUpdatedTypes=1, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:33.646  1990  1990 I BrightnessSynchronizer: [2089] New Update 0.20801185(f) set brightness values:  54(i)
+05-10 16:01:33.647  1990  1990 I BrightnessSynchronizer: Swallowing update of 54(i) by update: {[2089] 0.20801185(f), mUpdatedTypes=1, mConfirmedTypes=1, mTimeUpdated=54274565, mState=2}
+05-10 16:01:33.647  1990  1990 I BrightnessSynchronizer: Completed Update: {[2089] 0.20801185(f), mUpdatedTypes=1, mConfirmedTypes=1, mTimeUpdated=54274565, mState=3}
+05-10 16:01:33.648  2866  2866 D CentralSurfaces.BrightnessController: animateSliderTo[0] target=0.20801185 animationDuration=0 estimateDuration=3586 --> duration=3586
+05-10 16:01:33.788  1289  2613 I slpi    : LTR569 ALS_OC: lux:34.621098, last_ps:1[1518], RAW:466.000000[68, 34], INT:70, G:512, C:26, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:33.896  1289  2613 I slpi    : LTR569 ALS_OC: lux:45.096581, last_ps:1[1518], RAW:607.000000[512, 420], INT:70, G:512, C:28, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:34.015  1289  2613 I slpi    : LTR569 PRX_OC_T: Near 0 K 789 PDATA 929 PLT 972 PHT 1141 - 1,16,12,ed,|a5,c|46
+05-10 16:01:34.017  1288  2676 V MotSpeakerHelperProximity: updated mCurProximityState: FAR (5.000000)
+05-10 16:01:34.017  1288  2676 V MotSpeakerHelperProximity: ThreadLoop event mProximityState = FAR, previous NEAR
+05-10 16:01:34.290  1990  2316 I DisplayPowerController2[0]: 05-10 16:01:34.288 - BrightnessEvent: disp=0, physDisp=local:4630946747577212033, displayState=ON, displayPolicy=BRIGHT, brt=0.28972143, initBrt=0.20801185, rcmdBrt=0.28972143, preBrt=0.20801185, lux=15.371278, preLux=2.855, brtNits=119.25818, hdrNits=NaN, initNits=87.26999, preNits=87.26999, rcmdNits=119.25818, hdrBrightness=NaN, brt(%)=44%, brtInt=75, hbmPolicy=legacy, hbmMax=0.9999, hbmMode=off, rbcStrength=50, thrmMax=1.0, powerFactor=1.0, wasShortTermModelActive=false, flags=, reason=automatic, autoBrightness=true, strategy=InvalidBrightnessStrategy, autoBrightnessMode=default
+05-10 16:01:34.292  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10321/6923
+05-10 16:01:34.292  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10201/15210
+05-10 16:01:34.292  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10289/15708
+05-10 16:01:34.292  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 1010214/16981
+05-10 16:01:34.292  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10568/27391
+05-10 16:01:34.293  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10451/29046
+05-10 16:01:34.293  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10461/29332
+05-10 16:01:34.293  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10212/29366
+05-10 16:01:34.293  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10238/30780
+05-10 16:01:34.293  1990  1990 I BrightnessSynchronizer: New Update: {[2090] 0.28972143(f), mUpdatedTypes=1, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:34.293  1990  1990 I BrightnessSynchronizer: [2090] New Update 0.28972143(f) set brightness values:  75(i)
+05-10 16:01:34.294  1990  1990 I BrightnessSynchronizer: New PendingUpdate: {[2091] 0.28972143(f), mUpdatedTypes=0, mConfirmedTypes=0, mTimeUpdated=0, mState=1}, prev=null
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10321/6923
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10201/15210
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10289/15708
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 1010214/16981
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10568/27391
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10451/29046
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10461/29332
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10212/29366
+05-10 16:01:34.294  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10238/30780
+05-10 16:01:34.295  1990  1990 I BrightnessSynchronizer: Swallowing update of 75(i) by update: {[2090] 0.28972143(f), mUpdatedTypes=1, mConfirmedTypes=1, mTimeUpdated=54275212, mState=2}
+05-10 16:01:34.295  1990  1990 I BrightnessSynchronizer: Completed Update: {[2090] 0.28972143(f), mUpdatedTypes=1, mConfirmedTypes=1, mTimeUpdated=54275212, mState=3}
+05-10 16:01:34.295  1990  1990 I BrightnessSynchronizer: New Update: {[2091] 0.28972143(f), mUpdatedTypes=0, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:34.296  2866  2866 D CentralSurfaces.BrightnessController: animateSliderTo[0] target=0.28972143 animationDuration=0 estimateDuration=366 --> duration=366
+05-10 16:01:34.491   933  1234 I NearbyPresence: (REDACTED) %s verified [==] new request %s equals to the old request
+05-10 16:01:34.502 14686 17277 I NearbyPresence: (REDACTED) %s verified [==] new request %s equals to the old request
+05-10 16:01:34.670  1990  2316 I DisplayPowerController2[0]: 05-10 16:01:34.669 - BrightnessEvent: disp=0, physDisp=local:4630946747577212033, displayState=ON, displayPolicy=BRIGHT, brt=0.28972143, initBrt=0.28972143, rcmdBrt=0.28972143, preBrt=0.20801185, lux=20.59505, preLux=15.371278, brtNits=119.25818, hdrNits=NaN, initNits=119.25818, preNits=87.26999, rcmdNits=119.25818, hdrBrightness=NaN, brt(%)=44%, brtInt=75, hbmPolicy=legacy, hbmMax=0.9999, hbmMode=off, rbcStrength=50, thrmMax=1.0, powerFactor=1.0, wasShortTermModelActive=false, flags=, reason=automatic, autoBrightness=true, strategy=InvalidBrightnessStrategy, autoBrightnessMode=default
+05-10 16:01:34.670  1843  2091 E RIL-MOTEXT: qcrilUpdRegRAT, called , rat =7
+05-10 16:01:34.670  1386  2328 I SurfaceFlinger: mBrightnessDiming=0, isCli=0, mBrightnessDimingCnt=0
+05-10 16:01:34.672  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10321/6923
+05-10 16:01:34.672  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10201/15210
+05-10 16:01:34.672  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10289/15708
+05-10 16:01:34.672  1990  1990 I BrightnessSynchronizer: New Update: {[2092] 0.28972143(f), mUpdatedTypes=0, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:34.673  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 1010214/16981
+05-10 16:01:34.673  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10568/27391
+05-10 16:01:34.673  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10451/29046
+05-10 16:01:34.673  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10461/29332
+05-10 16:01:34.673  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10212/29366
+05-10 16:01:34.673  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10238/30780
+05-10 16:01:34.681  3041  3287 I QcrilOemhookMsgTunnel: [0]processOemHookIndication length=16
+05-10 16:01:34.682  3041  3041 D QcrilMsgTunnelIfaceManager: handleMessage what = 5
+05-10 16:01:34.684  1990  2055 D PowerManagerService: nativeAcquireSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 2
+05-10 16:01:34.696  1843 16511 E RIL-MOTEXT: qcrilUpdateOperator, called
+05-10 16:01:34.696  3038  3483 W IWlanNetworkService: 1860 > Response Processed
+05-10 16:01:34.698  1843  2091 E RIL-MOTEXT: qcrilUpdDataState, called , state =1
+05-10 16:01:34.701  1843  2091 E RIL-MOTEXT: qcrilUpdDataState, called , state =0
+05-10 16:01:34.707  1843  2091 E RIL-MOTEXT: qcrilUpdDataState, called , state =1
+05-10 16:01:34.708  1843  2091 E RIL-MOTEXT: qcrilUpdDataState, called , state =1
+05-10 16:01:34.740  2866  2866 D GlobalActionsDialogLite: Service changed before actions created
+05-10 16:01:34.740  2866  2866 D GlobalActionsDialogLite: Service changed before actions created
+05-10 16:01:34.746  1990  1990 I EnhancedConnectivity: [DataStallService] onServiceStateChanged result=0 subId=1 networkType=20
+05-10 16:01:34.747  5251  5251 I Smart5G : [NetworkStateListener_1_0] onServiceStateChanged networkType = 20 dataRegState=0 isInService=true
+05-10 16:01:34.751  9940  9940 D OtaApp  : PollingMangerService, phone state: roaming: false
+05-10 16:01:34.751  1990  2055 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcastMultiplePermissions:1308 android.content.Context.sendBroadcastMultiplePermissions:2522 com.android.server.TelephonyRegistry.broadcastServiceStateChanged:3764 com.android.server.TelephonyRegistry.notifyServiceStateForPhoneId:1765 com.android.internal.telephony.ITelephonyRegistry$Stub.onTransact:562 
+05-10 16:01:34.752  1990  2055 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcastMultiplePermissions:1341 com.android.server.TelephonyRegistry.broadcastServiceStateChanged:3769 com.android.server.TelephonyRegistry.notifyServiceStateForPhoneId:1765 com.android.internal.telephony.ITelephonyRegistry$Stub.onTransact:562 android.os.Binder.execTransactInternal:1520 
+05-10 16:01:34.753  1990  2055 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcastMultiplePermissions:1341 com.android.server.TelephonyRegistry.broadcastServiceStateChanged:3778 com.android.server.TelephonyRegistry.notifyServiceStateForPhoneId:1765 com.android.internal.telephony.ITelephonyRegistry$Stub.onTransact:562 android.os.Binder.execTransactInternal:1520 
+05-10 16:01:34.756  1990  2055 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcastMultiplePermissions:1341 com.android.server.TelephonyRegistry.broadcastServiceStateChanged:3784 com.android.server.TelephonyRegistry.notifyServiceStateForPhoneId:1765 com.android.internal.telephony.ITelephonyRegistry$Stub.onTransact:562 android.os.Binder.execTransactInternal:1520 
+05-10 16:01:34.757  1990  2181 D ActivityManager: unfreezing ProcessRecord{ea50c65 14621:com.google.android.cellbroadcastreceiver/u0a325}, reason = unfreezeTemporarily, adj = 955, adjType = cch-empty, adjSource = null
+05-10 16:01:34.757  3087  3087 D ServiceStateProvider: subId=1
+05-10 16:01:34.758  1990  2181 D ActivityManager: sync unfroze 14621 com.google.android.cellbroadcastreceiver for 3
+05-10 16:01:34.760 14621 14621 D CellBroadcastReceiver: onReceive Intent { act=android.intent.action.SERVICE_STATE flg=0x1000010 cmp=com.google.android.cellbroadcastreceiver/com.android.cellbroadcastreceiver.CellBroadcastReceiver (has extras) }
+05-10 16:01:34.766 14621 14621 D CellBroadcastReceiver: onServiceStateChanged, ss: 0
+05-10 16:01:34.766 14621 14621 D CellBroadcastReceiver: networkOperator: 405868
+05-10 16:01:34.766 14621 14621 D CellBroadcastReceiver: update supported roaming operator as 
+05-10 16:01:34.767  1843  2091 E RIL-MOTEXT: qcrilUpdRegRAT, called , rat =7
+05-10 16:01:34.773  3087  3087 D Telephony: TelecomAccountRegistry$TelecomAccountTelephonyCallback: onServiceStateChanged called.
+05-10 16:01:34.773  3087  3087 I Telephony: TelecomAccountRegistry$TelecomAccountTelephonyCallback: onServiceStateChanged: newState=0, mServiceState=0
+05-10 16:01:34.773  3041  3287 I QcrilOemhookMsgTunnel: [0]processOemHookIndication length=16
+05-10 16:01:34.774  3041  3041 D QcrilMsgTunnelIfaceManager: handleMessage what = 5
+05-10 16:01:34.781  3087  3087 I Telephony: TelecomAccountRegistry$AccountEntry: isRttCurrentlySupported -- regular acct, hasVoiceAvailability: true
+05-10 16:01:34.781  3087  3087 I Telephony:  isRttSupported: false
+05-10 16:01:34.781  3087  3087 I Telephony:  alwaysAllowWhileRoaming: false
+05-10 16:01:34.781  3087  3087 I Telephony:  isRoaming: false
+05-10 16:01:34.781  3087  3087 I Telephony:  isOnWfc: false
+05-10 16:01:34.783  3087  3087 I Telephony: VoiceActivationHandler: Service state is IN_SERVICE. Set voice activation state to ACTIVATED
+05-10 16:01:34.789  2866  2866 I SecurityPatternView: The position of mLockPatternView is not changed. return.
+05-10 16:01:34.792  3038  3483 W IWlanNetworkService: 1861 > Response Processed
+05-10 16:01:34.793  1843 16511 E RIL-MOTEXT: qcrilUpdateOperator, called
+05-10 16:01:34.975  1990  2055 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-10 16:01:35.054  1990  2635 D ActivityManager: freezing 15587 com.motorola.dolby.dolbyui, reason = oom_cached
+05-10 16:01:35.054   922 17242 I keystore2: system/security/keystore2/watchdog/src/lib.rs:319 - Watchdog thread idle -> terminating. Have a great day.
+05-10 16:01:35.059  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-10 16:01:35.061  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-10 16:01:35.061  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10141} in 3ms
+05-10 16:01:35.071  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 16:01:35.071  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 16:01:35.071  1484  1484 I Diag-Router: diag: In diag_copy_dci sending data 386 entry 0x0 buf 0x7fe7b88170
+05-10 16:01:35.074  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778409093406,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":364,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 16:01:35.083  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778409093424,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":364,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 16:01:35.084  5293 22699 E rola.dciservice: [diag_lsm_comm_read] singal hal thread to continue send
+05-10 16:01:35.271  1484  1484 I Diag-Router: 	 log code b825 set
+05-10 16:01:35.271  1484  1484 I Diag-Router: diag: In diag_copy_dci sending data 199 entry 0x0 buf 0x7fe7b88170
+05-10 16:01:35.274  5293 22699 D MOT_DCI : Parsed log output: {"code":47141,"slotId":0,"timestamp":1778409093763,"rrc_controller_state":"CONNECTED","<NR> nrRrcState":"CONNECTED","connectivity_mode":"SA","lte_band_list":[],"nr5g_cell_#_contiguous_cc":1,"nr5g_contiguous_cc_list":[{"#":0,"band":78,"dl_bw_class":"A","ul_bw_class":"A"}],"nr5g_cell_#_active_cc":1,"nr5g_active_cc_list":[{"#":0,"cell_id":364,"dl_arfcn":636666,"ul_arfcn":636666,"ssb_arfcn":634080,"band":78, "<NR UL> bandNumber":78,"dl_carrier_bw":"100","ul_carrier_bw":"100","<NR UL> banndWidth":"100"}]}
+05-10 16:01:35.283  5293 22699 E rola.dciservice: [diag_lsm_comm_read] singal hal thread to continue send
+05-10 16:01:35.285  1289  2613 I slpi    : LTR569 ALS_OC: lux:21.025259, last_ps:0[782], RAW:283.000000[667, 547], INT:70, G:512, C:34, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:35.394  1289  2613 I slpi    : LTR569 ALS_OC: lux:8.246656, last_ps:0[782], RAW:111.000000[311, 255], INT:70, G:512, C:34, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:35.499  1289  2613 I slpi    : LTR569 ALS_OC: lux:3.694412, last_ps:0[782], RAW:66.000000[124, 98], INT:70, G:512, C:34, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:35.712  1289  2613 I slpi    : LTR569 ALS_OC: lux:2.295013, last_ps:0[782], RAW:41.000000[83, 49], INT:70, G:512, C:33, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:35.815  1289  2613 I slpi    : LTR569 PRX_OC_T: Near 1 K 789 PDATA 1806 PLT 972 PHT 1141 - 0,16,12,ed,|a5,c|46
+05-10 16:01:35.821  1288  2676 V MotSpeakerHelperProximity: updated mCurProximityState: NEAR (0.000000)
+05-10 16:01:35.821  1288  2676 V MotSpeakerHelperProximity: ThreadLoop event mProximityState = NEAR, previous FAR
+05-10 16:01:36.463  1289  2613 I slpi    : LTR569 ALS_OC: lux:4.701978, last_ps:1[2712], RAW:84.000000[58, 24], INT:70, G:512, C:27, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:37.053  1289  2613 I slpi    : LTR569 ALS_OC: lux:3.694412, last_ps:1[1648], RAW:66.000000[101, 67], INT:70, G:512, C:27, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:38.226  1289  2613 I slpi    : LTR569 ALS_OC: lux:16.790489, last_ps:1[1090], RAW:226.000000[83, 49], INT:70, G:512, C:27, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:38.336  1289  2613 I slpi    : LTR569 ALS_OC: lux:39.821690, last_ps:1[1090], RAW:536.000000[248, 204], INT:70, G:512, C:27, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:38.493  1289  2613 I slpi    : LTR569 ALS_OC: lux:46.805344, last_ps:1[1090], RAW:630.000000[589, 483], INT:70, G:512, C:28, PCTRL:22, ACTRL:165, AGC:12, SCA:167, STA:37, AINT:127, MEAS:32, scale:0.801, rate:20.000000, int:960000
+05-10 16:01:38.515  1289  2613 I slpi    : LTR569 PRX_OC_T: Near 0 K 789 PDATA 856 PLT 972 PHT 1141 - 1,16,12,ed,|a5,c|46
+05-10 16:01:38.521  1288  2676 V MotSpeakerHelperProximity: updated mCurProximityState: FAR (5.000000)
+05-10 16:01:38.521  1288  2676 V MotSpeakerHelperProximity: ThreadLoop event mProximityState = FAR, previous NEAR
+05-10 16:01:38.735  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3899357, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156789, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=165100, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29985, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:38.736  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3899357, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156789, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=165100, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29985, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:38.746  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3899357, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156790, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=165100, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29985, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:38.746  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3899357, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156790, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=165100, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29985, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:38.747  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:38.749  2866  4870 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:38.749  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:38.749  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:38.751  2866  4897 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:38.753  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:38.753  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:38.754  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:38.754  2866  5014 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:39.986  1990  2316 I DisplayPowerController2[0]: 05-10 16:01:39.983 - BrightnessEvent: disp=0, physDisp=local:4630946747577212033, displayState=ON, displayPolicy=BRIGHT, brt=0.3396899, initBrt=0.28972143, rcmdBrt=0.3396899, preBrt=0.28972143, lux=40.370056, preLux=20.271143, brtNits=138.58252, hdrNits=NaN, initNits=119.25818, preNits=119.25818, rcmdNits=138.58252, hdrBrightness=NaN, brt(%)=49%, brtInt=87, hbmPolicy=legacy, hbmMax=0.9999, hbmMode=off, rbcStrength=50, thrmMax=1.0, powerFactor=1.0, wasShortTermModelActive=false, flags=, reason=automatic, autoBrightness=true, strategy=InvalidBrightnessStrategy, autoBrightnessMode=default
+05-10 16:01:39.987  1386  2327 I SurfaceFlinger: mBrightnessDiming=1, isCli=0, mBrightnessDimingCnt=0
+05-10 16:01:39.993  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10321/6923
+05-10 16:01:39.993  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10201/15210
+05-10 16:01:39.993  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10289/15708
+05-10 16:01:39.993  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 1010214/16981
+05-10 16:01:39.993  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10568/27391
+05-10 16:01:39.994  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10451/29046
+05-10 16:01:39.994  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10461/29332
+05-10 16:01:39.994  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10212/29366
+05-10 16:01:39.994  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10238/30780
+05-10 16:01:39.994  1990  1990 I BrightnessSynchronizer: New Update: {[2093] 0.3396899(f), mUpdatedTypes=1, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:39.994  1990  1990 I BrightnessSynchronizer: [2093] New Update 0.3396899(f) set brightness values:  87(i)
+05-10 16:01:39.995  1990  1990 I BrightnessSynchronizer: New PendingUpdate: {[2094] 0.3396899(f), mUpdatedTypes=0, mConfirmedTypes=0, mTimeUpdated=0, mState=1}, prev=null
+05-10 16:01:39.996  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10321/6923
+05-10 16:01:39.996  1990  1990 I BrightnessSynchronizer: Swallowing update of 87(i) by update: {[2093] 0.3396899(f), mUpdatedTypes=1, mConfirmedTypes=1, mTimeUpdated=54280913, mState=2}
+05-10 16:01:39.996  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10201/15210
+05-10 16:01:39.996  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10289/15708
+05-10 16:01:39.996  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 1010214/16981
+05-10 16:01:39.996  1990  1990 I BrightnessSynchronizer: Completed Update: {[2093] 0.3396899(f), mUpdatedTypes=1, mConfirmedTypes=1, mTimeUpdated=54280913, mState=3}
+05-10 16:01:39.997  1990  1990 I BrightnessSynchronizer: New Update: {[2094] 0.3396899(f), mUpdatedTypes=0, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:39.997  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10568/27391
+05-10 16:01:39.997  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10451/29046
+05-10 16:01:39.997  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10461/29332
+05-10 16:01:39.997  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10212/29366
+05-10 16:01:39.997  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10238/30780
+05-10 16:01:39.999  2866  2866 D CentralSurfaces.BrightnessController: animateSliderTo[0] target=0.3396899 animationDuration=0 estimateDuration=248 --> duration=248
+05-10 16:01:40.144  9357  9357 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.pay.service.BIND dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsApiService }
+05-10 16:01:40.151  9357  9357 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.cryptauth.cryptauthservice.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.GmsBoundBrokerService }
+05-10 16:01:40.211 14686 14686 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.auth.aang.events.services.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+05-10 16:01:40.245  1386  2327 I SurfaceFlinger: mBrightnessDiming=0, isCli=0, mBrightnessDimingCnt=0
+05-10 16:01:40.246  1990  1990 I BrightnessSynchronizer: New Update: {[2095] 0.3396899(f), mUpdatedTypes=0, mConfirmedTypes=0, mTimeUpdated=0, mState=2}
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10321/6923
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10201/15210
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10289/15708
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 1010214/16981
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10568/27391
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10451/29046
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10461/29332
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10212/29366
+05-10 16:01:40.247  1990  2128 D DisplayManagerService: Ignore redundant display event 0/4 to 10238/30780
+05-10 16:01:40.531 14686 14686 D BoundBrokerSvc: onUnbind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+05-10 16:01:42.514  3008  3025 I Tethering: [OffloadController] notifyAlertReached
+05-10 16:01:43.522  1990  2704 D PowerManagerService: nativeAcquireSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 4
+05-10 16:01:43.552  1990  2704 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-10 16:01:43.554  3057  3080 I QImsService: VtDataUsageProvider : onSetAlert:2097152
+05-10 16:01:43.554  3057  3057 I QImsService: ImsServiceClassTracker : updateAlertQuota:newQuota=2097152,Remaining=2097152
+05-10 16:01:43.856  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3895854, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156823, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=149536, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29975, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:43.857  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3895854, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156823, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=149536, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29975, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:43.868  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:43.870  2866  4975 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:43.872  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:43.872  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:43.873  2866  5052 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:43.874  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:43.875  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:43.875  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:43.877  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:43.877  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:43.878  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:43.878  2866  4952 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:43.883  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3895854, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156824, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=149536, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29975, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:43.883  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3895854, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156824, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=149536, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29975, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:43.888  2866  4708 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:43.892  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:43.893  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:43.893  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:43.897  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:43.897  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:43.897  2866  3379 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:43.897  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:44.242  1990  2055 D PowerManagerService: nativeAcquireSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 3
+05-10 16:01:44.252  3087  3087 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=104045370 mSleepTimeMs=35062287 mIdleTimeMs=10342309 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[78214, 7792, 2258, 280, 4],mRxTimeMs=58440459}]}
+05-10 16:01:44.252  1990  3613 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-10 16:01:44.770  1990  2635 D ActivityManager: freezing 14621 com.google.android.cellbroadcastreceiver, reason = oom_cached
+05-10 16:01:45.325  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:45.325  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:45.326  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:45.326  2866  4870 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:48.976  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3896632, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156827, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=175476, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29965, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:48.977  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3896632, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156827, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=175476, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29965, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:48.985  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3896632, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156828, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=175476, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29965, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:48.986  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3896632, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156828, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=175476, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=29965, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:48.989  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:48.992  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:48.993  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:48.996  2866  4897 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:48.998  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:48.998  2866  5014 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:48.998  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:48.999  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:50.125  1990  2635 D ActivityManager: freezing 23487 com.google.android.gms, reason = oom_cached
+05-10 16:01:50.253  1990  2635 D ActivityManager: freezing 9357 com.google.android.gms, reason = oom_cached
+05-10 16:01:51.359  1990  2644 D ActivityManager: unfreezing ProcessRecord{2a48388 9357:com.google.android.gms/u10a180}, reason = unfreezeTemporarily, adj = 915, adjType = cch-empty, adjSource = null
+05-10 16:01:51.359  1990  2644 D ActivityManager: sync unfroze 9357 com.google.android.gms for 27
+05-10 16:01:51.366  1990  2644 D PowerManagerService: nativeAcquireSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 2
+05-10 16:01:51.370  1990  2644 D ActivityManager: unfreezing ProcessRecord{837dfe7 23487:com.google.android.gms/u0a180}, reason = unfreezeTemporarily, adj = 900, adjType = service, adjSource = ProcessRecord{6c35a4 30780:com.google.android.apps.photos/u0a238}
+05-10 16:01:51.372  1990  2644 D ActivityManager: sync unfroze 23487 com.google.android.gms for 27
+05-10 16:01:51.378  1990  1990 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-10 16:01:51.395  9357 17323 I Authzen : [DeviceStateSyncManager] The server is in sync with current state. Nothing to do
+05-10 16:01:51.424 23487 17325 I Authzen : [DeviceStateSyncManager] The server is in sync with current state. Nothing to do
+05-10 16:01:53.479  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:53.480  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:53.480  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:53.482  2866  4975 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:53.565  3008  3025 I Tethering: [OffloadController] notifyAlertReached
+05-10 16:01:54.096  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3898579, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156830, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=173950, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30037, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:54.097  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3898579, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156830, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=173950, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30037, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:54.108  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3898579, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156831, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=173950, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30037, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:54.108  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3898579, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=156831, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=5, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=1500000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=45, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=173950, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30037, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=1500000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=410, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2185660}
+05-10 16:01:54.111  2866  5052 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:54.111  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:54.112  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:54.112  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:54.115  2866  4952 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-10 16:01:54.116  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-10 16:01:54.117  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-10 16:01:54.117  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-10 16:01:54.571  1990  2704 D PowerManagerService: nativeAcquireSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 3
+05-10 16:01:54.599  1990  2704 D PowerManagerService: nativeReleaseSuspendBlocker name:PowerManagerService.WakeLocks duration ms: 0
+05-10 16:01:54.601  3057  3080 I QImsService: VtDataUsageProvider : onSetAlert:2097152
+05-10 16:01:54.601  3057  3057 I QImsService: ImsServiceClassTracker : updateAlertQuota:newQuota=2097152,Remaining=2097152

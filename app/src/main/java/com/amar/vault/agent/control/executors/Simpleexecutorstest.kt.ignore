@@ -1,0 +1,155 @@
+package com.amar.vault.agent.control.executors
+
+import com.amar.vault.agent.control.CancellationReason
+import com.amar.vault.agent.control.ExecutionResult
+import com.amar.vault.agent.control.FailureReason
+import com.amar.vault.agent.control.TaskContext
+import com.amar.vault.agent.dsl.ActionEnvelope
+import com.amar.vault.agent.dsl.AgentAction
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.async
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.advanceTimeBy
+import kotlinx.coroutines.test.advanceUntilIdle
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+/**
+ * Tests for executors that don't need Android deps.
+ *
+ * WaitExecutor is pure coroutine — testable with TestDispatcher's virtual time.
+ * HomeExecutor and ReadScreenExecutor test the "service unavailable" path
+ * without needing a real PerceptionService (they check PerceptionService.get()
+ * which returns null in tests — exactly what we want to verify).
+ *
+ * We do NOT test the success paths of Home and ReadScreen here because those
+ * require a connected AccessibilityService, which is an instrumented-test
+ * concern, not a unit-test one.
+ */
+@OptIn(ExperimentalCoroutinesApi::class)
+class SimpleExecutorsTest {
+
+    private val dispatcher = StandardTestDispatcher()
+    private val scope = TestScope(dispatcher)
+
+    private fun context(envelope: ActionEnvelope): TaskContext = TaskContext.create(envelope)
+
+    // -------------------------------------------------------------------------
+    // WaitExecutor
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `wait for 500ms completes ExecutedAndVerified`() = runTest(dispatcher) {
+        val executor = WaitExecutor()
+        val envelope = ActionEnvelope(action = AgentAction.Wait(ms = 500))
+        val ctx = context(envelope)
+
+        val resultAsync = async {
+            executor.execute(envelope.action, ctx)
+        }
+
+        advanceTimeBy(501)
+        advanceUntilIdle()
+
+        val result = resultAsync.await()
+        assertTrue("expected ExecutedAndVerified, got $result", result is ExecutionResult.ExecutedAndVerified)
+        val verified = result as ExecutionResult.ExecutedAndVerified
+        assertEquals("500", verified.resultData["waited_ms"])
+    }
+
+    @Test
+    fun `wait honors cancellation mid-sleep`() = runTest(dispatcher) {
+        val executor = WaitExecutor()
+        val envelope = ActionEnvelope(action = AgentAction.Wait(ms = 5000))
+        val ctx = context(envelope)
+
+        val resultAsync = async {
+            executor.execute(envelope.action, ctx)
+        }
+
+        advanceTimeBy(200)
+        ctx.requestCancel(CancellationReason.UserRequested)
+        advanceTimeBy(200)
+        advanceUntilIdle()
+
+        val result = resultAsync.await()
+        assertTrue("expected Cancelled, got $result", result is ExecutionResult.Cancelled)
+    }
+
+    @Test
+    fun `wait with out-of-bounds ms fails fatal`() = runTest(dispatcher) {
+        val executor = WaitExecutor()
+        // Bypass ActionValidator and hand a value beyond the defensive 60s sanity bound.
+        val envelope = ActionEnvelope(action = AgentAction.Wait(ms = 120_000))
+        val ctx = context(envelope)
+
+        val result = executor.execute(envelope.action, ctx)
+        assertTrue(result is ExecutionResult.FatalFailure)
+    }
+
+    @Test
+    fun `wait rejects wrong action type`() = runTest(dispatcher) {
+        val executor = WaitExecutor()
+        val envelope = ActionEnvelope(action = AgentAction.Home)
+        val ctx = context(envelope)
+
+        // Home is the wrong action for WaitExecutor.
+        val result = executor.execute(AgentAction.Home, ctx)
+        assertTrue(result is ExecutionResult.FatalFailure)
+        assertTrue((result as ExecutionResult.FatalFailure).reason is FailureReason.Unexpected)
+    }
+
+    // -------------------------------------------------------------------------
+    // HomeExecutor — no-service path
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `home fails with AccessibilityUnavailable when service not bound`() = runTest(dispatcher) {
+        // PerceptionService.get() returns null in unit tests (no service connected).
+        val executor = HomeExecutor()
+        val envelope = ActionEnvelope(action = AgentAction.Home)
+        val ctx = context(envelope)
+
+        val result = executor.execute(envelope.action, ctx)
+        assertTrue(result is ExecutionResult.Failed)
+        assertTrue((result as ExecutionResult.Failed).reason is FailureReason.AccessibilityUnavailable)
+    }
+
+    @Test
+    fun `home isAvailable returns false without service`() {
+        assertTrue("no service bound in unit test", !HomeExecutor().isAvailable())
+    }
+
+    @Test
+    fun `home rejects wrong action type`() = runTest(dispatcher) {
+        val executor = HomeExecutor()
+        val envelope = ActionEnvelope(action = AgentAction.Wait(ms = 100))
+        val ctx = context(envelope)
+
+        val result = executor.execute(AgentAction.Wait(ms = 100), ctx)
+        assertTrue(result is ExecutionResult.FatalFailure)
+    }
+
+    // -------------------------------------------------------------------------
+    // ReadScreenExecutor — no-service path
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `read_screen fails when service not bound`() = runTest(dispatcher) {
+        val executor = ReadScreenExecutor()
+        val envelope = ActionEnvelope(action = AgentAction.ReadScreen)
+        val ctx = context(envelope)
+
+        val result = executor.execute(envelope.action, ctx)
+        assertTrue(result is ExecutionResult.Failed)
+        assertTrue((result as ExecutionResult.Failed).reason is FailureReason.AccessibilityUnavailable)
+    }
+
+    @Test
+    fun `read_screen isAvailable returns false without service`() {
+        assertTrue(!ReadScreenExecutor().isAvailable())
+    }
+}

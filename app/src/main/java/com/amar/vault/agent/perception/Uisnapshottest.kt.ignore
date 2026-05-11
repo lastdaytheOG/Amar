@@ -1,0 +1,200 @@
+package com.amar.vault.agent.perception
+
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNotNull
+import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+/**
+ * Pure-Kotlin tests for UiElement matching and UiSnapshot search.
+ *
+ * No Android dependencies — these test the data classes we built to live
+ * OUTSIDE the AccessibilityService. Executor tests cover the
+ * AccessibilityNodeInfo-side of perception elsewhere.
+ */
+class UiSnapshotTest {
+
+    private fun element(
+        type: UiElementType = UiElementType.BUTTON,
+        text: String? = null,
+        contentDesc: String? = null,
+        hint: String? = null,
+        resourceId: String? = null,
+        clickable: Boolean = true,
+        editable: Boolean = false
+    ): UiElement = UiElement(
+        type = type,
+        text = text,
+        contentDesc = contentDesc,
+        hint = hint,
+        resourceId = resourceId,
+        clickable = clickable,
+        editable = editable,
+        depth = 1,
+        path = ""
+    )
+
+    // -------------------------------------------------------------------------
+    // UiElement.matches
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `matches by text case-insensitive`() {
+        val e = element(text = "Send Message")
+        assertTrue(e.matches("send"))
+        assertTrue(e.matches("SEND MESSAGE"))
+        assertTrue(e.matches("message"))
+    }
+
+    @Test
+    fun `matches blank query returns false`() {
+        val e = element(text = "Send")
+        assertFalse(e.matches(""))
+        assertFalse(e.matches("   "))
+    }
+
+    @Test
+    fun `matches by contentDesc`() {
+        val e = element(text = null, contentDesc = "Send button")
+        assertTrue(e.matches("send"))
+    }
+
+    @Test
+    fun `matches by hint for inputs`() {
+        val e = element(type = UiElementType.INPUT, hint = "Type a message")
+        assertTrue(e.matches("message"))
+    }
+
+    @Test
+    fun `matches by resourceId`() {
+        val e = element(resourceId = "com.whatsapp:id/send_button")
+        assertTrue(e.matches("send_button"))
+    }
+
+    @Test
+    fun `strategy TEXT ignores other selectors`() {
+        val e = element(text = null, contentDesc = "Send")
+        assertFalse(e.matches("send", MatchStrategy.TEXT))
+        assertTrue(e.matches("send", MatchStrategy.CONTENT_DESC))
+    }
+
+    @Test
+    fun `strategy RESOURCE_ID only checks resourceId`() {
+        val e = element(
+            text = "Send",
+            resourceId = "com.whatsapp:id/send_button"
+        )
+        assertFalse(e.matches("send", MatchStrategy.RESOURCE_ID))
+        assertTrue(e.matches("send_button", MatchStrategy.RESOURCE_ID))
+    }
+
+    // -------------------------------------------------------------------------
+    // UiSnapshot.findFirst / findAll / resolveAuto
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `findFirst returns first matching element in document order`() {
+        val snap = UiSnapshot(
+            packageId = "com.test", windowClass = null, capturedAt = 0,
+            elements = listOf(
+                element(text = "Cancel"),
+                element(text = "Send"),
+                element(text = "Send again")
+            )
+        )
+        val result = snap.findFirst("send")
+        assertEquals("Send", result?.text)
+    }
+
+    @Test
+    fun `findAll returns all matches`() {
+        val snap = UiSnapshot(
+            packageId = null, windowClass = null, capturedAt = 0,
+            elements = listOf(
+                element(text = "Send"),
+                element(text = "Cancel"),
+                element(text = "Send message")
+            )
+        )
+        val results = snap.findAll("send")
+        assertEquals(2, results.size)
+    }
+
+    @Test
+    fun `resolveAuto prefers resourceId over text`() {
+        val snap = UiSnapshot(
+            packageId = null, windowClass = null, capturedAt = 0,
+            elements = listOf(
+                element(text = "send_btn"),                       // text matches
+                element(resourceId = "com.app:id/send_btn")       // resource matches
+            )
+        )
+        val result = snap.resolveAuto("send_btn")
+        assertNotNull(result?.resourceId)
+    }
+
+    @Test
+    fun `resolveAuto falls through to any when strict strategies miss`() {
+        val snap = UiSnapshot(
+            packageId = null, windowClass = null, capturedAt = 0,
+            elements = listOf(element(text = "Welcome to the app"))
+        )
+        // "Welcome" is present in text but not as resourceId/contentDesc.
+        val result = snap.resolveAuto("welcome")
+        assertNotNull(result)
+    }
+
+    @Test
+    fun `findFirst returns null when nothing matches`() {
+        val snap = UiSnapshot(
+            packageId = null, windowClass = null, capturedAt = 0,
+            elements = listOf(element(text = "Cancel"))
+        )
+        assertNull(snap.findFirst("nothere"))
+    }
+
+    // -------------------------------------------------------------------------
+    // UiSnapshot.containsText
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `containsText literal search finds matches`() {
+        val snap = UiSnapshot(
+            packageId = null, windowClass = null, capturedAt = 0,
+            elements = listOf(
+                element(text = "Message sent"),
+                element(text = "OK")
+            )
+        )
+        assertTrue(snap.containsText("sent"))
+        assertFalse(snap.containsText("failed"))
+    }
+
+    @Test
+    fun `containsText regex search`() {
+        val snap = UiSnapshot(
+            packageId = null, windowClass = null, capturedAt = 0,
+            elements = listOf(element(text = "Order #12345 confirmed"))
+        )
+        assertTrue(snap.containsText("Order\\s+#\\d+", isRegex = true))
+        assertFalse(snap.containsText("Order\\s+#[a-z]+", isRegex = true))
+    }
+
+    @Test
+    fun `containsText with invalid regex returns false instead of throwing`() {
+        val snap = UiSnapshot(
+            packageId = null, windowClass = null, capturedAt = 0,
+            elements = listOf(element(text = "anything"))
+        )
+        // Malformed regex — ( without close paren.
+        assertFalse(snap.containsText("(unclosed", isRegex = true))
+    }
+
+    @Test
+    fun `EMPTY sentinel has no elements`() {
+        assertTrue(UiSnapshot.EMPTY.isEmpty)
+        assertEquals(CaptureReason.UNAVAILABLE, UiSnapshot.EMPTY.captureReason)
+    }
+}

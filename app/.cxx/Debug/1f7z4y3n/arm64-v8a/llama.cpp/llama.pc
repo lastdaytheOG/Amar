@@ -1,0 +1,10 @@
+prefix=C:/Program Files (x86)/amar_native_engines
+exec_prefix=C:/Program Files (x86)/amar_native_engines
+libdir=C:/Program Files (x86)/amar_native_engines/lib
+includedir=C:/Program Files (x86)/amar_native_engines/include
+
+Name: llama
+Description: Port of Facebook's LLaMA model in C/C++
+Version: 0.0.8838
+Libs: -L${libdir} -lggml -lggml-base -lllama
+Cflags: -I${includedir}

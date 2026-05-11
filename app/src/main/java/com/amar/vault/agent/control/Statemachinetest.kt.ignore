@@ -1,0 +1,166 @@
+package com.amar.vault.agent.control
+
+import com.amar.vault.agent.dsl.ActionEnvelope
+import com.amar.vault.agent.dsl.AgentAction
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
+import org.junit.Test
+
+/**
+ * Pins down the task lifecycle state machine.
+ *
+ * This is the contract every downstream piece (UI, persistence, retry logic)
+ * depends on. Silent transition changes here would corrupt checkpoints and
+ * break the audit trail.
+ */
+class StateMachineTest {
+
+    private val taskId = "task-abc123"
+    private val envelope = ActionEnvelope(action = AgentAction.Home)
+
+    private fun pending() = TaskState.Pending(taskId, 0, envelope)
+    private fun running() = TaskState.Running(taskId, 0, envelope, attemptNumber = 1, startedAt = 0)
+    private fun verifying() = TaskState.Verifying(taskId, 0, envelope, attemptNumber = 1, executionDurationMs = 0)
+    private fun retrying() = TaskState.Retrying(
+        taskId, 0, envelope,
+        nextAttemptNumber = 2,
+        lastFailure = FailureReason.Unexpected("x"),
+        backoffUntil = 100
+    )
+    private fun succeeded() = TaskState.Succeeded(taskId, 0, attemptsUsed = 1, totalDurationMs = 0)
+    private fun failed() = TaskState.Failed(
+        taskId, 0, attemptsUsed = 1, totalDurationMs = 0,
+        reason = FailureReason.Unexpected("x")
+    )
+    private fun cancelled() = TaskState.Cancelled(taskId, 0, reason = CancellationReason.UserRequested)
+
+    // -------------------------------------------------------------------------
+    // Legal transitions
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `pending can transition to running`() {
+        assertTrue(StateMachine.canTransition(pending(), running()))
+    }
+
+    @Test
+    fun `pending can transition to cancelled`() {
+        assertTrue(StateMachine.canTransition(pending(), cancelled()))
+    }
+
+    @Test
+    fun `pending can transition directly to failed (validation rejection path)`() {
+        assertTrue(StateMachine.canTransition(pending(), failed()))
+    }
+
+    @Test
+    fun `running can transition to verifying`() {
+        assertTrue(StateMachine.canTransition(running(), verifying()))
+    }
+
+    @Test
+    fun `running can transition to retrying`() {
+        assertTrue(StateMachine.canTransition(running(), retrying()))
+    }
+
+    @Test
+    fun `running can transition to succeeded (skip verify when VerifySpec is None)`() {
+        assertTrue(StateMachine.canTransition(running(), succeeded()))
+    }
+
+    @Test
+    fun `verifying can transition to succeeded`() {
+        assertTrue(StateMachine.canTransition(verifying(), succeeded()))
+    }
+
+    @Test
+    fun `verifying can transition to retrying`() {
+        assertTrue(StateMachine.canTransition(verifying(), retrying()))
+    }
+
+    @Test
+    fun `retrying can transition back to running`() {
+        assertTrue(StateMachine.canTransition(retrying(), running()))
+    }
+
+    @Test
+    fun `retrying can transition to cancelled (interrupted during backoff)`() {
+        assertTrue(StateMachine.canTransition(retrying(), cancelled()))
+    }
+
+    // -------------------------------------------------------------------------
+    // Illegal transitions
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `terminal states cannot transition further`() {
+        assertFalse(StateMachine.canTransition(succeeded(), running()))
+        assertFalse(StateMachine.canTransition(failed(), running()))
+        assertFalse(StateMachine.canTransition(cancelled(), running()))
+
+        assertFalse(StateMachine.canTransition(succeeded(), failed()))
+        assertFalse(StateMachine.canTransition(failed(), succeeded()))
+        assertFalse(StateMachine.canTransition(cancelled(), succeeded()))
+    }
+
+    @Test
+    fun `cannot skip states backwards`() {
+        // verifying → running: no backward jump.
+        assertFalse(StateMachine.canTransition(verifying(), running()))
+        // retrying → verifying: must go through running first.
+        assertFalse(StateMachine.canTransition(retrying(), verifying()))
+    }
+
+    @Test
+    fun `cannot transition across tasks`() {
+        val other = TaskState.Running(
+            taskId = "other-task",
+            timestamp = 0,
+            envelope = envelope,
+            attemptNumber = 1,
+            startedAt = 0
+        )
+        assertFalse(StateMachine.canTransition(pending(), other))
+    }
+
+    @Test
+    fun `pending cannot skip to verifying`() {
+        assertFalse(StateMachine.canTransition(pending(), verifying()))
+    }
+
+    @Test
+    fun `pending cannot skip to succeeded`() {
+        assertFalse(StateMachine.canTransition(pending(), succeeded()))
+    }
+
+    // -------------------------------------------------------------------------
+    // Terminal detection
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `isTerminal flags terminal states`() {
+        assertTrue(succeeded().isTerminal)
+        assertTrue(failed().isTerminal)
+        assertTrue(cancelled().isTerminal)
+    }
+
+    @Test
+    fun `isTerminal false for active states`() {
+        assertFalse(pending().isTerminal)
+        assertFalse(running().isTerminal)
+        assertFalse(verifying().isTerminal)
+        assertFalse(retrying().isTerminal)
+    }
+
+    // -------------------------------------------------------------------------
+    // Transition naming (used by checkpoint logs)
+    // -------------------------------------------------------------------------
+
+    @Test
+    fun `transitionName produces stable format`() {
+        assertEquals("Pending→Running", StateMachine.transitionName(pending(), running()))
+        assertEquals("Running→Verifying", StateMachine.transitionName(running(), verifying()))
+        assertEquals("Verifying→Succeeded", StateMachine.transitionName(verifying(), succeeded()))
+    }
+}

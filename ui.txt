@@ -1,0 +1,1141 @@
+--------- beginning of main
+05-11 07:59:38.892  1321  1378 D DMSService: NotificationClient::onDapParamUpdate(): Callback to client type 00000000 id 036B50D8
+05-11 07:59:38.893  1321  1378 D DMSService: NotificationClient::onDapParamUpdate(): Callback to client type 00000007 id E8F7F6FC
+05-11 07:59:38.893  3043  3173 D DaxService: DmsHalClient received event: onDapParamUpdate(params len = 20 ).
+05-11 07:59:38.893  3043  3173 D DaxService: onDapParamUpdate()
+05-11 07:59:38.893  1321  1378 V DolbyManagerService: doOnDapParamUpdate() exit
+05-11 07:59:38.893  3043  3169 D DaxService: handleMessage, msg.what: 1
+05-11 07:59:38.893  3043  3169 D DaxService: mHandler::handleMessage, MSG_DOLBY_EVENT_CPDP_PARAM_UPDATED
+05-11 07:59:38.893  3043  3169 D DaxService: mHandler::handleMessage, event: 16777216
+05-11 07:59:38.893  1288  2437 D DlbDapEffectContext: onDapParamUpdate() effect context = 0xe8e6e000
+05-11 07:59:38.893  3043  3169 D DaxService: mHandler::handleMessage, profile update event: 16777216, profile: 3
+05-11 07:59:38.893  1288  2437 D DlbDapEffectContext: DapEffectContext 0xe8e6e000 grab the lock and call updateDapParams()
+05-11 07:59:38.893  3043  3169 D DaxService: onUpdateDolbyProfileSettings, userId: 0event:profile_setting_change, profile: 3
+05-11 07:59:38.893  3043  3169 D DolbyAudioEffectHelper: storeDaxSettingsForCurrentProfile: userId = 0
+05-11 07:59:38.893  3043  3169 D DolbyAudioEffectHelper: storeDaxSettingsForCurrentProfile(), Create the effect with control major priority
+05-11 07:59:38.894  1288 16710 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.898  1288  2437 D DlbEffectContext: EffectContext[0xe8e6e000]: getStoredParams() outToken size = 1, out_paramStore size = 7
+05-11 07:59:38.898  1288 16710 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.899  1288  2437 D DlbDapEndpointParamCache: commit() Applying parameters for device 0x40000000
+05-11 07:59:38.899  1288  2437 D DlbDapEndpointParamCache: doCommit() Committed 0 parameters out of 14.
+05-11 07:59:38.899  1288  2437 D DlbDapEndpointParamCache: commit() Overriding parameters for current device 0x00000002
+05-11 07:59:38.899  1288  2437 D DlbDapEndpointParamCache: doCommit() Committed 0 parameters out of 66.
+05-11 07:59:38.899  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.900  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.900  3043 10638 D DolbyProvider: query() get headtracking is supported=false
+05-11 07:59:38.901  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.903  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.904  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.905  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.905  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 88, ret = 0
+05-11 07:59:38.906  1321  1321 D DatabaseHelper: ieqId: 2, name: balanced
+05-11 07:59:38.906  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.907  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 88, ret = 0
+05-11 07:59:38.907  3043  3169 D DolbyAudioEffectHelper: fillDaxSettingsForProfile, profileId: 3, IeqPresetForCustom: 2, DialogEnhancerEnabledForCustom: false, DialogEnhancerAmountForCustom: 6, VolumeLevelerEnabledCustom: true, SpeakerVirtualizerEnabledCustom: false, HeadphoneVirtualizerEnabledCustom: false, GeqGainsForCustom: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+05-11 07:59:38.907 13804 13823 D MotoDolbyUI: setGraphicEqualizerBandGains, equalizer gains has not been updated
+05-11 07:59:38.908  3043  3169 D DaxService: sendCallbackIntent, DOLBY_UPDATE_EVENT: profile_setting_change
+05-11 07:59:38.908 13804 13823 I MotoDolbyUI: updateAudioSettingsForDevice.deviceUpdated: newDeviceId=loudspeaker, previousDeviceId=loudspeaker, isNewDevice=false, deviceUpdated=false, isDeviceSupported=true, headTrackingSupportedByHardware=false
+05-11 07:59:38.911  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.911  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:38.912  3043 10638 D DolbyAudioEffectHelper: getDolbyStatus enabled=true profile=2
+05-11 07:59:38.912  3043 10638 D DolbyProvider: true, profile=2
+05-11 07:59:38.915 13804 13829 I WM-WorkerWrapper: Worker result SUCCESS for Work [ id=5a293cb2-0552-4f84-9831-0dc60166c85d, tags={ com.motorola.dolby.dolbyui.device.DeviceChangedWorker, DeviceChangedWorker } ]
+--------- beginning of system
+05-11 07:59:38.925  1990 10188 W JobScheduler: Job didn't exist in JobStore: f9bec7f #u0a141/257619 com.motorola.dolby.dolbyui/androidx.work.impl.background.systemjob.SystemJobService
+05-11 07:59:39.509  1990 10188 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:39.889  1386  1386 I Scheduler: notifyScrollEvent state=0
+05-11 07:59:39.920  1990  2339 I AppsFilter: interaction: PackageSetting{415a7cf com.oem.euiccpartnerapp/10220} -> PackageSetting{6c0d068 com.motorola.dolby.dolbyui/10141} BLOCKED
+05-11 07:59:39.927  1990  2175 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-11 07:59:39.927  3087  3087 D CarrierSvcBindHelper: onPackageModified: com.motorola.dolby.dolbyui
+05-11 07:59:39.927  1990  2175 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-11 07:59:39.928  3087  3087 D CarrierSvcBindHelper: No carrier app for: 0
+05-11 07:59:39.928  3087  3087 D CarrierSvcBindHelper: No carrier app for: 1
+05-11 07:59:39.929  1990  2808 D ShortcutService: received package broadcast intent: Intent { act=android.intent.action.PACKAGE_CHANGED dat=package: flg=0x45000010 (has extras) }
+05-11 07:59:39.929  1990  2808 D ShortcutService: changing package: com.motorola.dolby.dolbyui userId0
+05-11 07:59:39.930  1990  2808 D ShortcutService: handlePackageChanged: com.motorola.dolby.dolbyui user=0
+05-11 07:59:39.930  1990  2808 D ShortcutService: rescanPackageIfNeeded 0@com.motorola.dolby.dolbyui, forceRescan=true , isNewApp=true
+05-11 07:59:39.930  1990  2802 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-11 07:59:39.931  1990 10188 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-11 07:59:39.931  1990 10188 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-11 07:59:39.931  1990  2808 D ShortcutService: Package com.motorola.dolby.dolbyui has 0 manifest shortcut(s), and 0 share target(s)
+05-11 07:59:39.931  1990 10188 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-11 07:59:39.931  1990 10188 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-11 07:59:39.934  1990  6170 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.935  1990  1990 I TrafficStatsCollector: Receive intent: android.intent.action.PACKAGE_CHANGED
+05-11 07:59:39.935  1990  1990 I TrafficStatsCollector: Not com.tmobile.echolocate.system, pkgName=com.motorola.dolby.dolbyui
+05-11 07:59:39.935 13435 13630 I PermissionControllerServiceImpl: Updating user sensitive for uid 10141
+05-11 07:59:39.936  1990 10188 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.936  1990  2175 W AccessibilitySecurityPolicy: Skipping accessibility service com.lenskart.app/io.cobrowse.CobrowseAccessibilityService: it does not require the permission android.permission.BIND_ACCESSIBILITY_SERVICE
+05-11 07:59:39.938  1990  3613 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.939  1990  2175 W MagnificationConnectionManager: requestConnection duplicated request: connect=false, mConnectionState=DISCONNECTED
+05-11 07:59:39.940  1990  2175 W UserManagerService: onPackageModified for another profile 0 from 10
+05-11 07:59:39.941  5569  5569 D MFL     : inside onPackageChanged 
+05-11 07:59:39.941 13489 13489 W MotoFreeForm: [PackageMonitor] onPackageChangedcom.motorola.dolby.dolbyui
+05-11 07:59:39.942  1990  6170 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 07:59:39.942  1990  6170 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.942 25920 25934 I PackageUpdatedTask: Packages updated: [com.motorola.dolby.dolbyui], mOp: 2, mUser: UserHandle{0}
+05-11 07:59:39.942 25920 25934 D PackageUpdatedTask: Package updated: mOp=UPDATE packages=[com.motorola.dolby.dolbyui]
+05-11 07:59:39.942  1990  2175 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-11 07:59:39.942 25920 25934 I SQLiteCacheHelper: SqliteCacheHelper---->delete whereClause = componentName LIKE ? AND profileId = ?, whereArgs = com.motorola.dolby.dolbyui/%;0;
+05-11 07:59:39.942  1990  2175 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-11 07:59:39.942  1990  2175 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 07:59:39.942  1990  2175 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-11 07:59:39.943  1990  2175 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-11 07:59:39.943  1990  2175 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-11 07:59:39.943  1990  2175 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.943  1990  2175 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:39.943  1990  2175 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-11 07:59:39.943  1990  2175 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-11 07:59:39.944  1990  2175 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-11 07:59:39.944  1990  2175 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-11 07:59:39.948  1990  6170 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+05-11 07:59:39.948  3087  3087 E SmsApplication: com.google.android.apps.messaging lost android:read_cell_broadcasts:  (fixing)
+05-11 07:59:39.948  1990  2605 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10185, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-11 07:59:39.952  3087  3087 E SmsApplication: isSystemPackage NameNotFoundException:com.motorola.cn.devicemigration
+05-11 07:59:39.952  1990  2605 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-11 07:59:39.953  1990  2605 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-11 07:59:39.955  1990  2175 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-11 07:59:39.955  1990  2175 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-11 07:59:39.955  1990  2175 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 07:59:39.955  1990  2638 I RoleService: Granting default roles...
+05-11 07:59:39.955  1990  2175 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.955  1990  2175 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-11 07:59:39.956  1990  2175 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-11 07:59:39.956  1990  2175 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-11 07:59:39.956  1990  2175 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-11 07:59:39.956  1990  2605 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = RECEIVE_WAP_PUSH, mode = allow, callingUid = 1001, oldMode = allow
+05-11 07:59:39.956  1990  2175 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-11 07:59:39.956  1990  2605 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = SEND_SMS, mode = allow, callingUid = 1001, oldMode = allow
+05-11 07:59:39.957  1990  2605 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 1001, code = READ_CELL_BROADCASTS, mode = allow, callingUid = 1001, oldMode = allow
+05-11 07:59:39.957  1990  2605 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 07:59:39.957  1990  2605 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.958  1990  2605 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 07:59:39.958  1990  2605 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.959  1990  6170 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.961  1990  6170 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:39.962  3087  3406 D ImsResolver: maybeAddedImsService, packageName: com.motorola.dolby.dolbyui
+05-11 07:59:39.969  1990  4681 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms.supervision, role: android.app.role.SYSTEM_SUPERVISION, user: 0
+05-11 07:59:39.971  1990  6170 E PersistenceController: SettingNotFoundException: sv_custom_ai_icon_enabled
+05-11 07:59:39.978  1990  4681 W SignedPackage: Package doesn't have required signing certificate: com.google.android.apps.work.clouddpc
+05-11 07:59:39.979  2866  2921 D Tile.ScreenshotTile: update state
+05-11 07:59:39.982  1990  4681 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-11 07:59:39.987  1990  4681 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-11 07:59:39.988 25920 25920 D StatsLog: LAUNCHER_ALLAPPS_COUNT
+05-11 07:59:39.999  1990  4681 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10150, code = FINE_LOCATION, mode = allow, callingUid = 1000, oldMode = allow
+05-11 07:59:40.007  1990  4681 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 07:59:40.007  1990  4681 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:40.007  1990  4681 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 07:59:40.007  1990  4681 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:40.008  1990  4681 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:40.008  1990  4681 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:40.009  1990  4681 W AppOpService: Ignored setUidMode call for runtime permission app op: uid = 10150, code = FINE_LOCATION, mode = allow, callingUid = 1000, oldMode = allow
+05-11 07:59:40.016  1990  4681 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.google.android.gms, role: android.app.role.WALLET, user: 0
+05-11 07:59:40.019  1990  4681 E RoleControllerServiceImpl: Default/fallback role holder package doesn't qualify for the role, package: com.motorola.paks, role: android.app.role.SYSTEM_FINANCED_DEVICE_CONTROLLER, user: 0
+05-11 07:59:40.021  1990  4681 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-11 07:59:40.429  1990  6170 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-11 07:59:40.431  1990  3133 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-11 07:59:40.432  2866  2866 D ControlsListingControllerImpl: ServiceConfig reloaded, count: 1
+05-11 07:59:40.433  1990  2605 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-11 07:59:40.434  1990  3133 W PackageManager: Missing required system package: com.mgoogle.android.gms, but found with extended search.
+05-11 07:59:40.435  1990  3133 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-11 07:59:40.441  2866  2866 D FreeformGesture: onStateChanged: State{mIsPackageAvailable=true, mPillGestureEnabled=false, mVibrationEnabled=true, mShortcutPanelShowing=false, mSwipeInEnabled=false, mHunFreeformEnabled=true, mIsInGameMode=false, mIsRecentsShowing=false, mIsInTutorialMode=false, mIsDoubleTapPowerEnabled=false, mIsPillMoving=false, mPillXPosition=1, mPillYPosition=180}
+05-11 07:59:40.468  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3966507, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=216313, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=56, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=124206, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30997, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=356, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2729383}
+05-11 07:59:40.468  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3966507, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=216313, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=56, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=124206, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30997, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=356, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2729383}
+05-11 07:59:40.471  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3966507, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=216314, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=56, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=124206, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30997, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=356, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2729383}
+05-11 07:59:40.472  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3966507, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=216314, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=56, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=124206, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30997, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=356, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2729383}
+05-11 07:59:40.474  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 07:59:40.478  2866  4708 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:40.480  2866  4952 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:40.484  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 07:59:40.484  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 07:59:40.486  2866  4897 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:40.487  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 07:59:40.487  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 07:59:40.487  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 07:59:40.488  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 07:59:40.488  2866  3379 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:40.489  2866  5014 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:40.491  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 07:59:40.491  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 07:59:40.491  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 07:59:40.492  3519  3684 I ThermalEngine: ACTION: freeze_rule - Setting freeze_rule to 0
+05-11 07:59:40.492  3519  3684 I ThermalEngine: Monitor:INACTIVE:FREEZE-CHG:freeze_rule=1:DETECT-STANDBY=1
+05-11 07:59:40.493  3519  3683 I ThermalEngine: Thermal-Server: Thermal received msg from  freezing
+05-11 07:59:40.493  3519 13990 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-11 07:59:40.494  3519  3684 I ThermalEngine: Monitor:ACTIVE:MON-MSM-STB:battery=7:Virt-QUT=38593
+05-11 07:59:40.517  1990  3133 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:41.101  1990  5270 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+05-11 07:59:41.525  1990  2606 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:42.278 13804 13993 D ProfileInstaller: Installing profile for com.motorola.dolby.dolbyui
+05-11 07:59:42.536  1990  2606 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:43.135  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 07:59:43.212  9508  9508 I IntentEntityParser: regex extracted: ParsedIntent(intent=ORDER_ITEM, app=Blinkit, query=milk)
+05-11 07:59:43.222  9508 11369 I OpenAppExecutor: Explicit package 'app.blinkit.consumer' not installed
+05-11 07:59:43.224  9508 11369 D OpenAppExecutor: matched EXACT: 'Blinkit' for 'blinkit'
+05-11 07:59:43.228  1990  2606 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 07:59:43.229  1990  2606 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-11 07:59:43.230  9508 11369 D OpenAppExecutor: Launching app: com.grofers.customerapp
+05-11 07:59:43.232  1990  2606 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 07:59:43.232  1990  2606 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-11 07:59:43.233  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.233  1990  2606 I SettingsAccessControlPolicy: isDeviceSettingsChangeDisabled: value -> false
+05-11 07:59:43.234  1990  2606 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_ORIENTATION_OVERRIDE
+05-11 07:59:43.235  1990  2606 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@90845228 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-11 07:59:43.236  1990  2606 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_RESIZEABLE_ACTIVITY_OVERRIDES
+05-11 07:59:43.236  1990  2606 W OptProp : Cannot read opt property android.window.PROPERTY_COMPAT_ALLOW_MIN_ASPECT_RATIO_OVERRIDE
+05-11 07:59:43.237  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.237  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.239  1347  1432 E ANDR-PERF-LM: MetaMeter: handleAsync() 166: AdaptLaunch Invalid Async
+05-11 07:59:43.239  1347  1432 E ANDR-PERF-LM: MetaMeter: handleAsync() 166: AdaptLaunch Invalid Async
+05-11 07:59:43.239  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.239  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.240  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.240  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.242  1990  2606 D ActivityTaskManager: sendShowDecorCaptionWindow Task is not organized Task{35715dd #1467 type=undefined}
+05-11 07:59:43.242  1990  2606 D ActivityTaskManager: sendShowDecorCaptionWindow Task is not organized Task{35715dd #1467 type=undefined}
+05-11 07:59:43.244  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.245  1990  2606 D ActivityTaskManager: getPreferredLaunchDisplay userset_displayid false user set display id 0, current focus display 0
+05-11 07:59:43.253  1990  2606 D PowerManagerService: nativeSetPowerMode ret:true mode:5 enabled:true duration ms: 0
+05-11 07:59:43.253  1302  1302 I QTI PowerHAL: Power setMode: 5 to: 1
+05-11 07:59:43.254  1347  1347 E ANDR-PERF-REQUEST: Qindx 137 is  not supported
+05-11 07:59:43.254  1347  1347 E ANDR-PERF-REQUEST: invalid request
+05-11 07:59:43.254  1347  1347 E ANDR-PERF-MPCTL: invalid request, no optimizations performed
+05-11 07:59:43.254  1302  1302 E QTI PowerHAL: Can't perform app launch hint
+05-11 07:59:43.254  1990  2606 D ActivityTrigger: ActivityTrigger activityPauseTrigger 
+05-11 07:59:43.256  1347  1432 W ANDR-PERF-LM: MetaMeter: handleAsync() 171: GameOptimization Invalid state for appName com.amar.vault 
+05-11 07:59:43.258  1990  2606 I ActivityTaskManager: START u0 {act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 pkg=com.grofers.customerapp cmp=com.grofers.customerapp/.DEFAULT} with LAUNCH_SINGLE_TOP from uid 10572 (startActivityAsUser) (BAL_ALLOW_VISIBLE_WINDOW) result code=0
+05-11 07:59:43.258  2866  2910 V WindowManagerShell: Transition requested (#1444): android.os.BinderProxy@b9593ce TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=1467 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 pkg=com.grofers.customerapp cmp=com.grofers.customerapp/.DEFAULT } baseActivity=ComponentInfo{com.grofers.customerapp/com.blinkit.home.HomeActivity} topActivity=ComponentInfo{com.grofers.customerapp/com.blinkit.home.HomeActivity} origActivity=ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.DEFAULT} realActivity=ComponentInfo{com.grofers.customerapp/com.blinkit.home.HomeActivity} numActivities=1 lastActiveTime=161524376 supportsMultiWindow=true supportsGlobalFreeform=true resizeMode=1 isResizeable=true isAppLocked=false isShowDecorCaptionWindowRequest=false canKillAndRestart=false minWidth=-1 minHeight=-1 defaultMinSize=200 token=WCT{android.window.IWindowContainerToken$Stub$Proxy@10ce2ef} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 77 - 0, 0) topActivityInfo=ActivityInfo{37ba1fc com.grofers.customerapp.DEFAULT} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=720 topActivityLetterboxHeight=1600 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 1444 }
+05-11 07:59:43.261  1990  2128 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@90845228 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-11 07:59:43.262 25920 25920 I TopTaskTracker: onTaskMovedToFront: (moved taskInfo to front) taskId=1467, baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 pkg=com.grofers.customerapp cmp=com.grofers.customerapp/.DEFAULT }
+05-11 07:59:43.267  1386  1386 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-11 07:59:43.274  1191  1191 D Zygote  : Forked child process 14002
+05-11 07:59:43.275  1347  1432 E ANDR-PERF-LM: MetaMeter: handleAsync() 166: AdaptLaunch Invalid Async
+05-11 07:59:43.275  1990  2182 I ActivityManager: Start proc 14002:com.grofers.customerapp/u0a386 for next-top-activity {com.grofers.customerapp/com.grofers.customerapp.DEFAULT}
+05-11 07:59:43.281  1990  2635 D ActivityManager: freezing 13236 com.google.android.gms, reason = oom_cached
+05-11 07:59:43.290  1990  6170 D CoreBackPreview: Window{b2d7b7f u0 Splash Screen com.grofers.customerapp}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@a2c2395, mPriority=0, mIsAnimationCallback=false}
+05-11 07:59:43.296  2866  2918 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+05-11 07:59:43.292  2866  2866 W ll.splashscreen: type=1400 audit(0.0:43694): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=2916 scontext=u:r:platform_app:s0:c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.android.systemui
+05-11 07:59:43.305 14002 14002 I ers.customerapp: Using CollectorTypeCC GC.
+05-11 07:59:43.308  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 07:59:43.309  1347  1432 W ANDR-PERF-LM: MetaMeter: handlePrimaryAsync() 118: AdaptLaunch MetaMeter. No MeterMgr Available to handle this Primary Async. !!!!
+05-11 07:59:43.310  1347  1432 W ANDR-PERF-LM: MetaMeter: handlePrimaryAsync() 118: AdaptLaunch MetaMeter. No MeterMgr Available to handle this Primary Async. !!!!
+05-11 07:59:43.313 14002 14002 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-11 07:59:43.321  1990  2175 D addPss  : tracker=ProcessState{d6a93cd com.whatsapp/10451 pkg=com.whatsapp}
+05-11 07:59:43.321  1347  1432 E ANDR-PERF-LM: MetaMeter: handleAsync() 166: AdaptLaunch Invalid Async
+05-11 07:59:43.323  1990  2175 D addPss  : tracker=ProcessState{f8da544 com.dti.motorola/10192 pkg=com.dti.motorola}
+05-11 07:59:43.339  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.DEFAULT} entered launcher screen? true
+05-11 07:59:43.340  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 07:59:43.340  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 07:59:43.347 14002 14002 D CompatChangeReporter: Compat change id reported: 242716250; UID 10386; state: ENABLED
+05-11 07:59:43.351  2866  2987 V WindowManagerShell: onTransitionReady(transaction=8546985019611)
+05-11 07:59:43.351  2866  2910 V WindowManagerShell: onTransitionReady (#1444) android.os.BinderProxy@b9593ce: {id=1444 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e265df} m=OPEN f=NONE pTaskId=-1 leash=Surface(name=Task=1467)/@0x7ea0600 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e9822c} m=TO_BACK f=NONE pTaskId=-1 leash=Surface(name=Task=1465)/@0x78be39 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1}]}
+05-11 07:59:43.351  2866  2910 V WindowManagerShell: Playing animation for (#1444) android.os.BinderProxy@b9593ce@0
+05-11 07:59:43.351  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultMixedHandler@dcd8091
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.keyguard.KeyguardTransitionHandler@ed21bf6
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.pip.PipTransition@a3f0bf7
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.activityembedding.ActivityEmbeddingController@a878a64
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.recents.RecentsTransitionHandler@53894cd
+05-11 07:59:43.352  2866  2910 V ShellRecents: RecentsTransitionHandler.startAnimation: no controller found
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.splitscreen.StageCoordinator@9fc0182
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.transition.RemoteTransitionHandler@54e7093
+05-11 07:59:43.352 14002 14002 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+05-11 07:59:43.352  2866  2910 V WindowManagerShell: Transition doesn't have explicit remote, search filters for match for {id=1444 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e265df} m=OPEN f=NONE pTaskId=-1 leash=Surface(name=Task=1467)/@0x7ea0600 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e9822c} m=TO_BACK f=NONE pTaskId=-1 leash=Surface(name=Task=1465)/@0x78be39 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1}]}
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  Checking filter Pair{{types=[] flags=0x0] notFlags=0x100 checks=[{atype=home independent=true modes=[OPEN,TO_FRONT] flags=NONE mustBeTask=false order=TOP topActivity=ComponentInfo{com.motorola.launcher3/com.android.launcher3.uioverrides.QuickstepLauncher} launchCookie=null},{atype=standard independent=true modes=[CLOSE,TO_BACK] flags=NONE mustBeTask=false order=ANY topActivity=null launchCookie=null}]} RemoteTransition { remoteTransition = android.window.IRemoteTransition$Stub$Proxy@14b3026, appThread = android.app.IApplicationThread$Stub$Proxy@9134467, debugName = QuickstepLaunchHome }}
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  Delegate animation for (#1444) to null
+05-11 07:59:43.352  2866  2910 V WindowManagerShell:  try handler com.android.wm.shell.transition.DefaultTransitionHandler@d64e8d0
+05-11 07:59:43.352  2866  2910 V WindowManagerShell: start default transition animation, info = {id=1444 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e265df} m=OPEN f=NONE pTaskId=-1 leash=Surface(name=Task=1467)/@0x7ea0600 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},{WCT{android.window.IWindowContainerToken$Stub$Proxy@9e9822c} m=TO_BACK f=NONE pTaskId=-1 leash=Surface(name=Task=1465)/@0x78be39 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1}]}
+05-11 07:59:43.353  2866  2910 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@81e04f5 animAttr=0x9 type=OPEN isEntrance=false
+05-11 07:59:43.354  2866  2910 V WindowManagerShell: loadAnimation: anim=android.view.animation.AnimationSet@4c8f28a animAttr=0x8 type=OPEN isEntrance=true
+05-11 07:59:43.357  2866  2910 V WindowManagerShell:  animated by com.android.wm.shell.transition.DefaultTransitionHandler@d64e8d0
+05-11 07:59:43.359  1990  2113 V WindowManager: Sent Transition (#1444) createdAt=05-11 07:59:43.237 via request=TransitionRequestInfo { type = OPEN, triggerTask = TaskInfo{userId=0 taskId=1467 displayId=0 isRunning=true baseIntent=Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] flg=0x10000000 pkg=com.grofers.customerapp cmp=com.grofers.customerapp/.DEFAULT } baseActivity=ComponentInfo{com.grofers.customerapp/com.blinkit.home.HomeActivity} topActivity=ComponentInfo{com.grofers.customerapp/com.blinkit.home.HomeActivity} origActivity=ComponentInfo{com.grofers.customerapp/com.grofers.customerapp.DEFAULT} realActivity=ComponentInfo{com.grofers.customerapp/com.blinkit.home.HomeActivity} numActivities=1 lastActiveTime=161524376 supportsMultiWindow=true supportsGlobalFreeform=true resizeMode=1 isResizeable=true isAppLocked=false isShowDecorCaptionWindowRequest=false canKillAndRestart=true minWidth=-1 minHeight=-1 defaultMinSize=200 token=WCT{RemoteToken{ffdda50 Task{35715dd #1467 type=standard A=10386:com.grofers.customerapp}}} topActivityType=1 pictureInPictureParams=null shouldDockBigOverlays=false launchIntoPipHostTaskId=-1 lastParentTaskIdBeforePip=-1 displayCutoutSafeInsets=Rect(0, 77 - 0, 0) topActivityInfo=ActivityInfo{17a8449 com.grofers.customerapp.DEFAULT} launchCookies=[] positionInParent=Point(0, 0) parentTaskId=-1 isFocused=false isVisible=false isVisibleRequested=false isSleeping=false locusId=null displayAreaFeatureId=1 isTopActivityTransparent=false appCompatTaskInfo=AppCompatTaskInfo { topActivityInSizeCompat=false topActivityEligibleForLetterboxEducation= falseisLetterboxEducationEnabled= false isLetterboxDoubleTapEnabled= false topActivityEligibleForUserAspectRatioButton= false topActivityBoundsLetterboxed= false isFromLetterboxDoubleTap= false topActivityLetterboxVerticalPosition= -1 topActivityLetterboxHorizontalPosition= -1 topActivityLetterboxWidth=720 topActivityLetterboxHeight=1600 isUserFullscreenOverrideEnabled=false isSystemFullscreenOverrideEnabled=false cameraCompatTaskInfo=CameraCompatTaskInfo { cameraCompatControlState=hidden freeformCameraCompatMode=inactive}}}, pipTask = null, remoteTransition = null, displayChange = null, flags = 0, debugId = 1444 }
+05-11 07:59:43.359  1990  2113 V WindowManager:     startWCT=WindowContainerTransaction { changes = {} hops = [] errorCallbackToken=null taskFragmentOrganizer=null }
+05-11 07:59:43.359  1990  2113 V WindowManager:     info={id=1444 t=OPEN f=0x0 trk=0 r=[0@Point(0, 0)] c=[
+05-11 07:59:43.359  1990  2113 V WindowManager:         {WCT{RemoteToken{ffdda50 Task{35715dd #1467 type=standard A=10386:com.grofers.customerapp}}} m=OPEN f=NONE pTaskId=-1 leash=Surface(name=Task=1467)/@0x26e304d sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1},
+05-11 07:59:43.359  1990  2113 V WindowManager:         {WCT{RemoteToken{aaf393 Task{bbd8a7a #1465 type=standard A=10572:com.amar.vault}}} m=TO_BACK f=NONE pTaskId=-1 leash=Surface(name=Task=1465)/@0xa025ca1 sb=Rect(0, 0 - 720, 1600) eb=Rect(0, 0 - 720, 1600) d=0 taskParent=-1}
+05-11 07:59:43.359  1990  2113 V WindowManager:     ]}
+05-11 07:59:43.363  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 07:59:43.363  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 07:59:43.365  5569  5569 D GameMode: exiting game mode
+05-11 07:59:43.365  1990  6170 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 07:59:43.371  5569  5569 D GameMode: isFeatureSupported: true
+05-11 07:59:43.371  3043  3043 D GameModeDetector: notifyGameModeStatusValue, value=false
+05-11 07:59:43.372  3043  3043 D DaxService: sendGameModeIntent, state=false
+05-11 07:59:43.372  5569  5569 D GameMode: isFeatureSupported: true
+05-11 07:59:43.376  5569  5569 D GameMode: isFeatureSupported: true
+05-11 07:59:43.383 13804 13823 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-11 07:59:43.384 13836 13836 I MM.MotoApp: Waiting update execution for com.motorola.dolby.dolbyui
+05-11 07:59:43.387 13804 13823 D MotoDolbyUI: getDeviceType, active device is 0x2
+05-11 07:59:43.388 13864 14016 D ProfileInstaller: Installing profile for com.motorola.personalize
+05-11 07:59:43.396  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:43.411  1288  2749 D DlbDapEffectContext: DapEffectContext[0xe8e6e000] getDapParameter() outval size = 12, ret = 0
+05-11 07:59:43.416  3043 10638 D DolbyAudioEffectHelper: getDolbyStatus enabled=true profile=2
+05-11 07:59:43.416  3043 10638 D DolbyProvider: true, profile=2
+05-11 07:59:43.422 13891 14018 D ProfileInstaller: Installing profile for com.motorola.motcameradesktop
+05-11 07:59:43.424 13850 13858 D SecurityHubProvider: query - uri = content://com.motorola.securityhub.provider/v5/families
+05-11 07:59:43.424 13850 13858 D MotoSecure>>: SecurityHubProvider - query - match = FAMILIES_V5
+05-11 07:59:43.429 13850 13858 D SecurityHubProvider: query - uri = content://com.motorola.securityhub.provider/v5/families
+05-11 07:59:43.429 13850 13858 D MotoSecure>>: SecurityHubProvider - query - match = FAMILIES_V5
+05-11 07:59:43.434 13836 13949 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+05-11 07:59:43.455 13836 13949 E MM.MotoApp: PackageManager.NameNotFoundException: com.motorola.motofpstouch
+05-11 07:59:43.456 13836 13949 E MM.MotoApp: PackageManager.NameNotFoundException: com.motorola.motoedgeassistant
+05-11 07:59:43.457 13836 13949 E MM.MotoApp: PackageManager.NameNotFoundException: com.motorola.motowaves
+05-11 07:59:43.464 13836 13842 W System  : A resource failed to call AbstractCursor.close. 
+05-11 07:59:43.483 13891 14020 D VideoEffectsProvider: query - uri = content://com.motorola.motoprovider.VideoEffectsProvider/v5/families
+05-11 07:59:43.489 13489 13498 W MotoFreeForm: [FeaturesProvider] CODE_FAMILIES tmpProjection = [_ID, VERSION, PRIORITY, TITLE, DESCRIPTION, ENABLED, FAMILY_IMAGE, ICON, FAMILY_HEADER_TEXT, FAMILY_SUPPORT_TEXT, SETTINGS_SUBTITLE, ACTION_INTENT, VALUE_PROP_TITLE, VALUE_PROP_DESC, VALUE_PROP_IMAGE, DISPLAY_TYPE]
+05-11 07:59:43.490 13489 13498 W MotoFreeForm: [FeaturesProvider] getFamiliesItem state = 1
+05-11 07:59:43.490 13489 13498 W MotoFreeForm: [FeaturesProvider] CODE_FAMILIES CODE = 11 Column Count =16
+05-11 07:59:43.493 13836 13949 E MM.MotoApp: PackageManager.NameNotFoundException: com.motorola.magictouch
+05-11 07:59:43.493 13836 13949 I MM.MotoApp: Support Version: 5 
+05-11 07:59:43.494 13836 13949 I MM.MotoApp: Update finished for com.motorola.dolby.dolbyui
+05-11 07:59:43.496  5569 22025 D GameMode: isEnabled = true
+05-11 07:59:43.497 13850 13858 D SecurityHubProvider: query - uri = content://com.motorola.securityhub.provider/v5/features
+05-11 07:59:43.497 13850 13858 D MotoSecure>>: SecurityHubProvider - query - match = FEATURES_V5
+05-11 07:59:43.497  5569 22025 I GameMode: isMonetizationSupported: isDeviceSupported: true
+05-11 07:59:43.497  5569 22025 I GameMode: isExploreAvailable: isDeviceSupported: true, isEnterprise: false
+05-11 07:59:43.497 13850 13859 D SecurityHubProvider: query - uri = content://com.motorola.securityhub.provider/v5/families
+05-11 07:59:43.497 13850 13859 D MotoSecure>>: SecurityHubProvider - query - match = FAMILIES_V5
+05-11 07:59:43.498 13836 13937 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+05-11 07:59:43.498 14002 14002 W ers.customerapp: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:43.499 14002 14002 W ers.customerapp: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:43.499 13489 13498 W MotoFreeForm: [FeaturesProvider] query: uri: content://com.motorola.freeform.settings.provider/v5/features projection  null
+05-11 07:59:43.499 13489 13498 I MotoFreeForm: [FeaturesProvider] tmpProjection = [_ID, FAMILY_ID, PRIORITY, VERSION, URI, TITLE, ENABLED, TYPE, DESCRIPTION, VALUE, STYLE, FEATURE_ICON, FEATURE_CARD_ICON, ACTION_INTENT, ACTION_PACKAGE, ACTION_EXTRA, ACTION_EXTRA_VALUE, DISPLAY_TYPE]
+05-11 07:59:43.500 13836 13934 E ActivityThread: Failed to find provider info for com.motorola.motowaves.provider.moto
+05-11 07:59:43.501 13836 13944 E ActivityThread: Failed to find provider info for com.motorola.magictouch.provider
+05-11 07:59:43.502  3519  3684 I ThermalEngine: Monitor:ACTIVE:FREEZE-CHG:freeze_rule=1:DETECT-STANDBY=0
+05-11 07:59:43.502 14002 14002 D nativeloader: Configuring clns-7 for other apk /data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/base.apk:/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/split_config.arm64_v8a.apk:/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/split_config.xhdpi.apk. target_sdk_version=34, uses_libraries=, library_path=/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/lib/arm64:/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/base.apk!/lib/arm64-v8a:/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/split_config.arm64_v8a.apk!/lib/arm64-v8a:/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/split_config.xhdpi.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.grofers.customerapp
+05-11 07:59:43.502 13891 14020 D VideoEffectsProvider: query - uri = content://com.motorola.motoprovider.VideoEffectsProvider/v5/features
+05-11 07:59:43.502  3519  3684 I ThermalEngine: ACTION: freeze_rule - Setting freeze_rule to 1
+05-11 07:59:43.503 13836 13918 E ActivityThread: Failed to find provider info for com.motorola.motofpstouch.provider
+05-11 07:59:43.503  3519  3683 I ThermalEngine: Thermal-Server: Thermal received msg from  freezing
+05-11 07:59:43.503 13489 13498 I MotoFreeForm: [FeaturesProvider] getItem state = 1
+05-11 07:59:43.503 13489 13498 I MotoFreeForm: [FeaturesProvider] value = 0
+05-11 07:59:43.504  3519 14025 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-11 07:59:43.505 13836 13928 E ActivityThread: Failed to find provider info for com.motorola.motoedgeassistant.provider
+05-11 07:59:43.505 13864 13872 D Styles  : Launcher Home App Count = 2
+05-11 07:59:43.505 13864 13872 D Styles  : isMotoLauncherDefaultHome: {com.motorola.launcher3/com.android.launcher3.CustomizationPanelLauncher}
+05-11 07:59:43.505 13864 13872 I FeatureProvider: getFeatures V5
+05-11 07:59:43.507 13891 14020 D VideoEffectsProvider: query - uri = content://com.motorola.motoprovider.VideoEffectsProvider/v5/families
+05-11 07:59:43.508 13836 13926 E ActivityThread: Failed to find provider info for com.motorola.motofpstouch.provider
+05-11 07:59:43.508 13836 13930 E ActivityThread: Failed to find provider info for com.motorola.motowaves.provider.moto
+05-11 07:59:43.509 13489 13500 W MotoFreeForm: [FeaturesProvider] CODE_FAMILIES tmpProjection = [_ID, VERSION, PRIORITY, TITLE, DESCRIPTION, ENABLED, FAMILY_IMAGE, ICON, FAMILY_HEADER_TEXT, FAMILY_SUPPORT_TEXT, SETTINGS_SUBTITLE, ACTION_INTENT, VALUE_PROP_TITLE, VALUE_PROP_DESC, VALUE_PROP_IMAGE, DISPLAY_TYPE]
+05-11 07:59:43.509 13836 13965 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+05-11 07:59:43.510 13489 13500 W MotoFreeForm: [FeaturesProvider] getFamiliesItem state = 1
+05-11 07:59:43.510 13489 13500 W MotoFreeForm: [FeaturesProvider] CODE_FAMILIES CODE = 11 Column Count =16
+05-11 07:59:43.510 13836 13925 E ActivityThread: Failed to find provider info for com.motorola.motoedgeassistant.provider
+05-11 07:59:43.511 13489 13498 I MotoFreeForm: [FeaturesProvider] CODE = 12 Column Count =18
+05-11 07:59:43.511 13850 13859 D SecurityHubProvider: query - uri = content://com.motorola.securityhub.provider/v5/heroes
+05-11 07:59:43.511 13850 13859 W SecurityHubProvider: query - match = NO MATCH
+05-11 07:59:43.513 13836 13928 E ActivityThread: Failed to find provider info for com.motorola.motoedgeassistant.provider
+05-11 07:59:43.514 13836 13932 E ActivityThread: Failed to find provider info for com.motorola.magictouch.provider
+05-11 07:59:43.514 14002 14002 V GraphicsEnvironment: Currently set values for:
+05-11 07:59:43.514 14002 14002 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-11 07:59:43.514 14002 14002 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-11 07:59:43.514 14002 14002 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-11 07:59:43.515 14002 14002 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-11 07:59:43.515 13836 13952 E ActivityThread: Failed to find provider info for com.motorola.motowaves.provider.moto
+05-11 07:59:43.515 13836 13954 E ActivityThread: Failed to find provider info for com.motorola.motofpstouch.provider
+05-11 07:59:43.518  5569 22025 W GameMode: could not match uri
+05-11 07:59:43.519 13836 13965 E ActivityThread: Failed to find provider info for com.motorola.motowaves.provider.moto
+05-11 07:59:43.519 13836 13951 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+05-11 07:59:43.520 13836 13926 E ActivityThread: Failed to find provider info for com.motorola.motofpstouch.provider
+05-11 07:59:43.521 13836 13950 E ActivityThread: Failed to find provider info for com.motorola.motoedgeassistant.provide
+05-11 07:59:43.521 13836 13957 E ActivityThread: Failed to find provider info for com.motorola.securevault.provider
+05-11 07:59:43.523 13850 13859 D SecurityHubProvider: query - uri = content://com.motorola.securityhub.provider/v5/sections
+05-11 07:59:43.523 13850 13859 W SecurityHubProvider: query - match = NO MATCH
+05-11 07:59:43.524 13891 14020 D VideoEffectsProvider: query - uri = content://com.motorola.motoprovider.VideoEffectsProvider/v5/hero
+05-11 07:59:43.525 13836 13960 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.525 13836 13960 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.525 13836 13960 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.525 13836 13960 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.525 13836 13960 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.525 13836 13960 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.525 13836 13960 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.526 13836 13960 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.527 13836 13963 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.527 13836 13963 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.527 13836 13963 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.527 13836 13963 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.527 13836 13963 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.528 13836 13963 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.528 13836 13963 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.528 13836 13963 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.528 13836 13963 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.528 13836 13963 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.528 13836 13963 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.529 13836 13963 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.529 13836 13963 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.529 13836 13963 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.529 13489 13498 W MotoFreeForm: [FeaturesProvider] CODE_HEROES query: uri: content://com.motorola.freeform.settings.provider/v5/heroes projection  null
+05-11 07:59:43.529 13836 13963 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.529 13489 13498 W MotoFreeForm: [FeaturesProvider] CODE_HEROES tmpProjection = [HERO_ID, HERO_ACTION, HERO_BACKGROUND, HERO_CTA_TEXT, HERO_EXTRA_NAME, HERO_EXTRA_VALUE, HERO_HEADER_TEXT, HERO_SUPPORT_TEXT, HERO_PRIORITY, HERO_VERSION, HERO_IS_ENABLED, HERO_ACTION_PACKAGE, DISPLAY_TYPE]
+05-11 07:59:43.529 13836 13963 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.530 13489 13498 E MotoFreeForm: [FeaturesProvider] getHeroesItem state = 1
+05-11 07:59:43.530 13489 13498 W MotoFreeForm: [FeaturesProvider] CODE_HEROES CODE = 10 Column Count =13
+05-11 07:59:43.532 13836 13972 E MM.MotoApp: Resources.NotFoundException: Unable to find resource ID #0x7f0801d1
+05-11 07:59:43.532 13836 13972 W MM.MotoApp: Invalid resource Id: 2131231185
+05-11 07:59:43.533 13836 13941 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.533 13836 13941 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.534 13836 13940 E ActivityThread: Failed to find provider info for com.motorola.magictouch.provider
+05-11 07:59:43.534 13836 13941 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.534 13836 13941 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.535 13836 13939 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.535 13836 13966 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.535 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.535 13836 13939 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.535 13836 13966 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.535 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.535 13836 13939 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.535 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.536 13836 13939 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.536 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.536 13836 13939 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.536 13836 13966 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.536 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.536 13836 13966 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.536  1990  2606 E PersistenceController: SettingNotFoundException: sv_hide_in_moto_secure
+05-11 07:59:43.537 13836 13939 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.538 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.538 13836 13947 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.538 13836 13939 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.538 13836 13947 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.538 13836 13947 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.538 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.538 13836 13939 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.538 13836 13947 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.538 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.539 13836 13939 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.539 13836 13947 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.539 13836 13939 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.539 13836 13947 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.541 13836 13937 E m.motorola.moto: Invalid resource ID 0x00000000.
+05-11 07:59:43.541 13836 13937 E MM.MotoApp: Resources.NotFoundException: String resource ID #0x0
+05-11 07:59:43.542 13836 13937 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.542 13836 13937 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.542 13836 13937 E m.motorola.moto: No package ID ff found for resource ID 0xffffffff.
+05-11 07:59:43.542 13836 13937 E MM.MotoApp: Resources.NotFoundException: String resource ID #0xffffffff
+05-11 07:59:43.551  1990  2606 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:43.552 13836 13948 E ActivityThread: Failed to find provider info for com.motorola.magictouch.provider
+05-11 07:59:43.558 14002 14031 W ers.customerapp: ClassLoaderContext classpath size mismatch. expected=1, found=0 (DLC[];PCL[base.apk*1515892466]{PCL[/system/framework/org.apache.http.legacy.jar*437079508]#PCL[/system/framework/com.android.location.provider.jar*3414091812]#PCL[/system/framework/com.android.media.remotedisplay.jar*2042759013]#PCL[/system_ext/framework/androidx.window.extensions.jar*1157725359]#PCL[/system_ext/framework/androidx.window.sidecar.jar*3501034208]} | DLC[];PCL[])
+05-11 07:59:43.567  1990  2605 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:43.567  1990  2606 D CompatChangeReporter: Compat change id reported: 161145287; UID 10386; state: ENABLED
+05-11 07:59:43.569  1990  5173 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:43.575  1990  5173 D CompatChangeReporter: Compat change id reported: 261072174; UID 10386; state: ENABLED
+05-11 07:59:43.579 14002 14031 W System  : ClassLoader referenced unknown path: 
+05-11 07:59:43.580 14002 14031 D nativeloader: Configuring clns-8 for other apk . target_sdk_version=37, uses_libraries=, library_path=/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/lib/arm64:/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+05-11 07:59:43.584  1990  5173 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:43.590 14002 14031 W ers.customerapp: ClassLoaderContext classpath element checksum mismatch. expected=1515892466, found=2173051155 (DLC[];PCL[base.apk*1515892466]{PCL[/system/framework/org.apache.http.legacy.jar*437079508]#PCL[/system/framework/com.android.location.provider.jar*3414091812]#PCL[/system/framework/com.android.media.remotedisplay.jar*2042759013]#PCL[/system_ext/framework/androidx.window.extensions.jar*1157725359]#PCL[/system_ext/framework/androidx.window.sidecar.jar*3501034208]} | DLC[];PCL[/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/base.apk*2173051155]{PCL[/system/framework/org.apache.http.legacy.jar*437079508]})
+05-11 07:59:43.626  1990  5173 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:43.642 14002 14054 D CompatChangeReporter: Compat change id reported: 253665015; UID 10386; state: ENABLED
+05-11 07:59:43.644  1990  5173 D CompatChangeReporter: Compat change id reported: 271850009; UID 10386; state: ENABLED
+05-11 07:59:43.645  1990  5173 D CompatChangeReporter: Compat change id reported: 253665015; UID 10386; state: ENABLED
+05-11 07:59:43.662  1990  2722 D ConnectivityService: NetReassign [no changes] [c 1] [a 1] [i 5]
+05-11 07:59:43.666  1990  2606 V GrammaticalInflectionUtils: AttributionSource: android.content.AttributionSource@cdf2c884 does not have READ_SYSTEM_GRAMMATICAL_GENDER permission.
+05-11 07:59:43.666 14002 14086 D CompatChangeReporter: Compat change id reported: 247079863; UID 10386; state: ENABLED
+05-11 07:59:43.666 13836 14107 D ProfileInstaller: Installing profile for com.motorola.moto
+05-11 07:59:43.674 22504  9916 I PhenotypeResourceReader: unable to find any Phenotype resource metadata for com.grofers.customerapp
+05-11 07:59:43.680  1990  2644 D ActivityManager: unfreezing ProcessRecord{4f3a3e3 13236:com.google.android.gms/u10a180}, reason = unfreezeTemporarily, adj = 920, adjType = cch-empty, adjSource = null
+05-11 07:59:43.682  1990  2644 D ActivityManager: sync unfroze 13236 com.google.android.gms for 27
+05-11 07:59:43.684  1191  1191 D Zygote  : Forked child process 14111
+05-11 07:59:43.688  1990  2182 I ActivityManager: Start proc 14111:com.indus.appstore/u0a422 for content provider {com.indus.appstore/com.indus.appstore.referrerattribution.contentprovider.PreInstallContentProvider}
+05-11 07:59:43.700  1990  2605 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:43.701  1990  2605 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:43.710 14111 14111 I .indus.appstore: Using CollectorTypeCC GC.
+05-11 07:59:43.713  9621 13983 I Authzen : [DeviceStateSyncManager] The server is in sync with current state. Nothing to do
+05-11 07:59:43.716 14002 14098 E ers.customerapp: No package ID 6a found for resource ID 0x6a0b0013.
+05-11 07:59:43.719 14002 14098 I FA      : App measurement initialized, version: 165000
+05-11 07:59:43.719 14002 14098 I FA      : To enable debug logging run: adb shell setprop log.tag.FA VERBOSE
+05-11 07:59:43.719 14002 14098 I FA      : To enable faster debug mode event logging run:
+05-11 07:59:43.719 14002 14098 I FA      :   adb shell setprop debug.firebase.analytics.app com.grofers.customerapp
+05-11 07:59:43.730 14002 14117 W ers.customerapp: ClassLoaderContext classpath element checksum mismatch. expected=1515892466, found=2173051155 (DLC[];PCL[base.apk*1515892466]{PCL[/system/framework/org.apache.http.legacy.jar*437079508]#PCL[/system/framework/com.android.location.provider.jar*3414091812]#PCL[/system/framework/com.android.media.remotedisplay.jar*2042759013]#PCL[/system_ext/framework/androidx.window.extensions.jar*1157725359]#PCL[/system_ext/framework/androidx.window.sidecar.jar*3501034208]} | DLC[];PCL[/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/base.apk*2173051155]{PCL[/system/framework/org.apache.http.legacy.jar*437079508]})
+05-11 07:59:43.734 14111 14111 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-11 07:59:43.739 13236 14116 I Authzen : [DeviceStateSyncManager] The server is in sync with current state. Nothing to do
+05-11 07:59:43.747 14002 14002 D nativeloader: Configuring clns-9 for other apk . target_sdk_version=34, uses_libraries=ALL, library_path=/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_CronetDynamite_installtime.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+05-11 07:59:43.747 14002 14002 D nativeloader: Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libjni_helper.motocameradesktop.so:libimgTuner_jni.motoimagetuner.so:libupdateprof.qti.so:libdiag_system.qti.so:libqape.qti.so:libqesdk_ndk_platform.qti.so:liblistenjni.qti.so
+05-11 07:59:43.751 14002 14002 D nativeloader: Load /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_CronetDynamite_installtime.apk!/lib/arm64-v8a/libcronet.147.0.7727.49.so using isolated ns clns-9 (caller=/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_CronetDynamite_installtime.apk!classes2.dex): ok
+05-11 07:59:43.763 14002 14130 I HttpFlagsLoader: HTTP flags log line (Impl): Using live production flag values from Google
+05-11 07:59:43.763  9621  9621 D BoundBrokerSvc: onBind: Intent { act=com.google.android.gms.measurement.START pkg=com.google.android.gms }
+05-11 07:59:43.763  9621  9621 D BoundBrokerSvc: Loading bound service for intent: Intent { act=com.google.android.gms.measurement.START pkg=com.google.android.gms }
+05-11 07:59:43.766 14002 14002 I cn_CronetLibraryLoader: Cronet version: 147.0.7727.49, arch: aarch64
+05-11 07:59:43.770 14111 14111 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+05-11 07:59:43.770 14111 14111 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-11 07:59:43.770 14111 14111 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+05-11 07:59:43.771  1990  2605 D ConnectivityService: requestNetwork for uid/pid:10386/14002 activeRequest: null callbackRequest: 10075 [NetworkRequest [ REQUEST id=10076, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOST|NC|LP
+05-11 07:59:43.776  1990  3062 D ConnectivityService: requestNetwork for uid/pid:10386/14002 activeRequest: null callbackRequest: 10077 [NetworkRequest [ REQUEST id=10078, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOST
+05-11 07:59:43.778  1990  2709 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=10076, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]
+05-11 07:59:43.779  1990  2709 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10076, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]
+05-11 07:59:43.780  1990  2709 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10076, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]
+05-11 07:59:43.780  1990  2709 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10076, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]
+05-11 07:59:43.782  1990  2722 D ConnectivityService: NetReassign [10076 : null → 114] [c 0] [a 1] [i 6]
+05-11 07:59:43.785  1990  2709 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=10078, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]
+05-11 07:59:43.786  1990  2709 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10078, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]
+05-11 07:59:43.787  1990  2709 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10078, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]
+05-11 07:59:43.787  1990  2709 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10078, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10386 RequestorUid: 10386 RequestorPkg: com.grofers.customerapp UnderlyingNetworks: Null] ]
+05-11 07:59:43.788  1990  2722 D ConnectivityService: NetReassign [10078 : null → 114] [c 0] [a 2] [i 3]
+05-11 07:59:43.791 14002 14002 I Typeface: updateThemeFont new=Rookery-Regular;old=sans-serif;new=Rookery-Stacked;old=
+05-11 07:59:43.793  1990  5433 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10386. pid: 14002
+05-11 07:59:43.793  1990  2722 D ConnectivityService: NetReassign [no changes] [c 0] [a 2] [i 3]
+05-11 07:59:43.864  2866  2910 V WindowManagerShell: Transition animation finished (aborted=false), notifying core (#1444) android.os.BinderProxy@b9593ce@0
+05-11 07:59:43.867  1990  2113 V WindowManager: Finish Transition (#1444): created at 05-11 07:59:43.237 collect-started=0.069ms request-sent=20.363ms started=25.637ms ready=106.337ms sent=110.872ms finished=629.08ms
+05-11 07:59:43.868  2866  2910 V WindowManagerShell: Track 0 became idle
+05-11 07:59:43.868  2866  2910 V WindowManagerShell: All active transition animations finished
+05-11 07:59:43.869  9508  9508 D VRI[MainActivity]: visibilityChanged oldVisibility=true newVisibility=false
+05-11 07:59:43.871  9508  9541 D Surface : Surface::disconnect
+05-11 07:59:43.871  9508  9541 D BufferQueueProducer: [com.amar.vault/com.amar.vault.MainActivity#16436(BLAST Consumer)pid:9508](id:252400000003,api:1,p:9508,c:9508) disconnect: api 1
+05-11 07:59:43.872  9508  9541 D HWUI    : endAllActiveAnimators on 0xb400007d4f8e2c00 (UnprojectedRipple) with handle 0xb400007ce859ee60
+05-11 07:59:43.873  1990  2605 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 07:59:43.886  1990  2606 W UserManagerService: Requested status bar icon for non-badged user 0
+05-11 07:59:43.912  1990  2635 D ActivityManager: freezing 11489 com.android.vending, reason = oom_cached
+05-11 07:59:43.923  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 07:59:43.924 14002 14143 D nativeloader: Load /data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/split_config.arm64_v8a.apk!/lib/arm64-v8a/libavif_android.so using class loader ns clns-7 (caller=/data/app/~~UcvoniWFtVrvf408Ffl0fg==/com.grofers.customerapp-97efKJtSdvC6mfGrRfbEmw==/base.apk!classes6.dex): ok
+05-11 07:59:43.926  1990  2722 D InetDiagMessage: Destroyed 2 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 07:59:43.927  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10212} in 7ms
+05-11 07:59:43.929 14002 14098 I FA      : Tag Manager is not found and thus will not be used
+05-11 07:59:43.936  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 07:59:43.937  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 07:59:43.937  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={10283} in 3ms
+05-11 07:59:43.939  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET, states=14
+05-11 07:59:43.941  1990  2722 D InetDiagMessage: Destroyed 0 sockets, proto=IPPROTO_TCP, family=AF_INET6, states=14
+05-11 07:59:43.942  1990  2722 D InetDiagMessage: Destroyed live tcp sockets for uids={20283} in 4ms
+05-11 07:59:43.948 14111 14111 D nativeloader: Configuring clns-7 for other apk /data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/lib/arm64:/data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.indus.appstore
+05-11 07:59:43.962 14111 14111 V GraphicsEnvironment: Currently set values for:
+05-11 07:59:43.962 14111 14111 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-11 07:59:43.962 14111 14111 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-11 07:59:43.962 14111 14111 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-11 07:59:43.962 14111 14111 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-11 07:59:43.977 14002 14002 W HWUI    : Unknown dataspace 0
+05-11 07:59:43.983  1990  5173 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:43.984  1990  5173 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.015 14002 14002 I Choreographer: Skipped 51 frames!  The application may be doing too much work on its main thread.
+05-11 07:59:44.020  1990  3613 D CoreBackPreview: Window{7754f85 u0 com.grofers.customerapp/com.grofers.customerapp.DEFAULT}: Setting back callback OnBackInvokedCallbackInfo{mCallback=android.window.IOnBackInvokedCallback$Stub$Proxy@452ea3d, mPriority=0, mIsAnimationCallback=false}
+05-11 07:59:44.032  1386  2327 I BpBinder: onLastStrongRef automatically unlinking death recipients: 
+05-11 07:59:44.037 14111 14111 D nativeloader: Configuring clns-8 for other apk . target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/lib/arm64:/data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand
+05-11 07:59:44.037 14111 14111 D nativeloader: Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libjni_helper.motocameradesktop.so:libimgTuner_jni.motoimagetuner.so:libupdateprof.qti.so:libdiag_system.qti.so:libqape.qti.so:libqesdk_ndk_platform.qti.so:liblistenjni.qti.so
+05-11 07:59:44.039 14111 14111 D nativeloader: Load /data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/base.apk!/lib/arm64-v8a/libe567.so using isolated ns clns-8 (caller=/data/user/0/com.indus.appstore/Anonymous-DexFile@1249552943.jar): ok
+05-11 07:59:44.048 14002 14002 W ers.customerapp: type=1400 audit(0.0:43695): avc:  denied  { read } for  name="u:object_r:vendor_display_prop:s0" dev="tmpfs" ino=2916 scontext=u:r:untrusted_app:s0:c130,c257,c512,c768 tcontext=u:object_r:vendor_display_prop:s0 tclass=file permissive=0 app=com.grofers.customerapp
+05-11 07:59:44.050 14002 14002 W libc    : Access denied finding property "vendor.display.enable_optimal_refresh_rate"
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: QUALCOMM build                   : 923a446bf8, I23d7d7df15
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: Build Date                       : 09/05/24
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: OpenGL ES Shader Compiler Version: EV031.35.01.12
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: Local Branch                     : 
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: Remote Branch                    : refs/tags/AU_LINUX_ANDROID_LA.UM.9.14.11.00.00.571.148
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: Remote Branch                    : NONE
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: Reconstruct Branch               : NOTHING
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: Build Config                     : S P 10.0.7 AArch64
+05-11 07:59:44.051 14002 14152 I AdrenoGLES-0: Driver Path                      : /vendor/lib64/egl/libGLESv2_adreno.so
+05-11 07:59:44.060 14002 14152 I AdrenoGLES-0: PFP: 0x016ee201, ME: 0x00000000
+05-11 07:59:44.076  1990  3613 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.077  1990  3613 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.086 14002 14152 I HWUI    : setGrContext nullptr-->validptr
+05-11 07:59:44.095  1990  5173 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.097  1990  3062 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.097  1990  3613 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.104  2866  2933 D Surface : Surface::disconnect
+05-11 07:59:44.104  2866  2933 D BufferQueueProducer: [Splash Screen com.grofers.customerapp#16448(BLAST Consumer)pid:2866](id:b3200000531,api:1,p:2866,c:2866) disconnect: api 1
+05-11 07:59:44.126  1990  2113 I MotoPerfManagerService: handleAppStart 10386:com.grofers.customerapp cold -1 118 71 92 866
+05-11 07:59:44.127  1302  1302 I QTI PowerHAL: Power setBoost: 0, duration: 0
+05-11 07:59:44.127  2866  2918 W WindowOnBackDispatcher: sendCancelIfRunning: isInProgress=false callback=android.view.ViewRootImpl$$ExternalSyntheticLambda11@2c840e7
+05-11 07:59:44.128  1990  3613 D CoreBackPreview: Window{b2d7b7f u0 Splash Screen com.grofers.customerapp EXITING}: Setting back callback null
+05-11 07:59:44.130  1990  2113 I ActivityTaskManager: Displayed com.grofers.customerapp/.DEFAULT for user 0: +866ms
+05-11 07:59:44.131  1990  5173 W InputManager-JNI: Input channel object 'b2d7b7f Splash Screen com.grofers.customerapp (client)' was disposed without first being removed with the input manager!
+05-11 07:59:44.146  9508  9550 I VectorEngineJNI: Saved HNSW index: 0 vectors
+05-11 07:59:44.148  9508  9550 D VectorSearch: Saved state: 0 vectors
+05-11 07:59:44.156  1990  2691 I ImeTracker: com.grofers.customerapp:44282ccf: onRequestHide at ORIGIN_SERVER reason HIDE_UNSPECIFIED_WINDOW fromUser false
+05-11 07:59:44.157  1990  2691 I ImeTracker: com.grofers.customerapp:44282ccf: onCancelled at PHASE_SERVER_SHOULD_HIDE
+05-11 07:59:44.164  1302  1302 I QTI PowerHAL: Power setMode: 5 to: 0
+05-11 07:59:44.165  1990  2605 D PowerManagerService: nativeSetPowerMode ret:true mode:5 enabled:false duration ms: 0
+05-11 07:59:44.167  1990  2175 W MotoBatteryCareService: uid: 10386 pkgName:com.grofers.customerapp come to foreground
+05-11 07:59:44.167  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onFinishInput():2099 
+05-11 07:59:44.170  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 0, locked = false
+05-11 07:59:44.171  5136  5136 I GoogleInputMethodService: GoogleInputMethodService.onStartInput():1371 onStartInput(EditorInfo{EditorInfo{packageName=com.grofers.customerapp, inputType=0, inputTypeString=NULL, enableLearning=false, autoCorrection=false, autoComplete=false, imeOptions=0, privateImeOptions=null, actionName=UNSPECIFIED, actionLabel=null, initialSelStart=-1, initialSelEnd=-1, initialCapsMode=0, label=null, fieldId=0, fieldName=null, extras=null, hintText=null, hintLocales=[]}}, false)
+05-11 07:59:44.172  9621 13519 D AdvertisingIdClient: AdvertisingIdClient already created.
+05-11 07:59:44.174  5136  5136 I Module  : DeviceLockedStatusModuleProvider$Module.updateDeviceLockedStatus():103 repeatCheckTimes = 1, locked = false
+05-11 07:59:44.176  1990  3062 W PackageConfigPersister: App-specific configuration not found for packageName: com.grofers.customerapp and userId: 0
+05-11 07:59:44.177  5569  5569 D GameMode: onStartedActivityChange: componnent: ComponentInfo{com.amar.vault/com.amar.vault.MainActivity} entered launcher screen? false
+05-11 07:59:44.178  5569  5955 D GameMode: isScreenUnlocked: true
+05-11 07:59:44.190  9621 13519 I AdvertisingIdClient: shouldSendLog 160628415
+05-11 07:59:44.190  9621 13519 I AdvertisingIdClient: GetInfoInternal elapse 18ms
+05-11 07:59:44.218 22504 22504 D BoundBrokerSvc: onRebind: Intent { act=com.google.android.gms.common.telemetry.service.START dat=chimera-action:/... cmp=com.google.android.gms/.chimera.PersistentApiService }
+05-11 07:59:44.219  1298  1407 E LocSvc_APIClientBase: onResponseCb:925] ERROR: 5 ID: 84
+05-11 07:59:44.220  1298  2046 E LocSvc_ApiV02: reportSystemInfo:4436] system info type: 1, leap second valid: 1 current gps time:valid:1, week: 2418, msec: 95401527,current leap second:valid 1, seconds 18, next gps time: valid 0, week: 0, msec: 0,next leap second: valid 0, seconds 0
+05-11 07:59:44.248  1298  2046 E LocSvc_ApiV02: reportLocEvent:3917] Loc event report: 0 KlobucharIonoMode_valid:0: leapSec_valid:1: tauC_valid:1 featureStatusReport_valid: 0 featureStatusReport: 0
+05-11 07:59:44.248  1298  2046 E LocSvc_ApiV02: reportSystemInfo:4436] system info type: 1, leap second valid: 1 current gps time:valid:1, week: 2418, msec: 95401555,current leap second:valid 1, seconds 18, next gps time: valid 0, week: 0, msec: 0,next leap second: valid 0, seconds 0
+05-11 07:59:44.250  1990  2042 I system_server: Background young concurrent copying GC freed 83MB AllocSpace bytes, 52(2524KB) LOS objects, 42% free, 118MB/205MB, paused 662us,1.854ms total 295.118ms
+05-11 07:59:44.257  9621 12363 I ConsentManagerApiServic: (REDACTED) ConsentManagerApiService onGetService success %s
+05-11 07:59:44.259 22504 22658 W Settings: Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+05-11 07:59:44.259 22504 22658 W Settings: Setting airplane_mode_on has moved from android.provider.Settings.System to android.provider.Settings.Global, returning read-only value.
+05-11 07:59:44.265 22504 13153 W SystemServiceRegistry: No service published for: wifirtt
+05-11 07:59:44.271  1990  2717 E WifiBackgroundScanStateMachine: Failed to update schedule because WifiScanningService is not initialized
+05-11 07:59:44.277  1990  2044 W System  : A resource failed to call release. 
+05-11 07:59:44.278  1990  2044 W System  : A resource failed to call HardwareBuffer.close. 
+05-11 07:59:44.278  1990  2044 W System  : A resource failed to call HardwareBuffer.close. 
+05-11 07:59:44.279  1990  2044 W System  : A resource failed to call HardwareBuffer.close. 
+05-11 07:59:44.326 22504 22700 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+05-11 07:59:44.326 22504 22700 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+05-11 07:59:44.327 22504 22700 I FusedLocation: (REDACTED) location delivery to %s blocked - too close
+05-11 07:59:44.330 22504 22700 I FusedLocation: (REDACTED) location delivery to %s blocked - too fast
+05-11 07:59:44.351  1990  3062 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1273 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1075 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1019 android.location.LocationResult.filter:253 com.android.server.location.provider.LocationProviderManager$LocationRegistration.acceptLocationChange:1018 
+05-11 07:59:44.356  1990  3062 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1273 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1075 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1019 android.location.LocationResult.filter:253 com.android.server.location.provider.LocationProviderManager$LocationRegistration.acceptLocationChange:1018 
+05-11 07:59:44.357  1990  3062 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1273 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1075 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1019 android.location.LocationResult.filter:253 com.android.server.location.provider.LocationProviderManager$LocationRegistration.acceptLocationChange:1018 
+05-11 07:59:44.357  1990  3062 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1273 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1075 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1019 android.location.LocationResult.filter:253 com.android.server.location.provider.LocationProviderManager$LocationRegistration.acceptLocationChange:1018 
+05-11 07:59:44.359  1990  3062 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1273 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1075 com.android.server.location.provider.LocationProviderManager$LocationRegistration$1.test:1019 android.location.LocationResult.filter:253 com.android.server.location.provider.LocationProviderManager$LocationRegistration.acceptLocationChange:1018 
+05-11 07:59:44.368  1990  2113 W AlarmManager: Unrecognized alarm listener com.android.server.location.gnss.GnssLocationProvider$$ExternalSyntheticLambda14@6f032ce
+05-11 07:59:44.368  1990  2113 W AlarmManager: Unrecognized alarm listener com.android.server.location.gnss.GnssLocationProvider$$ExternalSyntheticLambda13@d1495ef
+05-11 07:59:44.370  1990  2675 W ContextImpl: Calling a method in the system process without a qualified user: android.app.ContextImpl.sendBroadcast:1273 com.android.server.location.gnss.GnssStatusProvider.onReportStatus:176 com.android.server.location.gnss.hal.GnssNative.lambda$reportStatus$6:1113 com.android.server.location.gnss.hal.GnssNative.$r8$lambda$qNLm-8ijwEsUIu6uCf-cSxNrbGI:0 com.android.server.location.gnss.hal.GnssNative$$ExternalSyntheticLambda0.runOrThrow:0 
+05-11 07:59:44.373  1298  2046 E LocSvc_ApiV02: reportLocEvent:3917] Loc event report: 0 KlobucharIonoMode_valid:0: leapSec_valid:1: tauC_valid:1 featureStatusReport_valid: 0 featureStatusReport: 0
+05-11 07:59:44.373  1298  2046 E LocSvc_ApiV02: reportSystemInfo:4436] system info type: 1, leap second valid: 1 current gps time:valid:1, week: 2418, msec: 95401680,current leap second:valid 1, seconds 18, next gps time: valid 0, week: 0, msec: 0,next leap second: valid 0, seconds 0
+05-11 07:59:44.377  1990  5433 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.379  1990  2605 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.392  1347  3832 E ANDR-PERF-LM: VmRssMeter:: start() 453: Could not find pid, can not collect vmrss data
+05-11 07:59:44.405  1347  3833 E ANDR-PERF-LM: VmRssMeter:: start() 453: Could not find pid, can not collect vmrss data
+05-11 07:59:44.406  1347  3833 E ANDR-PERF-LM: AdaptiveLaunch: writeToDataBase() 64: Meter aborted or could not get meter data for this run
+05-11 07:59:44.425  3087  3087 D TelephonyManager: requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=161525545 mSleepTimeMs=58090112 mIdleTimeMs=18508080 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[472490, 15017, 3872, 731, 551],mRxTimeMs=84322937}]}
+05-11 07:59:44.433 22504 24335 I FontLog : (REDACTED) Received query %s, URI %s
+05-11 07:59:44.433 22504 24335 I FontLog : (REDACTED) Query [%s] resolved to %s
+05-11 07:59:44.435 22504 24335 I FontLog : (REDACTED) Fetch %s end status %s
+05-11 07:59:44.436 22504 22521 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+05-11 07:59:44.441 22504 24335 I FontLog : (REDACTED) Pulling font file for id = %d, cache size = %d
+05-11 07:59:44.470 14111 14276 W DynamiteModule: Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
+05-11 07:59:44.471 14111 14276 W DynamiteModule: Failed to load module via V2: java.lang.NoSuchFieldException: No field sClassLoader in class Lcom/google/android/gms/dynamite/DynamiteModule$DynamiteLoaderClassLoader; (declaration of 'com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader' appears in /data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/base.apk!classes2.dex)
+05-11 07:59:44.475 14111 14276 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+05-11 07:59:44.479 14111 14276 D nativeloader: Configuring clns-9 for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=37, uses_libraries=ALL, library_path=/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/lib/arm64:/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+05-11 07:59:44.479 14111 14276 D nativeloader: Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libjni_helper.motocameradesktop.so:libimgTuner_jni.motoimagetuner.so:libupdateprof.qti.so:libdiag_system.qti.so:libqape.qti.so:libqesdk_ndk_platform.qti.so:liblistenjni.qti.so
+05-11 07:59:44.485 14111 14111 I System.out:  saving configuration for INDUS_OS and class o.GenericConfirmationBottomSheetKtExternalSyntheticLambda3
+05-11 07:59:44.490 14111 14276 D nativeloader: Configuring clns-10 for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=37, uses_libraries=ALL, library_path=/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/lib/arm64:/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+05-11 07:59:44.490 14111 14276 D nativeloader: Extending system_exposed_libraries: libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libjni_helper.motocameradesktop.so:libimgTuner_jni.motoimagetuner.so:libupdateprof.qti.so:libdiag_system.qti.so:libqape.qti.so:libqesdk_ndk_platform.qti.so:liblistenjni.qti.so
+05-11 07:59:44.493 14111 14111 I System.out:  saving configuration for INDUS_OS and class o.BoltOrchestratesubscribe2
+05-11 07:59:44.494 14111 14111 I System.out:  saving configuration for INDUS_OS and class o.IWebSocketEventListenerSocketStateTokenAwaitedaddExtraAnalyticalMetadata1
+05-11 07:59:44.495 14111 14276 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-11 07:59:44.495 14111 14276 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+05-11 07:59:44.498 14002 14204 W InteractionJankMonitor: Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.grofers.customerapp
+05-11 07:59:44.505  1990  2605 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.507  1990  2605 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.522 14111 14296 I FirebaseApp: Device unlocked: initializing all Firebase APIs for app [DEFAULT]
+05-11 07:59:44.550 14111 14111 I MAI     : MSIS : false
+05-11 07:59:44.550 14111 14111 I MAI     : MSIS iAiB :  false, iFiB :  false, iSiD : false 
+05-11 07:59:44.559  1990  2606 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:44.569 14111 14111 I Typeface: updateThemeFont new=Rookery-Regular;old=sans-serif;new=Rookery-Stacked;old=
+05-11 07:59:44.574  1990  3613 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10422. pid: 14111
+05-11 07:59:44.576 14111 14111 I Choreographer: Skipped 53 frames!  The application may be doing too much work on its main thread.
+05-11 07:59:44.601 14111 14332 W DynamiteModule: Local module descriptor class for com.google.android.gms.measurement.dynamite not found.
+05-11 07:59:44.606 14111 14296 I FirebaseCrashlytics: Initializing Firebase Crashlytics 19.4.0 for com.indus.appstore
+05-11 07:59:44.614 14111 14317 I System.out:  saving configuration for ACCOUNTS and class o.BoltOrchestratesubscribe2
+05-11 07:59:44.616 14111 14317 I System.out:  saving configuration for ACCOUNTS and class o.IWebSocketEventListenerSocketStateTokenAwaitedaddExtraAnalyticalMetadata1
+05-11 07:59:44.665 14111 14276 D nativeloader: Configuring clns-11 for other apk /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk. target_sdk_version=37, uses_libraries=, library_path=/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/lib/arm64:/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+05-11 07:59:44.672  1990  3613 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.678  1990  5433 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:44.680 14111 14274 I o.lambdatoTable7: Provider GmsCore_OpenSSL not available
+05-11 07:59:44.692 22504 24335 W ProviderHelper: Unknown dynamite feature providerinstaller.dynamite
+05-11 07:59:44.693 14111 14332 I DynamiteModule: Considering local module com.google.android.gms.measurement.dynamite:0 and remote module com.google.android.gms.measurement.dynamite:189
+05-11 07:59:44.695 14111 14332 I DynamiteModule: Selected remote version of com.google.android.gms.measurement.dynamite, version >= 189
+05-11 07:59:44.699 14111 14276 I DynamiteModule: Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
+05-11 07:59:44.699 14111 14276 W ProviderInstaller: Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
+05-11 07:59:44.700 14111 14276 W ProviderInstaller: Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
+05-11 07:59:44.708 14111 14332 W System  : ClassLoader referenced unknown path: 
+05-11 07:59:44.710 14111 14332 D nativeloader: Configuring clns-12 for other apk . target_sdk_version=37, uses_libraries=, library_path=/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/lib/arm64:/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+05-11 07:59:44.724 14111 14332 W .indus.appstore: ClassLoaderContext classpath element checksum mismatch. expected=1515892466, found=1980240944 (DLC[];PCL[base.apk*1515892466]{PCL[/system/framework/org.apache.http.legacy.jar*437079508]#PCL[/system/framework/com.android.location.provider.jar*3414091812]#PCL[/system/framework/com.android.media.remotedisplay.jar*2042759013]#PCL[/system_ext/framework/androidx.window.extensions.jar*1157725359]#PCL[/system_ext/framework/androidx.window.sidecar.jar*3501034208]} | DLC[];PCL[/data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/base.apk*1980240944]{PCL[/system/framework/org.apache.http.legacy.jar*437079508]#PCL[/system_ext/framework/androidx.window.extensions.jar*1157725359]#PCL[/system_ext/framework/androidx.window.sidecar.jar*3501034208]})
+05-11 07:59:44.745 14111 14276 D nativeloader: Load /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk!/lib/arm64-v8a/libconscrypt_gmscore_jni.so using class loader ns clns-11 (caller=/data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/base.apk): ok
+05-11 07:59:44.745 14111 14276 V NativeCrypto: Registering com/google/android/gms/org/conscrypt/NativeCrypto's 336 native methods...
+05-11 07:59:44.784 14111 14276 I ProviderInstaller: Installed default security provider GmsCore_OpenSSL
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: Failed to get service from broker. 
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3241)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3225)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3208)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3150)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at bjcn.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):36)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at bjaj.z(:com.google.android.gms@261661035@26.16.61 (260400-906635036):143)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at bigf.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):42)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:1001)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:105)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at czrc.mD(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at czrc.dispatchMessage(:com.google.android.gms@261661035@26.16.61 (260400-906635036):5)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:268)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:384)
+05-11 07:59:44.796 14111 14378 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:103)
+05-11 07:59:44.797 14111 14378 W GoogleApiManager: Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: Failed to register com.google.android.gms.providerinstaller#com.indus.appstore
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: glbp: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at glbr.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):13)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at hkxz.d(:com.google.android.gms@261661035@26.16.61 (260400-906635036):3)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at hkyb.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):139)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at hlaj.execute(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at hkyj.f(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at hkyj.m(:com.google.android.gms@261661035@26.16.61 (260400-906635036):101)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at hkyj.q(:com.google.android.gms@261661035@26.16.61 (260400-906635036):16)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at gcsx.hy(:com.google.android.gms@261661035@26.16.61 (260400-906635036):35)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at fpgu.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):12)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at hlaj.execute(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at fpgv.b(:com.google.android.gms@261661035@26.16.61 (260400-906635036):18)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at fphk.b(:com.google.android.gms@261661035@26.16.61 (260400-906635036):34)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at fphm.d(:com.google.android.gms@261661035@26.16.61 (260400-906635036):22)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bidl.e(:com.google.android.gms@261661035@26.16.61 (260400-906635036):9)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bigd.q(:com.google.android.gms@261661035@26.16.61 (260400-906635036):48)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bigd.d(:com.google.android.gms@261661035@26.16.61 (260400-906635036):10)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bigd.g(:com.google.android.gms@261661035@26.16.61 (260400-906635036):191)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bigd.onConnectionFailed(:com.google.android.gms@261661035@26.16.61 (260400-906635036):2)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bigf.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):70)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at android.os.Handler.handleCallback(Handler.java:1001)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at android.os.Handler.dispatchMessage(Handler.java:105)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at czrc.mD(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at czrc.dispatchMessage(:com.google.android.gms@261661035@26.16.61 (260400-906635036):5)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at android.os.Looper.loopOnce(Looper.java:268)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at android.os.Looper.loop(Looper.java:384)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at android.os.HandlerThread.run(HandlerThread.java:103)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: Caused by: bibq: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bizv.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):15)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bido.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	at bidl.e(:com.google.android.gms@261661035@26.16.61 (260400-906635036):5)
+05-11 07:59:44.797 14111 14374 W FlagRegistrar: 	... 12 more
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: Failed to get service from broker. 
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3241)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3225)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3208)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3150)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at bjcn.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):36)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at bjaj.z(:com.google.android.gms@261661035@26.16.61 (260400-906635036):143)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at bigf.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):42)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:1001)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:105)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at czrc.mD(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at czrc.dispatchMessage(:com.google.android.gms@261661035@26.16.61 (260400-906635036):5)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:268)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:384)
+05-11 07:59:44.806 14111 14378 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:103)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: Failed to get service from broker. 
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3241)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.Parcel.createException(Parcel.java:3225)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3208)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.Parcel.readException(Parcel.java:3150)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at bjcn.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):36)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at bjaj.z(:com.google.android.gms@261661035@26.16.61 (260400-906635036):143)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at bigf.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):42)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.Handler.handleCallback(Handler.java:1001)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.Handler.dispatchMessage(Handler.java:105)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at czrc.mD(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at czrc.dispatchMessage(:com.google.android.gms@261661035@26.16.61 (260400-906635036):5)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.Looper.loopOnce(Looper.java:268)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.Looper.loop(Looper.java:384)
+05-11 07:59:44.811 14111 14378 E GoogleApiManager: 	at android.os.HandlerThread.run(HandlerThread.java:103)
+05-11 07:59:44.811 14111 14332 W DynamiteModule: Local module descriptor class for com.google.android.gms.measurement.dynamite not found.
+05-11 07:59:44.811 14111 14378 W GoogleApiManager: Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+05-11 07:59:44.813 14111 14392 W FlagStore: Unable to update local snapshot for com.google.android.gms.providerinstaller#com.indus.appstore, may result in stale flags.
+05-11 07:59:44.813 14111 14392 W FlagStore: java.util.concurrent.ExecutionException: glbp: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hkyj.j(:com.google.android.gms@261661035@26.16.61 (260400-906635036):21)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hkys.t(:com.google.android.gms@261661035@26.16.61 (260400-906635036):24)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hkyj.get(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hlcx.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):2)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hlbn.s(:com.google.android.gms@261661035@26.16.61 (260400-906635036):10)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at glhe.d(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at glgi.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):5)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:520)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:348)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1154)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:652)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at java.lang.Thread.run(Thread.java:1564)
+05-11 07:59:44.813 14111 14392 W FlagStore: Caused by: glbp: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at glbr.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):13)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hkxz.d(:com.google.android.gms@261661035@26.16.61 (260400-906635036):3)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hkyb.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):139)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hlaj.execute(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hkyj.f(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hkyj.m(:com.google.android.gms@261661035@26.16.61 (260400-906635036):101)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hkyj.q(:com.google.android.gms@261661035@26.16.61 (260400-906635036):16)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at gcsx.hy(:com.google.android.gms@261661035@26.16.61 (260400-906635036):35)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at fpgu.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):12)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hlaj.execute(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at fpgv.b(:com.google.android.gms@261661035@26.16.61 (260400-906635036):18)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at fphk.b(:com.google.android.gms@261661035@26.16.61 (260400-906635036):34)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at fphr.B(:com.google.android.gms@261661035@26.16.61 (260400-906635036):17)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at fpgm.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):60)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at hlaj.execute(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at fpgn.b(:com.google.android.gms@261661035@26.16.61 (260400-906635036):8)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at fphk.b(:com.google.android.gms@261661035@26.16.61 (260400-906635036):34)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at fphm.d(:com.google.android.gms@261661035@26.16.61 (260400-906635036):22)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bidl.e(:com.google.android.gms@261661035@26.16.61 (260400-906635036):9)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bigd.q(:com.google.android.gms@261661035@26.16.61 (260400-906635036):48)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bigd.d(:com.google.android.gms@261661035@26.16.61 (260400-906635036):10)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bigd.g(:com.google.android.gms@261661035@26.16.61 (260400-906635036):191)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bigd.onConnectionFailed(:com.google.android.gms@261661035@26.16.61 (260400-906635036):2)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bigf.run(:com.google.android.gms@261661035@26.16.61 (260400-906635036):70)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at android.os.Handler.handleCallback(Handler.java:1001)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at android.os.Handler.dispatchMessage(Handler.java:105)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at czrc.mD(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at czrc.dispatchMessage(:com.google.android.gms@261661035@26.16.61 (260400-906635036):5)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at android.os.Looper.loopOnce(Looper.java:268)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at android.os.Looper.loop(Looper.java:384)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at android.os.HandlerThread.run(HandlerThread.java:103)
+05-11 07:59:44.813 14111 14392 W FlagStore: Caused by: bibq: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bizv.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):15)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bido.a(:com.google.android.gms@261661035@26.16.61 (260400-906635036):1)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	at bidl.e(:com.google.android.gms@261661035@26.16.61 (260400-906635036):5)
+05-11 07:59:44.813 14111 14392 W FlagStore: 	... 12 more
+05-11 07:59:44.820 14111 14354 I FirebaseCrashlytics: Saved version control info
+05-11 07:59:44.848 14111 14349 D nativeloader: Load /data/app/~~Te6riT_yuZ1eWnp2NbGNMw==/com.indus.appstore-VorpSkFerHfq-NfJkgxQ5g==/base.apk!/lib/arm64-v8a/libphonepe-cryptography-support-lib.so using class loader ns clns-7 (caller=<unknown>): ok
+05-11 07:59:44.866 22504 13676 I PhenotypeResourceReader: unable to find any Phenotype resource metadata for com.indus.appstore
+05-11 07:59:44.882   842   842 I lowmemorykiller: Kill 'com.android.vending' (11489), uid 10212, oom_score_adj 920 to free 123452kB rss, 92156kB swap; reason: device is in medium stall and watermark low
+05-11 07:59:44.896 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:44.942 14002 14002 W WindowOnBackDispatcher: OnBackInvokedCallback is not enabled for the application.
+05-11 07:59:44.942 14002 14002 W WindowOnBackDispatcher: Set 'android:enableOnBackInvokedCallback="true"' in the application manifest.
+05-11 07:59:44.952 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:44.955 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:44.957 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:44.958 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:44.966  1191  1191 I Zygote  : Process 11489 exited due to signal 9 (Killed)
+05-11 07:59:44.967 14002 14002 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : requestUpdateInfo(com.grofers.customerapp)
+05-11 07:59:44.968  1990  2722 D ConnectivityService: releasing NetworkRequest [ REQUEST id=10027, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ] (release request)
+05-11 07:59:44.969  1990 11413 I ActivityManager: appDiedLocked: app=ProcessRecord{cc14d05 11489:com.android.vending/u0a212} thread=android.os.BinderProxy@b79f23 fromBinderDied=true isKilledByAm=false reason=null
+05-11 07:59:44.969  1990 11413 I ActivityManager: Process com.android.vending (pid 11489) has died: cch+20 CEM 
+05-11 07:59:44.970  1990 11413 D RestartModeController: markWaitRestartAppIsSuicided null processName=com.android.vending
+05-11 07:59:44.970  1990  2114 D DisplayManagerService: Drop pending events for gone uid 10212
+05-11 07:59:44.973  1990  2275 I libprocessgroup: Removed cgroup /sys/fs/cgroup/uid_10212/pid_11489
+05-11 07:59:44.973  1990  2275 W libprocessgroup: RemoveCgroup: /dev/memcg/apps/uid_10212/pid_11489 does not exist.
+05-11 07:59:44.973 14111 14401 E .indus.appstore: No package ID 6a found for resource ID 0x6a0b0013.
+05-11 07:59:44.974  1990 11413 D ActivityTaskManager: handleAppDied: uid=10212,diedCount=2,lastDiedTime=85344159,forceStopUids=false
+05-11 07:59:44.975 14002 14002 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : requestUpdateInfo(com.grofers.customerapp)
+05-11 07:59:44.975 14002 14002 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : requestUpdateInfo(com.grofers.customerapp)
+05-11 07:59:44.975 14002 14002 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : requestUpdateInfo(com.grofers.customerapp)
+05-11 07:59:44.976 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Initiate binding to the service.
+05-11 07:59:44.979 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Already connected to the service.
+05-11 07:59:44.979 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Waiting to bind to the service.
+05-11 07:59:44.979 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Already connected to the service.
+05-11 07:59:44.979 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Waiting to bind to the service.
+05-11 07:59:44.979 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Already connected to the service.
+05-11 07:59:44.979 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Waiting to bind to the service.
+05-11 07:59:44.990 14111 14401 I FA      : App measurement initialized, version: 165000
+05-11 07:59:44.990 14111 14401 I FA      : To enable debug logging run: adb shell setprop log.tag.FA VERBOSE
+05-11 07:59:44.991 14111 14401 I FA      : To enable faster debug mode event logging run:
+05-11 07:59:44.991 14111 14401 I FA      :   adb shell setprop debug.firebase.analytics.app com.indus.appstore
+05-11 07:59:44.995  1191  1191 D Zygote  : Forked child process 14421
+05-11 07:59:44.996  1990  2182 I ActivityManager: Start proc 14421:com.android.vending/u0a212 for service {com.android.vending/com.google.android.finsky.installservice.DevTriggeredUpdateService}
+05-11 07:59:45.034 14421 14421 I android.vending: Using CollectorTypeCC GC.
+05-11 07:59:45.051 14421 14421 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-11 07:59:45.099 14421 14421 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+05-11 07:59:45.099 14421 14421 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-11 07:59:45.099 14421 14421 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+05-11 07:59:45.198 14002 14204 I Choreographer: Skipped 35 frames!  The application may be doing too much work on its main thread.
+05-11 07:59:45.301 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:45.306 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:45.515 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:45.527 14421 14421 W android.vending: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:45.528 14421 14421 W android.vending: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:45.529 14421 14421 W android.vending: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:45.529 14421 14421 W android.vending: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:45.530 14421 14421 W android.vending: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:45.530 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:45.530 14421 14421 W android.vending: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:45.539 14421 14421 D nativeloader: Configuring clns-7 for other apk /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/base.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.arm64_v8a.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.en.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_data_loader.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_data_loader.config.arm64_v8a.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_webrtc_native_lib.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_webrtc_native_lib.config.arm64_v8a.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/lib/arm64:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.and
+05-11 07:59:45.540 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:45.549 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:45.561 14421 14421 V GraphicsEnvironment: Currently set values for:
+05-11 07:59:45.561 14421 14421 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-11 07:59:45.561 14421 14421 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-11 07:59:45.561 14421 14421 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-11 07:59:45.561 14421 14421 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-11 07:59:45.571  1990 11413 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:45.584 14421 14421 I Finsky  : [2] Process created at version: 51.2.34-31 [0] [PR] 908936081
+05-11 07:59:45.596  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3890209, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=216315, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=56, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-687866, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30968, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=356, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2729383}
+05-11 07:59:45.598 14002 14002 I Choreographer: Skipped 38 frames!  The application may be doing too much work on its main thread.
+05-11 07:59:45.599  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3890209, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=216315, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=56, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_CHARGE_RATE=Normal, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-687866, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30968, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=356, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2729383}
+05-11 07:59:45.606  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3890209, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=216316, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=56, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-687866, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30968, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=356, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2729383}
+05-11 07:59:45.606  1990  2611 D BatteryService: uevent={POWER_SUPPLY_VOLTAGE_NOW=3890209, POWER_SUPPLY_CHARGE_CONTROL_LIMIT_MAX=9, POWER_SUPPLY_TYPE=Battery, POWER_SUPPLY_HEALTH=Good, POWER_SUPPLY_TECHNOLOGY=Li-ion, POWER_SUPPLY_CHARGE_FULL_DESIGN=5096000, SEQNUM=216316, POWER_SUPPLY_CHARGE_CONTROL_LIMIT=0, POWER_SUPPLY_STATUS=Charging, POWER_SUPPLY_CURRENT_MAX=4000000, POWER_SUPPLY_CYCLE_COUNT=111, POWER_SUPPLY_CHARGE_TERM_CURRENT=-100, POWER_SUPPLY_CAPACITY=56, DEVPATH=/devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-02/1c40000.qcom,spmi:qcom,pm7250b@2:qcom,qpnp-smb5-mmi/power_supply/battery, POWER_SUPPLY_CHARGE_TYPE=Fast, POWER_SUPPLY_INPUT_CURRENT_LIMIT=0, POWER_SUPPLY_CURRENT_NOW=-687866, POWER_SUPPLY_PRESENT=1, POWER_SUPPLY_CHARGE_FULL=4894000, POWER_SUPPLY_TIME_TO_FULL_NOW=30968, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT=4000000, SUBSYSTEM=power_supply, POWER_SUPPLY_TEMP=356, ACTION=change, POWER_SUPPLY_NAME=battery, POWER_SUPPLY_VOLTAGE_MAX=4520000, POWER_SUPPLY_CONSTANT_CHARGE_CURRENT_MAX=4000000, POWER_SUPPLY_CHARGE_COUNTER=2729383}
+05-11 07:59:45.613  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 07:59:45.637  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 07:59:45.639  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 07:59:45.640  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 07:59:45.640  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 07:59:45.640  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 07:59:45.641  2866  4975 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:45.648 14421 14525 W Finsky  : [9222] Failed to get the task info for cold start.
+05-11 07:59:45.648 14421 14525 I Finsky  : [9222] Process started for unknown session.
+05-11 07:59:45.649  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 07:59:45.650  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 07:59:45.650  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 07:59:45.651  2866  4870 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:45.656  2866  5052 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:45.667 14421 14421 I Finsky  : [2] Finished reading experiment flags from file [0tGUNCGIkbk4o6-fQ335kUYSKwVj4lusnHT-A5Dsy08] numFlags=2303.
+05-11 07:59:45.670 14421 14524 I Finsky  : [9221] Finished reading experiment flags from file [0tGUNCGIkbk4o6-fQ335kUYSKwVj4lusnHT-A5Dsy08] numFlags=2303.
+05-11 07:59:45.673 14421 14522 I Finsky  : [9219] Finished reading experiment flags from file [iVEbirjHlHHAYvgqlG_UjYLf2qOmgv_vf_zrdOdF-AQ] numFlags=2004.
+05-11 07:59:45.675 14421 14523 I Finsky  : [9220] Finished reading experiment flags from file [Se-xCc4LzNyh3UrKMIU2sUf-PUKz4oQEbpKZDMuaFno] numFlags=1993.
+05-11 07:59:45.686 14421 14538 D nativeloader: Load /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.arm64_v8a.apk!/lib/arm64-v8a/libmappedcountercacheversionjni.so using class loader ns clns-7 (caller=/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/base.apk): ok
+05-11 07:59:45.707 14421 14524 I Finsky  : [9221] ajky - Registering in memory receiver for android.intent.action.PACKAGE_ADDED and android.intent.action.PACKAGE_REMOVED
+05-11 07:59:45.711 14421 14421 I Finsky  : [2] Profiling: window_size_ms=300000 delay_ms=171764
+05-11 07:59:45.720 14421 14421 I Finsky  : [2] Profiling: Starting up (14)
+05-11 07:59:45.722 14421 14421 I Typeface: updateThemeFont new=Rookery-Regular;old=sans-serif;new=Rookery-Stacked;old=
+05-11 07:59:45.724  1990  3451 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10212. pid: 14421
+05-11 07:59:45.732 14421 14421 I Finsky  : [2] This process start was not selected for Play memory metrics collection.
+05-11 07:59:45.744 14421 14522 I Finsky  : [9219] Device is eligible for platform Cronet and will attempt to use it.
+05-11 07:59:45.751 14421 14524 I Finsky  : [9221] Enqueuing libraries load for 1398842183
+05-11 07:59:45.767 14421 14542 I Finsky  : [9231] Starting libraries load for 1398842183
+05-11 07:59:45.787  9621 13519 D AdvertisingIdClient: AdvertisingIdClient already created.
+05-11 07:59:45.788 14421 14566 I Finsky  : [9237] ApplicationRestrictions: {}
+05-11 07:59:45.789  9621 13519 I AdvertisingIdClient: shouldSendLog 160628415
+05-11 07:59:45.791 14421 14525 I Finsky  : [9222] Subscription detail: DataSubscriptionInfo{groupIdLevel1=FFFFFFFFFFFFFFFFFFFF, serviceProviderName=[yOlW3tnQDJ1YThQMBZR88g71IOfDulvO9qZSUfyq_8k], simCarrierId=2018}
+05-11 07:59:45.791  9621 13519 I AdvertisingIdClient: GetInfoInternal elapse 2ms
+05-11 07:59:45.812 14421 14421 I Finsky  : [2] onSubscriptionsChanged
+05-11 07:59:45.812 14421 14575 D HttpFlagsLoader: Not loading HTTP flags because they are disabled in the manifest
+05-11 07:59:45.816 14002 14002 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : ServiceConnectionImpl.onServiceConnected(ComponentInfo{com.android.vending/com.google.android.finsky.installservice.DevTriggeredUpdateService})
+05-11 07:59:45.819 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : linkToDeath
+05-11 07:59:45.824 14421 14522 I cn_CronetLibraryLoader: Cronet version: 144.0.7500.8, arch: aarch64
+05-11 07:59:45.830 14421 14544 I Finsky  : [9233] CronetEngine is present. Using Cronet for the networking stack.
+05-11 07:59:45.835  1990  3451 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 07:59:45.836  1990  3614 D ConnectivityService: requestNetwork for uid/pid:10212/14421 activeRequest: null callbackRequest: 10080 [NetworkRequest [ REQUEST id=10081, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOST|NC|LP
+05-11 07:59:45.840  1990  2709 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=10081, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:45.843  1990  2709 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10081, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:45.848  1990  2709 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10081, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:45.849  1990  2709 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10081, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:45.850  1990  2722 D ConnectivityService: NetReassign [10081 : null → 114] [c 1] [a 1] [i 12]
+05-11 07:59:45.862  1990  2722 D ConnectivityService: NetReassign [no changes] [c 1] [a 2] [i 8]
+05-11 07:59:45.870 14421 14461 W Settings: Setting download_manager_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+05-11 07:59:45.871 14421 14461 I Finsky  : [9215] SettingNotFoundException, fall through to G.downloadBytesOverMobileMaximum
+05-11 07:59:45.871 14421 14461 W Settings: Setting download_manager_recommended_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+05-11 07:59:45.872 14421 14461 I Finsky  : [9215] SettingNotFoundException, fall through to G.downloadBytesOverMobileRecommended
+05-11 07:59:45.893  1990  1990 V UiModeManager: updateLocked: null action, mDockState=0, category=null
+05-11 07:59:45.893  1990  1990 D UiModeManager: updateConfigurationLocked: mDockState=0; mCarMode=false; mNightMode=com.android.server.UiModeManagerService$1@d0f89cf; mNightModeCustomType=-1; uiMode=33
+05-11 07:59:45.894  3057  3057 D QtiCarrierConfigHelper: WARNING, no carrier configs on phone Id: 1
+05-11 07:59:45.900  2866  4708 D PowerUI : can't show warning due to - plugged: true status unknown: false
+05-11 07:59:45.918 14002 14008 I ers.customerapp: Background concurrent copying GC freed 120MB AllocSpace bytes, 731(37MB) LOS objects, 71% free, 39MB/135MB, paused 1.920ms,166us total 605.082ms
+05-11 07:59:45.938 22504 13676 W GetConfigSnapshotOp: Succeeded but not registered: com.google.android.gms.gmscompliance_client#com.android.vending [CONTEXT service_id=51 ]
+05-11 07:59:45.943 22504 13675 W GetConfigSnapshotOp: Succeeded but not registered: com.google.android.libraries.onegoogle#com.android.vending [CONTEXT service_id=51 ]
+05-11 07:59:45.954 14421 14542 I Finsky  : [9231] Loaded library for account: [GTncqhUe82rYSTl-uc9HIxlL4oF88Flz7-Nbf9L0JrE]
+05-11 07:59:45.954 14421 14542 I Finsky  : [9231] Loaded library for account: [r2i1HNoWNd-IxuEqgdO9t1J4Ta4meFC4fh5xcN_wN7c]
+05-11 07:59:45.954 14421 14542 I Finsky  : [9231] Loaded library for account: [AWsYCdosCPB_EGwD6-We3Ei4thkIAjMggB8dYKC1ATw]
+05-11 07:59:45.954 14421 14542 I Finsky  : [9231] Loaded library for account: [SX4RlAbGKupnomfFoaValYrD2elZ5mV54ZfvHpXcoKw]
+05-11 07:59:45.954 14421 14542 I Finsky  : [9231] Loaded library for account: [Mx7Wo4CdVVMbo635cOHzCuAZSEzVPH-Dd6H2qi8qsiA]
+05-11 07:59:45.954 14421 14542 I Finsky  : [9231] Loaded library for account: [NHAZ40th3XGgnIXSYxlnXvNFag0MPkZ3koOkOssjIrA]
+05-11 07:59:45.954 14421 14542 I Finsky  : [9231] Finished loading 6 libraries.
+05-11 07:59:45.960 14421 14554 I Finsky  : [9235] CronetEngine is present. Using Cronet for the networking stack.
+05-11 07:59:46.030 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.035 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.039 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.058  1990  3614 D FileUtils: Rounded bytes from 7856328704 to 8000000000
+05-11 07:59:46.062  1990  3614 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 07:59:46.065 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.066 14421 14532 I Finsky  : [9223] Initializing pausers from value store.
+05-11 07:59:46.068 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.072  1990 11413 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 07:59:46.074 14421 14532 I Finsky  : [9223] IQ::HLD: Callers (Pausers) in PauseUpdatesCallersValueStore: []
+05-11 07:59:46.075  1990 11413 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 07:59:46.078  1990 11413 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 07:59:46.079 14421 14645 I Finsky  : [9264] Created new item store.
+05-11 07:59:46.082 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.084 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.086  1990  2175 W MotoBatteryCareService: uid: 10212 pkgName:com.android.vending come to foreground
+05-11 07:59:46.095 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.096 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.101  1191  1191 D Zygote  : Forked child process 14648
+05-11 07:59:46.102  1990  2182 I ActivityManager: Start proc 14648:com.android.vending:background/u0a212 for service {com.android.vending/com.google.frameworks.client.data.android.server.play.BackgroundProcessEndpointService}
+05-11 07:59:46.112 14002 14002 W BitmapDrawable: BitmapDrawable created with null Bitmap
+05-11 07:59:46.126 14111 14124 I .indus.appstore: Background concurrent copying GC freed 40MB AllocSpace bytes, 141(6368KB) LOS objects, 81% free, 5503KB/29MB, paused 317us,286us total 295.698ms
+05-11 07:59:46.132 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_AdsDynamite_installtime.apk' with 1 weak references
+05-11 07:59:46.133 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_CronetDynamite_installtime.apk' with 1 weak references
+05-11 07:59:46.133 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteLoader_installtime.apk' with 1 weak references
+05-11 07:59:46.133 14648 14648 I ding:background: Using CollectorTypeCC GC.
+05-11 07:59:46.134 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteModulesA_installtime.apk' with 1 weak references
+05-11 07:59:46.136 14421 14523 I Finsky  : [9220] VerifyApps: Setup app restrictions monitor
+05-11 07:59:46.134 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_DynamiteModulesC_installtime.apk' with 1 weak references
+05-11 07:59:46.136 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_GoogleCertificates_installtime.apk' with 1 weak references
+05-11 07:59:46.137 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_MapsDynamite_installtime.apk' with 1 weak references
+05-11 07:59:46.137 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_MeasurementDynamite_installtime.apk' with 1 weak references
+05-11 07:59:46.137 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /data/app/~~7xRcQKJFv9y1M_hOecjaIA==/com.google.android.gms-mf-VRZZYIlo1y_FIOBdeGg==/split_maps_core_dynamite_ondemand.apk' with 1 weak references
+05-11 07:59:46.138 14111 14126 W .indus.appstore: ApkAssets: Deleting an ApkAssets object '<empty> and /system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk' with 1 weak references
+05-11 07:59:46.139 14421 14523 I Finsky  : [9220] VerifyApps: Device wide unknown source restriction updated
+05-11 07:59:46.146 14421 14524 I Finsky  : [9221] Finished reading experiment flags from file [U6QYB0P1L3EsTmVEX8vPwHb9ZDRsaSwWz4QZs5aMCSc] numFlags=2004.
+05-11 07:59:46.150 14421 14524 I Finsky  : [9221] Finished reading experiment flags from file [_vfmduVnP-lY_-lglTl3zCWpYB6WHw1gFVw09iFlcgM] numFlags=2004.
+05-11 07:59:46.151 14648 14648 D nativeloader: Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+05-11 07:59:46.154 14421 14524 I Finsky  : [9221] Finished reading experiment flags from file [tNusFTu2Lf4iTAmK7bwB0ksUDRe-SzJpAzC88gN-Mds] numFlags=2004.
+05-11 07:59:46.158 14421 14524 I Finsky  : [9221] Finished reading experiment flags from file [XQzIQmk9McLj8bNtzw6tvfHZ8Ga3NvuEV_ScikzI5Rg] numFlags=2004.
+05-11 07:59:46.165 14421 14524 I Finsky  : [9221] Finished reading experiment flags from file [rSe4qG6X77Kuy1mJK3rJKA9LZc8i2h85NocgQrgEzs8] numFlags=2004.
+05-11 07:59:46.180 14421 14554 I Finsky  : [9235] SysUA: Set SystemUpdateActivity enabled state to 1
+05-11 07:59:46.182 14648 14648 D ApplicationLoaders: Returning zygote-cached class loader: /system/framework/org.apache.http.legacy.jar
+05-11 07:59:46.182 14648 14648 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.extensions.jar
+05-11 07:59:46.182 14648 14648 D ApplicationLoaders: Returning zygote-cached class loader: /system_ext/framework/androidx.window.sidecar.jar
+05-11 07:59:46.183 14421 14554 I Finsky  : [9235] Set UnhibernateActivity enabled state to 1
+05-11 07:59:46.190 14421 14544 I Finsky  : [9233] SysCUA: Set {com.android.vending/com.google.android.finsky.systemcomponentupdateui.common.SystemComponentUpdateActivity} enabled state to 0
+05-11 07:59:46.197 14421 14602 I Finsky  : [9255] Prepare dev-triggered update flow...
+05-11 07:59:46.211 14421 14602 I Finsky  : [9255] ICalc: estimated size required for installing com.grofers.customerapp: 85662517 bytes
+05-11 07:59:46.213 14421 14602 I Finsky  : [9255] Prepare dev-triggered update flow...
+05-11 07:59:46.216 14421 14566 I Finsky  : [9237] ICalc: Partition available space: 29825015808, install size: 85662517, min free: 524288000, additional needed: 0
+05-11 07:59:46.219 14421 14602 I Finsky  : [9255] ICalc: estimated size required for installing com.grofers.customerapp: 85662517 bytes
+05-11 07:59:46.220 14421 14602 I Finsky  : [9255] Prepare dev-triggered update flow...
+05-11 07:59:46.220 14421 14532 I Finsky  : [9223] ICalc: Partition available space: 29825015808, install size: 85662517, min free: 524288000, additional needed: 0
+05-11 07:59:46.226 14421 14602 I Finsky  : [9255] ICalc: estimated size required for installing com.grofers.customerapp: 85662517 bytes
+05-11 07:59:46.227 14421 14566 I Finsky  : [9237] ICalc: Partition available space: 29825011712, install size: 85662517, min free: 524288000, additional needed: 0
+05-11 07:59:46.228 14421 14602 I Finsky  : [9255] Prepare dev-triggered update flow...
+05-11 07:59:46.234 14421 14602 I Finsky  : [9255] ICalc: estimated size required for installing com.grofers.customerapp: 85662517 bytes
+05-11 07:59:46.236 14421 14532 I Finsky  : [9223] ICalc: Partition available space: 29825011712, install size: 85662517, min free: 524288000, additional needed: 0
+05-11 07:59:46.238 14421 14602 I Finsky  : [9255] playLoggingServerUrl: https://play.googleapis.com/play/log
+05-11 07:59:46.238 14421 14602 I Finsky  : [9255] playLoggingServerTimestampUrl: https://play.googleapis.com/play/log/timestamp
+05-11 07:59:46.241 14421 14583 I cn_CronetUrlRequestContext: destroyNativeStreamLocked android.net.http.internal.org.chromium.net.impl.CronetBidirectionalStream@b9f777d
+05-11 07:59:46.264  1990  5270 E TaskPersister: File error accessing recents directory (directory doesn't exist?).
+05-11 07:59:46.264  1990  3451 W PackageManager: Missing required system package: word.office.docxviewer.document.docx.reader, but found with extended search.
+05-11 07:59:46.264  1990  3451 W PackageManager: Missing required system package: water.sort.puzzle.game.color.sorting.free, but found with extended search.
+05-11 07:59:46.265  1990  3451 W PackageManager: Missing required system package: tech.butterfly.app, but found with extended search.
+05-11 07:59:46.265  1990  3451 W PackageManager: Missing required system package: src.com.dop, but found with extended search.
+05-11 07:59:46.266  1990  3451 W PackageManager: Missing required system package: sorting.games.goods.sort.triple.match3d.puzzle.stuff, but found with extended search.
+05-11 07:59:46.266  1990  3451 W PackageManager: Missing required system package: ru.zdevs.zarchiver, but found with extended search.
+05-11 07:59:46.267  1990  3451 W PackageManager: Missing required system package: org.videolan.vlc, but found with extended search.
+05-11 07:59:46.267  1990  3451 W PackageManager: Missing required system package: org.thoughtcrime.securesms, but found with extended search.
+05-11 07:59:46.267  1990  3451 W PackageManager: Missing required system package: org.telegram.messenger, but found with extended search.
+05-11 07:59:46.268  1990  3451 W PackageManager: Missing required system package: io.teslatech.callbreak, but found with extended search.
+05-11 07:59:46.268  1990  3451 W PackageManager: Missing required system package: info.indiapost.daksewa, but found with extended search.
+05-11 07:59:46.268  1990  3451 W PackageManager: Missing required system package: info.indiapost, but found with extended search.
+05-11 07:59:46.268  1990  3451 W PackageManager: Missing required system package: in.swiggy.android.instamart, but found with extended search.
+05-11 07:59:46.269  1990  3451 W PackageManager: Missing required system package: in.amazon.mShop.android.shopping, but found with extended search.
+05-11 07:59:46.269  1990  3451 W PackageManager: Missing required system package: homeworkout.homeworkouts.noequipment, but found with extended search.
+05-11 07:59:46.269  1990  3451 W PackageManager: Missing required system package: gymworkout.gym.gymlog.gymtrainer, but found with extended search.
+05-11 07:59:46.270  1990  3451 W PackageManager: Missing required system package: cris.org.in.prs.ima, but found with extended search.
+05-11 07:59:46.270  1990  3451 W PackageManager: Missing required system package: com.xingin.xhs, but found with extended search.
+05-11 07:59:46.270  1990  3451 W PackageManager: Missing required system package: com.worldpackers.travelers, but found with extended search.
+05-11 07:59:46.271  1990  3451 W PackageManager: Missing required system package: com.whereismytrain.android, but found with extended search.
+05-11 07:59:46.271  1990  3451 W PackageManager: Missing required system package: com.whatsapp, but found with extended search.
+05-11 07:59:46.272  1990  3451 W PackageManager: Missing required system package: com.valvesoftware.android.steam.community, but found with extended search.
+05-11 07:59:46.272  1990  3451 W PackageManager: Missing required system package: com.twitter.android, but found with extended search.
+05-11 07:59:46.272  1990  3451 W PackageManager: Missing required system package: com.tallteam.citychase, but found with extended search.
+05-11 07:59:46.273  1990  3451 W PackageManager: Missing required system package: com.sbi.lotusintouch, but found with extended search.
+05-11 07:59:46.273  1990  3451 W PackageManager: Missing required system package: com.rapido.passenger, but found with extended search.
+05-11 07:59:46.273  1990  3451 W PackageManager: Missing required system package: com.phonepe.app, but found with extended search.
+05-11 07:59:46.274  1990  3451 W PackageManager: Missing required system package: com.openai.chatgpt, but found with extended search.
+05-11 07:59:46.274  1990  3451 W PackageManager: Missing required system package: com.olacabs.customer, but found with extended search.
+05-11 07:59:46.274  1990  3451 W PackageManager: Missing required system package: com.myntra.android, but found with extended search.
+05-11 07:59:46.275  1990  3451 W PackageManager: Missing required system package: com.mbm.elereaning.mbmecj, but found with extended search.
+05-11 07:59:46.275  1990  3451 W PackageManager: Missing required system package: com.marc.files, but found with extended search.
+05-11 07:59:46.276  1990  3451 W PackageManager: Missing required system package: com.lenskart.app, but found with extended search.
+05-11 07:59:46.276  1990  3451 W PackageManager: Missing required system package: com.kiloo.subwaysurf, but found with extended search.
+05-11 07:59:46.277  1990  3451 W PackageManager: Missing required system package: com.jpl.jiomart, but found with extended search.
+05-11 07:59:46.277  1990  3451 W PackageManager: Missing required system package: com.jaipurcitybus.mobileticketingapp, but found with extended search.
+05-11 07:59:46.277  1990  3451 W PackageManager: Missing required system package: com.internshala.app, but found with extended search.
+05-11 07:59:46.277  1990  3451 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:46.278  1990  3451 W PackageManager: Missing required system package: com.innersloth.spacemafia, but found with extended search.
+05-11 07:59:46.278  1990  3451 W PackageManager: Missing required system package: com.google.earth, but found with extended search.
+05-11 07:59:46.278  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.subscriptions.red, but found with extended search.
+05-11 07:59:46.278  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.nbu.paisa.user, but found with extended search.
+05-11 07:59:46.278  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.fitness, but found with extended search.
+05-11 07:59:46.279  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.chromecast.app, but found with extended search.
+05-11 07:59:46.279  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.bard, but found with extended search.
+05-11 07:59:46.279  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.adm, but found with extended search.
+05-11 07:59:46.279  1990  3451 W PackageManager: Missing required system package: com.google.ai.edge.gallery, but found with extended search.
+05-11 07:59:46.279  1990  3451 W PackageManager: Missing required system package: com.fsn.nykaa, but found with extended search.
+05-11 07:59:46.280  1990  3451 W PackageManager: Missing required system package: com.frontrow.vlog, but found with extended search.
+05-11 07:59:46.280  1990  3451 W PackageManager: Missing required system package: com.flipkart.android, but found with extended search.
+05-11 07:59:46.280  1990  3451 W PackageManager: Missing required system package: com.easybrain.sudoku.android, but found with extended search.
+05-11 07:59:46.280  1990  3451 W PackageManager: Missing required system package: com.easybrain.spider.solitaire, but found with extended search.
+05-11 07:59:46.280  1990  3451 W PackageManager: Missing required system package: com.easybrain.jigsaw.puzzles, but found with extended search.
+05-11 07:59:46.280  1990  3451 W PackageManager: Missing required system package: com.easybrain.color.sort.puzzle, but found with extended search.
+05-11 07:59:46.281  1990  3451 W PackageManager: Missing required system package: com.easybrain.block.puzzle.games, but found with extended search.
+05-11 07:59:46.281  1990  3451 W PackageManager: Missing required system package: com.dts.freefiremax, but found with extended search.
+05-11 07:59:46.281  1990  3451 W PackageManager: Missing required system package: com.discord, but found with extended search.
+05-11 07:59:46.281  1990  3451 W PackageManager: Missing required system package: com.digital.bsnl.selfcare, but found with extended search.
+05-11 07:59:46.282  1990  3451 W PackageManager: Missing required system package: com.digilocker.android, but found with extended search.
+05-11 07:59:46.282  1990  3451 W PackageManager: Missing required system package: com.dare2compete.app, but found with extended search.
+05-11 07:59:46.282  1990  3451 W PackageManager: Missing required system package: com.cloudflare.onedotonedotonedotone, but found with extended search.
+05-11 07:59:46.283  1990  3451 W PackageManager: Missing required system package: com.catool.solitaire.card, but found with extended search.
+05-11 07:59:46.283  1990  3451 W PackageManager: Missing required system package: com.cambyte.okenscan, but found with extended search.
+05-11 07:59:46.283  1990  3451 W PackageManager: Missing required system package: com.bt.bms, but found with extended search.
+05-11 07:59:46.284  1990  3451 W PackageManager: Missing required system package: com.blackout.spades, but found with extended search.
+05-11 07:59:46.284  1990  3451 W PackageManager: Missing required system package: com.azefsw.audioconnect, but found with extended search.
+05-11 07:59:46.284  1990  3451 W PackageManager: Missing required system package: com.application.zomato, but found with extended search.
+05-11 07:59:46.285  1990  3451 W PackageManager: Missing required system package: com.anthropic.claude, but found with extended search.
+05-11 07:59:46.285  1990  3451 W PackageManager: Missing required system package: com.amar.vault, but found with extended search.
+05-11 07:59:46.285  1990  3451 W PackageManager: Missing required system package: com.Dominos, but found with extended search.
+05-11 07:59:46.286  1990  3451 W PackageManager: Missing required system package: app.revanced.manager.flutter, but found with extended search.
+05-11 07:59:46.286  1990  3451 W PackageManager: Missing required system package: app.revanced.android.gms, but found with extended search.
+05-11 07:59:46.286  1990  3451 W PackageManager: Missing required system package: app.netmirror.netmirrornew, but found with extended search.
+05-11 07:59:46.287  1990  3451 W PackageManager: Missing required system package: all.documentreader.filereader.office.viewer, but found with extended search.
+05-11 07:59:46.287  1990  3451 W PackageManager: Missing required system package: ai.character.app, but found with extended search.
+05-11 07:59:46.288  1990  3451 W PackageManager: Missing required system package: com.spotify.music, but found with extended search.
+05-11 07:59:46.288  1990  3451 W PackageManager: Missing required system package: com.pinterest, but found with extended search.
+05-11 07:59:46.289  1990  3451 W PackageManager: Missing required system package: com.jio.myjio, but found with extended search.
+05-11 07:59:46.289  1990  3451 W PackageManager: Missing required system package: com.grofers.customerapp, but found with extended search.
+05-11 07:59:46.290  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.youtube.creator, but found with extended search.
+05-11 07:59:46.290 14648 14648 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:46.290  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.sheets, but found with extended search.
+05-11 07:59:46.290  1990  3451 W PackageManager: Missing required system package: com.google.android.apps.docs.editors.docs, but found with extended search.
+05-11 07:59:46.290  1990  3451 W PackageManager: Missing required system package: com.dopuz.klotski.riddle, but found with extended search.
+05-11 07:59:46.290 14648 14648 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:46.291  1990  3451 W PackageManager: Missing required system package: com.couchsurfing.mobile.android, but found with extended search.
+05-11 07:59:46.291 14648 14648 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:46.291  1990  3451 W PackageManager: Missing required system package: com.brave.browser, but found with extended search.
+05-11 07:59:46.291 14648 14648 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:46.291  1990  3451 W PackageManager: Missing required system package: app.revanced.android.apps.youtube.music, but found with extended search.
+05-11 07:59:46.293 14648 14648 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:46.294 14648 14648 W ding:background: Failed to find entry 'classes.dex': Entry not found
+05-11 07:59:46.295 14648 14648 D nativeloader: Configuring clns-7 for other apk /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/base.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.arm64_v8a.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.en.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_data_loader.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_data_loader.config.arm64_v8a.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_webrtc_native_lib.apk:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_phonesky_webrtc_native_lib.config.arm64_v8a.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/lib/arm64:/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.and
+05-11 07:59:46.303 14648 14648 V GraphicsEnvironment: Currently set values for:
+05-11 07:59:46.303 14648 14648 V GraphicsEnvironment:   angle_gl_driver_selection_pkgs=[]
+05-11 07:59:46.303 14648 14648 V GraphicsEnvironment:   angle_gl_driver_selection_values=[]
+05-11 07:59:46.303 14648 14648 V GraphicsEnvironment: Global.Settings values are invalid: number of packages: 0, number of values: 0
+05-11 07:59:46.303 14648 14648 V GraphicsEnvironment: Neither updatable production driver nor prerelease driver is supported.
+05-11 07:59:46.312 14002 14200 I PlayCore: UID: [10386]  PID: [14002] OnRequestInstallCallback : onRequestInfo
+05-11 07:59:46.313 14002 14012 I PlayCore: UID: [10386]  PID: [14002] OnRequestInstallCallback : onRequestInfo
+05-11 07:59:46.313 14002 14013 I PlayCore: UID: [10386]  PID: [14002] OnRequestInstallCallback : onRequestInfo
+05-11 07:59:46.313 14002 14015 I PlayCore: UID: [10386]  PID: [14002] OnRequestInstallCallback : onRequestInfo
+05-11 07:59:46.314 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Leaving the connection open for other ongoing calls.
+05-11 07:59:46.314 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Leaving the connection open for other ongoing calls.
+05-11 07:59:46.314 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Leaving the connection open for other ongoing calls.
+05-11 07:59:46.314 14002 14411 I PlayCore: UID: [10386]  PID: [14002] AppUpdateService : Unbind from service.
+05-11 07:59:46.315 14648 14648 I Finsky:background: [2] Process created at version: 51.2.34-31 [0] [PR] 908936081
+05-11 07:59:46.323 14648 14648 I Finsky:background: [2] [BGP] Initializing early flags...
+05-11 07:59:46.323 14648 14648 I Finsky:background: [2] [BGP] Initializing Gservices...
+05-11 07:59:46.325 14648 14648 I Finsky:background: [2] [BGP] Initializing flags...
+05-11 07:59:46.326 14421 14421 I Finsky  : [2] Memory trim requested to level 40
+05-11 07:59:46.326 14421 14421 I Finsky  : [2] Flushing in-memory image cache
+05-11 07:59:46.342 14648 14648 I Finsky:background: [2] Finished reading experiment flags from file [0tGUNCGIkbk4o6-fQ335kUYSKwVj4lusnHT-A5Dsy08] numFlags=2303.
+05-11 07:59:46.361 14648 14730 D nativeloader: Load /data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/split_config.arm64_v8a.apk!/lib/arm64-v8a/libmappedcountercacheversionjni.so using class loader ns clns-7 (caller=/data/app/~~x_Lx-ESP9Fgo5x35xMFTTw==/com.android.vending-RQOcbskMiUbixntGGma31A==/base.apk): ok
+05-11 07:59:46.391 14648 14648 I Finsky:background: [2] Finished reading experiment flags from file [iVEbirjHlHHAYvgqlG_UjYLf2qOmgv_vf_zrdOdF-AQ] numFlags=2004.
+05-11 07:59:46.394 14648 14648 I Finsky:background: [2] Finished reading experiment flags from file [U6QYB0P1L3EsTmVEX8vPwHb9ZDRsaSwWz4QZs5aMCSc] numFlags=2004.
+05-11 07:59:46.400 14648 14648 I Finsky:background: [2] Finished reading experiment flags from file [_vfmduVnP-lY_-lglTl3zCWpYB6WHw1gFVw09iFlcgM] numFlags=2004.
+05-11 07:59:46.403 14648 14648 I Finsky:background: [2] Finished reading experiment flags from file [tNusFTu2Lf4iTAmK7bwB0ksUDRe-SzJpAzC88gN-Mds] numFlags=2004.
+05-11 07:59:46.409 14648 14648 I Finsky:background: [2] Finished reading experiment flags from file [XQzIQmk9McLj8bNtzw6tvfHZ8Ga3NvuEV_ScikzI5Rg] numFlags=2004.
+05-11 07:59:46.412 14648 14648 I Finsky:background: [2] Finished reading experiment flags from file [rSe4qG6X77Kuy1mJK3rJKA9LZc8i2h85NocgQrgEzs8] numFlags=2004.
+05-11 07:59:46.414 14648 14648 I Finsky:background: [2] [BGP] Initializing crash detector...
+05-11 07:59:46.417 14648 14648 I Finsky:background: [2] ajkm - Registering in memory receiver for android.intent.action.PACKAGE_ADDED and android.intent.action.PACKAGE_REMOVED
+05-11 07:59:46.424 14648 14648 I Typeface: updateThemeFont new=Rookery-Regular;old=sans-serif;new=Rookery-Stacked;old=
+05-11 07:59:46.426  1990  3614 I ActivityManager: Flag disabled. Ignoring finishAttachApplication from uid: 10212. pid: 14648
+05-11 07:59:46.436 14648 14648 I Finsky:background: [2] This process start was not selected for Play memory metrics collection.
+05-11 07:59:46.442 14648 14648 I Finsky:background: [2] Memory trim requested to level 40
+05-11 07:59:46.449 14648 14739 W Settings: Setting download_manager_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+05-11 07:59:46.451 14648 14739 I Finsky:background: [9229] SettingNotFoundException, fall through to G.downloadBytesOverMobileMaximum
+05-11 07:59:46.451 14648 14739 W Settings: Setting download_manager_recommended_max_bytes_over_mobile has moved from android.provider.Settings.Secure to android.provider.Settings.Global.
+05-11 07:59:46.454 14648 14739 I Finsky:background: [9229] SettingNotFoundException, fall through to G.downloadBytesOverMobileRecommended
+05-11 07:59:46.454 14648 14739 I Finsky:background: [9229] registerListener
+05-11 07:59:46.457 14648 14739 I Finsky:background: [9229] DFS: Listener added for slg@2967683
+05-11 07:59:46.457 14648 14739 I Finsky:background: [9229] registerListener
+05-11 07:59:46.458 14648 14739 I Finsky:background: [9229] registerListener
+05-11 07:59:46.458 14648 14739 I Finsky:background: [9229] DFS: Listener added for anue@fd632fb
+05-11 07:59:46.478  1990  3616 D ConnectivityService: requestNetwork for uid/pid:10212/14648 activeRequest: null callbackRequest: 10083 [NetworkRequest [ REQUEST id=10084, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOST
+05-11 07:59:46.480 14648 14739 I Finsky:background: [9229] IV2: IQv2 is disabled. Recovering all active installs: []
+05-11 07:59:46.483  1990  2709 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=10084, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:46.484  1990  2709 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10084, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:46.485  1990  2709 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10084, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:46.486  1990  2709 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10084, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:46.486  1990 11413 D ConnectivityService: Returning BLOCKED NetworkInfo to uid=10212
+05-11 07:59:46.486  1990  2722 D ConnectivityService: NetReassign [10084 : null → 114] [c 0] [a 1] [i 6]
+05-11 07:59:46.491 14648 14748 I Finsky:background: [9238] IQ: Internet connection lost.
+05-11 07:59:46.494 14648 14738 I Finsky:background: [9228] Device is eligible for platform Cronet and will attempt to use it.
+05-11 07:59:46.505 14648 14753 D HttpFlagsLoader: Not loading HTTP flags because they are disabled in the manifest
+05-11 07:59:46.510  3519  3684 I ThermalEngine: ACTION: override_c - Setting override_c to 0
+05-11 07:59:46.510  3519  3684 I ThermalEngine: Monitor:INACTIVE:OVERRIDE-CHG:internal_override=1:DETECT-STANDBY=0
+05-11 07:59:46.511  3519  3683 I ThermalEngine: Thermal-Server: Thermal received msg from  override_c
+05-11 07:59:46.511  3519 14755 I Thermal-Lib: Thermal-Lib-Client: Client request sent
+05-11 07:59:46.512  3519  3684 I ThermalEngine: Monitor:ACTIVE:MON-MSM-NORMAL:battery=6:Virt-QUT=38750
+05-11 07:59:46.512 14648 14738 I cn_CronetLibraryLoader: Cronet version: 144.0.7500.8, arch: aarch64
+05-11 07:59:46.518  1990 11413 D ConnectivityService: requestNetwork for uid/pid:10212/14648 activeRequest: null callbackRequest: 10085 [NetworkRequest [ REQUEST id=10086, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]] callback flags: 0 order: 2147483647 isUidTracked: false declaredMethods: AVAIL|LOST|NC|LP
+05-11 07:59:46.519 14648 14738 I Finsky:background: [9228] CronetEngine is present. Using Cronet for the networking stack.
+05-11 07:59:46.523 14648 14747 I Finsky:background: [9237] IQ: Pruning inactive install requests
+05-11 07:59:46.524  1990  2709 D WifiNetworkFactory: got request NetworkRequest [ REQUEST id=10086, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:46.527  1990  2709 D UntrustedWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10086, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:46.529  1990  2722 D ConnectivityService: NetReassign [10086 : null → 114] [c 1] [a 1] [i 8]
+05-11 07:59:46.529  1990  2709 D OemPaidWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10086, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:46.529  1990  2709 D MultiInternetWifiNetworkFactory: got request NetworkRequest [ REQUEST id=10086, [ Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VCN_MANAGED&NOT_BANDWIDTH_CONSTRAINED Uid: 10212 RequestorUid: 10212 RequestorPkg: com.android.vending UnderlyingNetworks: Null] ]
+05-11 07:59:46.531 14648 14738 I Finsky:background: [9228] Finished reading experiment flags from file [Se-xCc4LzNyh3UrKMIU2sUf-PUKz4oQEbpKZDMuaFno] numFlags=1993.
+05-11 07:59:46.537  1990  2722 D ConnectivityService: NetReassign [no changes] [c 1] [a 1] [i 5]
+05-11 07:59:46.547 14648 14738 I Finsky:background: [9228] Subscription detail: DataSubscriptionInfo{groupIdLevel1=FFFFFFFFFFFFFFFFFFFF, serviceProviderName=[yOlW3tnQDJ1YThQMBZR88g71IOfDulvO9qZSUfyq_8k], simCarrierId=2018}
+05-11 07:59:46.558 14648 14756 W chromium: [0511/075946.557971:WARNING:external/cronet/stable/net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
+05-11 07:59:46.561 14648 14648 I Finsky:background: [2] onSubscriptionsChanged
+05-11 07:59:46.590 14421 14770 I Finsky  : [9278] SM: There are no stale sessions to be pruned
+05-11 07:59:46.592  1990  3614 W PackageManager: Missing required system package: com.instagram.android, but found with extended search.
+05-11 07:59:46.599 14421 14421 I Finsky  : [2] Connecting InstallListener to SplitInstallService broadcaster...
+05-11 07:59:46.617 14648 14756 W chromium: [0511/075946.617352:WARNING:external/cronet/stable/net/dns/dns_config_service_android.cc:69] Failed to read DnsConfig.
