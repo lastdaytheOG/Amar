@@ -4,23 +4,21 @@ import android.util.Log
 import kotlinx.coroutines.delay
 
 /**
- * Waits for an app's UI to be "ready for interaction" instead of using a
- * hardcoded delay.
+ * Waits for an app's UI to be ready for interaction.
  *
- * Why dynamic polling beats a fixed sleep:
- *   - Pixel 9: Settings paints in ~250ms. A 1500ms delay wastes 1.25s every run.
- *   - Low-end Redmi: Settings can take 2500ms. A 1500ms delay fires too early
- *     and we click on a half-loaded tree.
- *   The same code can't make both happy with a fixed value.
+ * Match semantics — PREFIX match, not exact equality.
+ *   Apps often launch through a chain of activities where the foreground
+ *   package shifts. Settings launches as `com.android.settings`, then
+ *   OEM/intelligence layers (`com.android.settings.intelligence`,
+ *   `com.motorola.coresettingsext`) can take over briefly without us
+ *   knowing. Prefix-matching keeps the wait useful through those flips.
  *
  * Definition of "ready":
- *   The foreground snapshot matches the target package AND the tree contains
- *   more than [minElements] nodes. A splash screen typically has 1-3 nodes;
- *   a real UI has 10+. We default to >5 to clear loading screens without
- *   demanding a full content render.
+ *   Foreground package prefix matches target AND the tree has at least
+ *   [minElements] visible nodes. Splash screens have 1-3 nodes; a real
+ *   UI has 10+.
  *
- * Returns:
- *   The settled [UiSnapshot] on success, or null on timeout.
+ * Returns the settled snapshot, or null on timeout.
  */
 object UiReadinessWaiter {
 
@@ -29,17 +27,6 @@ object UiReadinessWaiter {
     private const val DEFAULT_MIN_ELEMENTS = 5
     private const val DEFAULT_TIMEOUT_MS = 4_000L
 
-    /**
-     * Poll the accessibility tree until [targetPackage] is foreground and
-     * the tree has at least [minElements] nodes.
-     *
-     * @param svc Bound PerceptionService.
-     * @param targetPackage Package id we expect to see foreground.
-     * @param timeoutMs Hard cap on waiting. Default 4s.
-     * @param minElements Minimum tree size to consider "rendered". Default 5.
-     * @param pollIntervalMs Time between snapshot attempts. Default 150ms.
-     * @return The settled snapshot, or null on timeout.
-     */
     suspend fun waitForUi(
         svc: PerceptionService,
         targetPackage: String,
@@ -49,21 +36,32 @@ object UiReadinessWaiter {
     ): UiSnapshot? {
         val startTime = System.currentTimeMillis()
         var latest: UiSnapshot? = null
+        var pollCount = 0
+        val targetPrefix = targetPackage.trimEnd('.')
 
         while (System.currentTimeMillis() - startTime < timeoutMs) {
             latest = svc.forceSnapshot()
+            pollCount++
 
-            if (latest.packageId == targetPackage && latest.size > minElements) {
+            val snapPkg = latest.packageId ?: ""
+            val elements = latest.size
+            val packageMatches = snapPkg.startsWith(targetPrefix)
+            val enoughElements = elements >= minElements
+
+            Log.i(TAG, "poll #$pollCount: target=$targetPrefix saw=$snapPkg " +
+                    "elements=$elements pkgMatch=$packageMatches")
+
+            if (packageMatches && enoughElements) {
                 Log.i(TAG, "UI settled in ${System.currentTimeMillis() - startTime}ms " +
-                        "(pkg=${latest.packageId}, elements=${latest.size})")
+                        "(saw=$snapPkg elements=$elements)")
                 return latest
             }
 
             delay(pollIntervalMs)
         }
 
-        Log.w(TAG, "Timeout waiting for $targetPackage " +
-                "(last pkg=${latest?.packageId}, elements=${latest?.size})")
+        Log.w(TAG, "Timeout after ${System.currentTimeMillis() - startTime}ms for $targetPrefix " +
+                "(last saw=${latest?.packageId} elements=${latest?.size} polls=$pollCount)")
         return null
     }
 }

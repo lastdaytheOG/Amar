@@ -235,6 +235,10 @@ class CapabilityRouter @Inject constructor(
          */
         private val CAPABILITIES: Map<String, AppCapabilities> = mapOf(
 
+            "com.android.settings" to AppCapabilities(
+                supportsActionSearch = true
+            ),
+
             "com.google.android.youtube" to AppCapabilities(
                 supportsActionSearch = true
             ),
@@ -284,17 +288,24 @@ class CapabilityRouter @Inject constructor(
             ),
 
             "com.grofers.customerapp" to AppCapabilities(
-                supportsActionSearch = false,
-                orderWorkflowId = "blinkit_order_v1"
-            ),
-
-            "com.grofers.customerapp" to AppCapabilities(
-                supportsActionSearch = false,
+                supportsActionSearch = true,
                 orderWorkflowId = "blinkit_order_v1"
             ),
             "app.blinkit.consumer" to AppCapabilities(
-                supportsActionSearch = false,
+                supportsActionSearch = true,
                 orderWorkflowId = "blinkit_order_v1"
+            ),
+            "com.zepto.consumer" to AppCapabilities(
+                supportsActionSearch = true
+            ),
+            "in.swiggy.android" to AppCapabilities(
+                supportsActionSearch = true
+            ),
+            "com.application.zomato" to AppCapabilities(
+                supportsActionSearch = true
+            ),
+            "com.jio.retail.etailer" to AppCapabilities(
+                supportsActionSearch = true
             )
         )
     }

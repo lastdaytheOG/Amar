@@ -44,9 +44,13 @@ class NativeSearchExecutor @Inject constructor(
                     route = "native_search_deep_link"
                 )
             } catch (t: Throwable) {
-                ExecutionOutcome.Failed(
+                // Deep link failed (e.g., OEM removed the activity class).
+                // Return NotSupported so the coordinator falls back to UiSearch.
+                android.util.Log.w("NativeSearchExecutor",
+                    "Deep link failed for ${plan.packageId}, falling back: ${t.message}")
+                ExecutionOutcome.NotSupported(
                     packageId = plan.packageId,
-                    detail = t.message ?: t::class.simpleName.orEmpty(),
+                    detail = "deep link failed: ${t.message ?: t::class.simpleName.orEmpty()}",
                     durationMs = System.currentTimeMillis() - started
                 )
             }
@@ -92,6 +96,22 @@ class NativeSearchExecutor @Inject constructor(
         val encodedQuery = android.net.Uri.encode(query)
 
         return when (packageId) {
+            "com.android.settings" -> {
+                // Strategy: try the AOSP SearchActivity directly. On AOSP 12+
+                // and most OEMs, com.android.settings.search.SearchActivity is
+                // exported and accepts a "query" extra to pre-fill the search.
+                // If the class doesn't exist on this OEM, NativeSearchExecutor
+                // catches the ActivityNotFoundException and falls back to
+                // UiSearch via the NotSupported path.
+                Intent().apply {
+                    setClassName(
+                        "com.android.settings",
+                        "com.android.settings.Settings\$SearchSettingsActivity"
+                    )
+                    putExtra("query", query)
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }
+            }
             "com.google.android.youtube" -> Intent(Intent.ACTION_SEARCH).apply {
                 setPackage("com.google.android.youtube")
                 putExtra(SearchManager.QUERY, query)
@@ -137,6 +157,42 @@ class NativeSearchExecutor @Inject constructor(
             "com.google.android.googlequicksearchbox" -> Intent(Intent.ACTION_WEB_SEARCH).apply {
                 setPackage("com.google.android.googlequicksearchbox")
                 putExtra(SearchManager.QUERY, query)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            // --- Indian delivery / grocery apps -------------------------------
+            "app.blinkit.consumer", "com.grofers.customerapp" -> Intent(
+                Intent.ACTION_VIEW,
+                android.net.Uri.parse("https://blinkit.com/s/?q=$encodedQuery")
+            ).apply {
+                setPackage(packageId)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            "com.zepto.consumer" -> Intent(
+                Intent.ACTION_VIEW,
+                android.net.Uri.parse("https://www.zeptonow.com/search?query=$encodedQuery")
+            ).apply {
+                setPackage("com.zepto.consumer")
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            "in.swiggy.android" -> Intent(
+                Intent.ACTION_VIEW,
+                android.net.Uri.parse("https://www.swiggy.com/search?query=$encodedQuery")
+            ).apply {
+                setPackage("in.swiggy.android")
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            "com.application.zomato" -> Intent(
+                Intent.ACTION_VIEW,
+                android.net.Uri.parse("https://www.zomato.com/search?q=$encodedQuery")
+            ).apply {
+                setPackage("com.application.zomato")
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            "com.jio.retail.etailer" -> Intent(
+                Intent.ACTION_VIEW,
+                android.net.Uri.parse("https://www.jiomart.com/search/$encodedQuery")
+            ).apply {
+                setPackage("com.jio.retail.etailer")
                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             }
             else -> null

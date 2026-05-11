@@ -79,6 +79,15 @@ class SearchAppExecutor(
         val encodedQuery = Uri.encode(query)
 
         return when (normalizedApp) {
+            "settings" -> Intent().apply {
+                setClassName(
+                    "com.android.settings",
+                    "com.android.settings.Settings\$SearchSettingsActivity"
+                )
+                putExtra("query", query)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+
             "youtube" -> Intent(Intent.ACTION_SEARCH).apply {
                 `package` = "com.google.android.youtube"
                 putExtra(SearchManager.QUERY, query)
@@ -334,6 +343,7 @@ class SearchAppExecutor(
         private const val TAG = "SearchAppExecutor"
 
         private val COMMON_APPS = mapOf(
+            "settings"    to listOf("com.android.settings"),
             "youtube"     to listOf("com.google.android.youtube"),
             "spotify"     to listOf("com.spotify.music"),
             "chrome"      to listOf("com.android.chrome"),
