@@ -160,7 +160,8 @@ enum class TargetStrategy {
     @SerialName("text")                      TEXT,
     @SerialName("content_desc")              CONTENT_DESC,
     @SerialName("resource_id")               RESOURCE_ID,
-    @SerialName("first_clickable_in_grid")   FIRST_CLICKABLE_IN_GRID
+    @SerialName("first_clickable_in_grid")   FIRST_CLICKABLE_IN_GRID,
+    @SerialName("focused_editable")          FOCUSED_EDITABLE
 }
 
 @Serializable

@@ -7,3 +7,7 @@ app/src/main/ml/
 .idea/
 build/
 .gradle/
+.gradle/
+*.txt
+*.xml
+whatsapp_tree.xml

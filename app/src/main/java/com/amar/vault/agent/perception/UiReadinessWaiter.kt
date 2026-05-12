@@ -3,23 +3,6 @@ package com.amar.vault.agent.perception
 import android.util.Log
 import kotlinx.coroutines.delay
 
-/**
- * Waits for an app's UI to be ready for interaction.
- *
- * Match semantics — PREFIX match, not exact equality.
- *   Apps often launch through a chain of activities where the foreground
- *   package shifts. Settings launches as `com.android.settings`, then
- *   OEM/intelligence layers (`com.android.settings.intelligence`,
- *   `com.motorola.coresettingsext`) can take over briefly without us
- *   knowing. Prefix-matching keeps the wait useful through those flips.
- *
- * Definition of "ready":
- *   Foreground package prefix matches target AND the tree has at least
- *   [minElements] visible nodes. Splash screens have 1-3 nodes; a real
- *   UI has 10+.
- *
- * Returns the settled snapshot, or null on timeout.
- */
 object UiReadinessWaiter {
 
     private const val TAG = "UiReadinessWaiter"
@@ -27,41 +10,91 @@ object UiReadinessWaiter {
     private const val DEFAULT_MIN_ELEMENTS = 5
     private const val DEFAULT_TIMEOUT_MS = 4_000L
 
+    // Packages known to need longer warmup (Chromium a11y bridge,
+    // WebView init, Compose first-frame). Prefix match.
+    private val SLOW_WARMUP_PACKAGES = mapOf(
+        "com.brave.browser" to 8_000L,
+        "com.android.chrome" to 8_000L,
+        "com.microsoft.emmx" to 8_000L,
+        "org.mozilla.firefox" to 8_000L,
+        "com.duckduckgo" to 8_000L,
+        "com.openai.chatgpt" to 8_000L,
+        "com.anthropic.claude" to 8_000L,
+    )
+
+    private fun timeoutFor(targetPrefix: String, override: Long?): Long {
+        if (override != null) return override
+
+        SLOW_WARMUP_PACKAGES.forEach { (pkg, timeout) ->
+            if (targetPrefix.startsWith(pkg)) return timeout
+        }
+
+        return DEFAULT_TIMEOUT_MS
+    }
+
     suspend fun waitForUi(
         svc: PerceptionService,
         targetPackage: String,
-        timeoutMs: Long = DEFAULT_TIMEOUT_MS,
+        timeoutMs: Long? = null,
         minElements: Int = DEFAULT_MIN_ELEMENTS,
         pollIntervalMs: Long = DEFAULT_POLL_INTERVAL_MS
     ): UiSnapshot? {
+
+        val targetPrefix = targetPackage.trimEnd('.')
+        val effectiveTimeout = timeoutFor(targetPrefix, timeoutMs)
+
         val startTime = System.currentTimeMillis()
         var latest: UiSnapshot? = null
         var pollCount = 0
-        val targetPrefix = targetPackage.trimEnd('.')
 
-        while (System.currentTimeMillis() - startTime < timeoutMs) {
+        Log.i(
+            TAG,
+            "waitForUi start: target=$targetPrefix timeout=${effectiveTimeout}ms"
+        )
+
+        while (System.currentTimeMillis() - startTime < effectiveTimeout) {
+
             latest = svc.forceSnapshot()
             pollCount++
 
             val snapPkg = latest.packageId ?: ""
             val elements = latest.size
+            val clickableCount = latest.elements.count { it.clickable }
+            val editableCount = latest.elements.count { it.editable }
+
             val packageMatches = snapPkg.startsWith(targetPrefix)
             val enoughElements = elements >= minElements
 
-            Log.i(TAG, "poll #$pollCount: target=$targetPrefix saw=$snapPkg " +
-                    "elements=$elements pkgMatch=$packageMatches")
+            Log.i(
+                TAG,
+                "poll #$pollCount: target=$targetPrefix saw=$snapPkg " +
+                        "elements=$elements (click:$clickableCount edit:$editableCount) " +
+                        "pkgMatch=$packageMatches"
+            )
 
             if (packageMatches && enoughElements) {
-                Log.i(TAG, "UI settled in ${System.currentTimeMillis() - startTime}ms " +
-                        "(saw=$snapPkg elements=$elements)")
+
+                Log.i(
+                    TAG,
+                    "UI settled in ${System.currentTimeMillis() - startTime}ms " +
+                            "(saw=$snapPkg elements=$elements " +
+                            "click=$clickableCount edit=$editableCount)"
+                )
+
                 return latest
             }
 
             delay(pollIntervalMs)
         }
 
-        Log.w(TAG, "Timeout after ${System.currentTimeMillis() - startTime}ms for $targetPrefix " +
-                "(last saw=${latest?.packageId} elements=${latest?.size} polls=$pollCount)")
+        Log.w(
+            TAG,
+            "Timeout after ${System.currentTimeMillis() - startTime}ms " +
+                    "for $targetPrefix " +
+                    "(last saw=${latest?.packageId} " +
+                    "elements=${latest?.size} polls=$pollCount)"
+        )
+
         return null
     }
 }

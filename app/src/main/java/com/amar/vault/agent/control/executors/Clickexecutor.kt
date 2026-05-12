@@ -67,8 +67,8 @@ class ClickExecutor(
             )
 
         // A matched node may not itself be clickable in Compose-based UIs where
-        // the clickable wrapper sits 1-2 levels above the visually-interactive child.
-        val clickable = LiveNodeFinder.findAncestor(liveNode, maxHops = 2) { it.isClickable }
+        // the clickable wrapper sits several levels above the visually-interactive child.
+        val clickable = LiveNodeFinder.findAncestor(liveNode, maxHops = 5) { it.isClickable }
         if (clickable == null) {
             LiveNodeFinder.safeRecycle(liveNode)
             return ExecutionResult.Failed(

@@ -75,7 +75,8 @@ class TypeTextExecutor(
         // The target should have been an editable field. If it wasn't, that's a
         // plan-quality issue — return TargetNotFound rather than silently typing
         // into a non-editable view and failing verify later.
-        if (!element.editable && element.type != UiElementType.INPUT) {
+        if (type.strategy != com.amar.vault.agent.dsl.TargetStrategy.FOCUSED_EDITABLE &&
+            !element.editable && element.type != UiElementType.INPUT) {
             return ExecutionResult.Failed(
                 reason = FailureReason.TargetNotFound(
                     target = type.target,

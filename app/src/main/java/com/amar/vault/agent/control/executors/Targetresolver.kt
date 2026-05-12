@@ -76,27 +76,77 @@ object TargetResolver {
                 snapshot.findFirst(target, MatchStrategy.ANY)
             }
             TargetStrategy.FIRST_CLICKABLE_IN_GRID -> {
-                // Used by workflows (e.g. Blinkit) to tap the first product tile
-                // on a search-results / catalog screen. The `target` parameter is
-                // advisory (usually the search query); if no element matches it
-                // we fall back to "any clickable container/list-item/card".
                 tried += "first_clickable_in_grid"
                 resolveFirstClickableInGrid(snapshot, target)
+            }
+            TargetStrategy.FOCUSED_EDITABLE -> {
+                resolveFocusedEditable(snapshot, tried)
             }
         }
     }
 
     /**
-     * Pick the first element that looks like a product tile / grid cell.
-     * Heuristic:
-     *   1. Prefer clickable LIST_ITEM / CONTAINER elements whose text or
-     *      contentDesc contains [target] (when non-blank).
-     *   2. Otherwise, first clickable LIST_ITEM / CONTAINER element anywhere.
-     *   3. Otherwise, first clickable element below ~25% of screen height
-     *      (search bars live at the top; product tiles live below).
-     *   4. Otherwise, first clickable element, period.
+     * "Type into whatever is focused" strategy.
      *
-     * Returns null if absolutely nothing clickable is on screen.
+     * Fallback cascade:
+     *   1. editable && focused, real bounds       — strict, ideal
+     *   2. editable OR INPUT type, in top half    — handles Brave-style URL bars
+     *                                                that don't toggle `editable`
+     *                                                until clicked
+     *   3. any editable on screen with real bounds — last resort
+     *
+     * `isReal()` rejects ghost / zero-size nodes that occasionally appear in
+     * the A11y tree (especially WhatsApp, Brave) and would otherwise be
+     * "typed into" silently with no visible effect.
+     */
+    private fun resolveFocusedEditable(
+        snapshot: UiSnapshot,
+        tried: MutableList<String>
+    ): UiElement? {
+        // A node is "real" if it has non-zero bounds. (UiElement doesn't expose
+        // a visibleToUser flag; non-zero bounds is the closest proxy we have.)
+        val isReal: (UiElement) -> Boolean = { el ->
+            el.bounds != null && !el.bounds.isEmpty
+        }
+
+        // Tier 1: strict focused-editable
+        tried += "focused_editable"
+        snapshot.elements.firstOrNull { it.editable && it.focused && isReal(it) }
+            ?.let { return it }
+
+        // Tier 2: editable-ish in top half of screen.
+        // "Editable-ish" = el.editable=true OR type==INPUT (matches EditText/
+        // TextInputLayout/AutoCompleteTextView that haven't toggled editable
+        // yet). Spatial filter excludes bottom-anchored comment/chat boxes.
+        tried += "editable_top_half"
+        val cutoff = estimateBottomHalfCutoff(snapshot)
+        snapshot.elements.firstOrNull { el ->
+            (el.editable || el.type == UiElementType.INPUT) &&
+                    isReal(el) &&
+                    (cutoff == null || (el.bounds?.top ?: 0) <= cutoff)
+        }?.let { return it }
+
+        // Tier 3: any visible editable-ish element
+        tried += "any_visible_editable"
+        return snapshot.elements.firstOrNull { el ->
+            (el.editable || el.type == UiElementType.INPUT) && isReal(el)
+        }
+    }
+
+    /**
+     * Estimates the y-coordinate dividing top half from bottom half of the
+     * screen. Derived from the max element-bottom in the snapshot since we
+     * don't store screen height directly. Returns null if snapshot has no
+     * bounded elements.
+     */
+    private fun estimateBottomHalfCutoff(snapshot: UiSnapshot): Int? {
+        val maxBottom = snapshot.elements.mapNotNull { it.bounds?.bottom }.maxOrNull()
+            ?: return null
+        return maxBottom / 2
+    }
+
+    /**
+     * Pick the first element that looks like a product tile / grid cell.
      */
     private fun resolveFirstClickableInGrid(
         snapshot: UiSnapshot,
@@ -140,11 +190,6 @@ object TargetResolver {
         return clickables.firstOrNull()
     }
 
-    /**
-     * Estimate the pixel cutoff for "below the header region" as ~25% of
-     * screen height. Derived from the largest element bounds we see in the
-     * snapshot. Returns null if we can't determine it.
-     */
     private fun estimateTopCutoff(snapshot: UiSnapshot): Int? {
         val maxBottom = snapshot.elements
             .mapNotNull { it.bounds?.bottom }
