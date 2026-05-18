@@ -242,4 +242,37 @@ object AgentModule {
         logger = logger,
         terminalObservers = observers
     )
+
+    // -------------------------------------------------------------------------
+    // Step 9: framework adapters. Hilt multibinding collects every @IntoSet
+    // FrameworkAdapter into a Set<FrameworkAdapter> the registry consumes.
+    // -------------------------------------------------------------------------
+
+    @Provides
+    @Singleton
+    @dagger.multibindings.IntoSet
+    fun provideWhatsAppAdapter(): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
+        com.amar.vault.agent.runtime.adapters.WhatsAppAdapter()
+
+    @Provides
+    @Singleton
+    @dagger.multibindings.IntoSet
+    fun provideChatGPTAdapter(): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
+        com.amar.vault.agent.runtime.adapters.ChatGPTAdapter()
+
+    @Provides
+    @Singleton
+    @dagger.multibindings.IntoSet
+    fun provideComposeAdapter(
+        cascade: com.amar.vault.agent.runtime.injection.StrategyCascade
+    ): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
+        com.amar.vault.agent.runtime.adapters.ComposeAdapter(cascade)
+
+    @Provides
+    @Singleton
+    @dagger.multibindings.IntoSet
+    fun provideFlutterAdapter(
+        cascade: com.amar.vault.agent.runtime.injection.StrategyCascade
+    ): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
+        com.amar.vault.agent.runtime.adapters.FlutterAdapter(cascade)
 }

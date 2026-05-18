@@ -47,7 +47,8 @@ class InjectionEngine @Inject constructor(
     private val imeCoordinator: ImeCoordinator,
     private val confidence: ConfidenceEngine,
     private val cascade: StrategyCascade,
-    private val scheduler: ExecutionScheduler
+    private val scheduler: ExecutionScheduler,
+    private val adapterRegistry: com.amar.vault.agent.runtime.adapters.FrameworkAdapterRegistry
 ) {
 
     /**
@@ -114,15 +115,35 @@ class InjectionEngine @Inject constructor(
         val savedClipboard = clipboardStrategy.saveClipboard()
 
         try {
-            // Step 3: cascade.
-            val strategies = cascade.strategies()
+            // Step 3: resolve adapter (if any) and choose strategy list.
+            val adapter = adapterRegistry.adapterFor(
+                packageId = expectedIdentity.packageId,
+                className = null,   // engine sees identity, not raw className here
+                resourceId = null
+            )
+            val strategies = adapter?.overrideStrategies(expectedIdentity)
+                ?: cascade.strategies()
+
+            if (adapter != null) {
+                Log.i(TAG, "ADAPTER_ACTIVE name=${adapter.adapterName} " +
+                        "strategies=${strategies.joinToString(",") { it.name }}")
+            }
+
             for ((idx, strategy) in strategies.withIndex()) {
+                // Adapter-specific per-strategy delay (e.g. Flutter rebuild settle).
+                val extraDelay = adapter?.perStrategyDelayMs(strategy, idx) ?: 0L
+                if (extraDelay > 0L) {
+                    Log.i(TAG, "ADAPTER_DELAY strategy=${strategy.name} idx=$idx waitMs=$extraDelay")
+                    kotlinx.coroutines.delay(extraDelay)
+                }
+
                 val attemptStart = System.currentTimeMillis()
                 val attempt = tryStrategy(
                     strategy = strategy,
                     text = text,
                     expectedIdentity = expectedIdentity,
-                    verifyTimeoutMs = perStrategyVerifyTimeoutMs
+                    verifyTimeoutMs = perStrategyVerifyTimeoutMs,
+                    clearBeforeInject = adapter?.shouldClearBeforeInject(expectedIdentity, idx) ?: false
                 )
                 attempts += attempt
                 Log.i(TAG, "ATTEMPT[$idx] ${attempt.strategy} mechanical=${attempt.mechanicalSuccess} " +
@@ -169,14 +190,15 @@ class InjectionEngine @Inject constructor(
     }
 
     /**
-     * Try a single strategy: acquire fresh node, verify identity, inject,
-     * verify mutation.
+     * Try a single strategy: acquire fresh node, verify identity,
+     * (optionally clear), inject, verify mutation.
      */
     private suspend fun tryStrategy(
         strategy: InjectionStrategy,
         text: String,
         expectedIdentity: SemanticIdentity,
-        verifyTimeoutMs: Long
+        verifyTimeoutMs: Long,
+        clearBeforeInject: Boolean = false
     ): StrategyAttempt {
         val attemptStart = System.currentTimeMillis()
 
@@ -225,6 +247,23 @@ class InjectionEngine @Inject constructor(
         // strategy used is now stale and we cannot trust the read-back without
         // re-acquiring. ConfidenceEngine handles this by polling refresh().
         val genBefore = RootGeneration.current()
+
+        // Adapter-requested clear: select-all + replace with empty. Prevents
+        // concatenation on retry attempts in apps that don't replace on SET_TEXT.
+        if (clearBeforeInject) {
+            try {
+                val selArgs = android.os.Bundle().apply {
+                    putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_START_INT, 0)
+                    putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_END_INT, Int.MAX_VALUE)
+                }
+                node.performAction(AccessibilityNodeInfo.ACTION_SET_SELECTION, selArgs)
+
+                val clearArgs = android.os.Bundle().apply {
+                    putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, "")
+                }
+                node.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, clearArgs)
+            } catch (_: Throwable) { /* best-effort */ }
+        }
 
         // Run the strategy.
         val mechanicalSuccess = strategy.inject(node, text, expectedIdentity)

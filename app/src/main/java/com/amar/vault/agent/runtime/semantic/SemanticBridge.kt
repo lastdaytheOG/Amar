@@ -43,7 +43,8 @@ import javax.inject.Singleton
 class SemanticBridge @Inject constructor(
     private val bus: AccessibilityEventBus,
     private val store: WorldStateStore,
-    private val resolver: SemanticResolver
+    private val resolver: SemanticResolver,
+    private val adapterRegistry: com.amar.vault.agent.runtime.adapters.FrameworkAdapterRegistry
 ) {
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
@@ -119,7 +120,18 @@ class SemanticBridge @Inject constructor(
 
             val generationId = com.amar.vault.agent.perception.RootGeneration.current()
 
-            val identity = resolver.resolveFocused(
+            // Step 9: ask the framework adapter first. If it returns a typed
+            // identity, use that. Otherwise (null) fall through to the generic
+            // resolver. This lets per-app adapters classify their own fields
+            // (WhatsApp's "Ask Meta AI or Search", ChatGPT's "prompt-textarea"
+            // resource_id, Flutter's shadow nodes) without modifying the
+            // generic resolver.
+            val adapter = adapterRegistry.adapterFor(
+                packageId = pkg,
+                className = className,
+                resourceId = resourceId
+            )
+            val adapterIdentity = adapter?.classifyFocusedNode(
                 packageId = pkg,
                 resourceId = resourceId,
                 contentDesc = contentDesc,
@@ -129,6 +141,20 @@ class SemanticBridge @Inject constructor(
                 boundsQuadrant = quadrant,
                 generationId = generationId
             )
+            val identity = adapterIdentity ?: resolver.resolveFocused(
+                packageId = pkg,
+                resourceId = resourceId,
+                contentDesc = contentDesc,
+                hint = hint,
+                className = className,
+                isEditable = isEditable,
+                boundsQuadrant = quadrant,
+                generationId = generationId
+            )
+            if (adapterIdentity != null) {
+                Log.i(TAG, "ADAPTER_CLASSIFY pkg=$pkg adapter=${adapter?.adapterName} " +
+                        "role=${adapterIdentity::class.simpleName}")
+            }
 
             // Patch WorldState directly. We can't go through the reducer
             // because reduce() is pure — and this upgrade IS the result of
