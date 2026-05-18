@@ -154,6 +154,13 @@ object ActionValidator {
                     )
             }
 
+            is AgentAction.GestureTap -> {
+                if (action.target.isBlank())
+                    reasons += ValidationReason.InvalidParamValue(
+                        "gesture_tap", "target", "must be non-empty"
+                    )
+            }
+
             is AgentAction.TypeText -> {
                 if (action.target.isBlank())
                     reasons += ValidationReason.InvalidParamValue(
@@ -309,6 +316,7 @@ internal val AgentJsonInternal: Json = Json {
             subclass(AgentAction.MakeCall::class)
             subclass(AgentAction.SendMessage::class)
             subclass(AgentAction.Click::class)
+            subclass(AgentAction.GestureTap::class)
             subclass(AgentAction.TypeText::class)
             subclass(AgentAction.Scroll::class)
             subclass(AgentAction.Wait::class)

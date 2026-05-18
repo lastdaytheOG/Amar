@@ -177,8 +177,25 @@ object TreeWalker {
         try { node.recycle() } catch (t: Throwable) { /* already recycled or released */ }
     }
 
+    /**
+     * Visibility gate. v2 (Fix B):
+     *
+     *   Original logic dropped any node where node.isVisibleToUser == false. That
+     *   filter is too aggressive: Android's framework reports isVisibleToUser=false
+     *   for nodes that ARE on screen but are clipped, partially covered, or have
+     *   a parent flagged as "not important for accessibility." WhatsApp's
+     *   `my_search_bar` FrameLayout and the lazy-inflated `search_input` EditText
+     *   both fall into this trap (confirmed via uiautomator dump showing the nodes
+     *   present, but TreeWalker emitting only 15-16 of WhatsApp's hundreds of nodes).
+     *
+     *   v2 drops the isVisibleToUser check and trusts on-screen bounds only.
+     *   A node with non-empty bounds inside the window is considered visible.
+     *   Downstream filters (ElementClassifier.isNoteworthy) still reject junk.
+     *
+     *   This roughly doubles snapshot size. SnapshotCache MAX_ELEMENTS cap still
+     *   applies, so worst case is graceful truncation, not OOM.
+     */
     private fun isVisible(node: AccessibilityNodeInfo, tmp: Rect): Boolean = try {
-        if (!node.isVisibleToUser) return false
         node.getBoundsInScreen(tmp)
         !tmp.isEmpty
     } catch (t: Throwable) {

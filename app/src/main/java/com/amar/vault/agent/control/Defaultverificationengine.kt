@@ -4,6 +4,9 @@ import android.app.ActivityManager
 import android.content.Context
 import android.util.Log
 import com.amar.vault.agent.dsl.VerifySpec
+import com.amar.vault.agent.perception.PerceptionDiagnostics
+import com.amar.vault.agent.perception.PerceptionService
+import com.amar.vault.agent.perception.SearchContextVerifier
 import com.amar.vault.agent.perception.SnapshotCache
 import com.amar.vault.agent.perception.UiSnapshot
 import kotlinx.coroutines.delay
@@ -41,6 +44,8 @@ class DefaultVerificationEngine(
                 delay(TEXT_SENT_WAIT_MS)
                 true
             }
+
+            is VerifySpec.SearchOpened -> verifySearchOpened(ctx)
 
             is VerifySpec.Unknown -> {
                 delay(UNKNOWN_VERIFY_WAIT_MS)
@@ -112,6 +117,63 @@ class DefaultVerificationEngine(
         return result ?: false
     }
 
+    /**
+     * Semantic search context verification.
+     *
+     * Replaces blind structural-change verification. Polls the snapshot cache
+     * for POSITIVE evidence of search context (editable nodes, search hints)
+     * and rejects screens with disqualifying semantics (scan/qr/camera/payment/upi).
+     *
+     * This is the critical fix for the WhatsApp false positive where QR scanner
+     * opening was incorrectly treated as "search opened" due to large structural change.
+     */
+    private suspend fun verifySearchOpened(ctx: TaskContext): Boolean {
+        val result = withTimeoutOrNull(SEARCH_OPENED_TIMEOUT_MS) {
+            while (true) {
+                if (ctx.isCancelRequested) return@withTimeoutOrNull false
+
+                val snapshot = snapshotCache.currentAnyAge()
+                if (snapshot != null) {
+                    val verification = SearchContextVerifier.verifySearchContext(snapshot)
+
+                    if (verification.isSearchContext) {
+                        Log.i(TAG, "SearchOpened verification PASSED: ${verification.toLogString()}")
+                        return@withTimeoutOrNull true
+                    }
+
+                    // If we see disqualifying semantics, fail immediately — don't wait.
+                    // The screen is definitively NOT a search context.
+                    if (verification.negativeSignals.isNotEmpty()) {
+                        Log.e(TAG, "SearchOpened verification FAILED (disqualifiers found): " +
+                                "${verification.toLogString()}")
+
+                        // Run perception diagnostic for debugging
+                        val service = PerceptionService.get()
+                        if (service != null && snapshot.elements.size < 20) {
+                            Log.e(TAG, "Running perception diagnostic due to undersized snapshot")
+                            PerceptionDiagnostics.runDiagnostic(service)
+                        }
+
+                        return@withTimeoutOrNull false
+                    }
+
+                    // No positive and no negative — keep polling (UI may still be transitioning)
+                    Log.d(TAG, "SearchOpened: no evidence yet (elements=${snapshot.elements.size}), polling...")
+                }
+
+                delay(POLL_INTERVAL_MS)
+            }
+            @Suppress("UNREACHABLE_CODE") false
+        }
+
+        if (result == null || !result) {
+            Log.w(TAG, "SearchOpened verification timed out or failed; rejecting")
+            return false
+        }
+
+        return true
+    }
+
     companion object {
         private const val TAG = "VerificationEngine"
 
@@ -120,5 +182,6 @@ class DefaultVerificationEngine(
         private const val POLL_INTERVAL_MS = 150L
         private const val UNKNOWN_VERIFY_WAIT_MS = 400L
         private const val TEXT_SENT_WAIT_MS = 1_500L
+        private const val SEARCH_OPENED_TIMEOUT_MS = 4_000L
     }
 }

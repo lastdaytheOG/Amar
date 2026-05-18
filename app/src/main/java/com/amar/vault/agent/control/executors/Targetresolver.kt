@@ -1,5 +1,7 @@
 package com.amar.vault.agent.control.executors
 
+import com.amar.vault.agent.AgentStateHolder
+import com.amar.vault.agent.control.AgentPhase
 import com.amar.vault.agent.dsl.TargetStrategy
 import com.amar.vault.agent.perception.CaptureReason
 import com.amar.vault.agent.perception.MatchStrategy
@@ -66,6 +68,10 @@ object TargetResolver {
                 snapshot.findFirst(target, MatchStrategy.CONTENT_DESC)
             }
             TargetStrategy.AUTO -> {
+                // Semantic matching FIRST — finds elements by their actual
+                // accessibility labels, resource IDs, or text. This correctly
+                // identifies WhatsApp's search icon (contentDescription="Search")
+                // instead of blindly guessing by geometry.
                 tried += "resource_id"
                 snapshot.findFirst(target, MatchStrategy.RESOURCE_ID)?.let { return it }
                 tried += "content_desc"
@@ -73,7 +79,15 @@ object TargetResolver {
                 tried += "text"
                 snapshot.findFirst(target, MatchStrategy.TEXT)?.let { return it }
                 tried += "any"
-                snapshot.findFirst(target, MatchStrategy.ANY)
+                snapshot.findFirst(target, MatchStrategy.ANY)?.let { return it }
+
+                // StructuralDNA is a LAST RESORT geometric fallback.
+                // It CANNOT distinguish a search icon from a sticker/camera/menu icon.
+                // Only use it when all semantic matchers above found nothing.
+                if (target.contains("search", ignoreCase = true)) {
+                    resolveByStructuralDna(snapshot, tried)?.let { return it }
+                }
+                null
             }
             TargetStrategy.FIRST_CLICKABLE_IN_GRID -> {
                 tried += "first_clickable_in_grid"
@@ -82,7 +96,148 @@ object TargetResolver {
             TargetStrategy.FOCUSED_EDITABLE -> {
                 resolveFocusedEditable(snapshot, tried)
             }
+            TargetStrategy.STRUCTURAL_DNA -> {
+                resolveByStructuralDna(snapshot, tried)
+            }
         }
+    }
+
+    /**
+     * Phase 2 (Elite Tier): Probabilistic Structural DNA Scoring
+     * Instead of strict boolean cutoffs, we score every element on the screen.
+     * The highest scoring element that passes a minimum confidence threshold wins.
+     */
+    private fun resolveByStructuralDna(
+        snapshot: UiSnapshot,
+        tried: MutableList<String>
+    ): UiElement? {
+        if (AgentStateHolder.phase == AgentPhase.INPUT) {
+            tried += "structural_dna_frozen_in_input"
+            return null
+        }
+        tried += "structural_dna_probabilistic"
+
+        val service = PerceptionService.get() ?: return null
+        val density = service.resources.displayMetrics.density
+        val screenHeight = service.resources.displayMetrics.heightPixels
+
+        val idealSizePx = 48 * density // Standard touch target
+        val top15Percent = screenHeight * 0.15f
+
+        var bestMatch: UiElement? = null
+        var highestScore = 0
+
+        // Minimum score required to trigger a click (prevents clicking random noise)
+        val CONFIDENCE_THRESHOLD = 70
+
+        for (el in snapshot.elements) {
+            var score = 0
+            val bounds = el.bounds ?: continue
+
+            // 1. BASE REQUIREMENT: Interactivity (Must have to even consider)
+            if (!el.clickable && el.type != UiElementType.BUTTON && el.type != UiElementType.IMAGE) {
+                continue
+            }
+
+            // 2. TEXT PENALTY / REWARD
+            if (el.text.isNullOrBlank()) {
+                score += 25 // Search icons usually don't have visible text
+            } else {
+                score -= 50 // Heavy penalty if it has text (it's likely a standard button, not an icon)
+            }
+
+            // 3. GEOMETRY: The "Squareness" Ratio
+            val w = bounds.width.toFloat()
+            val h = bounds.height.toFloat()
+            if (w > 0 && h > 0) {
+                val maxDim = Math.max(w, h)
+                val minDim = Math.min(w, h)
+                val aspectRatio = minDim / maxDim
+
+                // If it's 90%+ square, award points. Icons are almost always square.
+                if (aspectRatio > 0.90f) score += 20
+                else if (aspectRatio > 0.70f) score += 10
+            }
+
+            // 4. PHYSICS: Target Size Proximity
+            // Instead of strict bounds, we award points based on how close it is to 48dp
+            val sizeDiff = Math.abs(w - idealSizePx)
+            when {
+                sizeDiff <= (4 * density) -> score += 25 // Perfect size (44-52dp)
+                sizeDiff <= (10 * density) -> score += 15 // Acceptable size (38-58dp)
+                sizeDiff <= (20 * density) -> score += 5  // Weird size, but possible
+            }
+
+            // 5. SPATIAL: Location on Screen
+            if (bounds.centerY <= top15Percent) {
+                score += 30 // It's in the header, extremely high probability
+            }
+
+            // --- THE TOPOLOGICAL UPGRADE (Contextual Awareness) ---
+            // Does this element live inside a Toolbar or ActionBar?
+            val resId = el.resourceId?.lowercase() ?: ""
+            if (resId.contains("actionmenu") || resId.contains("toolbar")) {
+                score += 20
+            }
+
+            // --- SEMANTIC SIGNALS (v3) ---
+            // contentDescription is the most reliable signal for icon identity.
+            // WhatsApp's search icon has contentDescription="Search".
+            // Sticker/emoji/camera icons have their own descriptions.
+            val desc = el.contentDesc?.lowercase() ?: ""
+
+            // BOOST: Element whose contentDesc says "search" — this IS
+            // what we're looking for. Massive score boost.
+            if (desc.contains("search")) {
+                score += 80
+            }
+
+            // PENALTY: Elements with non-search semantics. These are common
+            // toolbar/bottom-bar icons that score high on geometry but are
+            // NOT search. Kill their score to prevent false matches.
+            val isNonSearchIcon = desc.contains("sticker") ||
+                    desc.contains("emoji") ||
+                    desc.contains("camera") ||
+                    desc.contains("attach") ||
+                    desc.contains("gif") ||
+                    desc.contains("photo") ||
+                    desc.contains("voice") ||
+                    desc.contains("video") ||
+                    desc.contains("call") ||
+                    desc.contains("menu") ||
+                    desc.contains("more option") ||
+                    desc.contains("new chat") ||
+                    desc.contains("community") ||
+                    desc.contains("status") ||
+                    desc.contains("channel") ||
+                    resId.contains("sticker") ||
+                    resId.contains("emoji") ||
+                    resId.contains("camera") ||
+                    resId.contains("attach") ||
+                    resId.contains("fab")  // Floating action buttons
+
+            if (isNonSearchIcon) {
+                score -= 200 // Kill score — guaranteed to never win
+            }
+
+            // Track the winner
+            if (score > highestScore && score >= CONFIDENCE_THRESHOLD) {
+                highestScore = score
+                bestMatch = el
+            }
+        }
+
+        if (bestMatch != null) {
+            android.util.Log.i("TargetResolver",
+                "DNA Match: score=$highestScore " +
+                        "contentDesc='${bestMatch?.contentDesc}' " +
+                        "resId='${bestMatch?.resourceId}' " +
+                        "bounds=${bestMatch?.bounds} " +
+                        "type=${bestMatch?.type}"
+            )
+        }
+
+        return bestMatch
     }
 
     /**
@@ -152,6 +307,9 @@ object TargetResolver {
         snapshot: UiSnapshot,
         target: String
     ): UiElement? {
+        if (AgentStateHolder.phase == AgentPhase.INPUT) {
+            return null
+        }
         val targetLower = target.trim().lowercase()
 
         val clickables = snapshot.elements.filter {

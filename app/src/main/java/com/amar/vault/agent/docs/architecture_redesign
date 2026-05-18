@@ -1,0 +1,123 @@
+# The Ultimate "God Architecture" for Autonomous Android Agents
+
+## 1. The Paradigm Shift: Polling vs. Event-Sourcing
+
+The previous 10/10 architecture was still fundamentally flawed by a single assumption: **polling**. Polling creates race windows, introduces arbitrary latency, and is vulnerable to OEM timing instability.
+
+The true elite-level architecture abandons polling entirely and moves to a **strictly Event-Sourced World Model** backed by an Accessibility Event Reconciliation Engine (akin to Redux for accessibility).
+
+### The Event-Sourced Pipeline
+1. **Raw Event Stream**: `TYPE_VIEW_FOCUSED`, `TYPE_WINDOWS_CHANGED`, `TYPE_WINDOW_CONTENT_CHANGED`, `TYPE_VIEW_TEXT_SELECTION_CHANGED`.
+2. **Reconciliation Engine (Reducer)**: Ingests raw events and deterministically reduces them into a unified, queryable `WorldState`.
+3. **Event Bus**: Strongly typed (`sealed class AgentEvent`) with prioritization, deduplication, and cancellation semantics.
+4. **Scheduler Isolation**: Dedicated event loop, perception stream, and injection queues running in absolute isolation to prevent timing interference.
+
+Executors **never** query the raw OS state. They subscribe to the `WorldState` stream.
+
+---
+
+## 2. Elite Input & Temporal Causality
+
+### InputConnection Readiness Detection
+Detecting IME visibility is insufficient for modern UI frameworks (Flutter, Compose, React Native) which often show the keyboard *before* binding the `InputConnection`.
+* **The Rule**: Do not inject text until the `WorldState` reflects: `KeyboardVisible == true` AND `FocusedEditable == true` AND `SelectionState == ACTIVE` (detected via `TYPE_VIEW_TEXT_SELECTION_CHANGED`).
+
+### Temporal Causality Tracking & Mutation Graphs
+Instead of knowing merely *what* exists, the agent must track *why* it changed.
+`Action` → `Expected Mutation` → `Observed Mutation`.
+
+If `UiSearchExecutor` dispatches a click, it logs:
+* Expected: `ToolbarExpanded` → `EditTextCreated` → `IMEAttached` → `InputConnectionReady`.
+If the observed mutation deviates, the system instantly triggers the deterministic recovery graph at the *exact failed stage* rather than restarting from zero.
+
+### Compose, Flutter & Framework Adapters
+Modern UI frameworks break classic node assumptions. Elite systems do not treat all nodes equally. They utilize `FrameworkAdapters` (`ComposeAdapter`, `FlutterAdapter`, `WebViewAdapter`) to dynamically translate OEM/framework-specific focus semantics and editable detection heuristics into a normalized semantic identity (`Node Identity Abstraction Layer`).
+
+---
+
+## 3. Probabilistic Verification & Confidence Engine
+
+Boolean verification (`textChanged == true`) is brittle. Elite systems use a **Confidence Engine** that aggregates multiple signals probabilistically to defeat false positives and false negatives caused by OEM weirdness or asynchronous sanitization.
+
+| Signal | Confidence Weight |
+| :--- | :--- |
+| Text Mutated Visually | +0.7 |
+| Cursor Moved / Selection Changed | +0.4 |
+| Specific Search Results Appeared | +0.8 |
+| IME Retained Focus | +0.3 |
+
+**Threshold**: If total confidence `>= 1.2`, the injection is successfully verified.
+
+---
+
+## 4. Production Hardening & Fleet Analytics
+
+To survive in the wild, an agent must possess self-healing and adaptive mechanics:
+
+1. **Ownership Protocol**: Strict definition of which executor owns focus, input, recovery, and navigation. Competing focus grabs are architecturally impossible.
+2. **Adaptive OEM Learning**: The agent learns runtime behaviors. If `ACTION_PASTE` fails consecutively on a Xiaomi device, the system dynamically promotes `ACTION_SET_TEXT` to the top of the OEM strategy cascade for that device ID.
+3. **RingBuffer Event History**: A rolling buffer of the last 1,000 `AccessibilityEvent` payloads. If an impossible failure occurs, the buffer is dumped for causality analysis and replayable debugging.
+4. **Interruption Arbitration (Overlay Manager)**: A dedicated daemon running parallel to the event bus that instantly detects and dismisses permission popups, battery warnings, or notifications before they corrupt the `WorldState`.
+5. **Cancellation Semantics**: If an asynchronous window change occurs mid-injection, the current workflow branch is instantly cancelled, state is invalidated, and the phase restarts deterministically.
+
+---
+
+## 5. Elite Pseudo-Code Implementation
+
+### The Redux Event-Sourcing Backbone
+
+```kotlin
+data class WorldState(
+    val imeVisible: Boolean = false,
+    val activeSemanticFocus: SemanticIdentity? = null,
+    val isInputConnectionReady: Boolean = false,
+    val confidenceScore: Float = 0f
+)
+
+sealed class SemanticIdentity {
+    data class SearchInput(val fingerprint: FocusFingerprint) : SemanticIdentity()
+    // Abstracted away from raw Android Node IDs
+}
+
+object AccessibilityReducer {
+    fun reduce(currentState: WorldState, event: AccessibilityEvent): WorldState {
+        return when (event.eventType) {
+            AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
+                val isIme = event.className == "android.inputmethodservice.SoftInputWindow"
+                currentState.copy(imeVisible = isIme)
+            }
+            AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED -> {
+                currentState.copy(isInputConnectionReady = true) // The ultimate readiness signal
+            }
+            else -> currentState
+        }
+    }
+}
+```
+
+### The Input Readiness Reactor
+
+```kotlin
+class TypeTextExecutor(private val eventBus: EventBus) {
+
+    suspend fun execute(query: String) {
+        // No polling. We suspend until the WorldState aligns with our exact expectations.
+        val targetState = eventBus.worldStateFlow.first { state ->
+            state.imeVisible &&
+            state.activeSemanticFocus is SemanticIdentity.SearchInput &&
+            state.isInputConnectionReady
+        }
+
+        // Framework Adapters dynamically map the injection strategy
+        val strategy = FrameworkRegistry.getAdapter(targetState.activeSemanticFocus).getInjectionStrategy()
+
+        injectText(query, strategy)
+
+        // Probabilistic Verification
+        val confidence = VerificationEngine.calculateConfidence(query)
+        if (confidence < 1.2f) {
+            RecoveryOrchestrator.dispatch(targetState, failureReason = "Confidence Threshold Missed")
+        }
+    }
+}
+```

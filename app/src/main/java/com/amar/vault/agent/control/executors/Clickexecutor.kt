@@ -8,8 +8,11 @@ import com.amar.vault.agent.control.FailureReason
 import com.amar.vault.agent.control.TaskContext
 import com.amar.vault.agent.dsl.ActionKind
 import com.amar.vault.agent.dsl.AgentAction
+import com.amar.vault.agent.AgentStateHolder
+import com.amar.vault.agent.control.AgentPhase
 import com.amar.vault.agent.perception.PerceptionService
 import com.amar.vault.agent.perception.SnapshotCache
+import com.amar.vault.agent.perception.UiReadinessWaiter
 
 /**
  * Clicks a UI element identified by its DSL target.
@@ -42,11 +45,22 @@ class ClickExecutor(
             durationMs = 0
         )
 
+        if (AgentStateHolder.phase == AgentPhase.INPUT) {
+            return ExecutionResult.Failed(
+                reason = FailureReason.Unexpected("Click exploration frozen during INPUT phase"),
+                durationMs = 0
+            )
+        }
+
         val started = System.currentTimeMillis()
         val service = PerceptionService.get() ?: return ExecutionResult.Failed(
             reason = FailureReason.AccessibilityUnavailable,
             durationMs = 0
         )
+
+        // Wait for UI motion to settle before resolving the target.
+        // This solves race conditions where the target moves (e.g., bottom-sheet slides up) mid-click.
+        UiReadinessWaiter.waitForStableUi(service)
 
         val resolve = TargetResolver.resolve(click.target, click.strategy, snapshotCache)
         val element = resolve.element ?: return ExecutionResult.Failed(

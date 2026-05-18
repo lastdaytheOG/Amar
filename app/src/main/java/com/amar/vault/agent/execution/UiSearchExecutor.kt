@@ -1,6 +1,9 @@
 package com.amar.vault.agent.execution
 
+import android.accessibilityservice.AccessibilityService
 import android.content.Context
+import android.os.Bundle
+import android.view.accessibility.AccessibilityNodeInfo
 import com.amar.vault.agent.capability.ExecutionPlan
 import com.amar.vault.agent.control.ControlLayer
 import com.amar.vault.agent.control.TaskContext
@@ -13,7 +16,6 @@ import com.amar.vault.agent.perception.SnapshotCache
 import com.amar.vault.agent.perception.UiElement
 import com.amar.vault.agent.perception.UiElementType
 import com.amar.vault.agent.perception.UiReadinessWaiter
-import com.amar.vault.agent.perception.UiSnapshot
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withTimeoutOrNull
@@ -23,24 +25,22 @@ import javax.inject.Singleton
 /**
  * Layer 3 / Execution: search via UI automation.
  *
- * v4 changes (post-click verification):
- *   Step 3 now verifies that a click actually changed UI state by polling
- *   for an editable node after each "successful" click. Mechanical click
- *   success on a non-interactive view (e.g. WhatsApp's `search_bar`
- *   layout container) returns true at the a11y framework level but has
- *   no UI effect. Without verification, the executor stops at the first
- *   mechanical win and never tries the real search affordance.
- *
- *   Candidate order also reorders: content_desc "Search" tries before
- *   resource_id "search_bar" because content_desc tends to map to the
- *   real action-bar icon, while resource_id often matches header
- *   containers.
+ * v7 changes (Step 8 InjectionEngine + WorldState-aware verification):
+ *   - Step 3 verification now consults WorldStateStore in addition to
+ *     SnapshotCache. When SemanticBridge classifies a SearchInput identity
+ *     in our package, we accept that as "editable appeared" — solves the
+ *     multi-window blindness in legacy snapshot.
+ *   - Step 8 (InjectionEngine) runs AFTER step 3 success, replacing legacy
+ *     step 5 as primary text-injection path. Legacy TypeText cascade is
+ *     retained as fallback.
  */
 @Singleton
 class UiSearchExecutor @Inject constructor(
     @dagger.hilt.android.qualifiers.ApplicationContext private val context: Context,
     private val controlLayer: ControlLayer,
-    private val snapshotCache: SnapshotCache
+    private val snapshotCache: SnapshotCache,
+    private val injectionRouter: com.amar.vault.agent.runtime.injection.InjectionRouter,
+    private val worldStateStore: com.amar.vault.agent.runtime.state.WorldStateStore
 ) {
 
     suspend fun execute(plan: ExecutionPlan.UiSearch, ctx: TaskContext): ExecutionOutcome {
@@ -81,10 +81,60 @@ class UiSearchExecutor @Inject constructor(
         android.util.Log.i(TAG, "step 2 settled in ${step2Time}ms: " +
                 "${settled?.packageId} elements=${settled?.size}")
 
-        // Step 2.5: deep poll for EITHER an editable input OR a search button.
-        // Whichever appears first decides whether we bypass the click step.
-        android.util.Log.i(TAG, "step 2.5 polling for input or search affordance...")
-        var latestSnap: UiSnapshot? = settled
+        val screenHeight = svc?.resources?.displayMetrics?.heightPixels ?: 2400
+        val appBarCutoff = (screenHeight * 0.15f).toInt()
+        android.util.Log.i(TAG, "app-bar cutoff: top ${appBarCutoff}px of ${screenHeight}px")
+
+        // Step 2.5: navigate to main screen
+        android.util.Log.i(TAG, "step 2.5 navigating to app home screen...")
+        val navStart = System.currentTimeMillis()
+        for (backAttempt in 0 until 3) {
+            val snap = svc?.forceSnapshot()
+            val elements = snap?.elements ?: emptyList()
+
+            val hasSearchAffordance = elements.any { el ->
+                val inAppBar = el.bounds != null && el.bounds.centerY <= appBarCutoff
+                inAppBar && (
+                        el.contentDesc?.contains("search", true) == true ||
+                                el.resourceId?.contains("search", true) == true
+                        )
+            }
+
+            if (hasSearchAffordance) {
+                android.util.Log.i(TAG, "step 2.5 search affordance visible after $backAttempt back presses")
+                break
+            }
+
+            val hasMainScreenTabs = elements.any { el ->
+                val txt = el.text?.lowercase() ?: ""
+                val desc = el.contentDesc?.lowercase() ?: ""
+                txt == "chats" || txt == "calls" || txt == "updates" || txt == "communities" ||
+                        desc == "chats" || desc == "calls" || desc == "updates" || desc == "communities"
+            }
+
+            if (hasMainScreenTabs) {
+                android.util.Log.i(TAG, "step 2.5 main screen tabs detected after $backAttempt back presses")
+                break
+            }
+
+            android.util.Log.i(TAG, "step 2.5 pressing BACK (attempt $backAttempt) to reach main screen")
+            val backed = svc?.performGlobalAction(AccessibilityService.GLOBAL_ACTION_BACK) ?: false
+            android.util.Log.i(TAG, "step 2.5 BACK result: $backed")
+            delay(600)
+
+            val afterBack = svc?.forceSnapshot()
+            if (afterBack?.packageId != plan.packageId) {
+                android.util.Log.w(TAG, "step 2.5 BACK exited the app (now ${afterBack?.packageId}), reopening")
+                submit(AgentAction.OpenApp(app = plan.packageId, packageId = plan.packageId))
+                delay(500)
+                break
+            }
+        }
+        android.util.Log.i(TAG, "step 2.5 navigation took ${System.currentTimeMillis() - navStart}ms")
+
+        // Step 2.7: deep poll for editable or search button
+        android.util.Log.i(TAG, "step 2.7 polling for input or search affordance...")
+        var latestSnap = svc?.forceSnapshot()
         var foundInput: UiElement? = null
         var foundSearchButtons: List<UiElement> = emptyList()
 
@@ -100,9 +150,11 @@ class UiSearchExecutor @Inject constructor(
                 }
 
                 foundSearchButtons = elements.filter { el ->
-                    el.text?.contains("search", true) == true ||
-                            el.contentDesc?.contains("search", true) == true ||
-                            el.resourceId?.contains("search", true) == true
+                    val inAppBar = el.bounds != null && el.bounds.centerY <= appBarCutoff
+                    inAppBar &&
+                            (el.contentDesc?.contains("search", true) == true ||
+                                    el.resourceId?.contains("search", true) == true) &&
+                            !isNonSearchElement(el)
                 }
 
                 if (foundInput != null || foundSearchButtons.isNotEmpty()) {
@@ -112,32 +164,21 @@ class UiSearchExecutor @Inject constructor(
             }
             @Suppress("UNREACHABLE_CODE") false
         }
-        android.util.Log.i(TAG, "step 2.5 done in ${System.currentTimeMillis() - pollStart}ms: " +
+        android.util.Log.i(TAG, "step 2.7 done in ${System.currentTimeMillis() - pollStart}ms: " +
                 "input=${foundInput?.resourceId ?: foundInput?.text ?: foundInput?.contentDesc}, " +
                 "searchButtons=${foundSearchButtons.size}")
 
-        // Stage 1: editable-already-visible bypass.
         val alreadyEditable = foundInput != null
         android.util.Log.i(TAG, "stage 1 already-editable bypass: $alreadyEditable")
 
         if (!alreadyEditable) {
-            // Step 3: click search affordance — try multiple candidates with
-            // POST-CLICK VERIFICATION. A mechanical click win that doesn't
-            // produce an editable within VERIFY_TIMEOUT_MS is treated as
-            // failed, and we move to the next candidate.
-            //
-            // Order: content_desc "Search" first (action-bar icon),
-            // then resource ids, then text/auto fallbacks. This is because
-            // resource_id `search_bar` in apps like WhatsApp matches a
-            // non-interactive header container, while content_desc=Search
-            // typically maps to the real magnifying-glass icon.
             val baseCandidates = listOf(
                 AgentAction.Click(target = "Search", strategy = TargetStrategy.CONTENT_DESC),
                 AgentAction.Click(target = "search_action_bar", strategy = TargetStrategy.RESOURCE_ID),
                 AgentAction.Click(target = "menuitem_search", strategy = TargetStrategy.RESOURCE_ID),
                 AgentAction.Click(target = "search_bar", strategy = TargetStrategy.RESOURCE_ID),
-                AgentAction.Click(target = "Search settings", strategy = TargetStrategy.TEXT),
-                AgentAction.Click(target = "search", strategy = TargetStrategy.AUTO)
+                AgentAction.Click(target = "my_search_bar", strategy = TargetStrategy.RESOURCE_ID),
+                AgentAction.Click(target = "Search settings", strategy = TargetStrategy.TEXT)
             )
 
             val dynamicCandidates = foundSearchButtons.mapNotNull { node ->
@@ -156,124 +197,451 @@ class UiSearchExecutor @Inject constructor(
 
             var clickedWith = "none"
             val step3Start = System.currentTimeMillis()
+
             for ((idx, candidate) in clickCandidates.withIndex()) {
+
                 val state = submit(candidate)
                 val mechOk = state is TaskState.Succeeded
+
                 if (!mechOk && state is TaskState.Failed) {
-                    android.util.Log.i(TAG, "step 3 candidate $idx failed reason: ${state.reason}")
+                    android.util.Log.i(TAG, "step 3 candidate $idx failed: ${state.reason}")
                 }
-                android.util.Log.i(TAG, "step 3 candidate $idx " +
-                        "(${candidate.target}/${candidate.strategy}) mechanical=$mechOk " +
-                        "(took ${System.currentTimeMillis() - step3Start}ms)")
+
+                android.util.Log.i(
+                    TAG,
+                    "step 3 candidate $idx " +
+                            "(${candidate.target}/${candidate.strategy}) mechanical=$mechOk " +
+                            "(took ${System.currentTimeMillis() - step3Start}ms)"
+                )
 
                 if (!mechOk) continue
 
-                // POST-CLICK VERIFICATION: did the UI actually change?
-                // Poll for an editable node. If none appears within the
-                // verify window, this click was a mechanical no-op and we
-                // try the next candidate.
-                val verifyStart = System.currentTimeMillis()
-                val verified = withTimeoutOrNull(POST_CLICK_VERIFY_MS) {
-                    while (true) {
-                        val snap = svc?.forceSnapshot()
-                        val hasEditable = snap?.elements?.any {
-                            (it.editable || it.type == UiElementType.INPUT) &&
-                                    it.bounds != null && !it.bounds.isEmpty
-                        } == true
-                        if (hasEditable) return@withTimeoutOrNull true
-                        delay(150L)
-                    }
-                    @Suppress("UNREACHABLE_CODE") false
-                } ?: false
-
-                android.util.Log.i(TAG, "step 3 candidate $idx verified=$verified " +
-                        "(verify took ${System.currentTimeMillis() - verifyStart}ms)")
+                // v7: WorldState-aware verification
+                val verified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, plan.packageId)
 
                 if (verified) {
+                    android.util.Log.i(
+                        TAG,
+                        "step 3 candidate $idx VERIFIED — editable field appeared"
+                    )
                     clickedWith = "${candidate.target}/${candidate.strategy}"
                     break
-                } else {
-                    android.util.Log.i(TAG, "step 3 candidate $idx click was mechanical no-op; trying next")
                 }
+
+                android.util.Log.i(
+                    TAG,
+                    "step 3 candidate $idx click didn't produce editable; trying gesture tap"
+                )
+
+                val gestureAction = AgentAction.GestureTap(
+                    target = candidate.target,
+                    strategy = candidate.strategy
+                )
+
+                val gestureState = submit(gestureAction)
+                val gestureOk = gestureState is TaskState.Succeeded
+
+                android.util.Log.i(
+                    TAG,
+                    "step 3 candidate $idx gesture_mechanical=$gestureOk"
+                )
+
+                if (gestureOk) {
+                    val gestureVerified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, plan.packageId)
+                    if (gestureVerified) {
+                        android.util.Log.i(
+                            TAG,
+                            "step 3 candidate $idx VERIFIED via gesture tap"
+                        )
+                        clickedWith = "${candidate.target}/${candidate.strategy}/gesture"
+                        break
+                    }
+                }
+
+                android.util.Log.i(
+                    TAG,
+                    "step 3 candidate $idx failed verification; next"
+                )
             }
 
             if (clickedWith == "none") {
-                android.util.Log.w(TAG, "FAIL step 3: all click candidates failed verification")
+                android.util.Log.w(TAG, "FAIL step 3: no candidate produced an editable search field")
                 return ExecutionOutcome.Failed(
                     packageId = plan.packageId,
-                    detail = "could not click search affordance (no editable appeared post-click)",
+                    detail = "could not activate search affordance (no editable field appeared)",
                     durationMs = System.currentTimeMillis() - started
                 )
             }
-            android.util.Log.i(TAG, "step 3 winner (verified): $clickedWith")
 
-            // Step 4 retained as a final settling delay; the verification
-            // loop already confirmed an editable exists.
+            android.util.Log.i(TAG, "step 3 winner: $clickedWith")
             delay(FIELD_APPEAR_DELAY_MS)
+
+            // DIAG
+            val diagSnap = svc?.forceSnapshot()
+            android.util.Log.i(TAG, "DIAG step5 snapshot pkg=${diagSnap?.packageId} elements=${diagSnap?.size}")
+            diagSnap?.elements?.forEachIndexed { i, el ->
+                android.util.Log.i(TAG, "DIAG[$i] type=${el.type} editable=${el.editable} focused=${el.focused} " +
+                        "rid=${el.resourceId} text='${el.text?.take(40)}' cd='${el.contentDesc?.take(40)}' " +
+                        "clickable=${el.clickable} bounds=${el.bounds}")
+            }
         }
 
-        // Step 5: type query. Cascade through selector candidates, ending
-        // with FOCUSED_EDITABLE which is the universal fallback.
-        val typeCandidates = listOf(
-            AgentAction.TypeText(
-                target = "search_src_text",
-                text = plan.query,
-                strategy = TargetStrategy.RESOURCE_ID,
-                submit = true
-            ),
-            AgentAction.TypeText(
-                target = "Search",
-                text = plan.query,
-                strategy = TargetStrategy.AUTO,
-                submit = true
-            ),
-            AgentAction.TypeText(
-                target = "Search...",
-                text = plan.query,
-                strategy = TargetStrategy.AUTO,
-                submit = true
-            ),
-            AgentAction.TypeText(
-                target = "(focused editable)",
-                text = plan.query,
-                strategy = TargetStrategy.FOCUSED_EDITABLE,
-                submit = true
-            )
-        )
-
-        var typedWith = "none"
-        val step5Start = System.currentTimeMillis()
-        for ((idx, candidate) in typeCandidates.withIndex()) {
-            val state = submit(candidate)
-            val ok = state is TaskState.Succeeded
-            if (!ok && state is TaskState.Failed) {
-                android.util.Log.i(TAG, "step 5 candidate $idx failed reason: ${state.reason}")
+        // Step 8 (God Architecture): try the InjectionEngine FIRST, before legacy step 5.
+        if (USE_INJECTION_ENGINE) {
+            kotlinx.coroutines.delay(300L)
+            android.util.Log.i(TAG, "step 8 invoking InjectionEngine after step 3 success...")
+            val engineResult = injectionRouter.injectIntoFocusedEditable(plan.query)
+            when (engineResult) {
+                is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.Verified -> {
+                    android.util.Log.i(TAG, "step 8 InjectionEngine WIN via=${engineResult.viaStrategy} " +
+                            "conf=${engineResult.confidence} dur=${engineResult.durationMs}ms")
+                    return ExecutionOutcome.Started(
+                        packageId = plan.packageId,
+                        durationMs = System.currentTimeMillis() - started,
+                        route = "ui_search/engine/${engineResult.viaStrategy}"
+                    )
+                }
+                is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.Failed -> {
+                    android.util.Log.w(TAG, "step 8 InjectionEngine failed reason=${engineResult.reason} " +
+                            "attempts=${engineResult.attempts}; falling through to legacy step 5")
+                }
+                is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.NoIdentity -> {
+                    android.util.Log.w(TAG, "step 8 InjectionEngine NoIdentity; falling through to legacy step 5")
+                }
             }
-            android.util.Log.i(TAG, "step 5 candidate $idx " +
-                    "(${candidate.target}/${candidate.strategy}) → $ok " +
-                    "(took ${System.currentTimeMillis() - step5Start}ms)")
-            if (ok) {
-                typedWith = "${candidate.target}/${candidate.strategy}"
-                break
+        }
+
+        // Step 5: legacy fallback typing via findFocus(FOCUS_INPUT).
+        android.util.Log.i(TAG, "step 5: typing query via findFocus(FOCUS_INPUT)")
+        val step5Start = System.currentTimeMillis()
+        var typedWith = "none"
+
+        val focusedNode = findInputFocusedNode(svc)
+        if (focusedNode != null) {
+            android.util.Log.i(TAG, "step 5 FOCUS_INPUT found: " +
+                    "class=${focusedNode.className} " +
+                    "editable=${focusedNode.isEditable} " +
+                    "text='${focusedNode.text}' " +
+                    "hint='${focusedNode.hintText}'")
+
+            val injected = injectText(focusedNode, plan.query, svc!!)
+            if (injected) {
+                typedWith = "findFocus(FOCUS_INPUT)/ACTION_SET_TEXT"
+                android.util.Log.i(TAG, "step 5 SUCCESS via $typedWith")
+            } else {
+                android.util.Log.w(TAG, "step 5 findFocus node found but injection failed")
+            }
+            safeRecycle(focusedNode)
+        } else {
+            android.util.Log.w(TAG, "step 5 findFocus(FOCUS_INPUT) returned null")
+        }
+
+        if (typedWith == "none") {
+            android.util.Log.i(TAG, "step 5 falling back to TypeText candidates")
+            val typeCandidates = listOf(
+                AgentAction.TypeText(
+                    target = "(focused editable)",
+                    text = plan.query,
+                    strategy = TargetStrategy.FOCUSED_EDITABLE,
+                    submit = true
+                ),
+                AgentAction.TypeText(
+                    target = "search_src_text",
+                    text = plan.query,
+                    strategy = TargetStrategy.RESOURCE_ID,
+                    submit = true
+                ),
+                AgentAction.TypeText(
+                    target = "search_input",
+                    text = plan.query,
+                    strategy = TargetStrategy.RESOURCE_ID,
+                    submit = true
+                )
+            )
+
+            for ((idx, candidate) in typeCandidates.withIndex()) {
+                val state = submit(candidate)
+                val ok = state is TaskState.Succeeded
+
+                android.util.Log.i(
+                    TAG,
+                    "step 5 fallback $idx " +
+                            "(${candidate.target}/${candidate.strategy}) -> $ok " +
+                            "(took ${System.currentTimeMillis() - step5Start}ms)"
+                )
+
+                if (ok) {
+                    typedWith = "${candidate.target}/${candidate.strategy}"
+                    break
+                }
             }
         }
 
         if (typedWith == "none") {
-            android.util.Log.w(TAG, "FAIL step 5: all type candidates failed")
+            android.util.Log.w(TAG, "FAIL step 5: all type methods failed")
             return ExecutionOutcome.Failed(
                 packageId = plan.packageId,
                 detail = "could not type query into field",
                 durationMs = System.currentTimeMillis() - started
             )
         }
-        android.util.Log.i(TAG, "step 5 winner: $typedWith")
 
+        android.util.Log.i(TAG, "step 5 winner: $typedWith")
         android.util.Log.i(TAG, "execute() SUCCESS in ${System.currentTimeMillis() - started}ms")
+
         return ExecutionOutcome.Started(
             packageId = plan.packageId,
             durationMs = System.currentTimeMillis() - started,
             route = "ui_search"
         )
+    }
+
+    // =========================================================================
+    // Verification helpers
+    // =========================================================================
+
+    /**
+     * Wait for an editable input field to appear. v7: accepts EITHER
+     *   (a) an editable in the legacy SnapshotCache, OR
+     *   (b) WorldStateStore.focusedEditableIdentity is SearchInput in [targetPackage].
+     */
+    private suspend fun waitForEditableOnly(
+        svc: PerceptionService?,
+        timeoutMs: Long,
+        targetPackage: String
+    ): Boolean = withTimeoutOrNull(timeoutMs) {
+        while (true) {
+            val snap = svc?.forceSnapshot()
+            val elements = snap?.elements ?: emptyList()
+            val hasEditable = elements.any {
+                (it.editable || it.type == UiElementType.INPUT) &&
+                        it.bounds != null && !it.bounds.isEmpty
+            }
+            if (hasEditable) {
+                android.util.Log.i("UiSearchExecutor", "waitForEditable: legacy snapshot hit")
+                return@withTimeoutOrNull true
+            }
+
+            val ws = worldStateStore.current()
+            val isSearchInput = ws.focusedEditableIdentity is
+                    com.amar.vault.agent.runtime.state.SemanticIdentity.SearchInput
+            val pkgMatches = ws.focusedEditableIdentity?.packageId == targetPackage
+            if (isSearchInput && pkgMatches) {
+                android.util.Log.i("UiSearchExecutor",
+                    "waitForEditable: WorldState SearchInput hit pkg=$targetPackage")
+                return@withTimeoutOrNull true
+            }
+
+            delay(150L)
+        }
+
+        @Suppress("UNREACHABLE_CODE")
+        false
+    } ?: false
+
+    private fun isNonSearchElement(el: UiElement): Boolean {
+        val desc = el.contentDesc?.lowercase() ?: ""
+        val resId = el.resourceId?.lowercase() ?: ""
+        val text = el.text?.lowercase() ?: ""
+        return desc.contains("sticker") || desc.contains("emoji") ||
+                desc.contains("camera") || desc.contains("gif") ||
+                desc.contains("voice") || desc.contains("attach") ||
+                resId.contains("sticker") || resId.contains("emoji") ||
+                resId.contains("camera") || resId.contains("gif") ||
+                resId.contains("attach") ||
+                text.contains("sticker") || text.contains("gif")
+    }
+
+    // =========================================================================
+    // Focus-based node acquisition
+    // =========================================================================
+
+    private fun findInputFocusedNode(svc: PerceptionService?): AccessibilityNodeInfo? {
+        if (svc == null) return null
+
+        try {
+            val windows = svc.windows ?: emptyList()
+            for (w in windows) {
+                if (w.type == android.view.accessibility.AccessibilityWindowInfo.TYPE_INPUT_METHOD) continue
+                val root = try { w.root } catch (_: Throwable) { null } ?: continue
+                val focused = root.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)
+                if (focused != null) {
+                    android.util.Log.i("UiSearchExecutor",
+                        "findFocus(FOCUS_INPUT) in window ${w.type}: class=${focused.className} " +
+                                "editable=${focused.isEditable} focused=${focused.isFocused} " +
+                                "text='${focused.text}' hint='${focused.hintText}'")
+                    return focused
+                }
+            }
+        } catch (t: Throwable) {
+            android.util.Log.w("UiSearchExecutor", "findFocus threw: ${t.message}")
+        }
+
+        try {
+            val windows = svc.windows ?: emptyList()
+            for (w in windows) {
+                if (w.type == android.view.accessibility.AccessibilityWindowInfo.TYPE_INPUT_METHOD) continue
+                val root = try { w.root } catch (_: Throwable) { null } ?: continue
+                val found = walkForFocusedEditable(root)
+                if (found != null) {
+                    android.util.Log.i("UiSearchExecutor", "walkForFocusedEditable found node")
+                    return found
+                }
+            }
+        } catch (t: Throwable) {
+            android.util.Log.w("UiSearchExecutor", "window walk threw: ${t.message}")
+        }
+
+        try {
+            val root = svc.rootInActiveWindow ?: return null
+            val editable = walkForAnyEditable(root)
+            if (editable != null) {
+                android.util.Log.i("UiSearchExecutor", "walkForAnyEditable found node, forcing focus")
+                try { editable.performAction(AccessibilityNodeInfo.ACTION_FOCUS) } catch (_: Throwable) {}
+                return editable
+            }
+        } catch (t: Throwable) {
+            android.util.Log.w("UiSearchExecutor", "editable walk threw: ${t.message}")
+        }
+
+        return null
+    }
+
+    private fun walkForFocusedEditable(root: AccessibilityNodeInfo): AccessibilityNodeInfo? {
+        val stack = ArrayDeque<AccessibilityNodeInfo>()
+        stack.addLast(root)
+        while (stack.isNotEmpty()) {
+            val node = stack.removeLast()
+            try {
+                val isEdit = node.isEditable || node.className?.toString()?.contains("EditText") == true
+                if (isEdit && node.isFocused) return node
+            } catch (_: Throwable) {}
+            val count = try { node.childCount } catch (_: Throwable) { 0 }
+            for (i in 0 until count) {
+                try { node.getChild(i)?.let { stack.addLast(it) } } catch (_: Throwable) {}
+            }
+        }
+        return null
+    }
+
+    private fun walkForAnyEditable(root: AccessibilityNodeInfo): AccessibilityNodeInfo? {
+        val stack = ArrayDeque<AccessibilityNodeInfo>()
+        stack.addLast(root)
+        while (stack.isNotEmpty()) {
+            val node = stack.removeLast()
+            try {
+                val isEdit = node.isEditable || node.className?.toString()?.contains("EditText") == true
+                if (isEdit) return node
+            } catch (_: Throwable) {}
+            val count = try { node.childCount } catch (_: Throwable) { 0 }
+            for (i in 0 until count) {
+                try { node.getChild(i)?.let { stack.addLast(it) } } catch (_: Throwable) {}
+            }
+        }
+        return null
+    }
+
+    // =========================================================================
+    // Text injection engine (legacy fallback)
+    // =========================================================================
+
+    private fun injectText(node: AccessibilityNodeInfo, text: String, svc: PerceptionService): Boolean {
+        val TAG = "UiSearchExecutor"
+
+        android.util.Log.i(TAG, "INJECT: waiting 400ms for InputConnection to establish")
+        Thread.sleep(400)
+
+        android.util.Log.i(TAG, "INJECT_1: Direct ACTION_SET_TEXT")
+        val set1 = trySetText(node, text)
+        android.util.Log.i(TAG, "INJECT_1: performAction returned $set1")
+        if (set1) {
+            Thread.sleep(200)
+            val verified = verifyText(node, text)
+            android.util.Log.i(TAG, "INJECT_1: verify=$verified")
+            if (verified) return true
+            val actual = try { node.refresh(); node.text?.toString() } catch (_: Throwable) { null }
+            android.util.Log.i(TAG, "INJECT_1: actual text after SET_TEXT='${actual?.take(30)}'")
+            if (!actual.isNullOrEmpty()) return true
+        }
+
+        android.util.Log.i(TAG, "INJECT_2: ACTION_CLICK + wait + SET_TEXT")
+        try { node.performAction(AccessibilityNodeInfo.ACTION_CLICK) } catch (_: Throwable) {}
+        Thread.sleep(300)
+        val set2 = trySetText(node, text)
+        android.util.Log.i(TAG, "INJECT_2: performAction returned $set2")
+        if (set2) {
+            Thread.sleep(200)
+            val actual = try { node.refresh(); node.text?.toString() } catch (_: Throwable) { null }
+            android.util.Log.i(TAG, "INJECT_2: actual text='${actual?.take(30)}'")
+            if (!actual.isNullOrEmpty()) return true
+        }
+
+        android.util.Log.i(TAG, "INJECT_3: Clipboard + ACTION_PASTE")
+        try {
+            val clipboard = svc.getSystemService(Context.CLIPBOARD_SERVICE)
+                    as android.content.ClipboardManager
+            clipboard.setPrimaryClip(android.content.ClipData.newPlainText("q", text))
+            node.performAction(AccessibilityNodeInfo.ACTION_FOCUS)
+            Thread.sleep(100)
+            val pasted = node.performAction(AccessibilityNodeInfo.ACTION_PASTE)
+            android.util.Log.i(TAG, "INJECT_3: ACTION_PASTE returned $pasted")
+            if (pasted) {
+                Thread.sleep(200)
+                val actual = try { node.refresh(); node.text?.toString() } catch (_: Throwable) { null }
+                android.util.Log.i(TAG, "INJECT_3: actual text='${actual?.take(30)}'")
+                if (!actual.isNullOrEmpty()) return true
+            }
+        } catch (e: Exception) {
+            android.util.Log.w(TAG, "INJECT_3 failed: ${e.message}")
+        }
+
+        android.util.Log.i(TAG, "INJECT_4: SELECT_ALL + SET_TEXT")
+        try {
+            val selectArgs = Bundle().apply {
+                putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_START_INT, 0)
+                putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_END_INT, Int.MAX_VALUE)
+            }
+            node.performAction(AccessibilityNodeInfo.ACTION_SET_SELECTION, selectArgs)
+            Thread.sleep(50)
+            val set4 = trySetText(node, text)
+            android.util.Log.i(TAG, "INJECT_4: performAction returned $set4")
+            if (set4) {
+                Thread.sleep(200)
+                val actual = try { node.refresh(); node.text?.toString() } catch (_: Throwable) { null }
+                android.util.Log.i(TAG, "INJECT_4: actual text='${actual?.take(30)}'")
+                if (!actual.isNullOrEmpty()) return true
+            }
+        } catch (e: Exception) {
+            android.util.Log.w(TAG, "INJECT_4 failed: ${e.message}")
+        }
+
+        android.util.Log.e(TAG, "ALL INJECTION STRATEGIES FAILED for text='${text.take(20)}'")
+        return false
+    }
+
+    private fun trySetText(node: AccessibilityNodeInfo, text: String): Boolean {
+        return try {
+            val args = Bundle().apply {
+                putCharSequence(
+                    AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
+                    text
+                )
+            }
+            node.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, args)
+        } catch (_: Exception) { false }
+    }
+
+    private fun verifyText(node: AccessibilityNodeInfo, expected: String): Boolean {
+        return try {
+            node.refresh()
+            val actual = node.text?.toString().orEmpty()
+            actual == expected || actual.contains(expected)
+        } catch (_: Throwable) { false }
+    }
+
+    @Suppress("DEPRECATION")
+    private fun safeRecycle(node: AccessibilityNodeInfo) {
+        try { node.recycle() } catch (_: Throwable) {}
     }
 
     private suspend fun submit(action: AgentAction): TaskState {
@@ -285,5 +653,11 @@ class UiSearchExecutor @Inject constructor(
     companion object {
         private const val FIELD_APPEAR_DELAY_MS = 400L
         private const val POST_CLICK_VERIFY_MS = 2_500L
+
+        /**
+         * Step 8 feature flag. After step 3 succeeds the InjectionEngine
+         * runs FIRST before legacy step 5 typing.
+         */
+        private const val USE_INJECTION_ENGINE = true
     }
 }

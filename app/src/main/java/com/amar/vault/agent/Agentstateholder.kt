@@ -3,6 +3,7 @@ package com.amar.vault.agent
 import com.amar.vault.agent.perception.PackageWatchlist
 import com.amar.vault.agent.perception.PerceptionService
 import com.amar.vault.agent.perception.SnapshotCache
+import com.amar.vault.agent.control.AgentPhase
 import java.util.concurrent.atomic.AtomicReference
 
 /**
@@ -42,6 +43,9 @@ object AgentStateHolder {
 
     @Volatile
     private var initialized: Boolean = false
+
+    @Volatile
+    var phase: AgentPhase = AgentPhase.NAVIGATION
 
     val snapshotCache: SnapshotCache
         get() = cacheRef.get()

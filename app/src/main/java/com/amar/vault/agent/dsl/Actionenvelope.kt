@@ -89,6 +89,14 @@ sealed class VerifySpec {
 
     data object TextSent : VerifySpec()
 
+    /**
+     * Semantic search context verification.
+     * Requires POSITIVE evidence of search context (editable nodes, search hints)
+     * AND absence of disqualifying semantics (scan/qr/camera/payment/upi).
+     * Replaces blind structural-change verification.
+     */
+    data object SearchOpened : VerifySpec()
+
     data object None : VerifySpec()
 
     /** Forward-compat escape hatch — preserves raw JSON for logging. */
@@ -107,6 +115,7 @@ sealed class VerifySpec {
                     packageId = json["package"]?.asStringOrNull() ?: return Unknown(type, json)
                 )
                 "text_sent" -> TextSent
+                "search_opened" -> SearchOpened
                 else -> Unknown(type, json)
             }
         }

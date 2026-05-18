@@ -4,22 +4,16 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 /**
- * Sealed hierarchy of all agent actions (v1 = 10 actions).
+ * Sealed hierarchy of all agent actions.
  *
- * Design:
- * - Polymorphic serialization keyed on the "action" field (see AgentJson).
- * - Each subclass declares its own typed params — strict validation at deserialization.
- * - Unknown action names fail fast; unknown params inside a known action also fail
- *   (ignoreUnknownKeys is false on purpose for the inner payload).
- *
- * Validation policy (v1 = HYBRID):
- * - STRICT on action name + params (this file, via kotlinx.serialization).
- * - LENIENT on constraints + verify (see ActionEnvelope — those are JsonObject).
+ * Stage 2d addition: GestureTap is a coordinate-based tap that bypasses
+ * ACTION_CLICK semantic action. Used as a fallback when target views handle
+ * input via OnTouchListener or gesture detectors rather than the a11y click
+ * pipeline.
  */
 @Serializable
 sealed class AgentAction {
 
-    /** Stable identifier used in logs, checkpoints, telemetry. */
     abstract val kind: ActionKind
 
     // ---------- Navigation ----------
@@ -27,8 +21,8 @@ sealed class AgentAction {
     @Serializable
     @SerialName("open_app")
     data class OpenApp(
-        val app: String,                       // display name OR package id; executor resolves
-        val packageId: String? = null          // optional explicit override
+        val app: String,
+        val packageId: String? = null
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.OPEN_APP
     }
@@ -36,8 +30,8 @@ sealed class AgentAction {
     @Serializable
     @SerialName("search_app")
     data class SearchApp(
-        val app: String,                       // target app: "YouTube", "Spotify", etc.
-        val query: String                      // search query text
+        val app: String,
+        val query: String
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.SEARCH_APP
     }
@@ -48,14 +42,12 @@ sealed class AgentAction {
         override val kind: ActionKind = ActionKind.HOME
     }
 
-    // NOTE: "back" is reserved for later — deferred out of v1 per user's 10-action choice.
-
     // ---------- Communication ----------
 
     @Serializable
     @SerialName("send_sms")
     data class SendSms(
-        val to: String,                        // phone number, E.164 preferred
+        val to: String,
         val body: String
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.SEND_SMS
@@ -64,7 +56,7 @@ sealed class AgentAction {
     @Serializable
     @SerialName("make_call")
     data class MakeCall(
-        val to: String                         // phone number
+        val to: String
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.MAKE_CALL
     }
@@ -72,31 +64,47 @@ sealed class AgentAction {
     @Serializable
     @SerialName("send_message")
     data class SendMessage(
-        val app: String,                       // "whatsapp", "telegram", etc.
-        val to: String,                        // contact name or number
+        val app: String,
+        val to: String,
         val content: String
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.SEND_MESSAGE
     }
 
-    // ---------- UI interaction (Accessibility fallback) ----------
+    // ---------- UI interaction ----------
 
     @Serializable
     @SerialName("click")
     data class Click(
-        val target: String,                    // text, contentDesc, or resourceId
+        val target: String,
         val strategy: TargetStrategy = TargetStrategy.AUTO
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.CLICK
     }
 
+    /**
+     * Coordinate gesture tap fallback. Resolves [target] to a node, then
+     * dispatches a real MotionEvent at the bounds center. Bypasses
+     * ACTION_CLICK for apps where the visible target isn't a11y-clickable
+     * (custom OnTouchListener / gesture detector / Compose interaction
+     * source / Material container delegation).
+     */
+    @Serializable
+    @SerialName("gesture_tap")
+    data class GestureTap(
+        val target: String,
+        val strategy: TargetStrategy = TargetStrategy.AUTO
+    ) : AgentAction() {
+        override val kind: ActionKind = ActionKind.GESTURE_TAP
+    }
+
     @Serializable
     @SerialName("type_text")
     data class TypeText(
-        val target: String,                    // hint/label of input field, or resourceId
+        val target: String,
         val text: String,
         val strategy: TargetStrategy = TargetStrategy.AUTO,
-        val submit: Boolean = false            // true = press IME action after typing
+        val submit: Boolean = false
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.TYPE_TEXT
     }
@@ -105,7 +113,7 @@ sealed class AgentAction {
     @SerialName("scroll")
     data class Scroll(
         val direction: ScrollDirection,
-        val target: String? = null             // optional: scroll a specific container
+        val target: String? = null
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.SCROLL
     }
@@ -115,7 +123,7 @@ sealed class AgentAction {
     @Serializable
     @SerialName("wait")
     data class Wait(
-        val ms: Int                            // bounded by validator: 50..15000
+        val ms: Int
     ) : AgentAction() {
         override val kind: ActionKind = ActionKind.WAIT
     }
@@ -136,8 +144,7 @@ sealed class AgentAction {
 }
 
 /**
- * Stable action identifiers. Never renumber — these persist in Room checkpoints
- * and will appear in Shadow Brain's failure analysis logs.
+ * Stable action identifiers.
  */
 enum class ActionKind {
     OPEN_APP,
@@ -147,6 +154,7 @@ enum class ActionKind {
     MAKE_CALL,
     SEND_MESSAGE,
     CLICK,
+    GESTURE_TAP,
     TYPE_TEXT,
     SCROLL,
     WAIT,
@@ -161,7 +169,8 @@ enum class TargetStrategy {
     @SerialName("content_desc")              CONTENT_DESC,
     @SerialName("resource_id")               RESOURCE_ID,
     @SerialName("first_clickable_in_grid")   FIRST_CLICKABLE_IN_GRID,
-    @SerialName("focused_editable")          FOCUSED_EDITABLE
+    @SerialName("focused_editable")          FOCUSED_EDITABLE,
+    @SerialName("structural_dna")            STRUCTURAL_DNA
 }
 
 @Serializable

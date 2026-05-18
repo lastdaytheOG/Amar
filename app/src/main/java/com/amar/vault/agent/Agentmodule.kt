@@ -7,6 +7,7 @@ import com.amar.vault.agent.control.ExecutorRegistry
 import com.amar.vault.agent.control.TaskTerminalObserver
 import com.amar.vault.agent.control.VerificationEngineApi
 import com.amar.vault.agent.control.executors.ClickExecutor
+import com.amar.vault.agent.control.executors.GestureTapExecutor
 import com.amar.vault.agent.control.executors.HomeExecutor
 import com.amar.vault.agent.control.executors.MakeCallExecutor
 import com.amar.vault.agent.control.executors.OpenAppExecutor
@@ -105,6 +106,11 @@ object AgentModule {
 
     @Provides
     @Singleton
+    fun provideGestureTapExecutor(snapshotCache: SnapshotCache): GestureTapExecutor =
+        GestureTapExecutor(snapshotCache)
+
+    @Provides
+    @Singleton
     fun provideTypeTextExecutor(snapshotCache: SnapshotCache): TypeTextExecutor =
         TypeTextExecutor(snapshotCache)
 
@@ -157,10 +163,16 @@ object AgentModule {
 
     @Provides
     @Singleton
+    fun provideSelectionTracker(): com.amar.vault.agent.runtime.ime.SelectionTracker =
+        com.amar.vault.agent.runtime.ime.SelectionTracker()
+
+    @Provides
+    @Singleton
     fun provideExecutorRegistry(
         openApp: OpenAppExecutor,
         searchApp: SearchAppExecutor,
         click: ClickExecutor,
+        gestureTap: GestureTapExecutor,
         typeText: TypeTextExecutor,
         scroll: ScrollExecutor,
         wait: WaitExecutor,
@@ -174,6 +186,7 @@ object AgentModule {
         register(openApp)
         register(searchApp)
         register(click)
+        register(gestureTap)
         register(typeText)
         register(scroll)
         register(wait)
