@@ -59,14 +59,58 @@ class ImeCoordinator @Inject constructor(
      * No polling — pure StateFlow subscription.
      */
     suspend fun awaitReady(timeoutMs: Long = 3_000L): Boolean {
-        // Fast path: already ready.
         if (store.current().inputConnectionReady) return true
-
         val result = withTimeoutOrNull(timeoutMs) {
             store.state.first { it.inputConnectionReady }
         }
         val ok = result != null
         Log.i(TAG, "AWAIT_READY result=$ok timeout=${timeoutMs}ms")
+        return ok
+    }
+
+    /**
+     * Weaker, faster-resolving readiness check used by the InjectionEngine.
+     *
+     * Why this exists:
+     *   The strict awaitReady() above gates on inputConnectionReady, which
+     *   the reducer flips only when TextSelectionChanged fires. Some apps
+     *   (notably WhatsApp's "Ask Meta AI or Search" field) take 3+ seconds
+     *   to fire TextSelectionChanged after the IME slides up, exceeding the
+     *   timeout we can reasonably wait.
+     *
+     * What we accept instead:
+     *   - imeVisible (keyboard is up)
+     *   - focusedEditableIdentity is non-null AND in [expectedPackage]
+     *   - foregroundPackage matches [expectedPackage]
+     *
+     * These three signals together prove the IME is bound to an editable
+     * in our target app — a sufficient precondition for ACTION_SET_TEXT /
+     * ACTION_PASTE to succeed. The InputConnection may not be 100% bound
+     * yet (no TextSelectionChanged), but the strategy cascade's mechanical
+     * + ConfidenceEngine verification will catch any premature injection.
+     *
+     * Returns true if the conditions are met within [timeoutMs]; false on
+     * timeout.
+     */
+    suspend fun awaitInjectable(
+        expectedPackage: String,
+        timeoutMs: Long = 1_500L
+    ): Boolean {
+        fun com.amar.vault.agent.runtime.state.WorldState.isInjectable(): Boolean =
+            imeVisible &&
+                    focusedEditableIdentity != null &&
+                    focusedEditableIdentity?.packageId == expectedPackage &&
+                    foregroundPackage == expectedPackage
+
+        if (store.current().isInjectable()) {
+            Log.i(TAG, "AWAIT_INJECTABLE fast_path pkg=$expectedPackage")
+            return true
+        }
+        val result = withTimeoutOrNull(timeoutMs) {
+            store.state.first { it.isInjectable() }
+        }
+        val ok = result != null
+        Log.i(TAG, "AWAIT_INJECTABLE result=$ok pkg=$expectedPackage timeout=${timeoutMs}ms")
         return ok
     }
 

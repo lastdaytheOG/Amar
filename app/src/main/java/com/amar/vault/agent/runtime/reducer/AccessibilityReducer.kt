@@ -29,6 +29,33 @@ import com.amar.vault.agent.runtime.state.WorldState
 object AccessibilityReducer {
 
     /**
+     * Heuristic: is this package an Input Method Editor (keyboard)?
+     *
+     * IME windows fire WindowContentChanged events frequently — every
+     * suggestion bar update, every layout swap, every internal state
+     * change. If we let these events flip foregroundPackage to the IME,
+     * downstream consumers (InputConnectionMonitor) see the IME as
+     * "foreground app" and conclude inputConnectionReady=false because
+     * the IME has no focused editable of its own.
+     *
+     * The user-visible foreground is the app BEHIND the IME, not the
+     * IME itself. So we ignore IME-sourced package transitions and
+     * keep the existing foregroundPackage.
+     *
+     * Match common IME packages plus any package whose id contains
+     * "inputmethod" (covers Gboard, Samsung Honeyboard, SwiftKey,
+     * AOSP latin, custom OEM keyboards).
+     */
+    private fun isImePackage(packageId: String?): Boolean {
+        if (packageId.isNullOrEmpty()) return false
+        return packageId.contains("inputmethod", ignoreCase = true) ||
+                packageId == "com.samsung.android.honeyboard" ||
+                packageId == "com.touchtype.swiftkey" ||
+                packageId == "com.touchtype.swiftkey.beta" ||
+                packageId == "com.microsoft.swiftkey"
+    }
+
+    /**
      * Apply a single event to the current state.
      *
      * Returns:
@@ -51,20 +78,33 @@ object AccessibilityReducer {
             // ACCESSIBILITY: foreground context, window structure, focus, text
             // ----------------------------------------------------------------
 
-            is AgentEvent.Accessibility.WindowStateChanged -> state.copy(
-                foregroundPackage = event.packageId ?: state.foregroundPackage,
-                foregroundWindowClass = event.windowClass ?: state.foregroundWindowClass,
-                lastEventSequence = event.sequence,
-                // Window change invalidates focus assumptions until re-confirmed.
-                // We do NOT clear inputConnectionReady on every window change —
-                // some apps push transient subwindows (popups, toolbars) without
-                // unbinding the IME. Step 6 handles those distinctions properly.
-            )
+            is AgentEvent.Accessibility.WindowStateChanged -> {
+                // Don't let IME WindowStateChanged events overwrite the app's
+                // foreground package. The IME is a transient overlay window;
+                // the "foreground app" is what's behind it.
+                if (isImePackage(event.packageId)) {
+                    state.copy(lastEventSequence = event.sequence)
+                } else {
+                    state.copy(
+                        foregroundPackage = event.packageId ?: state.foregroundPackage,
+                        foregroundWindowClass = event.windowClass ?: state.foregroundWindowClass,
+                        lastEventSequence = event.sequence
+                    )
+                }
+            }
 
-            is AgentEvent.Accessibility.WindowContentChanged -> state.copy(
-                foregroundPackage = event.packageId ?: state.foregroundPackage,
-                lastEventSequence = event.sequence
-            )
+            is AgentEvent.Accessibility.WindowContentChanged -> {
+                // IME WindowContentChanged events fire many times per second
+                // during typing. Ignoring them prevents readiness flap.
+                if (isImePackage(event.packageId)) {
+                    state.copy(lastEventSequence = event.sequence)
+                } else {
+                    state.copy(
+                        foregroundPackage = event.packageId ?: state.foregroundPackage,
+                        lastEventSequence = event.sequence
+                    )
+                }
+            }
 
             is AgentEvent.Accessibility.WindowsChanged -> state.copy(
                 lastEventSequence = event.sequence
@@ -74,22 +114,27 @@ object AccessibilityReducer {
             )
 
             is AgentEvent.Accessibility.ViewFocused -> {
-                val newIdentity: SemanticIdentity? = if (event.isEditable && event.packageId != null) {
-                    // Lightweight placeholder identity. Step 7 will replace this
-                    // with proper SemanticResolver output. For now, the existence
-                    // of "an editable was focused" is enough to drive Step 6.
-                    SemanticIdentity.Unknown(
+                // Only update focusedEditableIdentity when the focused node is
+                // editable. Non-editable focus events (button getting a11y
+                // focus, list item highlight) must NOT clear an established
+                // editable identity — the EditText still holds input focus
+                // even when accessibility focus moves around.
+                if (event.isEditable && event.packageId != null) {
+                    val newIdentity = SemanticIdentity.Unknown(
                         packageId = event.packageId,
                         generationId = state.generationId,
                         hint = "editable_focused:${event.resourceId ?: event.className ?: "anon"}"
                     )
+                    state.copy(
+                        focusedEditableIdentity = newIdentity,
+                        lastEventSequence = event.sequence
+                    )
                 } else {
-                    null
+                    // Non-editable focus event. Leave focusedEditableIdentity
+                    // alone — it gets cleared only by WindowStateChanged to a
+                    // different app, or by explicit ImeVisibilityChanged(false).
+                    state.copy(lastEventSequence = event.sequence)
                 }
-                state.copy(
-                    focusedEditableIdentity = newIdentity,
-                    lastEventSequence = event.sequence
-                )
             }
 
             is AgentEvent.Accessibility.TextChanged -> state.copy(

@@ -68,7 +68,7 @@ class InjectionEngine @Inject constructor(
     suspend fun inject(
         text: String,
         expectedIdentity: SemanticIdentity,
-        readinessTimeoutMs: Long = 3_000L,
+        readinessTimeoutMs: Long = 1_500L,
         perStrategyVerifyTimeoutMs: Long = 1_500L
     ): InjectionResult = scheduler.run(ExecutionLane.INJECTION, "inject:${expectedIdentity::class.simpleName}") {
 
@@ -84,10 +84,18 @@ class InjectionEngine @Inject constructor(
         ))
 
         // Step 1: await readiness.
-        val ready = imeCoordinator.awaitReady(readinessTimeoutMs)
+        // Use the weaker, faster-resolving awaitInjectable check instead of
+        // awaitReady. Rationale: WhatsApp-class apps don't fire TextSelectionChanged
+        // for several seconds after IME slide-up, so the strict readiness gate
+        // times out. awaitInjectable resolves on (imeVisible + editable identity
+        // matched + foreground matched) which fires within ~150ms.
+        val ready = imeCoordinator.awaitInjectable(
+            expectedPackage = expectedIdentity.packageId,
+            timeoutMs = readinessTimeoutMs
+        )
         if (!ready) {
             val r = InjectionResult.Failed(
-                reason = "ime_not_ready_within_${readinessTimeoutMs}ms",
+                reason = "not_injectable_within_${readinessTimeoutMs}ms",
                 attempts = emptyList(),
                 durationMs = System.currentTimeMillis() - started
             )

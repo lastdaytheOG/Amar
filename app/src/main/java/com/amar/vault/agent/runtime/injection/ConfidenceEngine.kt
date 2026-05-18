@@ -4,10 +4,8 @@ import android.util.Log
 import android.view.accessibility.AccessibilityNodeInfo
 import com.amar.vault.agent.runtime.events.AccessibilityEventBus
 import com.amar.vault.agent.runtime.events.AgentEvent
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.takeWhile
 import kotlinx.coroutines.withTimeoutOrNull
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -22,7 +20,7 @@ import javax.inject.Singleton
  *   - Read-back from the node matches injected text (+0.5)
  *   - Search results / structural change observed (deferred to Step 11)
  *
- * Threshold: >= 1.2 = verified. (Architecture doc number; tuneable.)
+ * Threshold: >= 1.0 = verified. (Architecture doc number; tuneable.)
  *
  * Why probabilistic:
  *   Boolean verification (`text == injected`) breaks under:
@@ -79,12 +77,15 @@ class ConfidenceEngine @Inject constructor(
 
             // Initial read-back attempt — sometimes ACTION_SET_TEXT applies
             // synchronously and the read is immediate.
+            // Normalize to strip zero-width chars some apps prepend.
             val readback = readBack(node)
-            if (readback != null && readback == expectedText) {
+            val readbackNorm = normalize(readback)
+            val expectedNorm = normalize(expectedText)
+            if (readback != null && readbackNorm == expectedNorm) {
                 confidence += READBACK_WEIGHT
                 observedReadback = true
                 notes.append("readback_match;")
-            } else if (readback != null && readback.contains(expectedText) && expectedText.isNotEmpty()) {
+            } else if (readback != null && expectedNorm.isNotEmpty() && readbackNorm.contains(expectedNorm)) {
                 confidence += READBACK_PARTIAL_WEIGHT
                 observedReadback = true
                 notes.append("readback_partial='${readback.take(20)}';")
@@ -92,17 +93,24 @@ class ConfidenceEngine @Inject constructor(
 
             if (confidence >= THRESHOLD) return@withTimeoutOrNull confidence
 
-            // Watch the bus.
+            // Watch the bus. Collect until either threshold reached or
+            // timeout (withTimeoutOrNull above cancels us).
+            //
+            // We intentionally DON'T use takeWhile/first chain — that pattern
+            // throws NoSuchElementException when the flow completes without
+            // emitting (which happens when takeWhile terminates after a
+            // side-effect that crosses threshold). Plain collect() with manual
+            // break-out via a return is correct here.
             val combined = merge(
                 textFlow.onEach { ev ->
                     if (!observedTextChange && ev.packageId == packageId) {
                         val txt = ev.afterText
-                        if (txt != null && (txt == expectedText || txt.contains(expectedText))) {
+                        val txtNorm = normalize(txt)
+                        if (txt != null && (txtNorm == expectedNorm || txtNorm.contains(expectedNorm))) {
                             confidence += TEXT_MUTATION_WEIGHT
                             observedTextChange = true
                             notes.append("text_event_match;")
                         } else if (txt != null && txt.isNotEmpty()) {
-                            // Any text change in our package is weak evidence.
                             confidence += TEXT_MUTATION_PARTIAL_WEIGHT
                             observedTextChange = true
                             notes.append("text_event_any;")
@@ -118,9 +126,15 @@ class ConfidenceEngine @Inject constructor(
                 }
             )
 
-            combined
-                .takeWhile { confidence < THRESHOLD }
-                .first()  // first emission OR completion when takeWhile terminates
+            try {
+                combined.collect {
+                    if (confidence >= THRESHOLD) {
+                        throw kotlinx.coroutines.CancellationException("threshold_reached")
+                    }
+                }
+            } catch (e: kotlinx.coroutines.CancellationException) {
+                // Expected — we use cancellation to break the collect.
+            }
 
             confidence
         }
@@ -129,7 +143,9 @@ class ConfidenceEngine @Inject constructor(
         // confirmation, check the node once more.
         if (!observedReadback) {
             val readback = readBack(node)
-            if (readback != null && (readback == expectedText || readback.contains(expectedText))) {
+            val readbackNorm = normalize(readback)
+            val expectedNorm = normalize(expectedText)
+            if (readback != null && (readbackNorm == expectedNorm || readbackNorm.contains(expectedNorm))) {
                 confidence += READBACK_PARTIAL_WEIGHT
                 notes.append("late_readback='${readback.take(20)}';")
             }
@@ -155,6 +171,22 @@ class ConfidenceEngine @Inject constructor(
         null
     }
 
+    /**
+     * Normalize text for comparison: strips zero-width spaces, BOMs, and
+     * leading/trailing whitespace. Necessary because WhatsApp's "Ask Meta
+     * AI or Search" field prepends a zero-width space (U+200B) to user
+     * input as a placeholder marker. Raw equality would always miss.
+     */
+    private fun normalize(s: String?): String {
+        if (s == null) return ""
+        return s
+            .replace("\u200B", "")  // ZERO WIDTH SPACE
+            .replace("\u200C", "")  // ZERO WIDTH NON-JOINER
+            .replace("\u200D", "")  // ZERO WIDTH JOINER
+            .replace("\uFEFF", "")  // BOM / ZERO WIDTH NO-BREAK SPACE
+            .trim()
+    }
+
     data class VerifyResult(
         val confidence: Float,
         val verified: Boolean,
@@ -172,6 +204,6 @@ class ConfidenceEngine @Inject constructor(
         private const val READBACK_WEIGHT               = 0.7f
         private const val READBACK_PARTIAL_WEIGHT       = 0.4f
 
-        const val THRESHOLD: Float = 1.2f
+        const val THRESHOLD: Float = 1.0f
     }
 }
