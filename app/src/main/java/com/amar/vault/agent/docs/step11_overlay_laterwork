@@ -1,0 +1,203 @@
+# Step 11 Overlay Detection — Current Status & Future Work
+
+## Current Status
+
+Step 11 infrastructure is considered successfully integrated and validated at the systems level.
+
+Validated:
+
+* Accessibility event stream receives all `TYPE_WINDOW_STATE_CHANGED` events
+* Overlay detector evaluates events correctly
+* Heuristics execute properly
+* No false positives observed during:
+
+  * launcher navigation
+  * settings navigation
+  * files app
+  * gmail
+  * normal activity transitions
+* Recovery pipeline wiring confirmed
+* Overlay manager integrated into runtime
+
+Observed behavior:
+
+* Detector logs:
+
+  * `EVAL pkg=...`
+  * `dialog=false`
+    correctly for standard activities
+* No accidental overlay firing occurred
+
+This confirms:
+
+* event subscription works
+* overlay evaluation pipeline works
+* recovery integration works
+* runtime stability preserved
+
+---
+
+# Important Clarification
+
+No REAL overlay/dialog appeared during validation session.
+
+Meaning:
+
+* full overlay interruption handling was NOT yet observed live
+* overlay dismissal behavior remains partially untested
+* heuristic tuning remains future work
+
+This is acceptable at current architecture stage.
+
+---
+
+# Why Step 11 Is Important
+
+Overlay handling exists to protect workflow continuity.
+
+Without overlay detection:
+
+* popups can corrupt execution
+* workflows lose state
+* executors click wrong targets
+* stale assumptions continue
+
+The runtime must:
+
+1. detect interruption
+2. pause workflow
+3. classify overlay
+4. dismiss/recover
+5. restore execution safely
+
+This is a core autonomous-agent capability.
+
+---
+
+# Current Architecture Goal
+
+The purpose is NOT:
+
+* simply detecting dialogs
+
+The real purpose is:
+
+* preserving intentional workflow execution during chaotic UI mutations
+
+Examples:
+
+* permission popups
+* battery warnings
+* update dialogs
+* ads/interstitials
+* OEM overlays
+* accessibility interruptions
+
+---
+
+# Deferred Real-World Validation
+
+Future runtime sessions should naturally validate:
+
+* real AlertDialogs
+* BottomSheets
+* Compose dialogs
+* OEM permission overlays
+* battery optimization popups
+* ad/interstitial interruptions
+
+Do NOT block architecture progress waiting for synthetic tests.
+
+Real-world tuning is preferred.
+
+---
+
+# Future Overlay Tuning Tasks
+
+## 1. Expand Overlay Heuristics
+
+Possible future classes:
+
+* AlertDialog
+* BottomSheetDialog
+* PermissionSheet
+* Compose modal surfaces
+* OEM custom overlays
+
+---
+
+## 2. Add Overlay Classification
+
+Future categories:
+
+* dismissible
+* blocking
+* permission
+* destructive
+* informational
+* unknown
+
+---
+
+## 3. Add Workflow Recovery Policies
+
+Examples:
+
+* retry current phase
+* restore navigation state
+* reopen IME
+* reacquire focus
+* restart executor safely
+
+---
+
+## 4. Add Overlay Confidence Scoring
+
+Potential signals:
+
+* window size
+* focus trapping
+* background dimming
+* button patterns
+* semantic keywords
+
+---
+
+## 5. Add Production Telemetry
+
+Track:
+
+* overlay frequency
+* false positives
+* missed overlays
+* recovery success rate
+* OEM-specific interruption patterns
+
+---
+
+# Engineering Decision
+
+Decision:
+
+* Step 11 accepted as infrastructure-valid
+* move forward to Step 12
+* continue runtime evolution
+* tune overlay heuristics later using real workflow interruptions
+
+Reason:
+Architecture progress is more valuable right now than premature heuristic perfection.
+
+---
+
+# Important Principle
+
+Do NOT optimize heuristics before sufficient real-world interruption data exists.
+
+Runtime evolution strategy:
+
+1. validate infrastructure
+2. gather real interruption data
+3. tune heuristics incrementally
+4. improve recovery policies over time
+
+This preserves forward engineering momentum while maintaining rollback safety.

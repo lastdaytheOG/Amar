@@ -20,6 +20,8 @@ class AmarApplication : Application() {
     @Inject lateinit var imeCoordinator: com.amar.vault.agent.runtime.ime.ImeCoordinator
     @Inject lateinit var semanticBridge: com.amar.vault.agent.runtime.semantic.SemanticBridge
     @Inject lateinit var injectionMetrics: com.amar.vault.agent.runtime.metrics.InjectionMetrics
+    @Inject lateinit var overlayDetector: com.amar.vault.agent.runtime.recovery.OverlayDetector
+    @Inject lateinit var recoveryEngine: com.amar.vault.agent.runtime.recovery.RecoveryEngine
 
     override fun onCreate() {
         super.onCreate()
@@ -40,6 +42,8 @@ class AmarApplication : Application() {
         // Step 7: start semantic identity resolver bridge.
         semanticBridge.start()
         injectionMetrics.start()
+        overlayDetector.start()
+        recoveryEngine.start()
 
         // If the service isn't connected yet (user enables a11y later), bind
         // again when it connects. For now this no-ops gracefully.

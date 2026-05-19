@@ -288,26 +288,48 @@ class UiSearchExecutor @Inject constructor(
 
         // Step 8 (God Architecture): try the InjectionEngine FIRST, before legacy step 5.
         if (USE_INJECTION_ENGINE) {
-            kotlinx.coroutines.delay(300L)
-            android.util.Log.i(TAG, "step 8 invoking InjectionEngine after step 3 success...")
-            val engineResult = injectionRouter.injectIntoFocusedEditable(plan.query)
-            when (engineResult) {
-                is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.Verified -> {
-                    android.util.Log.i(TAG, "step 8 InjectionEngine WIN via=${engineResult.viaStrategy} " +
-                            "conf=${engineResult.confidence} dur=${engineResult.durationMs}ms")
-                    return ExecutionOutcome.Started(
-                        packageId = plan.packageId,
-                        durationMs = System.currentTimeMillis() - started,
-                        route = "ui_search/engine/${engineResult.viaStrategy}"
-                    )
+            // Wait up to 1s for SemanticBridge to upgrade focusedEditableIdentity
+            // to a typed identity in the TARGET package. Avoids firing the engine
+            // against stale Unknown/wrong-package identity from agent's own UI.
+            val identityReady = kotlinx.coroutines.withTimeoutOrNull(1_000L) {
+                while (true) {
+                    val cur = worldStateStore.current().focusedEditableIdentity
+                    if (cur != null &&
+                        cur !is com.amar.vault.agent.runtime.state.SemanticIdentity.Unknown &&
+                        cur.packageId == plan.packageId) {
+                        return@withTimeoutOrNull true
+                    }
+                    kotlinx.coroutines.delay(50L)
                 }
-                is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.Failed -> {
-                    android.util.Log.w(TAG, "step 8 InjectionEngine failed reason=${engineResult.reason} " +
-                            "attempts=${engineResult.attempts}; falling through to legacy step 5")
+                @Suppress("UNREACHABLE_CODE") false
+            } ?: false
+
+            android.util.Log.i(TAG, "step 8 identity_ready=$identityReady " +
+                    "current=${worldStateStore.current().focusedEditableIdentity?.let { it::class.simpleName + "/" + it.packageId }}")
+
+            if (identityReady) {
+                android.util.Log.i(TAG, "step 8 invoking InjectionEngine after step 3 success...")
+                val engineResult = injectionRouter.injectIntoFocusedEditable(plan.query)
+                when (engineResult) {
+                    is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.Verified -> {
+                        android.util.Log.i(TAG, "step 8 InjectionEngine WIN via=${engineResult.viaStrategy} " +
+                                "conf=${engineResult.confidence} dur=${engineResult.durationMs}ms")
+                        return ExecutionOutcome.Started(
+                            packageId = plan.packageId,
+                            durationMs = System.currentTimeMillis() - started,
+                            route = "ui_search/engine/${engineResult.viaStrategy}"
+                        )
+                    }
+                    is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.Failed -> {
+                        android.util.Log.w(TAG, "step 8 InjectionEngine failed reason=${engineResult.reason} " +
+                                "attempts=${engineResult.attempts}; falling through to legacy step 5")
+                    }
+                    is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.NoIdentity -> {
+                        android.util.Log.w(TAG, "step 8 InjectionEngine NoIdentity; falling through to legacy step 5")
+                    }
                 }
-                is com.amar.vault.agent.runtime.injection.InjectionRouter.SimpleResult.NoIdentity -> {
-                    android.util.Log.w(TAG, "step 8 InjectionEngine NoIdentity; falling through to legacy step 5")
-                }
+            } else {
+                android.util.Log.w(TAG, "step 8 skipped: identity not ready in 1000ms; falling through to legacy step 5")
             }
         }
 
