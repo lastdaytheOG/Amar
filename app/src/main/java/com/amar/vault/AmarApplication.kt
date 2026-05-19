@@ -19,12 +19,11 @@ class AmarApplication : Application() {
     @Inject lateinit var accessibilityEventBus: com.amar.vault.agent.runtime.events.AccessibilityEventBus
     @Inject lateinit var imeCoordinator: com.amar.vault.agent.runtime.ime.ImeCoordinator
     @Inject lateinit var semanticBridge: com.amar.vault.agent.runtime.semantic.SemanticBridge
+    @Inject lateinit var injectionMetrics: com.amar.vault.agent.runtime.metrics.InjectionMetrics
 
     override fun onCreate() {
         super.onCreate()
         android.util.Log.e("AmarApp", "ONCREATE_ENTERED reducerEngine=${if (::reducerEngine.isInitialized) "injected" else "NOT_INJECTED"}")
-
-        // Step 3: start the WorldState reducer FIRST.
 
         // Step 3: start the WorldState reducer FIRST. It must be live before
         // any other initialization could publish events to the bus. The engine
@@ -40,6 +39,7 @@ class AmarApplication : Application() {
 
         // Step 7: start semantic identity resolver bridge.
         semanticBridge.start()
+        injectionMetrics.start()
 
         // If the service isn't connected yet (user enables a11y later), bind
         // again when it connects. For now this no-ops gracefully.
