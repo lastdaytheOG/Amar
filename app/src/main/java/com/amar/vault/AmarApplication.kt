@@ -26,6 +26,7 @@ class AmarApplication : Application() {
     @Inject lateinit var eventHistoryRecorder: com.amar.vault.agent.runtime.replay.EventHistoryRecorder
     @Inject lateinit var adapterManifestLoader: com.amar.vault.agent.runtime.adapters.AdapterManifestLoader
     @Inject lateinit var frameworkAdapterRegistry: com.amar.vault.agent.runtime.adapters.FrameworkAdapterRegistry
+    @Inject lateinit var telemetryExporter: com.amar.vault.agent.runtime.telemetry.TelemetryExporter
 
     override fun onCreate() {
         super.onCreate()
@@ -55,6 +56,7 @@ class AmarApplication : Application() {
         val discovered = adapterManifestLoader.discover()
         discovered.forEach { frameworkAdapterRegistry.registerRuntimeAdapter(it) }
         android.util.Log.i("AmarApp", "STEP16 declarative_adapters=${discovered.size}")
+        telemetryExporter.start()
 
         // If the service isn't connected yet (user enables a11y later), bind
         // again when it connects. For now this no-ops gracefully.

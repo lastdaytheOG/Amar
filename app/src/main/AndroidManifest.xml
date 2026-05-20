@@ -133,6 +133,14 @@
             </intent-filter>
         </receiver>
 
+        <receiver
+            android:name=".agent.runtime.telemetry.TelemetryDebugReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.amar.vault.DEBUG_TELEMETRY" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
