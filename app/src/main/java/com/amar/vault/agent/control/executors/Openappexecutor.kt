@@ -1,5 +1,6 @@
 package com.amar.vault.agent.control.executors
 
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.util.Log
@@ -152,22 +153,6 @@ class OpenAppExecutor(
     private fun normalize(s: String): String =
         s.lowercase(Locale.ROOT).replace("[^a-z0-9]".toRegex(), "")
 
-    /**
-     * Multi-tier fuzzy app matcher.
-     *
-     * Tiers (first hit wins):
-     *   1. EXACT       — normalized label matches query
-     *   2. WORD        — any word token matches query exactly
-     *   3. PREFIX      — any token or label starts with query (if query >=4 chars)
-     *   4. CONTAINS    — query is a substring of any token (if query >=4 chars)
-     *   5. LEVENSHTEIN — typo-tolerance with distance cap
-     *
-     * Each tier may return multiple candidates. Tie-breaker: shortest label
-     * wins (more specific), then alphabetically stable. This gives us
-     * "garena" → "Garena Free Fire" cleanly (shorter than "Garena Free Fire MAX").
-     *
-     * Length guards prevent "a" matching every app with letter A in it.
-     */
     private fun findPackageByLabel(query: String): String? {
         val apps = getApps()
         if (apps.isEmpty()) return null
@@ -179,7 +164,6 @@ class OpenAppExecutor(
         }
 
         // Tier 2: word-level exact match
-        // "garena" should match "Garena Free Fire" because "garena" is a word in it.
         apps.filter { it.tokens.contains(query) }
             .minByOrNull { it.normalizedLabel.length }
             ?.let {
@@ -187,12 +171,9 @@ class OpenAppExecutor(
                 return it.packageName
             }
 
-        // Guard: short queries (< 4 chars) skip substring/fuzzy tiers
-        // to avoid "sms" matching 30 unrelated apps.
         if (query.length < MIN_FUZZY_QUERY) return null
 
-        // Tier 3: prefix match on any token or on the whole label
-        // "subway" should match "Subway Surfers" via prefix of "subway" token.
+        // Tier 3: prefix match
         apps.filter { app ->
             app.tokens.any { it.startsWith(query) } ||
                     app.normalizedLabel.startsWith(query)
@@ -202,9 +183,7 @@ class OpenAppExecutor(
                 return it.packageName
             }
 
-        // Tier 4: query is substring of a token (or full label)
-        // "surfers" should match "Subway Surfers" because "surfers" in tokens.
-        // "workout" should match "Home Workout".
+        // Tier 4: contains match
         apps.filter { app ->
             app.tokens.any { it.contains(query) } ||
                     app.normalizedLabel.contains(query)
@@ -214,11 +193,7 @@ class OpenAppExecutor(
                 return it.packageName
             }
 
-        // Tier 5: Levenshtein fuzzy match on labels AND on individual tokens.
-        // Handles typos: "freefier" → "freefire", "whatsap" → "whatsapp".
-        //
-        // Distance threshold scales with query length. Short queries are
-        // strict; longer queries can tolerate more edits.
+        // Tier 5: Levenshtein fuzzy match
         val maxDistance = when {
             query.length <= 5 -> 1
             query.length <= 8 -> 2
@@ -226,7 +201,6 @@ class OpenAppExecutor(
         }
 
         val fuzzy = apps.mapNotNull { app ->
-            // Best distance against whole label or any token
             val candidates = mutableListOf(levenshtein(app.normalizedLabel, query))
             app.tokens.forEach { token ->
                 if (token.length >= MIN_FUZZY_QUERY) {
@@ -237,7 +211,6 @@ class OpenAppExecutor(
             if (best <= maxDistance) app to best else null
         }
 
-        // Tie-breaker: smallest distance first, then shortest label.
         return fuzzy
             .sortedWith(
                 compareBy({ it.second }, { it.first.normalizedLabel.length })
@@ -274,7 +247,24 @@ class OpenAppExecutor(
         return try {
             val pm = context.packageManager
 
-            var intent = pm.getLaunchIntentForPackage(packageId)
+            // Sentinel package id "com.google.android.googlequicksearchbox#gemini"
+            // opens the Gemini assistant MainActivity directly. Bare
+            // "com.google.android.googlequicksearchbox" opens the standard
+            // Google Search activity. This split lets "gemini" and "google"
+            // resolve to different launch targets despite sharing one APK.
+            var intent: Intent? = when {
+                packageId == "com.google.android.googlequicksearchbox#gemini" -> {
+                    Intent(Intent.ACTION_MAIN).apply {
+                        component = android.content.ComponentName(
+                            "com.google.android.googlequicksearchbox",
+                            "com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity"
+                        )
+                        addCategory(Intent.CATEGORY_LAUNCHER)
+                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                }
+                else -> pm.getLaunchIntentForPackage(packageId)
+            }
 
             if (intent == null) {
                 Log.w(TAG, "Fallback launch for $packageId")
@@ -318,12 +308,6 @@ class OpenAppExecutor(
 
     companion object {
         private const val TAG = "OpenAppExecutor"
-
-        /**
-         * Minimum query length for substring / prefix / fuzzy tiers.
-         * Below this we only do exact + word-level matches, to prevent
-         * pathological false positives like "a" matching every app.
-         */
         private const val MIN_FUZZY_QUERY = 4
 
         private val COMMON_APPS = mapOf(

@@ -1,0 +1,223 @@
+--------- beginning of crash
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: FATAL EXCEPTION: main
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: Process: com.android.intentresolver, PID: 4950
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.android.intentresolver/com.android.intentresolver.ChooserActivity}: java.util.NoSuchElementException: Collection contains no element matching the predicate.
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4174)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4365)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:112)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:174)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:109)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2751)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:268)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:384)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: Caused by: java.util.NoSuchElementException: Collection contains no element matching the predicate.
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at com.android.intentresolver.domain.interactor.UserInteractor$special$$inlined$map$2$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:133)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at com.android.intentresolver.domain.interactor.UserInteractor$special$$inlined$map$1$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:175)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at kotlinx.coroutines.flow.DistinctFlowImpl$collect$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:91)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at com.android.intentresolver.data.repository.UserRepositoryImpl$special$$inlined$map$1$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:88)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at com.android.intentresolver.data.repository.UserRepositoryImpl$special$$inlined$filterNot$1$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:64)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at kotlinx.coroutines.flow.StateFlowImpl.collect(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:193)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at kotlinx.coroutines.flow.StateFlowImpl$collect$1.invokeSuspend(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:13)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:8)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:113)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:4)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:3)
+05-20 14:35:43.249  4950  4950 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:91)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: FATAL EXCEPTION: main
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: Process: com.android.intentresolver, PID: 5030
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: java.lang.RuntimeException: Unable to start activity ComponentInfo{com.android.intentresolver/com.android.intentresolver.ChooserActivity}: java.util.NoSuchElementException: Collection contains no element matching the predicate.
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.app.ActivityThread.performLaunchActivity(ActivityThread.java:4174)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.app.ActivityThread.handleLaunchActivity(ActivityThread.java:4365)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.app.servertransaction.LaunchActivityItem.execute(LaunchActivityItem.java:112)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeNonLifecycleItem(TransactionExecutor.java:174)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.executeTransactionItems(TransactionExecutor.java:109)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.app.servertransaction.TransactionExecutor.execute(TransactionExecutor.java:81)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:2751)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:112)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:268)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:384)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at android.app.ActivityThread.main(ActivityThread.java:8936)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:580)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:907)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: Caused by: java.util.NoSuchElementException: Collection contains no element matching the predicate.
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at com.android.intentresolver.domain.interactor.UserInteractor$special$$inlined$map$2$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:133)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at com.android.intentresolver.domain.interactor.UserInteractor$special$$inlined$map$1$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:175)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at kotlinx.coroutines.flow.DistinctFlowImpl$collect$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:91)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at com.android.intentresolver.data.repository.UserRepositoryImpl$special$$inlined$map$1$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:88)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at com.android.intentresolver.data.repository.UserRepositoryImpl$special$$inlined$filterNot$1$2.emit(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:64)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at kotlinx.coroutines.flow.StateFlowImpl.collect(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:193)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at kotlinx.coroutines.flow.StateFlowImpl$collect$1.invokeSuspend(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:13)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:8)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at kotlinx.coroutines.DispatchedTask.run(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:113)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:4)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.TaskImpl.run(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:3)
+05-20 14:35:44.155  5030  5030 E AndroidRuntime: 	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(go/retraceme 010c0e2566e4fe1fbdb029f9d46e36c954f5944a66703ac69158dc7d9769647f:91)
+--------- beginning of main
+05-20 14:41:04.609  6130 15031 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:41:04.646  6130 15033 I SemanticBridge: SEMANTIC_UPGRADE pkg=com.google.android.googlequicksearchbox role=SearchInput gen=1593
+05-20 14:41:04.646  6130  4546 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.apps.tiktok.nav.gateway.GatewayActivity always=false conditional=false dialog=false
+05-20 14:41:05.189  6130  6159 D OverlayDetector: EVAL pkg=com.google.android.inputmethod.latin cls=android.inputmethodservice.SoftInputWindow always=false conditional=false dialog=false
+05-20 14:41:06.330  6130  6130 I UiSearchExecutor: step 2 settled in 3080ms: null elements=null
+05-20 14:41:06.330  6130  6130 I UiSearchExecutor: app-bar cutoff: top 240px of 1600px
+05-20 14:41:06.330  6130  6130 I UiSearchExecutor: step 2.5 navigating to app home screen...
+05-20 14:41:06.337  6130  6130 I UiSearchExecutor: step 2.5 pressing BACK (attempt 0) to reach main screen
+05-20 14:41:06.340  6130  6130 I UiSearchExecutor: step 2.5 BACK result: true
+05-20 14:41:06.968  6130  6130 W UiSearchExecutor: step 2.5 BACK exited the app (now com.google.android.googlequicksearchbox), reopening
+05-20 14:41:07.322  6130  6159 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:41:07.347  6130  6155 I SemanticBridge: SEMANTIC_UPGRADE pkg=com.google.android.googlequicksearchbox role=SearchInput gen=1604
+05-20 14:41:07.446  6130  6159 D OverlayDetector: EVAL pkg=com.google.android.inputmethod.latin cls=android.inputmethodservice.SoftInputWindow always=false conditional=false dialog=false
+05-20 14:41:07.492  6130  6130 I UiSearchExecutor: step 2.5 navigation took 1162ms
+05-20 14:41:07.492  6130  6130 I UiSearchExecutor: step 2.7 polling for input or search affordance...
+05-20 14:41:07.782  6130  6159 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.apps.tiktok.nav.gateway.GatewayActivity always=false conditional=false dialog=false
+05-20 14:41:11.535  6130  6130 I UiSearchExecutor: step 2.7 done in 4003ms: input=null, searchButtons=0
+05-20 14:41:11.535  6130  6130 I UiSearchExecutor: stage 1 already-editable bypass: false
+05-20 14:41:14.200  6130  6130 I UiSearchExecutor: step 3 candidate 0 failed: TargetNotFound(target=Search, strategiesTried=[content_desc, content_desc])
+05-20 14:41:14.200  6130  6130 I UiSearchExecutor: step 3 candidate 0 (Search/CONTENT_DESC) mechanical=false (took 2665ms)
+05-20 14:41:16.897  6130  6130 I UiSearchExecutor: step 3 candidate 1 failed: TargetNotFound(target=search_action_bar, strategiesTried=[resource_id, resource_id])
+05-20 14:41:16.897  6130  6130 I UiSearchExecutor: step 3 candidate 1 (search_action_bar/RESOURCE_ID) mechanical=false (took 5362ms)
+05-20 14:41:19.228  6130  6130 I UiSearchExecutor: step 3 candidate 2 failed: TargetNotFound(target=menuitem_search, strategiesTried=[resource_id, resource_id])
+05-20 14:41:19.228  6130  6130 I UiSearchExecutor: step 3 candidate 2 (menuitem_search/RESOURCE_ID) mechanical=false (took 7693ms)
+05-20 14:41:21.673  6130  6130 I UiSearchExecutor: step 3 candidate 3 failed: TargetNotFound(target=search_bar, strategiesTried=[resource_id, resource_id])
+05-20 14:41:21.673  6130  6130 I UiSearchExecutor: step 3 candidate 3 (search_bar/RESOURCE_ID) mechanical=false (took 10138ms)
+05-20 14:41:24.132  6130  6130 I UiSearchExecutor: step 3 candidate 4 failed: TargetNotFound(target=my_search_bar, strategiesTried=[resource_id, resource_id])
+05-20 14:41:24.132  6130  6130 I UiSearchExecutor: step 3 candidate 4 (my_search_bar/RESOURCE_ID) mechanical=false (took 12597ms)
+05-20 14:41:26.502  6130  6130 I UiSearchExecutor: step 3 candidate 5 failed: TargetNotFound(target=Search settings, strategiesTried=[text, text])
+05-20 14:41:26.502  6130  6130 I UiSearchExecutor: step 3 candidate 5 (Search settings/TEXT) mechanical=false (took 14967ms)
+05-20 14:41:26.502  6130  6130 W UiSearchExecutor: FAIL step 3: no candidate produced an editable search field
+05-20 14:41:26.502  6130  6130 I PhaseOrchestrator: PHASE wf=d3be36c4 -> VERIFYING
+05-20 14:41:26.502  6130  6130 I PhaseOrchestrator: PHASE wf=d3be36c4 -> COMPLETE elapsed=23252ms
+05-20 14:42:20.648  6130  6154 D OverlayDetector: EVAL pkg=com.android.systemui cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:42:24.646  6130  9870 D OverlayDetector: EVAL pkg=com.android.systemui cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:43:15.246  6130  4546 D OverlayDetector: EVAL pkg=com.android.systemui cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:43:15.652  6130  6154 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:43:15.695  6130 15031 I SemanticBridge: SEMANTIC_UPGRADE pkg=com.google.android.googlequicksearchbox role=SearchInput gen=1714
+05-20 14:43:16.552  6130  9870 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.ListView always=false conditional=false dialog=false
+05-20 14:43:16.804  6130  6155 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:17.231  6130  9870 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:18.135  6130  9869 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.ListView always=false conditional=false dialog=false
+05-20 14:43:18.277  6130  4546 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.LinearLayout always=false conditional=false dialog=false
+05-20 14:43:18.421  6130 15031 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:19.029  6130  6159 D OverlayDetector: EVAL pkg=com.amar.vault cls=com.amar.vault.MainActivity always=false conditional=false dialog=false
+05-20 14:43:19.138  6130  6159 D OverlayDetector: EVAL pkg=com.amar.vault cls=com.amar.vault.MainActivity always=false conditional=false dialog=false
+05-20 14:43:19.392  6130  4546 D OverlayDetector: EVAL pkg=com.amar.vault cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:43:19.545  6130 15031 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.LinearLayout always=false conditional=false dialog=false
+05-20 14:43:19.655  6130  4547 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.LinearLayout always=false conditional=false dialog=false
+05-20 14:43:22.628  6130  4546 I SemanticBridge: SEMANTIC_UPGRADE pkg=com.amar.vault role=Unknown gen=1714
+05-20 14:43:22.894  6130  4547 D OverlayDetector: EVAL pkg=com.google.android.inputmethod.latin cls=android.inputmethodservice.SoftInputWindow always=false conditional=false dialog=false
+05-20 14:43:29.288  6130  6130 I PhaseOrchestrator: PHASE wf=02386e2d goal='search:grind' pkg=com.google.android.apps.bard -> PLANNING
+05-20 14:43:29.288  6130  6130 I PhaseOrchestrator: PHASE wf=02386e2d -> EXECUTING
+05-20 14:43:29.288  6130  6130 I UiSearchExecutor: execute() pkg=com.google.android.apps.bard query='grind'
+05-20 14:43:29.288  6130  6130 I UiSearchExecutor: DIAG PerceptionService.get() = true
+05-20 14:43:29.288  6130  6130 I UiSearchExecutor: DIAG cache pkg=com.google.android.googlequicksearchbox elements=1
+05-20 14:43:29.369  6130  6130 I UiSearchExecutor: step 1 open: true (state=Succeeded)
+05-20 14:43:31.144  6130  6154 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.apps.tiktok.nav.gateway.GatewayActivity always=false conditional=false dialog=false
+05-20 14:43:31.561  6130  9869 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:43:31.888  6130 15031 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:43:32.653  6130  6130 I UiSearchExecutor: step 2 settled in 3365ms: null elements=null
+05-20 14:43:32.653  6130  6130 I UiSearchExecutor: app-bar cutoff: top 240px of 1600px
+05-20 14:43:32.653  6130  6130 I UiSearchExecutor: step 2.5 navigating to app home screen...
+05-20 14:43:32.705  6130  6130 I UiSearchExecutor: step 2.5 pressing BACK (attempt 0) to reach main screen
+05-20 14:43:32.707  6130  6130 I UiSearchExecutor: step 2.5 BACK result: true
+05-20 14:43:32.956  6130 15031 D OverlayDetector: EVAL pkg=com.amar.vault cls=com.amar.vault.MainActivity always=false conditional=false dialog=false
+05-20 14:43:33.419  6130  6130 W UiSearchExecutor: step 2.5 BACK exited the app (now com.amar.vault), reopening
+05-20 14:43:33.962  6130  6130 I UiSearchExecutor: step 2.5 navigation took 1309ms
+05-20 14:43:33.962  6130  6130 I UiSearchExecutor: step 2.7 polling for input or search affordance...
+05-20 14:43:34.252  6130  6159 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:43:34.623  6130  4547 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:43:38.022  6130  6130 I UiSearchExecutor: step 2.7 done in 4001ms: input=null, searchButtons=0
+05-20 14:43:38.022  6130  6130 I UiSearchExecutor: stage 1 already-editable bypass: false
+05-20 14:43:40.124  6130 10970 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:40.468  6130  4546 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:40.806  6130  6130 I UiSearchExecutor: step 3 candidate 0 failed: TargetNotFound(target=Search, strategiesTried=[content_desc, content_desc])
+05-20 14:43:40.806  6130  6130 I UiSearchExecutor: step 3 candidate 0 (Search/CONTENT_DESC) mechanical=false (took 2784ms)
+05-20 14:43:41.711  6130  9870 D OverlayDetector: EVAL pkg=com.android.settings cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:43:42.647  6130 10970 D OverlayDetector: EVAL pkg=com.android.settings cls=com.android.settings.SubSettings always=false conditional=false dialog=false
+05-20 14:43:43.265  6130  9869 D OverlayDetector: EVAL pkg=com.android.settings cls=android.app.AlertDialog always=false conditional=false dialog=true
+05-20 14:43:43.421  6130  4547 I OverlayDetector: OVERLAY_DETECTED pkg=com.android.settings cls=android.app.AlertDialog dismiss='null'
+05-20 14:43:43.422  6130  4546 I RecoveryEngine: RECOVERY_OBSERVED_OVERLAY type=com.android.settings/android.app.AlertDialog dismissed=false
+05-20 14:43:43.424  6130  6130 I UiSearchExecutor: step 3 candidate 1 failed: TargetNotFound(target=search_action_bar, strategiesTried=[resource_id, resource_id])
+05-20 14:43:43.424  6130  6130 I UiSearchExecutor: step 3 candidate 1 (search_action_bar/RESOURCE_ID) mechanical=false (took 5402ms)
+05-20 14:43:43.427  6130 10970 I PhaseOrchestrator: PHASE wf=02386e2d -> RECOVERING overlay='com.android.settings/android.app.AlertDialog'
+05-20 14:43:43.572  6130  9869 D OverlayDetector: EVAL pkg=com.android.settings cls=com.android.settings.SubSettings always=false conditional=false dialog=false
+05-20 14:43:43.733  6130  4547 I RecoveryEngine: DISMISS_VIA_BACK result=true dur=304ms
+05-20 14:43:43.734  6130  4547 I PhaseOrchestrator: PHASE wf=02386e2d -> EXECUTING (recovered)
+05-20 14:43:44.831  6130  9869 D OverlayDetector: EVAL pkg=com.android.settings cls=com.android.settings.SubSettings always=false conditional=false dialog=false
+05-20 14:43:45.825  6130  9870 D OverlayDetector: EVAL pkg=com.android.settings cls=com.android.settings.SubSettings always=false conditional=false dialog=false
+05-20 14:43:46.438  6130  9869 D OverlayDetector: EVAL pkg=com.android.settings cls=android.app.AlertDialog always=false conditional=false dialog=true
+05-20 14:43:46.600  6130  9870 I OverlayDetector: OVERLAY_DETECTED pkg=com.android.settings cls=android.app.AlertDialog dismiss='null'
+05-20 14:43:46.601  6130 10970 I RecoveryEngine: RECOVERY_OBSERVED_OVERLAY type=com.android.settings/android.app.AlertDialog dismissed=false
+05-20 14:43:46.601  6130 10970 W PhaseOrchestrator: PHASE wf=02386e2d recovery_loop_detected entries=1 sinceLast=2867ms; aborting
+05-20 14:43:47.067  6130  6130 I UiSearchExecutor: step 3 candidate 2 failed: AccessibilityUnavailable
+05-20 14:43:47.068  6130  6130 I UiSearchExecutor: step 3 candidate 2 (menuitem_search/RESOURCE_ID) mechanical=false (took 9046ms)
+05-20 14:43:47.070  6130  6130 I UiSearchExecutor: step 3 candidate 3 failed: AccessibilityUnavailable
+05-20 14:43:47.070  6130  6130 I UiSearchExecutor: step 3 candidate 3 (search_bar/RESOURCE_ID) mechanical=false (took 9048ms)
+05-20 14:43:47.078  6130  6130 I UiSearchExecutor: step 3 candidate 4 failed: AccessibilityUnavailable
+05-20 14:43:47.078  6130  6130 I UiSearchExecutor: step 3 candidate 4 (my_search_bar/RESOURCE_ID) mechanical=false (took 9056ms)
+05-20 14:43:47.083  6130  6130 I UiSearchExecutor: step 3 candidate 5 failed: AccessibilityUnavailable
+05-20 14:43:47.084  6130  6130 I UiSearchExecutor: step 3 candidate 5 (Search settings/TEXT) mechanical=false (took 9061ms)
+05-20 14:43:47.084  6130  6130 W UiSearchExecutor: FAIL step 3: no candidate produced an editable search field
+05-20 14:43:47.085  6130  6130 I PhaseOrchestrator: PHASE wf=02386e2d -> VERIFYING
+05-20 14:43:47.086  6130  6130 I PhaseOrchestrator: PHASE wf=02386e2d -> COMPLETE elapsed=17798ms
+05-20 14:43:49.588  6130 10970 D OverlayDetector: EVAL pkg=com.android.settings cls=com.android.settings.SubSettings always=false conditional=false dialog=false
+05-20 14:43:51.779  6130  9870 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.ListView always=false conditional=false dialog=false
+05-20 14:43:52.245  6130  6154 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:54.246  6130 10970 D OverlayDetector: EVAL pkg=com.amar.vault cls=com.amar.vault.MainActivity always=false conditional=false dialog=false
+05-20 14:43:55.058  6130  6130 I PhaseOrchestrator: PHASE wf=0e602c7e goal='search:grind' pkg=com.google.android.apps.bard -> PLANNING
+05-20 14:43:55.058  6130  6130 I PhaseOrchestrator: PHASE wf=0e602c7e -> EXECUTING
+05-20 14:43:55.058  6130  6130 I UiSearchExecutor: execute() pkg=com.google.android.apps.bard query='grind'
+05-20 14:43:55.058  6130  6130 I UiSearchExecutor: DIAG PerceptionService.get() = true
+05-20 14:43:55.058  6130  6130 I UiSearchExecutor: DIAG cache pkg=com.android.settings elements=15
+05-20 14:43:55.106  6130  6130 I UiSearchExecutor: step 1 open: true (state=Succeeded)
+05-20 14:43:55.606  6130  9869 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:43:55.926  6130  4546 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.apps.tiktok.nav.gateway.GatewayActivity always=false conditional=false dialog=false
+05-20 14:43:57.155  6130  6154 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.ListView always=false conditional=false dialog=false
+05-20 14:43:57.394  6130  9869 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:58.026  6130  9870 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:58.166  6130  6130 I UiSearchExecutor: step 2 settled in 3108ms: null elements=null
+05-20 14:43:58.166  6130  6130 I UiSearchExecutor: app-bar cutoff: top 240px of 1600px
+05-20 14:43:58.166  6130  6130 I UiSearchExecutor: step 2.5 navigating to app home screen...
+05-20 14:43:58.411  6130  6130 W PhaseOrchestrator: PHASE wf=0e602c7e -> ABORTED reason=Job was cancelled
+05-20 14:43:58.411  6130  6130 W UiSearchExecutor: runWorkflow failed: Job was cancelled
+05-20 14:43:58.734  6130  6155 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.ListView always=false conditional=false dialog=false
+05-20 14:43:58.861  6130  9869 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.LinearLayout always=false conditional=false dialog=false
+05-20 14:43:59.063  6130  6159 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=com.android.launcher3.uioverrides.QuickstepLauncher always=false conditional=false dialog=false
+05-20 14:43:59.565  6130 11789 D OverlayDetector: EVAL pkg=com.amar.vault cls=com.amar.vault.MainActivity always=false conditional=false dialog=false
+05-20 14:43:59.915  6130  6159 D OverlayDetector: EVAL pkg=com.amar.vault cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:44:00.043  6130  4547 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.LinearLayout always=false conditional=false dialog=false
+05-20 14:44:00.197  6130  6154 D OverlayDetector: EVAL pkg=com.motorola.launcher3 cls=android.widget.LinearLayout always=false conditional=false dialog=false
+05-20 14:44:02.169  6130  6155 I SemanticBridge: SEMANTIC_UPGRADE pkg=com.amar.vault role=Unknown gen=1867
+05-20 14:44:02.336  6130  4546 D OverlayDetector: EVAL pkg=com.google.android.inputmethod.latin cls=android.inputmethodservice.SoftInputWindow always=false conditional=false dialog=false
+05-20 14:44:06.975  6130  6130 I PhaseOrchestrator: PHASE wf=523ae8f8 goal='search:grind' pkg=com.google.android.apps.bard -> PLANNING
+05-20 14:44:06.975  6130  6130 I PhaseOrchestrator: PHASE wf=523ae8f8 -> EXECUTING
+05-20 14:44:06.975  6130  6130 I UiSearchExecutor: execute() pkg=com.google.android.apps.bard query='grind'
+05-20 14:44:06.975  6130  6130 I UiSearchExecutor: DIAG PerceptionService.get() = true
+05-20 14:44:06.975  6130  6130 I UiSearchExecutor: DIAG cache pkg=com.android.settings elements=15
+05-20 14:44:07.051  6130  6130 I UiSearchExecutor: step 1 open: true (state=Succeeded)
+05-20 14:44:08.280  6130 10970 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.apps.tiktok.nav.gateway.GatewayActivity always=false conditional=false dialog=false
+05-20 14:44:08.537  6130 11789 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:44:08.716  6130  6159 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:44:08.972  6130 15031 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:44:10.051  6130  6130 I UiSearchExecutor: step 2 settled in 3076ms: null elements=null
+05-20 14:44:10.051  6130  6130 I UiSearchExecutor: app-bar cutoff: top 240px of 1600px
+05-20 14:44:10.051  6130  6130 I UiSearchExecutor: step 2.5 navigating to app home screen...
+05-20 14:44:10.073  6130  6130 I UiSearchExecutor: step 2.5 pressing BACK (attempt 0) to reach main screen
+05-20 14:44:10.075  6130  6130 I UiSearchExecutor: step 2.5 BACK result: true
+05-20 14:44:10.309  6130 10970 D OverlayDetector: EVAL pkg=com.amar.vault cls=com.amar.vault.MainActivity always=false conditional=false dialog=false
+05-20 14:44:10.788  6130  6130 W UiSearchExecutor: step 2.5 BACK exited the app (now com.amar.vault), reopening
+05-20 14:44:11.343  6130  6130 I UiSearchExecutor: step 2.5 navigation took 1292ms
+05-20 14:44:11.343  6130  6130 I UiSearchExecutor: step 2.7 polling for input or search affordance...
+05-20 14:44:11.537  6130 15031 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity always=false conditional=false dialog=false
+05-20 14:44:11.669  6130  6155 D OverlayDetector: EVAL pkg=com.google.android.googlequicksearchbox cls=android.widget.FrameLayout always=false conditional=false dialog=false
+05-20 14:44:15.357  6130  6130 I UiSearchExecutor: step 2.7 done in 4002ms: input=null, searchButtons=0
+05-20 14:44:15.357  6130  6130 I UiSearchExecutor: stage 1 already-editable bypass: false
+05-20 14:44:17.828  6130  6130 I UiSearchExecutor: step 3 candidate 0 failed: TargetNotFound(target=Search, strategiesTried=[content_desc])
+05-20 14:44:17.828  6130  6130 I UiSearchExecutor: step 3 candidate 0 (Search/CONTENT_DESC) mechanical=false (took 2470ms)
+05-20 14:44:20.521  6130  6130 I UiSearchExecutor: step 3 candidate 1 failed: TargetNotFound(target=search_action_bar, strategiesTried=[resource_id])
+05-20 14:44:20.521  6130  6130 I UiSearchExecutor: step 3 candidate 1 (search_action_bar/RESOURCE_ID) mechanical=false (took 5163ms)

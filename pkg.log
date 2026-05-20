@@ -1,0 +1,262 @@
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:43:        val packageId = resolvePackage(parsed.app)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:49:        val capabilities = capabilitiesFor(packageId)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:52:            IntentType.OPEN_APP     -> routeOpen(parsed, packageId)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:53:            IntentType.SEARCH_APP   -> routeSearch(parsed, packageId, capabilities)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:54:            IntentType.ORDER_ITEM   -> routeOrder(parsed, packageId, capabilities)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:62:    private fun routeOpen(parsed: ParsedIntent, packageId: String): RoutingResult {
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:65:            packageId = packageId,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:66:            plan = ExecutionPlan.OpenApp(packageId)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:72:        packageId: String,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:83:                packageId = packageId,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:84:                plan = ExecutionPlan.NativeSearch(packageId, query)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:89:                packageId = packageId,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:90:                plan = ExecutionPlan.UiSearch(packageId, query)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:97:        packageId: String,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:107:                reason = UnresolvableReason.NoWorkflowRegistered(packageId),
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:113:            packageId = packageId,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:114:            plan = ExecutionPlan.OrderWorkflow(packageId, workflowId, query)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:179:    private fun capabilitiesFor(packageId: String): AppCapabilities =
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:180:        CAPABILITIES[packageId] ?: AppCapabilities.DEFAULT
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:324:    val supportsActionSearch: Boolean = false,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:341:        val packageId: String,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:357:    data class NoWorkflowRegistered(val packageId: String) : UnresolvableReason()
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:368:        val packageId: String
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:372:        val packageId: String,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:377:        val packageId: String,
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:382:        val packageId: String,
+app\src\main\java\com\amar\vault\agent\control\Defaultverificationengine.kt:41:            is VerifySpec.AppOpened -> verifyAppOpened(ctx, spec.packageId)
+app\src\main\java\com\amar\vault\agent\control\Defaultverificationengine.kt:68:                if (snap != null && snap.packageId == targetPackage) {
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:76:        val packageId = resolvePackage(open) ?: run {
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:90:        watchlist.acquire(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:92:        val launchOk = launch(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:98:                resultData = mapOf("package" to packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:101:            watchlist.release(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:103:                reason = FailureReason.SystemError("launch failed for $packageId"),
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:110:        open.packageId?.let {
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:273:    private fun launch(packageId: String): Boolean {
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:277:            var intent = pm.getLaunchIntentForPackage(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:280:                Log.w(TAG, "Fallback launch for $packageId")
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:284:                    setPackage(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:291:                    Log.e(TAG, "No launcher activity found for $packageId")
+app\src\main\java\com\amar\vault\agent\control\executors\Openappexecutor.kt:306:            Log.d(TAG, "Launching app: $packageId")
+app\src\main\java\com\amar\vault\agent\control\executors\Readscreenexecutor.kt:113:            put("package", snap.packageId ?: "")
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:97:            "spotify" -> Intent(Intent.ACTION_VIEW, Uri.parse("spotify:search:$encodedQuery")).apply {
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:219:        search: AgentAction.SearchApp,
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:223:        val packageId = resolvePackage(normalizedApp) ?: return ExecutionResult.Failed(
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:231:        watchlist.acquire(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:235:            `package` = packageId
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:245:            Log.d(TAG, "Generic ACTION_SEARCH succeeded for $packageId: ${search.query}")
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:249:                    "package" to packageId,
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:257:        val appLaunchIntent = pm.getLaunchIntentForPackage(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:261:                Log.w(TAG, "App launched but search not performed natively for $packageId")
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:262:                watchlist.release(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:265:                        "App '$packageId' does not support ACTION_SEARCH. " +
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:274:        watchlist.release(packageId)
+app\src\main\java\com\amar\vault\agent\control\executors\Searchappexecutor.kt:276:            reason = FailureReason.SystemError("Could not launch search for $packageId"),
+app\src\main\java\com\amar\vault\agent\control\executors\Typetextexecutor.kt:116:            packageName = snapshot.packageId ?: "",
+app\src\main\java\com\amar\vault\agent\control\observers\Watchlistreleaser.kt:15: *   OpenAppExecutor calls `watchlist.acquire(packageId)` when it launches an
+app\src\main\java\com\amar\vault\agent\control\observers\Watchlistreleaser.kt:55:                // Release by packageId if we have it, else by the known alias.
+app\src\main\java\com\amar\vault\agent\control\observers\Watchlistreleaser.kt:57:                val pkg = action.packageId ?: resolveAliasPackage(action.app)
+app\src\main\java\com\amar\vault\agent\coordinator\AgentCoordinator.kt:174:            action = AgentAction.OpenApp(app = plan.packageId, packageId = plan.packageId)
+app\src\main\java\com\amar\vault\agent\coordinator\AgentCoordinator.kt:194:                val fallback = ExecutionPlan.UiSearch(plan.packageId, plan.query)
+app\src\main\java\com\amar\vault\agent\coordinator\AgentCoordinator.kt:254:        is UnresolvableReason.NoWorkflowRegistered -> "no workflow for ${reason.packageId}"
+app\src\main\java\com\amar\vault\agent\debug\Agentdebugviewmodel.kt:123:                "[snapshot] package=${snap.packageId} window=${snap.windowClass}",
+app\src\main\java\com\amar\vault\agent\debug\Agentdebugviewmodel.kt:195:                addLine("[inspect] foreground=${snap.packageId} window=${snap.windowClass}")
+app\src\main\java\com\amar\vault\agent\debug\Agentdebugviewmodel.kt:458:                    addLine("[step 3] after click foreground=${snap.packageId}")
+app\src\main\java\com\amar\vault\agent\debug\Agentdebugviewmodel.kt:551:                    addLine("[step 2.5] after click foreground=${preSnap.packageId}")
+app\src\main\java\com\amar\vault\agent\debug\Agentdebugviewmodel.kt:605:                    addLine("[step 4] foreground=${finalSnap.packageId} elements=${finalSnap.size}")
+app\src\main\java\com\amar\vault\agent\debug\Debugagentscreen.kt:256:                "Snapshot: ${snapshot?.packageId ?: "(none)"} • " +
+app\src\main\java\com\amar\vault\agent\dsl\Actionenvelope.kt:88:    data class AppOpened(val packageId: String) : VerifySpec()
+app\src\main\java\com\amar\vault\agent\dsl\Actionenvelope.kt:115:                    packageId = json["package"]?.asStringOrNull() ?: return Unknown(type, json)
+app\src\main\java\com\amar\vault\agent\dsl\Actionvalidator.kt:85:                action.packageId?.let {
+app\src\main\java\com\amar\vault\agent\dsl\Actionvalidator.kt:88:                            "open_app", "packageId",
+app\src\main\java\com\amar\vault\agent\dsl\AgentAction.kt:25:        val packageId: String? = null
+app\src\main\java\com\amar\vault\agent\execution\ExecutionOutcome.kt:27:        val packageId: String,
+app\src\main\java\com\amar\vault\agent\execution\ExecutionOutcome.kt:33:        val packageId: String,
+app\src\main\java\com\amar\vault\agent\execution\ExecutionOutcome.kt:39:        val packageId: String,
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:18: * Reliability wins vs. UI-driven search:
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:35:        // Tier 1: App-specific deep links by packageId
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:36:        val deepLinkIntent = buildDeepLinkIntent(plan.packageId, plan.query)
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:42:                    packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:50:                    "Deep link failed for ${plan.packageId}, falling back: ${t.message}")
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:52:                    packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:61:            setPackage(plan.packageId)
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:72:                packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:73:                detail = "no activity handles ACTION_SEARCH for ${plan.packageId}",
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:82:                packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:88:                packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:95:    private fun buildDeepLinkIntent(packageId: String, query: String): Intent? {
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:98:        return when (packageId) {
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:120:            "com.spotify.music" -> Intent(Intent.ACTION_VIEW, android.net.Uri.parse("spotify:search:$encodedQuery")).apply {
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:133:                setPackage(packageId)
+app\src\main\java\com\amar\vault\agent\execution\NativeSearchExecutor.kt:167:                setPackage(packageId)
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:54:            goal = "search:${plan.query}",
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:55:            targetPackage = plan.packageId
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:65:                    packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:76:        android.util.Log.i(TAG, "execute() pkg=${plan.packageId} query='${plan.query}'")
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:81:        android.util.Log.i(TAG, "DIAG cache pkg=${cacheCheck?.packageId} elements=${cacheCheck?.size}")
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:85:            AgentAction.OpenApp(app = plan.packageId, packageId = plan.packageId)
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:91:                packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:102:                targetPackage = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:109:                "${settled?.packageId} elements=${settled?.size}")
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:153:            if (afterBack?.packageId != plan.packageId) {
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:154:                android.util.Log.w(TAG, "step 2.5 BACK exited the app (now ${afterBack?.packageId}), reopening")
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:155:                submit(AgentAction.OpenApp(app = plan.packageId, packageId = plan.packageId))
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:247:                val verified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, plan.packageId)
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:277:                    val gestureVerified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, plan.packageId)
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:297:                    packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:308:            android.util.Log.i(TAG, "DIAG step5 snapshot pkg=${diagSnap?.packageId} elements=${diagSnap?.size}")
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:326:                        cur.packageId == plan.packageId) {
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:335:                    "current=${worldStateStore.current().focusedEditableIdentity?.let { it::class.simpleName + "/" + it.packageId }}")
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:345:                            packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:432:                packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:442:            packageId = plan.packageId,
+app\src\main\java\com\amar\vault\agent\execution\UiSearchExecutor.kt:477:            val pkgMatches = ws.focusedEditableIdentity?.packageId == targetPackage
+app\src\main\java\com\amar\vault\agent\intent\IntentRouter.kt:41:                packageId = resolved.app.packageName
+app\src\main\java\com\amar\vault\agent\intent\Simpleintentextractor.kt:54:     * to a packageId on the next layer.
+app\src\main\java\com\amar\vault\agent\observation\AgentStateObserver.kt:51:                currentApp = snap.packageId,
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:49:     * Should the service process an event from [packageId]?
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:52:    fun allows(packageId: String?): Boolean {
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:53:        if (packageId.isNullOrBlank()) return true    // system / unknown — don't filter
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:55:        return w.isEmpty() || packageId in w
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:59:     * Add [packageId] to the watchlist. Idempotent — increments refcount if
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:62:    fun acquire(packageId: String): Int {
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:63:        val newCount = refcounts.compute(packageId) { _, old -> (old ?: 0) + 1 }!!
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:69:     * Decrement refcount for [packageId]. Removes entirely when refcount hits 0.
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:72:    fun release(packageId: String): Int {
+app\src\main\java\com\amar\vault\agent\perception\Packagewatchlist.kt:73:        val newCount = refcounts.compute(packageId) { _, old ->
+app\src\main\java\com\amar\vault\agent\perception\PerceptionDiagnostics.kt:358:                "truncated=${snapshot.truncated} pkg=${snapshot.packageId}")
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:212:                packageId = pkg,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:231:            packageId = null,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:238:        packageId: String?,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:257:        val targetPkg: String? = packageId
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:291:                packageId = targetPkg,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:321:                    packageId = targetPkg,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:344:            packageId = targetPkg,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:430:                            packageId = pkg,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:440:                            packageId = pkg
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:460:                            packageIds = pkgs
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:494:                            packageId = pkg,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:535:                            packageId = pkg,
+app\src\main\java\com\amar\vault\agent\perception\Perceptionservice.kt:575:                            packageId = pkg,
+app\src\main\java\com\amar\vault\agent\perception\Treewalker.kt:47:     * @param packageId      Foreground package (from AccessibilityEvent.packageName).
+app\src\main\java\com\amar\vault\agent\perception\Treewalker.kt:53:        packageId: String?,
+app\src\main\java\com\amar\vault\agent\perception\Treewalker.kt:111:            packageId = packageId,
+app\src\main\java\com\amar\vault\agent\perception\UiReadinessWaiter.kt:46:            val snapPkg = latest.packageId ?: ""
+app\src\main\java\com\amar\vault\agent\perception\UiReadinessWaiter.kt:66:                "(last saw=${latest?.packageId} elements=${latest?.size} polls=$pollCount)")
+app\src\main\java\com\amar\vault\agent\perception\Uisnapshot.kt:29:    val packageId: String?,
+app\src\main\java\com\amar\vault\agent\perception\Uisnapshot.kt:106:            packageId = null,
+app\src\main\java\com\amar\vault\agent\recovery\FailureHandler.kt:59:            ExecutionPlan.UiSearch(failed.packageId, failed.query)
+app\src\main\java\com\amar\vault\agent\recovery\FailureHandler.kt:63:            ExecutionPlan.UiSearch(failed.packageId, failed.query)
+app\src\main\java\com\amar\vault\agent\recovery\FailureHandler.kt:76:            ExecutionPlan.OpenApp(failed.packageId)
+app\src\main\java\com\amar\vault\agent\recovery\FailureHandler.kt:96:        return ExecutionPlan.OpenApp(failed.packageId)
+app\src\main\java\com\amar\vault\agent\runtime\adapters\AdapterManifestLoader.kt:29: *       "packageIds": ["com.example.foo"],
+app\src\main\java\com\amar\vault\agent\runtime\adapters\AdapterManifestLoader.kt:88:                            "appliesTo=${manifest.packageIds.joinToString(",")}")
+app\src\main\java\com\amar\vault\agent\runtime\adapters\AdapterManifestLoader.kt:122:                            "appliesTo=${manifest.packageIds.joinToString(",")}")
+app\src\main\java\com\amar\vault\agent\runtime\adapters\AdapterManifestLoader.kt:140:            val packageIds = obj.getJSONArray("packageIds").let { arr ->
+app\src\main\java\com\amar\vault\agent\runtime\adapters\AdapterManifestLoader.kt:171:                packageIds = packageIds,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\ChatGPTAdapter.kt:28:    override val packageIds: Set<String> = setOf(
+app\src\main\java\com\amar\vault\agent\runtime\adapters\ChatGPTAdapter.kt:33:        packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\ChatGPTAdapter.kt:59:                packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\ChatGPTAdapter.kt:72:                packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\ComposeAdapter.kt:38:    override fun matches(packageId: String?, className: String?, resourceId: String?): Boolean {
+app\src\main\java\com\amar\vault\agent\runtime\adapters\DeclarativeAdapter.kt:17: *   "packageIds": ["com.example.foo"],
+app\src\main\java\com\amar\vault\agent\runtime\adapters\DeclarativeAdapter.kt:53:    override val packageIds: Set<String> = manifest.packageIds.toSet()
+app\src\main\java\com\amar\vault\agent\runtime\adapters\DeclarativeAdapter.kt:56:        manifest.name ?: "DeclarativeAdapter(${manifest.packageIds.firstOrNull() ?: "?"})"
+app\src\main\java\com\amar\vault\agent\runtime\adapters\DeclarativeAdapter.kt:59:        packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\DeclarativeAdapter.kt:95:                        packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\DeclarativeAdapter.kt:107:                            packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\DeclarativeAdapter.kt:113:                Log.d(TAG, "DECL_CLASSIFY pkg=$packageId rid=$resourceId " +
+app\src\main\java\com\amar\vault\agent\runtime\adapters\DeclarativeAdapter.kt:154:    val packageIds: List<String>,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FlutterAdapter.kt:38:    override fun matches(packageId: String?, className: String?, resourceId: String?): Boolean {
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapter.kt:76:    val packageIds: Set<String> get() = emptySet()
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapter.kt:86:    fun matches(packageId: String?, className: String?, resourceId: String?): Boolean = false
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapter.kt:96:        packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapterRegistry.kt:50:                "packages=${adapter.packageIds.joinToString(",")}")
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapterRegistry.kt:58:        packageId: String?,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapterRegistry.kt:62:        if (packageId.isNullOrEmpty()) return null
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapterRegistry.kt:69:        allAdapters.firstOrNull { packageId in it.packageIds }?.let {
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapterRegistry.kt:70:            Log.i(TAG, "RESOLVED_ADAPTER kind=exact pkg=$packageId adapter=${it.adapterName}")
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapterRegistry.kt:75:        allAdapters.firstOrNull { it.matches(packageId, className, resourceId) }?.let {
+app\src\main\java\com\amar\vault\agent\runtime\adapters\FrameworkAdapterRegistry.kt:76:            Log.i(TAG, "RESOLVED_ADAPTER kind=pattern pkg=$packageId cls=$className adapter=${it.adapterName}")
+app\src\main\java\com\amar\vault\agent\runtime\adapters\GeminiAdapter.kt:24:    override val packageIds: Set<String> = setOf(
+app\src\main\java\com\amar\vault\agent\runtime\adapters\GeminiAdapter.kt:29:        packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\GeminiAdapter.kt:55:                packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\GeminiAdapter.kt:66:                packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\WhatsAppAdapter.kt:34:    override val packageIds: Set<String> = setOf(
+app\src\main\java\com\amar\vault\agent\runtime\adapters\WhatsAppAdapter.kt:40:        packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\WhatsAppAdapter.kt:65:                packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\adapters\WhatsAppAdapter.kt:76:                packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\events\AccessibilityEventBus.kt:82:                prev.packageId == event.packageId &&
+app\src\main\java\com\amar\vault\agent\runtime\events\AgentEvent.kt:36:            val packageId: String?,
+app\src\main\java\com\amar\vault\agent\runtime\events\AgentEvent.kt:43:            val packageId: String?,
+app\src\main\java\com\amar\vault\agent\runtime\events\AgentEvent.kt:49:            val packageIds: List<String>,
+app\src\main\java\com\amar\vault\agent\runtime\events\AgentEvent.kt:55:            val packageId: String?,
+app\src\main\java\com\amar\vault\agent\runtime\events\AgentEvent.kt:64:            val packageId: String?,
+app\src\main\java\com\amar\vault\agent\runtime\events\AgentEvent.kt:73:            val packageId: String?,
+app\src\main\java\com\amar\vault\agent\runtime\events\AgentEvent.kt:123:            val packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\ime\ImeCoordinator.kt:102:                    focusedEditableIdentity?.packageId == expectedPackage &&
+app\src\main\java\com\amar\vault\agent\runtime\ime\ImeCoordinator.kt:128:    fun onTextSelectionChanged(packageId: String?, resourceId: String?, atMillis: Long) {
+app\src\main\java\com\amar\vault\agent\runtime\ime\ImeCoordinator.kt:129:        selectionTracker.record(packageId, resourceId, atMillis)
+app\src\main\java\com\amar\vault\agent\runtime\ime\ImeCoordinator.kt:130:        monitor.onSelectionRecorded(packageId)
+app\src\main\java\com\amar\vault\agent\runtime\ime\InputConnectionMonitor.kt:98:    fun onSelectionRecorded(packageId: String?) {
+app\src\main\java\com\amar\vault\agent\runtime\ime\InputConnectionMonitor.kt:100:        if (s.foregroundPackage == packageId) {
+app\src\main\java\com\amar\vault\agent\runtime\ime\SelectionTracker.kt:27:    fun record(packageId: String?, resourceId: String?, atMillis: Long) {
+app\src\main\java\com\amar\vault\agent\runtime\ime\SelectionTracker.kt:28:        last.set(Snapshot(packageId, resourceId, atMillis))
+app\src\main\java\com\amar\vault\agent\runtime\ime\SelectionTracker.kt:32:     * True if a selection event was recorded for [packageId] within [withinMs].
+app\src\main\java\com\amar\vault\agent\runtime\ime\SelectionTracker.kt:35:    fun isRecent(packageId: String?, withinMs: Long = 1_500L): Boolean {
+app\src\main\java\com\amar\vault\agent\runtime\ime\SelectionTracker.kt:36:        if (packageId == null) return false
+app\src\main\java\com\amar\vault\agent\runtime\ime\SelectionTracker.kt:38:        if (s.packageId != packageId) return false
+app\src\main\java\com\amar\vault\agent\runtime\ime\SelectionTracker.kt:49:        val packageId: String?,
+app\src\main\java\com\amar\vault\agent\runtime\injection\ConfidenceEngine.kt:55:        packageId: String?,
+app\src\main\java\com\amar\vault\agent\runtime\injection\ConfidenceEngine.kt:106:                    if (!observedTextChange && ev.packageId == packageId) {
+app\src\main\java\com\amar\vault\agent\runtime\injection\ConfidenceEngine.kt:121:                    if (!observedSelectionChange && ev.packageId == packageId) {
+app\src\main\java\com\amar\vault\agent\runtime\injection\InjectionEngine.kt:80:        Log.i(TAG, "INJECTION_STARTED text='${text.take(20)}' identity=${expectedIdentity::class.simpleName} pkg=${expectedIdentity.packageId}")
+app\src\main\java\com\amar\vault\agent\runtime\injection\InjectionEngine.kt:95:            expectedPackage = expectedIdentity.packageId,
+app\src\main\java\com\amar\vault\agent\runtime\injection\InjectionEngine.kt:121:                packageId = expectedIdentity.packageId,
+app\src\main\java\com\amar\vault\agent\runtime\injection\InjectionEngine.kt:234:        val samePkg = currentIdentity?.packageId == expectedIdentity.packageId
+app\src\main\java\com\amar\vault\agent\runtime\injection\InjectionEngine.kt:243:                notes = "identity_mismatch_now=${currentIdentity?.let { it::class.simpleName + "/" + it.packageId }}"
+app\src\main\java\com\amar\vault\agent\runtime\injection\InjectionEngine.kt:291:                packageId = expectedIdentity.packageId,
+app\src\main\java\com\amar\vault\agent\runtime\recovery\OverlayDetector.kt:111:        val pkg = ev.packageId ?: return
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:49:    private fun isImePackage(packageId: String?): Boolean {
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:50:        if (packageId.isNullOrEmpty()) return false
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:51:        return packageId.contains("inputmethod", ignoreCase = true) ||
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:52:                packageId == "com.samsung.android.honeyboard" ||
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:53:                packageId == "com.touchtype.swiftkey" ||
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:54:                packageId == "com.touchtype.swiftkey.beta" ||
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:55:                packageId == "com.microsoft.swiftkey"
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:85:                if (isImePackage(event.packageId)) {
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:89:                        foregroundPackage = event.packageId ?: state.foregroundPackage,
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:99:                if (isImePackage(event.packageId)) {
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:103:                        foregroundPackage = event.packageId ?: state.foregroundPackage,
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:122:                if (event.isEditable && event.packageId != null) {
+app\src\main\java\com\amar\vault\agent\runtime\reducer\AccessibilityReducer.kt:124:                        packageId = event.packageId,
+app\src\main\java\com\amar\vault\agent\runtime\semantic\IdentityRegistry.kt:9: * In-memory registry of semantic identities keyed by (packageId, role).
+app\src\main\java\com\amar\vault\agent\runtime\semantic\IdentityRegistry.kt:20: *   "$packageId:$roleName" — e.g. "com.whatsapp:SearchInput". Roles come from
+app\src\main\java\com\amar\vault\agent\runtime\semantic\IdentityRegistry.kt:48:    fun get(packageId: String, role: String): SemanticIdentity? =
+app\src\main\java\com\amar\vault\agent\runtime\semantic\IdentityRegistry.kt:49:        byKey[key(packageId, role)]
+app\src\main\java\com\amar\vault\agent\runtime\semantic\IdentityRegistry.kt:57:        val k = key(identity.packageId, identity::class.simpleName ?: "Unknown")
+app\src\main\java\com\amar\vault\agent\runtime\semantic\IdentityRegistry.kt:71:    fun clearPackage(packageId: String) {
+app\src\main\java\com\amar\vault\agent\runtime\semantic\IdentityRegistry.kt:72:        val toRemove = byKey.keys.filter { it.startsWith("$packageId:") }
+app\src\main\java\com\amar\vault\agent\runtime\semantic\IdentityRegistry.kt:80:    private fun key(packageId: String, role: String): String = "$packageId:$role"
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticBridge.kt:78:        val pkg = event.packageId ?: return
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticBridge.kt:130:                packageId = pkg,
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticBridge.kt:135:                packageId = pkg,
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticBridge.kt:145:                packageId = pkg,
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticBridge.kt:171:                    cur.packageId == pkg
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticResolver.kt:50:     * @param packageId      foreground package at observation time
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticResolver.kt:60:        packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticResolver.kt:82:                    packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticResolver.kt:89:                    packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticResolver.kt:98:            packageId = packageId,
+app\src\main\java\com\amar\vault\agent\runtime\semantic\SemanticResolver.kt:108:        Log.i(TAG, "RESOLVED pkg=$packageId role=${resolved::class.simpleName} " +
+app\src\main\java\com\amar\vault\agent\runtime\state\SemanticIdentity.kt:24:    abstract val packageId: String
+app\src\main\java\com\amar\vault\agent\runtime\state\SemanticIdentity.kt:33:        override val packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\state\SemanticIdentity.kt:39:        override val packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\state\SemanticIdentity.kt:46:        override val packageId: String,
+app\src\main\java\com\amar\vault\agent\runtime\state\SemanticIdentity.kt:52:        override val packageId: String,
+app\src\main\java\com\amar\vault\agent\workflow\BlinkitOrderWorkflow.kt:65:        val packageId = "com.grofers.customerapp"
+app\src\main\java\com\amar\vault\agent\workflow\BlinkitOrderWorkflow.kt:68:        if (!submit(AgentAction.OpenApp(app = "Blinkit", packageId = packageId))) {
+app\src\main\java\com\amar\vault\agent\workflow\BlinkitOrderWorkflow.kt:73:        if (!awaitApp(packageId)) {
+app\src\main\java\com\amar\vault\agent\workflow\BlinkitOrderWorkflow.kt:238:    private suspend fun awaitApp(packageId: String): Boolean {
+app\src\main\java\com\amar\vault\agent\workflow\BlinkitOrderWorkflow.kt:251:                if (s != null && s.packageId in candidates) {

@@ -125,6 +125,18 @@ class CapabilityRouter @Inject constructor(
      * Matches the contract of Layer 3's OpenAppExecutor; kept in sync manually.
      */
     private fun resolvePackage(appName: String): String? {
+        // Short-circuit: LLM planners frequently hallucinate non-existent
+        // package names for Google AI products. Translate them to the real
+        // sentinel package BEFORE normalization.
+        when (appName.lowercase()) {
+            "com.google.android.apps.bard",
+            "com.google.android.apps.bardandroid",
+            "com.google.android.apps.gemini",
+            "com.google.android.bard",
+            "com.google.android.gemini" ->
+                return "com.google.android.googlequicksearchbox#gemini"
+        }
+
         val normalized = normalize(appName)
 
         APP_ALIASES[normalized]?.let { candidates ->
@@ -195,6 +207,18 @@ class CapabilityRouter @Inject constructor(
             "telegram"    to listOf("org.telegram.messenger"),
             "chrome"      to listOf("com.android.chrome"),
             "youtube"     to listOf("com.google.android.youtube"),
+            // Gemini lives inside Quicksearchbox but at a specific
+            // MainActivity component. We use a sentinel package id —
+            // resolved in OpenAppExecutor — so "gemini" launches Gemini
+            // and "google" stays at the standard Search activity.
+            "gemini"     to listOf("com.google.android.googlequicksearchbox#gemini"),
+            "googlegemini" to listOf("com.google.android.googlequicksearchbox#gemini"),
+            "askgemini"  to listOf("com.google.android.googlequicksearchbox#gemini"),
+            // LLM planners often hallucinate Bard/Gemini packages that
+            // don't exist on Android. Map them to the real sentinel.
+            "com.google.android.apps.bard" to listOf("com.google.android.googlequicksearchbox#gemini"),
+            "com.google.android.apps.bardandroid" to listOf("com.google.android.googlequicksearchbox#gemini"),
+            "com.google.android.apps.gemini" to listOf("com.google.android.googlequicksearchbox#gemini"),
             "instagram"   to listOf("com.instagram.android"),
             "facebook"    to listOf("com.facebook.katana"),
             "spotify"     to listOf("com.spotify.music"),
@@ -264,6 +288,9 @@ class CapabilityRouter @Inject constructor(
             ),
 
             "com.google.android.googlequicksearchbox" to AppCapabilities(
+                // Real Google Search supports ACTION_WEB_SEARCH (opens
+                // search results). Gemini sentinel "...#gemini" doesn't
+                // appear here and defaults to UI-driven path.
                 supportsActionSearch = true
             ),
 

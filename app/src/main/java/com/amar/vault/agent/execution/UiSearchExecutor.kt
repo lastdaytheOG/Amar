@@ -71,9 +71,14 @@ class UiSearchExecutor @Inject constructor(
     }
 
     private suspend fun executeInternal(plan: ExecutionPlan.UiSearch, ctx: TaskContext): ExecutionOutcome {
+        // Strip the "#gemini" (or any future) sentinel suffix when comparing
+        // against WorldState / Perception, which only see the real underlying
+        // package. OpenApp actions keep the sentinel so OpenAppExecutor can
+        // route to the right component.
+        val realPkg = plan.packageId.substringBefore("#")
         val started = System.currentTimeMillis()
         val TAG = "UiSearchExecutor"
-        android.util.Log.i(TAG, "execute() pkg=${plan.packageId} query='${plan.query}'")
+        android.util.Log.i(TAG, "execute() pkg=${plan.packageId} realPkg=$realPkg query='${plan.query}'")
 
         val svcCheck = PerceptionService.get()
         android.util.Log.i(TAG, "DIAG PerceptionService.get() = ${svcCheck != null}")
@@ -150,7 +155,7 @@ class UiSearchExecutor @Inject constructor(
             delay(600)
 
             val afterBack = svc?.forceSnapshot()
-            if (afterBack?.packageId != plan.packageId) {
+            if (afterBack?.packageId != realPkg) {
                 android.util.Log.w(TAG, "step 2.5 BACK exited the app (now ${afterBack?.packageId}), reopening")
                 submit(AgentAction.OpenApp(app = plan.packageId, packageId = plan.packageId))
                 delay(500)
@@ -173,7 +178,8 @@ class UiSearchExecutor @Inject constructor(
 
                 foundInput = elements.firstOrNull { el ->
                     (el.editable || el.type == UiElementType.INPUT) &&
-                            el.bounds != null && !el.bounds.isEmpty
+                            el.bounds != null && !el.bounds.isEmpty &&
+                            el.resourceId?.contains("collapsed_text") != true
                 }
 
                 foundSearchButtons = elements.filter { el ->
@@ -205,7 +211,11 @@ class UiSearchExecutor @Inject constructor(
                 AgentAction.Click(target = "menuitem_search", strategy = TargetStrategy.RESOURCE_ID),
                 AgentAction.Click(target = "search_bar", strategy = TargetStrategy.RESOURCE_ID),
                 AgentAction.Click(target = "my_search_bar", strategy = TargetStrategy.RESOURCE_ID),
-                AgentAction.Click(target = "Search settings", strategy = TargetStrategy.TEXT)
+                AgentAction.Click(target = "Search settings", strategy = TargetStrategy.TEXT),
+                AgentAction.Click(target = "Ask Gemini", strategy = TargetStrategy.TEXT),
+                AgentAction.Click(target = "assistant_robin_input_collapsed_text_half_sheet", strategy = TargetStrategy.RESOURCE_ID),
+                AgentAction.Click(target = "assistant_robin_chat_input_box", strategy = TargetStrategy.RESOURCE_ID),
+                AgentAction.Click(target = "assistant_robin_chat_input_half_sheet", strategy = TargetStrategy.RESOURCE_ID)
             )
 
             val dynamicCandidates = foundSearchButtons.mapNotNull { node ->
@@ -244,15 +254,16 @@ class UiSearchExecutor @Inject constructor(
                 if (!mechOk) continue
 
                 // v7: WorldState-aware verification
-                val verified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, plan.packageId)
+                if (mechOk) { val verified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, realPkg)
 
-                if (verified) {
-                    android.util.Log.i(
-                        TAG,
-                        "step 3 candidate $idx VERIFIED — editable field appeared"
-                    )
-                    clickedWith = "${candidate.target}/${candidate.strategy}"
-                    break
+                    if (verified) {
+                        android.util.Log.i(
+                            TAG,
+                            "step 3 candidate $idx VERIFIED — editable field appeared"
+                        )
+                        clickedWith = "${candidate.target}/${candidate.strategy}"
+                        break
+                    }
                 }
 
                 android.util.Log.i(
@@ -274,7 +285,7 @@ class UiSearchExecutor @Inject constructor(
                 )
 
                 if (gestureOk) {
-                    val gestureVerified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, plan.packageId)
+                    val gestureVerified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, realPkg)
                     if (gestureVerified) {
                         android.util.Log.i(
                             TAG,
@@ -323,7 +334,7 @@ class UiSearchExecutor @Inject constructor(
                     val cur = worldStateStore.current().focusedEditableIdentity
                     if (cur != null &&
                         cur !is com.amar.vault.agent.runtime.state.SemanticIdentity.Unknown &&
-                        cur.packageId == plan.packageId) {
+                        cur.packageId == realPkg) {
                         return@withTimeoutOrNull true
                     }
                     kotlinx.coroutines.delay(50L)
@@ -464,7 +475,8 @@ class UiSearchExecutor @Inject constructor(
             val elements = snap?.elements ?: emptyList()
             val hasEditable = elements.any {
                 (it.editable || it.type == UiElementType.INPUT) &&
-                        it.bounds != null && !it.bounds.isEmpty
+                        it.bounds != null && !it.bounds.isEmpty &&
+                        it.resourceId?.contains("collapsed_text") != true
             }
             if (hasEditable) {
                 android.util.Log.i("UiSearchExecutor", "waitForEditable: legacy snapshot hit")

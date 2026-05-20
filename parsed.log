@@ -1,0 +1,7 @@
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:43:        val packageId = resolvePackage(parsed.app)
+app\src\main\java\com\amar\vault\agent\capability\CapabilityRouter.kt:45:                reason = UnresolvableReason.AppNotInstalled(parsed.app),
+app\src\main\java\com\amar\vault\agent\debug\Braindebugviewmodel.kt:175:        is CoordinatorProgress.Parsed    -> "[coord] parsed → intent=${p.parsed.intent} app='${p.parsed.app}' query='${p.parsed.query ?: "—"}'"
+app\src\main\java\com\amar\vault\agent\intent\IntentEntityParser.kt:159:                    return ParsedIntent(IntentType.SEARCH_APP, app, query)
+app\src\main\java\com\amar\vault\agent\intent\IntentEntityParser.kt:167:        return ParsedIntent(intent, app, query)
+app\src\main\java\com\amar\vault\agent\intent\IntentEntityParser.kt:221:data class ParsedIntent(
+app\src\main\java\com\amar\vault\agent\intent\Simpleintentextractor.kt:75:                ParsedIntent(

@@ -260,6 +260,8 @@ object AgentModule {
     fun provideChatGPTAdapter(): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
         com.amar.vault.agent.runtime.adapters.ChatGPTAdapter()
 
+
+
     @Provides
     @Singleton
     @dagger.multibindings.IntoSet
@@ -275,4 +277,10 @@ object AgentModule {
         cascade: com.amar.vault.agent.runtime.injection.StrategyCascade
     ): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
         com.amar.vault.agent.runtime.adapters.FlutterAdapter(cascade)
+
+    @Provides
+    @Singleton
+    @dagger.multibindings.IntoSet
+    fun provideGeminiAdapter(): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
+        com.amar.vault.agent.runtime.adapters.GeminiAdapter()
 }
