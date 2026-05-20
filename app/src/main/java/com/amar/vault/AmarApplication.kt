@@ -24,6 +24,8 @@ class AmarApplication : Application() {
     @Inject lateinit var recoveryEngine: com.amar.vault.agent.runtime.recovery.RecoveryEngine
     @Inject lateinit var phaseOrchestrator: com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator
     @Inject lateinit var eventHistoryRecorder: com.amar.vault.agent.runtime.replay.EventHistoryRecorder
+    @Inject lateinit var adapterManifestLoader: com.amar.vault.agent.runtime.adapters.AdapterManifestLoader
+    @Inject lateinit var frameworkAdapterRegistry: com.amar.vault.agent.runtime.adapters.FrameworkAdapterRegistry
 
     override fun onCreate() {
         super.onCreate()
@@ -48,6 +50,11 @@ class AmarApplication : Application() {
         recoveryEngine.start()
         phaseOrchestrator.start()
         eventHistoryRecorder.start()
+
+        // Step 16: discover and register declarative adapters.
+        val discovered = adapterManifestLoader.discover()
+        discovered.forEach { frameworkAdapterRegistry.registerRuntimeAdapter(it) }
+        android.util.Log.i("AmarApp", "STEP16 declarative_adapters=${discovered.size}")
 
         // If the service isn't connected yet (user enables a11y later), bind
         // again when it connects. For now this no-ops gracefully.

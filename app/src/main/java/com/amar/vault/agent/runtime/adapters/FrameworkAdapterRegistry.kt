@@ -1,7 +1,6 @@
 package com.amar.vault.agent.runtime.adapters
 
 import android.util.Log
-import android.view.accessibility.AccessibilityNodeInfo
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -33,6 +32,23 @@ import javax.inject.Singleton
 class FrameworkAdapterRegistry @Inject constructor(
     private val adapters: Set<@JvmSuppressWildcards FrameworkAdapter>
 ) {
+    /**
+     * Adapters registered at runtime (declarative manifests, third-party
+     * packages). Separate from the Hilt-injected [adapters] set because
+     * those are graph-built at app start; runtime ones are discovered
+     * AFTER the graph is constructed.
+     */
+    private val runtimeAdapters = java.util.concurrent.CopyOnWriteArrayList<FrameworkAdapter>()
+
+    /**
+     * Register an adapter discovered at runtime. Idempotent.
+     */
+    fun registerRuntimeAdapter(adapter: FrameworkAdapter) {
+        if (runtimeAdapters.any { it === adapter }) return
+        runtimeAdapters.add(adapter)
+        Log.i(TAG, "REGISTERED_RUNTIME name=${adapter.adapterName} " +
+                "packages=${adapter.packageIds.joinToString(",")}")
+    }
 
     /**
      * Find the adapter that matches the given context. Returns null if no
@@ -45,14 +61,18 @@ class FrameworkAdapterRegistry @Inject constructor(
     ): FrameworkAdapter? {
         if (packageId.isNullOrEmpty()) return null
 
+        // Search Hilt-injected adapters first, then runtime-registered.
+        // Hilt-injected always wins on ties — they're the trusted built-ins.
+        val allAdapters = adapters + runtimeAdapters
+
         // Pass 1: exact package match.
-        adapters.firstOrNull { packageId in it.packageIds }?.let {
+        allAdapters.firstOrNull { packageId in it.packageIds }?.let {
             Log.i(TAG, "RESOLVED_ADAPTER kind=exact pkg=$packageId adapter=${it.adapterName}")
             return it
         }
 
         // Pass 2: pattern match (framework-level adapters).
-        adapters.firstOrNull { it.matches(packageId, className, resourceId) }?.let {
+        allAdapters.firstOrNull { it.matches(packageId, className, resourceId) }?.let {
             Log.i(TAG, "RESOLVED_ADAPTER kind=pattern pkg=$packageId cls=$className adapter=${it.adapterName}")
             return it
         }
@@ -63,7 +83,7 @@ class FrameworkAdapterRegistry @Inject constructor(
     /**
      * Diagnostic helper: list all registered adapters.
      */
-    fun all(): Set<FrameworkAdapter> = adapters
+    fun all(): Set<FrameworkAdapter> = adapters + runtimeAdapters.toSet()
 
     companion object {
         private const val TAG = "AdapterRegistry"
