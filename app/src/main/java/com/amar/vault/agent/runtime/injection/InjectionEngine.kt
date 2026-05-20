@@ -48,7 +48,8 @@ class InjectionEngine @Inject constructor(
     private val confidence: ConfidenceEngine,
     private val cascade: StrategyCascade,
     private val scheduler: ExecutionScheduler,
-    private val adapterRegistry: com.amar.vault.agent.runtime.adapters.FrameworkAdapterRegistry
+    private val adapterRegistry: com.amar.vault.agent.runtime.adapters.FrameworkAdapterRegistry,
+    private val adaptivePolicy: AdaptiveCascadePolicy
 ) {
 
     /**
@@ -121,8 +122,9 @@ class InjectionEngine @Inject constructor(
                 className = null,   // engine sees identity, not raw className here
                 resourceId = null
             )
-            val strategies = adapter?.overrideStrategies(expectedIdentity)
+            val baseStrategies = adapter?.overrideStrategies(expectedIdentity)
                 ?: cascade.strategies()
+            val strategies = adaptivePolicy.reorder(expectedIdentity, baseStrategies)
 
             if (adapter != null) {
                 Log.i(TAG, "ADAPTER_ACTIVE name=${adapter.adapterName} " +
