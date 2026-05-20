@@ -125,6 +125,14 @@
                 android:value="androidx.startup" />
         </provider>
 
+        <receiver
+            android:name=".agent.runtime.replay.EventHistoryDebugReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.amar.vault.DEBUG_EVENT_HISTORY" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

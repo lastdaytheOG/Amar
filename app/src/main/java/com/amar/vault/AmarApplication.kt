@@ -23,6 +23,7 @@ class AmarApplication : Application() {
     @Inject lateinit var overlayDetector: com.amar.vault.agent.runtime.recovery.OverlayDetector
     @Inject lateinit var recoveryEngine: com.amar.vault.agent.runtime.recovery.RecoveryEngine
     @Inject lateinit var phaseOrchestrator: com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator
+    @Inject lateinit var eventHistoryRecorder: com.amar.vault.agent.runtime.replay.EventHistoryRecorder
 
     override fun onCreate() {
         super.onCreate()
@@ -46,6 +47,7 @@ class AmarApplication : Application() {
         overlayDetector.start()
         recoveryEngine.start()
         phaseOrchestrator.start()
+        eventHistoryRecorder.start()
 
         // If the service isn't connected yet (user enables a11y later), bind
         // again when it connects. For now this no-ops gracefully.
