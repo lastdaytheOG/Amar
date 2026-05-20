@@ -40,10 +40,37 @@ class UiSearchExecutor @Inject constructor(
     private val controlLayer: ControlLayer,
     private val snapshotCache: SnapshotCache,
     private val injectionRouter: com.amar.vault.agent.runtime.injection.InjectionRouter,
-    private val worldStateStore: com.amar.vault.agent.runtime.state.WorldStateStore
+    private val worldStateStore: com.amar.vault.agent.runtime.state.WorldStateStore,
+    private val phaseOrchestrator: com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator
 ) {
 
     suspend fun execute(plan: ExecutionPlan.UiSearch, ctx: TaskContext): ExecutionOutcome {
+        // Step 13: route through PhaseOrchestrator. The orchestrator manages
+        // PLANNING → EXECUTING → VERIFYING transitions and auto-handles
+        // overlays detected during EXECUTING via RecoveryEngine.dismissOnce.
+        // The legacy body below runs inside the EXECUTING phase.
+        val workflowStart = System.currentTimeMillis()
+        val result = phaseOrchestrator.runWorkflow(
+            goal = "search:${plan.query}",
+            targetPackage = plan.packageId
+        ) { _ ->
+            executeInternal(plan, ctx)
+        }
+        return when (result) {
+            is com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator.WorkflowResult.Success ->
+                result.value
+            is com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator.WorkflowResult.Failure -> {
+                android.util.Log.w("UiSearchExecutor", "runWorkflow failed: ${result.cause.message}")
+                ExecutionOutcome.Failed(
+                    packageId = plan.packageId,
+                    detail = "workflow_failed:${result.cause.message}",
+                    durationMs = System.currentTimeMillis() - workflowStart
+                )
+            }
+        }
+    }
+
+    private suspend fun executeInternal(plan: ExecutionPlan.UiSearch, ctx: TaskContext): ExecutionOutcome {
         val started = System.currentTimeMillis()
         val TAG = "UiSearchExecutor"
         android.util.Log.i(TAG, "execute() pkg=${plan.packageId} query='${plan.query}'")
