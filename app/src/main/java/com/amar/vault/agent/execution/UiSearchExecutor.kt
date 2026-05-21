@@ -39,7 +39,8 @@ class UiSearchExecutor @Inject constructor(
     private val snapshotCache: SnapshotCache,
     private val injectionRouter: com.amar.vault.agent.runtime.injection.InjectionRouter,
     private val worldStateStore: com.amar.vault.agent.runtime.state.WorldStateStore,
-    private val phaseOrchestrator: com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator
+    private val phaseOrchestrator: com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator,
+    private val environmentVerifier: com.amar.vault.agent.runtime.environment.EnvironmentVerifier
 ) {
 
     suspend fun execute(plan: ExecutionPlan.UiSearch, ctx: TaskContext): ExecutionOutcome {
@@ -192,6 +193,35 @@ class UiSearchExecutor @Inject constructor(
 
         val alreadyEditable = foundInput != null
         android.util.Log.i(TAG, "stage 1 already-editable bypass: $alreadyEditable")
+
+        // Phase 4a: Semantic environment verification.
+        // For multi-surface packages (Gemini/Search in Quicksearchbox, etc),
+        // structural "an editable exists" is not enough — we must verify the
+        // ACTIVE environment matches the user's target intent.
+        val targetEnvName = if (plan.packageId.endsWith("#gemini")) "GeminiConversation" else null
+        if (targetEnvName != null) {
+            val targetEnv = environmentVerifier.findByName(targetEnvName)
+            if (targetEnv != null) {
+                val verifyResult = environmentVerifier.verify(targetEnv)
+                if (!verifyResult.targetReached) {
+                    android.util.Log.w(TAG,
+                        "ENV_MISMATCH target='${targetEnvName}' " +
+                                "actualWinner='${verifyResult.winningEnvironment?.name}' " +
+                                "confidence=${"%.2f".format(verifyResult.targetConfidence)} " +
+                                "(threshold=${targetEnv.confidenceThreshold})")
+                    // For now: abort. Phase 4c will add automatic recovery.
+                    return ExecutionOutcome.Failed(
+                        packageId = plan.packageId,
+                        detail = "wrong_environment:expected=${targetEnvName} " +
+                                "got=${verifyResult.winningEnvironment?.name ?: "unknown"} " +
+                                "conf=${"%.2f".format(verifyResult.targetConfidence)}",
+                        durationMs = System.currentTimeMillis() - started
+                    )
+                }
+                android.util.Log.i(TAG,
+                    "ENV_VERIFIED '${targetEnvName}' conf=${"%.2f".format(verifyResult.targetConfidence)}")
+            }
+        }
 
         if (!alreadyEditable) {
             val baseCandidates = listOf(

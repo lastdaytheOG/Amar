@@ -26,12 +26,16 @@ import com.amar.vault.agent.control.persistence.TaskCheckpointDao
 import com.amar.vault.agent.perception.PackageWatchlist
 import com.amar.vault.agent.perception.SnapshotCache
 import com.amar.vault.agent.control.DefaultVerificationEngine
+import com.amar.vault.agent.runtime.environment.SemanticEnvironment
+import com.amar.vault.agent.runtime.environment.environments.GeminiConversationEnvironment
+import com.amar.vault.agent.runtime.environment.environments.GoogleSearchEnvironment
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dagger.multibindings.IntoSet
 import kotlinx.coroutines.CoroutineScope
 import javax.inject.Singleton
 
@@ -243,28 +247,21 @@ object AgentModule {
         terminalObservers = observers
     )
 
-    // -------------------------------------------------------------------------
-    // Step 9: framework adapters. Hilt multibinding collects every @IntoSet
-    // FrameworkAdapter into a Set<FrameworkAdapter> the registry consumes.
-    // -------------------------------------------------------------------------
-
     @Provides
     @Singleton
-    @dagger.multibindings.IntoSet
+    @IntoSet
     fun provideWhatsAppAdapter(): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
         com.amar.vault.agent.runtime.adapters.WhatsAppAdapter()
 
     @Provides
     @Singleton
-    @dagger.multibindings.IntoSet
+    @IntoSet
     fun provideChatGPTAdapter(): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
         com.amar.vault.agent.runtime.adapters.ChatGPTAdapter()
 
-
-
     @Provides
     @Singleton
-    @dagger.multibindings.IntoSet
+    @IntoSet
     fun provideComposeAdapter(
         cascade: com.amar.vault.agent.runtime.injection.StrategyCascade
     ): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
@@ -272,7 +269,7 @@ object AgentModule {
 
     @Provides
     @Singleton
-    @dagger.multibindings.IntoSet
+    @IntoSet
     fun provideFlutterAdapter(
         cascade: com.amar.vault.agent.runtime.injection.StrategyCascade
     ): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
@@ -280,7 +277,20 @@ object AgentModule {
 
     @Provides
     @Singleton
-    @dagger.multibindings.IntoSet
+    @IntoSet
     fun provideGeminiAdapter(): com.amar.vault.agent.runtime.adapters.FrameworkAdapter =
         com.amar.vault.agent.runtime.adapters.GeminiAdapter()
+
+    // Phase 4a: SemanticEnvironment registry via Hilt multibinding.
+    @Provides
+    @Singleton
+    @IntoSet
+    fun provideGeminiConversationEnvironment(): SemanticEnvironment =
+        GeminiConversationEnvironment()
+
+    @Provides
+    @Singleton
+    @IntoSet
+    fun provideGoogleSearchEnvironment(): SemanticEnvironment =
+        GoogleSearchEnvironment()
 }
