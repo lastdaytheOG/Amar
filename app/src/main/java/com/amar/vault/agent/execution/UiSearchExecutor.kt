@@ -213,17 +213,30 @@ class UiSearchExecutor @Inject constructor(
                             "ENV_VERIFIED '${targetEnvName}' " +
                                     "conf=${"%.2f".format(verifyResult.targetConfidence)}")
                     }
-                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.WRONG_ENVIRONMENT -> {
+                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.WRONG_ENVIRONMENT,
+                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.TRANSITIONING,
+                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.UNKNOWN -> {
                         android.util.Log.w(TAG,
-                            "ENV_WRONG target='${targetEnvName}' " +
+                            "ENV_MISMATCH state=${verifyResult.state} target='${targetEnvName}' " +
                                     "winner='${verifyResult.winningEnvironment?.name}' " +
-                                    "conf=${"%.2f".format(verifyResult.targetConfidence)}")
-                        return ExecutionOutcome.Failed(
-                            packageId = plan.packageId,
-                            detail = "wrong_environment:expected=${targetEnvName} " +
-                                    "got=${verifyResult.winningEnvironment?.name ?: "unknown"}",
-                            durationMs = System.currentTimeMillis() - started
-                        )
+                                    "conf=${"%.2f".format(verifyResult.targetConfidence)} — attempting recovery")
+
+                        val recovered = attemptEnvironmentRecovery(targetEnv)
+                        if (recovered.state ==
+                            com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.STABLE) {
+                            android.util.Log.i(TAG,
+                                "ENV_RECOVERED via recovery — conf=${"%.2f".format(recovered.targetConfidence)}")
+                        } else {
+                            android.util.Log.w(TAG,
+                                "ENV_RECOVERY_FAILED final_state=${recovered.state} " +
+                                        "conf=${"%.2f".format(recovered.targetConfidence)}")
+                            return ExecutionOutcome.Failed(
+                                packageId = plan.packageId,
+                                detail = "env_recovery_failed:state=${recovered.state} " +
+                                        "conf=${"%.2f".format(recovered.targetConfidence)}",
+                                durationMs = System.currentTimeMillis() - started
+                            )
+                        }
                     }
                     com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.AMBIGUOUS -> {
                         android.util.Log.w(TAG,
@@ -232,20 +245,6 @@ class UiSearchExecutor @Inject constructor(
                         return ExecutionOutcome.Failed(
                             packageId = plan.packageId,
                             detail = "ambiguous_environment:${verifyResult.allConfidences}",
-                            durationMs = System.currentTimeMillis() - started
-                        )
-                    }
-                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.TRANSITIONING,
-                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.UNKNOWN -> {
-                        android.util.Log.w(TAG,
-                            "ENV_UNSTABLE target='${targetEnvName}' " +
-                                    "state=${verifyResult.state} " +
-                                    "conf=${"%.2f".format(verifyResult.targetConfidence)} " +
-                                    "after retries — aborting (recovery in next session)")
-                        return ExecutionOutcome.Failed(
-                            packageId = plan.packageId,
-                            detail = "env_unstable:state=${verifyResult.state} " +
-                                    "conf=${"%.2f".format(verifyResult.targetConfidence)}",
                             durationMs = System.currentTimeMillis() - started
                         )
                     }
@@ -438,6 +437,65 @@ class UiSearchExecutor @Inject constructor(
     /**
      * Traverses the layout layer recursively, forcing node refreshing to bypass dynamic tree compression.
      */
+    /**
+     * Invokes the target environment's recovery strategy and re-verifies.
+     *
+     * For LaunchComponent: launches a specific Activity component (used
+     * when the generic intent landed in the wrong surface — e.g. ACTION_ASSIST
+     * opening Google Search instead of Gemini's MainActivity).
+     *
+     * For SendIntent: fires an Android Intent (alternative deep-link path).
+     *
+     * For TapAffordance: clicks an in-UI button (e.g. mode-switch tab).
+     *
+     * After recovery action: waits 600ms for UI to settle, then runs
+     * verifier again. Returns the post-recovery verification result.
+     */
+    private suspend fun attemptEnvironmentRecovery(
+        targetEnv: com.amar.vault.agent.runtime.environment.SemanticEnvironment
+    ): com.amar.vault.agent.runtime.environment.EnvironmentVerifier.VerificationResult {
+        val recovery = targetEnv.recoveryStrategy()
+        if (recovery == null) {
+            android.util.Log.w("UiSearchExecutor", "RECOVERY no_strategy for env=${targetEnv.name}")
+            return environmentVerifier.verify(targetEnv)
+        }
+
+        android.util.Log.i("UiSearchExecutor", "RECOVERY invoking strategy=$recovery for env=${targetEnv.name}")
+
+        try {
+            when (recovery) {
+                is com.amar.vault.agent.runtime.environment.EnvironmentRecovery.LaunchComponent -> {
+                    val intent = android.content.Intent(android.content.Intent.ACTION_MAIN).apply {
+                        component = android.content.ComponentName(recovery.packageName, recovery.className)
+                        addCategory(android.content.Intent.CATEGORY_LAUNCHER)
+                        addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                    context.startActivity(intent)
+                }
+                is com.amar.vault.agent.runtime.environment.EnvironmentRecovery.SendIntent -> {
+                    val intent = android.content.Intent(recovery.action).apply {
+                        setPackage(recovery.packageName)
+                        addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+                    }
+                    context.startActivity(intent)
+                }
+                is com.amar.vault.agent.runtime.environment.EnvironmentRecovery.TapAffordance -> {
+                    val strategy = if (recovery.byText) TargetStrategy.TEXT else TargetStrategy.RESOURCE_ID
+                    submit(AgentAction.Click(target = recovery.target, strategy = strategy))
+                }
+            }
+        } catch (t: Throwable) {
+            android.util.Log.w("UiSearchExecutor", "RECOVERY threw: ${t.message}")
+        }
+
+        // Let the new surface render before re-verifying.
+        delay(800L)
+        val result = retryUntilStable(targetEnv, maxTries = 4)
+        android.util.Log.i("UiSearchExecutor", "RECOVERY_RESULT state=${result.state} " +
+                "conf=${"%.2f".format(result.targetConfidence)}")
+        return result
+    }
+
     private suspend fun retryUntilStable(
         targetEnv: com.amar.vault.agent.runtime.environment.SemanticEnvironment,
         maxTries: Int

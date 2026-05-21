@@ -132,6 +132,11 @@ sealed interface EnvironmentRecovery {
     /** Send an Android Intent (e.g. deep-link to the right surface). */
     data class SendIntent(val action: String, val packageName: String) : EnvironmentRecovery
 
+    /** Launch a specific Activity component directly. Used when the
+     *  generic intent action lands in the wrong surface and we know the
+     *  exact component for the right one. */
+    data class LaunchComponent(val packageName: String, val className: String) : EnvironmentRecovery
+
     /** Tap a UI affordance by text or resource_id. */
     data class TapAffordance(val target: String, val byText: Boolean = true) : EnvironmentRecovery
 }

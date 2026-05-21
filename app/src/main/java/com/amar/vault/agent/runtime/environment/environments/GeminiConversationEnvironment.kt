@@ -47,8 +47,8 @@ class GeminiConversationEnvironment @Inject constructor() : SemanticEnvironment 
     override val confidenceThreshold: Double = 0.5
 
     override fun recoveryStrategy(): EnvironmentRecovery =
-        EnvironmentRecovery.SendIntent(
-            action = "android.intent.action.ASSIST",
-            packageName = "com.google.android.googlequicksearchbox"
+        EnvironmentRecovery.LaunchComponent(
+            packageName = "com.google.android.googlequicksearchbox",
+            className = "com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity"
         )
 }
