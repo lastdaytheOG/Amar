@@ -47,8 +47,14 @@ class GeminiConversationEnvironment @Inject constructor() : SemanticEnvironment 
     override val confidenceThreshold: Double = 0.5
 
     override fun recoveryStrategy(): EnvironmentRecovery =
-        EnvironmentRecovery.LaunchComponent(
-            packageName = "com.google.android.googlequicksearchbox",
-            className = "com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity"
+    // Gemini's MainActivity is android:exported="false", so we cannot
+    // launch it directly from a third-party app. Instead, when we land
+    // in Google Search (the default ACTION_ASSIST surface on this
+    // device), the search screen exposes an "AI Mode" chip with
+    // resource-id googleapp_sbn_aim_chip that switches into Gemini
+        // conversational mode. Tap that.
+        EnvironmentRecovery.TapAffordance(
+            target = "googleapp_sbn_aim_chip",
+            byText = false  // resource-id, not text
         )
 }
