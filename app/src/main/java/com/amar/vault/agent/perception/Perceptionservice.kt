@@ -269,6 +269,15 @@ class PerceptionService : AccessibilityService() {
             } else {
                 windowInfos
                     .sortedByDescending { it.layer }
+                    .also { wins ->
+                        // Diagnostic: log every window the system reports
+                        wins.forEachIndexed { i, w ->
+                            val r = safeRoot { w.root }
+                            val rPkg = try { r?.packageName?.toString() } catch (t: Throwable) { null }
+                            Log.i(TAG, "WIN[$i] type=${w.type} focused=${w.isFocused} active=${w.isActive} " +
+                                    "layer=${w.layer} rootPkg=$rPkg")
+                        }
+                    }
                     .filter { w ->
                         val type = w.type
                         type == android.view.accessibility.AccessibilityWindowInfo.TYPE_APPLICATION ||
@@ -279,10 +288,13 @@ class PerceptionService : AccessibilityService() {
                     .mapNotNull { w -> safeRoot { w.root } }
                     .filter { root ->
                         // Keep roots whose package matches the foreground app.
-                        // Also keep "anonymous" roots (null package) — happens with
-                        // some overlay popups that don't tag themselves.
+                        // Also keep "anonymous" roots (null package).
                         val pkg = try { root.packageName?.toString() } catch (t: Throwable) { null }
-                        pkg == null || pkg == targetPkg || targetPkg == null
+                        val keep = pkg == null || pkg == targetPkg || targetPkg == null
+                        if (!keep) {
+                            Log.i(TAG, "WIN_FILTERED_OUT rootPkg=$pkg targetPkg=$targetPkg")
+                        }
+                        keep
                     }
             }
 

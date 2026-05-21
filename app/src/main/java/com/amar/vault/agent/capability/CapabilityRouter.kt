@@ -8,6 +8,7 @@ import com.amar.vault.agent.intent.ParsedIntent
 import java.util.Locale
 import javax.inject.Inject
 import javax.inject.Singleton
+import android.util.Log
 
 /**
  * Layer 2: Capability Router.
@@ -125,16 +126,22 @@ class CapabilityRouter @Inject constructor(
      * Matches the contract of Layer 3's OpenAppExecutor; kept in sync manually.
      */
     private fun resolvePackage(appName: String): String? {
+        Log.i("CapabilityRouter", "resolvePackage in='$appName' lower='${appName.lowercase()}'")
+
         // Short-circuit: LLM planners frequently hallucinate non-existent
         // package names for Google AI products. Translate them to the real
         // sentinel package BEFORE normalization.
-        when (appName.lowercase()) {
+        when (appName.lowercase().trim()) {
             "com.google.android.apps.bard",
             "com.google.android.apps.bardandroid",
             "com.google.android.apps.gemini",
             "com.google.android.bard",
-            "com.google.android.gemini" ->
+            "com.google.android.gemini",
+            "gemini",
+            "bard" -> {
+                Log.i("CapabilityRouter", "resolvePackage SHORTCIRCUIT '$appName' -> gemini sentinel")
                 return "com.google.android.googlequicksearchbox#gemini"
+            }
         }
 
         val normalized = normalize(appName)

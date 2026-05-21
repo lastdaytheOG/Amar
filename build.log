@@ -1,3 +1,4 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
 > Task :app:preBuild UP-TO-DATE
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
@@ -39,12 +40,10 @@
 > Task :app:kspDebugKotlin
 
 > Task :app:compileDebugKotlin
-w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/capability/CapabilityRouter.kt:39:5 This annotation is currently applied to the value parameter only, but in the future it will also be applied to field.
-- To opt in to applying to both value parameter and field, add '-Xannotation-default-target=param-property' to your compiler arguments.
-- To keep applying to the value parameter only, use the '@param:' annotation target.
-
-See https://youtrack.jetbrains.com/issue/KT-73255 for more details.
-w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/capability/CapabilityRouter.kt:145:55 Unnecessary safe call on a non-null receiver of type 'CharSequence'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/perception/Perceptionservice.kt:514:30 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/perception/Perceptionservice.kt:539:35 Unnecessary safe call on a non-null receiver of type '(Mutable)List<CharSequence!>'.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/perception/Perceptionservice.kt:555:30 'fun recycle(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/amar/vault/agent/perception/Perceptionservice.kt:601:30 'fun recycle(): Unit' is deprecated. Deprecated in Java.
 
 > Task :app:compileDebugJavaWithJavac
 > Task :app:hiltAggregateDepsDebug UP-TO-DATE
@@ -55,18 +54,5 @@ w: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/app/src/main/java/com/ama
 > Task :app:dexBuilderDebug
 > Task :app:mergeDebugGlobalSynthetics UP-TO-DATE
 > Task :app:mergeProjectDexDebug
-> Task :app:packageDebug
-> Task :app:createDebugApkListingFileRedirect UP-TO-DATE
-> Task :app:assembleDebug
-
-[Incubating] Problems report is available at: file:///C:/Users/Lenovo/AndroidStudioProjects/Amar2/build/reports/problems/problems-report.html
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
-
-You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-
-For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
-
-BUILD SUCCESSFUL in 36s
-45 actionable tasks: 12 executed, 33 up-to-date
-Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.3.1/userguide/configuration_cache_enabling.html
+Terminate batch job (Y/N)? 
+^C

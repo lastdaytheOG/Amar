@@ -109,7 +109,8 @@ class OpenAppExecutor(
 
     private suspend fun resolvePackage(open: AgentAction.OpenApp): String? {
         open.packageId?.let {
-            if (isPackageInstalled(it)) return it
+            val cleanPackageId = it.substringBefore("#")
+            if (isPackageInstalled(cleanPackageId)) return it
             Log.i(TAG, "Explicit package '$it' not installed")
         }
 
@@ -248,18 +249,11 @@ class OpenAppExecutor(
             val pm = context.packageManager
 
             // Sentinel package id "com.google.android.googlequicksearchbox#gemini"
-            // opens the Gemini assistant MainActivity directly. Bare
-            // "com.google.android.googlequicksearchbox" opens the standard
-            // Google Search activity. This split lets "gemini" and "google"
-            // resolve to different launch targets despite sharing one APK.
+            // opens the Gemini overlay panel via secure ACTION_ASSIST.
             var intent: Intent? = when {
                 packageId == "com.google.android.googlequicksearchbox#gemini" -> {
-                    Intent(Intent.ACTION_MAIN).apply {
-                        component = android.content.ComponentName(
-                            "com.google.android.googlequicksearchbox",
-                            "com.google.android.apps.search.assistant.surfaces.voice.robin.main.MainActivity"
-                        )
-                        addCategory(Intent.CATEGORY_LAUNCHER)
+                    Intent(Intent.ACTION_ASSIST).apply {
+                        setPackage("com.google.android.googlequicksearchbox")
                         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     }
                 }
