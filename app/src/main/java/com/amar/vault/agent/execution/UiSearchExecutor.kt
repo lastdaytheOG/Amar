@@ -171,7 +171,11 @@ class UiSearchExecutor @Inject constructor(
                 }
 
                 foundInput = nodes.firstOrNull { el ->
-                    el.editable && el.bounds != null && !el.bounds.isEmpty
+                    el.editable && el.bounds != null && !el.bounds.isEmpty &&
+                            // Skip Gemini's collapsed-text placeholder. It's editable=true
+                            // but typing into it doesn't work — must be clicked first to
+                            // expand into a real EditText.
+                            el.resourceId?.contains("collapsed_text") != true
                 }
 
                 foundSearchButtons = nodes.filter { el ->
@@ -192,13 +196,24 @@ class UiSearchExecutor @Inject constructor(
         android.util.Log.i(TAG, "step 2.7 done in ${System.currentTimeMillis() - pollStart}ms")
 
         val alreadyEditable = foundInput != null
-        android.util.Log.i(TAG, "stage 1 already-editable bypass: $alreadyEditable")
+        android.util.Log.i(TAG, "stage 1 already-editable bypass: $alreadyEditable " +
+                "match=${foundInput?.let { "rid=${it.resourceId} type=${it.type} text='${it.text?.take(30)}' cd='${it.contentDesc?.take(30)}'" }}")
 
         // Phase 4a: Semantic environment verification.
         // For multi-surface packages (Gemini/Search in Quicksearchbox, etc),
         // structural "an editable exists" is not enough — we must verify the
         // ACTIVE environment matches the user's target intent.
-        val targetEnvName = if (plan.packageId.endsWith("#gemini")) "GeminiConversation" else null
+        // Multi-environment package detection: any package containing apps
+        // with distinct semantic surfaces (Gemini vs Search inside googlequicksearchbox,
+        // Uber rides vs Eats, Amazon search vs checkout) gets routed through the
+        // verifier. The verifier picks the correct environment by signal match
+        // and rejects if forbidden signals fire.
+        val targetEnvName: String? = when {
+            plan.packageId == "com.google.android.apps.bard" -> "GeminiConversation"
+            plan.packageId == "com.google.android.googlequicksearchbox" -> "GeminiConversation"
+            plan.packageId.endsWith("#gemini") -> "GeminiConversation"
+            else -> null
+        }
         if (targetEnvName != null) {
             val targetEnv = environmentVerifier.findByName(targetEnvName)
             if (targetEnv != null) {
@@ -254,13 +269,15 @@ class UiSearchExecutor @Inject constructor(
 
         if (!alreadyEditable) {
             val baseCandidates = listOf(
+                // Gemini-specific candidates first — when target env is Gemini,
+                // these resolve in ~150ms vs 18s of generic candidate timeouts.
+                AgentAction.Click(target = "Ask Gemini", strategy = TargetStrategy.TEXT),
                 AgentAction.Click(target = "Search", strategy = TargetStrategy.CONTENT_DESC),
                 AgentAction.Click(target = "search_action_bar", strategy = TargetStrategy.RESOURCE_ID),
                 AgentAction.Click(target = "menuitem_search", strategy = TargetStrategy.RESOURCE_ID),
                 AgentAction.Click(target = "search_bar", strategy = TargetStrategy.RESOURCE_ID),
                 AgentAction.Click(target = "my_search_bar", strategy = TargetStrategy.RESOURCE_ID),
                 AgentAction.Click(target = "Search settings", strategy = TargetStrategy.TEXT),
-                AgentAction.Click(target = "Ask Gemini", strategy = TargetStrategy.TEXT),
 
                 // --- Gemini Keyboard Toggle Strategies ---
                 AgentAction.Click(target = "Keyboard", strategy = TargetStrategy.CONTENT_DESC),
@@ -378,6 +395,43 @@ class UiSearchExecutor @Inject constructor(
             if (injected) {
                 typedWith = "findFocus(FOCUS_INPUT)/ACTION_SET_TEXT"
                 android.util.Log.i(TAG, "step 5 SUCCESS via $typedWith")
+
+                // Press ENTER to submit the query. ACTION_IME_ENTER is the
+                // canonical accessibility action for "submit current input"
+                // and works on most modern apps. Available since Android 30.
+                try {
+                    delay(150L)  // let text settle into the field
+                    val submitted = if (android.os.Build.VERSION.SDK_INT >= 30) {
+                        focusedNode.performAction(
+                            android.view.accessibility.AccessibilityNodeInfo.AccessibilityAction.ACTION_IME_ENTER.id
+                        )
+                    } else false
+                    android.util.Log.i(TAG, "step 5 submit ACTION_IME_ENTER=$submitted")
+
+                    // ACTION_IME_ENTER works for many apps but Compose-based
+                    // surfaces (Gemini, ChatGPT) ignore it and require an
+                    // explicit Send button click. Try a few common Send-button
+                    // affordances after a small settle delay.
+                    delay(200L)
+                    val sendCandidates = listOf(
+                        AgentAction.Click(target = "Send", strategy = TargetStrategy.CONTENT_DESC),
+                        AgentAction.Click(target = "Send message", strategy = TargetStrategy.CONTENT_DESC),
+                        AgentAction.Click(target = "Submit", strategy = TargetStrategy.CONTENT_DESC),
+                        AgentAction.Click(target = "send_btn", strategy = TargetStrategy.RESOURCE_ID),
+                        AgentAction.Click(target = "send_button", strategy = TargetStrategy.RESOURCE_ID)
+                    )
+                    var sentBy: String? = null
+                    for (cand in sendCandidates) {
+                        val st = submit(cand)
+                        if (st is TaskState.Succeeded) {
+                            sentBy = "${cand.target}/${cand.strategy}"
+                            break
+                        }
+                    }
+                    android.util.Log.i(TAG, "step 5 send_button=$sentBy")
+                } catch (t: Throwable) {
+                    android.util.Log.w(TAG, "step 5 submit threw: ${t.message}")
+                }
             }
             safeRecycle(focusedNode)
         }

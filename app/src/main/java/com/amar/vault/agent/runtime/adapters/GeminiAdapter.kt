@@ -22,7 +22,8 @@ import javax.inject.Singleton
 class GeminiAdapter @Inject constructor() : FrameworkAdapter {
 
     override val packageIds: Set<String> = setOf(
-        "com.google.android.googlequicksearchbox"
+        "com.google.android.googlequicksearchbox",
+        "com.google.android.apps.bard"
     )
 
     override fun classifyFocusedNode(

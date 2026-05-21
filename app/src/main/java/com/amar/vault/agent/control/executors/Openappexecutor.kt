@@ -248,17 +248,12 @@ class OpenAppExecutor(
         return try {
             val pm = context.packageManager
 
-            // Sentinel package id "com.google.android.googlequicksearchbox#gemini"
-            // opens the Gemini overlay panel via secure ACTION_ASSIST.
-            var intent: Intent? = when {
-                packageId == "com.google.android.googlequicksearchbox#gemini" -> {
-                    Intent(Intent.ACTION_ASSIST).apply {
-                        setPackage("com.google.android.googlequicksearchbox")
-                        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    }
-                }
-                else -> pm.getLaunchIntentForPackage(packageId)
-            }
+            // Standard launcher intent. The .bard package is a launcher stub
+            // that redirects to com.google.android.googlequicksearchbox's
+            // Gemini conversational surface. The runtime-identity mismatch
+            // is handled by EnvironmentVerifier (which matches both package
+            // ids in its environment definition).
+            var intent: Intent? = pm.getLaunchIntentForPackage(packageId)
 
             if (intent == null) {
                 Log.w(TAG, "Fallback launch for $packageId")

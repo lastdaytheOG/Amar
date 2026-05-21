@@ -128,9 +128,11 @@ class CapabilityRouter @Inject constructor(
     private fun resolvePackage(appName: String): String? {
         Log.i("CapabilityRouter", "resolvePackage in='$appName' lower='${appName.lowercase()}'")
 
-        // Short-circuit: LLM planners frequently hallucinate non-existent
-        // package names for Google AI products. Translate them to the real
-        // sentinel package BEFORE normalization.
+        // The Gemini app's launch identity (com.google.android.apps.bard) differs
+        // from its runtime identity (com.google.android.googlequicksearchbox).
+        // Launch by .bard so we land on the real Gemini conversational surface
+        // (not AIM/Google Search). The semantic environment verifier handles
+        // the runtime-side identity via signal-based detection.
         when (appName.lowercase().trim()) {
             "com.google.android.apps.bard",
             "com.google.android.apps.bardandroid",
@@ -139,8 +141,8 @@ class CapabilityRouter @Inject constructor(
             "com.google.android.gemini",
             "gemini",
             "bard" -> {
-                Log.i("CapabilityRouter", "resolvePackage SHORTCIRCUIT '$appName' -> gemini sentinel")
-                return "com.google.android.googlequicksearchbox#gemini"
+                Log.i("CapabilityRouter", "resolvePackage GEMINI '$appName' -> com.google.android.apps.bard")
+                return "com.google.android.apps.bard"
             }
         }
 
