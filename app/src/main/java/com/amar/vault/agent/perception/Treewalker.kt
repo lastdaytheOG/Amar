@@ -37,7 +37,7 @@ import android.view.accessibility.AccessibilityNodeInfo
 object TreeWalker {
 
     /** Max depth from window root. Past this, nodes are skipped. */
-    const val DEPTH_LIMIT = 16
+    const val DEPTH_LIMIT = 32
 
     /**
      * Walk the tree and produce a snapshot.
@@ -69,6 +69,9 @@ object TreeWalker {
                 break
             }
             if (frame.depth > DEPTH_LIMIT) {
+                android.util.Log.i("TreeWalker",
+                    "DEPTH_LIMIT_HIT pkg=$packageId depth=${frame.depth} " +
+                            "elements_so_far=${elements.size}")
                 truncated = true
                 continue
             }
