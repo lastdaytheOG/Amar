@@ -202,24 +202,54 @@ class UiSearchExecutor @Inject constructor(
         if (targetEnvName != null) {
             val targetEnv = environmentVerifier.findByName(targetEnvName)
             if (targetEnv != null) {
-                val verifyResult = environmentVerifier.verify(targetEnv)
-                if (!verifyResult.targetReached) {
-                    android.util.Log.w(TAG,
-                        "ENV_MISMATCH target='${targetEnvName}' " +
-                                "actualWinner='${verifyResult.winningEnvironment?.name}' " +
-                                "confidence=${"%.2f".format(verifyResult.targetConfidence)} " +
-                                "(threshold=${targetEnv.confidenceThreshold})")
-                    // For now: abort. Phase 4c will add automatic recovery.
-                    return ExecutionOutcome.Failed(
-                        packageId = plan.packageId,
-                        detail = "wrong_environment:expected=${targetEnvName} " +
-                                "got=${verifyResult.winningEnvironment?.name ?: "unknown"} " +
-                                "conf=${"%.2f".format(verifyResult.targetConfidence)}",
-                        durationMs = System.currentTimeMillis() - started
-                    )
+                // Step 1 of recovery roadmap: state-aware verification.
+                // We classify into STABLE/TRANSITIONING/AMBIGUOUS/WRONG_ENV/UNKNOWN
+                // and branch accordingly. For TRANSITIONING we wait & retry.
+                // Recovery actions (Step 2) wired in next session.
+                val verifyResult = retryUntilStable(targetEnv, maxTries = 4)
+                when (verifyResult.state) {
+                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.STABLE -> {
+                        android.util.Log.i(TAG,
+                            "ENV_VERIFIED '${targetEnvName}' " +
+                                    "conf=${"%.2f".format(verifyResult.targetConfidence)}")
+                    }
+                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.WRONG_ENVIRONMENT -> {
+                        android.util.Log.w(TAG,
+                            "ENV_WRONG target='${targetEnvName}' " +
+                                    "winner='${verifyResult.winningEnvironment?.name}' " +
+                                    "conf=${"%.2f".format(verifyResult.targetConfidence)}")
+                        return ExecutionOutcome.Failed(
+                            packageId = plan.packageId,
+                            detail = "wrong_environment:expected=${targetEnvName} " +
+                                    "got=${verifyResult.winningEnvironment?.name ?: "unknown"}",
+                            durationMs = System.currentTimeMillis() - started
+                        )
+                    }
+                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.AMBIGUOUS -> {
+                        android.util.Log.w(TAG,
+                            "ENV_AMBIGUOUS target='${targetEnvName}' " +
+                                    "confidences=${verifyResult.allConfidences}")
+                        return ExecutionOutcome.Failed(
+                            packageId = plan.packageId,
+                            detail = "ambiguous_environment:${verifyResult.allConfidences}",
+                            durationMs = System.currentTimeMillis() - started
+                        )
+                    }
+                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.TRANSITIONING,
+                    com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.UNKNOWN -> {
+                        android.util.Log.w(TAG,
+                            "ENV_UNSTABLE target='${targetEnvName}' " +
+                                    "state=${verifyResult.state} " +
+                                    "conf=${"%.2f".format(verifyResult.targetConfidence)} " +
+                                    "after retries — aborting (recovery in next session)")
+                        return ExecutionOutcome.Failed(
+                            packageId = plan.packageId,
+                            detail = "env_unstable:state=${verifyResult.state} " +
+                                    "conf=${"%.2f".format(verifyResult.targetConfidence)}",
+                            durationMs = System.currentTimeMillis() - started
+                        )
+                    }
                 }
-                android.util.Log.i(TAG,
-                    "ENV_VERIFIED '${targetEnvName}' conf=${"%.2f".format(verifyResult.targetConfidence)}")
             }
         }
 
@@ -408,6 +438,22 @@ class UiSearchExecutor @Inject constructor(
     /**
      * Traverses the layout layer recursively, forcing node refreshing to bypass dynamic tree compression.
      */
+    private suspend fun retryUntilStable(
+        targetEnv: com.amar.vault.agent.runtime.environment.SemanticEnvironment,
+        maxTries: Int
+    ): com.amar.vault.agent.runtime.environment.EnvironmentVerifier.VerificationResult {
+        var last = environmentVerifier.verify(targetEnv)
+        var tries = 1
+        while (tries < maxTries &&
+            last.state == com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.TRANSITIONING) {
+            delay(250L)
+            last = environmentVerifier.verify(targetEnv)
+            tries++
+        }
+        android.util.Log.i("UiSearchExecutor", "retryUntilStable tries=$tries final_state=${last.state}")
+        return last
+    }
+
     private fun unpackComposeTree(node: AccessibilityNodeInfo, output: MutableList<UiElement>) {
         val stack = ArrayDeque<AccessibilityNodeInfo>()
         stack.addLast(node)

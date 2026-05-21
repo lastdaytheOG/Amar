@@ -34,12 +34,40 @@ class EnvironmentVerifier @Inject constructor(
     private val environments: Set<@JvmSuppressWildcards SemanticEnvironment>
 ) {
 
+    /**
+     * Lightweight state enum capturing whether the verifier has high
+     * confidence in its decision, vs. is observing an unstable / loading
+     * UI vs. is genuinely seeing the wrong environment.
+     *
+     * Step 1 of the roadmap only introduces the *states* — recovery
+     * decisions branch on them. Hysteresis, rolling confidence memory,
+     * and async monitoring loops come in later steps once we have real
+     * telemetry to justify them.
+     */
+    enum class EnvironmentState {
+        /** Target environment confidence ≥ threshold. Safe to execute. */
+        STABLE,
+        /** Some signals present but below threshold. UI may be loading
+         *  or animating. Caller should wait and retry, not fail. */
+        TRANSITIONING,
+        /** Multiple environments scoring close together. Genuinely
+         *  unclear which one is active. Caller should escalate. */
+        AMBIGUOUS,
+        /** A different environment definitively won. Caller should
+         *  invoke environment-specific recovery before retrying. */
+        WRONG_ENVIRONMENT,
+        /** No environment signals present at all. UI may be blank,
+         *  permission dialog, etc. */
+        UNKNOWN
+    }
+
     data class VerificationResult(
         val targetEnvironment: SemanticEnvironment,
         val targetConfidence: Double,
         val targetReached: Boolean,
         val winningEnvironment: SemanticEnvironment?,
-        val allConfidences: Map<String, Double>
+        val allConfidences: Map<String, Double>,
+        val state: EnvironmentState
     )
 
     fun verify(targetEnvironment: SemanticEnvironment): VerificationResult {
@@ -85,13 +113,62 @@ class EnvironmentVerifier @Inject constructor(
                 "reached=$targetReached " +
                 "winner='${winningEnvironment?.name}'")
 
+        // Step 1: classify into a coarse state. No hysteresis or rolling
+        // memory yet — just snapshot-derived classification.
+        val state = classifyState(
+            targetEnvironment = targetEnvironment,
+            targetConfidence = targetConfidence,
+            winningEnvironment = winningEnvironment,
+            allConfidences = confidences
+        )
+        Log.i(TAG, "STATE target='${targetEnvironment.name}' state=$state")
+
         return VerificationResult(
             targetEnvironment = targetEnvironment,
             targetConfidence = targetConfidence,
             targetReached = targetReached,
             winningEnvironment = winningEnvironment,
-            allConfidences = confidences
+            allConfidences = confidences,
+            state = state
         )
+    }
+
+    /**
+     * Coarse classifier mapping raw confidence values to a runtime state.
+     *
+     * Heuristics:
+     *   - STABLE              → target conf ≥ threshold
+     *   - WRONG_ENVIRONMENT   → another env beat the target with high margin
+     *   - AMBIGUOUS           → top two envs are within 0.15 of each other
+     *   - TRANSITIONING       → some signals fire (>0) but below threshold
+     *   - UNKNOWN             → no env scored above zero
+     */
+    private fun classifyState(
+        targetEnvironment: SemanticEnvironment,
+        targetConfidence: Double,
+        winningEnvironment: SemanticEnvironment?,
+        allConfidences: Map<String, Double>
+    ): EnvironmentState {
+        if (targetConfidence >= targetEnvironment.confidenceThreshold) {
+            return EnvironmentState.STABLE
+        }
+        val maxConf = allConfidences.values.maxOrNull() ?: 0.0
+        if (maxConf <= 0.05) {
+            return EnvironmentState.UNKNOWN
+        }
+        val sorted = allConfidences.values.sortedDescending()
+        val top = sorted.getOrNull(0) ?: 0.0
+        val second = sorted.getOrNull(1) ?: 0.0
+        if (top - second < 0.15 && top > 0.2) {
+            return EnvironmentState.AMBIGUOUS
+        }
+        if (winningEnvironment != null &&
+            winningEnvironment.name != targetEnvironment.name &&
+            (allConfidences[winningEnvironment.name] ?: 0.0) >= 0.3
+        ) {
+            return EnvironmentState.WRONG_ENVIRONMENT
+        }
+        return EnvironmentState.TRANSITIONING
     }
 
     fun findByName(name: String): SemanticEnvironment? =
