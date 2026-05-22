@@ -223,3 +223,24 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }
+
+// Phase 1 Step 1.5: offline replay analyzer task.
+// Usage: gradlew analyzeReplay -PreplayFile=path/to/replay.json
+tasks.register<JavaExec>("analyzeReplay") {
+    description = "Analyze a replay JSON file and print timeline."
+    group = "verification"
+    dependsOn("compileDebugKotlin")
+    mainClass.set("com.amar.vault.agent.replay.ReplayAnalyzerKt")
+    classpath = files(
+        layout.buildDirectory.dir("tmp/kotlin-classes/debug"),
+        layout.buildDirectory.dir("intermediates/javac/debug/classes"),
+        configurations.named("debugRuntimeClasspath")
+    )
+    val replayFile: String? = if (project.hasProperty("replayFile")) {
+        project.property("replayFile") as String
+    } else null
+    if (replayFile != null) {
+        args = listOf(replayFile)
+    }
+    standardOutput = System.out
+}
