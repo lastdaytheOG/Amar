@@ -172,6 +172,9 @@ class UiSearchExecutor @Inject constructor(
 
                 foundInput = nodes.firstOrNull { el ->
                     el.editable && el.bounds != null && !el.bounds.isEmpty &&
+                            // Skip Gmail's open_search shim (clickable button labeled
+                            // editable but typing fails until expanded).
+                            el.resourceId?.contains("open_search") != true &&
                             // Skip Gemini's collapsed-text placeholder. It's editable=true
                             // but typing into it doesn't work — must be clicked first to
                             // expand into a real EditText.
