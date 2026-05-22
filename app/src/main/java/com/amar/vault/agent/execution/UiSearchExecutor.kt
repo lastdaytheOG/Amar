@@ -172,15 +172,10 @@ class UiSearchExecutor @Inject constructor(
 
                 foundInput = nodes.firstOrNull { el ->
                     el.editable && el.bounds != null && !el.bounds.isEmpty &&
-                            // Skip Gemini's collapsed-text placeholder and Gmail-style
-                            // "search entry button" patterns. These nodes report
-                            // editable=true but typing fails — they're clickable shims
-                            // that must be activated first to reveal the real EditText.
-                            el.resourceId?.contains("collapsed_text") != true &&
-                            el.resourceId?.contains("open_search") != true &&
-                            // Real EditTexts usually have type=INPUT AND either no hint
-                            // OR a meaningful resource_id. Hint-only buttons fail typing.
-                            !(el.resourceId == null && el.text.isNullOrEmpty() && !el.contentDesc.isNullOrEmpty())
+                            // Skip Gemini's collapsed-text placeholder. It's editable=true
+                            // but typing into it doesn't work — must be clicked first to
+                            // expand into a real EditText.
+                            el.resourceId?.contains("collapsed_text") != true
                 }
 
                 foundSearchButtons = nodes.filter { el ->
@@ -421,13 +416,9 @@ class UiSearchExecutor @Inject constructor(
                     val sendCandidates = listOf(
                         AgentAction.Click(target = "Send", strategy = TargetStrategy.CONTENT_DESC),
                         AgentAction.Click(target = "Send message", strategy = TargetStrategy.CONTENT_DESC),
-                        AgentAction.Click(target = "Send prompt", strategy = TargetStrategy.CONTENT_DESC),
                         AgentAction.Click(target = "Submit", strategy = TargetStrategy.CONTENT_DESC),
-                        AgentAction.Click(target = "Submit prompt", strategy = TargetStrategy.CONTENT_DESC),
                         AgentAction.Click(target = "send_btn", strategy = TargetStrategy.RESOURCE_ID),
-                        AgentAction.Click(target = "send_button", strategy = TargetStrategy.RESOURCE_ID),
-                        AgentAction.Click(target = "composer_send_button", strategy = TargetStrategy.RESOURCE_ID),
-                        AgentAction.Click(target = "voice_record_button", strategy = TargetStrategy.RESOURCE_ID)
+                        AgentAction.Click(target = "send_button", strategy = TargetStrategy.RESOURCE_ID)
                     )
                     var sentBy: String? = null
                     for (cand in sendCandidates) {
