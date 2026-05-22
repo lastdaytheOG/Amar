@@ -40,8 +40,38 @@ class UiSearchExecutor @Inject constructor(
     private val injectionRouter: com.amar.vault.agent.runtime.injection.InjectionRouter,
     private val worldStateStore: com.amar.vault.agent.runtime.state.WorldStateStore,
     private val phaseOrchestrator: com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator,
-    private val environmentVerifier: com.amar.vault.agent.runtime.environment.EnvironmentVerifier
+    private val environmentVerifier: com.amar.vault.agent.runtime.environment.EnvironmentVerifier,
+    private val replayRecorder: com.amar.vault.agent.replay.ReplayRecorder
 ) {
+
+    /**
+     * Records a step boundary: a marker frame and (optionally) a snapshot
+     * of the current UI. Per Option B (step-level recording), we capture
+     * snapshots only at meaningful step transitions, not every walk.
+     */
+    private fun recordStep(step: String, detail: String? = null, snapshot: com.amar.vault.agent.perception.UiSnapshot? = null) {
+        val ts = replayRecorder.timeSinceStartMs()
+        replayRecorder.recordFrame(
+            com.amar.vault.agent.replay.ReplayFrame.StepMarker(
+                tsMs = ts,
+                step = step,
+                detail = detail
+            )
+        )
+        if (snapshot != null) {
+            replayRecorder.recordFrame(
+                com.amar.vault.agent.replay.ReplayFrame.Snapshot(
+                    tsMs = ts,
+                    snapshotId = java.util.UUID.randomUUID().toString(),
+                    packageId = snapshot.packageId,
+                    elementCount = snapshot.elements.size,
+                    elements = snapshot.elements.map {
+                        com.amar.vault.agent.replay.SerializableUiElement.from(it)
+                    }
+                )
+            )
+        }
+    }
 
     suspend fun execute(plan: ExecutionPlan.UiSearch, ctx: TaskContext): ExecutionOutcome {
         val workflowStart = System.currentTimeMillis()
@@ -80,6 +110,7 @@ class UiSearchExecutor @Inject constructor(
         )
         val opened = openedState is TaskState.Succeeded
         android.util.Log.i(TAG, "step 1 open: $opened (state=${openedState::class.simpleName})")
+        recordStep("step_1_open", detail = "opened=$opened")
         if (!opened) {
             return ExecutionOutcome.Failed(
                 packageId = plan.packageId,
@@ -99,6 +130,7 @@ class UiSearchExecutor @Inject constructor(
             )
         }
         android.util.Log.i(TAG, "step 2 settled: ${settled?.packageId} elements=${settled?.size}")
+        recordStep("step_2_settled", detail = "elements=${settled?.size}", snapshot = settled)
 
         val screenHeight = svc?.resources?.displayMetrics?.heightPixels ?: 2400
         val appBarCutoff = (screenHeight * 0.15f).toInt()
@@ -201,6 +233,9 @@ class UiSearchExecutor @Inject constructor(
         val alreadyEditable = foundInput != null
         android.util.Log.i(TAG, "stage 1 already-editable bypass: $alreadyEditable " +
                 "match=${foundInput?.let { "rid=${it.resourceId} type=${it.type} text='${it.text?.take(30)}' cd='${it.contentDesc?.take(30)}'" }}")
+        recordStep("step_2.7_polled",
+            detail = "alreadyEditable=$alreadyEditable foundInput=${foundInput?.resourceId}",
+            snapshot = svc?.forceSnapshot())
 
         // Phase 4a: Semantic environment verification.
         // For multi-surface packages (Gemini/Search in Quicksearchbox, etc),
@@ -352,6 +387,7 @@ class UiSearchExecutor @Inject constructor(
             }
 
             android.util.Log.i(TAG, "step 3 winner: $clickedWith")
+            recordStep("step_3_winner", detail = clickedWith, snapshot = svc?.forceSnapshot())
             delay(FIELD_APPEAR_DELAY_MS)
         }
 
@@ -398,6 +434,7 @@ class UiSearchExecutor @Inject constructor(
             if (injected) {
                 typedWith = "findFocus(FOCUS_INPUT)/ACTION_SET_TEXT"
                 android.util.Log.i(TAG, "step 5 SUCCESS via $typedWith")
+                recordStep("step_5_SUCCESS", detail = typedWith)
 
                 // Press ENTER to submit the query. ACTION_IME_ENTER is the
                 // canonical accessibility action for "submit current input"

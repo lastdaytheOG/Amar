@@ -61,7 +61,8 @@ import javax.inject.Singleton
 class PhaseOrchestrator @Inject constructor(
     private val bus: AccessibilityEventBus,
     private val store: WorldStateStore,
-    private val recoveryEngine: RecoveryEngine
+    private val recoveryEngine: RecoveryEngine,
+    private val replayRecorder: com.amar.vault.agent.replay.ReplayRecorder
 ) {
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
@@ -118,6 +119,14 @@ class PhaseOrchestrator @Inject constructor(
             ctx.transitionTo(AgentPhase.PLANNING, PhaseTransitionReason.Normal)
             Log.i(TAG, "PHASE wf=${ctx.workflowId} goal='$goal' pkg=$targetPackage -> PLANNING")
 
+            // Phase 1: replay recording. Tags inferred from packageId so
+            // failures can later be clustered by category, not by app.
+            replayRecorder.startWorkflow(
+                goalStr = goal,
+                pkgId = targetPackage,
+                tags = inferWorkflowTags(targetPackage)
+            )
+
             // EXECUTING — the body runs here. Overlay events during this
             // phase trigger transitions to RECOVERING via onOverlayDetected.
             ctx.transitionTo(AgentPhase.EXECUTING, PhaseTransitionReason.Normal)
@@ -137,6 +146,12 @@ class PhaseOrchestrator @Inject constructor(
             ctx.transitionTo(AgentPhase.COMPLETE, PhaseTransitionReason.Normal)
             Log.i(TAG, "PHASE wf=${ctx.workflowId} -> COMPLETE elapsed=${ctx.elapsedMs()}ms")
 
+            replayRecorder.finishWorkflow(
+                com.amar.vault.agent.replay.ReplayOutcome(
+                    kind = "Succeeded",
+                    durationMs = ctx.elapsedMs()
+                )
+            )
             return WorkflowResult.Success(result, ctx)
         } catch (t: Throwable) {
             ctx.transitionTo(
@@ -144,6 +159,15 @@ class PhaseOrchestrator @Inject constructor(
                 PhaseTransitionReason.RecoveryFailed(ctx.recoveryEntries)
             )
             Log.w(TAG, "PHASE wf=${ctx.workflowId} -> ABORTED reason=${t.message}")
+
+            replayRecorder.finishWorkflow(
+                com.amar.vault.agent.replay.ReplayOutcome(
+                    kind = "Failed",
+                    detail = t.message,
+                    durationMs = ctx.elapsedMs(),
+                    failureClass = com.amar.vault.agent.replay.FailureClass.UNKNOWN
+                )
+            )
             return WorkflowResult.Failure(t, ctx)
         } finally {
             activeWorkflows.remove(ctx.workflowId)
@@ -198,6 +222,35 @@ class PhaseOrchestrator @Inject constructor(
 
     /** Diagnostic: snapshot of active workflows. */
     fun activeWorkflows(): List<WorkflowContext> = activeWorkflows.values.toList()
+
+    /**
+     * Infers workflow tags from package id for failure-class clustering.
+     * Tags let telemetry group failures by *kind* (compose, chat_input,
+     * dynamic_affordance) rather than per-app. Extend as patterns emerge.
+     */
+    private fun inferWorkflowTags(packageId: String): List<String> {
+        val pkg = packageId.lowercase()
+        val tags = mutableListOf<String>()
+        when {
+            pkg.contains("bard") || pkg.contains("googlequicksearchbox") -> {
+                tags += listOf("compose", "chat_input", "semantic_transition")
+            }
+            pkg.contains("chatgpt") || pkg.contains("openai") -> {
+                tags += listOf("compose", "chat_input", "post_injection_affordance",
+                    "dynamic_affordance_mutation")
+            }
+            pkg.contains("whatsapp") || pkg.contains("telegram") -> {
+                tags += listOf("chat_input", "main_screen_tabs")
+            }
+            pkg.contains("instagram") || pkg.contains("twitter") -> {
+                tags += listOf("social_feed", "search_button")
+            }
+            pkg.contains("gmail") -> {
+                tags += listOf("search_button_shim", "fake_editable_risk")
+            }
+        }
+        return tags
+    }
 
     sealed class WorkflowResult<out T> {
         abstract val context: WorkflowContext
