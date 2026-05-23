@@ -244,3 +244,25 @@ tasks.register<JavaExec>("analyzeReplay") {
     }
     standardOutput = System.out
 }
+
+// Phase 2 Step 2.3: telemetry aggregator task.
+// Usage: gradlew aggregateTelemetry -PreplayDir=... -PoutputCsv=...
+tasks.register<JavaExec>("aggregateTelemetry") {
+    description = "Aggregate replay files into a telemetry CSV."
+    group = "verification"
+    dependsOn("compileDebugKotlin")
+    mainClass.set("com.amar.vault.agent.telemetry.TelemetryAggregatorKt")
+    classpath = files(
+        layout.buildDirectory.dir("tmp/kotlin-classes/debug"),
+        layout.buildDirectory.dir("intermediates/javac/debug/classes"),
+        configurations.named("debugRuntimeClasspath")
+    )
+    val replayDir: String = if (project.hasProperty("replayDir")) {
+        project.property("replayDir") as String
+    } else "replays"
+    val outputCsv: String = if (project.hasProperty("outputCsv")) {
+        project.property("outputCsv") as String
+    } else "telemetry.csv"
+    args = listOf(replayDir, outputCsv)
+    standardOutput = System.out
+}
