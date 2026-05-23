@@ -266,3 +266,25 @@ tasks.register<JavaExec>("aggregateTelemetry") {
     args = listOf(replayDir, outputCsv)
     standardOutput = System.out
 }
+
+// Phase 3: regression harness.
+// Usage: gradlew regression -Pmanifest=canonical_workflows.json -PreplayDir=replays
+tasks.register<JavaExec>("regression") {
+    description = "Run regression harness against canonical workflow manifest."
+    group = "verification"
+    dependsOn("compileDebugKotlin")
+    mainClass.set("com.amar.vault.agent.regression.RegressionHarnessKt")
+    classpath = files(
+        layout.buildDirectory.dir("tmp/kotlin-classes/debug"),
+        layout.buildDirectory.dir("intermediates/javac/debug/classes"),
+        configurations.named("debugRuntimeClasspath")
+    )
+    val manifest: String = if (project.hasProperty("manifest")) {
+        project.property("manifest") as String
+    } else "${project.rootDir}/regression/canonical_workflows.json"
+    val replayDir: String = if (project.hasProperty("replayDir")) {
+        project.property("replayDir") as String
+    } else "${project.rootDir}/replays"
+    args = listOf(manifest, replayDir)
+    standardOutput = System.out
+}
