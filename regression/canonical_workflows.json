@@ -23,19 +23,19 @@
       "id": "twitter_search_puppy",
       "goal": "search puppy on twitter",
       "package_id": "com.twitter.android",
-      "expected_outcome": "Failed",
-      "expected_failure_class": "UNKNOWN",
-      "max_duration_ms": 30000,
-      "notes": "BROKEN: goal-parser doesn't route 'search ... on twitter' through PhaseOrchestrator. CapabilityRouter resolves package but UiSearch plan never created. Fix in Phase 4 by adding twitter/X to search-capable apps list."
+      "expected_outcome": "Succeeded",
+      "expected_failure_class": null,
+      "max_duration_ms": 10000,
+      "notes": "Routes through NativeSearchExecutor deep link. Twitter alias added in Phase 3."
     },
     {
       "id": "instagram_search_pizza",
       "goal": "search pizza on instagram",
       "package_id": "com.instagram.android",
-      "expected_outcome": "Failed",
-      "expected_failure_class": "UNKNOWN",
-      "max_duration_ms": 30000,
-      "notes": "BROKEN: same routing issue as twitter. Fix in Phase 4."
+      "expected_outcome": "Succeeded",
+      "expected_failure_class": null,
+      "max_duration_ms": 10000,
+      "notes": "Routes through NativeSearchExecutor explore-tags deep link."
     },
     {
       "id": "gmail_search_inbox",

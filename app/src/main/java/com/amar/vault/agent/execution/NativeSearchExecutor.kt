@@ -26,11 +26,21 @@ import javax.inject.Singleton
  */
 @Singleton
 class NativeSearchExecutor @Inject constructor(
-    @dagger.hilt.android.qualifiers.ApplicationContext private val context: Context
+    @dagger.hilt.android.qualifiers.ApplicationContext private val context: Context,
+    private val replayRecorder: com.amar.vault.agent.replay.ReplayRecorder
 ) {
 
     suspend fun execute(plan: ExecutionPlan.NativeSearch): ExecutionOutcome {
         val started = System.currentTimeMillis()
+
+        // Phase 1: record this workflow even though we don't go through
+        // PhaseOrchestrator. Allows regression harness to see native-search
+        // workflows as completed instead of as MISS.
+        replayRecorder.startWorkflow(
+            goalStr = "search:${plan.query}",
+            pkgId = plan.packageId,
+            tags = listOf("native_search")
+        )
 
         // Tier 1: App-specific deep links by packageId
         val deepLinkIntent = buildDeepLinkIntent(plan.packageId, plan.query)
@@ -38,9 +48,17 @@ class NativeSearchExecutor @Inject constructor(
             return try {
                 val launcher: Context = CurrentActivityHolder.get() ?: context
                 launcher.startActivity(deepLinkIntent)
+                val duration = System.currentTimeMillis() - started
+                replayRecorder.finishWorkflow(
+                    com.amar.vault.agent.replay.ReplayOutcome(
+                        kind = "Succeeded",
+                        route = "native_search_deep_link",
+                        durationMs = duration
+                    )
+                )
                 ExecutionOutcome.Started(
                     packageId = plan.packageId,
-                    durationMs = System.currentTimeMillis() - started,
+                    durationMs = duration,
                     route = "native_search_deep_link"
                 )
             } catch (t: Throwable) {

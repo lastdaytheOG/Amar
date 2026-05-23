@@ -229,6 +229,8 @@ class CapabilityRouter @Inject constructor(
             "com.google.android.apps.bardandroid" to listOf("com.google.android.googlequicksearchbox#gemini"),
             "com.google.android.apps.gemini" to listOf("com.google.android.googlequicksearchbox#gemini"),
             "instagram"   to listOf("com.instagram.android"),
+            "twitter"     to listOf("com.twitter.android"),
+            "x"           to listOf("com.twitter.android"),
             "facebook"    to listOf("com.facebook.katana"),
             "spotify"     to listOf("com.spotify.music"),
             "netflix"     to listOf("com.netflix.mediaclient"),
