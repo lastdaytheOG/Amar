@@ -306,6 +306,35 @@ class UiSearchExecutor @Inject constructor(
         }
 
         if (!alreadyEditable) {
+            // Phase 4 stability fix: prioritize candidates likely to win for
+            // this package first. The full candidate set is preserved as
+            // fallback; we just reorder so each app hits its known winner
+            // within the first ~2 candidates instead of position 5-7.
+            // Reordering proven from replay analyzer (e.g. Gmail wasted 11s
+            // hitting Gemini candidates before reaching search_bar).
+            val priorityTargetsForPackage: List<Pair<String, TargetStrategy>> = when {
+                realPkg.contains("bard") || realPkg.contains("googlequicksearchbox") ->
+                    listOf(
+                        "Ask Gemini" to TargetStrategy.TEXT,
+                        "assistant_robin_input_collapsed_text_half_sheet" to TargetStrategy.RESOURCE_ID
+                    )
+                realPkg == "com.google.android.gm" ->
+                    listOf(
+                        "search_bar" to TargetStrategy.RESOURCE_ID,
+                        "open_search" to TargetStrategy.RESOURCE_ID
+                    )
+                realPkg == "com.whatsapp" ->
+                    listOf(
+                        "Search" to TargetStrategy.CONTENT_DESC,
+                        "my_search_bar" to TargetStrategy.RESOURCE_ID
+                    )
+                realPkg == "org.telegram.messenger" ->
+                    listOf("Search" to TargetStrategy.CONTENT_DESC)
+                realPkg == "com.openai.chatgpt" ->
+                    listOf("Search" to TargetStrategy.CONTENT_DESC)
+                else -> emptyList()
+            }
+
             val baseCandidates = listOf(
                 // Gemini-specific candidates first — when target env is Gemini,
                 // these resolve in ~150ms vs 18s of generic candidate timeouts.
@@ -340,7 +369,13 @@ class UiSearchExecutor @Inject constructor(
                 AgentAction.Click(target = target, strategy = strategy)
             }
 
-            val clickCandidates = (baseCandidates + dynamicCandidates).distinctBy { it.target }
+            // Prepend priority candidates so they're tried before the generic
+            // cascade; distinctBy preserves only the first occurrence.
+            val priorityCandidates = priorityTargetsForPackage.map { (target, strategy) ->
+                AgentAction.Click(target = target, strategy = strategy)
+            }
+            val clickCandidates = (priorityCandidates + baseCandidates + dynamicCandidates)
+                .distinctBy { it.target }
             var clickedWith = "none"
             val step3Start = System.currentTimeMillis()
 
@@ -452,23 +487,45 @@ class UiSearchExecutor @Inject constructor(
                     // surfaces (Gemini, ChatGPT) ignore it and require an
                     // explicit Send button click. Try a few common Send-button
                     // affordances after a small settle delay.
-                    delay(200L)
-                    val sendCandidates = listOf(
-                        AgentAction.Click(target = "Send", strategy = TargetStrategy.CONTENT_DESC),
-                        AgentAction.Click(target = "Send message", strategy = TargetStrategy.CONTENT_DESC),
-                        AgentAction.Click(target = "Submit", strategy = TargetStrategy.CONTENT_DESC),
-                        AgentAction.Click(target = "send_btn", strategy = TargetStrategy.RESOURCE_ID),
-                        AgentAction.Click(target = "send_button", strategy = TargetStrategy.RESOURCE_ID)
-                    )
-                    var sentBy: String? = null
-                    for (cand in sendCandidates) {
-                        val st = submit(cand)
-                        if (st is TaskState.Succeeded) {
-                            sentBy = "${cand.target}/${cand.strategy}"
-                            break
+                    //
+                    // Phase 4 stability fix: only run the send cascade for
+                    // chat/messaging apps that actually HAVE a send button.
+                    // For search-bar apps (Gmail, Twitter, Instagram via UI,
+                    // generic search surfaces) IME_ENTER already submitted;
+                    // the cascade just wastes ~3s per candidate timing out
+                    // looking for buttons that don't exist.
+                    val needsSendButton =
+                        realPkg.contains("whatsapp") ||
+                                realPkg.contains("telegram") ||
+                                realPkg.contains("messenger") ||
+                                realPkg.contains("chatgpt") ||
+                                realPkg.contains("openai") ||
+                                realPkg.contains("bard") ||
+                                realPkg.contains("googlequicksearchbox") ||
+                                realPkg.contains("signal") ||
+                                realPkg.contains("slack") ||
+                                realPkg.contains("discord")
+                    if (needsSendButton) {
+                        delay(200L)
+                        val sendCandidates = listOf(
+                            AgentAction.Click(target = "Send", strategy = TargetStrategy.CONTENT_DESC),
+                            AgentAction.Click(target = "Send message", strategy = TargetStrategy.CONTENT_DESC),
+                            AgentAction.Click(target = "Submit", strategy = TargetStrategy.CONTENT_DESC),
+                            AgentAction.Click(target = "send_btn", strategy = TargetStrategy.RESOURCE_ID),
+                            AgentAction.Click(target = "send_button", strategy = TargetStrategy.RESOURCE_ID)
+                        )
+                        var sentBy: String? = null
+                        for (cand in sendCandidates) {
+                            val st = submit(cand)
+                            if (st is TaskState.Succeeded) {
+                                sentBy = "${cand.target}/${cand.strategy}"
+                                break
+                            }
                         }
+                        android.util.Log.i(TAG, "step 5 send_button=$sentBy")
+                    } else {
+                        android.util.Log.i(TAG, "step 5 send_button=skipped (search-bar app, IME_ENTER sufficient)")
                     }
-                    android.util.Log.i(TAG, "step 5 send_button=$sentBy")
                 } catch (t: Throwable) {
                     android.util.Log.w(TAG, "step 5 submit threw: ${t.message}")
                 }
