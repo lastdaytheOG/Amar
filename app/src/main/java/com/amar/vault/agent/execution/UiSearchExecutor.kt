@@ -75,22 +75,45 @@ class UiSearchExecutor @Inject constructor(
 
     suspend fun execute(plan: ExecutionPlan.UiSearch, ctx: TaskContext): ExecutionOutcome {
         val workflowStart = System.currentTimeMillis()
-        val result = phaseOrchestrator.runWorkflow(
-            goal = "search:${plan.query}",
-            targetPackage = plan.packageId
-        ) { _ ->
-            executeInternal(plan, ctx)
+
+        // Phase 5 Step 5a: begin tracking target liveness via accessibility
+        // events. PerceptionService.onAccessibilityEvent updates the
+        // heartbeat timestamp; the predicate isTargetDead() is wired in
+        // Step 5b. Tracking is best-effort — if start fails, the workflow
+        // proceeds normally.
+        val trackedPkg = plan.packageId.substringBefore("#")
+        try {
+            worldStateStore.startTrackingTarget(trackedPkg)
+        } catch (t: Throwable) {
+            android.util.Log.w("UiSearchExecutor", "startTrackingTarget failed: ${t.message}")
         }
-        return when (result) {
-            is com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator.WorkflowResult.Success ->
-                result.value
-            is com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator.WorkflowResult.Failure -> {
-                android.util.Log.w("UiSearchExecutor", "runWorkflow failed: ${result.cause.message}")
-                ExecutionOutcome.Failed(
-                    packageId = plan.packageId,
-                    detail = "workflow_failed:${result.cause.message}",
-                    durationMs = System.currentTimeMillis() - workflowStart
-                )
+
+        try {
+            val result = phaseOrchestrator.runWorkflow(
+                goal = "search:${plan.query}",
+                targetPackage = plan.packageId
+            ) { _ ->
+                executeInternal(plan, ctx)
+            }
+            return when (result) {
+                is com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator.WorkflowResult.Success ->
+                    result.value
+                is com.amar.vault.agent.runtime.orchestrator.PhaseOrchestrator.WorkflowResult.Failure -> {
+                    android.util.Log.w("UiSearchExecutor", "runWorkflow failed: ${result.cause.message}")
+                    ExecutionOutcome.Failed(
+                        packageId = plan.packageId,
+                        detail = "workflow_failed:${result.cause.message}",
+                        durationMs = System.currentTimeMillis() - workflowStart
+                    )
+                }
+            }
+        } finally {
+            // Always stop tracking on exit (success, fail, exception). The
+            // breaker becomes inert and isTargetDead() returns false.
+            try {
+                worldStateStore.stopTrackingTarget()
+            } catch (t: Throwable) {
+                android.util.Log.w("UiSearchExecutor", "stopTrackingTarget failed: ${t.message}")
             }
         }
     }
@@ -241,11 +264,32 @@ class UiSearchExecutor @Inject constructor(
             detail = "alreadyEditable=$alreadyEditable foundInput=${foundInput?.resourceId}",
             snapshot = svc?.forceSnapshot())
 
-        // Phase 5 NOTE: process-health gate was attempted here but caused
-        // 5/7 baseline regression on Android 15 (getRunningAppProcesses()
-        // returns only caller's own process on SDK 30+, breaking the check).
-        // Reverted. APP_CRASH_DURING_PERCEPTION detection requires a
-        // different signal — deferred to future Phase 5+.
+        // Phase 5 Step 5b: circuit-breaker predicate check. The heartbeat
+        // tracker (PerceptionService.onAccessibilityEvent → WorldStateStore.
+        // updateTargetHeartbeat) updates lastTargetSeenAtMillis on every
+        // event from the target package. If we get here and the heartbeat
+        // hasn't pulsed in >1.2s, the target app is dead/unrendered and
+        // continuing into step 3 will waste ~40s on doomed clicks. Abort
+        // cleanly with APP_CRASH_DURING_PERCEPTION classification.
+        //
+        // Unlike the earlier process-health attempt (which used
+        // getRunningAppProcesses, blocked by Android 11+ security), this
+        // uses ONLY accessibility events that are already streaming. No
+        // privileged permissions, no false positives on system overlays
+        // (the passlist in WorldStateStore handles keyboards/permission
+        // sheets/system UI).
+        if (worldStateStore.isTargetDead()) {
+            val interrupter = worldStateStore.current().lastInterruptingPackage
+            android.util.Log.w(TAG,
+                "circuit-breaker: target $realPkg heartbeat absent — " +
+                        "lastInterruptingPackage=$interrupter")
+            return ExecutionOutcome.Failed(
+                packageId = plan.packageId,
+                detail = "app_crash_during_perception: $realPkg heartbeat absent " +
+                        "(>1.2s), lastInterrupter=$interrupter",
+                durationMs = System.currentTimeMillis() - started
+            )
+        }
 
         // Phase 4a: Semantic environment verification.
         // For multi-surface packages (Gemini/Search in Quicksearchbox, etc),
