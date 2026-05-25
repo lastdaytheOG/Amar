@@ -56,5 +56,6 @@ object FailureClass {
     const val INJECTION_REJECTED = "INJECTION_REJECTED"        // ACTION_SET_TEXT returned false
     const val SEND_FAILED = "SEND_FAILED"                      // typed but send button never fired
     const val APP_LAUNCH_FAILED = "APP_LAUNCH_FAILED"          // step 1 OpenApp didn't open
+    const val APP_CRASH_DURING_PERCEPTION = "APP_CRASH_DURING_PERCEPTION" // target process killed mid-workflow
     const val UNKNOWN = "UNKNOWN"                              // catch-all for unclassified failures
 }

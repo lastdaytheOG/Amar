@@ -126,7 +126,11 @@ class UiSearchExecutor @Inject constructor(
                 svc = it,
                 targetPackage = plan.packageId,
                 timeoutMs = 3_000L,
-                minElements = 1 // Safe default constraint allows overlapping layouts to settle cleanly
+                minElements = 10 // Phase 4: raised from 1 to 10 to avoid settling
+                // on splash-screen states (Rapido shows a single "Launching..."
+                // image as element #1, then takes 9+ seconds to render real UI).
+                // Most real app screens have well over 10 elements; this catches
+                // splash/loading/intro screens and waits for the real surface.
             )
         }
         android.util.Log.i(TAG, "step 2 settled: ${settled?.packageId} elements=${settled?.size}")
@@ -237,6 +241,12 @@ class UiSearchExecutor @Inject constructor(
             detail = "alreadyEditable=$alreadyEditable foundInput=${foundInput?.resourceId}",
             snapshot = svc?.forceSnapshot())
 
+        // Phase 5 NOTE: process-health gate was attempted here but caused
+        // 5/7 baseline regression on Android 15 (getRunningAppProcesses()
+        // returns only caller's own process on SDK 30+, breaking the check).
+        // Reverted. APP_CRASH_DURING_PERCEPTION detection requires a
+        // different signal — deferred to future Phase 5+.
+
         // Phase 4a: Semantic environment verification.
         // For multi-surface packages (Gemini/Search in Quicksearchbox, etc),
         // structural "an editable exists" is not enough — we must verify the
@@ -332,6 +342,9 @@ class UiSearchExecutor @Inject constructor(
                     listOf("Search" to TargetStrategy.CONTENT_DESC)
                 realPkg == "com.openai.chatgpt" ->
                     listOf("Search" to TargetStrategy.CONTENT_DESC)
+                // Rapido entry removed: app crashes ~7s after launch
+                // (LocationSdkQosConfig deserializer failure), so priority
+                // candidate never runs. Re-add when Rapido becomes stable.
                 else -> emptyList()
             }
 

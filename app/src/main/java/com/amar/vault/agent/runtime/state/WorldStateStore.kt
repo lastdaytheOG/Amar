@@ -109,8 +109,124 @@ class WorldStateStore @Inject constructor() {
         }
     }
 
+    // ====================================================================
+    // Phase 5: Circuit Breaker — target-app liveness tracking
+    // ====================================================================
+
+    /**
+     * Begin watching for the target package's heartbeat. Called by the
+     * executor when a workflow begins. The reducer will update
+     * lastTargetSeenAtMillis on every accessibility event that names this
+     * package; the executor periodically checks [isTargetDead].
+     */
+    fun startTrackingTarget(packageName: String) {
+        reduce { old ->
+            old.copy(
+                circuitBreakerTargetPackage = packageName,
+                lastTargetSeenAtMillis = System.currentTimeMillis(),
+                lastInterruptingPackage = null
+            )
+        }
+        Log.i(TAG, "CIRCUIT_BREAKER tracking pkg=$packageName")
+    }
+
+    /**
+     * Stop tracking the target. Called by the executor when a workflow ends
+     * (success or failure). The breaker becomes inert and isTargetDead()
+     * returns false.
+     */
+    fun stopTrackingTarget() {
+        val prev = current().circuitBreakerTargetPackage
+        reduce { old ->
+            old.copy(
+                circuitBreakerTargetPackage = null,
+                lastTargetSeenAtMillis = 0L,
+                lastInterruptingPackage = null
+            )
+        }
+        if (prev != null) {
+            Log.i(TAG, "CIRCUIT_BREAKER stopped tracking pkg=$prev")
+        }
+    }
+
+    /**
+     * Update target-heartbeat timestamp if the given package matches the
+     * tracked target. Called by PerceptionService on every relevant
+     * accessibility event. Idempotent and cheap.
+     *
+     * Returns the action taken so callers can log diagnostics:
+     *   "heartbeat"   — eventPackage matched tracked target, timestamp updated
+     *   "system"      — eventPackage is a known harmless system overlay (no update)
+     *   "interrupt"   — eventPackage is unknown and not the target (recorded, no trip)
+     *   "idle"        — no target being tracked
+     */
+    fun updateTargetHeartbeat(eventPackage: String?): String {
+        if (eventPackage == null) return "idle"
+        val tracked = current().circuitBreakerTargetPackage ?: return "idle"
+
+        return when {
+            eventPackage == tracked || eventPackage.startsWith("$tracked:") -> {
+                reduce { old ->
+                    old.copy(lastTargetSeenAtMillis = System.currentTimeMillis())
+                }
+                "heartbeat"
+            }
+            PERMITTED_SYSTEM_PACKAGES.contains(eventPackage) -> {
+                // Known harmless overlay (keyboard, permission dialog, etc).
+                // Don't update timestamp, don't tip the breaker.
+                "system"
+            }
+            else -> {
+                // Unexpected foreground — record but don't trip; the predicate
+                // decides based on time-since-last-heartbeat, not on a single event.
+                reduce { old ->
+                    old.copy(lastInterruptingPackage = eventPackage)
+                }
+                "interrupt"
+            }
+        }
+    }
+
+    /**
+     * Circuit-breaker predicate: returns true if the tracked target package
+     * has not been observed in any accessibility event for more than the
+     * absence window (default 1200ms). Returns false when no target is
+     * being tracked.
+     *
+     * Time-based rather than event-count-based: Android event density is
+     * unpredictable. A burst of 15 launcher events in 50ms shouldn't trip;
+     * a single confirmed dead app for 1.2s should.
+     */
+    fun isTargetDead(allowedAbsenceMs: Long = DEFAULT_ABSENCE_WINDOW_MS): Boolean {
+        val s = current()
+        val target = s.circuitBreakerTargetPackage ?: return false
+        if (s.lastTargetSeenAtMillis == 0L) return false
+        val sinceSeen = System.currentTimeMillis() - s.lastTargetSeenAtMillis
+        return sinceSeen > allowedAbsenceMs
+    }
+
     companion object {
         private const val TAG = "WorldStateStore"
+
+        /** Default absence window for the circuit breaker. */
+        private const val DEFAULT_ABSENCE_WINDOW_MS = 1200L
+
+        /**
+         * Packages that may legitimately take foreground focus during a
+         * workflow without indicating a target-app crash. Keyboards,
+         * permission sheets, system UI overlays. When one of these is
+         * the event package, the breaker holds its current timestamp
+         * but doesn't trip.
+         */
+        private val PERMITTED_SYSTEM_PACKAGES: Set<String> = setOf(
+            "com.android.systemui",
+            "com.google.android.inputmethod.latin",
+            "com.google.android.inputmethod.pinyin",
+            "com.touchtype.swiftkey",
+            "com.android.permissioncontroller",
+            "com.google.android.permissioncontroller",
+            "android"
+        )
         private const val HISTORY_CAPACITY = 32
     }
 }

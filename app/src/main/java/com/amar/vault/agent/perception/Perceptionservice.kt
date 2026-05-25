@@ -62,6 +62,9 @@ class PerceptionService : AccessibilityService() {
         private set
 
     @Volatile var imeCoordinator: ImeCoordinator? = null
+
+    // Phase 5: circuit breaker — populated via Hilt EntryPoint same as bus/ime.
+    @Volatile var worldStateStore: com.amar.vault.agent.runtime.state.WorldStateStore? = null
         private set
 
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Default)
@@ -117,7 +120,8 @@ class PerceptionService : AccessibilityService() {
             )
             bindRuntime(
                 bus = entry.accessibilityEventBus(),
-                imeCoordinator = entry.imeCoordinator()
+                imeCoordinator = entry.imeCoordinator(),
+                worldStateStore = entry.worldStateStore()
             )
         } catch (t: Throwable) {
             Log.w(TAG, "Failed to fetch runtime deps via Hilt EntryPoint: ${t.message}")
@@ -154,10 +158,15 @@ class PerceptionService : AccessibilityService() {
      * to keep legacy bind() callers working without modification.
      * Safe to call before or after the service connects.
      */
-    fun bindRuntime(bus: AccessibilityEventBus, imeCoordinator: ImeCoordinator) {
+    fun bindRuntime(
+        bus: AccessibilityEventBus,
+        imeCoordinator: ImeCoordinator,
+        worldStateStore: com.amar.vault.agent.runtime.state.WorldStateStore
+    ) {
         this.bus = bus
         this.imeCoordinator = imeCoordinator
-        Log.i(TAG, "PERCEPTION_RUNTIME_BOUND bus=true ime=true")
+        this.worldStateStore = worldStateStore
+        Log.i(TAG, "PERCEPTION_RUNTIME_BOUND bus=true ime=true wss=true")
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
@@ -170,6 +179,17 @@ class PerceptionService : AccessibilityService() {
         // bus consumers (Reducer → WorldState) get rich event data while
         // existing executors continue to use snapshotCache as before.
         publishToBus(event, type)
+
+        // Phase 5: circuit breaker heartbeat. Best-effort; never throws or
+        // delays the perception loop. updateTargetHeartbeat is idempotent
+        // and cheap (single state-store read + optional reducer call).
+        try {
+            val eventPkg = event.packageName?.toString()
+            worldStateStore?.updateTargetHeartbeat(eventPkg)
+        } catch (t: Throwable) {
+            // Heartbeat is advisory; perception must keep running.
+            Log.w(TAG, "circuit-breaker heartbeat failed: ${t.message}")
+        }
 
         // Legacy guard: only state/content changes drive snapshot walks.
         if (type != AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED &&

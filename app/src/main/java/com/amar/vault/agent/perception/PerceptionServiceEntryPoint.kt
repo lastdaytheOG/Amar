@@ -20,4 +20,5 @@ import dagger.hilt.components.SingletonComponent
 interface PerceptionServiceEntryPoint {
     fun accessibilityEventBus(): AccessibilityEventBus
     fun imeCoordinator(): ImeCoordinator
+    fun worldStateStore(): com.amar.vault.agent.runtime.state.WorldStateStore
 }

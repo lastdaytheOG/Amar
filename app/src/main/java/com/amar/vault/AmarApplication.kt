@@ -27,6 +27,7 @@ class AmarApplication : Application() {
     @Inject lateinit var adapterManifestLoader: com.amar.vault.agent.runtime.adapters.AdapterManifestLoader
     @Inject lateinit var frameworkAdapterRegistry: com.amar.vault.agent.runtime.adapters.FrameworkAdapterRegistry
     @Inject lateinit var telemetryExporter: com.amar.vault.agent.runtime.telemetry.TelemetryExporter
+    @Inject lateinit var worldStateStore: com.amar.vault.agent.runtime.state.WorldStateStore
 
     override fun onCreate() {
         super.onCreate()
@@ -41,7 +42,8 @@ class AmarApplication : Application() {
         imeCoordinator.start()
         com.amar.vault.agent.perception.PerceptionService.get()?.bindRuntime(
             bus = accessibilityEventBus,
-            imeCoordinator = imeCoordinator
+            imeCoordinator = imeCoordinator,
+            worldStateStore = worldStateStore
         )
 
         // Step 7: start semantic identity resolver bridge.

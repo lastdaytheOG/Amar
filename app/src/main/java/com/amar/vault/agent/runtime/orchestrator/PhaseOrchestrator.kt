@@ -146,12 +146,51 @@ class PhaseOrchestrator @Inject constructor(
             ctx.transitionTo(AgentPhase.COMPLETE, PhaseTransitionReason.Normal)
             Log.i(TAG, "PHASE wf=${ctx.workflowId} -> COMPLETE elapsed=${ctx.elapsedMs()}ms")
 
-            replayRecorder.finishWorkflow(
-                com.amar.vault.agent.replay.ReplayOutcome(
-                    kind = "Succeeded",
-                    durationMs = ctx.elapsedMs()
+            // Phase 4c: inspect the returned value. An ExecutionOutcome.Failed
+            // is a regular return (not an exception) but should still be
+            // recorded as a Failed workflow with the correct failureClass.
+            // We detect via class name to keep this generic-T method neutral
+            // about the concrete ExecutionOutcome type.
+            val resultClassName = result?.let { it::class.simpleName } ?: ""
+            val isFailed = resultClassName == "Failed"
+            if (isFailed) {
+                // Best-effort extraction of detail string via reflection-free
+                // toString — ExecutionOutcome.Failed includes detail in its
+                // generated data-class toString output.
+                val detailStr = result?.toString() ?: ""
+                val failureClass = when {
+                    detailStr.contains("app_crash_during_perception") ->
+                        com.amar.vault.agent.replay.FailureClass.APP_CRASH_DURING_PERCEPTION
+                    detailStr.contains("could not activate search affordance") ->
+                        com.amar.vault.agent.replay.FailureClass.NO_SEARCH_AFFORDANCE
+                    detailStr.contains("could not type query") ->
+                        com.amar.vault.agent.replay.FailureClass.INJECTION_REJECTED
+                    detailStr.contains("failed to open app") ->
+                        com.amar.vault.agent.replay.FailureClass.APP_LAUNCH_FAILED
+                    detailStr.contains("env_recovery_failed") ->
+                        com.amar.vault.agent.replay.FailureClass.ENV_RECOVERY_FAILED
+                    detailStr.contains("ambiguous_environment") ->
+                        com.amar.vault.agent.replay.FailureClass.WRONG_ENVIRONMENT
+                    else ->
+                        com.amar.vault.agent.replay.FailureClass.UNKNOWN
+                }
+                Log.w(TAG, "PHASE wf=${ctx.workflowId} executor returned Failed: $failureClass")
+                replayRecorder.finishWorkflow(
+                    com.amar.vault.agent.replay.ReplayOutcome(
+                        kind = "Failed",
+                        detail = detailStr.take(200),
+                        durationMs = ctx.elapsedMs(),
+                        failureClass = failureClass
+                    )
                 )
-            )
+            } else {
+                replayRecorder.finishWorkflow(
+                    com.amar.vault.agent.replay.ReplayOutcome(
+                        kind = "Succeeded",
+                        durationMs = ctx.elapsedMs()
+                    )
+                )
+            }
             return WorkflowResult.Success(result, ctx)
         } catch (t: Throwable) {
             ctx.transitionTo(

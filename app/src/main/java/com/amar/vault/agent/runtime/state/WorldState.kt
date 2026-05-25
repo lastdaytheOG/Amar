@@ -100,7 +100,31 @@ data class WorldState(
      * True if recovery is currently in progress. Step 12 (Recovery Engine)
      * sets this when dispatching, clears when complete.
      */
-    val inRecovery: Boolean = false
+    val inRecovery: Boolean = false,
+
+    // ---------- Circuit Breaker: target-app liveness tracking ----------
+
+    /**
+     * Package the executor is currently working with. Null when no workflow
+     * is targeted. Updated by [WorldStateStore.startTrackingTarget] when a
+     * workflow begins. When non-null, the reducer/perception pipeline checks
+     * each window event against this and updates lastTargetSeenAtMillis.
+     */
+    val circuitBreakerTargetPackage: String? = null,
+
+    /**
+     * Wall-clock time of the last AccessibilityEvent that confirmed the
+     * target package was on-screen. Zero when not tracking. The circuit
+     * breaker predicate compares (now - this) against an absence window.
+     */
+    val lastTargetSeenAtMillis: Long = 0L,
+
+    /**
+     * Last package observed in an unexpected (non-target, non-system-allowed)
+     * window event. Helps post-mortem analysis: distinguishes "target died and
+     * launcher took over" from "system permission dialog briefly interrupted".
+     */
+    val lastInterruptingPackage: String? = null
 ) {
 
     /**
