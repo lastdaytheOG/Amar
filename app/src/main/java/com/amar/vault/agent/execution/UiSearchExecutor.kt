@@ -477,12 +477,38 @@ class UiSearchExecutor @Inject constructor(
                     if (gestureState is TaskState.Succeeded) {
                         val postSnap = svc?.forceSnapshot()
                         android.util.Log.i(TAG, "step 3 candidate $idx post-gesture snapshot: pkg=${postSnap?.packageId} elements=${postSnap?.size}")
+                        postSnap?.elements?.forEachIndexed { i, el ->
+                            android.util.Log.i(TAG, "  post[$i] type=${el.type} text='${el.text?.take(40)}' cd='${el.contentDesc?.take(40)}' rid=${el.resourceId} clickable=${el.clickable} editable=${el.editable} bounds=${el.bounds}")
+                        }
                         val gestureVerified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, realPkg)
                         android.util.Log.i(TAG, "step 3 candidate $idx gestureVerified=$gestureVerified")
                         if (gestureVerified) {
                             android.util.Log.i(TAG, "step 3 candidate $idx VERIFIED via escalated gesture tap")
                             clickedWith = "${candidate.target}/${candidate.strategy}/gesture-escalated"
                             break
+                        }
+                        // Phase 6b: Rapido's first tap expands a pickup-confirmation
+                        // panel that still shows "Where are you going?" — the actual
+                        // destination editor opens on the SECOND tap. If our target's
+                        // contentDesc is still present in the post-snapshot, gesture-tap
+                        // it again.
+                        val targetStillPresent = postSnap?.elements?.any {
+                            it.contentDesc == candidate.target || it.text == candidate.target
+                        } == true
+                        if (targetStillPresent) {
+                            android.util.Log.i(TAG, "step 3 candidate $idx target still present post-tap; second gesture tap")
+                            val secondGesture = submit(AgentAction.GestureTap(target = candidate.target, strategy = candidate.strategy))
+                            android.util.Log.i(TAG, "step 3 candidate $idx second gesture state: ${secondGesture::class.simpleName}" +
+                                    if (secondGesture is TaskState.Failed) " reason=${secondGesture.reason}" else "")
+                            if (secondGesture is TaskState.Succeeded) {
+                                val secondVerified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, realPkg)
+                                android.util.Log.i(TAG, "step 3 candidate $idx secondGestureVerified=$secondVerified")
+                                if (secondVerified) {
+                                    android.util.Log.i(TAG, "step 3 candidate $idx VERIFIED via two-stage gesture tap")
+                                    clickedWith = "${candidate.target}/${candidate.strategy}/gesture-2stage"
+                                    break
+                                }
+                            }
                         }
                     }
                     continue
@@ -564,8 +590,41 @@ class UiSearchExecutor @Inject constructor(
         android.util.Log.i(TAG, "step 5: typing query via findFocus(FOCUS_INPUT)")
         var typedWith = "none"
 
+        // Phase 6b: Rapido (and similar map apps) expose their destination
+        // input as a custom view identified by resourceId, not by
+        // editable=true or FOCUS_INPUT. Try direct ACTION_SET_TEXT on
+        // known map-input rids before falling through to focus-based path.
+        if (realPkg in MAP_APP_PACKAGES) {
+            val mapInputNode = svc?.let { findNodeByResourceId(it, MAP_INPUT_RESOURCE_IDS) }
+            if (mapInputNode != null) {
+                val ridSnap = mapInputNode.viewIdResourceName
+                android.util.Log.i(TAG, "step 5 map-input node found by rid=$ridSnap; attempting direct injection")
+                val injected = injectText(mapInputNode, plan.query)
+                safeRecycle(mapInputNode)
+                if (injected) {
+                    typedWith = "map-input/$ridSnap/ACTION_SET_TEXT"
+                    android.util.Log.i(TAG, "step 5 SUCCESS via $typedWith")
+                    recordStep("step_5_SUCCESS", detail = typedWith)
+                } else if (svc != null) {
+                    // ACTION_SET_TEXT didn't take (Compose hidden EditText).
+                    // Fall back to virtual keyboard tapping — slow but real.
+                    android.util.Log.i(TAG, "step 5 direct injection failed; trying virtual-keyboard tapping")
+                    val vkOk = injectViaVirtualKeyboard(svc, plan.query)
+                    if (vkOk) {
+                        typedWith = "map-input/$ridSnap/virtual-keyboard"
+                        android.util.Log.i(TAG, "step 5 SUCCESS via $typedWith")
+                        recordStep("step_5_SUCCESS", detail = typedWith)
+                    } else {
+                        android.util.Log.w(TAG, "step 5 virtual-keyboard tapping failed")
+                    }
+                }
+            } else {
+                android.util.Log.i(TAG, "step 5 no map-input rid match; falling through to findFocus path")
+            }
+        }
+
         val focusedNode = findInputFocusedNode(svc)
-        if (focusedNode != null) {
+        if (typedWith == "none" && focusedNode != null) {
             val injected = injectText(focusedNode, plan.query)
             if (injected) {
                 typedWith = "findFocus(FOCUS_INPUT)/ACTION_SET_TEXT"
@@ -754,8 +813,13 @@ class UiSearchExecutor @Inject constructor(
     ): com.amar.vault.agent.runtime.environment.EnvironmentVerifier.VerificationResult {
         var last = environmentVerifier.verify(targetEnv)
         var tries = 1
+        // Phase 6b: also retry on UNKNOWN (verifier saw no snapshot data
+        // yet, typically because the app was already foregrounded and
+        // step 2 settle didn't fire). Previously this exited immediately
+        // and treated transient-no-data as a hard mismatch.
         while (tries < maxTries &&
-            last.state == com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.TRANSITIONING) {
+            (last.state == com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.TRANSITIONING ||
+                    last.state == com.amar.vault.agent.runtime.environment.EnvironmentVerifier.EnvironmentState.UNKNOWN)) {
             delay(250L)
             last = environmentVerifier.verify(targetEnv)
             tries++
@@ -823,6 +887,25 @@ class UiSearchExecutor @Inject constructor(
                 return@withTimeoutOrNull true
             }
 
+            // Phase 6b: Compose BasicTextField doesn't always expose editable=true,
+            // but if the IME is up while the target app is foregrounded, there is
+            // a focused input even if invisible to our walker. Treat that as success
+            // and let downstream injection (findFocus / InjectionEngine) find it.
+            val imeUp = svc?.windows?.any { it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD } == true
+            val targetForegrounded = svc?.windows?.any {
+                val rootPkg = try { it.root?.packageName?.toString() } catch (_: Throwable) { null }
+                it.type == AccessibilityWindowInfo.TYPE_APPLICATION && rootPkg == targetPackage
+            } == true
+            if (imeUp && targetForegrounded) {
+                android.util.Log.i("UiSearchExecutor", "waitForEditableOnly: IME up + target foregrounded → declaring editable present")
+                // Phase 6b diagnostic: dump destination-picker tree so we can
+                // figure out how to target the invisible BasicTextField.
+                nodes.forEachIndexed { i, el ->
+                    android.util.Log.i("UiSearchExecutor", "  ime[$i] type=${el.type} text='${el.text?.take(50)}' cd='${el.contentDesc?.take(50)}' rid=${el.resourceId} clickable=${el.clickable} editable=${el.editable} focused=${el.focused} bounds=${el.bounds}")
+                }
+                return@withTimeoutOrNull true
+            }
+
             delay(150L)
         }
         @Suppress("UNREACHABLE_CODE") false
@@ -839,6 +922,41 @@ class UiSearchExecutor @Inject constructor(
                 resId.contains("camera") || resId.contains("gif") ||
                 resId.contains("attach") ||
                 text.contains("sticker") || text.contains("gif")
+    }
+
+    // Phase 6b: locate a node by its resourceId across all application
+    // windows. Used to find map-app inputs (Rapido drop_text, etc.) that
+    // don't surface as editable=true. Returns first match; caller must
+    // recycle. Matches on the unqualified id suffix to tolerate package
+    // prefix variations (e.g. "com.rapido.passenger:id/drop_text" or
+    // bare "drop_text").
+    private fun findNodeByResourceId(
+        svc: PerceptionService,
+        candidateIds: List<String>
+    ): AccessibilityNodeInfo? {
+        val windows = svc.windows ?: return null
+        for (w in windows) {
+            val root = try { w.root } catch (_: Throwable) { null } ?: continue
+            val stack = ArrayDeque<AccessibilityNodeInfo>()
+            stack.addLast(root)
+            while (stack.isNotEmpty()) {
+                val node = stack.removeLast()
+                try {
+                    val rid = node.viewIdResourceName
+                    if (rid != null && candidateIds.any { id -> rid == id || rid.endsWith(":id/$id") }) {
+                        return node
+                    }
+                    val count = try { node.childCount } catch (_: Throwable) { 0 }
+                    for (i in 0 until count) {
+                        val child = try { node.getChild(i) } catch (_: Throwable) { null }
+                        if (child != null) stack.addLast(child)
+                    }
+                } catch (_: Throwable) {
+                    // skip and continue
+                }
+            }
+        }
+        return null
     }
 
     private fun findInputFocusedNode(svc: PerceptionService?): AccessibilityNodeInfo? {
@@ -892,6 +1010,72 @@ class UiSearchExecutor @Inject constructor(
         } catch (_: Exception) { false }
     }
 
+    // Phase 6b: virtual-keyboard tapping for apps where ACTION_SET_TEXT
+    // doesn't work (Compose hidden EditText, custom map inputs). Walks the
+    // IME window's a11y tree to find each key by contentDesc, then
+    // dispatches a real touch gesture at its center. Slow (~150ms/char)
+    // but bypasses node-targeting limitations entirely.
+    private suspend fun injectViaVirtualKeyboard(
+        svc: com.amar.vault.agent.perception.PerceptionService,
+        text: String
+    ): Boolean {
+        val windows = svc.windows ?: return false
+        val imeWindow = windows.firstOrNull { it.type == android.view.accessibility.AccessibilityWindowInfo.TYPE_INPUT_METHOD }
+        val imeRoot = try { imeWindow?.root } catch (_: Throwable) { null } ?: return false
+        // Build a map of contentDesc -> first matching node bounds.
+        val keyMap = mutableMapOf<String, android.graphics.Rect>()
+        val stack = ArrayDeque<AccessibilityNodeInfo>()
+        stack.addLast(imeRoot)
+        while (stack.isNotEmpty()) {
+            val n = stack.removeLast()
+            try {
+                val cd = n.contentDescription?.toString()
+                if (cd != null && cd.length == 1 && n.isClickable) {
+                    val r = android.graphics.Rect()
+                    n.getBoundsInScreen(r)
+                    if (!r.isEmpty && cd !in keyMap) keyMap[cd] = android.graphics.Rect(r)
+                }
+                val count = try { n.childCount } catch (_: Throwable) { 0 }
+                for (i in 0 until count) {
+                    try { n.getChild(i)?.let { stack.addLast(it) } } catch (_: Throwable) {}
+                }
+            } catch (_: Throwable) {}
+        }
+        android.util.Log.i("UiSearchExecutor", "vk: keyMap size=${keyMap.size}")
+        if (keyMap.size < 5) return false  // sanity: keyboard not properly read
+        for (c in text) {
+            val needle = c.toString()
+            // Try lowercase first, then literal (covers shift-required cases).
+            val rect = keyMap[needle.lowercase()] ?: keyMap[needle] ?: run {
+                android.util.Log.w("UiSearchExecutor", "vk: no key found for char '$c'")
+                return false
+            }
+            val cx = rect.centerX().toFloat()
+            val cy = rect.centerY().toFloat()
+            val path = android.graphics.Path().apply { moveTo(cx, cy) }
+            val stroke = android.accessibilityservice.GestureDescription.StrokeDescription(path, 0L, 50L)
+            val gesture = android.accessibilityservice.GestureDescription.Builder().addStroke(stroke).build()
+            val ok = kotlinx.coroutines.suspendCancellableCoroutine<Boolean> { cont ->
+                val callback = object : android.accessibilityservice.AccessibilityService.GestureResultCallback() {
+                    override fun onCompleted(g: android.accessibilityservice.GestureDescription?) {
+                        if (cont.isActive) cont.resume(true) {}
+                    }
+                    override fun onCancelled(g: android.accessibilityservice.GestureDescription?) {
+                        if (cont.isActive) cont.resume(false) {}
+                    }
+                }
+                val dispatched = try { svc.dispatchGesture(gesture, callback, null) } catch (_: Throwable) { false }
+                if (!dispatched && cont.isActive) cont.resume(false) {}
+            }
+            if (!ok) {
+                android.util.Log.w("UiSearchExecutor", "vk: gesture for '$c' failed")
+                return false
+            }
+            kotlinx.coroutines.delay(80L)
+        }
+        return true
+    }
+
     @Suppress("DEPRECATION")
     private fun safeRecycle(node: AccessibilityNodeInfo) {
         try { node.recycle() } catch (_: Throwable) {}
@@ -923,6 +1107,18 @@ class UiSearchExecutor @Inject constructor(
         private val MAP_DESTINATION_PHRASES = listOf(
             "where are you going", "where to", "destination",
             "drop", "pickup", "pick up", "drop off"
+        )
+
+        // Phase 6b: known resourceIds for map-app destination/search inputs
+        // that don't surface as editable=true in the a11y tree but accept
+        // ACTION_SET_TEXT directly. Rapido uses drop_text + pickup_text.
+        // Extend this list when adding new map apps.
+        private val MAP_INPUT_RESOURCE_IDS = listOf(
+            "drop_text",
+            "destination_input",
+            "search_input",
+            "search_edit_text",
+            "where_to_input"
         )
     }
 }
