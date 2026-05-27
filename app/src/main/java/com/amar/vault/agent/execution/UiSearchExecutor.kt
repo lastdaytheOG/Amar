@@ -241,11 +241,20 @@ class UiSearchExecutor @Inject constructor(
                 }
 
                 foundSearchButtons = nodes.filter { el ->
-                    (el.contentDesc?.contains("search", true) == true ||
-                            el.contentDesc?.contains("keyboard", true) == true ||
-                            el.text?.contains("Type", true) == true ||
-                            el.resourceId?.contains("search", true) == true) &&
-                            !isNonSearchElement(el)
+                    val isSearchSemantic =
+                        el.contentDesc?.contains("search", true) == true ||
+                                el.contentDesc?.contains("keyboard", true) == true ||
+                                el.text?.contains("Type", true) == true ||
+                                el.resourceId?.contains("search", true) == true
+                    // Phase 6: map-first destination-entry surfaces use a
+                    // non-editable Button labeled with location semantics
+                    // (e.g. Rapido's "Where are you going?"). Gate on
+                    // package allowlist to avoid false-positives in chat apps.
+                    val isMapDestinationSemantic = realPkg in MAP_APP_PACKAGES && (
+                            el.text?.let { t -> MAP_DESTINATION_PHRASES.any { t.contains(it, true) } } == true ||
+                                    el.contentDesc?.let { d -> MAP_DESTINATION_PHRASES.any { d.contains(it, true) } } == true
+                            )
+                    (isSearchSemantic || isMapDestinationSemantic) && !isNonSearchElement(el)
                 }
 
                 if (foundInput != null || foundSearchButtons.isNotEmpty()) {
@@ -386,9 +395,13 @@ class UiSearchExecutor @Inject constructor(
                     listOf("Search" to TargetStrategy.CONTENT_DESC)
                 realPkg == "com.openai.chatgpt" ->
                     listOf("Search" to TargetStrategy.CONTENT_DESC)
-                // Rapido entry removed: app crashes ~7s after launch
-                // (LocationSdkQosConfig deserializer failure), so priority
-                // candidate never runs. Re-add when Rapido becomes stable.
+                realPkg == "com.rapido.passenger" ->
+                    listOf("Where are you going?" to TargetStrategy.CONTENT_DESC)
+                realPkg == "com.pinterest" ->
+                    listOf(
+                        "menu_search" to TargetStrategy.RESOURCE_ID,
+                        "Search" to TargetStrategy.CONTENT_DESC
+                    )
                 else -> emptyList()
             }
 
@@ -442,6 +455,37 @@ class UiSearchExecutor @Inject constructor(
 
                 if (!mechOk && state is TaskState.Failed) {
                     android.util.Log.i(TAG, "step 3 candidate $idx failed: ${state.reason}")
+                }
+
+                // Phase 6: when accessibility resolved the target but refused
+                // ACTION_CLICK because the node has no clickable ancestor
+                // (Rapido's "Where are you going?" button — Compose pointer-
+                // input handler isn't reflected in the a11y clickable flag),
+                // escalate directly to gesture-tap instead of skipping. The
+                // existing gesture-tap fallback below would never run because
+                // it's gated on mechOk=true.
+                val isUnclickableTarget = !mechOk &&
+                        state is TaskState.Failed &&
+                        (state.reason as? com.amar.vault.agent.control.FailureReason.TargetNotFound)
+                            ?.strategiesTried?.contains("no_clickable_ancestor") == true
+                if (isUnclickableTarget) {
+                    android.util.Log.i(TAG, "step 3 candidate $idx unclickable; escalating to gesture tap")
+                    val gestureAction = AgentAction.GestureTap(target = candidate.target, strategy = candidate.strategy)
+                    val gestureState = submit(gestureAction)
+                    android.util.Log.i(TAG, "step 3 candidate $idx gesture state: ${gestureState::class.simpleName}" +
+                            if (gestureState is TaskState.Failed) " reason=${gestureState.reason}" else "")
+                    if (gestureState is TaskState.Succeeded) {
+                        val postSnap = svc?.forceSnapshot()
+                        android.util.Log.i(TAG, "step 3 candidate $idx post-gesture snapshot: pkg=${postSnap?.packageId} elements=${postSnap?.size}")
+                        val gestureVerified = waitForEditableOnly(svc, POST_CLICK_VERIFY_MS, realPkg)
+                        android.util.Log.i(TAG, "step 3 candidate $idx gestureVerified=$gestureVerified")
+                        if (gestureVerified) {
+                            android.util.Log.i(TAG, "step 3 candidate $idx VERIFIED via escalated gesture tap")
+                            clickedWith = "${candidate.target}/${candidate.strategy}/gesture-escalated"
+                            break
+                        }
+                    }
+                    continue
                 }
 
                 if (!mechOk) continue
@@ -863,5 +907,22 @@ class UiSearchExecutor @Inject constructor(
         private const val FIELD_APPEAR_DELAY_MS = 400L
         private const val POST_CLICK_VERIFY_MS = 2_500L
         private const val USE_INJECTION_ENGINE = true
+
+        // Phase 6: map-first ride/navigation apps where the home screen shows
+        // a non-editable Button styled as a search bar ("Where are you going?").
+        // The button triggers an activity transition into a real editable
+        // surface. priorityTargetsForPackage already clicks these; this set
+        // gates the step 2.7 filter extension that lets the predicate
+        // recognize the trigger as a search affordance.
+        private val MAP_APP_PACKAGES = setOf(
+            "com.rapido.passenger",
+            "com.olacabs.customer",
+            "com.ubercab",
+            "com.google.android.apps.maps"
+        )
+        private val MAP_DESTINATION_PHRASES = listOf(
+            "where are you going", "where to", "destination",
+            "drop", "pickup", "pick up", "drop off"
+        )
     }
 }
