@@ -62,10 +62,12 @@ object TargetResolver {
             TargetStrategy.TEXT -> {
                 tried += "text"
                 snapshot.findFirst(target, MatchStrategy.TEXT)
+                    ?: nativeFallback(target, byContentDesc = false, tried = tried)
             }
             TargetStrategy.CONTENT_DESC -> {
                 tried += "content_desc"
                 snapshot.findFirst(target, MatchStrategy.CONTENT_DESC)
+                    ?: nativeFallback(target, byContentDesc = true, tried = tried)
             }
             TargetStrategy.AUTO -> {
                 // Semantic matching FIRST — finds elements by their actual
@@ -98,6 +100,10 @@ object TargetResolver {
             }
             TargetStrategy.STRUCTURAL_DNA -> {
                 resolveByStructuralDna(snapshot, tried)
+            }
+            TargetStrategy.DESTINATION_TRIGGER -> {
+                tried += "destination_trigger"
+                resolveDestinationTrigger(snapshot, tried)
             }
         }
     }
@@ -353,5 +359,196 @@ object TargetResolver {
             .mapNotNull { it.bounds?.bottom }
             .maxOrNull() ?: return null
         return maxBottom / 4
+    }
+
+    /**
+     * Phase 6f — Layer 2 fuzzy semantic resolver for map-app destination triggers.
+     *
+     * Runs after Layer 1 exact-match candidates exhaust. Scores every element by:
+     *  - destination/transit keywords in text or contentDesc
+     *  - top-of-screen position (within top 30% vertical)
+     *  - large horizontal bounds (>=50% screen width)
+     *  - clickable / button-class flag
+     *  - penalties for known non-targets (favourites, settings, profile, menu, notifications)
+     *
+     * Returns the highest-scoring element if it crosses the confidence threshold.
+     * Future-proofs against Rapido (or future map apps) renaming the home-screen
+     * destination button without requiring a code change.
+     */
+    private fun resolveDestinationTrigger(
+        snapshot: UiSnapshot,
+        tried: MutableList<String>
+    ): UiElement? {
+        val keywordScores = mapOf(
+            "destination" to 50,
+            "going" to 30,
+            "where" to 30,
+            "go " to 15,
+            "drop" to 25,
+            "ride" to 25,
+            "travel" to 25,
+            "pickup" to 25,
+            "search" to 20,
+            "enter" to 20,
+            "next" to 15
+        )
+        val maxBottom = snapshot.elements.mapNotNull { it.bounds?.bottom }.maxOrNull() ?: return null
+        val maxRight = snapshot.elements.mapNotNull { it.bounds?.right }.maxOrNull() ?: return null
+        val topThird = (maxBottom * 0.30).toInt()
+        val halfWidth = (maxRight * 0.50).toInt()
+        val THRESHOLD = 60
+
+        var best: UiElement? = null
+        var bestScore = 0
+
+        for (el in snapshot.elements) {
+            val b = el.bounds ?: continue
+            val cd = (el.contentDesc ?: "").lowercase()
+            val tx = (el.text ?: "").lowercase()
+            val combined = "$cd $tx"
+            var score = 0
+
+            for ((kw, pts) in keywordScores) {
+                if (combined.contains(kw)) score += pts
+            }
+            if (b.top <= topThird) score += 20
+            if (b.width >= halfWidth) score += 20
+            if (el.clickable || el.type == UiElementType.BUTTON) score += 20
+
+            // Penalty: reject known non-target patterns
+            if (cd.contains("favourite") || cd.contains("favorite") ||
+                cd.contains("setting") || cd.contains("profile") ||
+                cd.contains("menu") || cd.contains("notification") ||
+                cd.contains("add to") || cd.contains("status bar")) {
+                score -= 100
+            }
+
+            if (score > bestScore && score >= THRESHOLD) {
+                bestScore = score
+                best = el
+            }
+        }
+
+        if (best != null) {
+            android.util.Log.i("TargetResolver",
+                "destination_trigger MATCH score=$bestScore cd='${best.contentDesc}' text='${best.text}' bounds=${best.bounds}"
+            )
+        } else {
+            android.util.Log.i("TargetResolver",
+                "destination_trigger: no element crossed threshold $THRESHOLD"
+            )
+        }
+        return best
+    }
+
+    /**
+     * Phase 6e: native OS-level fallback when the snapshot misses a target.
+     *
+     * Compose UIs sometimes don't surface their accessibility nodes through
+     * our custom snapshot unpacker (the Compose semantics tree merges nodes
+     * with clickable=false, no resourceId, and the Button class projection
+     * sits inside a ComposeView subtree that our walker may not traverse
+     * fully). When this happens, the snapshot doesn't contain the node even
+     * though the OS does see it (uiautomator dump confirms its presence).
+     *
+     * This bypass queries the live a11y tree via the same API uiautomator
+     * uses — findAccessibilityNodeInfosByContentDescription / ByText — and
+     * synthesizes a UiElement from the first match. The synthesized element
+     * has enough fields populated (bounds, clickable, contentDesc/text) for
+     * downstream executors to work with.
+     */
+    private fun nativeFallback(
+        target: String,
+        byContentDesc: Boolean,
+        tried: MutableList<String>
+    ): UiElement? {
+        tried += if (byContentDesc) "native_content_desc" else "native_text"
+        val svc = PerceptionService.get() ?: return null
+        val windows = try { svc.windows } catch (_: Throwable) { null } ?: return null
+        android.util.Log.i("TargetResolver", "native fallback: searching '$target' across ${windows.size} windows")
+        for ((wIdx, w) in windows.withIndex()) {
+            try {
+                val r = try { w.root } catch (_: Throwable) { null }
+                val pkg = r?.packageName?.toString() ?: "null"
+                val childCount = r?.childCount ?: -1
+                android.util.Log.i("TargetResolver", "  window[$wIdx] type=${w.type} pkg=$pkg childCount=$childCount")
+            } catch (_: Throwable) {}
+        }
+        for (w in windows) {
+            val root = try { w.root } catch (_: Throwable) { null } ?: continue
+            // findAccessibilityNodeInfosByText only searches the .text
+            // property. Compose Buttons often have text="" and put the
+            // label in contentDescription, so we walk the tree manually
+            // when matching by contentDesc.
+            val node = if (byContentDesc) {
+                // Force refresh + manual traversal. Our PerceptionService's
+                // cached tree is event-driven and lags reality; uiautomator
+                // refreshes before reading. We do the same here.
+                try { root.refresh() } catch (_: Throwable) {}
+                val stack = ArrayDeque<android.view.accessibility.AccessibilityNodeInfo>()
+                stack.addLast(root)
+                var found: android.view.accessibility.AccessibilityNodeInfo? = null
+                var nodesWalked = 0
+                val seenLabels = mutableListOf<String>()
+                while (stack.isNotEmpty() && found == null) {
+                    val n = stack.removeLast()
+                    nodesWalked++
+                    try {
+                        try { n.refresh() } catch (_: Throwable) {}
+                        val cd = n.contentDescription?.toString()
+                        val txt = n.text?.toString()
+                        if (!cd.isNullOrBlank()) seenLabels.add("desc:$cd")
+                        if (!txt.isNullOrBlank()) seenLabels.add("text:$txt")
+                        if (cd != null && cd.trim().equals(target.trim(), ignoreCase = false)) {
+                            found = n
+                            break
+                        }
+                        val cnt = try { n.childCount } catch (_: Throwable) { 0 }
+                        for (i in 0 until cnt) {
+                            try { n.getChild(i)?.let { stack.addLast(it) } } catch (_: Throwable) {}
+                        }
+                    } catch (_: Throwable) {}
+                }
+                android.util.Log.i("TargetResolver", "  walked $nodesWalked nodes for '$target' in pkg=${root.packageName} labels=$seenLabels")
+                found
+            } else {
+                val hits = try {
+                    root.findAccessibilityNodeInfosByText(target)
+                } catch (_: Throwable) { null }
+                hits?.firstOrNull { it != null }
+            } ?: continue
+            try {
+                val r = android.graphics.Rect()
+                node.getBoundsInScreen(r)
+                val text = node.text?.toString()
+                val cd = node.contentDescription?.toString()
+                val rid = try { node.viewIdResourceName } catch (_: Throwable) { null }
+                val cls = node.className?.toString() ?: ""
+                val type = when {
+                    cls.contains("Button") -> com.amar.vault.agent.perception.UiElementType.BUTTON
+                    cls.contains("EditText") -> com.amar.vault.agent.perception.UiElementType.INPUT
+                    else -> com.amar.vault.agent.perception.UiElementType.CONTAINER
+                }
+                android.util.Log.i("TargetResolver", "native fallback HIT for '$target' bounds=$r cd='$cd' text='$text'")
+                return UiElement(
+                    type = type,
+                    text = text,
+                    contentDesc = cd,
+                    hint = null,
+                    resourceId = rid,
+                    bounds = com.amar.vault.agent.perception.UiBounds.from(r),
+                    clickable = node.isClickable,
+                    scrollable = false,
+                    editable = node.isEditable,
+                    enabled = node.isEnabled,
+                    focused = node.isFocused,
+                    depth = 0,
+                    path = ""
+                )
+            } catch (_: Throwable) {
+                // Continue searching other windows
+            }
+        }
+        return null
     }
 }

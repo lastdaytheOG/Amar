@@ -170,7 +170,8 @@ enum class TargetStrategy {
     @SerialName("resource_id")               RESOURCE_ID,
     @SerialName("first_clickable_in_grid")   FIRST_CLICKABLE_IN_GRID,
     @SerialName("focused_editable")          FOCUSED_EDITABLE,
-    @SerialName("structural_dna")            STRUCTURAL_DNA
+    @SerialName("structural_dna")            STRUCTURAL_DNA,
+    @SerialName("destination_trigger")       DESTINATION_TRIGGER
 }
 
 @Serializable

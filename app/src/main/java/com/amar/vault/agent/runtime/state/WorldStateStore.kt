@@ -120,6 +120,10 @@ class WorldStateStore @Inject constructor() {
      * package; the executor periodically checks [isTargetDead].
      */
     fun startTrackingTarget(packageName: String) {
+        // Initial timestamp = now. The 5000ms absence window provides
+        // built-in tolerance for app launch time + normal quiet periods.
+        // If the target never emits a single event (process crash before
+        // any rendering), absence window expires and breaker fires correctly.
         reduce { old ->
             old.copy(
                 circuitBreakerTargetPackage = packageName,
@@ -165,7 +169,9 @@ class WorldStateStore @Inject constructor() {
         val tracked = current().circuitBreakerTargetPackage ?: return "idle"
 
         return when {
-            eventPackage == tracked || eventPackage.startsWith("$tracked:") -> {
+            eventPackage == tracked ||
+                    eventPackage.startsWith("$tracked:") ||
+                    isRuntimeAlias(tracked, eventPackage) -> {
                 reduce { old ->
                     old.copy(lastTargetSeenAtMillis = System.currentTimeMillis())
                 }
@@ -205,11 +211,47 @@ class WorldStateStore @Inject constructor() {
         return sinceSeen > allowedAbsenceMs
     }
 
+    /**
+     * Maps known launch-package ↔ runtime-package equivalences. Some apps
+     * launch via one package but their accessibility events arrive under a
+     * different package id (Gemini: launch via .apps.bard, runtime is
+     * googlequicksearchbox). Without this, the circuit-breaker heartbeat
+     * never matches and trips falsely. Mirror of EnvironmentVerifier's
+     * packageIds sets but kept local to avoid coupling.
+     */
+    private fun isRuntimeAlias(tracked: String, eventPackage: String): Boolean {
+        val pair = setOf(tracked, eventPackage)
+        return RUNTIME_ALIASES.any { it == pair }
+    }
+
     companion object {
         private const val TAG = "WorldStateStore"
 
-        /** Default absence window for the circuit breaker. */
-        private const val DEFAULT_ABSENCE_WINDOW_MS = 1200L
+        /**
+         * Known launch↔runtime package equivalences. Add new pairs as
+         * dual-identity apps are discovered. Each entry is a 2-element
+         * set so direction doesn't matter.
+         */
+        private val RUNTIME_ALIASES: List<Set<String>> = listOf(
+            setOf("com.google.android.apps.bard", "com.google.android.googlequicksearchbox")
+        )
+
+        /** Default absence window for the circuit breaker.
+         *  Empirical: 1200ms was the original design value but real apps
+         *  (especially Compose-heavy like Gemini/ChatGPT) can go 2-4 seconds
+         *  between accessibility events during normal operation while
+         *  fetching data, doing layout, or rendering. 5000ms gives enough
+         *  headroom for legitimate quiet periods while still catching
+         *  app-crash scenarios (process death = total silence indefinitely). */
+        private const val DEFAULT_ABSENCE_WINDOW_MS = 5000L
+
+        /**
+         * Grace period at workflow start. The target app needs time to launch
+         * and start emitting accessibility events. Without this, the first
+         * 1-2 seconds where our own app is still foreground would immediately
+         * trip the breaker.
+         */
+        private const val STARTUP_GRACE_MS = 5000L
 
         /**
          * Packages that may legitimately take foreground focus during a

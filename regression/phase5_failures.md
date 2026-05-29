@@ -54,3 +54,17 @@ For each app:
 
 \- Map-input affordances (different from text-input affordances)
 
+## Pinterest (com.pinterest) - COMPOSE_TREE_NONDETERMINISM
+
+Symptoms:
+- Step 2 settled: 14-16 elements visible
+- Step 2.7 polled: snapshot collapses to 1-7 elements
+- menu_search node sometimes present, sometimes absent
+- Priority candidate ordering doesn't help (target node not in tree)
+
+Hypothesis: Pinterest uses aggressive Compose semantic merging.
+Accessibility tree depth/breadth varies between captures even when
+visible UI is identical.
+
+Defer to Phase 6 (multimodal perception). Pure a11y-tree approach
+cannot reliably interact with this app.

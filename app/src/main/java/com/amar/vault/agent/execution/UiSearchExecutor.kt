@@ -179,6 +179,8 @@ class UiSearchExecutor @Inject constructor(
                             )
                 }
 
+
+
                 if (hasSearchAffordance) {
                     android.util.Log.i(TAG, "step 2.5 search affordance visible after $backAttempt back presses")
                     break
@@ -396,7 +398,14 @@ class UiSearchExecutor @Inject constructor(
                 realPkg == "com.openai.chatgpt" ->
                     listOf("Search" to TargetStrategy.CONTENT_DESC)
                 realPkg == "com.rapido.passenger" ->
-                    listOf("Where are you going?" to TargetStrategy.CONTENT_DESC)
+                    listOf(
+                        // Layer 1: known exact-match contentDescs across Rapido versions
+                        "Where do you want to go?" to TargetStrategy.CONTENT_DESC,
+                        "Where are you going?" to TargetStrategy.CONTENT_DESC,
+                        "Enter pickup location" to TargetStrategy.CONTENT_DESC,
+                        // Layer 2: fuzzy semantic resolver for future Rapido wording changes
+                        "destination" to TargetStrategy.DESTINATION_TRIGGER
+                    )
                 realPkg == "com.pinterest" ->
                     listOf(
                         "menu_search" to TargetStrategy.RESOURCE_ID,
@@ -614,6 +623,17 @@ class UiSearchExecutor @Inject constructor(
                         typedWith = "map-input/$ridSnap/virtual-keyboard"
                         android.util.Log.i(TAG, "step 5 SUCCESS via $typedWith")
                         recordStep("step_5_SUCCESS", detail = typedWith)
+                        // Phase 6c: after typing, map apps show query-matched
+                        // suggestions. Wait for them to populate, then select
+                        // the best match and tap it to set the destination.
+                        delay(1500L)
+                        val selected = selectBestSuggestion(svc, plan.query)
+                        if (selected) {
+                            android.util.Log.i(TAG, "step 5 suggestion selected for query='${plan.query}'")
+                            recordStep("step_6_suggestion_selected", detail = plan.query)
+                        } else {
+                            android.util.Log.w(TAG, "step 5 no suggestion matched query='${plan.query}'")
+                        }
                     } else {
                         android.util.Log.w(TAG, "step 5 virtual-keyboard tapping failed")
                     }
@@ -1008,6 +1028,129 @@ class UiSearchExecutor @Inject constructor(
             }
             false
         } catch (_: Exception) { false }
+    }
+
+    // Phase 6c: after typing into a map-app input, scan the suggestion
+    // list and tap the row that best matches the query. Rapido (and
+    // similar) render each suggestion as a clickable CONTAINER under a
+    // scroll view (rid contains "address_list" or "suggestion"/"result"),
+    // with TEXT children holding the place title + locality. We group
+    // TEXT under each clickable row by spatial containment, score against
+    // the query, and gesture-tap the best row's center.
+    private suspend fun selectBestSuggestion(
+        svc: com.amar.vault.agent.perception.PerceptionService,
+        query: String
+    ): Boolean {
+        val snap = svc.forceSnapshot() ?: return false
+        val els = snap.elements
+        // Identify the suggestion-list container by resourceId hint.
+        val listEl = els.firstOrNull {
+            val r = it.resourceId ?: ""
+            r.contains("address_list") || r.contains("suggestion") || r.contains("result_list")
+        }
+        // Candidate rows: clickable containers inside the list bounds (or,
+        // if no list found, any clickable container in the mid-screen band).
+        val rows = els.filter { el ->
+            el.clickable && el.bounds != null && el.type == UiElementType.CONTAINER &&
+                    if (listEl?.bounds != null) {
+                        el.bounds.top >= listEl.bounds.top - 4 && el.bounds.bottom <= listEl.bounds.bottom + 4
+                    } else {
+                        el.bounds.top in 440..1300
+                    }
+        }
+        if (rows.isEmpty()) { android.util.Log.w("UiSearchExecutor", "sug-select: no candidate rows"); return false }
+        // For each row, collect TEXT inside its bounds → combined label.
+        val q = query.lowercase()
+        data class Scored(val row: UiElement, val label: String, val score: Int)
+        val scored = rows.map { row ->
+            val rb = row.bounds!!
+            val texts = els.filter {
+                it.type == UiElementType.TEXT && it.text != null && it.bounds != null &&
+                        it.bounds.top >= rb.top && it.bounds.bottom <= rb.bottom &&
+                        it.bounds.left >= rb.left && it.bounds.right <= rb.right
+            }.sortedBy { it.bounds!!.top }
+            val title = texts.firstOrNull()?.text ?: ""
+            val label = texts.joinToString(" ") { it.text ?: "" }
+            val tl = title.lowercase()
+            val ll = label.lowercase()
+            // Score: title starts with query (3) > title word match (2) >
+            // label contains query (1) > nothing (0).
+            val score = when {
+                tl.startsWith(q) -> 3
+                tl.split(" ", ",").any { it == q } -> 2
+                ll.contains(q) -> 1
+                else -> 0
+            }
+            Scored(row, label, score)
+        }.filter { it.score > 0 }.sortedByDescending { it.score }
+        val best = scored.firstOrNull()
+        if (best == null) { android.util.Log.w("UiSearchExecutor", "sug-select: no row matched '$q'"); return false }
+        android.util.Log.i("UiSearchExecutor", "sug-select: best='${best.label.take(50)}' score=${best.score}")
+        val rb = best.row.bounds!!
+        val cx = ((rb.left + rb.right) / 2).toFloat()
+        val cy = ((rb.top + rb.bottom) / 2).toFloat()
+        android.util.Log.i("UiSearchExecutor", "sug-select: target row bounds=$rb center=($cx, $cy)")
+        // Phase 6d: prefer ACTION_CLICK on the live node at these bounds.
+        // Compose suggestion rows often register a11y clicks but ignore
+        // synthesized touches. Walk live tree, find a clickable node whose
+        // bounds match the snapshot, try ACTION_CLICK. Fall back to a
+        // gesture tap if that doesn't take.
+        val windows = svc.windows ?: emptyList()
+        var clickedViaAction = false
+        outer@ for (w in windows) {
+            val root = try { w.root } catch (_: Throwable) { null } ?: continue
+            val stack = ArrayDeque<AccessibilityNodeInfo>()
+            stack.addLast(root)
+            while (stack.isNotEmpty()) {
+                val n = stack.removeLast()
+                try {
+                    val r = android.graphics.Rect()
+                    n.getBoundsInScreen(r)
+                    // Match: same bounds as our target row (allow 4px slack).
+                    if (n.isClickable &&
+                        kotlin.math.abs(r.left - rb.left) <= 4 &&
+                        kotlin.math.abs(r.top - rb.top) <= 4 &&
+                        kotlin.math.abs(r.right - rb.right) <= 4 &&
+                        kotlin.math.abs(r.bottom - rb.bottom) <= 4) {
+                        val ok = try { n.performAction(AccessibilityNodeInfo.ACTION_CLICK) } catch (_: Throwable) { false }
+                        android.util.Log.i("UiSearchExecutor", "sug-select: ACTION_CLICK on node bounds=$r ok=$ok")
+                        if (ok) { clickedViaAction = true; break@outer }
+                    }
+                    val cnt = try { n.childCount } catch (_: Throwable) { 0 }
+                    for (i in 0 until cnt) {
+                        try { n.getChild(i)?.let { stack.addLast(it) } } catch (_: Throwable) {}
+                    }
+                } catch (_: Throwable) {}
+            }
+        }
+        if (clickedViaAction) return true
+        // Fallback: gesture tap with 1px line + 120ms dwell.
+        android.util.Log.i("UiSearchExecutor", "sug-select: ACTION_CLICK failed; falling back to gesture tap")
+        val path = android.graphics.Path().apply {
+            moveTo(cx, cy)
+            lineTo(cx + 1f, cy + 1f)
+        }
+        val stroke = android.accessibilityservice.GestureDescription.StrokeDescription(path, 0L, 120L)
+        val gesture = android.accessibilityservice.GestureDescription.Builder().addStroke(stroke).build()
+        val tapResult = kotlinx.coroutines.suspendCancellableCoroutine<Boolean> { cont ->
+            val cb = object : android.accessibilityservice.AccessibilityService.GestureResultCallback() {
+                override fun onCompleted(g: android.accessibilityservice.GestureDescription?) {
+                    android.util.Log.i("UiSearchExecutor", "sug-select: gesture onCompleted")
+                    if (cont.isActive) cont.resume(true) {}
+                }
+                override fun onCancelled(g: android.accessibilityservice.GestureDescription?) {
+                    android.util.Log.w("UiSearchExecutor", "sug-select: gesture onCancelled")
+                    if (cont.isActive) cont.resume(false) {}
+                }
+            }
+            val dispatched = try { svc.dispatchGesture(gesture, cb, null) } catch (t: Throwable) {
+                android.util.Log.w("UiSearchExecutor", "sug-select: dispatchGesture threw: ${t.message}")
+                false
+            }
+            android.util.Log.i("UiSearchExecutor", "sug-select: dispatched=$dispatched")
+            if (!dispatched && cont.isActive) cont.resume(false) {}
+        }
+        return tapResult
     }
 
     // Phase 6b: virtual-keyboard tapping for apps where ACTION_SET_TEXT
