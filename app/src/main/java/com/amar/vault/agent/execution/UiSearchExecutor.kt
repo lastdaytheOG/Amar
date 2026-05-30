@@ -560,6 +560,38 @@ class UiSearchExecutor @Inject constructor(
             android.util.Log.i(TAG, "step 3 winner: $clickedWith")
             recordStep("step_3_winner", detail = clickedWith, snapshot = svc?.forceSnapshot())
             delay(FIELD_APPEAR_DELAY_MS)
+
+            // Phase 7A (early): validate pickup BEFORE typing. Rapido auto-
+            // focuses pickup_text when pickup is empty; typing would land in
+            // the wrong field and corrupt state. Detect empty pickup banner
+            // now and halt before any text injection happens.
+            if (svc != null && realPkg in MAP_APP_PACKAGES) {
+                val preTypeSnap = svc.forceSnapshot()
+                if (preTypeSnap != null) {
+                    val r = com.amar.vault.agent.validation.PickupValidator
+                        .validate(svc.applicationContext, preTypeSnap)
+                    when (r) {
+                        is com.amar.vault.agent.validation.PickupValidator.Result.Ok -> {
+                            android.util.Log.i(TAG, "step 7 (pre-type) pickup OK")
+                            recordStep("step_7_pickup_ok")
+                        }
+                        is com.amar.vault.agent.validation.PickupValidator.Result.Suspicious -> {
+                            val detail = "reason=${r.reason} pickup='${r.pickupLocality}' gps='${r.gpsLocality}' dist=${r.distanceMeters}m"
+                            android.util.Log.w(TAG, "step 7 (pre-type) pickup SUSPICIOUS: $detail")
+                            recordStep("step_7_pickup_suspicious", detail = detail)
+                            return ExecutionOutcome.Failed(
+                                packageId = plan.packageId,
+                                detail = "pickup_suspicious: ${r.reason}",
+                                durationMs = System.currentTimeMillis() - started
+                            )
+                        }
+                        is com.amar.vault.agent.validation.PickupValidator.Result.Unavailable -> {
+                            android.util.Log.i(TAG, "step 7 (pre-type) pickup validation unavailable: ${r.reason}")
+                            recordStep("step_7_pickup_unavailable", detail = r.reason)
+                        }
+                    }
+                }
+            }
         }
 
         // Step 8: try the InjectionEngine FIRST, before legacy step 5.
@@ -627,6 +659,40 @@ class UiSearchExecutor @Inject constructor(
                         // suggestions. Wait for them to populate, then select
                         // the best match and tap it to set the destination.
                         delay(1500L)
+
+                        // Phase 7A: pickup validation. Pickup-edit screen is
+                        // still visible at this moment (pickup_text in tree).
+                        // After suggestion tap, Rapido navigates to ride-selection
+                        // and pickup_text disappears — so we validate first.
+                        // Suspicious pickup → skip suggestion tap, return Failed.
+                        if (realPkg in MAP_APP_PACKAGES) {
+                            val preSnap = svc.forceSnapshot()
+                            if (preSnap != null) {
+                                val pickupResult = com.amar.vault.agent.validation.PickupValidator
+                                    .validate(svc.applicationContext, preSnap)
+                                when (pickupResult) {
+                                    is com.amar.vault.agent.validation.PickupValidator.Result.Ok -> {
+                                        android.util.Log.i(TAG, "step 7 pickup OK")
+                                        recordStep("step_7_pickup_ok")
+                                    }
+                                    is com.amar.vault.agent.validation.PickupValidator.Result.Suspicious -> {
+                                        val detail = "reason=${pickupResult.reason} pickup='${pickupResult.pickupLocality}' gps='${pickupResult.gpsLocality}' dist=${pickupResult.distanceMeters}m"
+                                        android.util.Log.w(TAG, "step 7 pickup SUSPICIOUS: $detail")
+                                        recordStep("step_7_pickup_suspicious", detail = detail)
+                                        return ExecutionOutcome.Failed(
+                                            packageId = plan.packageId,
+                                            detail = "pickup_suspicious: ${pickupResult.reason}",
+                                            durationMs = System.currentTimeMillis() - started
+                                        )
+                                    }
+                                    is com.amar.vault.agent.validation.PickupValidator.Result.Unavailable -> {
+                                        android.util.Log.i(TAG, "step 7 pickup validation unavailable: ${pickupResult.reason}")
+                                        recordStep("step_7_pickup_unavailable", detail = pickupResult.reason)
+                                    }
+                                }
+                            }
+                        }
+
                         val selected = selectBestSuggestion(svc, plan.query)
                         if (selected) {
                             android.util.Log.i(TAG, "step 5 suggestion selected for query='${plan.query}'")
