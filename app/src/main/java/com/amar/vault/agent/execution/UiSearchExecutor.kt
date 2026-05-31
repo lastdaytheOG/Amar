@@ -579,11 +579,21 @@ class UiSearchExecutor @Inject constructor(
                             val detail = "reason=${r.reason} pickup='${r.pickupLocality}' gps='${r.gpsLocality}' dist=${r.distanceMeters}m"
                             android.util.Log.w(TAG, "step 7 (pre-type) pickup SUSPICIOUS: $detail")
                             recordStep("step_7_pickup_suspicious", detail = detail)
-                            return ExecutionOutcome.Failed(
-                                packageId = plan.packageId,
-                                detail = "pickup_suspicious: ${r.reason}",
-                                durationMs = System.currentTimeMillis() - started
-                            )
+                            // For pickup_field_empty: continue to Phase 6 typing.
+                            // Phase 6 targets drop_text by rid (see MAP_INPUT_RESOURCE_IDS),
+                            // so typing lands in drop regardless of which field Rapido
+                            // auto-focused. Rapido itself won't proceed to ride-selection
+                            // while pickup is empty — user fixes pickup manually then
+                            // taps confirm. For city_mismatch / distance_too_far, halt
+                            // because pickup is populated but wrong.
+                            if (r.reason != "pickup_field_empty") {
+                                return ExecutionOutcome.Failed(
+                                    packageId = plan.packageId,
+                                    detail = "pickup_suspicious: ${r.reason}",
+                                    durationMs = System.currentTimeMillis() - started
+                                )
+                            }
+                            android.util.Log.i(TAG, "step 7: pickup_field_empty — continuing to Phase 6 typing (will land in drop_text by rid)")
                         }
                         is com.amar.vault.agent.validation.PickupValidator.Result.Unavailable -> {
                             android.util.Log.i(TAG, "step 7 (pre-type) pickup validation unavailable: ${r.reason}")
@@ -641,15 +651,64 @@ class UiSearchExecutor @Inject constructor(
                 val ridSnap = mapInputNode.viewIdResourceName
                 android.util.Log.i(TAG, "step 5 map-input node found by rid=$ridSnap; attempting direct injection")
                 val injected = injectText(mapInputNode, plan.query)
-                safeRecycle(mapInputNode)
                 if (injected) {
+                    safeRecycle(mapInputNode)
                     typedWith = "map-input/$ridSnap/ACTION_SET_TEXT"
                     android.util.Log.i(TAG, "step 5 SUCCESS via $typedWith")
                     recordStep("step_5_SUCCESS", detail = typedWith)
                 } else if (svc != null) {
                     // ACTION_SET_TEXT didn't take (Compose hidden EditText).
-                    // Fall back to virtual keyboard tapping — slow but real.
-                    android.util.Log.i(TAG, "step 5 direct injection failed; trying virtual-keyboard tapping")
+                    // Fall back to virtual keyboard tapping ΓÇö slow but real.
+                    // CRITICAL: virtual keyboard taps go to whichever field
+                    // currently has input focus. When pickup is empty, Rapido
+                    // auto-focuses pickup_text. We must explicitly tap the
+                    // target field (drop_text) to move focus before typing,
+                    // otherwise "delhi" lands in pickup instead of drop.
+                    android.util.Log.i(TAG, "step 5 direct injection failed; tapping target field to focus before VK typing")
+                    val focusTapped = try {
+                        // First try ACTION_CLICK on the node or its clickable ancestor
+                        var cur: AccessibilityNodeInfo? = mapInputNode
+                        var clicked = false
+                        while (cur != null) {
+                            if (cur.isClickable) {
+                                clicked = cur.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+                                if (clicked) break
+                            }
+                            cur = cur.parent
+                        }
+                        if (!clicked) {
+                            // Escalate to gesture-tap on bounds center
+                            val rect = android.graphics.Rect()
+                            mapInputNode.getBoundsInScreen(rect)
+                            if (!rect.isEmpty) {
+                                val cx = rect.exactCenterX()
+                                val cy = rect.exactCenterY()
+                                android.util.Log.i(TAG, "step 5 focus gesture-tap on $ridSnap at ($cx,$cy)")
+                                val path = android.graphics.Path().apply { moveTo(cx, cy) }
+                                val stroke = android.accessibilityservice.GestureDescription.StrokeDescription(path, 0L, 50L)
+                                val gesture = android.accessibilityservice.GestureDescription.Builder().addStroke(stroke).build()
+                                kotlinx.coroutines.suspendCancellableCoroutine<Boolean> { cont ->
+                                    val cb = object : android.accessibilityservice.AccessibilityService.GestureResultCallback() {
+                                        override fun onCompleted(g: android.accessibilityservice.GestureDescription?) {
+                                            if (cont.isActive) cont.resume(true) {}
+                                        }
+                                        override fun onCancelled(g: android.accessibilityservice.GestureDescription?) {
+                                            if (cont.isActive) cont.resume(false) {}
+                                        }
+                                    }
+                                    try { svc.dispatchGesture(gesture, cb, null) } catch (t: Throwable) {
+                                        if (cont.isActive) cont.resume(false) {}
+                                    }
+                                }
+                            } else false
+                        } else true
+                    } catch (t: Throwable) {
+                        android.util.Log.w(TAG, "step 5 focus tap threw: ${t.message}")
+                        false
+                    }
+                    safeRecycle(mapInputNode)
+                    android.util.Log.i(TAG, "step 5 focus tap on $ridSnap = $focusTapped; settling 300ms")
+                    delay(300L)
                     val vkOk = injectViaVirtualKeyboard(svc, plan.query)
                     if (vkOk) {
                         typedWith = "map-input/$ridSnap/virtual-keyboard"
@@ -679,11 +738,21 @@ class UiSearchExecutor @Inject constructor(
                                         val detail = "reason=${pickupResult.reason} pickup='${pickupResult.pickupLocality}' gps='${pickupResult.gpsLocality}' dist=${pickupResult.distanceMeters}m"
                                         android.util.Log.w(TAG, "step 7 pickup SUSPICIOUS: $detail")
                                         recordStep("step_7_pickup_suspicious", detail = detail)
-                                        return ExecutionOutcome.Failed(
-                                            packageId = plan.packageId,
-                                            detail = "pickup_suspicious: ${pickupResult.reason}",
-                                            durationMs = System.currentTimeMillis() - started
-                                        )
+                                        // For pickup_field_empty: don't halt — let suggestion
+                                        // selection proceed. Drop is already populated with the
+                                        // query; selecting a suggestion fills drop with the real
+                                        // place. Rapido won't navigate past pickup-edit because
+                                        // pickup is still empty — user fixes pickup manually.
+                                        // For city_mismatch / distance_too_far: pickup is wrong,
+                                        // halt and surface to user.
+                                        if (pickupResult.reason != "pickup_field_empty") {
+                                            return ExecutionOutcome.Failed(
+                                                packageId = plan.packageId,
+                                                detail = "pickup_suspicious: ${pickupResult.reason}",
+                                                durationMs = System.currentTimeMillis() - started
+                                            )
+                                        }
+                                        android.util.Log.i(TAG, "step 7 (late): pickup_field_empty — proceeding to suggestion select")
                                     }
                                     is com.amar.vault.agent.validation.PickupValidator.Result.Unavailable -> {
                                         android.util.Log.i(TAG, "step 7 pickup validation unavailable: ${pickupResult.reason}")
@@ -1251,14 +1320,30 @@ class UiSearchExecutor @Inject constructor(
             } catch (_: Throwable) {}
         }
         android.util.Log.i("UiSearchExecutor", "vk: keyMap size=${keyMap.size}")
+        // Diagnostic: log keys we care about for special chars
+        val specialDiag = keyMap.keys.filter {
+            it.length > 1 || it == "," || it == "." || it == " "
+        }
+        android.util.Log.i("UiSearchExecutor", "vk: keyMap multi-char/punct keys=${specialDiag.sorted()}")
         if (keyMap.size < 5) return false  // sanity: keyboard not properly read
         for (c in text) {
             val needle = c.toString()
-            // Try lowercase first, then literal (covers shift-required cases).
-            val rect = keyMap[needle.lowercase()] ?: keyMap[needle] ?: run {
-                android.util.Log.w("UiSearchExecutor", "vk: no key found for char '$c'")
-                return false
+            // Special chars: GBoard exposes some keys by descriptive labels
+            // rather than the literal character (e.g. space key contentDesc
+            // is "Space", not " "). Map these before standard lookup.
+            val specialKey: String? = when (c) {
+                ' ' -> "Space"
+                '\t' -> "Tab"
+                '\n' -> "Enter"
+                else -> null
             }
+            val rect = (specialKey?.let { keyMap[it] })
+                ?: keyMap[needle.lowercase()]
+                ?: keyMap[needle]
+                ?: run {
+                    android.util.Log.w("UiSearchExecutor", "vk: no key found for char '$c'")
+                    return false
+                }
             val cx = rect.centerX().toFloat()
             val cy = rect.centerY().toFloat()
             val path = android.graphics.Path().apply { moveTo(cx, cy) }
